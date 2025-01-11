@@ -1,0 +1,56 @@
+@charset "utf-8";
+body, body * {
+    padding: 0;
+    margin: 0;
+}
+
+.f-page {
+    font: normal 14px/180% Microsoft YaHei, "微软雅黑";
+    color: #000;
+    text-align: center;
+}
+
+.fz_16 {
+    font-size: 16px;
+}
+
+.c-fff-fff {
+    color: #fff;
+}
+
+.bg_f7 {
+    background: #f7f9fb;
+}
+
+.bg_3e {
+    background: #3ec8dd;
+}
+
+.safety {
+    padding: 80px 0;
+    min-width: 1200px;
+}
+
+.safety_words {
+    width: 845px;
+    margin: 0 auto;
+}
+
+.safety_words h1 {
+    padding-bottom: 60px;
+}
+
+.safety_words p, .safety_words li {
+    line-height: 30px;
+}
+
+.safety_words li {
+    margin-left: 30px;
+}
+
+.safety_words i {
+    width: 5px;
+    height: 30px;
+    background: url(../img/sprite.png) -997px 15px no-repeat;
+    padding-right: 10px;
+}

@@ -1,0 +1,8 @@
+(function (window) {
+    var version="20150428110142";
+    var _basePath = CDN_PATH + 'release/',head = window.document.head || window.document.getElementsByTagName('head')[0],v='v='+version;
+    with(window){function JSCOMPILER_PRESERVE(){};App = {basePath: _basePath,verTime:version,version:'1.5.0'};_hmt = window._hmt || [];_bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");}
+    var link = document.createElement('link');link.rel = 'stylesheet';link.type = 'text/css';link.href = _basePath+'/app/resource/app.css?'+v;head.appendChild(link);
+    require({cache:{'app/main':function(){define(["dojo/has","require","dojo/main"],function(b,a){a(["./Application","./nav/Index","dojo/domReady!"],function(a){a.startup();    var bdSript = document.createElement('script'); bdSript.type="text/javascript";bdSript.src=_bdhmProtocol+"hm.baidu.com/h.js?5b937da9ec91718e91eecfb2d9a3086e";document.body.appendChild(bdSript);})}); }}});
+    require({cacheBust:v},[_basePath+'app/Application.js'],function(){require({baseUrl:_basePath,packages:[{name:"dojo",location:"dojo"},{name:"dijit",location:"dijit"},{name:"dgrid",location:"dgrid"},{name:"dojox",location:"dojox"},{name:"put-selector",location:"put-selector"},{name:"xstyle",location:"xstyle"},{name:"chanjet",location:"chanjet"},{name:"csp",location:"csp"},{name:"app",location:"app"},{name:"jquery",location:"jquery"}]},["app"]);});
+})(window);

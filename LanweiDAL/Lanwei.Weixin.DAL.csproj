@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E68C4CF-0E51-491E-87ED-A09745DC47D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>Lanwei.Weixin.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountDAL.cs" />
+    <Compile Include="article.cs" />
+    <Compile Include="article_albums.cs" />
+    <Compile Include="article_attach.cs" />
+    <Compile Include="article_attribute_field.cs" />
+    <Compile Include="article_category.cs" />
+    <Compile Include="article_comment.cs" />
+    <Compile Include="article_images_size.cs" />
+    <Compile Include="AssembleDAL.cs" />
+    <Compile Include="AssembleItemDAL.cs" />
+    <Compile Include="CangkuDAL.cs" />
+    <Compile Include="channel.cs" />
+    <Compile Include="channel_category.cs" />
+    <Compile Include="CheckBillDAL.cs" />
+    <Compile Include="CheckBillItemPayMentDAL.cs" />
+    <Compile Include="CheckBillItemPurDAL.cs" />
+    <Compile Include="CheckBillItemReceivableDAL.cs" />
+    <Compile Include="CheckBillItemSalesDAL.cs" />
+    <Compile Include="baseSet\CityDAL.cs" />
+    <Compile Include="baseSet\ClientDAL.cs" />
+    <Compile Include="baseSet\ClientLinkManDAL.cs" />
+    <Compile Include="baseSet\ClientTypeDAL.cs" />
+    <Compile Include="baseSet\CompanyDAL.cs" />
+    <Compile Include="baseSet\CompanyTypeDAL.cs" />
+    <Compile Include="CostChangeDAL.cs" />
+    <Compile Include="CostChangeItemDAL.cs" />
+    <Compile Include="DeptDAL.cs" />
+    <Compile Include="DiaoboDAL.cs" />
+    <Compile Include="DiaoboItemDAL.cs" />
+    <Compile Include="DisassembleDAL.cs" />
+    <Compile Include="DisassembleItemDAL.cs" />
+    <Compile Include="baseSet\GoodsAttributeDAL.cs" />
+    <Compile Include="baseSet\GoodsBrandDAL.cs" />
+    <Compile Include="baseSet\GoodsDAL.cs" />
+    <Compile Include="baseSet\GoodsTypeDAL.cs" />
+    <Compile Include="HandlerDAL.cs" />
+    <Compile Include="HandlerDDListDAL.cs" />
+    <Compile Include="ISVDD\IsvSuiteTicketDingdingDAL.cs" />
+    <Compile Include="ISVDD\IsvOAuthCorpInfoDDDAL.cs" />
+    <Compile Include="ISVDD\IsvReceiveDingdingDAL.cs" />
+    <Compile Include="ISVFW\CorpDatabaseConnStringDAL.cs" />
+    <Compile Include="LogsDAL.cs" />
+    <Compile Include="ManagerDAL.cs" />
+    <Compile Include="navigation.cs" />
+    <Compile Include="NewsDAL.cs" />
+    <Compile Include="NewsTypeDAL.cs" />
+    <Compile Include="OtherGetDAL.cs" />
+    <Compile Include="OtherGetItemDAL.cs" />
+    <Compile Include="OtherInDAL.cs" />
+    <Compile Include="OtherInItemDAL.cs" />
+    <Compile Include="OtherOutDAL.cs" />
+    <Compile Include="OtherOutItemDAL.cs" />
+    <Compile Include="OtherPayDAL.cs" />
+    <Compile Include="OtherPayItemDAL.cs" />
+    <Compile Include="PayGetDAL.cs" />
+    <Compile Include="PayMentAccountItemDAL.cs" />
+    <Compile Include="PayMentDAL.cs" />
+    <Compile Include="PayMentSourceBillItemDAL.cs" />
+    <Compile Include="PayTypeDAL.cs" />
+    <Compile Include="produce\goodsBomList.cs" />
+    <Compile Include="produce\goodsBomListItem.cs" />
+    <Compile Include="produce\goodsBomListType.cs" />
+    <Compile Include="produce\produceGetList.cs" />
+    <Compile Include="produce\produceGetListItem.cs" />
+    <Compile Include="produce\ProduceListItemBomDAL.cs" />
+    <Compile Include="PromotionGoodsOneDAL.cs" />
+    <Compile Include="PromotionGoodsOneItemDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="buy\PurOrderDAL.cs" />
+    <Compile Include="buy\PurOrderItemDAL.cs" />
+    <Compile Include="buy\PurReceiptDAL.cs" />
+    <Compile Include="buy\PurReceiptItemDAL.cs" />
+    <Compile Include="buy\PurTicketDAL.cs" />
+    <Compile Include="buy\PurTicketItemDAL.cs" />
+    <Compile Include="ReceivableAccountItemDAL.cs" />
+    <Compile Include="ReceivableDAL.cs" />
+    <Compile Include="ReceivableSourceBillItemDAL.cs" />
+    <Compile Include="RoleDAL.cs" />
+    <Compile Include="SalesOrderDAL.cs" />
+    <Compile Include="SalesOrderItemDAL.cs" />
+    <Compile Include="SalesOrderLockDAL.cs" />
+    <Compile Include="SalesOrderPayDAL.cs" />
+    <Compile Include="SalesQuoteDAL.cs" />
+    <Compile Include="SalesQuoteItemDAL.cs" />
+    <Compile Include="SalesReceiptDAL.cs" />
+    <Compile Include="SalesReceiptItemDAL.cs" />
+    <Compile Include="SalesTicketDAL.cs" />
+    <Compile Include="SalesTicketItemDAL.cs" />
+    <Compile Include="SendTypeDAL.cs" />
+    <Compile Include="ShopDAL.cs" />
+    <Compile Include="SpecDAL.cs" />
+    <Compile Include="SystemSetDAL.cs" />
+    <Compile Include="sys_config.cs" />
+    <Compile Include="baseSet\UnitDAL.cs" />
+    <Compile Include="UrlDAL.cs" />
+    <Compile Include="url_rewrite.cs" />
+    <Compile Include="UserDAL.cs" />
+    <Compile Include="user_amount_log.cs" />
+    <Compile Include="user_config.cs" />
+    <Compile Include="user_groups.cs" />
+    <Compile Include="user_login_log.cs" />
+    <Compile Include="user_point_log.cs" />
+    <Compile Include="VenderDAL.cs" />
+    <Compile Include="VenderLinkManDAL.cs" />
+    <Compile Include="VenderTypeDAL.cs" />
+    <Compile Include="WeixinDAL.cs" />
+    <Compile Include="WeixinOrderDAL.cs" />
+    <Compile Include="weixin\kaoqinListWeixin.cs" />
+    <Compile Include="weixin\wxopenBannerList.cs" />
+    <Compile Include="weixin\wx_requestRule.cs" />
+    <Compile Include="weixin\wx_requestRuleContent.cs" />
+    <Compile Include="weixin\wx_userweixin.cs" />
+    <Compile Include="CorpDAL.cs" />
+    <Compile Include="WuliuDAL.cs" />
+    <Compile Include="UserListDAL.cs" />
+    <Compile Include="ISVQY\IsvOAuthCorpInfoQYDAL.cs" />
+    <Compile Include="produce\processTypeDAL.cs" />
+    <Compile Include="produce\processListDAL.cs" />
+    <Compile Include="KaoqinDAL.cs" />
+    <Compile Include="KaoqinSetDAL.cs" />
+    <Compile Include="produce\ProduceListDAL.cs" />
+    <Compile Include="produce\ProduceListItemDAL.cs" />
+    <Compile Include="produce\ProduceInDAL.cs" />
+    <Compile Include="produce\ProduceInItemDAL.cs" />
+    <Compile Include="produce\ProduceProcessListDAL.cs" />
+    <Compile Include="wxmall\usersList.cs" />
+    <Compile Include="wxmall\wx_wxmall_attach_manage.cs" />
+    <Compile Include="wxmall\wx_wxmall_goods_category.cs" />
+    <Compile Include="wxmall\wx_wxmall_goods_img.cs" />
+    <Compile Include="wxmall\wx_wxmall_goods_manage.cs" />
+    <Compile Include="wxmall\wx_wxmall_goods_order.cs" />
+    <Compile Include="wxmall\wx_wxmall_goods_orderdetal.cs" />
+    <Compile Include="wxmall\wx_wxmall_goods_spec.cs" />
+    <Compile Include="wxmall\wx_wxmall_order_attach.cs" />
+    <Compile Include="wxmall\wx_wxmall_users_address.cs" />
+    <Compile Include="wxmall\wx_wxmall_users_manage.cs" />
+    <Compile Include="wxopen\wxOpenList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LanweiCommon\Lanwei.Weixin.Common.csproj">
+      <Project>{5b841e9e-6dec-4e17-ad50-fda7ba8982e7}</Project>
+      <Name>Lanwei.Weixin.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LanweiDBUtility\Lanwei.Weixin.DBUtility.csproj">
+      <Project>{094e4809-e780-4e85-92be-b0b9651057d9}</Project>
+      <Name>Lanwei.Weixin.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LanweiModel\Lanwei.Weixin.Model.csproj">
+      <Project>{da558fff-57ce-440e-a3a9-2dac1462a55c}</Project>
+      <Name>Lanwei.Weixin.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
