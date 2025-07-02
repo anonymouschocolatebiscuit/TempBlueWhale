@@ -58,8 +58,8 @@
     <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
     </Reference>
-    <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cd8b63ad3d691a37, processorArchitecture=MSIL">
-      <HintPath>..\packages\MathNet.Numerics.Signed.5.0.0\lib\net48\MathNet.Numerics.dll</HintPath>
+    <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.5.0.0\lib\net48\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -3650,6 +3650,7 @@
     <Content Include="Asset\README.md" />
     <Content Include="buy\ashx\PurOrderListEdit.ashx" />
     <Content Include="buy\PurOrderListEdit.aspx" />
+    <None Include="packages.config" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
