@@ -25,7 +25,7 @@
         <form id="form1" runat="server">
             <div class="login-title">
                <a href="Login.aspx" style=" text-decoration:none;">
-                <img src="images/logo.png" alt="BlueWhale ERP" height="80px" />
+                <img src="images/Logo_With_Name.png" alt="IvoryEagle ERP" height="80px" />
                </a>
             </div>
             <div class="login-screen">
