@@ -25,6 +25,7 @@
                 z-index: 99;
                 width: 100%;
                 font-family: '微软雅黑', '宋体';
+                background: linear-gradient(345deg, #a3c0e8, transparent);
             }
 
             .default .menuList1 {
@@ -67,7 +68,7 @@
                 top: 46px;
                 left: 0;
                 width: 63px;
-                background: #393d48;
+                background: #1A2B47;
                 height: 100%;
                 z-index: 201;
             }
@@ -696,8 +697,11 @@
             <div id="appHeader">
                 <div id="app/vm/Header_0">
                     <div>
-                        <a title="Return to Index" class="mainLogo">
-                           BlueWhale ERP
+                        <a title="Return to Index" style="float: left; display: block; width: 300px; height: 45px; margin-left: 10px;">
+                          <img src="images/Eagle.png" alt="Ivory Eagle ERP" style="height: 45px; width: 45px;" />
+                          <span style="display: inline-block; width: 100px; font-size: 18px; color: #0530b18f; font-family: '微软雅黑', '宋体'; font-weight: bold; margin-left: 10px;">
+                            Ivory Eagle <span>ERP</span>
+                          </span>
                         </a>
                     </div>
                     <div class="fr headMessage" id="userList">
