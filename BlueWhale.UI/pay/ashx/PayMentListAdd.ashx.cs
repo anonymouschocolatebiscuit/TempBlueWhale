@@ -1,0 +1,256 @@
+﻿using BlueWhale.DAL;
+using BlueWhale.Model;
+using BlueWhale.UI.src;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Web;
+using System.Web.Services;
+using System.Web.SessionState;
+
+namespace BlueWhale.UI.pay.ashx
+{
+    [WebService(Namespace = "http://tempuri.org/")]
+    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+    public class PayMentListAdd : IHttpHandler, IRequiresSessionState  // IRequiresSessionState required when using session
+    {
+        public PayMentDAL dal = new PayMentDAL();
+
+        public class OrderListModel<T>
+        {
+            #region Header Fields
+
+            private int _wlId;
+            public int wlId
+            {
+                get { return _wlId; }
+                set { _wlId = value; }
+            }
+
+            private int bizId;
+            public int BizId
+            {
+                get { return bizId; }
+                set { bizId = value; }
+            }
+
+            private DateTime _bizDate;
+            public DateTime bizDate
+            {
+                get { return _bizDate; }
+                set { _bizDate = value; }
+            }
+
+            private decimal _disPrice;
+            public decimal disPrice
+            {
+                get { return _disPrice; }
+                set { _disPrice = value; }
+            }
+
+            private decimal _payPriceNowMore;
+            public decimal payPriceNowMore
+            {
+                get { return _payPriceNowMore; }
+                set { _payPriceNowMore = value; }
+            }
+
+            private string _remarks;
+            public string remarks
+            {
+                get { return _remarks; }
+                set { _remarks = value; }
+            }
+
+            #endregion
+
+            /// <summary>
+            /// Payment Account
+            /// </summary>
+            public List<OrderListItemModel> _Rows;
+            public List<OrderListItemModel> Rows
+            {
+                get { return _Rows; }
+                set { _Rows = value; }
+            }
+
+            /// <summary>
+            /// Verification Details
+            /// </summary>
+            public List<OrderListItemModelBill> _RowsBill;
+            public List<OrderListItemModelBill> RowsBill
+            {
+                get { return _RowsBill; }
+                set { _RowsBill = value; }
+            }
+        }
+
+        [Serializable]
+        public class OrderListItemModel
+        {
+            private int bkId;
+            public int BkId
+            {
+                get { return bkId; }
+                set { bkId = value; }
+            }
+
+            private int payTypeId;
+            public int PayTypeId
+            {
+                get { return payTypeId; }
+                set { payTypeId = value; }
+            }
+
+            private string payNumber;
+            public string PayNumber
+            {
+                get { return payNumber; }
+                set { payNumber = value; }
+            }
+
+            private decimal payPrice;
+            public decimal PayPrice
+            {
+                get { return payPrice; }
+                set { payPrice = value; }
+            }
+
+            private string remarks;
+            public string Remarks
+            {
+                get { return remarks; }
+                set { remarks = value; }
+            }
+        }
+
+        [Serializable]
+        public class OrderListItemModelBill
+        {
+            private string sourceNumber;
+            public string SourceNumber
+            {
+                get { return sourceNumber; }
+                set { sourceNumber = value; }
+            }
+
+            private decimal priceCheckNow;
+            public decimal PriceCheckNow
+            {
+                get { return priceCheckNow; }
+                set { priceCheckNow = value; }
+            }
+        }
+
+        public void ProcessRequest(HttpContext context)
+        {
+            context.Response.ContentType = "text/plain";
+
+            if (context.Session["userInfo"] == null)
+            {
+
+                context.Response.Write("Login timeout, please log in again!");
+                return;
+
+            }
+            BasePage basePage = new BasePage();
+            if (!basePage.CheckPower("PayMentListAdd"))
+            {
+                context.Response.Write("You do not have this permission, please contact the administrator！");
+                return;
+            }
+            Users users = context.Session["userInfo"] as Users;
+
+            StreamReader reader = new StreamReader(context.Request.InputStream);
+            string strJson = HttpUtility.UrlDecode(reader.ReadToEnd());
+
+            OrderListModel<OrderListItemModel> obj = Newtonsoft.Json.JsonConvert.DeserializeObject<OrderListModel<OrderListItemModel>>(strJson);
+
+            OrderListModel<OrderListItemModelBill> objBill = Newtonsoft.Json.JsonConvert.DeserializeObject<OrderListModel<OrderListItemModelBill>>(strJson);
+
+            OrderListModel<OrderListItemModel> payList = obj;
+
+            OrderListModel<OrderListItemModelBill> billList = objBill;
+
+            #region Main Table Assignment
+
+            dal.Number = dal.GetBillNumberAuto(users.ShopId);
+            dal.ShopId = users.ShopId;
+            dal.BizDate = obj.bizDate;
+            dal.WlId = obj.wlId;
+            dal.DisPrice = obj.disPrice;
+            dal.Remarks = obj.remarks.ToString();
+            dal.MakeId = users.Id;
+            dal.MakeDate = DateTime.Now;
+            dal.PayPriceNowMore = obj.payPriceNowMore;
+            dal.Flag = "Save";
+
+            #endregion
+
+            int pId = dal.Add();
+
+            #region Sub-table Assignment 
+
+            if (pId > 0)
+            {
+                int check = 0;
+
+                PayMentAccountItemDAL item = new PayMentAccountItemDAL();
+                PayMentSourceBillItemDAL billItem = new PayMentSourceBillItemDAL();
+
+                #region Account Entry
+
+                for (int i = 0; i < payList.Rows.Count; i++)
+                {
+
+                    item.PId = pId;
+                    item.BkId = payList.Rows[i].BkId;
+                    item.PayTypeId = payList.Rows[i].PayTypeId;
+                    item.PayNumber = payList.Rows[i].PayNumber;
+                    item.PayPrice = payList.Rows[i].PayPrice;
+                    item.Remarks = payList.Rows[i].Remarks;
+                    item.Flag = "Save";
+
+                    check = item.Add();
+                }
+
+                #endregion
+
+                #region Verification Entry 
+
+                for (int i = 0; i < billList.RowsBill.Count; i++)
+                {
+                    billItem.PId = pId;
+                    billItem.PriceCheckNow = billList.RowsBill[i].PriceCheckNow;
+                    billItem.SourceNumber = billList.RowsBill[i].SourceNumber;
+                    billItem.Flag = "Save";
+
+                    check = billItem.Add();
+                }
+
+                #endregion
+
+                if (check > 0)
+                {
+                    LogsDAL logs = new LogsDAL();
+                    logs.Users = users.Names;
+                    logs.Events = "Create Payment Order ：" + dal.Number;
+                    logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
+                    logs.Add();
+
+                    context.Response.Write("Execution successful！");
+                }
+            }
+
+            #endregion
+        }
+
+        public bool IsReusable
+        {
+            get
+            {
+                return false;
+            }
+        }
+    }
+}

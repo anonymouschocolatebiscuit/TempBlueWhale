@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<siteMapNode id="1"  title="BlueWhale ERP System" url="BlueWhale" description="" target="mainFrame" image="" parentId="0" seq="1" >
+
+
+	<siteMapNode id="2"   title="Ordering platform management" url="OrderOnline" description="" target=""  parentId="1"  seq="2" >
+
+		<siteMapNode id="21"  title="Order View" url="GoodsListSet.aspx" description=""  target="mainFrame" image="" parentId="2"   seq="2"  />
+
+		<siteMapNode  id="22" title="Logistics Company Setup" url="WuliuList" description=""  target="mainFrame" image="" parentId="2"   seq="3" />
+
+		<siteMapNode  id="23" title="Order Delete" url="order/SearchShaxianBuy.aspx?typeId=1" description=""  target="mainFrame" image="" parentId="2"   seq="4" />
+
+
+	</siteMapNode>
+
+	<siteMapNode id="3"   title="Procurement Management" url="Buy" parentId="1"  seq="3" >
+
+		<siteMapNode id="31"  title="Purchase Order" url="PurOrder" parentId="3"  seq="2">
+
+			<siteMapNode id="311"  title="Search" url="PurOrderList" parentId="31"  seq="3" />
+
+			<siteMapNode id="312"  title="Add" url="PurOrderListAdd"  parentId="31"   seq="4" />
+
+			<siteMapNode id="313"  title="Edit" url="PurOrderListEdit"  parentId="31"   seq="5" />
+
+			<siteMapNode id="314"  title="Delete" url="PurOrderListDelete"  parentId="31"  seq="6" />
+
+			<siteMapNode id="315"  title="Review" url="PurOrderListCheck"  parentId="31"  seq="7" />
+
+			<siteMapNode id="316"  title="Cancel Review" url="PurOrderListCheckNo"  parentId="31"  seq="8" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="32"  title="Purchase receipt" url="PurReceipt" parentId="3"  seq="3">
+
+			<siteMapNode id="321"  title="Search" url="PurReceiptList"  parentId="32"  seq="2" />
+
+			<siteMapNode id="322"  title="Add" url="PurReceiptListAdd"  parentId="32"  seq="3" />
+
+			<siteMapNode id="323"  title="Edit" url="PurReceiptListEdit"  parentId="32"  seq="4" />
+
+			<siteMapNode id="324"  title="Delete" url="PurReceiptListDelete"  parentId="32"  seq="5" />
+
+			<siteMapNode id="325"  title="Review" url="PurReceiptListCheck"  parentId="32"  seq="6" />
+
+			<siteMapNode id="326"  title="Cancel Review" url="PurReceiptListCheckNo"  parentId="32"  seq="7" />
+
+
+		</siteMapNode>
+
+
+	</siteMapNode>
+
+	<siteMapNode id="4"   title="Sales Information Management" url="Sales" parentId="1"  seq="4" >
+
+		<siteMapNode id="40"  title="Sales Quote" url="SalesQuote" parentId="4"  seq="1">
+
+			<siteMapNode id="401"  title="Search" url="SalesQuoteList"  parentId="40"  seq="1" />
+
+			<siteMapNode id="402"  title="Add" url="SalesQuoteListAdd"  parentId="40"  seq="2" />
+
+			<siteMapNode id="403"  title="Edit" url="SalesQuoteListEdit"  parentId="40"  seq="3" />
+
+			<siteMapNode id="404"  title="Delete" url="SalesQuoteListDelete"  parentId="40"  seq="4" />
+
+			<siteMapNode id="405"  title="Review" url="SalesQuoteListCheck"  parentId="40"  seq="5" />
+
+			<siteMapNode id="406"  title="Cancel Review" url="SalesQuoteListCheckNo"  parentId="40"  seq="6" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="41"  title="Sales Order" url="SalesOrder" parentId="4"  seq="2">
+
+			<siteMapNode id="411"  title="Search" url="SalesOrderList"  parentId="41"  seq="3" />
+
+			<siteMapNode id="412"  title="Add" url="SalesOrderListAdd"  parentId="41"  seq="4" />
+
+			<siteMapNode id="413"  title="Edit" url="SalesOrderListEdit"  parentId="41"  seq="5" />
+
+			<siteMapNode id="414"  title="Delete" url="SalesOrderListDelete"  parentId="41"  seq="6" />
+
+			<siteMapNode id="415"  title="Review" url="SalesOrderListCheck"  parentId="41"  seq="7" />
+
+			<siteMapNode id="416"  title="Cancel Review" url="SalesOrderListCheckNo"  parentId="41"  seq="8" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="42"  title="Sales delivery order" url="SalesReceipt" parentId="4"  seq="3">
+
+			<siteMapNode id="421"  title="Search" url="SalesReceiptList"  parentId="42"  seq="1" />
+
+			<siteMapNode id="422"  title="Add" url="SalesReceiptListAdd"  parentId="42"  seq="2" />
+
+			<siteMapNode id="423"  title="Edit" url="SalesReceiptListEdit"  parentId="42"  seq="3" />
+
+			<siteMapNode id="424"  title="Delete" url="SalesReceiptListDelete"  parentId="42"  seq="4" />
+
+			<siteMapNode id="425"  title="Review" url="SalesReceiptListCheck"  parentId="42"  seq="5" />
+
+			<siteMapNode id="426"  title="Cancel Review" url="SalesReceiptListCheckNo"  parentId="42"  seq="6" />
+
+
+		</siteMapNode>
+
+
+	</siteMapNode>
+
+	<siteMapNode id="5"   title="Warehouse Management" url="Cangku" parentId="1"  seq="5" >
+
+		<siteMapNode id="51"  title="Other warehouse orders" url="OtherIn" parentId="5"  seq="2">
+
+			<siteMapNode id="511"  title="Search" url="OtherInList"  parentId="51"  seq="3" />
+
+			<siteMapNode id="512"  title="Add" url="OtherInListAdd"  parentId="51"  seq="4" />
+
+			<siteMapNode id="513"  title="Edit" url="OtherInListEdit"  parentId="51"  seq="5" />
+
+			<siteMapNode id="514"  title="Delete" url="OtherInListDelete"  parentId="51"  seq="6" />
+
+			<siteMapNode id="515"  title="Review" url="OtherInListCheck"  parentId="51"  seq="7" />
+
+			<siteMapNode id="516"  title="Cancel Review" url="OtherInListCheckNo"  parentId="51"  seq="8" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="52"  title="Other delivery orders" url="OtherOut" parentId="5"  seq="1">
+
+			<siteMapNode id="521"  title="Search" url="OtherOutList"  parentId="52"  seq="2" />
+
+			<siteMapNode id="522"  title="Add" url="OtherOutListAdd"  parentId="52"  seq="3" />
+
+			<siteMapNode id="523"  title="Edit" url="OtherOutListEdit"  parentId="52"  seq="4" />
+
+			<siteMapNode id="524"  title="Delete" url="OtherOutListDelete"  parentId="52"  seq="5" />
+
+			<siteMapNode id="525"  title="Review" url="OtherOutListCheck"  parentId="52"  seq="6" />
+
+			<siteMapNode id="526"  title="Cancel Review" url="OtherOutListCheckNo"  parentId="52"  seq="7" />
+
+
+		</siteMapNode>
+
+
+
+		<siteMapNode id="53"  title="Warehouse transfer order" url="Diaobo" parentId="5"  seq="1">
+
+			<siteMapNode id="531"  title="Search" url="DiaoboList"  parentId="53"  seq="2" />
+
+			<siteMapNode id="532"  title="Add" url="DiaoboListAdd"  parentId="53"  seq="3" />
+
+			<siteMapNode id="533"  title="Edit" url="DiaoboListEdit"  parentId="53"  seq="4" />
+
+			<siteMapNode id="534"  title="Delete" url="DiaoboListDelete"  parentId="53"  seq="5" />
+
+			<siteMapNode id="535"  title="Review" url="DiaoboListCheck"  parentId="53"  seq="6" />
+
+			<siteMapNode id="536"  title="Cancel Review" url="DiaoboListCheckNo"  parentId="53"  seq="7" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="57"  title="Product assembly list" url="Assemble" parentId="5"  seq="1">
+
+			<siteMapNode id="571"  title="Search" url="AssembleList"  parentId="57"  seq="2" />
+
+			<siteMapNode id="572"  title="Add" url="AssembleListAdd"  parentId="57"  seq="3" />
+
+			<siteMapNode id="573"  title="Edit" url="AssembleListEdit"  parentId="57"  seq="4" />
+
+			<siteMapNode id="574"  title="Delete" url="AssembleListDelete"  parentId="57"  seq="5" />
+
+			<siteMapNode id="575"  title="Review" url="AssembleListCheck"  parentId="57"  seq="6" />
+
+			<siteMapNode id="576"  title="Cancel Review" url="AssembleListCheckNo"  parentId="57"  seq="7" />
+
+
+		</siteMapNode>
+
+
+		<siteMapNode id="58"  title="Product disassembly order" url="Disassemble" parentId="5"  seq="1">
+
+			<siteMapNode id="581"  title="Search" url="DisAssembleList"  parentId="58"  seq="2" />
+
+			<siteMapNode id="582"  title="Add" url="DisAssembleListAdd"  parentId="58"  seq="3" />
+
+			<siteMapNode id="583"  title="Edit" url="DisAssembleListEdit"  parentId="58"  seq="4" />
+
+			<siteMapNode id="584"  title="Delete" url="DisAssembleListDelete"  parentId="58"  seq="5" />
+
+			<siteMapNode id="585"  title="Review" url="DisAssembleListCheck"  parentId="58"  seq="6" />
+
+			<siteMapNode id="586"  title="Cancel Review" url="DisAssembleListCheckNo"  parentId="58"  seq="7" />
+
+
+		</siteMapNode>
+
+
+		<siteMapNode id="54"  title="Cost Adjustment Sheet" url="CostChange" parentId="5"  seq="1">
+
+			<siteMapNode id="541"  title="Search" url="CostChangeList"  parentId="54"  seq="2" />
+
+			<siteMapNode id="542"  title="Add" url="CostChangeListAdd"  parentId="54"  seq="3" />
+
+			<siteMapNode id="543"  title="Edit" url="CostChangeListEdit"  parentId="54"  seq="4" />
+
+			<siteMapNode id="544"  title="Delete" url="CostChangeListDelete"  parentId="54"  seq="5" />
+
+			<siteMapNode id="545"  title="Review" url="CostChangeListCheck"  parentId="54"  seq="6" />
+
+			<siteMapNode id="546"  title="Cancel Review" url="CostChangeListCheckNo"  parentId="54"  seq="7" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="55"  title="Warehouse inventory" url="Pandian"  parentId="5"  seq="55" />
+
+	</siteMapNode>
+
+	<siteMapNode id="11"   title="Invoice information management" url="Ticket" parentId="1"  seq="6" >
+
+		<siteMapNode id="111"  title="Purchase Invoice" url="PurTicket" parentId="11"  seq="2">
+
+			<siteMapNode id="1111"  title="Search" url="PurTicketList"  parentId="111"  seq="3" />
+
+			<siteMapNode id="1112"  title="Add" url="PurTicketListAdd"  parentId="111"  seq="4" />
+
+			<siteMapNode id="1113"  title="Edit" url="PurTicketListEdit"  parentId="111"  seq="5" />
+
+			<siteMapNode id="1114"  title="Delete" url="PurTicketListDelete"  parentId="111"  seq="6" />
+
+			<siteMapNode id="1115"  title="Review" url="PurTicketListCheck"  parentId="111"  seq="7" />
+
+			<siteMapNode id="1116"  title="Cancel Review" url="PurTicketListCheckNo"  parentId="111"  seq="8" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="112"  title="Sales Invoice" url="SalesTicket" parentId="11"  seq="3">
+
+			<siteMapNode id="1121"  title="Search" url="SalesTicketList"  parentId="112"  seq="1" />
+
+			<siteMapNode id="1122"  title="Add" url="SalesTicketListAdd"  parentId="112"  seq="2" />
+
+			<siteMapNode id="1123"  title="Edit" url="SalesTicketListEdit"  parentId="112"  seq="3" />
+
+			<siteMapNode id="1124"  title="Delete" url="SalesTicketListDelete"  parentId="112"  seq="4" />
+
+			<siteMapNode id="1125"  title="Review" url="SalesTicketListCheck"  parentId="112"  seq="5" />
+
+			<siteMapNode id="1126"  title="Cancel Review" url="SalesTicketListCheckNo"  parentId="112"  seq="6" />
+
+
+		</siteMapNode>
+
+
+	</siteMapNode>
+
+	<siteMapNode id="6"   title="Fund information management" url="Pay" parentId="1"  seq="7" >
+
+		<siteMapNode id="61"  title="Sales Collection" url="Receivable" parentId="6"  seq="2">
+
+			<siteMapNode id="611"  title="Search" url="ReceivableList"  parentId="61"  seq="3" />
+
+			<siteMapNode id="612"  title="Add" url="ReceivableListAdd"  parentId="61"  seq="4" />
+
+			<siteMapNode id="613"  title="Edit" url="ReceivableListEdit"  parentId="61"  seq="5" />
+
+			<siteMapNode id="614"  title="Delete" url="ReceivableListDelete"  parentId="61"  seq="6" />
+
+			<siteMapNode id="615"  title="Review" url="ReceivableListCheck"  parentId="61"  seq="7" />
+
+			<siteMapNode id="616"  title="Cancel Review" url="ReceivableListCheckNo"  parentId="61"  seq="8" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="62"  title="Purchase to Pay" url="PayMent" parentId="6"  seq="1">
+
+			<siteMapNode id="621"  title="Search" url="PayMentList"  parentId="62"  seq="2" />
+
+			<siteMapNode id="622"  title="Add" url="PayMentListAdd"  parentId="62"  seq="3" />
+
+			<siteMapNode id="623"  title="Edit" url="PayMentListEdit"  parentId="62"  seq="4" />
+
+			<siteMapNode id="624"  title="Delete" url="PayMentListDelete"  parentId="62"  seq="5" />
+
+			<siteMapNode id="625"  title="Review" url="PayMentListCheck"  parentId="62"  seq="6" />
+
+			<siteMapNode id="626"  title="Cancel Review" url="PayMentListCheckNo"  parentId="62"  seq="7" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="63"  title="Collection verification" url="CheckBillGet" parentId="6"  seq="1">
+
+			<siteMapNode id="631"  title="Search" url="CheckBillGetList"  parentId="63"  seq="2" />
+
+			<siteMapNode id="632"  title="Add" url="CheckBillGetListAdd"  parentId="63"  seq="3" />
+
+			<siteMapNode id="633"  title="Edit" url="CheckBillGetListEdit"  parentId="63"  seq="4" />
+
+			<siteMapNode id="634"  title="Delete" url="CheckBillGetListDelete"  parentId="63"  seq="5" />
+
+			<siteMapNode id="635"  title="Review" url="CheckBillGetListCheck"  parentId="63"  seq="6" />
+
+			<siteMapNode id="636"  title="Cancel Review" url="CheckBillGetListCheckNo"  parentId="63"  seq="7" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="64"  title="Payment verification" url="CheckBillPay" parentId="6"  seq="1">
+
+			<siteMapNode id="641"  title="Search" url="CheckBillPayList"  parentId="64"  seq="2" />
+
+			<siteMapNode id="642"  title="Add" url="CheckBillPayListAdd"  parentId="64"  seq="3" />
+
+			<siteMapNode id="643"  title="Edit" url="CheckBillPayListEdit"  parentId="64"  seq="4" />
+
+			<siteMapNode id="644"  title="Delete" url="CheckBillPayListDelete"  parentId="64"  seq="5" />
+
+			<siteMapNode id="645"  title="Review" url="CheckBillPayListCheck"  parentId="64"  seq="6" />
+
+			<siteMapNode id="646"  title="Cancel Review" url="CheckBillPayListCheckNo"  parentId="64"  seq="7" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="65"  title="Other collections" url="OtherGet" parentId="6"  seq="1">
+
+			<siteMapNode id="651"  title="Search" url="OtherGetList"  parentId="65"  seq="2" />
+
+			<siteMapNode id="652"  title="Add" url="OtherGetListAdd"  parentId="65"  seq="3" />
+
+			<siteMapNode id="653"  title="Edit" url="OtherGetListEdit"  parentId="65"  seq="4" />
+
+			<siteMapNode id="654"  title="Delete" url="OtherGetListDelete"  parentId="65"  seq="5" />
+
+			<siteMapNode id="655"  title="Review" url="OtherGetListCheck"  parentId="65"  seq="6" />
+
+			<siteMapNode id="656"  title="Cancel Review" url="OtherGetListCheckNo"  parentId="65"  seq="7" />
+
+
+		</siteMapNode>
+
+
+
+		<siteMapNode id="66"  title="Other Payment" url="OtherPay" parentId="6"  seq="1">
+
+			<siteMapNode id="661"  title="Search" url="OtherPayList"  parentId="66"  seq="2" />
+
+			<siteMapNode id="662"  title="Add" url="OtherPayListAdd"  parentId="66"  seq="3" />
+
+			<siteMapNode id="663"  title="Edit" url="OtherPayListEdit"  parentId="66"  seq="4" />
+
+			<siteMapNode id="664"  title="Delete" url="OtherPayListDelete"  parentId="66"  seq="5" />
+
+			<siteMapNode id="665"  title="Review" url="OtherPayListCheck"  parentId="66"  seq="6" />
+
+			<siteMapNode id="666"  title="Cancel Review" url="OtherPayListCheckNo"  parentId="66"  seq="7" />
+
+
+		</siteMapNode>
+
+
+	</siteMapNode>
+
+
+	<siteMapNode id="7"   title="Analytical Reports Search" url="Report" parentId="1"  seq="8" >
+
+		<siteMapNode id="71"  title="Purchase Report" url="ReportBuy" parentId="7"  seq="2">
+
+			<siteMapNode id="711"  title="Purchase Order List Report" url="PurOrderListReport"  parentId="71"  seq="3" />
+
+			<siteMapNode id="712"  title="Purchase Details Report" url="PurOrderListDetailsReport"  parentId="71"  seq="4" />
+
+			<siteMapNode id="713"  title="Purchase summary table (by commodity)" url="PurOrderListSumGoodsReport"  parentId="71"  seq="5" />
+
+			<siteMapNode id="714"  title="Purchase Summary (by vender)" url="PurOrderListSumVenderReport"  parentId="71"  seq="6" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="72"  title="Sales Report" url="ReportSales" parentId="7"  seq="1">
+
+			<siteMapNode id="721"  title="Sales Order List Report" url="SalesOrderListReport"  parentId="72"  seq="2" />
+
+			<siteMapNode id="722"  title="Sales Order List Details Report" url="SalesOrderListDetailsReport"  parentId="72"  seq="3" />
+
+			<siteMapNode id="723"  title="Sales Summary (by Product)" url="SalesOrderListSumGoodsReport"  parentId="72"  seq="4" />
+
+			<siteMapNode id="724"  title="Sales Summary (by Customer)" url="SalesOrderListSumClientReport"  parentId="72"  seq="5" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="73"  title="Inventory report" url="ReportStore" parentId="7"  seq="1">
+
+			<siteMapNode id="731"  title="Commodity Inventory Balance Sheet" url="SumNumGoodsReport"  parentId="73"  seq="2" />
+
+			<siteMapNode id="732"  title="Goods Out In Detail Report" url="GoodsOutInDetailReport"  parentId="73"  seq="3" />
+
+			<siteMapNode id="733"  title="Goods Out In Sum Report" url="GoodsOutInSumReport"  parentId="73"  seq="4" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="74"  title="Funding Statement" url="ReportMoney" parentId="7"  seq="1">
+
+			<siteMapNode id="741"  title="Account Flow Report" url="AccountFlowReport"  parentId="74"  seq="2" />
+
+			<siteMapNode id="742"  title="Vendor Need Pay Report" url="VenderNeedPayReport"  parentId="74"  seq="3" />
+
+			<siteMapNode id="743"  title="Client Need Pay Report" url="ClientNeedPayReport"  parentId="74"  seq="4" />
+
+			<siteMapNode id="744"  title="Statement Client" url="StatementClient"  parentId="74"  seq="5" />
+
+			<siteMapNode id="745"  title="Statement Voucher" url="StatementVender"  parentId="74"  seq="6" />
+
+
+		</siteMapNode>
+
+
+	</siteMapNode>
+
+
+	<siteMapNode id="8"   title="Basic information management" url="BaseSet" parentId="1"  seq="9" >
+
+		<siteMapNode id="81"  title="Customer Management" url="Client" parentId="8"  seq="2">
+
+			<siteMapNode id="811"  title="Search" url="ClientList"  parentId="81"  seq="3" />
+
+			<siteMapNode id="812"  title="Add" url="ClientListAdd"  parentId="81"  seq="4" />
+
+			<siteMapNode id="813"  title="Edit" url="ClientListEdit"  parentId="81"  seq="5" />
+
+			<siteMapNode id="814"  title="Delete" url="ClientListDelete"  parentId="81"  seq="6" />
+
+			<siteMapNode id="815"  title="导入" url="ClientListExcel"  parentId="81"  seq="7" />
+
+			<siteMapNode id="811"  title="Review" url="ClientListCheck"  parentId="81"  seq="8" />
+
+			<siteMapNode id="811"  title="Cancel Review" url="ClientListCheckNo"  parentId="81"  seq="9" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="82"  title="Vender Management" url="Vender" parentId="8"  seq="1">
+
+			<siteMapNode id="821"  title="Search" url="VenderList"  parentId="82"  seq="2" />
+
+			<siteMapNode id="822"  title="Add" url="VenderListAdd"  parentId="82"  seq="3" />
+
+			<siteMapNode id="823"  title="Edit" url="VenderListEdit"  parentId="82"  seq="4" />
+
+			<siteMapNode id="824"  title="Delete" url="VenderListDelete"  parentId="82"  seq="5" />
+
+			<siteMapNode id="825"  title="Import" url="VenderListExcel"  parentId="82"  seq="6" />
+
+			<siteMapNode id="811"  title="Review" url="VenderListCheck"  parentId="82"  seq="7" />
+
+			<siteMapNode id="811"  title="Cancel Review" url="VenderListCheckNo"  parentId="82"  seq="8" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="83"  title="Product Management" url="Goods" parentId="8"  seq="1">
+
+			<siteMapNode id="831"  title="Search" url="GoodsList"  parentId="83"  seq="2" />
+
+			<siteMapNode id="832"  title="Add" url="GoodsListAdd"  parentId="83"  seq="3" />
+
+			<siteMapNode id="833"  title="Edit" url="GoodsListEdit"  parentId="83"  seq="4" />
+
+			<siteMapNode id="834"  title="Delete" url="GoodsListDelete"  parentId="83"  seq="5" />
+
+			<siteMapNode id="835"  title="Import" url="GoodsListExcel"  parentId="83"  seq="6" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="84"  title="Warehouse Management" url="Store" parentId="8"  seq="1">
+
+			<siteMapNode id="841"  title="Search" url="InventoryList"  parentId="84"  seq="2" />
+
+			<siteMapNode id="842"  title="Add" url="InventoryListAdd"  parentId="84"  seq="3" />
+
+			<siteMapNode id="843"  title="Edit" url="InventoryListEdit"  parentId="84"  seq="4" />
+
+			<siteMapNode id="844"  title="Delete" url="InventoryListDelete"  parentId="84"  seq="5" />
+
+
+
+		</siteMapNode>
+
+		<siteMapNode id="85"  title="Account Management" url="Account" parentId="8"  seq="1">
+
+			<siteMapNode id="851"  title="Search" url="AccountList"  parentId="85"  seq="2" />
+
+			<siteMapNode id="852"  title="Add" url="AccountListAdd"  parentId="85"  seq="3" />
+
+			<siteMapNode id="853"  title="Edit" url="AccountListEdit"  parentId="85"  seq="4" />
+
+			<siteMapNode id="854"  title="Delete" url="AccountListDelete"  parentId="85"  seq="5" />
+
+
+
+		</siteMapNode>
+
+
+	</siteMapNode>
+
+	<siteMapNode id="9"   title="Auxiliary data management" url="TypeList" parentId="1"  seq="1" >
+
+		<siteMapNode id="91"  title="Customer Category" url="ClientType" parentId="9"  seq="2">
+
+			<siteMapNode id="911"  title="Search" url="ClientTypeList"  parentId="91"  seq="3" />
+
+			<siteMapNode id="911"  title="Add" url="ClientTypeListAdd"  parentId="91"  seq="4" />
+
+			<siteMapNode id="911"  title="Edit" url="ClientTypeListEdit"  parentId="91"  seq="5" />
+
+			<siteMapNode id="911"  title="Delete" url="ClientTypeListDelete"  parentId="91"  seq="6" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="92"  title="Vender Category" url="VenderType" parentId="9"  seq="1">
+
+			<siteMapNode id="921"  title="Search" url="VenderTypeList"  parentId="92"  seq="2" />
+
+			<siteMapNode id="921"  title="Add" url="VenderTypeListAdd"  parentId="92"  seq="3" />
+
+			<siteMapNode id="921"  title="Edit" url="VenderTypeListEdit"  parentId="92"  seq="4" />
+
+			<siteMapNode id="921"  title="Delete" url="VenderTypeListDelete"  parentId="92"  seq="5" />
+
+
+		</siteMapNode>
+
+		<siteMapNode id="93"  title="Product categories" url="GoodsType" parentId="9"  seq="1">
+
+			<siteMapNode id="931"  title="Search" url="GoodsTypeList"  parentId="93"  seq="2" />
+
+			<siteMapNode id="931"  title="Add" url="GoodsTypeListAdd"  parentId="93"  seq="3" />
+
+			<siteMapNode id="931"  title="Edit" url="GoodsTypeListEdit"  parentId="93"  seq="4" />
+
+			<siteMapNode id="931"  title="Delete" url="GoodsTypeListDelete"  parentId="93"  seq="5" />
+
+		</siteMapNode>
+
+		<siteMapNode id="94"  title="Unit of measurement" url="Spec" parentId="9"  seq="1">
+
+			<siteMapNode id="941"  title="Search" url="SpecList"  parentId="94"  seq="2" />
+
+			<siteMapNode id="941"  title="Add" url="SpecListAdd"  parentId="94"  seq="3" />
+
+			<siteMapNode id="941"  title="Edit" url="SpecListEdit"  parentId="94"  seq="4" />
+
+			<siteMapNode id="941"  title="Delete" url="SpecListDelete"  parentId="94"  seq="5" />
+
+
+
+		</siteMapNode>
+
+		<siteMapNode id="95"  title="Settlement Method" url="Pay" parentId="9"  seq="1">
+
+			<siteMapNode id="951"  title="Search" url="PayTypeList"  parentId="95"  seq="2" />
+
+			<siteMapNode id="951"  title="Add" url="PayTypeListAdd"  parentId="95"  seq="3" />
+
+			<siteMapNode id="951"  title="Edit" url="PayTypeListEdit"  parentId="95"  seq="4" />
+
+			<siteMapNode id="951"  title="Delete" url="PayTypeListDelete"  parentId="95"  seq="5" />
+
+
+
+		</siteMapNode>
+
+
+		<siteMapNode id="96"  title="Income and Expenditure Category" url="PayGet" parentId="9"  seq="1">
+
+			<siteMapNode id="961"  title="Search" url="PayGetList"  parentId="96"  seq="2" />
+
+			<siteMapNode id="961"  title="Add" url="PayGetListAdd"  parentId="96"  seq="3" />
+
+			<siteMapNode id="961"  title="Edit" url="PayGetListEdit"  parentId="96"  seq="4" />
+
+			<siteMapNode id="961"  title="Delete" url="PayGetListDelete"  parentId="96"  seq="5" />
+
+
+
+		</siteMapNode>
+
+
+	</siteMapNode>
+
+	<siteMapNode id="10"   title="Advanced settings management" url="Advance" parentId="1"  seq="1" >
+
+		<siteMapNode id="1001"  title="System Parameters" url="SystemSet" parentId="10"  seq="2"></siteMapNode>
+
+		<siteMapNode id="1002"  title="User Management" url="Users" parentId="10"  seq="3">
+
+
+			<siteMapNode id="100201"  title="View" url="UsersList" parentId="1002"  seq="1"></siteMapNode>
+
+			<siteMapNode id="100202"  title="Add" url="UsersListAdd" parentId="1002"  seq="2"></siteMapNode>
+
+			<siteMapNode id="100203"  title="Edit" url="UsersListEdit" parentId="1002"  seq="3"></siteMapNode>
+
+			<siteMapNode id="100204"  title="Delete" url="UsersListDelete" parentId="1002"  seq="4"></siteMapNode>
+
+			<siteMapNode id="100205"  title="Permissions" url="UsersListPowerSet" parentId="1002"  seq="5"></siteMapNode>
+
+
+		</siteMapNode>
+
+		<siteMapNode id="1003"  title="Operation log" url="LogsList" parentId="10"  seq="4"></siteMapNode>
+
+		<siteMapNode id="1004"  title="Data backup" url="DatabaseBackUp" parentId="10"  seq="5"></siteMapNode>
+
+	</siteMapNode>
+
+
+</siteMapNode>
+
+
+
+
