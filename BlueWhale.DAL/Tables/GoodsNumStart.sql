@@ -1,0 +1,18 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[goodsNumStart](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[goodsId] [int] NULL,
+	[ckId] [int] NULL,
+	[num] [decimal](18, 0) NULL,
+	[priceCost] [decimal](18, 2) NULL,
+	[sumPrice] [decimal](18, 2) NULL,
+ CONSTRAINT [PK__goodsNumStart__52593CB8] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO

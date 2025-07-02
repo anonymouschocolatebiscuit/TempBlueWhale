@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6010E9BC-75DC-42F0-A399-96623CC187B1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BlueWhale.DAL</RootNamespace>
+    <AssemblyName>BlueWhale.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountDAL.cs" />
+    <Compile Include="AssembleDAL.cs" />
+    <Compile Include="AssembleItemDAL.cs" />
+    <Compile Include="baseSet\ClientLinkManDAL.cs" />
+    <Compile Include="baseSet\GoodsBrandDAL.cs" />
+    <Compile Include="baseSet\UnitDAL.cs" />
+    <Compile Include="baseSet\ClientTypeDAL.cs" />
+    <Compile Include="baseSet\GoodsDAL.cs" />
+    <Compile Include="baseSet\GoodsTypeDAL.cs" />
+    <Compile Include="baseSet\ClientDAL.cs" />
+    <Compile Include="buy\PurOrderListDAL.cs" />
+    <Compile Include="buy\PurOrderDAL.cs" />
+    <Compile Include="buy\PurReceiptDAL.cs" />
+    <Compile Include="produce\goodsBomListDAL.cs" />
+    <Compile Include="produce\goodsBomListItemDAL.cs" />
+    <Compile Include="produce\goodsBomListTypeDAL.cs" />
+    <Compile Include="produce\ProduceProcessListDAL.cs" />
+    <Compile Include="StorageDAL.cs" />
+    <Compile Include="CheckBillDAL.cs" />
+    <Compile Include="CheckBillItemPayMentDAL.cs" />
+    <Compile Include="CheckBillItemPurDAL.cs" />
+    <Compile Include="CheckBillItemReceivableDAL.cs" />
+    <Compile Include="CheckBillItemSalesDAL.cs" />
+    <Compile Include="DisassembleDAL.cs" />
+    <Compile Include="DisassembleItemDAL.cs" />
+    <Compile Include="DeptDAL.cs" />
+    <Compile Include="InventoryDAL.cs" />
+    <Compile Include="InventoryTransferDAL.cs" />
+    <Compile Include="InventoryTransferDetailsDAL.cs" />
+    <Compile Include="LogsDAL.cs" />
+    <Compile Include="OtherGetDAL.cs" />
+    <Compile Include="OtherGetItemDAL.cs" />
+    <Compile Include="OtherInDAL.cs" />
+    <Compile Include="OtherInItemDAL.cs" />
+    <Compile Include="OtherOutItemDAL.cs" />
+    <Compile Include="OtherPayDAL.cs" />
+    <Compile Include="OtherPayItemDAL.cs" />
+    <Compile Include="PayMentAccountItemDAL.cs" />
+    <Compile Include="OtherOutDAL.cs" />
+    <Compile Include="PayMentDAL.cs" />
+    <Compile Include="PayGetDAL.cs" />
+    <Compile Include="PayMentSourceBillItemDAL.cs" />
+    <Compile Include="PayTyeDAL.cs" />
+    <Compile Include="produce\ProcessListDAL.cs" />
+    <Compile Include="produce\ProcessTypeDAL.cs" />
+    <Compile Include="produce\ProduceGetList.cs" />
+    <Compile Include="produce\ProduceGetListItem.cs" />
+    <Compile Include="produce\ProduceInDAL.cs" />
+    <Compile Include="produce\ProduceInItemDAL.cs" />
+    <Compile Include="produce\ProduceListDAL.cs" />
+    <Compile Include="produce\ProduceListItemBomDAL.cs" />
+    <Compile Include="produce\ProduceListItemDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurReceiptItemDAL.cs" />
+    <Compile Include="ReceivableSourceBillItemDAL.cs" />
+    <Compile Include="ReceivableAccountItemDAL.cs" />
+    <Compile Include="ReceivableDAL.cs" />
+    <Compile Include="RoleDAL.cs" />
+    <Compile Include="SalesOrderDAL.cs" />
+    <Compile Include="SalesOrderItemDAL.cs" />
+    <Compile Include="SalesReceiptDAL.cs" />
+    <Compile Include="ShopDAL.cs" />
+    <Content Include="StoredProcedures\MakeBillNumber.sql" />
+    <Compile Include="UserDAL.cs" />
+    <Compile Include="SpecDAL.cs" />
+    <Compile Include="VenderLinkManDAL.cs" />
+    <Compile Include="VenderDAL.cs" />
+    <Compile Include="SalesReceiptItemDAL.cs" />
+    <Compile Include="SystemSetDAL.cs" />
+    <Compile Include="LogisticsDAL.cs" />
+    <Compile Include="VenderTypeDAL.cs" />
+    <Content Include="Tables\CheckBill.sql" />
+    <Content Include="Tables\CheckBillItemPayMent.sql" />
+    <Content Include="Tables\CheckBillItemPur.sql" />
+    <Content Include="Tables\Dept.sql" />
+    <Content Include="Tables\goodsBomList.sql" />
+    <Content Include="Tables\goodsBomListItem.sql" />
+    <Content Include="Tables\GoodsBrand.sql" />
+    <Content Include="Tables\OtherInItem.sql" />
+    <Content Include="Tables\ProduceGetListItem.sql" />
+    <Content Include="Tables\ProduceProcessList.sql" />
+    <Content Include="Tables\Roles.sql" />
+    <Content Include="Tables\SalesOrderItem.sql" />
+    <Content Include="Tables\Shop.sql" />
+    <Content Include="Tables\Storage.sql" />
+    <Content Include="Tables\Unit.sql" />
+    <Content Include="Views\ViewSalesOrderItem.sql" />
+    <Content Include="Views\ViewSalesOrderListSelect.sql" />
+    <Content Include="Views\viewGoodsBomList.sql" />
+    <Content Include="Views\viewGoodsBomListItem.sql" />
+    <Content Include="Views\ViewProduceGetListItemSum.sql" />
+    <Content Include="Views\ViewProduceGetListItem.sql" />
+    <Content Include="Views\ViewProduceProcessList.sql" />
+    <Content Include="Views\ViewReceivableSourceBillPriceCheckNowSum.sql" />
+    <Content Include="Views\ViewSalesReceiptItemSum.sql" />
+    <Content Include="Views\ViewUser.sql">
+      <SubType>Component</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BlueWhale.Common\BlueWhale.Common.csproj">
+      <Project>{6fed1a94-27c9-4ba3-86f9-f08bba2b973a}</Project>
+      <Name>BlueWhale.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlueWhale.DBUtility\BlueWhale.DBUtility.csproj">
+      <Project>{FB3CE14E-D735-4BFB-B663-24B1A0095CE2}</Project>
+      <Name>BlueWhale.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlueWhale.Model\BlueWhale.Model.csproj">
+      <Project>{c8cfae6a-d018-4d67-b248-e71e88c3adf2}</Project>
+      <Name>BlueWhale.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tables\CheckBillItemPayMent.sql" />
+    <Content Include="Tables\Goods.sql" />
+    <Content Include="Tables\GoodsBomListType.sql" />
+    <Content Include="Tables\GoodsTypePicList.sql" />
+    <Content Include="Tables\GoodsType.sql" />
+    <Content Include="Tables\GoodsShow.sql" />
+    <Content Include="Tables\GoodsSave.sql" />
+    <Content Include="Tables\GoodsPriceClientType.sql" />
+    <Content Include="Tables\GoodsPriceClient.sql" />
+    <Content Include="Tables\GoodsOpenItem.sql" />
+    <Content Include="Tables\GoodsOpen.sql" />
+    <Content Include="Tables\GoodsNumStart.sql" />
+    <Content Include="Tables\GoodsImages.sql" />
+    <Content Include="Tables\GoodsCloseItem.sql" />
+    <Content Include="Tables\ClientAdderss.sql" />
+    <Content Include="Tables\Months.sql" />
+    <Content Include="Tables\OtherOutItem.sql" />
+    <Content Include="Tables\PayMent.sql" />
+    <Content Include="Tables\PayMentAccountItem.sql" />
+    <Content Include="Tables\PayMentSourceBillItem.sql" />
+    <Content Include="Tables\payType.sql" />
+    <Content Include="Tables\PurOrderItem.sql" />
+    <Content Include="Tables\ReceivableSourceBillItem.sql" />
+    <Content Include="Tables\ReceivableAccountItem.sql" />
+    <Content Include="Tables\OtherPayItem.sql" />
+    <Content Include="Tables\OtherPay.sql" />
+    <Content Include="Tables\PurReceiptItem.sql" />
+    <Content Include="Tables\PurReceipt.sql" />
+    <Content Include="Tables\Client.sql" />
+    <Content Include="Tables\ClientLinkMan.sql" />
+    <Content Include="Tables\ClientType.sql" />
+    <Content Include="Tables\Company.sql" />
+    <Content Include="Tables\GoodsClose.sql" />
+    <Content Include="Tables\OtherGet.sql" />
+    <Content Include="Tables\OtherIn.sql" />
+    <Content Include="Tables\ProduceList.sql" />
+    <Content Include="Tables\systemSet.sql" />
+    <Content Include="Views\ViewOtherOut.sql" />
+    <Content Include="Views\ViewPayMentSourceBillPriceCheckNowSumSum.sql" />
+    <Content Include="Views\ViewPurReceiptItemSum.sql" />
+    <Content Include="Views\ViewPurReceiptItem.sql" />
+    <Content Include="Views\ViewPurReceipt.sql" />
+    <Content Include="Views\ViewPurReceiptDetail.sql" />
+    <Content Include="Views\ViewClientAddress.sql" />
+    <Content Include="Views\ViewClientNeedPayFlow.sql" />
+    <Content Include="Views\ViewOtherGetItemFlow.sql" />
+    <Content Include="Views\ViewOtherGetPayFlow.sql" />
+    <Content Include="Views\ViewOtherPayItemFlow.sql" />
+    <Content Include="Views\ViewPayMent.sql" />
+    <Content Include="Views\ViewPayMentAccountItem.sql" />
+    <Content Include="Views\ViewPayMentSourceBillItem.sql" />
+    <Content Include="Views\ViewSalesReceiptList.sql" />
+    <Content Include="Tables\ProduceGetList.sql" />
+    <Content Include="Tables\PurOrder.sql" />
+    <Content Include="Tables\Logs.sql" />
+    <Content Include="Tables\OtherOut.sql" />
+    <Content Include="Tables\ProcessList.sql" />
+    <Content Include="Tables\Receivable.sql" />
+    <Content Include="Tables\Vender.sql" />
+    <Content Include="Tables\Inventory.sql" />
+    <Content Include="Tables\InventoryTransfer.sql" />
+    <Content Include="Tables\InventoryTransferDetails.sql" />
+    <Content Include="Tables\Logistics.sql" />
+    <Content Include="Tables\LogisticsCodeList.sql" />
+    <Content Include="Tables\SalesReceipt.sql" />
+    <Content Include="Tables\SalesReceiptItem.sql" />
+    <Content Include="Tables\ProduceIn.sql" />
+    <Content Include="Tables\ProduceInItem.sql" />
+    <Content Include="Tables\Users.sql" />
+    <Content Include="Views\ViewGoodsClose.sql" />
+    <Content Include="Views\ViewGoodsNumStartView.sql" />
+    <Content Include="Views\ViewGoodsOpen.sql" />
+    <Content Include="Views\ViewGoodsTypeList.sql" />
+    <Content Include="Views\ViewGoodsType.sql" />
+    <Content Include="Views\ViewGoodsShow.sql" />
+    <Content Include="Views\ViewGoodsOpenItem.sql" />
+    <Content Include="Views\ViewGoodsCloseItem.sql" />
+    <Content Include="Views\ViewGoods.sql" />
+    <Content Include="Views\ViewGoodsNumStart.sql" />
+    <Content Include="Views\ViewPurOrderList.sql" />
+    <Content Include="Views\ViewSalesReceiptItem.sql" />
+    <Content Include="Views\ViewSalesReceiptDetail.sql" />
+    <Content Include="Views\ViewSalesReceiptList.sql" />
+    <Content Include="Views\ViewReceivableAccountItem.sql" />
+    <Content Include="Views\ViewSalesReceipt.sql" />
+    <Content Include="Views\ViewReceivableSourceBillItem.sql" />
+    <Content Include="Views\ViewReceivableItem.sql" />
+    <Content Include="Views\ViewReceivable.sql" />
+    <Content Include="Views\ViewClient.sql" />
+    <Content Include="Views\ViewClientType.sql" />
+    <Content Include="Views\ViewOtherGet.sql" />
+    <Content Include="Views\ViewProduceIn.sql" />
+    <Content Include="Views\ViewProduceInItemSum.sql" />
+    <Content Include="Views\ViewProcessList.sql" />
+    <Content Include="Views\ViewInventoryTransfer.sql" />
+    <Content Include="Views\ViewInventoryTransferDetails.sql" />
+    <Content Include="Views\ViewOtherIn.sql" />
+    <Content Include="Views\ViewProduceList.sql" />
+    <Content Include="Views\ViewProduceGetList.sql" />
+    <Content Include="Views\ViewStatementClient.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
