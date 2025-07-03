@@ -706,14 +706,14 @@
                     </div>
                     <div class="fr headMessage" id="userList">
                         <a class="clearfix" onclick="logout()">
-                            <img src="images/logout_24.png" style="border:0px;" alt=""/>
-                            <span>Logout</span>
+                            <img src="images/logout_24.png" style="filter: invert(24%) sepia(85%) saturate(7000%) hue-rotate(180deg) brightness(90%) contrast(90%); border:0px;" alt=""/>
+                            <span style="color: #0530b18f;">Logout</span>
                         </a>
                     </div>
                     <div class="fr headMessage" id="Div2">
                         <a class="clearfix" onclick="f_addTab('Pwd','Change Password','Pwd.aspx')">
-                            <img src="images/key_24.png" style="border:0px;" alt=""/>
-                            <span>Change Password</span>
+                            <img src="images/key_24.png" style="filter: invert(24%) sepia(85%) saturate(7000%) hue-rotate(180deg) brightness(90%) contrast(90%); border:0px;" alt=""/>
+                            <span style="color: #0530b18f;">Change Password</span>
                         </a>
                     </div>
                 </div>
@@ -725,7 +725,7 @@
                 <ul id="nav">
                     <li class="a2">
                         <a href="javascript:void(0);" page="workrecord">
-                            <span class="moduleimg" style="background-position: -36px -96px;"></span>
+                            <span class="moduleimg" style="background-position: -72px -96px;"></span>
                         </a>
                         <div class="sub-nav-wrap group-nav group-nav-t0 vip-nav cf" style="display:none;">
                             <div class="nav-item nav-onlineStore">
@@ -746,7 +746,7 @@
                     </li>
                     <li class="a1">
                         <a href="javascript:void(0);">
-                            <span class="moduleimg" style="background-position: -36px -160px;"></span>
+                            <span class="moduleimg" style="background-position: -72px -160px;"></span>
                         </a>
                         
                         <div class="sub-nav-wrap group-nav group-nav-t0 produce-nav cf" style="display:none;">
@@ -782,7 +782,7 @@
                     </li>
                     <li class="">
                         <a href="javascript:void(0);" page="customer_list">
-                            <span class="moduleimg" style="background-position: -36px -64px;"></span>
+                            <span class="moduleimg" style="background-position: -72px -64px;"></span>
                         </a>
                         <div class="sub-nav-wrap group-nav group-nav-t0 vip-nav cf" style="display:none;">
                             <div class="nav-item nav-onlineStore">
@@ -803,7 +803,7 @@
                     </li>
                     <li class="a3">
                         <a href="javascript:void(0);" page="todo">
-                            <span class="moduleimg"style="background-position: -36px -0px;"></span>
+                            <span class="moduleimg"style="background-position: -72px -0px;"></span>
                         </a>
                         <div class="sub-nav-wrap group-nav group-nav-t0 store-nav cf" style="display: none;">
                             <div class="nav-item nav-pur">
@@ -839,7 +839,7 @@
                     </li>
                     <li class="a4">
                         <a href="javascript:void(0);">
-                            <span class="moduleimg"style="background-position: -36px -220px;"></span>
+                            <span class="moduleimg"style="background-position: -72px -220px;"></span>
                         </a>
                         <div class="sub-nav-wrap group-nav group-nav-t0 store-nav cf" style="display:none;">
                             <div class="nav-item nav-onlineStore">
@@ -873,7 +873,7 @@
                     </li>
                     <li class="a4">
                         <a href="javascript:void(0);" page="baidu" class="baidu ">
-                            <span class="moduleimg" style="background-position: -36px -256px;"></span>
+                            <span class="moduleimg" style="background-position: -72px -256px;"></span>
                         </a>
                         <div class="sub-nav-wrap group-nav group-nav-t0 report-nav cf" style="display: none;">
                             
@@ -928,7 +928,7 @@
                     </li>
                     <li class="a4">
                         <a href="javascript:void(0);" page="baidu" class="baidu ">
-                            <span class="moduleimg" style="background-position: -36px -288px;"></span>
+                            <span class="moduleimg" style="background-position: -72px -288px;"></span>
                         </a>
                         <div class="sub-nav-wrap cf group-nav group-nav-t0 setting-nav" style="display: none;">
                             <div class="nav-item">
