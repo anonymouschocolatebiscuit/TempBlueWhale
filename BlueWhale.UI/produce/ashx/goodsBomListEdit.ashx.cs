@@ -18,13 +18,10 @@ namespace BlueWhale.UI.produce.ashx
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class goodsBomListEdit : IHttpHandler, IRequiresSessionState 
     {
-
-        public goodsBomList dal = new goodsBomList();
+        public DAL.produce.goodsBomList dal = new DAL.produce.goodsBomList();
         
-  
         public class ListModel<T>
         {
-
             #region Model
             private int _id;
             private int? _shopid;
