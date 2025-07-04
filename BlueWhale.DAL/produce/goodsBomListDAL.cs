@@ -1,15 +1,15 @@
-﻿using System;
+﻿using BlueWhale.DBUtility;
+using System;
 using System.Data;
-using System.Text;
 using System.Data.SqlClient;
-using BlueWhale.DBUtility;
-using BlueWhale.Model.produce;
+using System.Text;
+
 namespace BlueWhale.DAL.produce
 {
-	/// <summary>
-	/// 数据访问类:goodsBomList
-	/// </summary>
-	public partial class goodsBomList
+    /// <summary>
+    /// 数据访问类:goodsBomList
+    /// </summary>
+    public partial class goodsBomList
 	{
 		public goodsBomList()
 		{}

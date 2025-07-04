@@ -235,6 +235,7 @@
     <Content Include="bin\System.Runtime.CompilerServices.Unsafe.dll" />
     <Content Include="images\Eagle.png" />
     <Content Include="images\Logo_With_Name.png" />
+    <Content Include="produce\goodsBomList.aspx" />
     <Content Include="sales\ashx\SalesOrderListEdit.ashx" />
     <Content Include="sales\js\SalesOrderListEdit.js" />
     <Content Include="sales\SalesOrderListEdit.aspx" />
@@ -3483,7 +3484,6 @@
     <Content Include="pay\ReceivableListEdit.aspx" />
     <Content Include="pay\PayMentList.aspx" />
     <Content Include="pay\PayMentListEdit.aspx" />
-    <Content Include="produce\goodsBomList.aspx" />
     <Content Include="produce\goodsBomListAdd.aspx" />
     <Content Include="produce\goodsBomListEdit.aspx" />
     <Content Include="produce\goodsBomListType.aspx" />
@@ -3924,6 +3924,13 @@
   <ItemGroup>
     <Compile Include="ashx\produceInListAdd.ashx.cs">
       <DependentUpon>produceInListAdd.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="produce\goodsBomList.aspx.cs">
+      <DependentUpon>goodsBomList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="produce\goodsBomList.aspx.designer.cs">
+      <DependentUpon>goodsBomList.aspx</DependentUpon>
     </Compile>
     <Compile Include="sales\ashx\SalesOrderListEdit.ashx.cs">
       <DependentUpon>SalesOrderListEdit.ashx</DependentUpon>
@@ -4536,9 +4543,6 @@
     </Compile>
     <Compile Include="produce\ashx\produceListEdit.ashx.cs">
       <DependentUpon>produceListEdit.ashx</DependentUpon>
-    </Compile>
-    <Compile Include="produce\goodsBomList.aspx.designer.cs">
-      <DependentUpon>goodsBomList.aspx</DependentUpon>
     </Compile>
     <Compile Include="produce\goodsBomListAdd.aspx.cs">
       <DependentUpon>goodsBomListAdd.aspx</DependentUpon>
