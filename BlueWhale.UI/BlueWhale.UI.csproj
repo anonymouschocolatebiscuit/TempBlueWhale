@@ -233,8 +233,6 @@
     <Content Include="bin\System.Memory.dll" />
     <Content Include="bin\System.Numerics.Vectors.dll" />
     <Content Include="bin\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="images\Eagle.png" />
-    <Content Include="images\Logo_With_Name.png" />
     <Content Include="sales\ashx\SalesOrderListEdit.ashx" />
     <Content Include="sales\js\SalesOrderListEdit.js" />
     <Content Include="sales\SalesOrderListEdit.aspx" />
