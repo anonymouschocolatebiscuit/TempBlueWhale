@@ -129,7 +129,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Product Name', name: 'goodsName', width: 250, align: 'left',
+                    display: 'Product Name', name: 'goodsName', width: '155px', align: 'left',
 
                     totalSummary:
                     {
@@ -140,18 +140,18 @@ $(function () {
                         }
                     }
                 },
-                { display: 'Specification', name: 'spec', width: 100, align: 'center' },
-                { display: 'Unit', name: 'unitName', width: 80, align: 'center' },
+                { display: 'Specification', name: 'spec', width: '100px', align: 'center' },
+                { display: 'Unit', name: 'unitName', width: '80px', align: 'center' },
                 {
-                    display: 'warehouse', name: 'ckId', width: 80, isSort: false, textField: 'ckName',
-                    editor:
+                    display: 'Storehouse', name: 'ckId', width: '100px', isSort: false, textField: 'ckName',
+                    editor: {
                         type: 'select',
-                    url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
-                    valueField: 'ckId', textField: 'ckName'
-                }
+                        url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
+                        valueField: 'ckId', textField: 'ckName'
+                    }
                 },
                         {
-                            display: 'Quantity', name: 'num', width: 70, type: 'float', align: 'right', editor: { type: 'float' },
+                            display: 'Quantity', name: 'num', width: '70px', type: 'float', align: 'right', editor: { type: 'float' },
 
                             totalSummary:
                             {
@@ -164,13 +164,13 @@ $(function () {
                             }
                         },
                         {
-                            display: 'Original price', name: 'price', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
+                            display: 'Original price', name: 'price', width: '95px', type: 'float', align: 'right', editor: { type: 'float' }
                         },
                         {
-                            display: 'Discount%', name: 'dis', width: 60, type: 'float', align: 'right', editor: { type: 'float' }
+                            display: 'Discount%', name: 'dis', width: '80px', type: 'float', align: 'right', editor: { type: 'float' }
                         },
                         {
-                            display: 'Discount amount', name: 'sumPriceDis', width: 70, type: 'float', align: 'right', editor: { type: 'float' },
+                            display: 'Discount amount', name: 'sumPriceDis', width: '120px', type: 'float', align: 'right', editor: { type: 'float' },
                             totalSummary:
                             {
                                 align: 'center', //Alignment of summary cell contents: left/center/right
@@ -183,10 +183,10 @@ $(function () {
                             }
                         },
                         {
-                            display: 'Current Price', name: 'priceNow', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
+                            display: 'Current Price', name: 'priceNow', width: '90px', type: 'float', align: 'right', editor: { type: 'float' }
                         },
                         {
-                            display: 'Amount', name: 'sumPriceNow', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
+                            display: 'Amount', name: 'sumPriceNow', width: '75px', type: 'float', align: 'right', editor: { type: 'float' },
 
                             totalSummary:
                             {
@@ -199,10 +199,10 @@ $(function () {
                                 }
                             }
                         },
-                        { display: 'Tax rate%', name: 'tax', width: 60, type: 'int', align: 'center', editor: { type: 'int' } },
-                        { display: 'Unit price including tax', name: 'priceTax', width: 70, type: 'float', align: 'center', editor: { type: 'float' } },
+                        { display: 'Tax rate%', name: 'tax', width: '80px', type: 'int', align: 'center', editor: { type: 'int' } },
+                        { display: 'Unit price including tax', name: 'priceTax', width:  '150px', type: 'float', align: 'center', editor: { type: 'float' } },
                         {
-                            display: 'Tax amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
+                            display: 'Tax amount', name: 'sumPriceTax', width: '80px', type: 'float', align: 'right',
 
                             totalSummary:
                             {
@@ -218,7 +218,7 @@ $(function () {
                             }
                         },
                         {
-                            display: 'Price and tax total', name: 'sumPriceAll', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
+                            display: 'Price and tax total', name: 'sumPriceAll', width: '120px', type: 'float', align: 'right', editor: { type: 'float' },
                             totalSummary:
                             {
                                 align: 'center', //Alignment of summary cell contents: left/center/right
@@ -232,7 +232,7 @@ $(function () {
                                 }
                             }
                         },
-                        { display: 'Remarks', name: 'remarks', width: 150, align: 'left', type: 'text', editor: { type: 'text' } },
+                        { display: 'Remarks', name: 'remarks', width:  '125px', align: 'left', type: 'text', editor: { type: 'text' } },
                         { display: 'Source order number', name: 'sourceNumber', width: 180, align: 'left', type: 'text' }
                      ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '350',
             url: 'SalesReceiptListEdit.aspx?Action=GetData&id=' + param,
@@ -1073,7 +1073,7 @@ function calcDisPrice(dis) {
     //2. Calculate the warranty amount
     var disPrice = sumPriceAll * dis / 100;
     $("#txtDisPrice").val(Math.round(disPrice * 10000) / 10000);
-} }
+}
 
 var param = getUrlParam("id");
 
