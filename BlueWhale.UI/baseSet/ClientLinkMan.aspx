@@ -33,7 +33,11 @@
         .l-table-edit-td{ padding:4px;}
         .l-button-submit,.l-button-test{width:80px; float:left; margin-left:10px; padding-bottom:2px;}
         .l-verify-tip{ left:230px; top:120px;}
+        .custom-gridview th, .custom-gridview td {
+            text-align: center !important;
+        }
     </style>
+
 
 </head>
 <body style="font-size:10pt;">
@@ -87,7 +91,7 @@
                 <td colspan="4" align="center">
              
                     <asp:GridView ID="gvLevel" runat="server" AutoGenerateColumns="False" 
-                        DataKeyNames="id" onrowcancelingedit="gvLevel_RowCancelingEdit"  Width="600px"
+                        DataKeyNames="id" onrowcancelingedit="gvLevel_RowCancelingEdit"  Width="750px" CssClass="custom-gridview"
                         onrowdatabound="gvLevel_RowDataBound" onrowdeleting="gvLevel_RowDeleting" 
                         onrowediting="gvLevel_RowEditing" onrowupdating="gvLevel_RowUpdating" 
                         PageSize="15">
@@ -101,7 +105,8 @@
                                     <asp:TextBox ID="txtNames0" runat="server" 
                                         Text='<%# DataBinder.Eval(Container.DataItem,"Names") %>' Width="50px"></asp:TextBox>
                                 </EditItemTemplate>
-                                <ItemStyle Width="50px" />
+                                <ItemStyle Width="110px" HorizontalAlign="Center" />
+                                <HeaderStyle Width="110px" HorizontalAlign="Center" />
                             </asp:TemplateField>
                     
                             <asp:TemplateField HeaderText="Mobile Phone">
@@ -113,7 +118,8 @@
                                     <asp:TextBox ID="txtPhone0" runat="server" 
                                         Text='<%# DataBinder.Eval(Container.DataItem,"Phone") %>' Width="70px"></asp:TextBox>
                                 </EditItemTemplate>
-                                <ItemStyle Width="80px" />
+                                <ItemStyle Width="110px" HorizontalAlign="Center" />
+                                <HeaderStyle Width="110px" HorizontalAlign="Center" />
                             </asp:TemplateField>
                     
                             <asp:TemplateField HeaderText="Landline Phone">
@@ -125,7 +131,8 @@
                                     <asp:TextBox ID="txtTel0" runat="server" 
                                         Text='<%# DataBinder.Eval(Container.DataItem,"Tel") %>' Width="70px"></asp:TextBox>
                                 </EditItemTemplate>
-                                <ItemStyle Width="80px" />
+                                 <ItemStyle Width="110px" HorizontalAlign="Center" />
+                                 <HeaderStyle Width="110px" HorizontalAlign="Center" />
                             </asp:TemplateField>
                     
                             <asp:TemplateField HeaderText="Shipping Address">
@@ -137,7 +144,8 @@
                                     <asp:TextBox ID="txtAddress0" runat="server" 
                                         Text='<%# DataBinder.Eval(Container.DataItem,"Address") %>' Width="70px"></asp:TextBox>
                                 </EditItemTemplate>
-                                <ItemStyle Width="80px" />
+                                 <ItemStyle Width="110px" HorizontalAlign="Center" />
+                                 <HeaderStyle Width="110px" HorizontalAlign="Center" />
                             </asp:TemplateField>
                     
                               <asp:TemplateField HeaderText="Primary contact person">
@@ -146,14 +154,15 @@
                                         Text='<%# DataBinder.Eval(Container.DataItem,"moren") %>'></asp:Label>
                                 </ItemTemplate>
                                 <EditItemTemplate>
-                           
+                                
                                      <asp:DropDownList ID="ddlMoren0" runat="server">
                                 <asp:ListItem Selected="True" Value="1">True</asp:ListItem>
                                 <asp:ListItem Value="0">False</asp:ListItem>
                             </asp:DropDownList>
                            
                                 </EditItemTemplate>
-                                <ItemStyle Width="80px" />
+                                 <ItemStyle Width="110px" HorizontalAlign="Center" />
+                                 <HeaderStyle Width="150px" HorizontalAlign="Center" />
                             </asp:TemplateField>
                     
                             <asp:CommandField HeaderText="Delete" ShowDeleteButton="True">

@@ -47,13 +47,16 @@
                 </td>
             </tr>
             <tr>
-                <td style="width:80px; text-align:right;">
-                    <b>Kind tips：</b>
-                </td>
-                <td>
-                    The format of the imported template cannot be modified. Please refer to the demonstration template for the input method.
+                <td style="text-align:left;" colspan="2">
+                    <b>Friendly Reminder：</b>
                 </td>
             </tr>
+             <tr>
+                 <td style="width:80px; text-align:right;">&nbsp;</td>
+                 <td>
+                     The format of the imported template cannot be modified. Please refer to the demonstration template for the input method.
+                 </td>
+             </tr>
             <tr>
                 <td style="width:80px; text-align:right;">&nbsp;</td>
                 <td>

@@ -17,10 +17,9 @@
                 {
                     checkbox: true,
                     columns: [
-                        { display: 'Operate', isSort: false, width: 60, align: 'center' },
-                        { display: 'Customer Category', name: 'typeName', width: 130, type: 'int', align: 'center' },
-                        { display: 'Customer Number', name: 'code', width: 125, align: 'center' },
-                        { display: 'Customer Name', name: 'names', width: 115, align: 'left' },
+                        { display: 'Client Category', name: 'typeName', width: 130, type: 'int', align: 'center' },
+                        { display: 'Client Number', name: 'code', width: 125, align: 'center' },
+                        { display: 'Client Name', name: 'names', width: 115, align: 'left' },
                         { display: 'Balance Date', name: 'yueDate', width: 90, align: 'center' },
                         { display: 'Opening Balance', name: 'balance', width: 120, align: 'center' },
                         { display: 'Tax rate %', name: 'tax', width: 80, align: 'center' },
@@ -48,9 +47,9 @@
                             { line: true },
                             { text: 'Filter Query', click: search, img: '../lib/ligerUI/skins/icons/search.gif'},
                             { line: true },
-                            { text: "Add Customer", click: addRowTop, img: '../lib/ligerUI/skins/icons/add.gif'},
+                            { text: "Add Client", click: addRowTop, img: '../lib/ligerUI/skins/icons/add.gif'},
                             { line: true },
-                            { text: "Modify Customer", click: editRow, img: '../lib/ligerUI/skins/icons/modify.gif' },
+                            { text: "Modify Client", click: editRow, img: '../lib/ligerUI/skins/icons/modify.gif' },
                             { line: true },
                             { text: "Administrative Contact", click: linkManForm, img: '../lib/ligerUI/skins/icons/customers.gif' },
                             { line: true },
@@ -60,7 +59,7 @@
                             { line: true },
                             { text: "Reset Password", click: setPwd, img: '../lib/ligerUI/skins/icons/settings.gif' },
                             { line: true },
-                            { text: "Delete Customer", click: deleteRow, img: '../lib/ligerUI/skins/icons/delete.gif' },
+                            { text: "Delete Client", click: deleteRow, img: '../lib/ligerUI/skins/icons/delete.gif' },
                             { line: true },
                             { text: 'Batch Import', click: excel, img: '../lib/ligerUI/skins/icons/xls.gif' }
                         ]
@@ -74,7 +73,7 @@
         }
 
         function search() {
-            $.ligerDialog.prompt('Can search by name, mobile phone, telephone number, address, remarks','', function (yes,value) {
+            $.ligerDialog.prompt('Search by name, mobile phone, telephone number, address, remarks','', function (yes,value) {
                  if(yes) 
                  {
                     var key = value;
@@ -85,7 +84,7 @@
         }
 
         function addRowTop() {
-            var title = "Add Customer";
+            var title = "Add Client";
 
             $.ligerDialog.open({
                 title: title,
@@ -100,7 +99,7 @@
             var row = manager.getSelectedRow();
             if (!row) {  $.ligerDialog.warn('Please select the row to modify!'); return; }
 
-            var title="Modify Customer-"+row.names;
+            var title ="Modify Client-"+row.names;
            
             $.ligerDialog.open({ 
                 title : title,
@@ -113,7 +112,7 @@
 
         function linkManForm() {
             var row = manager.getSelectedRow();
-            if (!row) { $.ligerDialog.warn('Please select customer！'); return; }
+            if (!row) { $.ligerDialog.warn('Please select client！'); return; }
 
             var title = "Contact Management-" + row.names;
 
