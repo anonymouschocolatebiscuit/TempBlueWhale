@@ -19,7 +19,7 @@
     });
 
     // Manager
-    InitializeManager();
+    //InitializeManager();
 });
 
 function f_selectClient() {
@@ -172,7 +172,7 @@ function InitializeManager() {
         //pageSizeOptions: [5, 10, 15, 20],
         height: '98%',
         // pageSize: 15,
-        dataAction: 'local', //Order
+        dataAction: 'server', //Order
         usePager: false,
         rownumbers: true,//Display index
         alternatingRow: false,
@@ -228,7 +228,11 @@ function search() {
         keys = "";
     }
   
-    manager._setUrl("ProduceListReport.aspx?Action=GetDataList&keys=" + keys + "&start=" + start + "&end=" + end + "&wlId=" + wlId + "&goodsId=" + goodsList + "&typeId=" + typeId);
+    manager.setOptions({
+        url: "ProduceListReport.aspx?Action=GetDataList&keys=" + keys + "&start=" + start + "&end=" + end + "&wlId=" + wlId + "&goodsId=" + goodsList + "&typeId=" + typeId
+    });
+    manager.loadData(); // <-- CRITICAL TO REFRESH DATA
+
 }
 
 function viewRow() {
