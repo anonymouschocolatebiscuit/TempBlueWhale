@@ -235,6 +235,7 @@
     <Content Include="bin\System.Runtime.CompilerServices.Unsafe.dll" />
     <Content Include="images\key_24.png" />
     <Content Include="images\logout_24.png" />
+    <Content Include="images\purple_bg.png" />
     <Content Include="images\tubiao.png" />
     <Content Include="images\obsidian_wolf.png" />
     <Content Include="produce\goodsBomList.aspx" />
