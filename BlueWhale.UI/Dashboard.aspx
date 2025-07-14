@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
-        <title>Welcome to BlueWhale ERP</title>
+        <title>Welcome to ObsidianWolf ERP</title>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,6 +24,7 @@
                 left: 0px;
                 z-index: 99;
                 width: 100%;
+                background: linear-gradient(to right, #9B7EBD 0%, #3B1E54 100%);
                 font-family: '微软雅黑', '宋体';
             }
 
@@ -35,18 +36,28 @@
             .default .headMessage {
                 height: 45px;
                 margin-right: 25px;
+                color: #EEEEEE;
             }
 
             .default .mainLogo {
                 float: left;
                 display: block;
-                width: 300px;
+                width: 240px;
                 height: 25px;
                 margin: 10px 0 0 14px;
                 font-size: 18px;
-                color: #fff;
+                color: #EEEEEE;
                 font-family: '微软雅黑', '宋体';
                 position: relative;
+            }
+
+            .default .mainLogo span {
+                display: block; 
+                width: 200px;
+                height: 8px; 
+                position: absolute; 
+                right: 0; 
+                top: 0;
             }
 
             .default .head-ask {
@@ -67,7 +78,7 @@
                 top: 46px;
                 left: 0;
                 width: 63px;
-                background: #393d48;
+                background: #17153B;
                 height: 100%;
                 z-index: 201;
             }
@@ -697,18 +708,19 @@
                 <div id="app/vm/Header_0">
                     <div>
                         <a title="Return to Index" class="mainLogo">
-                           BlueWhale ERP
+                             <img src="images/obsidian_wolf.png" style="border:0px; width: 34px;" alt=""/>
+                             <span style="top:0;right:0;">ObsidianWolf ERP </span>
                         </a>
                     </div>
                     <div class="fr headMessage" id="userList">
                         <a class="clearfix" onclick="logout()">
-                            <img src="images/logout_24.png" style="border:0px;" alt=""/>
+                            <img src="images/logout_24.png" style="border:0px; " alt=""/>
                             <span>Logout</span>
                         </a>
                     </div>
                     <div class="fr headMessage" id="Div2">
                         <a class="clearfix" onclick="f_addTab('Pwd','Change Password','Pwd.aspx')">
-                            <img src="images/key_24.png" style="border:0px;" alt=""/>
+                            <img src="images/key_24.png" style="border:0px; " alt=""/>
                             <span>Change Password</span>
                         </a>
                     </div>
@@ -740,7 +752,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="a1">
+                    <%--<li class="a1">
                         <a href="javascript:void(0);">
                             <span class="moduleimg" style="background-position: -36px -160px;"></span>
                         </a>
@@ -775,7 +787,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </li>
+                    </li>--%>
                     <li class="">
                         <a href="javascript:void(0);" page="customer_list">
                             <span class="moduleimg" style="background-position: -36px -64px;"></span>
@@ -918,6 +930,23 @@
                                     <li><a onclick="f_addTab('StatementClient','Client Statement','Report/StatementClient.aspx')">Client Statement</a></li>
                                     <li><a onclick="f_addTab('StatementVender','Vender Statement','Report/StatementVender.aspx')">Vender Statement</a></li>
                                     <li><a onclick="f_addTab('OtherGetPayFlowReport','Other Income & Expense Detail Report','Report/OtherGetPayFlowReport.aspx')">Other Income & Expense Detail Report</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <a href="javascript:void(0);" page="customer_list">
+                            <span class="moduleimg" style="background-position: -36px -194px;"></span>
+                        </a>
+                        <div class="sub-nav-wrap group-nav group-nav-t0 vip-nav cf" style="display:none;">
+                            <div class="nav-item nav-JDstore last">
+                                <h3>Promotion Management</h3>
+                                <ul class="sub-nav" id="Ul14">
+                                    <li><a onclick="f_addTab('goodsBomListType','Campaign Overview','')">Campaign Overview</a></li>
+                                    <li><a onclick="f_addTab('goodsBomList','Influencers Management','')">Influencers Management</a></li>
+                                    <li><a onclick="f_addTab('produceListAdd','Campaign Management','')">Campaign Management</a></li>
+                                    <li><a onclick="f_addTab('produceList','Content Management','')">Content Management</a></li>
+                                    <li><a onclick="f_addTab('produceInListAdd','Contract Management','')">Contract Management</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -233,6 +233,10 @@
     <Content Include="bin\System.Memory.dll" />
     <Content Include="bin\System.Numerics.Vectors.dll" />
     <Content Include="bin\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="images\key_24.png" />
+    <Content Include="images\logout_24.png" />
+    <Content Include="images\tubiao.png" />
+    <Content Include="images\obsidian_wolf.png" />
     <Content Include="produce\goodsBomList.aspx" />
     <Content Include="sales\ashx\SalesOrderListEdit.ashx" />
     <Content Include="sales\js\SalesOrderListEdit.js" />
@@ -642,7 +646,6 @@
     <Content Include="images\index_h2_bg.png" />
     <Content Include="images\index_icons.png" />
     <Content Include="images\kefu.png" />
-    <Content Include="images\key_24.png" />
     <Content Include="images\lanrenzhijia.png" />
     <Content Include="images\large_chart.png" />
     <Content Include="images\left_hand.png" />
@@ -660,7 +663,6 @@
     <Content Include="images\login_12.gif" />
     <Content Include="images\login_bg.png" />
     <Content Include="images\logo.png" />
-    <Content Include="images\logout_24.png" />
     <Content Include="images\menu-item-over-l.gif" />
     <Content Include="images\menu-item-over-m.gif" />
     <Content Include="images\menu-item-over-r.gif" />
@@ -687,7 +689,6 @@
     <Content Include="images\tab_20.gif" />
     <Content Include="images\tab_bg.png" />
     <Content Include="images\tou.png" />
-    <Content Include="images\tubiao.png" />
     <Content Include="images\user.png" />
     <Content Include="images\username.png" />
     <Content Include="images\world.png" />
