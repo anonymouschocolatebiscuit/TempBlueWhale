@@ -21,11 +21,12 @@
         }
     </script>
     </head>
-    <body style="background: url(images/login_bg.png) no-repeat;background-position: center;background-attachment: fixed;">
+    <body style="background: url(images/purple_bg.png) no-repeat;background-position: center;background-attachment: fixed;">
         <form id="form1" runat="server">
             <div class="login-title">
-               <a href="Login.aspx" style=" text-decoration:none;">
-                <img src="images/logo.png" alt="ObsidianWolf ERP" height="80px" />
+               <a href="Login.aspx" style=" text-decoration:none; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: 'Segoe UI', 'Roboto', sans-serif;">
+                <img src="images/obsidian_wolf.png" alt="ObsidianWolf ERP" height="140px" />
+                 <span style="color: #D4BEE4; font-size: 40px; font-weight: 600; text-shadow: 2px 2px 3px #17153B, 4px 4px 6px #17153B; letter-spacing: 1px;">ObsidianWolf ERP</span>
                </a>
             </div>
             <div class="login-screen">
