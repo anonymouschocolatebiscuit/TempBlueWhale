@@ -120,9 +120,9 @@ $(function () {
                     display: '', isSort: false, width: 60, align: 'center', frozen: true, render: function (rowdata, rowindex, value) {
                         var h = "";
                         if (!rowdata._editing) {
-                            h += "<a href='javascript:addNewRow()' title='Add new row' style='float:left;'><div class='ui-icon ui-icon-plus'></div> </a> ";
-                            h += "<a href='javascript:deleteRow()' title='Delete row' style='float:left;'><div class='ui-icon ui-icon-trash'></div>< /a> ";
-                            h += "<a href='javascript:f_selectContact()' title='Select Products' style='float:left;'><div class='ui-icon ui-icon-search'></div>< /a> ";
+                            h += "<a href='javascript:addNewRow()' title='Add new row' style='float:left;'><div class='ui-icon ui-icon-plus'></div></a> ";
+                            h += "<a href='javascript:deleteRow()' title='Delete row' style='float:left;'><div class='ui-icon ui-icon-trash'></div></a> ";
+                            h += "<a href='javascript:f_selectContact()' title='Select Products' style='float:left;'><div class='ui-icon ui-icon-search'></div></a> ";
                         }
 
                         return h;

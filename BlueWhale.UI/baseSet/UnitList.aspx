@@ -20,7 +20,7 @@
         $(function () {
             manager = $("#maingrid").ligerGrid({
                 columns: [
-                    { display: 'Unit MeasurementName', name: 'names', id: 'levelName', width: 250, align: 'left' }
+                    { display: 'Unit', name: 'names', id: 'levelName', width: 250, align: 'left' }
                 ],
                 width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '99%',
                 url: 'UnitList.aspx?Action=GetDataList',

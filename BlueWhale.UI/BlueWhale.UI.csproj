@@ -168,6 +168,7 @@
     <Content Include="appCss\Tooltip.js" />
     <Content Include="appCss\WorkRecord.js" />
     <Content Include="appCss\WorkRecord_zh-cn.js" />
+    <Content Include="baseSet\GoodsTypeListAdd.aspx" />
     <Content Include="bin\BlueWhale.BLL.dll" />
     <Content Include="bin\BlueWhale.BLL.pdb" />
     <Content Include="bin\BlueWhale.Common.dll" />
@@ -3925,6 +3926,27 @@
   <ItemGroup>
     <Compile Include="ashx\produceInListAdd.ashx.cs">
       <DependentUpon>produceInListAdd.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="baseSet\GoodsTypeListAdd.aspx.cs">
+      <DependentUpon>GoodsTypeListAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="baseSet\GoodsTypeListAdd.aspx.designer.cs">
+      <DependentUpon>GoodsTypeListAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="baseSet\UnitList.aspx.cs">
+      <DependentUpon>UnitList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="baseSet\UnitList.aspx.designer.cs">
+      <DependentUpon>UnitList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="baseSet\UnitListAdd.aspx.cs">
+      <DependentUpon>UnitListAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="baseSet\UnitListAdd.aspx.designer.cs">
+      <DependentUpon>UnitListAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="sales\ashx\SalesOrderListEdit.ashx.cs">
       <DependentUpon>SalesOrderListEdit.ashx</DependentUpon>
