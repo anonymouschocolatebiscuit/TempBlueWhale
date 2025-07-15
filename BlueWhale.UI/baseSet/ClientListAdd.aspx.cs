@@ -64,13 +64,13 @@ namespace BlueWhale.UI.BaseSet
 
             if (this.txtCode.Text.Trim() == "")
             {
-                MessageBox.Show(this, "Please fill in the customer code！");
+                MessageBox.Show(this, "Please fill in the customer code!");
                 return;
             }
 
             if (this.txtNames.Text == "")
             {
-                MessageBox.Show(this, "Please fill in the customer name！");
+                MessageBox.Show(this, "Please fill in the customer name!");
                 return;
             }
 
@@ -101,7 +101,7 @@ namespace BlueWhale.UI.BaseSet
             {
                 if (dal.isExistsCodeAdd(LoginUser.ShopId, this.txtCode.Text.Trim()))
                 {
-                    MessageBox.Show(this, "Add failed, customer number is duplicated！");
+                    MessageBox.Show(this, "Add failed, customer number is duplicated!");
                     return;
                 }
 
@@ -111,22 +111,22 @@ namespace BlueWhale.UI.BaseSet
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Add Customer：" + this.txtCode.Text + " Name：" + this.txtNames.Text;
+                    logs.Events = "Add Customer: " + this.txtCode.Text + " Name: " + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    MessageBox.ShowAndRedirect(this, "Execution successful！", "ClientListAdd.aspx?id=" + id.ToString());
+                    MessageBox.ShowAndRedirect(this, "Execution successful!", "ClientListAdd.aspx?id=" + id.ToString());
                 }
                 else
                 {
-                    MessageBox.Show(this, "Add failure！");
+                    MessageBox.Show(this, "Add failure!");
                 }
             }
             else
             {
                 if (dal.isExistsCodeEdit(id, LoginUser.ShopId, this.txtCode.Text.Trim()))
                 {
-                    MessageBox.Show(this, "Modification failed, customer number is duplicated！");
+                    MessageBox.Show(this, "Modification failed, customer number is duplicated!");
                     return;
                 }
 
@@ -135,15 +135,15 @@ namespace BlueWhale.UI.BaseSet
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Modify Customer：" + this.txtCode.Text + " Name：" + this.txtNames.Text;
+                    logs.Events = "Modify Customer: " + this.txtCode.Text + " Name: " + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    MessageBox.Show(this, "Execution successful！");
+                    MessageBox.Show(this, "Execution successful!");
                 }
                 else
                 {
-                    MessageBox.Show(this, "Modification failed！");
+                    MessageBox.Show(this, "Modification failed!");
                 }
             }
         }

@@ -1,7 +1,7 @@
 ﻿
 /////////////////////////调用实例
 //        <div>
-//                <span>交易查询：</span> <span>从
+//                <span>交易查询: </span> <span>从
 //                    <input name="control_date" type="text" id="control_date" size="10"
 //                        maxlength="10" onclick="new Calendar().show(this);" readonly="readonly" />
 //                    <input type="button" name="button" id="button" value="button" onclick="new Calendar().show(this.form.control_date);" /></span>

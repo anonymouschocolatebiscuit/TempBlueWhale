@@ -80,7 +80,7 @@ $(function () {
                     {
                         type: 'count',
                         render: function (e) {
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                 },
@@ -284,7 +284,7 @@ function endAllEdit() {
 
 function deleteRow() {
     if (manager.rows.length == 1) {
-        $.ligerDialog.warn('Remain at least one row！')
+        $.ligerDialog.warn('Remain at least one row!')
     }
     else {
         manager.deleteSelectedRow();
@@ -331,35 +331,35 @@ function save() {
     }
 
     if (data.length == 0) {
-        $.ligerDialog.warn('Please select goods！');
+        $.ligerDialog.warn('Please select goods!');
         return;
     }
 
     for (var i = 0; i < data.length; i++) {
         if (data[i].num <= 0 || data[i].num == "" || data[i].num == "0" || data[i].num == "0.00") {
-            $.ligerDialog.warn("Please insert number " + (i + 1) + "row number of goods count！");
+            $.ligerDialog.warn("Please insert number " + (i + 1) + "row number of goods count!");
             return;
         }
 
         if (data[i].ckIdIn <= 0 || data[i].ckIdIn == "" || data[i].ckIdIn == "0") {
-            $.ligerDialog.warn("Please select number" + (i + 1) + "row number of goods in！");
+            $.ligerDialog.warn("Please select number" + (i + 1) + "row number of goods in!");
             return;
         }
 
         if (data[i].ckIdOut <= 0 || data[i].ckIdOut == "" || data[i].ckIdOut == "0") {
-            $.ligerDialog.warn("Please select number" + (i + 1) + "row number of goods out！");
+            $.ligerDialog.warn("Please select number" + (i + 1) + "row number of goods out!");
             return;
         }
 
         if (data[i].ckIdIn == data[i].ckIdOut) {
-            $.ligerDialog.warn("Number" + (i + 1) + "row number of goods in and out same！");
+            $.ligerDialog.warn("Number" + (i + 1) + "row number of goods in and out same!");
             return;
         }
     }
 
     var bizDate = $("#txtBizDate").val();
     if (bizDate == "") {
-        $.ligerDialog.warn("Please fill the order date！");
+        $.ligerDialog.warn("Please fill the order date!");
         return;
     }
 
@@ -383,9 +383,9 @@ function save() {
         data: JSON.stringify(postData),
         success: function (jsonResult) {
 
-            if (jsonResult == "Execution Success！") {
+            if (jsonResult == "Execution Success!") {
 
-                $.ligerDialog.waitting('Execution Success！'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
+                $.ligerDialog.waitting('Execution Success!'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
             }
             else {
                 $.ligerDialog.warn(jsonResult);

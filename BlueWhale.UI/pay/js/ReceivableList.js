@@ -12,7 +12,7 @@
                 columns: [
 
 
-                 { display: 'Operate', isSort: false, width: 70, align: 'center', render: function(rowdata, rowindex, value) {
+                 { display: 'Action', isSort: false, width: 70, align: 'center', render: function(rowdata, rowindex, value) {
                      var h = "";
                      if (!rowdata._editing) {
                          h += "<a href='javascript:editRow()' title='EditRow' style='float:left;'><div class='ui-icon ui-icon-pencil'></div></a> ";
@@ -33,7 +33,7 @@
                         render: function (e) 
                         {  // Summary Renderer，returns html loaded into cell
                            // Summary Object(include sum,max,min,avg,count)
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                  

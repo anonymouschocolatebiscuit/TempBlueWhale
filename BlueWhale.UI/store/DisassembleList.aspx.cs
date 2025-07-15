@@ -166,7 +166,7 @@ namespace BlueWhale.UI.store
 
                 if (!CheckPower("DisassembleListDelete"))
                 {
-                    Response.Write("No permission to perform this operation. Please contact the administrator！");
+                    Response.Write("No permission to perform this operation. Please contact the administrator!");
                     return;
                 }
 
@@ -189,7 +189,7 @@ namespace BlueWhale.UI.store
 
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Disassemble Order-ID：" + delId.ToString();
+                            logs.Events = "Delete Disassemble Order-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -203,17 +203,17 @@ namespace BlueWhale.UI.store
                 {
 
 
-                    Response.Write("Successfully delete" + num + "records！");
+                    Response.Write("Successfully delete" + num + "records!");
 
                 }
                 else
                 {
-                    Response.Write("Deletion failed！");
+                    Response.Write("Deletion failed!");
                 }
             }
             else
             {
-                Response.Write("Login timeout, please log in again！");
+                Response.Write("Login timeout, please log in again!");
             }
 
         }
@@ -225,7 +225,7 @@ namespace BlueWhale.UI.store
 
                 if (!CheckPower("DisassembleListCheck"))
                 {
-                    Response.Write("No permission to perform this operation！");
+                    Response.Write("No permission to perform this operation!");
 
                     return;
                 }
@@ -249,7 +249,7 @@ namespace BlueWhale.UI.store
 
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Review Disassemble Order-ID：" + delId.ToString();
+                            logs.Events = "Review Disassemble Order-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -263,12 +263,12 @@ namespace BlueWhale.UI.store
                 {
 
 
-                    Response.Write("Successfully review" + num + "records！");
+                    Response.Write("Successfully review" + num + "records!");
 
                 }
                 else
                 {
-                    Response.Write("Review failed！");
+                    Response.Write("Review failed!");
                 }
 
 
@@ -277,7 +277,7 @@ namespace BlueWhale.UI.store
             }
             else
             {
-                Response.Write("Login timeout, please log in again！");
+                Response.Write("Login timeout, please log in again!");
             }
 
         }
@@ -290,7 +290,7 @@ namespace BlueWhale.UI.store
 
                 if (!CheckPower("DisassembleListCheckNo"))
                 {
-                    Response.Write("No permission to perform this operation！");
+                    Response.Write("No permission to perform this operation!");
 
                     return;
                 }
@@ -314,7 +314,7 @@ namespace BlueWhale.UI.store
 
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel Review Disassemble Order-ID：" + delId.ToString();
+                            logs.Events = "Cancel Review Disassemble Order-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -328,12 +328,12 @@ namespace BlueWhale.UI.store
                 {
 
 
-                    Response.Write("Successfully cancel review" + num + "records！");
+                    Response.Write("Successfully cancel review" + num + "records!");
 
                 }
                 else
                 {
-                    Response.Write("Cancel review failed！");
+                    Response.Write("Cancel review failed!");
                 }
 
 
@@ -342,7 +342,7 @@ namespace BlueWhale.UI.store
             }
             else
             {
-                Response.Write("Login timeout, please log in again！");
+                Response.Write("Login timeout, please log in again!");
             }
 
 

@@ -270,7 +270,7 @@ namespace BlueWhale.UI.BaseSet
 
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Add Good：" + this.txtCode.Text + " Name：" + this.txtNames.Text;
+                    logs.Events = "Add Good: " + this.txtCode.Text + " Name: " + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
@@ -301,7 +301,7 @@ namespace BlueWhale.UI.BaseSet
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Edit Good：" + this.txtCode.Text + " Name:" + this.txtNames.Text;
+                    logs.Events = "Edit Good: " + this.txtCode.Text + " Name:" + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 

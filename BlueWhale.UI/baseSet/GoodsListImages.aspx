@@ -58,7 +58,7 @@
             <tr>
                 <td align="left" style="line-height: 40px;">
                     <asp:FileUpload ID="fload" runat="server" />
-                    &nbsp; Default Display：<asp:DropDownList ID="ddlDefault" runat="server">
+                    &nbsp; Default Display: <asp:DropDownList ID="ddlDefault" runat="server">
                         <asp:ListItem Selected="True" Value="1">Yes</asp:ListItem>
                         <asp:ListItem Value="0">No</asp:ListItem>
                     </asp:DropDownList>

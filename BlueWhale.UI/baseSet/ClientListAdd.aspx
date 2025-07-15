@@ -37,68 +37,68 @@
         <table id="form" border="0" cellpadding="0" cellspacing="20" style="width:1000px; line-height:45px;">
             <tr>
                 <td style="width:100px;text-align:right;">
-                    Customer Number：</td>
+                    Customer Number: </td>
                 <td style="width:180px;">
                     <asp:TextBox ID="txtCode" runat="server" validate="{required:true}"></asp:TextBox>
                     </td>
                 <td style="width:100px; text-align:right;">
-                    Customer Name：</td>
+                    Customer Name: </td>
                 <td style="width:180px;">
                     <asp:TextBox ID="txtNames" runat="server" validate="{required:true}"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td style="text-align:right;">
-                    Customer Category：</td>
+                    Customer Category: </td>
                 <td>
                     <asp:DropDownList ID="ddlVenderTypeList" runat="server">
                     </asp:DropDownList>
                     </td>
                 <td align="right">
-                    Balance Date：</td>
+                    Balance Date: </td>
                 <td>
                     <asp:TextBox ID="txtYueDate" runat="server"  ltype="date" validate="{required:true}" ></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td style="text-align:right;">
-                    Beginning Receivables：</td>
+                    Beginning Receivables: </td>
                 <td>
                     <asp:TextBox ID="txtPayNeed" runat="server"></asp:TextBox>
                     </td>
                 <td align="right">
-                    Opening Advance Receipts：</td>
+                    Opening Advance Receipts: </td>
                 <td>
                     <asp:TextBox ID="txtPayReady" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td style="text-align:right;">
-                    Tax rate：</td>
+                    Tax rate: </td>
                 <td>
                     <asp:TextBox ID="txtTax" runat="server"></asp:TextBox>
                     </td>
                 <td align="right">
-                    Tax Number：</td>
+                    Tax Number: </td>
                 <td>
                     <asp:TextBox ID="txtTaxNumber" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td style="text-align:right;">
-                    Opening Bank：</td>
+                    Opening Bank: </td>
                 <td>
                     <asp:TextBox ID="txtBankName" runat="server"></asp:TextBox>
                     </td>
                 <td align="right">
-                    Bank Account Number：</td>
+                    Bank Account Number: </td>
                 <td>
                     <asp:TextBox ID="txtBankNumber" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td style="text-align:right;">
-                    Address：</td>
+                    Address: </td>
                 <td colspan="3">
                     <asp:TextBox ID="txtDizhi" runat="server" TextMode="MultiLine" 
                         Width="438px"></asp:TextBox>
@@ -106,7 +106,7 @@
             </tr>
             <tr>
                 <td style="text-align:right;">
-                    Remarks：</td>
+                    Remarks: </td>
                 <td colspan="3">
                     <asp:TextBox ID="txtRemarks" runat="server" Height="40px" TextMode="MultiLine" 
                         Width="438px"></asp:TextBox>

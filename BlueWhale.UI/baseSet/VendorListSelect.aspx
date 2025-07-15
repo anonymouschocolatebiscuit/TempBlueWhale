@@ -39,9 +39,9 @@
 
                 manager = $("#maingrid4").ligerGrid({
                     columns: [
-                        { display: 'Vender Category', name: 'typeName', width: 100, type: 'int', align: 'center' },
-                        { display: 'Vender Number', name: 'code', width: 100, align: 'center' },
-                        { display: 'Vender Name', name: 'names', width: 230, align: 'left' },
+                        { display: 'Supplier Category', name: 'typeName', width: 100, type: 'int', align: 'center' },
+                        { display: 'Supplier Number', name: 'code', width: 100, align: 'center' },
+                        { display: 'Supplier Name', name: 'names', width: 230, align: 'left' },
                         { display: 'Balance Date', name: 'yueDate', width: 80, align: 'center' },
                         { display: 'Opening Balance', name: 'balance', width: 70, align: 'center' },
                         { display: 'Tax rate%', name: 'tax', width: 60, align: 'center' },

@@ -179,7 +179,7 @@ namespace BlueWhaleUI.baseSet
             {
                 string code = dt.Rows[i]["Vender Number"].ToString();
                 string names = dt.Rows[i]["Vender Name"].ToString();
-                string typeName = dt.Rows[i]["Vender Category"].ToString();
+                string typeName = dt.Rows[i]["Supplier Category"].ToString();
                 int tax = ConvertTo.ConvertInt(dt.Rows[i]["Tax Rate"].ToString());
                 DateTime dueDate = DateTime.Now;
 

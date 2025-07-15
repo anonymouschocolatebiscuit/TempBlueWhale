@@ -111,7 +111,7 @@ $(function () {
                     {
                         type: 'count',
                         render: function (e) { 
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
 
@@ -188,7 +188,7 @@ $(function () {
                     {
                         type: 'count',
                         render: function (e) { 
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
 
@@ -422,7 +422,7 @@ function f_onGoodsChangedSub(e) {
         for (var i = data.length - 1; i >= 0; i--) {
             if (data[i].goodsId == 0 || data[i].goodsName == "") {
                 managersub.deleteRow(i);
-                // alert("Delete Row："+i);
+                // alert("Delete Row: "+i);
             }
 
         }
@@ -788,7 +788,7 @@ function endAllEdit() {
 function deleteRow() {
 
     if (managersub.rows.length == 1) {
-        $.ligerDialog.warn('At least one row must be retained！')
+        $.ligerDialog.warn('At least one row must be retained!')
 
     }
     else {
@@ -860,10 +860,10 @@ function save() {
 
 
     if (data.length == 0) {
-        $.ligerDialog.warn('Please select the disassembled product！');
+        $.ligerDialog.warn('Please select the disassembled product!');
 
         return;
-        alert("Execution skipped！");
+        alert("Execution skipped!");
     }
 
 
@@ -871,18 +871,18 @@ function save() {
     for (var i = 0; i < data.length; i++) {
         if (data[i].num <= 0 || data[i].num == "" || data[i].num == "0" || data[i].num == "0.00") {
 
-            $.ligerDialog.warn("Please enter row " + (i + 1) + "quantity of disassembled products！");
+            $.ligerDialog.warn("Please enter row " + (i + 1) + "quantity of disassembled products!");
 
             return;
-            alert("Execution skipped！");
+            alert("Execution skipped!");
         }
 
         if (data[i].ckId == 0 || data[i].ckId == "" || data[i].ckId == "0" || data[i].ckName == "") {
 
-            $.ligerDialog.warn("Please enter row " + (i + 1) + "warehouse of the disassembled products！");
+            $.ligerDialog.warn("Please enter row " + (i + 1) + "warehouse of the disassembled products!");
 
             return;
-            alert("Execution skipped！");
+            alert("Execution skipped!");
         }
 
 
@@ -894,10 +894,10 @@ function save() {
     var ckId = data[0].ckId;
     var remarksItem = data[0].remarks;
 
-    //     alert("ID："+data[0].goodsId);
-    //     alert("Amount："+data[0].num);
-    //     alert("Price："+data[0].price);
-    //     alert("Warehouse："+data[0].ckId);
+    //     alert("ID: "+data[0].goodsId);
+    //     alert("Amount: "+data[0].num);
+    //     alert("Price: "+data[0].price);
+    //     alert("Warehouse: "+data[0].ckId);
 
 
     var datasub = managersub.getData();
@@ -913,10 +913,10 @@ function save() {
 
 
     if (datasub.length == 0) {
-        $.ligerDialog.warn('Please select products after disassembly！');
+        $.ligerDialog.warn('Please select products after disassembly!');
 
         return;
-        alert("Execution skipped！");
+        alert("Execution skipped!");
     }
 
 
@@ -924,18 +924,18 @@ function save() {
     for (var i = 0; i < datasub.length; i++) {
         if (datasub[i].num <= 0 || datasub[i].num == "" || datasub[i].num == "0" || datasub[i].num == "0.00") {
 
-            $.ligerDialog.warn("Please enter row " + (i + 1) + "quantity of products after disassembly！");
+            $.ligerDialog.warn("Please enter row " + (i + 1) + "quantity of products after disassembly!");
 
             return;
-            alert("Execution skipped！");
+            alert("Execution skipped!");
         }
 
         if (datasub[i].ckId == 0 || datasub[i].ckId == "" || datasub[i].ckId == "0" || datasub[i].ckName == "") {
 
-            $.ligerDialog.warn("Please enter row " + (i + 1) + "warehouse of products after disassembly！");
+            $.ligerDialog.warn("Please enter row " + (i + 1) + "warehouse of products after disassembly!");
 
             return;
-            alert("Execution skipped！");
+            alert("Execution skipped!");
         }
 
 
@@ -948,7 +948,7 @@ function save() {
 
     var bizDate = $("#txtBizDate").val();
     if (bizDate == "") {
-        $.ligerDialog.warn("Please enter the disassembly date！");
+        $.ligerDialog.warn("Please enter the disassembly date!");
         return;
 
     }
@@ -1008,9 +1008,9 @@ function save() {
         data: JSON.stringify(postData),   //data: "{'str1':'foovalue', 'str2':'barvalue'}",
         success: function (jsonResult) {
 
-            if (jsonResult == "Operation successful！") {
+            if (jsonResult == "Operation successful!") {
 
-                $.ligerDialog.waitting('Operation successful！'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
+                $.ligerDialog.waitting('Operation successful!'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
 
             }
             else {

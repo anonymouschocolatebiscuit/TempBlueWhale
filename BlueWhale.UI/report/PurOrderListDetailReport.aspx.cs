@@ -202,7 +202,7 @@ namespace BlueWhale.UI.report
                 NPOI.SS.UserModel.IRow row3 = sheet.CreateRow(dt.Rows.Count + 1);
 
                 row3.CreateCell(0).SetCellValue("");//Item Code
-                row3.CreateCell(1).SetCellValue("Total：");//Goods Name
+                row3.CreateCell(1).SetCellValue("Total: ");//Goods Name
                 row3.CreateCell(9).SetCellValue(sumNum.ToString("0.00"));
                 row3.CreateCell(12).SetCellValue(sumPriceDis.ToString("0.00"));
                 row3.CreateCell(14).SetCellValue(sumPriceNow.ToString("0.00"));

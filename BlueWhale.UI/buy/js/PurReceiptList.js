@@ -15,7 +15,7 @@ $(function () {
 		checkbox: true,
 		columns: [
 			{
-				display: 'Operate', isSort: false, width: 80, align: 'center', render: function (rowdata, rowindex, value) {
+				display: 'Action', isSort: false, width: 80, align: 'center', render: function (rowdata, rowindex, value) {
 					var h = "";
 					if (!rowdata._editing) {
 						h += "<a href='javascript:editRow()' title='Edit Row' style='float:left;'><div class='ui-icon ui-icon-pencil'></div></a> ";
@@ -34,7 +34,7 @@ $(function () {
 				{
 					type: 'count',
 					render: function (e) { 
-						return 'Total：';
+						return 'Total: ';
 					}
 				}
 			},
@@ -46,7 +46,7 @@ $(function () {
 					return html;
 				}
 			},
-			{ display: 'Vender', name: 'wlName', width: 170, align: 'left' },
+			{ display: 'Supplier', name: 'wlName', width: 170, align: 'left' },
 			{
 				display: 'Purchase Quantity', name: 'sumNum', width: 150, align: 'right',
 				totalSummary:
@@ -118,7 +118,7 @@ function f_set() {
 
 function search() {
 	var keys = document.getElementById("txtKeys").value;
-	if (keys == "Please Enter Receipt No./Vender/Remark") {
+	if (keys == "Please Enter Receipt No./Supplier/Remark") {
 		keys = "";
 	}
 	var start = document.getElementById("txtDateStart").value;
@@ -193,7 +193,7 @@ function add() {
 
 function editRow() {
 	var row = manager.getSelectedRow();
-	parent.f_addTab('PurReceiptListEdit', 'Purchase Receipt - Edit', 'buy/PurReceiptListEdit.aspx?id=' + row.id);
+	parent.f_addTab('PurReceiptListEdit', 'Purchase Inbound - Edit', 'buy/PurReceiptListEdit.aspx?id=' + row.id);
 }
 
 function viewRow() {

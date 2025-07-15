@@ -30,7 +30,7 @@
  <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
            <tr>
            <td style="width:80px; text-align:right;">
-               Sales Unit：</td>
+               Sales Unit: </td>
            <td style="text-align:left; width:250px;">
             
           <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px">
@@ -40,7 +40,7 @@
           
           </td>
            <td style="text-align:right; width:80px;">
-                                                  Write-Off Date：</td>
+                                                  Write-Off Date: </td>
            <td style="text-align:left; width:180px;">
             
                                                   <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
@@ -59,7 +59,7 @@
            <tr>
            <td style="text-align:right; width:80px;">
             
-               Collection Number：</td>
+               Collection Number: </td>
            <td style="text-align:left; width:140px;">
             
              
@@ -70,7 +70,7 @@
             </td>
            <td style="text-align:right; width:70px;">
             
-               Date：
+               Date: 
             
               </td>
            <td style="text-align:left; width:120px;">
@@ -116,7 +116,7 @@
            <tr>
            <td style="text-align:right; width:80px;">
             
-               Accounts Receivable (AR) No.：</td>
+               Accounts Receivable (AR) No.: </td>
            <td style="text-align:left; width:140px;">
             
              
@@ -127,7 +127,7 @@
             </td>
            <td style="text-align:right; width:70px;">
             
-               Date：
+               Date: 
             
               </td>
            <td style="text-align:left; width:120px;">
@@ -167,7 +167,7 @@
            </tr>
            <tr>
            <td align="right">
-               Remarks：</td>
+               Remarks: </td>
            <td style="text-align:left; " colspan="3">
             
                <asp:TextBox ID="txtRemarks" runat="server" Width="510px" TextMode="MultiLine"></asp:TextBox>

@@ -16,7 +16,7 @@
                 </tr>
                 <tr>
                     <td align="center" colspan="2">
-                        Change Picture：
+                        Change Picture: 
                         <asp:RadioButton ID="RB1" runat="server" Checked="True" GroupName="id" Text="Stamp" />
                         &nbsp;
                         <asp:RadioButton ID="RB2" runat="server" GroupName="id" Text="LogoSet" />
@@ -25,7 +25,7 @@
                 </tr>
                 <tr>
                     <td align="center" colspan="2">
-                        Image：
+                        Image: 
                         <asp:FileUpload ID="ProductImg" runat="server" Width="194px" />&nbsp;
                         <asp:Button ID="ButtonUpload" runat="server" onclick="ButtonUpload_Click" Text="Upload" />
                     </td>

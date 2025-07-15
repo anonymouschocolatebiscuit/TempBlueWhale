@@ -1068,7 +1068,7 @@
     程序会查询以 liger-插件名 类名的Dom,从dom加载相应的参数并调用插件
         比如遇到 .liger-grid 的dom，会找到 liger.defaults.Grid 加载需要的参数
         而在config.Grid中配置了这些参数的类型,会动态得加载data,而columns会设置为数组
-    参数处理的优先级为：
+    参数处理的优先级为: 
     1,ignores 忽略不处理的参数
     2,dom存在 {属性名} 的类名 ,比如 <ul class="columns"></ul> ,便会将这个参数设置为复杂属性(object或array):找到相应的defaults和config来加载
          defaults是先找$.liger.inject.defaults,找不到再找liger.defaults的
@@ -1080,9 +1080,9 @@
         prev: 'liger-',
 
         /* 
-        命名规则：插件名_属性名(包括第N级的属性) (插件名首字母大写,属性名首字母小写) 
-        获取规则：获取default时会先找这里,找不到再找liger.defaults,比如 liger.defaults.Grid_columns 
-        备注：这里只定义了参数的列表
+        命名规则: 插件名_属性名(包括第N级的属性) (插件名首字母大写,属性名首字母小写) 
+        获取规则: 获取default时会先找这里,找不到再找liger.defaults,比如 liger.defaults.Grid_columns 
+        备注: 这里只定义了参数的列表
         */
         defaults: {
             Grid_detail: {
@@ -2045,7 +2045,7 @@
         valueFieldCssClass: null,
         isRowReadOnly: null,        //选项是否只读的判定函数
         rowClsRender: null,       //选项行 class name 自定义函数
-        keySupport: false,              //按键支持： 上、下、回车 支
+        keySupport: false,              //按键支持:  上、下、回车 支
         initIsTriggerEvent: false,      //初始化时是否触发选择事件
         conditionSearchClick: null      //下拉框表格搜索按钮自定义函数
     };
@@ -3127,7 +3127,7 @@
             }
         },
         //设置值到 文本框和隐藏域
-        //isSelectEvent：是否选择事件
+        //isSelectEvent: 是否选择事件
         _changeValue: function (newValue, newText, isSelectEvent) {
             var g = this, p = this.options;
             g.valueField.val(newValue);
@@ -4476,7 +4476,7 @@
                         var iframeloading = $(".l-dialog-loading:first", g.dialog.body);
                         g.jiframe[0].dialog = g;//增加窗口对dialog对象的引用
                         /*
-                        可以在子窗口这样使用：
+                        可以在子窗口这样使用: 
                         var dialog = frameElement.dialog;
                         var dialogData = dialog.get('data');//获取data参数
                         dialog.set('title','新标题'); //设置标题
@@ -5807,7 +5807,7 @@
             var g = this, p = this.options;
 
             g.set(p);
-            //事件：增加分组
+            //事件: 增加分组
             $(g.element).bind("click", function (e) {
                 e.preventDefault();
                 var jthis = $((e.target || e.srcElement));
@@ -5946,7 +5946,7 @@
                 g.appendEditor(rulerow, p.fields[0]);
             }
 
-            //事件：字段列表改变时
+            //事件: 字段列表改变时
             $("select.fieldsel", rulerow).bind('change', function () {
                 var jopsel = $(this).parent().next().find("select:first");
                 var fieldName = $(this).val();
@@ -6277,7 +6277,7 @@
         labelWidth: 90,
         //间隔宽度
         space: 40,
-        rightToken: '：',
+        rightToken: ': ',
         //标签对齐方式
         labelAlign: 'left',
         //控件对齐方式
@@ -6286,7 +6286,7 @@
         /*
         数组的集合,支持的类型包括在$.ligerDefaults.Form.editors,这个editors同Grid的editors继承于base.js中提供的编辑器集合,具体可以看liger.editors
         字段的参数参考 127行左右的 $.ligerDefaults.Form_fields,
-        ui内置的编辑表单元素都会调用ui的表单插件集合,所以这些字段都有属于自己的"liger对象",可以同liger.get("[ID]")的方式获取，这里的[ID]获取方式优先级如下：
+        ui内置的编辑表单元素都会调用ui的表单插件集合,所以这些字段都有属于自己的"liger对象",可以同liger.get("[ID]")的方式获取，这里的[ID]获取方式优先级如下: 
         1,定义了field.id 则取field.id 
         2,如果是下拉框和PopupEdit，并且定义了comboboxName，则取comboboxName(如果表单定义了prefixID,需要加上)
         3,默认取field.name(如果表单定义了prefixID,需要加上) 
@@ -6586,7 +6586,7 @@
         //预处理字段 , 处理分组
         _preSetFields: function (fields) {
             var g = this, p = this.options, lastVisitedGroup = null, lastVisitedGroupIcon = null;
-            //分组： 先填充没有设置分组的字段
+            //分组:  先填充没有设置分组的字段
             $(p.fields).each(function (i, field) {
                 if (p.readonly || field.readonly || (field.editor && field.editor.readonly)) {
                     //if (!field.editor) field.editor = {};
@@ -7328,8 +7328,8 @@
         parms: [],                         //提交到服务器的参数 
         columns: [],                          //数据源
         minColToggle: 1,                        //最小显示的列
-        dataType: 'server',                     //数据源：本地(local)或(server),本地是将读取p.data。不需要配置，取决于设置了data或是url
-        dataAction: 'server',                    //提交数据的方式：本地(local)或(server),选择本地方式时将在客服端分页、排序。 
+        dataType: 'server',                     //数据源: 本地(local)或(server),本地是将读取p.data。不需要配置，取决于设置了data或是url
+        dataAction: 'server',                    //提交数据的方式: 本地(local)或(server),选择本地方式时将在客服端分页、排序。 
         showTableToggleBtn: false,              //是否显示'显示隐藏Grid'按钮 
         switchPageSizeApplyComboBox: false,     //切换每页记录数是否应用ligerComboBox
         allowAdjustColWidth: true,              //是否允许调整列宽     
@@ -13309,7 +13309,7 @@
                     var iframeloading = $(".l-panel-loading:first", content);
 
                     /*
-                    可以在子窗口这样使用：
+                    可以在子窗口这样使用: 
                     var panel = frameElement.panel;
                     var panelData = dialog.get('data');//获取data参数
                     panel.set('title','新标题'); //设置标题
@@ -13864,7 +13864,7 @@
 
     $.ligerDefaults.Portal = {
         width: null,
-        /*行元素：组件允许以纵向方式分割为几块
+        /*行元素: 组件允许以纵向方式分割为几块
         每一块(行)允许自定义N个列(column)
         每一列允许自定义N个Panel(最小元素)
         rows:[
@@ -13880,7 +13880,7 @@
         ]
         */
         rows: null,
-        /* 列元素： 组件将认为只存在一个row(块),
+        /* 列元素:  组件将认为只存在一个row(块),
        这一块 允许自定义N个列(column),结构同上
         */
         columns: null,
@@ -16491,12 +16491,12 @@
     };
 
     //在指定Dom Element右侧显示气泡
-    //target：将ligerui对象ID附加上
+    //target: 将ligerui对象ID附加上
     $.fn.ligerTip = function (options) {
         this.each(function () {
             var p = $.extend({}, $.ligerDefaults.ElementTip, options || {});
             p.target = p.target || this;
-            //如果是自动模式：鼠标经过时显示，移开时关闭
+            //如果是自动模式: 鼠标经过时显示，移开时关闭
             if (p.auto || options == undefined) {
                 if (!p.content) {
                     p.content = this.title;
@@ -16570,7 +16570,7 @@
         y: 0,
         appendIdTo: null,       //保存ID到那一个对象(jQuery)(待移除)
         target: null,
-        auto: null,             //是否自动模式，如果是，那么：鼠标经过时显示，移开时关闭,并且当content为空时自动读取attr[title]
+        auto: null,             //是否自动模式，如果是，那么: 鼠标经过时显示，移开时关闭,并且当content为空时自动读取attr[title]
         removeTitle: true        //自动模式时，默认是否移除掉title
     };
 
@@ -17347,7 +17347,7 @@
                 g.trigger('cancelSelect', [{ data: treenodedata, target: treeitem[0] }]);
             }
         },
-        //选择节点(参数：条件函数、Dom节点或ID值)
+        //选择节点(参数: 条件函数、Dom节点或ID值)
         selectNode: function (selectNodeParm, isTriggerEvent) {
             var g = this, p = this.options;
             var clause = null;
@@ -17855,7 +17855,7 @@
                 //chekcbox even
                 if ($(obj).hasClass("l-checkbox")) {
                     if (p.autoCheckboxEven) {
-                        //状态：未选中
+                        //状态: 未选中
                         if ($(obj).hasClass("l-checkbox-unchecked")) {
                             $(obj).removeClass("l-checkbox-unchecked").addClass("l-checkbox-checked");
                             $(".l-children .l-checkbox", treeitem)
@@ -17863,7 +17863,7 @@
                                 .addClass("l-checkbox-checked");
                             g.trigger('check', [{ data: treenodedata, target: treeitem[0] }, true]);
                         }
-                        //状态：选中
+                        //状态: 选中
                         else if ($(obj).hasClass("l-checkbox-checked")) {
                             $(obj).removeClass("l-checkbox-checked").addClass("l-checkbox-unchecked");
                             $(".l-children .l-checkbox", treeitem)
@@ -17871,7 +17871,7 @@
                                 .addClass("l-checkbox-unchecked");
                             g.trigger('check', [{ data: treenodedata, target: treeitem[0] }, false]);
                         }
-                        //状态：未完全选中
+                        //状态: 未完全选中
                         else if ($(obj).hasClass("l-checkbox-incomplete")) {
                             $(obj).removeClass("l-checkbox-incomplete").addClass("l-checkbox-checked");
                             $(".l-children .l-checkbox", treeitem)
@@ -17882,7 +17882,7 @@
                         g._setParentCheckboxStatus(treeitem);
                     }
                     else {
-                        //状态：未选中
+                        //状态: 未选中
                         if ($(obj).hasClass("l-checkbox-unchecked")) {
                             $(obj).removeClass("l-checkbox-unchecked").addClass("l-checkbox-checked");
                             //是否单选
@@ -17891,14 +17891,14 @@
                             }
                             g.trigger('check', [{ data: treenodedata, target: treeitem[0] }, true]);
                         }
-                        //状态：选中
+                        //状态: 选中
                         else if ($(obj).hasClass("l-checkbox-checked")) {
                             $(obj).removeClass("l-checkbox-checked").addClass("l-checkbox-unchecked");
                             g.trigger('check', [{ data: treenodedata, target: treeitem[0] }, false]);
                         }
                     }
                 }
-                //状态：已经张开
+                //状态: 已经张开
                 else if (treeitembtn.hasClass("l-expandable-open") && (!p.btnClickToToggleOnly || clickOnTreeItemBtn)) {
                     if (g.trigger('beforeCollapse', [{ data: treenodedata, target: treeitem[0] }]) == false)
                         return false;
@@ -17912,7 +17912,7 @@
                         .addClass(g._getParentNodeClassName());
                     g.trigger('collapse', [{ data: treenodedata, target: treeitem[0] }]);
                 }
-                //状态：没有张开
+                //状态: 没有张开
                 else if (treeitembtn.hasClass("l-expandable-close") && (!p.btnClickToToggleOnly || clickOnTreeItemBtn)) {
                     if (g.trigger('beforeExpand', [{ data: treenodedata, target: treeitem[0] }]) == false)
                         return false;

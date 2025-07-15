@@ -97,13 +97,13 @@
     <form id="form1" runat="server">
     <table id="form" border="0" cellpadding="0" cellspacing="10" style="width:380px; line-height:40px;">
         <tr>
-            <td style="width:100px; text-align:right;">Brand Name：</td>
+            <td style="width:100px; text-align:right;">Brand Name: </td>
             <td>
                 <asp:TextBox ID="txtNames" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
-            <td style="text-align:right;">Display Order：</td>
+            <td style="text-align:right;">Display Order: </td>
             <td>
                 <asp:TextBox ID="txtFlag" runat="server"  ltype='spinner' ligerui="{type:'int'}" value="0"></asp:TextBox>
             </td>

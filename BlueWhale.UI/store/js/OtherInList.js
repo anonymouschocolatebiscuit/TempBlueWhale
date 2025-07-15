@@ -60,7 +60,7 @@
                  
                  
                  },
-                 { display: 'Vender', name: 'wlName', width: 170, align: 'left'},
+                 { display: 'Supplier', name: 'wlName', width: 170, align: 'left'},
                  { display: 'Inbound Amount', name: 'sumPriceAll', width: 100, align: 'right',
                  
                       totalSummary:
@@ -144,7 +144,7 @@
         function search() {
 
             var keys = document.getElementById("txtKeys").value;
-            if (keys == "Please enter Receipt Number/Vender/Remarks") {
+            if (keys == "Please enter Receipt Number/Supplier/Remarks") {
 
                 keys = "";
 

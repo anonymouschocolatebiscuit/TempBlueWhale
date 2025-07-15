@@ -16,7 +16,7 @@ $(function () {
         checkbox: true,
         columns: [
             {
-                display: 'Operate', isSort: false, width: 75, align: 'center', render: function (rowdata, rowindex, value) {
+                display: 'Action', isSort: false, width: 75, align: 'center', render: function (rowdata, rowindex, value) {
                     var h = "";
                     if (!rowdata._editing) {
                         h += "<a href='javascript:editRow()' title='Edit Row' style='float:left;'><div class='ui-icon ui-icon-pencil'></div></a> ";
@@ -36,7 +36,7 @@ $(function () {
                     type: 'count',
                     render: function (e) {  //Total renderer, returns HTML to be loaded into the cell
                         // e Total Object (including sum, max, min, avg, count)"
-                        return 'Total：';
+                        return 'Total: ';
                     }
                 }
             },
@@ -119,7 +119,7 @@ function makePDF() {
         data: "Action=makePDF&id=" + id + "&number=" + number + "&ranid=" + Math.random(), //encodeURI
         success: function (resultString) {
 
-            if (resultString == "Generate Successful！") {
+            if (resultString == "Generate Successful!") {
                 parent.f_addTab('pdf', 'Sales Outbound-Print Preview', 'sales/pdf/' + number + '.pdf');
             }
             else {

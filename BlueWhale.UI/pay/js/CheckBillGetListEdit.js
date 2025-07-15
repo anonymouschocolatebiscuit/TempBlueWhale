@@ -145,7 +145,7 @@
                         render: function (e) 
                         {  // Summary renderer, returns HTML to be loaded into the cell
                             // e: Summary Object (including sum, max, min, avg, count)
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                 
@@ -215,12 +215,12 @@
            
            if(Number(sumPayPrice)>Number(sumPrice))
            {
-               $.ligerDialog.warn("The total redemption amount cannot exceed the total payment amount！");
+               $.ligerDialog.warn("The total redemption amount cannot exceed the total payment amount!");
               return;
            }
            
-//           alert("sumPrice："+sumPrice);
-//           alert("sumPayPrice："+sumPayPrice);
+//           alert("sumPrice: "+sumPrice);
+//           alert("sumPayPrice: "+sumPayPrice);
 //          
             var disPrice = $("#txtDisPrice").val();// Overall discount for the order
            
@@ -268,7 +268,7 @@
                         render: function (e) 
                         {  // Summary renderer, returns HTML to be loaded into the cell
                             // e: Summary Object (including sum, max, min, avg, count)
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                 
@@ -413,7 +413,7 @@ function save() {
 
     // 2, Check if a product is selected
     if (data.length == 0) {
-        $.ligerDialog.warn('Please select payment information！');
+        $.ligerDialog.warn('Please select payment information!');
 
         return;
         alert("Execution skipped!");

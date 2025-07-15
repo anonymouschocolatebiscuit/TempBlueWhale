@@ -83,7 +83,7 @@ $(function () {
                     {
                         type: 'count',
                         render: function (e) {  //汇总渲染器，返回html加载到单元格
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                 },
@@ -150,7 +150,7 @@ $(function () {
                         type: 'count',
                         render: function (e) {  //汇总渲染器，返回html加载到单元格
                             //e 汇总Object(包括sum,max,min,avg,count) 
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                 },
@@ -261,7 +261,7 @@ function selectCangku() {
     $.ligerDialog.close(); //关闭dialog
 }
 
-//商品 改变事件：获取单位、单价等信息
+//商品 改变事件: 获取单位、单价等信息
 function f_onGoodsChanged(e) {
 
     if (!e || !e.length) return;
@@ -288,7 +288,7 @@ function f_onGoodsChanged(e) {
     });
 }
 
-//商品 改变事件：获取单位、单价等信息
+//商品 改变事件: 获取单位、单价等信息
 function f_onGoodsChangedSub(e) {
 
     if (!e || !e.length) return;
@@ -459,7 +459,7 @@ function f_onAfterEditSub(e) {
 
     if (e.column.name == "num") //数量改变---开始
     {
-        //数量改变：【折扣率、税率】 计算【折扣额、金额、税额、价税合计】
+        //数量改变: 【折扣率、税率】 计算【折扣额、金额、税额、价税合计】
         num = Number(e.value);
 
         //2、金额=数量*单价-折扣额
@@ -481,7 +481,7 @@ function f_onAfterEditSub(e) {
 
     if (e.column.name == "price") //单价改变---开始、计算金额、折扣额、税额、价税合计
     {
-        //单价改变：【数量、折扣率、税率】 计算【折扣额、金额、税额、价税合计】; 
+        //单价改变: 【数量、折扣率、税率】 计算【折扣额、金额、税额、价税合计】; 
         price = Number(e.value);
 
         //2、金额=数量*单价-折扣额
@@ -503,7 +503,7 @@ function f_onAfterEditSub(e) {
 
     if (e.column.name == "sumPrice") //金额改变
     {
-        //金额改变：【数量、折扣额、税率】 计算【折扣率、单价、税额、价税合计】   
+        //金额改变: 【数量、折扣额、税率】 计算【折扣率、单价、税额、价税合计】   
 
         sumPrice = Number(e.value);
 
@@ -725,7 +725,7 @@ function save() {
         data: JSON.stringify(postData),
         success: function (jsonResult) {
 
-            if (jsonResult == "Execution successful！") {
+            if (jsonResult == "Execution successful!") {
 
                 $.ligerDialog.waitting('Execution successful!'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
 

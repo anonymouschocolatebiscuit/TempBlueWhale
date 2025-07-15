@@ -123,7 +123,7 @@ namespace BlueWhale.UI.baseSet
                 {
 
                     logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Set Good Display-ID：" + goodsId.ToString();
+                    logs.Events = "Set Good Display-ID: " + goodsId.ToString();
                     logs.Ip = Request.UserHostAddress.ToString();
                     logs.Add();
 

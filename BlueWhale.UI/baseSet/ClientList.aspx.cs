@@ -225,7 +225,7 @@ namespace BlueWhale.UI.baseSet
 
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Customer-ID：" + id.ToString();
+                            logs.Events = "Delete Customer-ID: " + id.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -269,7 +269,7 @@ namespace BlueWhale.UI.baseSet
                             num += 1;
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Review customer-ID：" + delId.ToString();
+                            logs.Events = "Review customer-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -313,7 +313,7 @@ namespace BlueWhale.UI.baseSet
                             num += 1;
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Reverse review customer-ID：" + delId.ToString();
+                            logs.Events = "Reverse review customer-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -347,7 +347,7 @@ namespace BlueWhale.UI.baseSet
 
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Initialize user password-ID：" + empId.ToString();
+                    logs.Events = "Initialize user password-ID: " + empId.ToString();
                     logs.Ip = Request.UserHostAddress.ToString();
                     logs.Add();
 

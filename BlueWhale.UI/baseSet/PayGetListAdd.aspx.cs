@@ -45,13 +45,13 @@ namespace BlueWhale.UI.baseSet
 
             if (!CheckPower("PayGetListAdd"))
             {
-                MessageBox.Show(this, "无此操作权限！");
+                MessageBox.Show(this, "无此操作权限!");
                 return;
             }
 
             if (this.txtNames.Text == "")
             {
-                MessageBox.Show(this, "Please fill in the name！");
+                MessageBox.Show(this, "Please fill in the name!");
                 this.txtNames.Focus();
                 return;
 
@@ -79,7 +79,7 @@ namespace BlueWhale.UI.baseSet
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "新增收支类别：" + this.txtNames.Text;
+                    logs.Events = "新增收支类别: " + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
@@ -102,7 +102,7 @@ namespace BlueWhale.UI.baseSet
 
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "修改收支类别：" + this.txtNames.Text;
+                    logs.Events = "修改收支类别: " + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 

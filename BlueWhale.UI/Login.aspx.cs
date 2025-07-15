@@ -75,7 +75,7 @@ namespace BlueWhale.UI
                     {
                         ShopId = 0,
                         Users = txtUserName.Text,
-                        Events = "account not exist, password：" + txtPassword.Text + " captcha：" + this.captcha.Text,
+                        Events = "account not exist, password: " + txtPassword.Text + " captcha: " + this.captcha.Text,
                         Ip = HttpContext.Current.Request.UserHostAddress.ToString()
                     };
                     logs.Add();
@@ -90,7 +90,7 @@ namespace BlueWhale.UI
                     {
                         ShopId = 0,
                         Users = txtUserName.Text,
-                        Events = "account or password invalid, password：" + txtPassword.Text + " captcha：" + this.captcha.Text,
+                        Events = "account or password invalid, password: " + txtPassword.Text + " captcha: " + this.captcha.Text,
                         Ip = HttpContext.Current.Request.UserHostAddress.ToString()
                     };
 

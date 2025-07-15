@@ -30,37 +30,39 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td class="tdLbl">Vendor：</td>
+                <td class="tdLbl">Supplier: </td>
                 <td class="tdTxt">
                     <asp:TextBox ID="clientName" runat="server"></asp:TextBox>
                     <input type="hidden" id="clientId" runat="server" value="" />
                     <input type="hidden" id="txtClientName" runat="server" value="" />
                 </td>
-                <td class="tdLbl">Stock In Date：</td>
+                <td class="tdLbl">Stock In Date: </td>
                 <td class="tdTxt">
                     <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td class="tdLbl">Purchaser：</td>
+                <td class="tdLbl">Purchaser: </td>
                 <td style="text-align: left; width: 180px;">
                     <asp:DropDownList ID="ddlYWYList" runat="server">
                     </asp:DropDownList>
                 </td>
+                <td style="text-align:right; width:80px;">&nbsp;</td>
+                <td style="text-align:left;">&nbsp;</td>
             </tr>
         </table>
 
         <div id="maingrid"></div>
         <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 50px;">
             <tr>
-                <td class="tdLbl">Current Payment：</td>
+                <td class="tdLbl">Current Payment: </td>
                 <td class="tdTxt">
                     <asp:TextBox ID="txtPayNow" runat="server">0</asp:TextBox>
                 </td>
-                <td class="tdLbl">Current Debt：</td>
+                <td class="tdLbl">Current Debt: </td>
                 <td class="tdTxt">
                     <asp:TextBox ID="txtPayNo" runat="server"
                         BackColor="#FFFFCC" ToolTip="Auto Calculation">0</asp:TextBox>
                 </td>
-                <td class="tdLbl">Settlement Account：</td>
+                <td class="tdLbl">Settlement Account: </td>
                 <td class="tdTxt">
                     <asp:DropDownList ID="ddlBankList" runat="server">
                     </asp:DropDownList>
@@ -68,7 +70,7 @@
                 <td style="text-align: right; padding-right: 30px;">&nbsp;</td>
             </tr>
             <tr>
-                <td class="tdLbl">Remarks：</td>
+                <td class="tdLbl">Remarks: </td>
                 <td class="tdTxt">
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>

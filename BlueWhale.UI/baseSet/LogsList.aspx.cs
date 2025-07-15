@@ -102,17 +102,17 @@ namespace BlueWhale.UI.baseSet
                 {
                    
 
-                    Response.Write("Delete successfully！");
+                    Response.Write("Delete successfully!");
 
                 }
                 else
                 {
-                    Response.Write("Delete failed！");
+                    Response.Write("Delete failed!");
                 }
             }
             else
             {
-                Response.Write("Login timeout, please log in again！");
+                Response.Write("Login timeout, please log in again!");
             }
 
         }

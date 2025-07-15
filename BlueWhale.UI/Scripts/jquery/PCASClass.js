@@ -18,7 +18,7 @@
 		new PCAS("Province","City","Area","吉林省","松原市")
 		new PCAS("Province","City","Area","吉林省","松原市","宁江区")
 	省、市、地区对象取得的值均为实际值。
-	注：省、市、地区提示信息选项的值为""(空字符串)
+	注: 省、市、地区提示信息选项的值为""(空字符串)
 
 \*** 程序制作/版权所有:崔永祥(333) E-Mail:zhadan007@21cn.com 网址:http://www.popub.net ***/
 

@@ -32,7 +32,7 @@
                 </td>
             </tr>
             <tr>
-                <td style="width:80px; text-align:right;">Select File：</td>
+                <td style="width:80px; text-align:right;">Select File: </td>
                 <td>
                     <asp:FileUpload ID="fload" runat="server" />
                     <asp:Button ID="btnExcelTo" runat="server" Width="110px" class="ui_state_highlight" Text="Start importing" onclick="btnExcelTo_Click" />
@@ -48,7 +48,7 @@
             </tr>
             <tr>
                 <td style="width:80px; text-align:right;">
-                    <b>Kind tips：</b>
+                    <b>Kind tips: </b>
                 </td>
                 <td>
                     The format of the imported template cannot be modified. Please refer to the demonstration template for the input method.

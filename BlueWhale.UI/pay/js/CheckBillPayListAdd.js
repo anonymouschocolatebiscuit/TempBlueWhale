@@ -336,7 +336,7 @@ function save() {
         contentType: "application/json",
         data: JSON.stringify(postData),
         success: function (jsonResult) {
-            if (jsonResult == "操作成功！") {
+            if (jsonResult == "操作成功!") {
                 $.ligerDialog.waitting('Operation successful!');
                 setTimeout(function () {
                     $.ligerDialog.closeWaitting();

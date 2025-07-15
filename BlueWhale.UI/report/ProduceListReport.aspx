@@ -20,7 +20,7 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="text-align: right; width: 70px;">Schedule date： 
+                <td style="text-align: right; width: 70px;">Schedule date:  
                 </td>
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
@@ -30,22 +30,22 @@
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 80px;">Order no：</td>
+                <td style="text-align: right; width: 80px;">Order no: </td>
                 <td style="text-align: left; width: 180px;">
                     <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter oder no/remark"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 60px;">Vendor：</td>
+                <td style="text-align: right; width: 60px;">Supplier: </td>
                 <td style="text-align: left; width: 120px;">
                     <input type="text" id="clientName" runat="server" value="" />
                     <input type="hidden" id="clientId" runat="server" value="" />
                 </td>
-                <td style="text-align: right; width: 50px;">Product：
+                <td style="text-align: right; width: 50px;">Product: 
                 </td>
                 <td style="text-align: left; width: 100px;">
                     <input type="text" id="txtGoodsName" runat="server" value="" />
                     <input type="hidden" id="txtGoodsId" runat="server" value="" />
                 </td>
-                <td style="text-align: right; width: 60px;">Status：
+                <td style="text-align: right; width: 60px;">Status: 
                 </td>
                 <td style="text-align: left; width: 80px;">
                     <input type="text" id="txtFlagList" />

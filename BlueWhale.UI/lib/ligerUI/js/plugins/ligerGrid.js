@@ -36,8 +36,8 @@
         parms: [],                         //提交到服务器的参数
         columns: [],                          //数据源
         minColToggle: 1,                        //最小显示的列
-        dataType: 'server',                     //数据源：本地(local)或(server),本地是将读取p.data。不需要配置，取决于设置了data或是url
-        dataAction: 'server',                    //提交数据的方式：本地(local)或(server),选择本地方式时将在客服端分页、排序。 
+        dataType: 'server',                     //数据源: 本地(local)或(server),本地是将读取p.data。不需要配置，取决于设置了data或是url
+        dataAction: 'server',                    //提交数据的方式: 本地(local)或(server),选择本地方式时将在客服端分页、排序。 
         showTableToggleBtn: false,              //是否显示'显示隐藏Grid'按钮 
         switchPageSizeApplyComboBox: false,     //切换每页记录数是否应用ligerComboBox
         allowAdjustColWidth: true,              //是否允许调整列宽     

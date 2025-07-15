@@ -215,7 +215,7 @@
                         var iframeloading = $(".l-dialog-loading:first", g.dialog.body);
                         g.jiframe[0].dialog = g;//增加窗口对dialog对象的引用
                         /*
-                        可以在子窗口这样使用：
+                        可以在子窗口这样使用: 
                         var dialog = frameElement.dialog;
                         var dialogData = dialog.get('data');//获取data参数
                         dialog.set('title','新标题'); //设置标题

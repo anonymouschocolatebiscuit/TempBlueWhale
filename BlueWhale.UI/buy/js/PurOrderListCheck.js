@@ -14,7 +14,7 @@ $(function () {
         checkbox: true,
         columns: [
             {
-                display: 'Operate', isSort: false, width: 50, align: 'center', render: function (rowdata, rowindex, value) {
+                display: 'Action', isSort: false, width: 50, align: 'center', render: function (rowdata, rowindex, value) {
                     var h = "";
                     if (!rowdata._editing) {
                         h += "<a href='javascript:editRow()' title='EditRow' style='float:left;'><div class='ui-icon ui-icon-pencil'></div></a> ";
@@ -34,7 +34,7 @@ $(function () {
                     type: 'count',
                     render: function (e) {  
                         //e Object(Include sum,max,min,avg,count) 
-                        return 'Total：';
+                        return 'Total: ';
                     }
                 }
             },
@@ -47,7 +47,7 @@ $(function () {
                     return html;
                 }
             },
-            { display: 'Vendor', name: 'wlName', width: 170, align: 'left' },
+            { display: 'Supplier', name: 'wlName', width: 170, align: 'left' },
             {
                 display: 'Purchase Quantity', name: 'sumNum', width: 100, align: 'right',
 

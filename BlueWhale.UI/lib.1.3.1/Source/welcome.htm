@@ -21,7 +21,7 @@
               { tag: '下拉框', type: 'BUG', content: '解决下拉框树如果用了delay，初始化时选不中的问题。' },
               { tag: 'Tree', type: '优化', content: 'selectNode()和cancelSelect()增加是否触发选择事件(默认触发)' },
               { tag: '下拉框', type: '优化', content: '增加初始化是否触发选择事件的选项' },
-              { tag: '下拉框', type: '优化', content: '增加conditionSearchClick(下拉框表格搜索按钮自定义函数)(应用例子：下拉框 - 分页表格(带搜索))' },
+              { tag: '下拉框', type: '优化', content: '增加conditionSearchClick(下拉框表格搜索按钮自定义函数)(应用例子: 下拉框 - 分页表格(带搜索))' },
             { tag: '表格', type: '优化', content: '刷新方法reload()增加参数(指定页),比如 reload(1)' },
          
              { tag: 'Tab', type: '优化', content: '增加方法hideTabItem和showTabItem' }
@@ -272,7 +272,7 @@
                 { tag: '表格', type: '需求', content: '多表头支持跨行合并' },
                 { tag: '表格', type: '需求', content: '增加行编辑模式' },
                 { tag: '表格', type: '需求', content: '增加明细编辑模式' },
-                { tag: '表格', type: '需求', content: '增加扩展接口：排序、格式化器,优化扩展接口：编辑器' },
+                { tag: '表格', type: '需求', content: '增加扩展接口: 排序、格式化器,优化扩展接口: 编辑器' },
                 { tag: '表格', type: '需求', content: '选择行支持Ctrl选择' }, 
                 { tag: '表格', type: '需求', content: '明细框可以设置高度(detail参数增加onExtend、onCollapse 和height)' },
                 { tag: '表格', type: '需求', content: '参数移除renderDate、dblClickToEdit 方法移除stringToDate、getFormatDate' },
@@ -282,9 +282,9 @@
             ];
 
             var v114 = [
-                { tag: '核心', type: '需求', content: '增加方法的调用方式：liger{Plugin}(method) ' },
-                { tag: '核心', type: '需求', content: '增加获取属性的调用方式：liger{Plugin}("option",name)' },
-                { tag: '核心', type: '需求', content: '增加设置属性的调用方式：liger{Plugin}("option",name,value)' },
+                { tag: '核心', type: '需求', content: '增加方法的调用方式: liger{Plugin}(method) ' },
+                { tag: '核心', type: '需求', content: '增加获取属性的调用方式: liger{Plugin}("option",name)' },
+                { tag: '核心', type: '需求', content: '增加设置属性的调用方式: liger{Plugin}("option",name,value)' },
                 { tag: '综合', type: 'BUG', content: '修复V1.1.3部分插件没有触发事件的BUG' },
                 { tag: '表单', type: 'BUG', content: '修复V1.1.3验证出现的气泡没有消失的BUG' },
                 { tag: '布局', type: '需求', content: 'Tab控件增加双击关闭页签' },
@@ -310,7 +310,7 @@
                 { tag: '对话框', type: '优化', content: '移除ligerDialogImagePath,改为$.ligerui.DialogImagePath' },
                 { tag: '对话框', type: '需求', content: '添加设置url方法' },
                 { tag: '对话框', type: '需求', content: '增加加载完成事件onloaded' },
-                { tag: '对话框', type: '需求', content: '增加参数：show、title' },
+                { tag: '对话框', type: '需求', content: '增加参数: show、title' },
                 { tag: 'Window', type: '需求', content: '添加load远程文件方法和设置url方法' },
                 { tag: '气泡', type: '优化', content: '优化气泡控件' },
                 { tag: '树', type: '需求', content: '增加方法arrayToTree' },
@@ -384,8 +384,8 @@
                 { tag: '表格', type: '需求', content: '优化了显示速度' },
                 { tag: '表格', type: 'BUG', content: '解决在IE6下表格头部文字消失的问题' },
                 { tag: '表格', type: 'BUG', content: '解决包含在form下不能正常显示高度的问题(height设置为百分比)' },
-                { tag: '弹窗', type: '需求', content: '增加新插件：弹框，命名空间为$.ligerDialog。一系列静态方法。包括Open、Success、Error、Warn、Show。（这个样式比较美观，于是加上去了。并采用九格的排版方式，兼容性更好，扩展性更好）集对话框、模态窗口、非模态窗口等于这个命名空间下。（原来已经有弹出框插件和窗口插件了，ligerWindow和ligerMessage，不推荐，暂时保留）' },
-                { tag: '菜单', type: '需求', content: '增加新插件：菜单、菜单条、工具条,菜单可以自定义图片，可以动态设置项，动态的显示位置。菜单条和是在菜单的基础上显示的一个类似Window菜单的一个插件，工具条是一些按钮的集合，可以自定义图片。' },
+                { tag: '弹窗', type: '需求', content: '增加新插件: 弹框，命名空间为$.ligerDialog。一系列静态方法。包括Open、Success、Error、Warn、Show。（这个样式比较美观，于是加上去了。并采用九格的排版方式，兼容性更好，扩展性更好）集对话框、模态窗口、非模态窗口等于这个命名空间下。（原来已经有弹出框插件和窗口插件了，ligerWindow和ligerMessage，不推荐，暂时保留）' },
+                { tag: '菜单', type: '需求', content: '增加新插件: 菜单、菜单条、工具条,菜单可以自定义图片，可以动态设置项，动态的显示位置。菜单条和是在菜单的基础上显示的一个类似Window菜单的一个插件，工具条是一些按钮的集合，可以自定义图片。' },
                 { tag: '树', type: '需求', content: '提供右击方法实现的接口' },
                 { tag: '树', type: '优化', content: '点击项就折叠/反折叠，而不是点击 + 才折叠' },
                 { tag: '下拉框', type: '需求', content: '支持在分页的表格在选取数据(配置grid,参数跟ligerGrid的参数一致)' },
@@ -527,24 +527,24 @@
     <p class="l-log-content">
         交流QQ群1群: 71664111</p>
     <p class="l-log-content">
-        交流QQ群2群：104842296</p>
+        交流QQ群2群: 104842296</p>
     <p class="l-log-content">
-        交流QQ群3群：153770480</p>
+        交流QQ群3群: 153770480</p>
     <p class="l-log-content">
-        交流QQ群4群：190391819
+        交流QQ群4群: 190391819
         </p>
    <p class="l-log-content">
-        交流QQ群5群：37205343
+        交流QQ群5群: 37205343
         </p> <p class="l-log-content">
-        交流QQ群6群：237634156
+        交流QQ群6群: 237634156
         </p>
          <p class="l-log-content">
-        交流QQ群7群：262424299
+        交流QQ群7群: 262424299
         </p>
     <p class="l-log-content">
-        交流QQ群7群：262424299
+        交流QQ群7群: 262424299
         </p><p class="l-log-content">
-        交流QQ群8群：427520658
+        交流QQ群8群: 427520658
         </p>
     <p class="l-log-content">
         API: <a href="http://api.ligerui.com/" target="_blank">http://api.ligerui.com/</a></p>

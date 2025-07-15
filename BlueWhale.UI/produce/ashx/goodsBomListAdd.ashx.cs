@@ -207,7 +207,7 @@ namespace BlueWhale.UI.produce.ashx
 
             if (dal.ExistsBomList(obj.goodsId))
             {
-                context.Response.Write("Item is exist in BOM，Cannot duplicate add！");
+                context.Response.Write("Item is exist in BOM，Cannot duplicate add!");
                 return;
 
             }
@@ -268,7 +268,7 @@ namespace BlueWhale.UI.produce.ashx
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId=users.ShopId;
                     logs.Users = users.Names;
-                    logs.Events = "Add new product BOM list：" + model.number;
+                    logs.Events = "Add new product BOM list: " + model.number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 

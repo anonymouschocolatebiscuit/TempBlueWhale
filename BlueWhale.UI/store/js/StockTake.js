@@ -103,7 +103,7 @@ function save() {
     }
 
     if (data.length == 0) {
-        $.ligerDialog.warn('Please Select Product！');
+        $.ligerDialog.warn('Please Select Product!');
 
         return;
     }
@@ -112,10 +112,10 @@ function save() {
         //|| data[i].sumNumPD=="0" || data[i].sumNumPD=="0.00"
 
         if (data[i].sumNumPD < 0 || data[i].sumNumPD == "") {
-            $.ligerDialog.warn("请输入第" + (i + 1) + "行的商品数量！");
+            $.ligerDialog.warn("请输入第" + (i + 1) + "行的商品数量!");
 
             return;
-            alert("我就不执行了！");
+            alert("我就不执行了!");
         }
     }
 
@@ -153,8 +153,8 @@ function save() {
         data: JSON.stringify(postData),  //aka //data: "{'str1':'foovalue', 'str2':'barvalue'}",
         success: function (jsonResult) {
 
-            if (jsonResult == "Success！") {
-                $.ligerDialog.waitting('Success！'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
+            if (jsonResult == "Success!") {
+                $.ligerDialog.waitting('Success!'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
             }
             else {
                 $.ligerDialog.warn(jsonResult);

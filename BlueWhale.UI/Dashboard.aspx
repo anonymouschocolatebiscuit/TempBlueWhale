@@ -797,7 +797,7 @@
                                 <h3>Purchase Order</h3>
                                 <ul class="sub-nav" id="Ul13">
                                     <li><a onclick="f_addTab('PurOrderListAdd','Purchase Order - Create','buy/PurOrderListAdd.aspx?id=0')">Purchase Order - Create</a></li>
-                                    <li><a onclick="f_addTab('PurOrderList','Purchase Order- View','buy/PurOrderList.aspx')">Purchase Order- View</a></li>
+                                    <li><a onclick="f_addTab('PurOrderList','Purchase Order - View','buy/PurOrderList.aspx')">Purchase Order - View</a></li>
                                 </ul>
                             </div>
                             <div class="nav-item nav-JDstore last">
@@ -960,7 +960,7 @@
                                 <h3>Basic Settings</h3>
                                 <ul class="sub-nav" id="setting-base">
                                     <li><a onclick="f_addTab('ClientList','Client Management','BaseSet/ClientList.aspx')">Client Management</a></li>
-                                    <li><a onclick="f_addTab('VenderList','Vender Management','BaseSet/VenderList.aspx')">Vender Management</a></li>
+                                    <li><a onclick="f_addTab('VenderList','Supplier Management','BaseSet/VenderList.aspx')">Supplier Management</a></li>
                                     <li><a onclick="f_addTab('GoodsList','Product Management','BaseSet/GoodsList.aspx')">Product Management</a></li>
                                     <li><a onclick="f_addTab('InventoryList','Inventory Management','BaseSet/InventoryList.aspx')">Inventory Management</a></li>
                                     <li><a onclick="f_addTab('AccountList','Account Management','BaseSet/AccountList.aspx')">Account Management</a></li>
@@ -972,7 +972,7 @@
                                 <h3>Auxiliary Settings</h3>
                                 <ul class="sub-nav" id="setting-auxiliary">
                                     <li><a onclick="f_addTab('ClientTypeList','Client Category','BaseSet/ClientTypeList.aspx')">Client Category</a></li>
-                                    <li><a onclick="f_addTab('VenderTypeList','Vender Category','BaseSet/VenderTypeList.aspx')">Vender Category</a></li>
+                                    <li><a onclick="f_addTab('VenderTypeList','Supplier Category','BaseSet/VenderTypeList.aspx')">Supplier Category</a></li>
                                     <li><a onclick="f_addTab('GoodsTypeList','Item Category','BaseSet/GoodsTypeList.aspx')">Item Category</a></li>
                                     <li><a onclick="f_addTab('GoodsBrandList','Item Brand','BaseSet/GoodsBrandList.aspx')">Item Brand</a></li>
                                     <li><a onclick="f_addTab('PayGetList','Income & Expense Category','BaseSet/PayGetList.aspx')">Income & Expense Category</a></li>

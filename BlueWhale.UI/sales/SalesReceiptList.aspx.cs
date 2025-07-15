@@ -184,7 +184,7 @@ namespace BlueWhale.UI.sales
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Sales Receipt-ID：" + delId.ToString();
+                            logs.Events = "Delete Sales Receipt-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -236,7 +236,7 @@ namespace BlueWhale.UI.sales
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Review Sales Receipt-ID：" + delId.ToString();
+                            logs.Events = "Review Sales Receipt-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -290,7 +290,7 @@ namespace BlueWhale.UI.sales
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel Review Sales Receipt-ID：" + delId.ToString();
+                            logs.Events = "Cancel Review Sales Receipt-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }

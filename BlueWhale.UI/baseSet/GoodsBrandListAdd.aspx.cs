@@ -39,14 +39,14 @@ namespace BlueWhale.UI.baseSet
         {
             if (this.txtNames.Text == "")
             {
-                MessageBox.Show(this, "Please fill in the name！");
+                MessageBox.Show(this, "Please fill in the name!");
                 this.txtNames.Focus();
                 return;
             }
 
             if (this.txtFlag.Text == "")
             {
-                MessageBox.Show(this, "Please fill in the display order！");
+                MessageBox.Show(this, "Please fill in the display order!");
                 this.txtFlag.Focus();
                 return;
             }
@@ -71,11 +71,11 @@ namespace BlueWhale.UI.baseSet
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Add new product brands：" + this.txtNames.Text;
+                    logs.Events = "Add new product brands: " + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    MessageBox.Show(this, "Operation Successful！");
+                    MessageBox.Show(this, "Operation Successful!");
                 }
             }
             else
@@ -92,11 +92,11 @@ namespace BlueWhale.UI.baseSet
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Modify product brand：" + this.txtNames.Text;
+                    logs.Events = "Modify product brand: " + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    MessageBox.Show(this, "Operation Successful！");
+                    MessageBox.Show(this, "Operation Successful!");
                 }
             }
         }

@@ -4,8 +4,8 @@ GO
 
 /****** Object:  View [dbo].[viewInventoryTransfer]    Script Date: 2025/01/11 13:07:23 ******/
 /*
-** Description £º Create Inventory Transfer View
-** Changes £º 2024-01-09 dev100  222#457 - Create [InventoryTransfer] & [InventoryTransferDetails] Datatable, DAL
+** Description :  Create Inventory Transfer View
+** Changes :  2024-01-09 dev100  222#457 - Create [InventoryTransfer] & [InventoryTransferDetails] Datatable, DAL
 */
 SET ANSI_NULLS ON
 GO

@@ -181,10 +181,10 @@ function save() {
 
     //2、Determine whether to select a product
     if (data.length == 0) {
-        $.ligerDialog.warn('Please select payment type！');
+        $.ligerDialog.warn('Please select payment type!');
 
         return;
-        alert("Execution skipped！");
+        alert("Execution skipped!");
     }
 
 
@@ -193,10 +193,10 @@ function save() {
     for (var i = 0; i < data.length; i++) {
         if (data[i].price <= 0 || data[i].price == "" || data[i].price == "0" || data[i].price == "0.00") {
 
-            $.ligerDialog.warn("Please enter the" + (i + 1) + "row income amount！");
+            $.ligerDialog.warn("Please enter the" + (i + 1) + "row income amount!");
 
             return;
-            alert("Execution skipped！");
+            alert("Execution skipped!");
         }
 
     }
@@ -205,7 +205,7 @@ function save() {
     var bkId = $("#ddlBankList").val(); 
     var bizDate = $("#txtBizDate").val();
     if (bizDate == "") {
-        $.ligerDialog.warn("Please enter payment date！");
+        $.ligerDialog.warn("Please enter payment date!");
         return;
     }
 
@@ -231,9 +231,9 @@ function save() {
         data: JSON.stringify(postData), 
         success: function (jsonResult) {
 
-            if (jsonResult == "Execution successful！") {
+            if (jsonResult == "Execution successful!") {
 
-                $.ligerDialog.waitting('Execution successful！'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
+                $.ligerDialog.waitting('Execution successful!'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
 
             }
             else {

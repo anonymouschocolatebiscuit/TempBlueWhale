@@ -59,7 +59,7 @@
         <table id="form" style=" line-height:35px;" >
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Company Name：
+                    Company Name: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
@@ -67,7 +67,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Company Address：
+                    Company Address: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
@@ -75,7 +75,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Contact No.：
+                    Contact No.: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
@@ -83,7 +83,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Fax No.：
+                    Fax No.: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
@@ -91,7 +91,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Postcode：
+                    Postcode: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
@@ -99,7 +99,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Activate Review：
+                    Activate Review: 
                 </td>
                 <td style="width:550px;">
                     <asp:CheckBox ID="cbBillCheckList" runat="server" 
@@ -108,7 +108,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Check Negative Inventory：
+                    Check Negative Inventory: 
                 </td>
                 <td style="width:550px;">
                     <asp:CheckBox ID="cbStoreNum" runat="server" Text="Yes（If checked、Stock cannot be moved if negative inventory is detected）" />
@@ -116,7 +116,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Print Logo：
+                    Print Logo: 
                 </td>
                 <td style="width:550px;">
                     <asp:CheckBox ID="cbPrintLogo" runat="server" 
@@ -125,7 +125,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Print Digital Stamp：</td>
+                    Print Digital Stamp: </td>
                 <td style="width:550px;">
                     <asp:CheckBox ID="cbPrintStamp" runat="server" 
                         Text="Yes（If checked、digital stamp will be shown on receipt）" />
@@ -139,7 +139,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Customized Field 1：
+                    Customized Field 1: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="txtFieldA" runat="server"></asp:TextBox>
@@ -147,7 +147,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Customized Field 2：
+                    Customized Field 2: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="txtFieldB" runat="server"></asp:TextBox>
@@ -155,7 +155,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Customized Field 3：
+                    Customized Field 3: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="txtFieldC" runat="server"></asp:TextBox>
@@ -163,7 +163,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Customized Field 4：
+                    Customized Field 4: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="txtFieldD" runat="server"></asp:TextBox>
@@ -176,7 +176,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Attendance Secret：
+                    Attendance Secret: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="txtSecretAttendance" runat="server"></asp:TextBox>  
@@ -184,7 +184,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Review Secret：
+                    Review Secret: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="txtSecretReview" runat="server"></asp:TextBox>  
@@ -192,7 +192,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Purchase Secret：
+                    Purchase Secret: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="txtSecretBuy" runat="server"></asp:TextBox>  
@@ -200,7 +200,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Sales Secret：
+                    Sales Secret: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="txtSecretSales" runat="server"></asp:TextBox>  
@@ -208,7 +208,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Inventory Secret：
+                    Inventory Secret: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="txtSecretStore" runat="server"></asp:TextBox>  
@@ -216,7 +216,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Fee Secret：
+                    Fee Secret: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="txtSecretFee" runat="server"></asp:TextBox>  
@@ -224,7 +224,7 @@
             </tr>
             <tr>
                 <td style="width:200px;text-align:right;">
-                    Report Secret：
+                    Report Secret: 
                 </td>
                 <td style="width:550px;">
                     <asp:TextBox ID="txtSecretReport" runat="server"></asp:TextBox>  

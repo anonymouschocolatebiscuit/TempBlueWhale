@@ -201,7 +201,7 @@
             var g = this, p = this.options;
              
             g.set(p); 
-            //事件：增加分组
+            //事件: 增加分组
                       $(g.element).bind("click", function (e)
             {
                 e.preventDefault(); 
@@ -363,7 +363,7 @@
                 g.appendEditor(rulerow, p.fields[0]);
             }
 
-            //事件：字段列表改变时
+            //事件: 字段列表改变时
             $("select.fieldsel", rulerow).bind('change', function ()
             {
                 var jopsel = $(this).parent().next().find("select:first");

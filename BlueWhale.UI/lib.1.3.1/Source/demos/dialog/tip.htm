@@ -20,13 +20,13 @@
     </style>
     <script type="text/javascript"> 
         function f_tip() {
-            $.ligerDialog.tip({  title: 'Notification',content:'记录已经删除！'+num++ });
+            $.ligerDialog.tip({  title: 'Notification',content:'记录已经删除!'+num++ });
         }
         var tip;
         var num = 0;
         function f_tip2() {
             if (!tip) {
-                tip = $.ligerDialog.tip({ title: 'Notification', content: '记录已经删除！' });
+                tip = $.ligerDialog.tip({ title: 'Notification', content: '记录已经删除!' });
             }
             else {
                 var visabled = tip.get('visible');

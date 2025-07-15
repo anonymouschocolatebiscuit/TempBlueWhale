@@ -158,7 +158,7 @@ namespace BlueWhale.UI.sales
                             num += 1;
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Sales Outbound Order Inquiry-ID：" + delId.ToString();
+                            logs.Events = "Delete Sales Outbound Order Inquiry-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -168,16 +168,16 @@ namespace BlueWhale.UI.sales
 
                 if (num > 0)
                 {
-                    Response.Write("Delete Successfully, " + num + "rows records！");
+                    Response.Write("Delete Successfully, " + num + "rows records!");
                 }
                 else
                 {
-                    Response.Write("Delete Failed！");
+                    Response.Write("Delete Failed!");
                 }
             }
             else
             {
-                Response.Write("Login timed out, please log in again!！");
+                Response.Write("Login timed out, please log in again!!");
             }
         }
 
@@ -187,7 +187,7 @@ namespace BlueWhale.UI.sales
             {
                 if (!CheckPower("SalesReceiptListCheck"))
                 {
-                    Response.Write("No permission for this operation!！");
+                    Response.Write("No permission for this operation!!");
 
                     return;
                 }
@@ -210,7 +210,7 @@ namespace BlueWhale.UI.sales
                             num += 1;
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Review Sales Outbound Order-ID：" + delId.ToString();
+                            logs.Events = "Review Sales Outbound Order-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -219,16 +219,16 @@ namespace BlueWhale.UI.sales
 
                 if (num > 0)
                 {
-                    Response.Write("Review Successfully" + num + "rows records！");
+                    Response.Write("Review Successfully" + num + "rows records!");
                 }
                 else
                 {
-                    Response.Write("Review Failed！");
+                    Response.Write("Review Failed!");
                 }
             }
             else
             {
-                Response.Write("Login timed out, please log in again!！");
+                Response.Write("Login timed out, please log in again!!");
             }
         }
 
@@ -239,7 +239,7 @@ namespace BlueWhale.UI.sales
 
                 if (!CheckPower("SalesReceiptListCheckNo"))
                 {
-                    Response.Write("No permission for this operation!！");
+                    Response.Write("No permission for this operation!!");
 
                     return;
                 }
@@ -263,7 +263,7 @@ namespace BlueWhale.UI.sales
 
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Decline Sales Outbound Order-ID：" + delId.ToString();
+                            logs.Events = "Decline Sales Outbound Order-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -273,16 +273,16 @@ namespace BlueWhale.UI.sales
 
                 if (num > 0)
                 {
-                    Response.Write("Decline" + num + "rows records！");
+                    Response.Write("Decline" + num + "rows records!");
                 }
                 else
                 {
-                    Response.Write("Failed！");
+                    Response.Write("Failed!");
                 }
             }
             else
             {
-                Response.Write("Login timed out, please log in again!！");
+                Response.Write("Login timed out, please log in again!!");
             }
         }
     }

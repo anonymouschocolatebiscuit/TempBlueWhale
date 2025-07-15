@@ -166,14 +166,14 @@ namespace BlueWhale.UI.store.ashx
             if (context.Session["userInfo"] == null)
             {
 
-                context.Response.Write("Login timed out, please log in again！");
+                context.Response.Write("Login timed out, please log in again!");
                 return;
 
             }
             BasePage basePage = new BasePage();
             if (!basePage.CheckPower("DisassembleListEdit"))
             {
-                context.Response.Write("No permission to perform this operation. Please contact the administrator！");
+                context.Response.Write("No permission to perform this operation. Please contact the administrator!");
                 return;
             }
             Users users = context.Session["userInfo"] as Users;
@@ -266,11 +266,11 @@ namespace BlueWhale.UI.store.ashx
                 {
                     LogsDAL logs = new LogsDAL();
                     logs.Users = users.Names;
-                    logs.Events = "Edit product dismantling order：" + obj.id.ToString();
+                    logs.Events = "Edit product dismantling order: " + obj.id.ToString();
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    context.Response.Write("Operation successful！");
+                    context.Response.Write("Operation successful!");
 
 
                 }

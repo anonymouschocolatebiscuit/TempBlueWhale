@@ -245,7 +245,7 @@ function addNewRow() {
 }
 
 
-//商品 改变事件：获取单位、单价等信息
+//商品 改变事件: 获取单位、单价等信息
 function f_onGoodsChanged(e) {
 
 
@@ -298,7 +298,7 @@ function f_onGoodsChanged(e) {
         for (var i = data.length - 1; i >= 0; i--) {
             if (data[i].goodsId == 0 || data[i].goodsName == "") {
                 manager.deleteRow(i);
-                // alert("Delete row："+i);
+                // alert("Delete row: "+i);
             }
 
         }
@@ -549,7 +549,7 @@ function f_onAfterEdit(e) {
         sumPriceDis = Number(e.value);
 
         if (sumPriceDis >= num * price) {
-            alert("请填写正确的折扣金额！");
+            alert("请填写正确的折扣金额!");
             return;
         }
 
@@ -557,7 +557,7 @@ function f_onAfterEdit(e) {
             dis = (1 - sumPriceDis / (num * price)) * 100;
         }
         else {
-            alert("请填写数量和单价！");
+            alert("请填写数量和单价!");
             return;
         }
 
@@ -657,7 +657,7 @@ function f_onAfterEdit(e) {
 
     if (e.column.name == "sumPriceNow") //金额改变
     {
-        //金额改变：【数量、折扣额、税率】 计算【折扣率、单价、税额、价税合计】   
+        //金额改变: 【数量、折扣额、税率】 计算【折扣率、单价、税额、价税合计】   
 
         sumPriceNow = Number(e.value);
 
@@ -727,7 +727,7 @@ function f_onAfterEdit(e) {
 
     if (e.column.name == "tax") //税率改变
     {
-        //金额改变：【数量、折扣额、税率】 计算【折扣率、单价、税额、价税合计】   
+        //金额改变: 【数量、折扣额、税率】 计算【折扣率、单价、税额、价税合计】   
 
         tax = Number(e.value);
 
@@ -773,7 +773,7 @@ function f_onAfterEdit(e) {
 
     if (e.column.name == "priceTax") //含税单价改变
     {
-        //金额改变：【数量、折扣额、税率】 计算【折扣率、单价、税额、价税合计】   
+        //金额改变: 【数量、折扣额、税率】 计算【折扣率、单价、税额、价税合计】   
 
         priceTax = Number(e.value);
 
@@ -835,7 +835,7 @@ function f_onAfterEdit(e) {
 
     if (e.column.name == "sumPriceAll") //价税合计改变
     {
-        //金额改变：【数量、折扣额、税率】 计算【折扣率、单价、税额、价税合计】   
+        //金额改变: 【数量、折扣额、税率】 计算【折扣率、单价、税额、价税合计】   
 
         sumPriceAll = Number(e.value);
 
@@ -935,7 +935,7 @@ function f_onBeforeSubmitEdit(e) {
 function deleteRow() {
 
     if (manager.rows.length == 1) {
-        $.ligerDialog.warn('至少保留一行！')
+        $.ligerDialog.warn('至少保留一行!')
 
     }
     else {
@@ -957,7 +957,7 @@ function save() {
 
 
     if (bizId == 0) {
-        $.ligerDialog.warn('请选择入库人！');
+        $.ligerDialog.warn('请选择入库人!');
 
         return;
     }
@@ -966,7 +966,7 @@ function save() {
 
     var bizDate = $("#txtBizDate").val();
     if (bizDate == "") {
-        $.ligerDialog.warn("填写入库日期！");
+        $.ligerDialog.warn("填写入库日期!");
         return;
 
     }
@@ -996,7 +996,7 @@ function save() {
 
     //2, Check if a product is selected
     if (data.length == 0) {
-        $.ligerDialog.warn('Please Select Product！');
+        $.ligerDialog.warn('Please Select Product!');
 
         return;
     }
@@ -1007,7 +1007,7 @@ function save() {
     for (var i = 0; i < data.length; i++) {
         if (data[i].num <= 0 || data[i].num == "" || data[i].num == "0" || data[i].num == "0.00") {
 
-            $.ligerDialog.warn("请输入第" + (i + 1) + "行的商品数量！");
+            $.ligerDialog.warn("请输入第" + (i + 1) + "行的商品数量!");
 
             return;
             alert("Execution skipped!");
@@ -1016,7 +1016,7 @@ function save() {
 
         if (data[i].ckId == 0 || data[i].ckId == "" || data[i].ckId == "0" || data[i].ckName == "") {
 
-            $.ligerDialog.warn("请输入第" + (i + 1) + "行的仓库！");
+            $.ligerDialog.warn("请输入第" + (i + 1) + "行的仓库!");
 
             return;
             alert("Execution skipped!");

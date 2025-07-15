@@ -141,7 +141,7 @@ namespace BlueWhale.UI.store
 
                 if (!CheckPower("OtherInListDelete"))
                 {
-                    Response.Write("No permission for this operation, please contact the administrator！");
+                    Response.Write("No permission for this operation, please contact the administrator!");
                     return;
                 }
 
@@ -164,7 +164,7 @@ namespace BlueWhale.UI.store
 
                             
                             logs.ShopId = LoginUser.ShopId;logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Other Warehouse Entry-ID：" + delId.ToString();
+                            logs.Events = "Delete Other Warehouse Entry-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -178,12 +178,12 @@ namespace BlueWhale.UI.store
                 {
 
                    
-                    Response.Write("Successfully deleted "+num+" records！");
+                    Response.Write("Successfully deleted "+num+" records!");
 
                 }
                 else
                 {
-                    Response.Write("delete failed！");
+                    Response.Write("delete failed!");
                 }
             }
             else
@@ -224,7 +224,7 @@ namespace BlueWhale.UI.store
 
 
                             logs.ShopId = LoginUser.ShopId;logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Approve Other Warehouse Entry-ID：" + delId.ToString();
+                            logs.Events = "Approve Other Warehouse Entry-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -243,7 +243,7 @@ namespace BlueWhale.UI.store
                 }
                 else
                 {
-                    Response.Write("Approval failed！");
+                    Response.Write("Approval failed!");
                 }
 
 
@@ -289,7 +289,7 @@ namespace BlueWhale.UI.store
 
 
                             logs.ShopId = LoginUser.ShopId;logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Revoke Approval Other Warehouse Entry-ID：" + delId.ToString();
+                            logs.Events = "Revoke Approval Other Warehouse Entry-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 

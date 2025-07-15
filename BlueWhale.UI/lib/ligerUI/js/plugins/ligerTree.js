@@ -524,7 +524,7 @@
                 treeitembody.removeClass("l-selected");
             g.trigger('cancelSelect', [{ data: treenodedata, target: treeitem[0] }]);
         },
-        //选择节点(参数：条件函数、Dom节点或ID值)
+        //选择节点(参数: 条件函数、Dom节点或ID值)
         selectNode: function (selectNodeParm)
         {
             var g = this, p = this.options;
@@ -1104,7 +1104,7 @@
                 {
                     if (p.autoCheckboxEven)
                     {
-                        //状态：未选中
+                        //状态: 未选中
                         if ($(obj).hasClass("l-checkbox-unchecked"))
                         {
                             $(obj).removeClass("l-checkbox-unchecked").addClass("l-checkbox-checked");
@@ -1113,7 +1113,7 @@
                                     .addClass("l-checkbox-checked");
                             g.trigger('check', [{ data: treenodedata, target: treeitem[0] }, true]);
                         }
-                            //状态：选中
+                            //状态: 选中
                         else if ($(obj).hasClass("l-checkbox-checked"))
                         {
                             $(obj).removeClass("l-checkbox-checked").addClass("l-checkbox-unchecked");
@@ -1122,7 +1122,7 @@
                                     .addClass("l-checkbox-unchecked");
                             g.trigger('check', [{ data: treenodedata, target: treeitem[0] }, false]);
                         }
-                            //状态：未完全选中
+                            //状态: 未完全选中
                         else if ($(obj).hasClass("l-checkbox-incomplete"))
                         {
                             $(obj).removeClass("l-checkbox-incomplete").addClass("l-checkbox-checked");
@@ -1135,7 +1135,7 @@
                     }
                     else
                     {
-                        //状态：未选中
+                        //状态: 未选中
                         if ($(obj).hasClass("l-checkbox-unchecked"))
                         {
                             $(obj).removeClass("l-checkbox-unchecked").addClass("l-checkbox-checked");
@@ -1146,7 +1146,7 @@
                             }
                             g.trigger('check', [{ data: treenodedata, target: treeitem[0] }, true]);
                         }
-                            //状态：选中
+                            //状态: 选中
                         else if ($(obj).hasClass("l-checkbox-checked"))
                         {
                             $(obj).removeClass("l-checkbox-checked").addClass("l-checkbox-unchecked");
@@ -1154,7 +1154,7 @@
                         }
                     }
                 }
-                    //状态：已经张开
+                    //状态: 已经张开
                 else if (treeitembtn.hasClass("l-expandable-open") && (!p.btnClickToToggleOnly || clickOnTreeItemBtn))
                 {
                     if (g.trigger('beforeCollapse', [{ data: treenodedata, target: treeitem[0] }]) == false)
@@ -1169,7 +1169,7 @@
                             .addClass(g._getParentNodeClassName());
                     g.trigger('collapse', [{ data: treenodedata, target: treeitem[0] }]);
                 }
-                    //状态：没有张开
+                    //状态: 没有张开
                 else if (treeitembtn.hasClass("l-expandable-close") && (!p.btnClickToToggleOnly || clickOnTreeItemBtn))
                 {
                     if (g.trigger('beforeExpand', [{ data: treenodedata, target: treeitem[0] }]) == false)

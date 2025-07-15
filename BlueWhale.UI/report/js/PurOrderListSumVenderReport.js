@@ -14,14 +14,14 @@ $(function () {
     manager = $("#maingrid").ligerGrid({
         columns: [
             {
-                display: 'Vender', name: 'wlName', width: 170, align: 'left',
+                display: 'Supplier', name: 'wlName', width: 170, align: 'left',
 
                 totalSummary:
                 {
                     type: 'count',
                     render: function (e) {  // Summary renderer, returns HTML to be loaded into the cell
                         // e Summary Object (including sum, max, min, avg, count)
-                        return 'Total：';
+                        return 'Total: ';
                     }
                 }
             },

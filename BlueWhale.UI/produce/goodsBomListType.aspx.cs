@@ -103,21 +103,21 @@ namespace BlueWhale.UI.produce
 
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Deleted BOM Group-ID：" + id.ToString();
+                    logs.Events = "Deleted BOM Group-ID: " + id.ToString();
                     logs.Ip = Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    Response.Write("Delete successfully！");
+                    Response.Write("Delete successfully!");
 
                 }
                 else
                 {
-                    Response.Write("Delete failed！");
+                    Response.Write("Delete failed!");
                 }
             }
             else
             {
-                Response.Write("Session timeout, please log in again！");
+                Response.Write("Session timeout, please log in again!");
             }
 
         }

@@ -256,7 +256,7 @@ namespace BlueWhale.UI.store.ashx
                 {
                     LogsDAL logs = new LogsDAL();
                     logs.Users = users.Names;
-                    logs.Events = "Add new product disassemble order：" + dal.Number;
+                    logs.Events = "Add new product disassemble order: " + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 

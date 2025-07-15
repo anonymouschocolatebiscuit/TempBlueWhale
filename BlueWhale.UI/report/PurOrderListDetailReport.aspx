@@ -138,7 +138,7 @@
            <tr>
            <td style="text-align:right; width:130px;">
             
-               Purchase Date： 
+               Purchase Date:  
             
             
             </td>
@@ -168,7 +168,7 @@
            <td style="text-align:right; width:60px;">
             
             
-             Vender：</td>
+             Supplier: </td>
             <td style="text-align:left; width:120px;">
             
            <input type="text" id="txtVenderList"/> 
@@ -177,7 +177,7 @@
            </td>
            <td style="text-align:right;width:70px;">
            
-           Product：
+           Product: 
        
            
             
@@ -189,7 +189,7 @@
            </td>
            <td style="text-align:right;width:80px;">
            
-           Warehouse：
+           Warehouse: 
            </td>
            <td style="text-align:left;width:80px;">
            

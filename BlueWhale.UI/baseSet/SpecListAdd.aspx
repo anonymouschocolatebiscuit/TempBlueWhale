@@ -127,7 +127,7 @@
     <form id="form1" runat="server">
     <table id="form" border="0" cellpadding="0" cellspacing="10" style="width:380px; line-height:40px;">
     <tr>
-    <td style="width:80px; text-align:right;">Name：</td>
+    <td style="width:80px; text-align:right;">Name: </td>
     <td>
         <asp:TextBox ID="txtNames" runat="server"></asp:TextBox>
     </td>

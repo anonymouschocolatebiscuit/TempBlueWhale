@@ -145,7 +145,7 @@ namespace BlueWhale.UI.produce
 
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Production-ID：" + delId.ToString();
+                            logs.Events = "Delete Production-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -159,12 +159,12 @@ namespace BlueWhale.UI.produce
                 {
 
 
-                    Response.Write("Delete successfully" + num + "of records！");
+                    Response.Write("Delete successfully" + num + "of records!");
 
                 }
                 else
                 {
-                    Response.Write("Delete failed！");
+                    Response.Write("Delete failed!");
                 }
             }
             else
@@ -198,7 +198,7 @@ namespace BlueWhale.UI.produce
 
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Check Production Warehour Entry-ID：" + delId.ToString();
+                            logs.Events = "Check Production Warehour Entry-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -212,12 +212,12 @@ namespace BlueWhale.UI.produce
                 {
 
 
-                    Response.Write("Check successfully" + num + " records！");
+                    Response.Write("Check successfully" + num + " records!");
 
                 }
                 else
                 {
-                    Response.Write("Check failed！");
+                    Response.Write("Check failed!");
                 }
 
 
@@ -255,7 +255,7 @@ namespace BlueWhale.UI.produce
 
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Fail Check Production Warehour Entry-ID：" + delId.ToString();
+                            logs.Events = "Fail Check Production Warehour Entry-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -269,12 +269,12 @@ namespace BlueWhale.UI.produce
                 {
 
 
-                    Response.Write("Fail check successfully" + num + "records！");
+                    Response.Write("Fail check successfully" + num + "records!");
 
                 }
                 else
                 {
-                    Response.Write("Fail check failed！");
+                    Response.Write("Fail check failed!");
                 }
 
 

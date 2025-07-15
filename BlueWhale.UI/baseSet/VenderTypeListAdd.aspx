@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Vender Category</title>
+    <title>Supplier Category</title>
 
     <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
@@ -32,14 +32,14 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="10" style="width:380px; line-height:40px;">
             <tr>
-                <td style="width:160px; text-align:right;">Category Name：</td>
+                <td style="width:160px; text-align:right;">Category Name: </td>
                 <td>
                     <asp:TextBox ID="txtNames" runat="server"></asp:TextBox>
                 </td>
             </tr>
 
             <tr>
-                <td style="width:160px; text-align:right;">Display Order：</td>
+                <td style="width:160px; text-align:right;">Display Order: </td>
                 <td>
                     <asp:TextBox ID="txtFlag" runat="server" ltype='spinner' ligerui="{type:'int'}" value="0"></asp:TextBox>
                 </td>

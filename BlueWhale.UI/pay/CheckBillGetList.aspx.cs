@@ -125,7 +125,7 @@ namespace BlueWhale.UI.pay
 
                 if (!CheckPower("CheckBillGetListDelete"))
                 {
-                    Response.Write("无此操作权限，请联系管理员！");
+                    Response.Write("无此操作权限，请联系管理员!");
                     return;
                 }
 
@@ -148,7 +148,7 @@ namespace BlueWhale.UI.pay
 
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "删除销售收款-ID：" + delId.ToString();
+                            logs.Events = "删除销售收款-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -162,17 +162,17 @@ namespace BlueWhale.UI.pay
                 {
 
 
-                    Response.Write("成功删除" + num + "条记录！");
+                    Response.Write("成功删除" + num + "条记录!");
 
                 }
                 else
                 {
-                    Response.Write("删除失败！");
+                    Response.Write("删除失败!");
                 }
             }
             else
             {
-                Response.Write("登录超时，请重新登陆！");
+                Response.Write("登录超时，请重新登陆!");
             }
 
         }
@@ -184,7 +184,7 @@ namespace BlueWhale.UI.pay
 
                 if (!CheckPower("CheckBillGetListCheck"))
                 {
-                    Response.Write("无此操作权限！");
+                    Response.Write("无此操作权限!");
 
                     return;
                 }
@@ -208,7 +208,7 @@ namespace BlueWhale.UI.pay
 
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "审核销售收款-ID：" + delId.ToString();
+                            logs.Events = "审核销售收款-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -222,12 +222,12 @@ namespace BlueWhale.UI.pay
                 {
 
 
-                    Response.Write("成功审核" + num + "条记录！");
+                    Response.Write("成功审核" + num + "条记录!");
 
                 }
                 else
                 {
-                    Response.Write("审核失败！");
+                    Response.Write("审核失败!");
                 }
 
 
@@ -236,7 +236,7 @@ namespace BlueWhale.UI.pay
             }
             else
             {
-                Response.Write("登录超时，请重新登陆！");
+                Response.Write("登录超时，请重新登陆!");
             }
 
         }
@@ -249,7 +249,7 @@ namespace BlueWhale.UI.pay
 
                 if (!CheckPower("CheckBillGetListCheckNo"))
                 {
-                    Response.Write("无此操作权限！");
+                    Response.Write("无此操作权限!");
 
                     return;
                 }
@@ -273,7 +273,7 @@ namespace BlueWhale.UI.pay
 
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "反审核销售收款-ID：" + delId.ToString();
+                            logs.Events = "反审核销售收款-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -287,12 +287,12 @@ namespace BlueWhale.UI.pay
                 {
 
 
-                    Response.Write("成功反审核" + num + "条记录！");
+                    Response.Write("成功反审核" + num + "条记录!");
 
                 }
                 else
                 {
-                    Response.Write("反审核失败！");
+                    Response.Write("反审核失败!");
                 }
 
 
@@ -301,7 +301,7 @@ namespace BlueWhale.UI.pay
             }
             else
             {
-                Response.Write("登录超时，请重新登陆！");
+                Response.Write("登录超时，请重新登陆!");
             }
 
 

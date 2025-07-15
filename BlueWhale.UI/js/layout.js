@@ -2,7 +2,7 @@
 /*====================================
  *基于JQuery 1.9.0主框架
  *MxWeiXinPF管理界面
- *作者：一些事情
+ *作者: 一些事情
 ====================================*/
 //绑定需要浮动的表头
 $(function(){
@@ -158,7 +158,7 @@ function ShowMaxDialog(tit, url) {
 //执行回传函数
 function ExePostBack(objId, objmsg) {
     if ($(".checkall input:checked").size() < 1) {
-        $.dialog.alert('对不起，请选中您要操作的记录！');
+        $.dialog.alert('对不起，请选中您要操作的记录!');
         return false;
     }
     var msg = "删除记录后不可恢复，您确定吗？";
@@ -172,7 +172,7 @@ function ExePostBack(objId, objmsg) {
 }
 //检查是否有选中再决定回传
 function CheckPostBack(objId, objmsg) {
-    var msg = "对不起，请选中您要操作的记录！";
+    var msg = "对不起，请选中您要操作的记录!";
     if (arguments.length == 2) {
         msg = objmsg;
     }
@@ -203,12 +203,12 @@ $.fn.initValidform = function () {
     var checkValidform = function (formObj) {
         $(formObj).Validform({
             tiptype: function (msg, o, cssctl) {
-                /*msg：提示信息;
+                /*msg: 提示信息;
                 o:{obj:*,type:*,curform:*}
                 obj指向的是当前验证的表单元素（或表单对象）；
-                type指示提示的状态，值为1、2、3、4， 1：正在检测/提交数据，2：通过验证，3：验证失败，4：提示ignore状态；
+                type指示提示的状态，值为1、2、3、4， 1: 正在检测/提交数据，2: 通过验证，3: 验证失败，4: 提示ignore状态；
                 curform为当前form对象;
-                cssctl:内置的提示信息样式控制函数，该函数需传入两个参数：显示提示信息的对象 和 当前提示的状态（既形参o中的type）；*/
+                cssctl:内置的提示信息样式控制函数，该函数需传入两个参数: 显示提示信息的对象 和 当前提示的状态（既形参o中的type）；*/
                 //全部验证通过提交表单时o.obj为该表单对象;
                 if (!o.obj.is("form")) {
                     //定位到相应的Tab页面

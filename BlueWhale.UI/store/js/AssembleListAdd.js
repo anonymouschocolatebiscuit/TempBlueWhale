@@ -266,7 +266,7 @@ function selectCangku() {
 
 
 
-//商品 改变事件：获取UnitName、单价等信息
+//商品 改变事件: 获取UnitName、单价等信息
 function f_onGoodsChanged(e) {
 
 
@@ -298,7 +298,7 @@ function f_onGoodsChanged(e) {
     });
 }
 
-//商品 改变事件：获取UnitName、单价等信息
+//商品 改变事件: 获取UnitName、单价等信息
 function f_onGoodsChangedSub(e) {
     if (!e || !e.length) return;
 
@@ -334,7 +334,7 @@ function f_onGoodsChangedSub(e) {
         for (var i = data.length - 1; i >= 0; i--) {
             if (data[i].goodsId == 0 || data[i].goodsName == "") {
                 managersub.deleteRow(i);
-                // alert("Delete row："+i);
+                // alert("Delete row: "+i);
             }
 
         }
@@ -412,7 +412,7 @@ function f_onAfterEdit(e) {
 
     if (e.column.name == "price") //单价改变---开始、计算TotalPrice、折扣额、税额、价税合计
     {
-        //单价改变：【数量、折扣率、税率】 计算【折扣额、TotalPrice、税额、价税合计】; 
+        //单价改变: 【数量、折扣率、税率】 计算【折扣额、TotalPrice、税额、价税合计】; 
         price = Number(e.value);
 
 
@@ -435,7 +435,7 @@ function f_onAfterEdit(e) {
 
     if (e.column.name == "sumPrice") //TotalPrice改变
     {
-        //TotalPrice改变：【数量、折扣额、税率】 计算【折扣率、单价、税额、价税合计】   
+        //TotalPrice改变: 【数量、折扣额、税率】 计算【折扣率、单价、税额、价税合计】   
 
         sumPrice = Number(e.value);
 
@@ -476,7 +476,7 @@ function f_onAfterEditSub(e) {
 
     if (e.column.name == "num") //数量改变---开始
     {
-        //数量改变：【折扣率、税率】 计算【折扣额、TotalPrice、税额、价税合计】
+        //数量改变: 【折扣率、税率】 计算【折扣额、TotalPrice、税额、价税合计】
         num = Number(e.value);
 
         //2、TotalPrice=数量*单价-折扣额
@@ -633,7 +633,7 @@ function save() {
     for (var i = 0; i < data.length; i++) {
         if (data[i].num <= 0 || data[i].num == "" || data[i].num == "0" || data[i].num == "0.00") {
 
-            $.ligerDialog.warn("Please enter the quantity of assembled products in row" + (i + 1) + "！");
+            $.ligerDialog.warn("Please enter the quantity of assembled products in row" + (i + 1) + "!");
 
             return;
             alert("Execution skipped!");

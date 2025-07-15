@@ -125,7 +125,7 @@
     
     <table id="form" border="0" cellpadding="0" cellspacing="10" style="width:380px; line-height:40px;">
     <tr>
-    <td style="width:80px; text-align:right;">名称：</td>
+    <td style="width:80px; text-align:right;">名称: </td>
     <td>
     
     
@@ -141,7 +141,7 @@
     
     
     <tr>
-    <td style="width:80px; text-align:right;">类别：</td>
+    <td style="width:80px; text-align:right;">类别: </td>
     <td>
     
     

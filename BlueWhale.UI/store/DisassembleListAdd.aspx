@@ -43,11 +43,11 @@
 
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td class="tdLbl">Disassemble Date：</td>
+                <td class="tdLbl">Disassemble Date: </td>
                 <td class="tdTxt">
                     <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td class="tdLbl">Disambled：</td>
+                <td class="tdLbl">Disambled: </td>
                 <td class="tdTxt">
                     <asp:TextBox ID="txtFee" runat="server" Text="0"></asp:TextBox>
                 </td>
@@ -82,7 +82,7 @@
 
         <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 50px;">
             <tr>
-                <td style="width: 80px; text-align: right;">Remarks：</td>
+                <td style="width: 80px; text-align: right;">Remarks: </td>
                 <td style="text-align: left;">
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>

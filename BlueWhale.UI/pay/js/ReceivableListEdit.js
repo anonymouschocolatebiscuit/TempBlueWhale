@@ -117,7 +117,7 @@
                         render: function (e) 
                         {  // Summary renderer, returns HTML to be loaded into the cell
                            // Summary Object (including sum, max, min, avg, count)
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
 
@@ -195,8 +195,8 @@
               return;
            }
            
-//           alert("sumPrice："+sumPrice);
-//           alert("sumPayPrice："+sumPayPrice);
+//           alert("sumPrice: "+sumPrice);
+//           alert("sumPayPrice: "+sumPayPrice);
 //          
            var disPrice=$("#txtDisPrice").val();//Total order discount
            
@@ -251,7 +251,7 @@
                         render: function (e) 
                         {  // Summary renderer, returns HTML to be loaded into the cell
                            // Summary Object (including sum, max, min, avg, count)
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                 

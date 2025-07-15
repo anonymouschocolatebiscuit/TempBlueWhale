@@ -118,7 +118,7 @@
            <tr>
            <td style="text-align:right; width:50px;">
             
-            Keyword： 
+            Keyword:  
             
             
             </td>
@@ -127,7 +127,7 @@
             </td>
            <td style="text-align:right; width:70px;">
             
-               Start Date：
+               Start Date: 
             
               </td>
            <td style="text-align:left; width:150px;">
@@ -136,7 +136,7 @@
            </td>
            <td style="text-align:right; width:70px;">
             
-               End Date：
+               End Date: 
            
            </td>
             <td style="text-align:left; width:150px;">

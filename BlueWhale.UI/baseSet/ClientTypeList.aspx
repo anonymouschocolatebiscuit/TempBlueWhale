@@ -56,7 +56,7 @@
         function editRow() {
             var row = manager.getSelectedRow();
             if (!row) {
-                $.ligerDialog.warn('Please select the row to edit！');
+                $.ligerDialog.warn('Please select the row to edit!');
                 return;
             }
             $.ligerDialog.open({

@@ -192,7 +192,7 @@ $(function () {
                         type: 'count',
                         render: function (e) {  //Summary renderer, returns HTML loaded into the cell
                             //e Summary Object (including sum, max, min, avg, count)
-                            return 'Total£º';
+                            return 'Total: ';
                         }
                     }
                 },

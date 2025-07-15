@@ -126,7 +126,7 @@ namespace BlueWhale.UI.store
 
                 if (!CheckPower("OtherOutListDelete"))
                 {
-                    Response.Write("You do not have this permission, please contact the administrator！");
+                    Response.Write("You do not have this permission, please contact the administrator!");
                     return;
                 }
 
@@ -147,7 +147,7 @@ namespace BlueWhale.UI.store
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete other out-ID：" + delId.ToString();
+                            logs.Events = "Delete other out-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -161,17 +161,17 @@ namespace BlueWhale.UI.store
                 {
 
 
-                    Response.Write("Delete successfully"+num+"rows records！");
+                    Response.Write("Delete successfully"+num+"rows records!");
 
                 }
                 else
                 {
-                    Response.Write("Delete Failed！");
+                    Response.Write("Delete Failed!");
                 }
             }
             else
             {
-                Response.Write("Login timed out, please log in again！");
+                Response.Write("Login timed out, please log in again!");
             }
 
         }
@@ -207,7 +207,7 @@ namespace BlueWhale.UI.store
 
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Review other out-ID：" + delId.ToString();
+                            logs.Events = "Review other out-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -221,12 +221,12 @@ namespace BlueWhale.UI.store
                 {
 
 
-                    Response.Write("Review Successfully" + num + "rows records！");
+                    Response.Write("Review Successfully" + num + "rows records!");
 
                 }
                 else
                 {
-                    Response.Write("Review failed!！");
+                    Response.Write("Review failed!!");
                 }
 
 
@@ -272,7 +272,7 @@ namespace BlueWhale.UI.store
 
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel review other out list-ID：" + delId.ToString();
+                            logs.Events = "Cancel review other out list-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -286,12 +286,12 @@ namespace BlueWhale.UI.store
                 {
 
 
-                    Response.Write("Successfully canceled review" + num + "rows records！");
+                    Response.Write("Successfully canceled review" + num + "rows records!");
 
                 }
                 else
                 {
-                    Response.Write("Cancel review failed！");
+                    Response.Write("Cancel review failed!");
                 }
 
 

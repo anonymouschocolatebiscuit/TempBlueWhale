@@ -120,7 +120,7 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px; white-space:nowrap; ">
             <tr>
-                <td style="text-align: right; width: 100px;">Purchase Date：</td>
+                <td style="text-align: right; width: 100px;">Purchase Date: </td>
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
@@ -128,15 +128,15 @@
                 <td style="text-align: left; width: 120px; padding-right:10px;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 60px;">Vender：</td>
+                <td style="text-align: right; width: 60px;">Supplier: </td>
                 <td style="text-align: left; width: 120px; padding-right:10px;">
                     <input type="text" id="txtVenderList" />
                 </td>
-                <td style="text-align: right; width: 50px;">Product：</td>
+                <td style="text-align: right; width: 50px;">Product: </td>
                 <td style="text-align: left; width: 100px; padding-right:10px;">
                     <input type="text" id="txtGoodsList" />
                 </td>
-                <td style="text-align: right; width: 60px;">Warehouse：</td>
+                <td style="text-align: right; width: 60px;">Warehouse: </td>
                 <td style="text-align: left; width: 80px;">
                     <input type="text" id="txtFlagList" />
                 </td>

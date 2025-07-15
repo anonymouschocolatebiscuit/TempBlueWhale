@@ -30,7 +30,7 @@ layui.define(['layer', 'laypage', 'laytpl'], function (exports) {
             fail: function (msg) { layer.msg(msg, { icon: 2 }); }, //type:function
             complate: undefined, //type:function
             serverError: function (xhr, status, error) { //ajax的服务错误
-                throwError("错误提示： " + xhr.status + " " + xhr.statusText);
+                throwError("错误提示:  " + xhr.status + " " + xhr.statusText);
             }
         };
     };
@@ -128,7 +128,7 @@ layui.define(['layer', 'laypage', 'laytpl'], function (exports) {
                     });
                     if (_config.paged) {
                         if (result.count === null || result.count === 0) {
-                            throwError('Paging Error:请返回数据总数！');
+                            throwError('Paging Error:请返回数据总数!');
                             return;
                         }
                         var _pageConfig = _config.pageConfig;

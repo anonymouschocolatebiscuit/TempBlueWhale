@@ -19,7 +19,7 @@ $(function () {
                 {
                     type: 'count',
                     render: function (e) {
-                        return 'Total：';
+                        return 'Total: ';
                     }
                 }
             },
@@ -100,7 +100,7 @@ function search() {
 
     }
     if (typeId == "") {
-        $.ligerDialog.warn('Please select a vendor！');
+        $.ligerDialog.warn('Please select a vendor!');
         return;
     }
     manager._setUrl("StatementVender.aspx?Action=GetDataList&start=" + start + "&end=" + end + "&typeId=" + typeId);

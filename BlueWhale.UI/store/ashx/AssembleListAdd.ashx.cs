@@ -154,7 +154,7 @@ namespace BlueWhale.UI.store.ashx
             BasePage basePage = new BasePage();
             if (!basePage.CheckPower("AssembleListAdd"))
             {
-                context.Response.Write("You do not have this permission, please contact the administrator！");
+                context.Response.Write("You do not have this permission, please contact the administrator!");
                 return;
             }
             Users users = context.Session["userInfo"] as Users;
@@ -215,10 +215,10 @@ namespace BlueWhale.UI.store.ashx
                 {
                     LogsDAL logs = new LogsDAL();
                     logs.Users = users.Names;
-                    logs.Events = "Add New Assemble Goods：" + dal.Number;
+                    logs.Events = "Add New Assemble Goods: " + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
-                    context.Response.Write("Execution successful！");
+                    context.Response.Write("Execution successful!");
                 }
             }
             #endregion

@@ -413,7 +413,7 @@
 
 			<siteMapNode id="741"  title="Account Flow Report" url="AccountFlowReport"  parentId="74"  seq="2" />
 
-			<siteMapNode id="742"  title="Vendor Need Pay Report" url="VenderNeedPayReport"  parentId="74"  seq="3" />
+			<siteMapNode id="742"  title="Supplier Need Pay Report" url="VenderNeedPayReport"  parentId="74"  seq="3" />
 
 			<siteMapNode id="743"  title="Client Need Pay Report" url="ClientNeedPayReport"  parentId="74"  seq="4" />
 
@@ -449,7 +449,7 @@
 
 		</siteMapNode>
 
-		<siteMapNode id="82"  title="Vender Management" url="Vender" parentId="8"  seq="1">
+		<siteMapNode id="82"  title="Supplier Management" url="Vender" parentId="8"  seq="1">
 
 			<siteMapNode id="821"  title="Search" url="VenderList"  parentId="82"  seq="2" />
 
@@ -529,7 +529,7 @@
 
 		</siteMapNode>
 
-		<siteMapNode id="92"  title="Vender Category" url="VenderType" parentId="9"  seq="1">
+		<siteMapNode id="92"  title="Supplier Category" url="VenderType" parentId="9"  seq="1">
 
 			<siteMapNode id="921"  title="Search" url="VenderTypeList"  parentId="92"  seq="2" />
 

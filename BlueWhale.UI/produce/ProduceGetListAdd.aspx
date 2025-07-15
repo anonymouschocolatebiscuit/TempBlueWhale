@@ -33,7 +33,7 @@
  <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
            <tr>
            <td style="width:80px; text-align:center;">
-               计划编号：</td>
+               计划编号: </td>
            <td style="text-align:left; width:250px;">
            
                  <asp:TextBox ID="txtOrderNumber" runat="server"></asp:TextBox>
@@ -55,7 +55,7 @@
            </tr>
            <tr>
            <td style="width:80px; text-align:center;">
-               商品名称：</td>
+               商品名称: </td>
            <td style="text-align:left; width:250px;">
             
             <asp:TextBox ID="txtGoodsName" runat="server"></asp:TextBox>
@@ -64,14 +64,14 @@
            
            </td>
            <td style="text-align:right; width:80px;">
-                      商品规格：</td>
+                      商品规格: </td>
            <td style="text-align:left; width:180px;">
            
                <asp:TextBox ID="txtSpec" runat="server"></asp:TextBox>                                      
            
            </td>
            <td style="text-align:right; width:80px;">
-                                                  单位：</td>
+                                                  单位: </td>
            <td style="text-align:left;">
            
                <asp:TextBox ID="txtUnitName" runat="server"></asp:TextBox>    
@@ -80,14 +80,14 @@
            </tr>
            <tr>
            <td style="width:80px; text-align:center;">
-               投入产量：</td>
+               投入产量: </td>
            <td style="text-align:left; width:250px;">
            
                <asp:TextBox ID="txtNum" runat="server"></asp:TextBox>    
                
            </td>
            <td style="text-align:right; width:80px;">
-                                                  领料人：</td>
+                                                  领料人: </td>
            <td style="text-align:left; width:180px;">
             
                                                   <asp:DropDownList ID="ddlYWYList" runat="server">
@@ -96,7 +96,7 @@
              
                    </td>
            <td style="text-align:right; width:80px;">
-                                                  领料日期：</td>
+                                                  领料日期: </td>
            <td style="text-align:left;">
 
                <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
@@ -114,7 +114,7 @@
  <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:50px;">
            <tr>
            <td style="width:80px; text-align:right;">
-               备注信息：</td>
+               备注信息: </td>
            <td style="text-align:left; ">
             
                <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>

@@ -55,7 +55,7 @@
            <tr>
            <td style="text-align:right; width:50px;">
             
-            Keyword： 
+            Keyword:  
             
             
             </td>
@@ -63,7 +63,7 @@
             
              
             
-               <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter Receipt Number/Vender/Remarks"></asp:TextBox>
+               <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter Receipt Number/Supplier/Remarks"></asp:TextBox>
             
              
             
@@ -74,7 +74,7 @@
             </td>
            <td style="text-align:right; width:70px;">
             
-               Start Date：
+               Start Date: 
             
               </td>
            <td style="text-align:left; width:180px;">
@@ -86,7 +86,7 @@
            <td style="text-align:right; width:70px;">
             
             
-               End Date：
+               End Date: 
              
              
             

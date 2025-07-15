@@ -104,7 +104,7 @@ function search() {
 
     }
     if (typeId == "") {
-        $.ligerDialog.warn('Please select customer！');
+        $.ligerDialog.warn('Please select customer!');
         return;
     }
 

@@ -27,7 +27,7 @@ $(function () {
                 {
                     type: 'count',
                     render: function () {
-                        return 'Total：';
+                        return 'Total: ';
                     }
                 }
             },

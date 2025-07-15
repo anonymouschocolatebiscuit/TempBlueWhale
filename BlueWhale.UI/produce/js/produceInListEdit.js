@@ -84,7 +84,7 @@ $(function () {
                     {
                         type: 'count',
                         render: function (e) { 
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                 },
@@ -394,7 +394,7 @@ function f_onAfterEdit(e) {
         sumPriceDis = Number(e.value);
 
         if (sumPriceDis >= num * price) {
-            alert("Please fill in the correct discount amount！");
+            alert("Please fill in the correct discount amount!");
             return;
         }
 
@@ -402,7 +402,7 @@ function f_onAfterEdit(e) {
             dis = (1 - sumPriceDis / (num * price)) * 100;
         }
         else {
-            alert("Please fill in the quantity and unit price！");
+            alert("Please fill in the quantity and unit price!");
             return;
         }
 
@@ -644,14 +644,14 @@ function save() {
     var bizId = $("#ddlYWYList").val();
 
     if (bizId == 0) {
-        $.ligerDialog.warn('Please select stock-in operator！');
+        $.ligerDialog.warn('Please select stock-in operator!');
 
         return;
     }
 
     var bizDate = $("#txtBizDate").val();
     if (bizDate == "") {
-        $.ligerDialog.warn("Plaese fill in stock-in date！");
+        $.ligerDialog.warn("Plaese fill in stock-in date!");
         return;
 
     }
@@ -667,7 +667,7 @@ function save() {
     }
 
     if (data.length == 0) {
-        $.ligerDialog.warn('Please select goods！');
+        $.ligerDialog.warn('Please select goods!');
 
         return;
         alert("Execution skipped");
@@ -722,9 +722,9 @@ function save() {
         data: JSON.stringify(postData),
         success: function (jsonResult) {
 
-            if (jsonResult == "Execution successful！") {
+            if (jsonResult == "Execution successful!") {
 
-                $.ligerDialog.waitting('Execution successful！'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
+                $.ligerDialog.waitting('Execution successful!'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
 
             }
             else {

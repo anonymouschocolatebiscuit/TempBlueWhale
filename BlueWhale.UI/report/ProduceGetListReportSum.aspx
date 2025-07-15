@@ -16,7 +16,7 @@
     <script type="text/javascript">
         function f_selectClient() {
             $.ligerDialog.open({
-                title: 'Vendor', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
+                title: 'Supplier', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
                     { text: 'Confirm', onclick: f_selectClientOK },
                     { text: 'Close', onclick: f_selectClientCancel }
                 ]
@@ -105,7 +105,7 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="text-align: right; width: 70px;">Obtain Date：</td>
+                <td style="text-align: right; width: 70px;">Obtain Date: </td>
 
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
@@ -117,13 +117,13 @@
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
 
-                <td style="text-align: right; width: 50px;">商品：</td>
+                <td style="text-align: right; width: 50px;">商品: </td>
 
                 <td style="text-align: left; width: 180px;">
                     <input type="text" id="txtGoodsList" />
                 </td>
 
-                <td style="text-align: right; width: 60px;">仓库：</td>
+                <td style="text-align: right; width: 60px;">仓库: </td>
 
                 <td style="text-align: left; width: 80px;">
                     <input type="text" id="txtFlagList" />

@@ -20,13 +20,13 @@
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:100%; line-height:40px;">
            <tr>
                <td style="text-align:right; width:60px;">
-                   Keyword：
+                   Keyword: 
                </td>
                <td style="text-align:left; width:140px;">
                    <asp:TextBox ID="txtKeys" runat="server" placeholder="Please Enter Receipt No./Item/Remarks"></asp:TextBox>
                 </td>
                <td style="text-align:right; width:50px;">
-                   Date：
+                   Date: 
                   </td>
                <td style="text-align:left; width:110px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
@@ -38,13 +38,13 @@
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox> 
                 </td>
                <td style="text-align:center; width:140px;">
-                Source Warehouse：
+                Source Warehouse: 
                 </td>
                <td style="text-align:center; width:100px;">
                  <input type="text" id="txtInventoryOut"/> 
                 </td>
                <td style="text-align:center; width:160px;">
-                Destination Warehouse：
+                Destination Warehouse: 
                  </td>
                 <td style="text-align:left; width:100px;">
                     <input type="text" id="txtInventoryIn"/> 

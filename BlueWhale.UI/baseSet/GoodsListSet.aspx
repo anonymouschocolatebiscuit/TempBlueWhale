@@ -273,7 +273,7 @@
            <tr>
            <td style="text-align:right; width:70px;">
             
-               Good Type：
+               Good Type: 
                        
             
             </td>
@@ -283,7 +283,7 @@
             <input type="text" id="txtTypeList"/></td>
            <td style="text-align:right;width:80px;">
            
-               Keyword：</td>
+               Keyword: </td>
            <td style="text-align:left; width:200px;">
            
                <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter good code/name"></asp:TextBox>

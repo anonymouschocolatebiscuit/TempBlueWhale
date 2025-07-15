@@ -74,20 +74,20 @@ function fileQueueError(file, errorCode, message) {
     try {
         switch (errorCode) {
             case SWFUpload.errorCode_QUEUE_LIMIT_EXCEEDED:
-                alert("你选择的文件太多！");
+                alert("你选择的文件太多!");
                 break;
             case SWFUpload.QUEUE_ERROR.ZERO_BYTE_FILE:
-                alert(file.name + "文件太小！");
+                alert(file.name + "文件太小!");
                 break;
             case SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT:
-                alert(file.name + "文件太大！");
+                alert(file.name + "文件太大!");
                 break;
             case SWFUpload.QUEUE_ERROR.INVALID_FILETYPE:
-                alert(file.name + "文件类型出错！");
+                alert(file.name + "文件类型出错!");
                 break;
             default:
                 if (file !== null) {
-                    alert("出现未知错误！");
+                    alert("出现未知错误!");
                 }
                 break;
         }
@@ -132,7 +132,7 @@ function uploadError(file, errorCode, message) {
             case SWFUpload.UPLOAD_ERROR.FILE_CANCELLED:
                 try {
                     var progressObj = $(this.customSettings.upload_target).children(".upload-progress");
-                    progressObj.children(".txt").html("上传被取消：Cancelled");
+                    progressObj.children(".txt").html("上传被取消: Cancelled");
                 }
                 catch (ex1) {
                     this.debug(ex1);
@@ -141,7 +141,7 @@ function uploadError(file, errorCode, message) {
             case SWFUpload.UPLOAD_ERROR.UPLOAD_STOPPED:
                 try {
                     var progressObj = $(this.customSettings.upload_target).children(".upload-progress");
-                    progressObj.children(".txt").html("上传被停止：Stopped");
+                    progressObj.children(".txt").html("上传被停止: Stopped");
                 }
                 catch (ex2) {
                     this.debug(ex2);
@@ -150,7 +150,7 @@ function uploadError(file, errorCode, message) {
                 alert(message + "SWFUpload.UPLOAD_ERROR.UPLOAD_LIMIT_EXCEEDED");
                 break;
             default:
-                alert(message + "未知！");
+                alert(message + "未知!");
                 break;
         }
     } catch (ex3) {
@@ -175,7 +175,7 @@ function uploadSuccess(file, serverData) {
                 addImage($(this.customSettings.upload_target), jsonstr.path, jsonstr.thumb);
             }
             var progressObj = $(this.customSettings.upload_target).children(".upload-progress");
-            progressObj.children(".txt").html("上传成功：" + file.name);
+            progressObj.children(".txt").html("上传成功: " + file.name);
         }
     } catch (ex) {
         this.debug(ex);

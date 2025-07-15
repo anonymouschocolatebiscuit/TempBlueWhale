@@ -57,21 +57,21 @@
         <table id="form" style="height:250px;">
             <tr>
                 <td style="text-align:right; white-space: nowrap;">
-                    Account Number：</td>
+                    Account Number: </td>
                 <td style="width:300px;">
                     <asp:TextBox ID="txtCode" runat="server" validate="{required:true}"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td style="text-align:right; white-space: nowrap;">
-                    Account Name：</td>
+                    Account Name: </td>
                 <td>
                     <asp:TextBox ID="txtNames" runat="server" validate="{required:true}"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td style="text-align:right; white-space: nowrap;">
-                    Balance Date：</td>
+                    Balance Date: </td>
                 <td>
                     <asp:TextBox data-name="addDate" ID="txtYueDate" runat="server" ltype="date"
                         validate="{required:true}"></asp:TextBox>
@@ -79,14 +79,14 @@
             </tr>
             <tr>
                 <td style="text-align:right; white-space: nowrap;">
-                    Account Balance：</td>
+                    Account Balance: </td>
                 <td>
                     <asp:TextBox ID="txtYuePrice" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td style="text-align:right; white-space: nowrap;">
-                    Account Type：</td>
+                    Account Type: </td>
                 <td>
                     <asp:DropDownList ID="ddlTypes" runat="server">
                         <asp:ListItem>Cash</asp:ListItem>

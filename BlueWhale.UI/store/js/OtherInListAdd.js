@@ -109,7 +109,7 @@ $(function () {
                     {
                         type: 'count',
                         render: function (e) {
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
 
@@ -276,7 +276,7 @@ function f_onGoodsChanged(e) {
         for (var i = data.length - 1; i >= 0; i--) {
             if (data[i].goodsId == 0 || data[i].goodsName == "") {
                 manager.deleteRow(i);
-                // alert("DeleteRow："+i);
+                // alert("DeleteRow: "+i);
             }
 
         }
@@ -515,7 +515,7 @@ function endAllEdit() {
 function deleteRow() {
 
     if (manager.rows.length == 1) {
-        $.ligerDialog.warn('At least keep one row！')
+        $.ligerDialog.warn('At least keep one row!')
 
     }
     else {
@@ -587,10 +587,10 @@ function save() {
 
 
     if (data.length == 0) {
-        $.ligerDialog.warn('Please select an item！');
+        $.ligerDialog.warn('Please select an item!');
 
         return;
-        alert("Won't execute it！");
+        alert("Won't execute it!");
     }
 
 
@@ -598,18 +598,18 @@ function save() {
     for (var i = 0; i < data.length; i++) {
         if (data[i].num <= 0 || data[i].num == "" || data[i].num == "0" || data[i].num == "0.00") {
 
-            $.ligerDialog.warn("Please enter the item quantity in the row" + (i + 1) + "！");
+            $.ligerDialog.warn("Please enter the item quantity in the row" + (i + 1) + "!");
 
             return;
-            alert("Won't execute it！");
+            alert("Won't execute it!");
         }
 
         if (data[i].ckId == 0 || data[i].ckId == "" || data[i].ckId == "0" || data[i].ckName == "") {
 
-            $.ligerDialog.warn("Please enter the warehouse at line" + (i + 1) + "！");
+            $.ligerDialog.warn("Please enter the warehouse at line" + (i + 1) + "!");
 
             return;
-            alert("Won't execute it！");
+            alert("Won't execute it!");
         }
 
 
@@ -636,7 +636,7 @@ function save() {
 
     var bizDate = $("#txtBizDate").val();
     if (bizDate == "") {
-        $.ligerDialog.warn("Please enter stock in date！");
+        $.ligerDialog.warn("Please enter stock in date!");
         return;
 
     }
@@ -694,9 +694,9 @@ function save() {
         data: JSON.stringify(postData),  //Equivalent to //data: "{'str1':'foovalue', 'str2':'barvalue'}",
         success: function (jsonResult) {
 
-            if (jsonResult == "Operation successful！") {
+            if (jsonResult == "Operation successful!") {
 
-                $.ligerDialog.waitting('Operation successful！'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
+                $.ligerDialog.waitting('Operation successful!'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
 
             }
             else {
@@ -723,14 +723,14 @@ function checkBill() {
         for (var i = 0; i < data.length; i++) {
             if (data.Rows[i].goodsName == "" || data.Rows[i].goodsId == 0) {
 
-                $.ligerDialog.warn('Row：' + i + " item information in this row is empty！");
+                $.ligerDialog.warn('Row: ' + i + " item information in this row is empty!");
                 return false;
 
             }
 
             if (data.Rows[i].num == 0) {
 
-                $.ligerDialog.warn('Please fill in row ' + i + "quantity for the item！");
+                $.ligerDialog.warn('Please fill in row ' + i + "quantity for the item!");
                 return false;
 
             }

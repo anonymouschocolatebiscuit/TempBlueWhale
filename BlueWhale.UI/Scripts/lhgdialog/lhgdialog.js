@@ -70,7 +70,7 @@ dialogTpl =
 	
 /*!
  * _path 获取组件核心文件lhgdialog.js所在的绝对路径
- * _args 获取lhgdialog.js文件后的url参数组，如：lhgdialog.js?self=true&skin=aero中的?后面的内容
+ * _args 获取lhgdialog.js文件后的url参数组，如: lhgdialog.js?self=true&skin=aero中的?后面的内容
  */
 _args, _path = (function( script, i, me )
 {
@@ -678,7 +678,7 @@ lhgdialog.fn = lhgdialog.prototype =
 			if( typeof  fn === 'function' && fn.call(that, that.iframe.contentWindow, window) === false )
 			    return that;
 			
-			// 重要！需要重置iframe地址，否则下次出现的对话框在IE6、7无法聚焦input
+			// 重要!需要重置iframe地址，否则下次出现的对话框在IE6、7无法聚焦input
 			// IE删除iframe后，iframe仍然会留在内存中出现上述问题，置换src是最容易解决的方法
 			$(that.iframe).unbind('load',that._fmLoad).attr('src',"javascript:''").remove();
 			
@@ -1332,7 +1332,7 @@ lhgdialog.setting =
 	top: '38.2%',				// Y轴坐标
 	max: true,                  // 是否显示最大化按钮
 	min: true,                  // 是否显示最小化按钮
-	zIndex: 1976,				// 对话框叠加高度值(重要：此值不能超过浏览器最大限制)
+	zIndex: 1976,				// 对话框叠加高度值(重要: 此值不能超过浏览器最大限制)
 	resize: true,				// 是否允许用户调节尺寸
 	drag: true, 				// 是否允许用户拖动位置
 	cache: true,                // 是否缓存窗口内容页
@@ -1649,7 +1649,7 @@ lhgdialog.confirm = function( content, yes, no, parent )
 /**
  * 提问
  * @param	{String}	提问内容
- * @param	{Function}	回调函数. 接收参数：输入值
+ * @param	{Function}	回调函数. 接收参数: 输入值
  * @param	{String}	默认值
  */
 lhgdialog.prompt = function( content, yes, value, parent )

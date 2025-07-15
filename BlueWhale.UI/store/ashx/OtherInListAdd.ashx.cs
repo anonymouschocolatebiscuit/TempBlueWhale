@@ -142,14 +142,14 @@ namespace BlueWhale.UI.store.ashx
             if (context.Session["userInfo"] == null)
             {
 
-                context.Response.Write("Login timeout, please log in to the system again！");
+                context.Response.Write("Login timeout, please log in to the system again!");
                 return;
 
             }
             BasePage basePage = new BasePage();
             if (!basePage.CheckPower("OtherInListAdd"))
             {
-                context.Response.Write("No permission to perform this operation. Please contact the administrator！");
+                context.Response.Write("No permission to perform this operation. Please contact the administrator!");
                 return;
             }
             Users users = context.Session["userInfo"] as Users;
@@ -229,11 +229,11 @@ namespace BlueWhale.UI.store.ashx
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = users.ShopId;
                     logs.Users = users.Names;
-                    logs.Events = "Add other inbound order：" + dal.Number;
+                    logs.Events = "Add other inbound order: " + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    context.Response.Write("Operation successful！");
+                    context.Response.Write("Operation successful!");
 
 
                 }

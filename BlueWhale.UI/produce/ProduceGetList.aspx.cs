@@ -156,7 +156,7 @@ namespace BlueWhale.UI.produce
 
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Production Material Collection-ID：" + delId.ToString();
+                            logs.Events = "Delete Production Material Collection-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -200,7 +200,7 @@ namespace BlueWhale.UI.produce
                             num += 1;
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Review-ID：" + delId.ToString();
+                            logs.Events = "Review-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -213,7 +213,7 @@ namespace BlueWhale.UI.produce
                 }
                 else
                 {
-                    Response.Write("Review Failed！");
+                    Response.Write("Review Failed!");
                 }
             }
             else
@@ -244,7 +244,7 @@ namespace BlueWhale.UI.produce
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel Review-ID：" + delId.ToString();
+                            logs.Events = "Cancel Review-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }

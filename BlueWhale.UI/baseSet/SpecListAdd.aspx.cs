@@ -85,11 +85,11 @@ namespace BlueWhale.UI.baseSet
 
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "New Measure Unit：" + this.txtNames.Text;
+                    logs.Events = "New Measure Unit: " + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    MessageBox.Show(this, "Operation Successful！");
+                    MessageBox.Show(this, "Operation Successful!");
                 }
 
             }
@@ -106,11 +106,11 @@ namespace BlueWhale.UI.baseSet
 
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Modify Measure Unit：" + this.txtNames.Text;
+                    logs.Events = "Modify Measure Unit: " + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    MessageBox.Show(this, "Operation Successful！");
+                    MessageBox.Show(this, "Operation Successful!");
                 }
             }
 

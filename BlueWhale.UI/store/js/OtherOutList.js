@@ -47,7 +47,7 @@ $(function () {
                 {
                     type: 'count',
                     render: function (e) { 
-                        return 'Total：';
+                        return 'Total: ';
                     }
                 }
 
@@ -143,7 +143,7 @@ function f_set() {
 function search() {
 
     var keys = document.getElementById("txtKeys").value;
-    if (keys == "Please Enter Receipt No./Vender/Remarks") {
+    if (keys == "Please Enter Receipt No./Supplier/Remarks") {
 
         keys = "";
 

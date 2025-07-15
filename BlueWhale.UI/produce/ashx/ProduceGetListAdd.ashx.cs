@@ -334,7 +334,7 @@ namespace BlueWhale.UI.produce.ashx
                 logs.Ip = HttpContext.Current.Request.UserHostAddress.ToString();
                 logs.Add();
 
-                context.Response.Write("Success！");
+                context.Response.Write("Success!");
             }
             #endregion
         }

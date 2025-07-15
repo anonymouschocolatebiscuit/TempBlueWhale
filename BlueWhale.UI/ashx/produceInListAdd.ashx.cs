@@ -188,7 +188,7 @@ namespace BlueWhale.UI.ashx
 
             if (context.Session["userInfo"] == null)
             {
-                context.Response.Write("登陆超时，请重新登陆系统！");
+                context.Response.Write("登陆超时，请重新登陆系统!");
                 return;
             }
             BasePage basePage = new BasePage();
@@ -254,7 +254,7 @@ namespace BlueWhale.UI.ashx
                     {
                         ShopId = users.ShopId,
                         Users = users.Phone + "-" + users.Names,
-                        Events = "新增生产入库：" + dal.Number,
+                        Events = "新增生产入库: " + dal.Number,
                         Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString()
                     };
                     logs.Add();

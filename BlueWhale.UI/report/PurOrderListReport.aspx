@@ -17,7 +17,7 @@
 
         function f_selectClient() {
             $.ligerDialog.open({
-                title: 'Select Vendor', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
+                title: 'Select Supplier', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
                     { text: 'Confirm', onclick: f_selectClientOK },
                     { text: 'Cancel', onclick: f_selectClientCancel }
                 ]
@@ -104,7 +104,7 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="text-align: left; width: 80px;">Order Date： 
+                <td style="text-align: left; width: 80px;">Order Date:  
                 </td>
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
@@ -114,16 +114,16 @@
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 60px;">Vendor：</td>
+                <td style="text-align: right; width: 60px;">Supplier: </td>
                 <td style="text-align: left; width: 120px;">
                     <input type="text" id="txtVenderList" />
                 </td>
-                <td style="text-align: right; width: 50px;">Item：
+                <td style="text-align: right; width: 50px;">Item: 
                 </td>
                 <td style="text-align: left; width: 100px;">
                     <input type="text" id="txtGoodsList" />
                 </td>
-                <td style="text-align: right; width: 60px;">Status：
+                <td style="text-align: right; width: 60px;">Status: 
                 </td>
                 <td style="text-align: left; width: 80px;">
                     <input type="text" id="txtFlagList" />

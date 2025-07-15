@@ -154,12 +154,12 @@ function f_onAfterEdit() {
     }
 
     if (Number(sumPayPrice) > Number(sumPrice)) {
-        $.ligerDialog.warn("The total redemption amount cannot exceed the total payment amount！");
+        $.ligerDialog.warn("The total redemption amount cannot exceed the total payment amount!");
         return;
     }
 
-    //  alert("sumPrice："+sumPrice);
-    //  alert("sumPayPrice："+sumPayPrice);         
+    //  alert("sumPrice: "+sumPrice);
+    //  alert("sumPayPrice: "+sumPayPrice);         
     var disPrice = $("#txtDisPrice").val(); // Overall discount for the order
     var payPriceNowMore = Number(sumPrice) - Number(sumPayPrice) - Number(disPrice);
 
@@ -290,7 +290,7 @@ function save() {
 
     // 2. Check if any products are selected
     if (data.length == 0) {
-        $.ligerDialog.warn('Please select payment information！');
+        $.ligerDialog.warn('Please select payment information!');
 
         return;
         alert("I won't execute it!");

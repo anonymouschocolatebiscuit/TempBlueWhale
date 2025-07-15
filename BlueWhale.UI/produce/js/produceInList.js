@@ -16,7 +16,7 @@ $(function () {
         checkbox: true,
         columns: [
             {
-                display: 'Operate', isSort: false, width: 70, align: 'center', render: function (rowdata, rowindex, value) {
+                display: 'Action', isSort: false, width: 70, align: 'center', render: function (rowdata, rowindex, value) {
                     var h = "";
                     if (!rowdata._editing) {
                         h += "<a href='javascript:editRow()' title='EditRow' style='float:left;'><div class='ui-icon ui-icon-pencil'></div></a> ";
@@ -36,7 +36,7 @@ $(function () {
                 {
                     type: 'count',
                     render: function (e) {
-                        return 'Total：';
+                        return 'Total: ';
                     }
                 }
             },

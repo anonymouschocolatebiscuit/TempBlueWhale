@@ -180,7 +180,7 @@ lab.validate = function (form, options)
 
 
 
-//附加表单搜索按钮：搜索、高级搜索
+//附加表单搜索按钮: 搜索、高级搜索
 lab.appendSearchButtons = function (form, grid, filterbtn,callback)
 {
     if (!form) return;
@@ -200,7 +200,7 @@ lab.bulidFilterGroup = function (form)
         .each(function ()
         {
             if (!this.name) return;
-            //field ： 标示为搜索用到的字段
+            //field :  标示为搜索用到的字段
             if (!$(this).hasClass("field")) return;
             if ($(this).val() == null || $(this).val() == "") return;
             var op = $(this).attr("op") || "like";
@@ -247,7 +247,7 @@ lab.createButton = function (options)
     btn.appendTo(p.appendTo);
 };
 
-//创建表单搜索按钮：搜索、高级搜索
+//创建表单搜索按钮: 搜索、高级搜索
 lab.addSearchButtons = function (form, grid, btn1Container, btn2Container, callback)
 {
     if (!form) return;

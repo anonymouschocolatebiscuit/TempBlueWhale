@@ -142,7 +142,7 @@ namespace BlueWhale.UI.BaseSet
 
                         LogsDAL logs = new LogsDAL();
                         logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                        logs.Events = "Import Good Details：" + this.Label1.Text;
+                        logs.Events = "Import Good Details: " + this.Label1.Text;
                         logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                         logs.Add();
 

@@ -71,32 +71,32 @@
 </head>
 <body style="padding: 10px; padding-bottom: 800px;">
     <div class="l-case-title">
-        实例一(保存window manager)：if (win1) win1.show(); else win1 = $.ligerDialog.open({ height:
+        实例一(保存window manager): if (win1) win1.show(); else win1 = $.ligerDialog.open({ height:
         200, url: '../../welcome.htm', width: null });</div>
     <input type="button" onclick="f_open()" value="open window" />
     <div class="l-case-title">
-        实例二：$.ligerDialog.open({ height: 200,url: '../../welcome.htm' });</div>
+        实例二: $.ligerDialog.open({ height: 200,url: '../../welcome.htm' });</div>
     <input type="button" onclick="f_open3()" value="open window" />
     <div class="l-case-title">
-        实例三：$.ligerDialog.open({ url: '../../welcome.htm', height: 200,width: null, buttons:
+        实例三: $.ligerDialog.open({ url: '../../welcome.htm', height: 200,width: null, buttons:
         [ { text: '确定', onclick: function (item, dialog) { alert(item.text); } }, { text:
         '取消', onclick: function (item, dialog) { dialog.close(); } } ] });</div>
     <input type="button" onclick="f_open2()" value="open window with button" />
     <div class="l-case-title">
-        实例四：$.ligerDialog.open({ url: '../../welcome.htm', width: null,height:200,modal:false
+        实例四: $.ligerDialog.open({ url: '../../welcome.htm', width: null,height:200,modal:false
         });</div>
     <input type="button" onclick="f_open4()" value="open noModal window" />
     <div class="l-case-title">
-        实例五：$.ligerDialog.open({ url: '../../welcome.htm',height: 200, isResize:true });</div>
+        实例五: $.ligerDialog.open({ url: '../../welcome.htm',height: 200, isResize:true });</div>
     <input type="button" onclick="f_open5()" value="open Resizable window" />
     <div class="l-case-title">
-        实例六：模拟手工控制关闭和打开 var m = $.ligerDialog.open({ url: '../../welcome.htm',height: 200,
+        实例六: 模拟手工控制关闭和打开 var m = $.ligerDialog.open({ url: '../../welcome.htm',height: 200,
         isResize:true }); setTimeout(function () { m.hide(); setTimeout(function () { m.show();
         }, 1000); }, 1000);
     </div>
     <input type="button" onclick="f_open6()" value="模拟手工控制关闭和打开" />
     <div class="l-case-title">
-        实例七： var m = $.ligerDialog.open({ url: '../../welcome.htm', height: 200, isResize:
+        实例七:  var m = $.ligerDialog.open({ url: '../../welcome.htm', height: 200, isResize:
         true }); setTimeout(function () { m.setUrl('dialogUrl.htm'); }, 1000);
     </div>
     <input type="button" onclick="f_open7()" value="动态修改url" />

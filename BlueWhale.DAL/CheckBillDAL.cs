@@ -259,10 +259,10 @@ namespace BlueWhale.DAL
 
         #endregion
 
-        #region Query Check Bills (Vendor Payment Verification)
+        #region Query Check Bills (Supplier Payment Verification)
 
         /// <summary>
-        /// Query Check Bills (Vendor Payment Verification)
+        /// Query Check Bills (Supplier Payment Verification)
         /// </summary>
         /// <param name="key"></param>
         /// <param name="dateStart"></param>

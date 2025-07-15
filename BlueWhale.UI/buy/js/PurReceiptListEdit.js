@@ -59,7 +59,7 @@ $.ligerDefaults.Grid.formatters['numberbox'] = function (value, column) {
 //Client Start
 function f_selectClient() {
     $.ligerDialog.open({
-        title: 'Select vender', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
+        title: 'Select supplier', name: 'winselector', width: 1200, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
             { text: 'Confirm', onclick: f_selectClientOK },
             { text: 'Close', onclick: f_selectClientCancel }
         ]
@@ -117,13 +117,13 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Disassembled Item Name', name: 'goodsName', width: 250, align: 'left',
+                    display: 'Item Name', name: 'goodsName', width: 250, align: 'left',
                     totalSummary:
                     {
                         type: 'count',
                         render: function (e) {  //Summary renderer, returns HTML loaded into the cell
                             //e Summary Object (including sum, max, min, avg, count)
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                 },
@@ -153,7 +153,7 @@ $(function () {
                     display: 'Original Price', name: 'price', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
                 },
                 {
-                    display: 'Discount%', name: 'dis', width: 80, type: 'float', align: 'right', editor: { type: 'float' }
+                    display: 'Discount%', name: 'dis', width: 90, type: 'float', align: 'right', editor: { type: 'float' }
                 },
                 {
                     display: 'Discount amount', name: 'sumPriceDis', width: 70, type: 'float', align: 'right', editor: { type: 'float' },
@@ -183,7 +183,7 @@ $(function () {
                     }
                 },
 
-                { display: 'Tax rate%', name: 'tax', width: 60, type: 'int', align: 'center', editor: { type: 'int' } },
+                { display: 'Tax rate%', name: 'tax', width: 70, type: 'int', align: 'center', editor: { type: 'int' } },
                 { display: 'Unit Price with Tax', name: 'priceTax', width: 70, type: 'float', align: 'center', editor: { type: 'float' } },
                 {
                     display: 'Tax amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
@@ -272,7 +272,7 @@ function f_onGoodsChanged(e) {
         for (var i = data.length - 1; i >= 0; i--) {
             if (data[i].goodsId == 0 || data[i].goodsName == "") {
                 manager.deleteRow(i);
-                // alert("Deleting a row："+i);
+                // alert("Deleting a row: "+i);
             }
         }
 
@@ -443,7 +443,7 @@ function f_onAfterEdit(e) {
         sumPriceDis = Number(e.value);
 
         if (sumPriceDis >= num * price) {
-            alert("Please fill in the correct discount amount！");
+            alert("Please fill in the correct discount amount!");
             return;
         }
 
@@ -451,7 +451,7 @@ function f_onAfterEdit(e) {
             dis = (1 - sumPriceDis / (num * price)) * 100;
         }
         else {
-            alert("Please fill in the quantity and unit price！");
+            alert("Please fill in the quantity and unit price!");
             return;
         }
 
@@ -713,7 +713,7 @@ function save() {
 
     var bizDate = $("#txtBizDate").val();
     if (bizDate == "") {
-        $.ligerDialog.warn("Fill in the storage date！");
+        $.ligerDialog.warn("Fill in the storage date!");
         return;
     }
 
@@ -729,29 +729,29 @@ function save() {
     }
 
     if (data.length == 0) {
-        $.ligerDialog.warn('Please select product！');
+        $.ligerDialog.warn('Please select product!');
         return;
-        alert("Execution skipped！");
+        alert("Execution skipped!");
     }
 
     for (var i = 0; i < data.length; i++) {
         if (data[i].num <= 0 || data[i].num == "" || data[i].num == "0" || data[i].num == "0.00") {
-            $.ligerDialog.warn(" Please enter the product quantity for row the " + (i + 1) + "！");
+            $.ligerDialog.warn(" Please enter the product quantity for row the " + (i + 1) + "!");
             return;
-            alert("Execution skipped！");
+            alert("Execution skipped!");
         }
 
         if (data[i].ckId == 0 || data[i].ckId == "" || data[i].ckId == "0" || data[i].ckName == "") {
 
             $.ligerDialog.warn("Please enter the storage for row " + (i + 1) + "!");
             return;
-            alert("Execution skipped！");
+            alert("Execution skipped!");
         }
     }
 
     if (Number(payNow) != 0) {
         if (bkId == "0") {
-            $.ligerDialog.warn("Please select a settlement account！");
+            $.ligerDialog.warn("Please select a settlement account!");
             return;
         }
     }
@@ -775,8 +775,8 @@ function save() {
         //dataType: "json",
         data: JSON.stringify(postData), 
         success: function (jsonResult) {
-            if (jsonResult == "Execution successful！") {
-                $.ligerDialog.waitting('Execution successful！'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
+            if (jsonResult == "Execution successful!") {
+                $.ligerDialog.waitting('Execution successful!'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
             }
             else {
                 $.ligerDialog.warn(jsonResult);

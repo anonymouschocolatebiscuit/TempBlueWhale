@@ -20,7 +20,7 @@
 
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="width: 80px; text-align: right;">Vender:</td>
+                <td style="width: 80px; text-align: right;">Supplier:</td>
                 <td style="text-align: left; width: 250px;">
 
                     <asp:TextBox ID="clientName" runat="server"></asp:TextBox>

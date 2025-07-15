@@ -65,7 +65,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align: right;">Vender Category£º</td>
+                    <td style="text-align: right;">Supplier Category: </td>
                     <td>
                         <asp:DropDownList ID="ddlVenderTypeList" runat="server">
                         </asp:DropDownList>
@@ -86,7 +86,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align: right;">Tax Rate£º</td>
+                    <td style="text-align: right;">Tax Rate: </td>
                     <td>
                         <asp:TextBox ID="txtTax" runat="server"></asp:TextBox>
                     </td>

@@ -95,7 +95,7 @@ function f_selectOrderOK(item, dialog) {
     var fn = dialog.frame.f_select || dialog.frame.window.f_select;
     var data = fn();
     if (!data) {
-        alert('Please select row！');
+        alert('Please select row!');
         return;
     }
 
@@ -146,7 +146,7 @@ function f_selectGoodsOK(item, dialog) {
     var fn = dialog.frame.f_select || dialog.frame.window.f_select;
     var data = fn();
     if (!data) {
-        alert('Please select row！');
+        alert('Please select row!');
         return;
     }
 
@@ -279,7 +279,7 @@ $(function () {
                     {
                         type: 'count',
                         render: function (e) {  
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                 },
@@ -483,7 +483,7 @@ $(function () {
                         type: 'count',
                         render: function (e) {  
                       
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
 
@@ -549,13 +549,13 @@ function save() {
 
     var hfGoodsId = $("#hfGoodsId").val();
     if (hfGoodsId == "" || hfGoodsId == 0) {
-        $.ligerDialog.warn("Please select the product to be produced！");
+        $.ligerDialog.warn("Please select the product to be produced!");
         return;
     }
 
     var txtNum = $("#txtNum").val();
     if (txtNum == "" || txtNum == 0) {
-        $.ligerDialog.warn("Please enter production quantity！");
+        $.ligerDialog.warn("Please enter production quantity!");
         return;
 
     }
@@ -584,20 +584,20 @@ function save() {
 
     if (isGongxu) {
         if (data.length == 0) {
-            $.ligerDialog.warn("Please select raw material products！");
+            $.ligerDialog.warn("Please select raw material products!");
 
             return;
-            alert("I won't execute it！");
+            alert("I won't execute it!");
 
         }
         for (var i = 0; i < data.length; i++) {
 
             if (data[i].num <= 0 || data[i].num == "") {
 
-                $.ligerDialog.warn("Please enter the" + (i + 1) + "row planned usage！");
+                $.ligerDialog.warn("Please enter the" + (i + 1) + "row planned usage!");
 
                 return;
-                alert("I won't execute it！");
+                alert("I won't execute it!");
             }
 
         }
@@ -606,14 +606,14 @@ function save() {
 
     var dateStart = $("#txtDateStart").val();
     if (dateStart == "") {
-        $.ligerDialog.warn("Please enter start date！");
+        $.ligerDialog.warn("Please enter start date!");
         return;
 
     }
 
     var dateEnd = $("#txtDateEnd").val();
     if (dateStart == "") {
-        $.ligerDialog.warn("Please enter end date！");
+        $.ligerDialog.warn("Please enter end date!");
         return;
 
     }
@@ -664,9 +664,9 @@ function save() {
         data: JSON.stringify(postData),  
         success: function (jsonResult) {
 
-            if (jsonResult == "Operate Successful！") {
+            if (jsonResult == "Operate Successful!") {
 
-                $.ligerDialog.waitting('Operate Successful！'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
+                $.ligerDialog.waitting('Operate Successful!'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
 
             }
             else {

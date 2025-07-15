@@ -231,7 +231,7 @@
                     var iframeloading = $(".l-panel-loading:first", content);
              
                     /*
-                    可以在子窗口这样使用：
+                    可以在子窗口这样使用: 
                     var panel = frameElement.panel;
                     var panelData = dialog.get('data');//获取data参数
                     panel.set('title','新标题'); //设置标题

@@ -63,13 +63,13 @@ function f_selectGoodsOK(item, dialog) {
     var fn = dialog.frame.f_select || dialog.frame.window.f_select;
     var data = fn();
     if (data.length == 0) {
-        $.ligerDialog.warn("Please select product！");
+        $.ligerDialog.warn("Please select product!");
 
         return;
     }
 
     if (data.length > 1) {
-        $.ligerDialog.warn("Please select only one product！");
+        $.ligerDialog.warn("Please select only one product!");
         return;
 
     }
@@ -111,7 +111,7 @@ function InitializeManager() {
                 {
                     type: 'count',
                     render: function (e) { 
-                        return 'Sum：';
+                        return 'Sum: ';
                     }
                 }
             },
@@ -119,7 +119,7 @@ function InitializeManager() {
             { display: 'Invoice no', name: 'number', width: 150, align: 'center' },
             { display: 'Schedule type', name: 'typeName', width: 80, align: 'center' },
             { display: 'Order no', name: 'orderNumber', width: 150, align: 'center' },
-            { display: 'Vendor', name: 'wlName', width: 170, align: 'left' },
+            { display: 'Supplier', name: 'wlName', width: 170, align: 'left' },
             { display: 'Product Id', name: 'code', width: 100, align: 'center' },
             { display: 'Prioduct name', name: 'goodsName', width: 120, align: 'center' },
             { display: 'Standard', name: 'spec', width: 100, align: 'center' },

@@ -130,7 +130,7 @@ namespace BlueWhale.UI.pay
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Other GetList-ID：" + delId.ToString();
+                            logs.Events = "Delete Other GetList-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -233,7 +233,7 @@ namespace BlueWhale.UI.pay
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Unreview Other GetList-ID：" + delId.ToString();
+                            logs.Events = "Unreview Other GetList-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }

@@ -29,7 +29,7 @@
                         render: function (e) 
                         {  // Summary renderer, returns HTML to be loaded into the cell
                            // Summary Object (including sum, max, min, avg, count)
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                    

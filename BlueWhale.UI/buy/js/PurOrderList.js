@@ -25,7 +25,7 @@ $(function () {
         checkbox: true,
         columns: [
             {
-                display: 'Operate', isSort: false, width: 90, align: 'center', render: function (rowdata, rowindex, value) {
+                display: 'Action', isSort: false, width: 90, align: 'center', render: function (rowdata, rowindex, value) {
                     var h = '';
                     if (!rowdata._editing) {
                         h += '<a href="javascript:editRow()" title="EditRow" style="float:left;"><div class="ui-icon ui-icon-pencil"></div></a> ';
@@ -47,13 +47,13 @@ $(function () {
                     type: 'count',
                     render: function (e) {  // Summary renderer, returns HTML to be loaded into the cell
                         // e Aggregation of Objects (including sum, max, min, avg, count)
-                        return 'Total£º';
+                        return 'Total:';
                     }
                 }
             },
             { display: 'Order Number', name: 'number', width: 150, align: 'center' },
 
-            { display: 'Vender', name: 'wlName', width: 170, align: 'left' },
+            { display: 'Supplier', name: 'wlName', width: 170, align: 'left' },
             {
                 display: 'Total Price', name: 'sumPriceAll', width: 100, align: 'right',
 
@@ -183,7 +183,7 @@ function search() {
 
     var keys = document.getElementById('txtKeys').value;
 
-    if (keys == 'Please Enter Order No./Vender/Remark') {
+    if (keys == 'Please Enter Order No./Supplier/Remark') {
         keys = '';
     }
 
@@ -290,7 +290,7 @@ function viewRow() {
 
     if (!row) { alert('Please select a row'); return; }
 
-    parent.f_addTab('purOrderListEdit', 'Purchase Order - Details', 'buy/purOrderListEdit.aspx?id=' + row.id);
+    parent.f_addTab('purOrderListEdit', 'Purchase Order - Edit', 'buy/purOrderListEdit.aspx?id=' + row.id);
 }
 
 function reload() {

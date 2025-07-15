@@ -130,7 +130,7 @@ namespace BlueWhale.UI.baseSet
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Delete product category-ID：" + id.ToString();
+                    logs.Events = "Delete product category-ID: " + id.ToString();
                     logs.Ip = Request.UserHostAddress.ToString();
                     logs.Add();
 
@@ -143,7 +143,7 @@ namespace BlueWhale.UI.baseSet
             }
             else
             {
-                Response.Write("Login timed out, please log in again！");
+                Response.Write("Login timed out, please log in again!");
             }
         }
     }

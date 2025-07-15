@@ -342,7 +342,7 @@ namespace Lanwei.Weixin.UI.produce.ashx
                 LogsDAL logs = new LogsDAL();
                 logs.ShopId = users.ShopId;
                 logs.Users = users.Names;
-                logs.Events = "Create Production Plan：" + dal.Number;
+                logs.Events = "Create Production Plan: " + dal.Number;
                 logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                 logs.Add();
                 context.Response.Write("Execution successful!");

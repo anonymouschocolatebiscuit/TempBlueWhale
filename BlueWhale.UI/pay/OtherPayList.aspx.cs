@@ -133,7 +133,7 @@ namespace BlueWhale.UI.pay
                             num += 1;
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Other Payment-ID：" + delId.ToString();
+                            logs.Events = "Delete Other Payment-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -142,11 +142,11 @@ namespace BlueWhale.UI.pay
 
                 if (num > 0)
                 {
-                    Response.Write("Delete Successfully" + num + "Records！");
+                    Response.Write("Delete Successfully" + num + "Records!");
                 }
                 else
                 {
-                    Response.Write("Delete Failed！");
+                    Response.Write("Delete Failed!");
                 }
             }
             else
@@ -184,7 +184,7 @@ namespace BlueWhale.UI.pay
                             num += 1;
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Review Other Payment-ID：" + delId.ToString();
+                            logs.Events = "Review Other Payment-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -235,7 +235,7 @@ namespace BlueWhale.UI.pay
                             num += 1;
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel Review Other Payment-ID：" + delId.ToString();
+                            logs.Events = "Cancel Review Other Payment-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }

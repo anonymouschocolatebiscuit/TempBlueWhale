@@ -112,14 +112,14 @@ namespace BlueWhale.UI.pay.ashx
             if (context.Session["userInfo"] == null)
             {
 
-                context.Response.Write("Login timeout, please log in again！");
+                context.Response.Write("Login timeout, please log in again!");
                 return;
 
             }
             BasePage basePage = new BasePage();
             if (!basePage.CheckPower("OtherPayListAdd"))
             {
-                context.Response.Write("You do not have this permission, please contact the administrator！");
+                context.Response.Write("You do not have this permission, please contact the administrator!");
                 return;
             }
             Users users = context.Session["userInfo"] as Users;
@@ -168,10 +168,10 @@ namespace BlueWhale.UI.pay.ashx
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = users.ShopId;
                     logs.Users = users.Names;
-                    logs.Events = "Add other payment slips：" + dal.Number;
+                    logs.Events = "Add other payment slips: " + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
-                    context.Response.Write("Operation successful！");
+                    context.Response.Write("Operation successful!");
                 }
             }
 

@@ -287,14 +287,14 @@ namespace BlueWhale.UI.sales.ashx
             if (context.Session["userInfo"] == null)
             {
 
-                context.Response.Write("Login timeout, please log in again！");
+                context.Response.Write("Login timeout, please log in again!");
                 return;
 
             }
             BasePage basePage = new BasePage();
             if (!basePage.CheckPower("SalesReceiptListAdd"))
             {
-                context.Response.Write("You do not have this permission, please contact the administrator！");
+                context.Response.Write("You do not have this permission, please contact the administrator!");
                 return;
             }
 
@@ -427,7 +427,7 @@ namespace BlueWhale.UI.sales.ashx
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    context.Response.Write("Operation successful！");
+                    context.Response.Write("Operation successful!");
                 }
             }
             #endregion

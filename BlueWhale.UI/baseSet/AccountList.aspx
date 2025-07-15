@@ -76,7 +76,7 @@
 
        function editRow(id)
        {
-          //alert("The selected value is："+id);
+          //alert("The selected value is: "+id);
           
           f_open(id);
           

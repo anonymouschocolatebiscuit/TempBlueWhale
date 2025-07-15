@@ -153,7 +153,7 @@ namespace BlueWhale.UI.BaseSet
 
 					logs.ShopId = LoginUser.ShopId;
 					logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-					logs.Events = "Add Vender:" + this.txtCode.Text + " Name£º" + this.txtNames.Text;
+					logs.Events = "Add Supplier:" + this.txtCode.Text + " Name: " + this.txtNames.Text;
 					logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
 					logs.Add();
 

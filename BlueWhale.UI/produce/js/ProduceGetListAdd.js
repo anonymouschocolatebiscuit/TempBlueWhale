@@ -194,7 +194,7 @@ function f_onGoodsChanged(e) {
         for (var i = data.length - 1; i >= 0; i--) {
             if (data[i].processId == 0 || data[i].processName == "") {
                 manager.deleteRow(i);
-                // alert("Delete row："+i);
+                // alert("Delete row: "+i);
             }
         }
 

@@ -147,7 +147,7 @@ namespace BlueWhale.UI.buy
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete purchase receipt-ID：" + delId.ToString();
+                            logs.Events = "Delete purchase receipt-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -157,11 +157,11 @@ namespace BlueWhale.UI.buy
 
                 if (num > 0)
                 {
-                    Response.Write("Delete Successfully " + num + " rows records！");
+                    Response.Write("Delete Successfully " + num + " rows records!");
                 }
                 else
                 {
-                    Response.Write("Delete Failed！");
+                    Response.Write("Delete Failed!");
                 }
             }
             else
@@ -176,7 +176,7 @@ namespace BlueWhale.UI.buy
             {
                 if (!CheckPower("PurReceiptListCheck"))
                 {
-                    Response.Write("You do not have this permission, please contact the administrator！");
+                    Response.Write("You do not have this permission, please contact the administrator!");
                     return;
                 }
 
@@ -197,7 +197,7 @@ namespace BlueWhale.UI.buy
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Review Purchase Receipt-ID：" + delId.ToString();
+                            logs.Events = "Review Purchase Receipt-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -206,11 +206,11 @@ namespace BlueWhale.UI.buy
 
                 if (num > 0)
                 {
-                    Response.Write("Review Successfully " + num + " rows records！");
+                    Response.Write("Review Successfully " + num + " rows records!");
                 }
                 else
                 {
-                    Response.Write("Review Failed！");
+                    Response.Write("Review Failed!");
                 }
             }
             else
@@ -228,7 +228,7 @@ namespace BlueWhale.UI.buy
 
                 if (!CheckPower("PurReceiptListCheckNo"))
                 {
-                    Response.Write("You do not have this permission, please contact the administrator！");
+                    Response.Write("You do not have this permission, please contact the administrator!");
 
                     return;
                 }
@@ -252,7 +252,7 @@ namespace BlueWhale.UI.buy
 
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Review Purchase Receipt-ID：" + delId.ToString();
+                            logs.Events = "Review Purchase Receipt-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -262,11 +262,11 @@ namespace BlueWhale.UI.buy
 
                 if (num > 0)
                 {
-                    Response.Write("Cancel Review Success " + num + " rows records！！");
+                    Response.Write("Cancel Review Success " + num + " rows records!!");
                 }
                 else
                 {
-                    Response.Write("Cancel Review Fail！");
+                    Response.Write("Cancel Review Fail!");
                 }
             }
             else

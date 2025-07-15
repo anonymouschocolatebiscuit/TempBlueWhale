@@ -13,7 +13,7 @@
     程序会查询以 liger-插件名 类名的Dom,从dom加载相应的参数并调用插件
         比如遇到 .liger-grid 的dom，会找到 liger.defaults.Grid 加载需要的参数
         而在config.Grid中配置了这些参数的类型,会动态得加载data,而columns会设置为数组
-    参数处理的优先级为：
+    参数处理的优先级为: 
     1,ignores 忽略不处理的参数
     2,dom存在 {属性名} 的类名 ,比如 <ul class="columns"></ul> ,便会将这个参数设置为复杂属性(object或array):找到相应的defaults和config来加载
          defaults是先找$.liger.inject.defaults,找不到再找liger.defaults的
@@ -25,9 +25,9 @@
         prev: 'liger-',
 
         /* 
-        命名规则：插件名_属性名(包括第N级的属性) (插件名首字母大写,属性名首字母小写) 
-        获取规则：获取default时会先找这里,找不到再找liger.defaults,比如 liger.defaults.Grid_columns 
-        备注：这里只定义了参数的列表
+        命名规则: 插件名_属性名(包括第N级的属性) (插件名首字母大写,属性名首字母小写) 
+        获取规则: 获取default时会先找这里,找不到再找liger.defaults,比如 liger.defaults.Grid_columns 
+        备注: 这里只定义了参数的列表
         */
         defaults: {
             Grid_detail: {

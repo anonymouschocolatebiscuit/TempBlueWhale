@@ -141,7 +141,7 @@ namespace BlueWhale.UI.pay
 
                 if (!CheckPower("ReceivableListDelete"))
                 {
-                    Response.Write("You do not have this permission, please contact the administrator！");
+                    Response.Write("You do not have this permission, please contact the administrator!");
                     return;
                 }
 
@@ -165,7 +165,7 @@ namespace BlueWhale.UI.pay
                             
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Sales Payment-ID：" + delId.ToString();
+                            logs.Events = "Delete Sales Payment-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -179,17 +179,17 @@ namespace BlueWhale.UI.pay
                 {
 
                    
-                    Response.Write("Delete Successfully" + num+ "rows records！");
+                    Response.Write("Delete Successfully" + num+ "rows records!");
 
                 }
                 else
                 {
-                    Response.Write("Delete Failed！");
+                    Response.Write("Delete Failed!");
                 }
             }
             else
             {
-                Response.Write("Login timed out, please log in again!！");
+                Response.Write("Login timed out, please log in again!!");
             }
 
         }
@@ -226,7 +226,7 @@ namespace BlueWhale.UI.pay
 
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Review Sales Payment-ID：" + delId.ToString();
+                            logs.Events = "Review Sales Payment-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -240,12 +240,12 @@ namespace BlueWhale.UI.pay
                 {
 
 
-                    Response.Write("Review Successfully" + num + "rows records！");
+                    Response.Write("Review Successfully" + num + "rows records!");
 
                 }
                 else
                 {
-                    Response.Write("Review Failed！");
+                    Response.Write("Review Failed!");
                 }
 
 
@@ -292,7 +292,7 @@ namespace BlueWhale.UI.pay
 
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel Review Sales Payment-ID：" + delId.ToString();
+                            logs.Events = "Cancel Review Sales Payment-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -311,7 +311,7 @@ namespace BlueWhale.UI.pay
                 }
                 else
                 {
-                    Response.Write("Cancel Review Failed！");
+                    Response.Write("Cancel Review Failed!");
                 }
 
 

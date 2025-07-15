@@ -72,28 +72,28 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="20" style="width: 600px; line-height: 45px;">
             <tr>
-                <td style="width: 100px; text-align: right;">Product Code：</td>
+                <td style="width: 100px; text-align: right;">Product Code: </td>
                 <td style="width: 180px;">
                     <asp:Label ID="lbCode" runat="server" Text="Label"></asp:Label>
                 </td>
-                <td style="width: 100px; text-align: right;">Product Name：</td>
+                <td style="width: 100px; text-align: right;">Product Name: </td>
                 <td style="width: 180px;">
                     <asp:Label ID="lbNames" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td style="text-align: right;">Inventory：</td>
+                <td style="text-align: right;">Inventory: </td>
                 <td>
                     <asp:DropDownList ID="ddlInventoryList" runat="server">
                     </asp:DropDownList>
                 </td>
-                <td align="right">Initial Quantity：</td>
+                <td align="right">Initial Quantity: </td>
                 <td>
                     <asp:TextBox ID="txtNum" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td style="text-align: right;">Unit Cost：</td>
+                <td style="text-align: right;">Unit Cost: </td>
                 <td>
                     <asp:TextBox ID="txtPriceCost" runat="server"></asp:TextBox>
                 </td>

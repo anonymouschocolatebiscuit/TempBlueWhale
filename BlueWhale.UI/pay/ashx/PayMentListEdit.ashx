@@ -184,14 +184,14 @@ namespace BlueWhale.UI.pay.ashx
             if (context.Session["userInfo"] == null)
             {
 
-                context.Response.Write("登陆超时，请重新登陆系统！");
+                context.Response.Write("登陆超时，请重新登陆系统!");
                 return;
  
             }
             BasePage basePage = new BasePage();
             if (!basePage.CheckPower("PayMentListEdit"))
             {
-                context.Response.Write("无此操作权限，请联系管理员！");
+                context.Response.Write("无此操作权限，请联系管理员!");
                 return;
             }
             Users users = context.Session["userInfo"] as Users;

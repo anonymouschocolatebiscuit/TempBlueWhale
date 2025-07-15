@@ -29,7 +29,7 @@
             <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
                 <tr>
                     <td style="text-align:right; width:40px;">
-                        Date：
+                        Date: 
                     </td>
                     <td style="text-align:left; width:120px;">
                         <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
@@ -41,14 +41,14 @@
                         <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                     </td>
                     <td style="text-align:right; width:60px;">
-                        Store：</td>
+                        Store: </td>
                     <td style="text-align:left; width:120px;">
 
                         <input type="text" id="txtFlagList" />
                     </td>
                     <td style="text-align:right;width:50px;">
 
-                        Goods：
+                        Goods: 
 
                     </td>
                     <td style="text-align:left;width:170px;">

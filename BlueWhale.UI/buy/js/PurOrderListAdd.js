@@ -143,7 +143,7 @@ $(function () {
                         type: 'count',
                         render: function (e) { // Summary renderer, returns HTML loaded into the cell
                             //e Summary Object (including sum, max, min, avg, count)
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                 }, {
@@ -398,7 +398,7 @@ function f_onGoodsChanged(e) {
         for (var i = data.length - 1; i >= 0; i--) {
             if (data[i].goodsId == 0 || data[i].goodsName == "") {
                 manager.deleteRow(i);
-                // alert("Remove Row："+i);
+                // alert("Remove Row: "+i);
             }
         }
         for (var i = 1; i < e.length; i++) {

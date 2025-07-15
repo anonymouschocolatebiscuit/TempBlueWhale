@@ -23,7 +23,7 @@
            <tr>
            <td style="text-align:right; width:50px;">
             
-            Keyword： 
+            Keyword:  
             
             
             </td>
@@ -42,7 +42,7 @@
             </td>
            <td style="text-align:right; width:80px;">
             
-               Start Date：
+               Start Date: 
             
               </td>
            <td style="text-align:left; width:180px;">
@@ -54,7 +54,7 @@
            <td style="text-align:right; width:80px;">
             
             
-               End Date：
+               End Date: 
              
              
             

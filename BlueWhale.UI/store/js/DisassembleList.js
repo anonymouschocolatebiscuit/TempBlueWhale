@@ -238,7 +238,7 @@ $(function () {
                     {
                         type: 'count',
                         render: function (e) { 
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                 },

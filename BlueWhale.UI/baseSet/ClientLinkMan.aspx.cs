@@ -41,7 +41,7 @@ namespace BlueWhale.UI.BaseSet
 
             if (dal.isExistsNames(id,this.txtNames.Text))
             {
-                MessageBox.Show(this, "Operation failed, contact name is duplicated！");
+                MessageBox.Show(this, "Operation failed, contact name is duplicated!");
                 return;
             }
 
@@ -49,11 +49,11 @@ namespace BlueWhale.UI.BaseSet
             {
                 LogsDAL logs = new LogsDAL();
                 logs.ShopId = LoginUser.ShopId;logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                logs.Events = "Add new customer contact name：" + this.txtNames.Text;
+                logs.Events = "Add new customer contact name: " + this.txtNames.Text;
                 logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                 logs.Add();
 
-                MessageBox.ShowAndRedirect(this, "Operation Successful！", "ClientLinkMan.aspx?id=" + id);
+                MessageBox.ShowAndRedirect(this, "Operation Successful!", "ClientLinkMan.aspx?id=" + id);
             }
         }
 
@@ -94,7 +94,7 @@ namespace BlueWhale.UI.BaseSet
             {
                 LogsDAL logs = new LogsDAL();
                 logs.ShopId = LoginUser.ShopId;logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                logs.Events = "Deleting a Customer Contact：" + Id.ToString();
+                logs.Events = "Deleting a Customer Contact: " + Id.ToString();
                 logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                 logs.Add();
                 this.Bind();
@@ -124,7 +124,7 @@ namespace BlueWhale.UI.BaseSet
 
                 LogsDAL logs = new LogsDAL();
                 logs.ShopId = LoginUser.ShopId;logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                logs.Events = "Modify customer contact：" + this.gvLevel.Rows[e.RowIndex].Cells[0].Text.ToString();
+                logs.Events = "Modify customer contact: " + this.gvLevel.Rows[e.RowIndex].Cells[0].Text.ToString();
                 logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                 logs.Add();
                 this.Bind();

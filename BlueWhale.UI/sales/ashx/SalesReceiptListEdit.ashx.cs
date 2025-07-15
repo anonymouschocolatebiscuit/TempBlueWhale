@@ -411,11 +411,11 @@ namespace BlueWhale.UI.Sales.ashx
 
                     logs.ShopId = users.ShopId;
                     logs.Users = users.Names;
-                    logs.Events = "Modify sales delivery：" + dal.Number;
+                    logs.Events = "Modify sales delivery: " + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    context.Response.Write("Operation successful！");
+                    context.Response.Write("Operation successful!");
                 }
             }
             #endregion

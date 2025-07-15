@@ -55,7 +55,7 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="text-align: right; width: 70px;">Start Date： 
+                <td style="text-align: right; width: 70px;">Start Date:  
                 </td>
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
@@ -65,7 +65,7 @@
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 60px;">Client：
+                <td style="text-align: right; width: 60px;">Client: 
                 </td>
                 <td style="text-align: left; width: 80px;">
                     <input type="text" id="txtVenderList" />

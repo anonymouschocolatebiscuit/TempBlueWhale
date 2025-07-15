@@ -16,7 +16,7 @@
 
     $.ligerDefaults.Portal = {
         width: null,
-        /*行元素：组件允许以纵向方式分割为几块
+        /*行元素: 组件允许以纵向方式分割为几块
         每一块(行)允许自定义N个列(column)
         每一列允许自定义N个Panel(最小元素)
         rows:[
@@ -32,7 +32,7 @@
         ]
         */
         rows: null,
-        /* 列元素： 组件将认为只存在一个row(块),
+        /* 列元素:  组件将认为只存在一个row(块),
        这一块 允许自定义N个列(column),结构同上
         */
         columns:null,

@@ -48,24 +48,24 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="20" style="width:600px; line-height:45px;">
             <tr>
-                <td style="width:90px; text-align:right;">Mobile No.：</td>
+                <td style="width:90px; text-align:right;">Mobile No.: </td>
                 <td style="width:170px;">
                     <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
                 </td>
                 
-                <td style="width:90px; text-align:right;">Name：</td>
+                <td style="width:90px; text-align:right;">Name: </td>
                 <td style="width:170px;">
                     <asp:TextBox ID="txtNames" runat="server"></asp:TextBox>
                 </td>
             </tr>
 
             <tr>
-                <td style="text-align:right;">Phone No.：</td>
+                <td style="text-align:right;">Phone No.: </td>
                 <td>
                     <asp:TextBox ID="txtTel" runat="server"></asp:TextBox>
                 </td>
                 
-                <td style="text-align:right;">Status：</td>
+                <td style="text-align:right;">Status: </td>
                 <td>
                     <asp:DropDownList ID="ddlFlagList" runat="server">
                         <asp:ListItem>Active</asp:ListItem>
@@ -75,31 +75,31 @@
             </tr>
 
             <tr>
-                <td style="text-align:right;">Email：</td>
+                <td style="text-align:right;">Email: </td>
                 <td>
                     <asp:TextBox ID="txtEmail" runat="server" validate="{required:true}"></asp:TextBox>
                 </td>
 
-                <td style="text-align:right;">QQ：</td>
+                <td style="text-align:right;">QQ: </td>
                 <td>
                     <asp:TextBox ID="txtQQ" runat="server" validate="{required:true}"></asp:TextBox>
                 </td>
             </tr>
 
             <tr>
-                <td style="text-align:right;">Address：</td>
+                <td style="text-align:right;">Address: </td>
                 <td colspan="3">
                     <textarea id="txtAddress" cols="78" name="S1" rows="2" runat="server"></textarea>
                 </td>
             </tr>
 
             <tr>
-                <td style="text-align:right;">Date of Birth：</td>
+                <td style="text-align:right;">Date of Birth: </td>
                 <td>
                     <asp:TextBox ID="txtBrithDay" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
 
-                <td align="right">Onboard Date：</td>
+                <td align="right">Onboard Date: </td>
                 <td>
                     <asp:TextBox ID="txtComeDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>

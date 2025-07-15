@@ -101,7 +101,7 @@ namespace BlueWhale.UI.baseSet
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Edit pay type：" + this.txtNames.Text;
+                    logs.Events = "Edit pay type: " + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 

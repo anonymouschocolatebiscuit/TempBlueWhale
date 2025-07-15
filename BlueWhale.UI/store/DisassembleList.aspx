@@ -23,19 +23,19 @@
 
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 30px;">
             <tr>
-                <td style="width: 80px; text-align: center;">Keyword：</td>
+                <td style="width: 80px; text-align: center;">Keyword: </td>
 
                 <td style="text-align: left; width: 180px;">
                     <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter the receipt no./bundled product/remarks"></asp:TextBox>
                 </td>
 
-                <td style="text-align: right; width: 90px;">Start Date：</td>
+                <td style="text-align: right; width: 90px;">Start Date: </td>
 
                 <td style="text-align: left; width: 180px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
 
-                <td style="text-align: right; width: 90px;">End Date：</td>
+                <td style="text-align: right; width: 90px;">End Date: </td>
 
                 <td style="text-align: left; width: 180px;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>

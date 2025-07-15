@@ -2,7 +2,7 @@
 Ajax 三级省市联动(兼容JQM)
 http://seyea.blogbus.com
 Author:张小可(Designer.SK)
-日期：2013-8-26
+日期: 2013-8-26
 
 settings 参数说明
 -----

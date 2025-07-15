@@ -22,14 +22,14 @@
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
             <tr>
                 <td style="width:135px; text-align:right;">
-                    Order no：
+                    Order no: 
                 </td>
                 <td style="text-align:left; width:250px;">
                     <asp:TextBox ID="txtOrderNumber" runat="server"></asp:TextBox>
                     <input type="hidden" id="hfOrderNumber" runat="server" value="" />
                 </td>
                 <td style="text-align:right; width:150px;">
-                    Program Type：
+                    Program Type: 
                 </td>
                 <td style="text-align:left; width:180px;">
                     <asp:DropDownList ID="ddlTypeName" runat="server">
@@ -41,31 +41,31 @@
                 <td style="text-align:left;">&nbsp;</td>
             </tr>
             <tr>
-                <td style="width:135px; text-align:right;">Product name：</td>
+                <td style="width:135px; text-align:right;">Product name: </td>
                 <td style="text-align:left; width:250px;">
                     <asp:TextBox ID="txtGoodsName" runat="server"></asp:TextBox>
                     <input type="hidden" id="hfGoodsId" runat="server" value="" /> 
                 </td>
                 <td style="text-align:right; width:150px;">
-                          Product Specifications：</td>
+                          Product Specifications: </td>
                 <td style="text-align:left; width:180px;">
                     <asp:TextBox ID="txtSpec" runat="server"></asp:TextBox>                                      
                 </td>
-                <td style="text-align:right; width:80px;">Unit：</td>
+                <td style="text-align:right; width:80px;">Unit: </td>
                 <td style="text-align:left;">
                     <asp:TextBox ID="txtUnitName" runat="server"></asp:TextBox>    
                 </td>
             </tr>
             <tr>
-                <td style="width:135px; text-align:right;">Production quantity：</td>
+                <td style="width:135px; text-align:right;">Production quantity: </td>
                 <td style="text-align:left; width:250px;">
                     <asp:TextBox ID="txtNum" runat="server"></asp:TextBox>    
                 </td>
-                <td style="text-align:right; width:150px;">Start Date：</td>
+                <td style="text-align:right; width:150px;">Start Date: </td>
                 <td style="text-align:left; width:180px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align:right; width:80px;">End Date：</td>
+                <td style="text-align:right; width:80px;">End Date: </td>
                 <td style="text-align:left;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
@@ -75,7 +75,7 @@
         <div id="maingrid"></div>
         <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width:99%; margin-top: 10px">
             <tr>
-                <td style="width:80px; text-align:right;">Remark：</td>
+                <td style="width:80px; text-align:right;">Remark: </td>
                 <td style="text-align:left">
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>

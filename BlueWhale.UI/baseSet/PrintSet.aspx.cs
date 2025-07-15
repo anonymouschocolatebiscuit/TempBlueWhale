@@ -37,7 +37,7 @@ namespace BlueWhale.UI.baseSet
             int update = dal.UpdatePrintSetPurOrderRemarks(LoginUser.ShopId, remarks);
             if (update > 0)
             {
-                MessageBox.Show(this, "Save success！");
+                MessageBox.Show(this, "Save success!");
             }
         }
 
@@ -48,7 +48,7 @@ namespace BlueWhale.UI.baseSet
             int update = dal.UpdatePrintSetSalesOrderRemarks(LoginUser.ShopId, remarks);
             if (update > 0)
             {
-                MessageBox.Show(this, "Save success！");
+                MessageBox.Show(this, "Save success!");
             }
         }
     }

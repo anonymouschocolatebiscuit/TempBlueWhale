@@ -107,7 +107,7 @@ namespace BlueWhale.UI.store.ashx
 
             if (!basePage.CheckPower("Pandian"))
             {
-                context.Response.Write("You do not have this permission, please contact the administrator！");
+                context.Response.Write("You do not have this permission, please contact the administrator!");
                 return;
             }
 
@@ -118,7 +118,7 @@ namespace BlueWhale.UI.store.ashx
             OrderListModel<OrderListItemModel> itemList = obj;
             bool hasMore = false;
             bool hasDes = false;
-            string result = "Execution successful！";
+            string result = "Execution successful!";
 
             #region Traverse the situation of inventory surplus and shortage
 
@@ -150,7 +150,7 @@ namespace BlueWhale.UI.store.ashx
             {
                 string numberIn = inDAL.GetBillNumberAuto(users.ShopId);
 
-                result += " Generate surplus inventory receipt：" + numberIn;
+                result += " Generate surplus inventory receipt: " + numberIn;
 
                 inDAL.ShopId = users.ShopId;
                 inDAL.Number = numberIn;
@@ -212,7 +212,7 @@ namespace BlueWhale.UI.store.ashx
             {
                 string numberOut = outDAL.GetBillNumberAuto(users.ShopId);
 
-                result += " Generate stock-out form for inventory shortage：" + numberOut;
+                result += " Generate stock-out form for inventory shortage: " + numberOut;
 
                 outDAL.ShopId = users.ShopId;
                 outDAL.Number = numberOut;

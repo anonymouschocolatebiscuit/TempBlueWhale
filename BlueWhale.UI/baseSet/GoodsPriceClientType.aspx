@@ -63,9 +63,9 @@
                 data: JSON.stringify(postData),  // Equivalent to //data: "{'str1':'foovalue', 'str2':'barvalue'}",
                 success: function (jsonResult) {
 
-                    if (jsonResult == "Execution successful！") {
+                    if (jsonResult == "Execution successful!") {
 
-                        $.ligerDialog.waitting('Execution successful！');
+                        $.ligerDialog.waitting('Execution successful!');
                         setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
 
                     }

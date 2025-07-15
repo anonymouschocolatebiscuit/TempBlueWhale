@@ -64,7 +64,7 @@ namespace BlueWhale.UI.baseSet
 
                 if (extName != "" && extName.ToLower() != "jpg" && extName.ToLower() != "gif" && extName.ToLower() != "png")
                 {
-                    MessageBox.Show(this, "Image uploaded wrong format ，Please upload format in JPG，GIF，PNG！");
+                    MessageBox.Show(this, "Image uploaded wrong format ，Please upload format in JPG，GIF，PNG!");
                     return;
                 }
 

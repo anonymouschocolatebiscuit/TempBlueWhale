@@ -36,7 +36,7 @@
                         render: function (e) 
                         {  // Summary renderer, returns HTML to be loaded into the cell
                            // Aggregation of Objects (including sum, max, min, avg, count)
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                  
@@ -52,7 +52,7 @@
                  
                  
                  },
-                  { display: 'Vender', name: 'wlName', width: 70, align: 'left'},
+                  { display: 'Supplier', name: 'wlName', width: 70, align: 'left'},
                   { display: 'Item Number', name: 'code', width: 100, align: 'center'},
                  { display: 'Item Name', name: 'goodsName', width: 100, align: 'left'},
                  { display: 'Specification', name: 'spec', width: 80, align: 'center'},

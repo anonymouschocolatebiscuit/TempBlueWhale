@@ -132,7 +132,7 @@ namespace BlueWhale.UI.pay
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Purchase Payment-ID：" + delId.ToString();
+                            logs.Events = "Delete Purchase Payment-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -181,7 +181,7 @@ namespace BlueWhale.UI.pay
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Audit purchase payment-ID：" + delId.ToString();
+                            logs.Events = "Audit purchase payment-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -231,7 +231,7 @@ namespace BlueWhale.UI.pay
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel audit purchase payment-ID：" + delId.ToString();
+                            logs.Events = "Cancel audit purchase payment-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }

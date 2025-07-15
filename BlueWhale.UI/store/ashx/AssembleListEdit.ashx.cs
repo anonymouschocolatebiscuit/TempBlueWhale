@@ -234,7 +234,7 @@ namespace BlueWhale.UI.store.ashx
                 {
                     LogsDAL logs = new LogsDAL();
                     logs.Users = users.Names;
-                    logs.Events = "Edit Assembled Product：" + obj.id.ToString();
+                    logs.Events = "Edit Assembled Product: " + obj.id.ToString();
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 

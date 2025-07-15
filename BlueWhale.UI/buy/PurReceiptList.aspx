@@ -47,16 +47,16 @@
                     Keyword: 
                 </td>
                 <td class="tdTxt">
-                    <asp:TextBox ID="txtKeys" runat="server" placeholder="Please Enter Receipt No./Vender/Remark"></asp:TextBox>
+                    <asp:TextBox ID="txtKeys" runat="server" placeholder="Please Enter Receipt No./Supplier/Remark"></asp:TextBox>
                 </td>
                 <td class="tdLbl">
-                    Start Date：            
+                    Start Date:             
                 </td>
                 <td class="tdTxt">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
                 <td class="tdLbl">
-                    End Date：
+                    End Date: 
                 </td>
                 <td class="tdTxt">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>

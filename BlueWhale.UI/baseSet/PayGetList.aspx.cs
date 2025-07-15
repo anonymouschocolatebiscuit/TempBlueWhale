@@ -108,21 +108,21 @@ namespace BlueWhale.UI.baseSet
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "删除收支类别-ID：" + id.ToString();
+                    logs.Events = "删除收支类别-ID: " + id.ToString();
                     logs.Ip = Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    Response.Write("删除成功！");
+                    Response.Write("删除成功!");
 
                 }
                 else
                 {
-                    Response.Write("删除失败！");
+                    Response.Write("删除失败!");
                 }
             }
             else
             {
-                Response.Write("登录超时，请重新登陆！");
+                Response.Write("登录超时，请重新登陆!");
             }
 
         }

@@ -101,13 +101,13 @@
             <tr>
                 <td style="text-align: left;">
                     <asp:Label ID="lbFieldA" runat="server" Text="Label"></asp:Label>
-                    ：</td>
+                    : </td>
                 <td>
                     <asp:TextBox ID="txtFieldA" runat="server"></asp:TextBox>
                 </td>
                 <td align="left">
                     <asp:Label ID="lbFieldB" runat="server" Text="Label"></asp:Label>
-                    ：</td>
+                    : </td>
                 <td>
                     <asp:TextBox ID="txtFieldB" runat="server"></asp:TextBox>
                 </td>
@@ -115,13 +115,13 @@
             <tr>
                 <td style="text-align: left;">
                     <asp:Label ID="lbFieldC" runat="server" Text="Label"></asp:Label>
-                    ：</td>
+                    : </td>
                 <td>
                     <asp:TextBox ID="txtFieldC" runat="server"></asp:TextBox>
                 </td>
                 <td align="left">
                     <asp:Label ID="lbFieldD" runat="server" Text="Label"></asp:Label>
-                    ：</td>
+                    : </td>
                 <td>
                     <asp:TextBox ID="txtFieldD" runat="server"></asp:TextBox>
                 </td>

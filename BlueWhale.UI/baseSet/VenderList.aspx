@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
     <head runat="server">
-        <title>Vender Management</title>
+        <title>Supplier Management</title>
            <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
         <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
  
@@ -17,9 +17,9 @@
                 manager = $("#maingrid").ligerGrid({
                 checkbox: true,
                     columns: [
-                        { display: 'Vender Category', name: 'typeName', width: 130, type: 'int', align: 'center' },
-                        { display: 'Vender Code', name: 'code', width: 100, align: 'center' },
-                        { display: 'Vender Name', name: 'names', width: 150, align: 'left'},
+                        { display: 'Supplier Category', name: 'typeName', width: 130, type: 'int', align: 'center' },
+                        { display: 'Supplier Code', name: 'code', width: 100, align: 'center' },
+                        { display: 'Supplier Name', name: 'names', width: 150, align: 'left'},
                         { display: 'Balance Date', name: 'dueDate', width: 90, align: 'center' },
                         { display: 'Opening Balance', name: 'balance', width: 120, align: 'center' },
                         { display: 'Tax Rate%', name: 'tax', width: 80, align: 'center' },

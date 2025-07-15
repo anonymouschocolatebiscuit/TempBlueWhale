@@ -41,19 +41,19 @@
         <table id="form" border="0" cellpadding="0" cellspacing="20" style="width:900px; line-height:45px;">
             <tr>
                 <td style="width:100px;text-align:right;">
-                    Name：</td>
+                    Name: </td>
                 <td style="width:180px;">
                     <asp:TextBox ID="txtNames" runat="server"></asp:TextBox>
                     </td>
                 <td style="width:100px; text-align:right;">
-                    Mobile Phone：</td>
+                    Mobile Phone: </td>
                 <td style="width:180px;">
                     <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
                     </td>
             </tr>
             <tr>
                 <td style="text-align:right;">
-                    Landline Phone：
+                    Landline Phone: 
                 </td>
                 <td>
                     <asp:TextBox ID="txtTel" runat="server"></asp:TextBox>
@@ -61,7 +61,7 @@
             </tr>
             <tr>
                 <td style="text-align:right;">
-                    Shipping Address：
+                    Shipping Address: 
                 </td>
                 <td colspan="3">
                     <asp:TextBox ID="txtAddress" runat="server" Width="418px"></asp:TextBox>
@@ -69,7 +69,7 @@
             </tr>
             <tr>
                 <td style="text-align:right;">
-                    Primary contact person：</td>
+                    Primary contact person: </td>
                 <td>
                     <asp:DropDownList ID="ddlMoren" runat="server">
                         <asp:ListItem Selected="True" Value="1">True</asp:ListItem>

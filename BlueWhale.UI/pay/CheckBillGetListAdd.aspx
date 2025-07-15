@@ -14,11 +14,11 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
             <tr>
-                <td style="width:140px; text-align:left;">Sales Unit：</td>
+                <td style="width:140px; text-align:left;">Sales Unit: </td>
                 <td style="text-align:left; width:250px;">
                     <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px"></asp:DropDownList>
                 </td>
-                <td style="text-align:center; width:170px;">Write-Off Date：</td>
+                <td style="text-align:center; width:170px;">Write-Off Date: </td>
                 <td style="text-align:left; width:180px;">
                     <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
@@ -29,11 +29,11 @@
                 <td style="text-align:left;" colspan="6">
                     <table id="Table2" border="0" cellpadding="0" cellspacing="0" style="line-height:40px;">
                         <tr>
-                            <td style="text-align:left; width:140px;">Collection Number：</td>
+                            <td style="text-align:left; width:140px;">Collection Number: </td>
                             <td style="text-align:left; width:140px;">
                                 <asp:TextBox ID="txtKeysGet" runat="server" placeholder="Please Enter Receipt No."></asp:TextBox>
                             </td>
-                            <td style="text-align:center; width:65px;">Date：</td>
+                            <td style="text-align:center; width:65px;">Date: </td>
                             <td style="text-align:left; width:120px;">
                                 <asp:TextBox ID="txtDateStar1" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                             </td>
@@ -59,11 +59,11 @@
                 <td align="left" colspan="6">
                     <table id="Table1" border="0" cellpadding="0" cellspacing="0" style="line-height:40px;">
                         <tr>
-                            <td style="text-align:left; width:200px;">Accounts Receivable (AR) No.：</td>
+                            <td style="text-align:left; width:200px;">Accounts Receivable (AR) No.: </td>
                             <td style="text-align:left; width:140px;">
                                 <asp:TextBox ID="txtKeys" runat="server" placeholder="Please Enter Receipt No."></asp:TextBox>
                             </td>
-                            <td style="text-align:center; width:65px; padding-left:10px;">Date：</td>
+                            <td style="text-align:center; width:65px; padding-left:10px;">Date: </td>
                             <td style="text-align:left; width:120px;">
                                 <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                             </td>
@@ -86,7 +86,7 @@
             </tr>
             <tr><td colspan="6" style="height:15px;"></td></tr>
             <tr>
-                <td style="text-align:left;">Remarks：</td>
+                <td style="text-align:left;">Remarks: </td>
                 <td style="text-align:left; width:150px;" colspan="3">
                     <asp:TextBox ID="txtRemarks" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox>
                 </td>

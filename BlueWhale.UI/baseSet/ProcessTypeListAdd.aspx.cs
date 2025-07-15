@@ -39,7 +39,7 @@ namespace BlueWhale.UI.baseSet
         {
             if (string.IsNullOrWhiteSpace(txtNames.Text))
             {
-                MessageBox.Show(this, "Please fill in the name！");
+                MessageBox.Show(this, "Please fill in the name!");
                 txtNames.Focus();
                 return;
             }
@@ -61,7 +61,7 @@ namespace BlueWhale.UI.baseSet
 
                 if (dal.Add() > 0)
                 {
-                    AddLog("Create Process Category：" + txtNames.Text);
+                    AddLog("Create Process Category: " + txtNames.Text);
                     MessageBox.Show(this, "Operation Successful!");
                 }
             }
@@ -76,7 +76,7 @@ namespace BlueWhale.UI.baseSet
 
                 if (dal.Update() > 0)
                 {
-                    AddLog("Edit Process Category：" + txtNames.Text);
+                    AddLog("Edit Process Category: " + txtNames.Text);
                     MessageBox.Show(this, "Operation Successful!");
                 }
             }

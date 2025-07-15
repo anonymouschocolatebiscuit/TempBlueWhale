@@ -115,7 +115,7 @@ namespace BlueWhale.UI.store
                             num += 1;
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Inventory Transfer-ID：" + delId.ToString();
+                            logs.Events = "Delete Inventory Transfer-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -128,7 +128,7 @@ namespace BlueWhale.UI.store
                 }
                 else
                 {
-                    Response.Write("Fail to delete！");
+                    Response.Write("Fail to delete!");
                 }
             }
             else
@@ -166,7 +166,7 @@ namespace BlueWhale.UI.store
                             num += 1;
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Review Inventory Transfer-ID：" + delId.ToString();
+                            logs.Events = "Review Inventory Transfer-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -175,7 +175,7 @@ namespace BlueWhale.UI.store
 
                 if (num > 0)
                 {
-                    Response.Write("Review " + num + "records successfully！");
+                    Response.Write("Review " + num + "records successfully!");
                 }
                 else
                 {
@@ -216,7 +216,7 @@ namespace BlueWhale.UI.store
                             num += 1;
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel Review Inventory Transfer-ID：" + delId.ToString();
+                            logs.Events = "Cancel Review Inventory Transfer-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -229,7 +229,7 @@ namespace BlueWhale.UI.store
                 }
                 else
                 {
-                    Response.Write("Fail to cancel review！");
+                    Response.Write("Fail to cancel review!");
                 }
             }
             else

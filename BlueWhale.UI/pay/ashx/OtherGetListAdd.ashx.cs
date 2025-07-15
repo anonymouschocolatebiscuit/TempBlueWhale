@@ -157,7 +157,7 @@ namespace BlueWhale.UI.pay.ashx
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = users.ShopId;
                     logs.Users = users.Names;
-                    logs.Events = "Create New OtherGet：" + dal.Number;
+                    logs.Events = "Create New OtherGet: " + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
                     context.Response.Write("Execution successful!");

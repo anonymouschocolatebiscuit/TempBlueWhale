@@ -63,7 +63,7 @@
                     </asp:TextBox>
                 </td>
                 <td style="text-align:right; width:60px; white-space:nowrap; padding-right:0.5rem">
-                    Vendor:
+                    Supplier:
                 </td>
                 <td style="text-align:left;width:80px;">
                     <input type="text" id="txtVenderList" />

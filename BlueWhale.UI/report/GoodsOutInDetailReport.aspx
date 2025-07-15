@@ -106,7 +106,7 @@
      <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
            <tr>
            <td style="text-align:right; width:40px;">
-              Date： 
+              Date:  
             </td>
            <td style="text-align:left; width:120px;">
             
@@ -122,14 +122,14 @@
            </td>
           
            <td style="text-align:right;width:50px;">
-           Goods：
+           Goods: 
             </td>
 
            <td style="text-align:left;width:170px;">
             <input type="text" id="txtGoodsList"/> 
            </td>
                 <td style="text-align:right; width:60px;">
-               Inventory：</td>
+               Inventory: </td>
             <td style="text-align:left; width:120px;">
              <input type="text" id="txtFlagList"/>  
            </td>

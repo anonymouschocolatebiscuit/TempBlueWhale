@@ -311,11 +311,11 @@ namespace BlueWhale.UI.produce.ashx
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId=users.ShopId;
                     logs.Users = users.Names;
-                    logs.Events = "Modify product BOM list：" + model.number;
+                    logs.Events = "Modify product BOM list: " + model.number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    context.Response.Write("Operation Successful！");
+                    context.Response.Write("Operation Successful!");
                 }
             }
             #endregion

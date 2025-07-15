@@ -2,7 +2,7 @@
 基于LayUI的管理后台模板
 Layui版本 1.0.4
 演示站点:http://beginner.zhengjinfan.cn/demo/beginner_admin/
-交流Q群：248049395 
+交流Q群: 248049395 
 
 版本号:# v0.0.6 2016-11-27
 
@@ -24,7 +24,7 @@ Layui版本 1.0.4
 版本号:# v0.0.3 2016-11-22
 
 1、table 添加单选，全选功能
-    1.1、依赖组件iCheck 文档地址： http://www.bootcss.com/p/icheck/
+    1.1、依赖组件iCheck 文档地址:  http://www.bootcss.com/p/icheck/
 2、添加登录页面
 3、top样式修改
 4、修复直接选中checkbox时背景色没变化，感谢@瀮月的反馈

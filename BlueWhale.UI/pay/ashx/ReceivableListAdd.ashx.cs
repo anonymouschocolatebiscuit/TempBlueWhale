@@ -148,14 +148,14 @@ namespace BlueWhaleUI.pay.ashx
             if (context.Session["userInfo"] == null)
             {
 
-                context.Response.Write("登陆超时，请重新登陆系统！");
+                context.Response.Write("登陆超时，请重新登陆系统!");
                 return;
 
             }
             BasePage basePage = new BasePage();
             if (!basePage.CheckPower("ReceivableListAdd"))
             {
-                context.Response.Write("无此操作权限，请联系管理员！");
+                context.Response.Write("无此操作权限，请联系管理员!");
                 return;
             }
             Users users = context.Session["userInfo"] as Users;
@@ -253,7 +253,7 @@ namespace BlueWhaleUI.pay.ashx
                 {
                     LogsDAL logs = new LogsDAL();
                     logs.Users = users.Names;
-                    logs.Events = "新增收款单：" + dal.Number;
+                    logs.Events = "新增收款单: " + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 

@@ -156,7 +156,7 @@ namespace BlueWhale.UI.pay.ashx
             BasePage basePage = new BasePage();
             if (!basePage.CheckPower("PayMentListAdd"))
             {
-                context.Response.Write("You do not have this permission, please contact the administrator！");
+                context.Response.Write("You do not have this permission, please contact the administrator!");
                 return;
             }
             Users users = context.Session["userInfo"] as Users;
@@ -234,11 +234,11 @@ namespace BlueWhale.UI.pay.ashx
                 {
                     LogsDAL logs = new LogsDAL();
                     logs.Users = users.Names;
-                    logs.Events = "Create Payment Order ：" + dal.Number;
+                    logs.Events = "Create Payment Order : " + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    context.Response.Write("Execution successful！");
+                    context.Response.Write("Execution successful!");
                 }
             }
 

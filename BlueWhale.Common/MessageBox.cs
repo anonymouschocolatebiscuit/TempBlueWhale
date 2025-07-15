@@ -43,7 +43,7 @@ namespace BlueWhale.Common
         /// <param name="url">redirect target URL</param>
         public static void ShowAndRedirect(System.Web.UI.Page page, string msg, string url)
         {
-            //Response.Write("<script>alert('帐户审核通过！现在去为企业充值。');window.location=\"" + pageurl + "\"</script>");
+            //Response.Write("<script>alert('帐户审核通过!现在去为企业充值。');window.location=\"" + pageurl + "\"</script>");
             page.ClientScript.RegisterStartupScript(page.GetType(), "message", "<script language='javascript' defer>alert('" + msg + "');window.location=\"" + url + "\"</script>");
         }
 

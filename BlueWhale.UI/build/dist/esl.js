@@ -151,7 +151,7 @@ var require;
         
         // 出现window不是疏忽
         // esl设计是做为browser端的loader
-        // 闭包的global更多意义在于：
+        // 闭包的global更多意义在于: 
         //     define和require方法可以被挂到用户自定义对象中
         var opera = window.opera;
 
@@ -256,7 +256,7 @@ var require;
      * 首先，完成对factory中声明依赖的分析提取
      * 然后，尝试加载"资源加载所需模块"
      * 
-     * 需要先加载模块的原因是：如果模块不存在，无法进行resourceId normalize化
+     * 需要先加载模块的原因是: 如果模块不存在，无法进行resourceId normalize化
      * modAnalyse完成后续的依赖分析处理，并进行依赖模块的加载
      * 
      * @inner
@@ -350,10 +350,10 @@ var require;
                     }
                 );
 
-                // 依赖模块id normalize化，并去除必要的依赖。去除的依赖模块有：
-                // 1. 内部模块：require/exports/module
-                // 2. 重复模块：dependencies参数和内部require可能重复
-                // 3. 空模块：dependencies中使用者可能写空
+                // 依赖模块id normalize化，并去除必要的依赖。去除的依赖模块有: 
+                // 1. 内部模块: require/exports/module
+                // 2. 重复模块: dependencies参数和内部require可能重复
+                // 3. 空模块: dependencies中使用者可能写空
                 var realDepends = module.realDeps;
                 var len = realDepends.length;
                 var existsDepend = {};
@@ -812,7 +812,7 @@ var require;
         wait4PreDefines.length = 0;
         wait4PreDefines = [];
 
-        // 预定义模块：
+        // 预定义模块: 
         // 此时处理的模块都是匿名define的模块
         each(
             preDefines,

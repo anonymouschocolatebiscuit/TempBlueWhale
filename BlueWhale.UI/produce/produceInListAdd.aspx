@@ -39,7 +39,7 @@
  <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
            <tr>
            <td style="width:80px; text-align:center;">
-                                                  入库日期：</td>
+                                                  入库日期: </td>
            <td style="text-align:left; width:250px;">
             
                                                   <asp:TextBox ID="txtAddDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
@@ -48,7 +48,7 @@
              
                    </td>
            <td style="text-align:right; width:80px;">
-                                                  入库人：</td>
+                                                  入库人: </td>
            <td style="text-align:left; width:180px;">
                                                   <asp:DropDownList ID="ddlUsers" runat="server">
                                                   </asp:DropDownList>
@@ -74,7 +74,7 @@
  <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:50px;">
            <tr>
            <td style="width:80px; text-align:right;">
-               备注信息：</td>
+               备注信息: </td>
            <td style="text-align:left; ">
             
                <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>

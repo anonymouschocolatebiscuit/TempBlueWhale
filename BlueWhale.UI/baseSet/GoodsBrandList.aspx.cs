@@ -86,7 +86,7 @@ namespace BlueWhale.UI.baseSet
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Delete product brand-ID：" + id.ToString();
+                    logs.Events = "Delete product brand-ID: " + id.ToString();
                     logs.Ip = Request.UserHostAddress.ToString();
                     logs.Add();
 

@@ -42,7 +42,7 @@ $(function () {
                 {
                     type: 'count',
                     render: function (e) {
-                        return 'Total：';
+                        return 'Total: ';
                     }
                 }
             },
@@ -214,7 +214,7 @@ function makePDF() {
         url: 'SalesOrderList.aspx',
         data: 'Action=makePDF&id=' + id + '&number=' + number + '&ranid=' + Math.random(), //encodeURI
         success: function (resultString) {
-            if (resultString == 'Generate Successfully！') {
+            if (resultString == 'Generate Successfully!') {
                 parent.f_addTab('pdf', 'Sales Order - Print Review', 'sales/pdf/' + shopId + '-' + number + '.pdf');
             }
             else {
@@ -238,7 +238,7 @@ function makePDFNoPrice() {
         url: 'SalesOrderList.aspx',
         data: 'Action=makePDFNoPrice&id=' + id + '&number=' + number + '&ranid=' + Math.random(), //encodeURI
         success: function (resultString) {
-            if (resultString == 'Generate Successfully！') {
+            if (resultString == 'Generate Successfully!') {
                 parent.f_addTab('pdf', 'Sales Order - Print Review', 'sales/pdf/' + shopId + '-' + number + '-01.pdf');
             }
             else {

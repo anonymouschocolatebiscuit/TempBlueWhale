@@ -150,7 +150,7 @@ namespace BlueWhale.UI.store
                             num += 1;
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Assemble Item-ID：" + delId.ToString();
+                            logs.Events = "Delete Assemble Item-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -202,7 +202,7 @@ namespace BlueWhale.UI.store
                             num += 1;
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Check Assemble Item-ID：" + delId.ToString();
+                            logs.Events = "Check Assemble Item-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -252,7 +252,7 @@ namespace BlueWhale.UI.store
                             num += 1;
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Check No Assemble Item-ID：" + delId.ToString();
+                            logs.Events = "Check No Assemble Item-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }

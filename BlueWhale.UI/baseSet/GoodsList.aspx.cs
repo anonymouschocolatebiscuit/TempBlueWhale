@@ -284,7 +284,7 @@ namespace BlueWhale.UI.baseSet
                     {
                         ShopId = LoginUser.ShopId,
                         Users = LoginUser.Phone + "-" + LoginUser.Names,
-                        Events = "Delete Good-ID：" + id.ToString(),
+                        Events = "Delete Good-ID: " + id.ToString(),
                         Ip = Request.UserHostAddress.ToString()
                     };
                     logs.Add();
@@ -330,7 +330,7 @@ namespace BlueWhale.UI.baseSet
                             num += 1;
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Good-ID：" + delId.ToString();
+                            logs.Events = "Delete Good-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -339,7 +339,7 @@ namespace BlueWhale.UI.baseSet
 
                 if (num > 0)
                 {
-                    Response.Write("Deletion successful!" + num + "row of record！");
+                    Response.Write("Deletion successful!" + num + "row of record!");
                 }
                 else
                 {
@@ -374,7 +374,7 @@ namespace BlueWhale.UI.baseSet
                             num += 1;
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "On Sale Good-ID：" + delId.ToString();
+                            logs.Events = "On Sale Good-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -419,7 +419,7 @@ namespace BlueWhale.UI.baseSet
                             num += 1;
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Take Down Good-ID：" + delId.ToString();
+                            logs.Events = "Take Down Good-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }

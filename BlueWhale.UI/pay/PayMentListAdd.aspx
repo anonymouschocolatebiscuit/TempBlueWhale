@@ -19,12 +19,12 @@
     <form id="form2" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="width: 130px; text-align: right;">Purchasing Vendor：</td>
+                <td style="width: 130px; text-align: right;">Purchasing Supplier: </td>
                 <td style="text-align: left; width: 250px;">
                     <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px">
                     </asp:DropDownList>
                 </td>
-                <td style="text-align: right; width: 130px;">Payment Date：</td>
+                <td style="text-align: right; width: 130px;">Payment Date: </td>
                 <td style="text-align: left; width: 180px;">
                     <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
@@ -40,13 +40,13 @@
                 <td align="left" colspan="6">
                     <table id="Table1" border="0" cellpadding="0" cellspacing="0" style="line-height: 40px;">
                         <tr>
-                            <td style="text-align: right; width: 80px;"> Source Order Number：</td>
+                            <td style="text-align: right; width: 80px;"> Source Order Number: </td>
 
                             <td style="text-align: left; width: 140px;">
                                 <asp:TextBox ID="txtKeys" runat="server" placeholder="Please Enter Receipt No."></asp:TextBox>
                             </td>
 
-                            <td style="text-align: right; width: 70px;">Date：
+                            <td style="text-align: right; width: 70px;">Date: 
                             </td>
 
                             <td style="text-align: left; width: 120px;">
@@ -71,11 +71,11 @@
                 </td>
             </tr>
             <tr>
-                <td align="right">Overall Discount：</td>
+                <td align="right">Overall Discount: </td>
                 <td style="text-align: left; width: 250px;">
                     <asp:TextBox ID="txtDisPrice" runat="server">0</asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 80px;">Current Prepayment：</td>
+                <td style="text-align: right; width: 80px;">Current Prepayment: </td>
                 <td style="text-align: left; width: 180px;">
                     <asp:TextBox ID="txtPayPriceNowMore" runat="server" BackColor="#FFFFCC"
                         ToolTip="Auto Calculation">0</asp:TextBox>
@@ -84,7 +84,7 @@
                 <td style="text-align: left;">&nbsp;</td>
             </tr>
             <tr>
-                <td align="right">Remarks：</td>
+                <td align="right">Remarks: </td>
                 <td style="text-align: left;" colspan="3">
                     <asp:TextBox ID="txtRemarks" runat="server" Width="510px" TextMode="MultiLine"></asp:TextBox>
                 </td>

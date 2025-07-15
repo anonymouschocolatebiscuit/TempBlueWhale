@@ -276,11 +276,11 @@ namespace BlueWhale.UI.sales.ashx
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = users.ShopId;
                     logs.Users = users.Names;
-                    logs.Events = "Added sales order：" + dal.Number;
+                    logs.Events = "Added sales order: " + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    context.Response.Write("Execution successful！");
+                    context.Response.Write("Execution successful!");
 
 
                 }

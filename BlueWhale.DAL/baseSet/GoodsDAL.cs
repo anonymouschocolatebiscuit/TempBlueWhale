@@ -1043,7 +1043,7 @@ namespace BlueWhale.DAL
 
             sql += "union all ";
 
-            sql += @"select '' goodsId,code,goodsName+'-Subtotal：' goodsName,'' spec,'' unitName,'' ckId,'All Inventory' ckName,
+            sql += @"select '' goodsId,code,goodsName+'-Subtotal: ' goodsName,'' spec,'' unitName,'' ckId,'All Inventory' ckName,
                     sum(numIn) sumNumIn,
                     sum(numOut) sumNumOut,
                     sum(numIn-numOut) sumNum,
@@ -1175,7 +1175,7 @@ namespace BlueWhale.DAL
 
             sql += "union all ";
 
-            sql += @"select '' goodsId,code,goodsName+'-Subtotal：' goodsName,'' spec,'' unitName,'' ckId,'All Invetory' ckName,
+            sql += @"select '' goodsId,code,goodsName+'-Subtotal: ' goodsName,'' spec,'' unitName,'' ckId,'All Invetory' ckName,
                             sum(numIn) sumNumIn,
                             sum(numOut) sumNumOut,
                             sum(numIn-numOut) sumNum,

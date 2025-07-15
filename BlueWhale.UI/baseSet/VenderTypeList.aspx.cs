@@ -90,7 +90,7 @@ namespace BlueWhale.UI.baseSet
                     {
                         ShopId = LoginUser.ShopId,
                         Users = LoginUser.Phone + "-" + LoginUser.Names,
-                        Events = " Delete Vender Category-ID：" + id.ToString(),
+                        Events = " Delete Supplier Category-ID: " + id.ToString(),
                         Ip = Request.UserHostAddress.ToString()
                     };
                     logs.Add();

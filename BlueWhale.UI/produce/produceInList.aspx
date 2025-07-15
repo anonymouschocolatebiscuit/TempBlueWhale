@@ -20,13 +20,13 @@
 
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 100%; line-height: 40px;">
             <tr>
-                <td style="text-align: right; width: 50px;">Keywords： 
+                <td style="text-align: right; width: 50px;">Keywords:  
                 </td>
                 <td style="text-align: left; width: 200px;">
                     <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter invoice no/remarks"></asp:TextBox>
                     <asp:HiddenField ID="hfShopId" runat="server" />
                 </td>
-                <td style="text-align: right; width: 70px;">Start Date：
+                <td style="text-align: right; width: 70px;">Start Date: 
             
                 </td>
                 <td style="text-align: left; width: 180px;">
@@ -35,7 +35,7 @@
 
 
                 </td>
-                <td style="text-align: right; width: 70px;">End Date：
+                <td style="text-align: right; width: 70px;">End Date: 
              
              
             

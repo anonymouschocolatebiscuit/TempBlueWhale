@@ -16,17 +16,17 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 100%; line-height: 40px;">
             <tr>
-                <td style="text-align: right; width: 50px;">Keywords： 
+                <td style="text-align: right; width: 50px;">Keywords:  
                 </td>
                 <td style="text-align: left; width: 180px;">
                     <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter the document number/product/remarks"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 70px;">Start Date：
+                <td style="text-align: right; width: 70px;">Start Date: 
                 </td>
                 <td style="text-align: left; width: 180px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 70px;">End Date：
+                <td style="text-align: right; width: 70px;">End Date: 
                 </td>
                 <td style="text-align: left; width: 180px;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>

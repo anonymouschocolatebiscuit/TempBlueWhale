@@ -122,7 +122,7 @@ $(function () {
                 display: 'Item Name', name: 'goodsName', width: 250, align: 'left',
                 totalSummary: {
                     type: 'count',
-                    render: function () { return 'Total：'; }
+                    render: function () { return 'Total: '; }
                 }
             },
             { display: 'Specification', name: 'spec', width: 100, align: 'center' },

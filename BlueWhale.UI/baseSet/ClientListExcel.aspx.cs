@@ -127,7 +127,7 @@ namespace BlueWhale.UI.BaseSet
 
                         logs.ShopId = LoginUser.ShopId;
                         logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                        logs.Events = "Import customer information：" + this.Label1.Text;
+                        logs.Events = "Import customer information: " + this.Label1.Text;
                         logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                         logs.Add();
                     }
@@ -145,7 +145,7 @@ namespace BlueWhale.UI.BaseSet
             }
             else
             {
-                MessageBox.Show(this, "Please select the Excel file to import！");
+                MessageBox.Show(this, "Please select the Excel file to import!");
                 return;
             }
         }

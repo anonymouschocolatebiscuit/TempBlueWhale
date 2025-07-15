@@ -68,7 +68,7 @@ namespace BlueWhale.UI.produce
 
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Added BOM Group：" + this.txtNames.Text;
+                    logs.Events = "Added BOM Group: " + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
@@ -91,11 +91,11 @@ namespace BlueWhale.UI.produce
 
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Edited BOM Group：" + this.txtNames.Text;
+                    logs.Events = "Edited BOM Group: " + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    MessageBox.Show(this, "Edit successfully！");
+                    MessageBox.Show(this, "Edit successfully!");
                 }
             }
         }

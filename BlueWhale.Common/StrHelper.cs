@@ -36,7 +36,7 @@ namespace BlueWhale.Common
         /// <param name="msg"></param>
         public static void AjaxAlert(System.Web.UI.Page page, string msg)
         {
-            page.ClientScript.RegisterStartupScript(page.GetType(), "ajaxjs", string.Format("alert('{0}！')", msg), true);
+            page.ClientScript.RegisterStartupScript(page.GetType(), "ajaxjs", string.Format("alert('{0}!')", msg), true);
         }
 
         //字符串清理
@@ -427,7 +427,7 @@ namespace BlueWhale.Common
         }
 
         /// <summary>
-        /// generate barcode：example：bar_code("20070520122334", 20, 1, 1);
+        /// generate barcode: example: bar_code("20070520122334", 20, 1, 1);
         /// </summary>
         /// <param name="str"></param>
         /// <param name="ch">height</param>

@@ -131,7 +131,7 @@ $(function () {
                     {
                         type: 'count',
                         render: function (e) {
-                            return 'Total£º';
+                            return 'Total: ';
                         }
                     }
                 },
@@ -139,7 +139,7 @@ $(function () {
                 { display: 'Specs', name: 'spec', width: 100, align: 'center' },
                 { display: 'Number', name: 'unitName', width: 80, align: 'center' },
                 {
-                    display: 'Inventory', name: 'ckId', width: 80, isSort: false, textField: 'ckName',
+                    display: 'Inventory', name: 'ckId', width: 100, isSort: false, textField: 'ckName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
@@ -148,7 +148,7 @@ $(function () {
                 },
 
                 {
-                    display: 'Number', name: 'num', width: 70, type: 'float', align: 'right', editor: { type: 'float', precision: 3 },
+                    display: 'Number', name: 'num', width: 80, type: 'float', align: 'right', editor: { type: 'float', precision: 3 },
 
                     totalSummary:
                     {
@@ -166,7 +166,7 @@ $(function () {
                 },
 
                 {
-                    display: 'Discount%', name: 'dis', width: 60, type: 'float', align: 'right', editor: { type: 'float' }
+                    display: 'Discount%', name: 'dis', width: 90, type: 'float', align: 'right', editor: { type: 'float' }
                 },
 
                 {
@@ -188,7 +188,7 @@ $(function () {
                 },
 
                 {
-                    display: 'Price', name: 'sumPriceNow', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Price', name: 'sumPriceNow', width: 90, type: 'float', align: 'right', editor: { type: 'float' },
 
                     totalSummary:
                     {
@@ -201,7 +201,7 @@ $(function () {
                     }
                 },
 
-                { display: 'Tax Table%', name: 'tax', width: 60, type: 'int', align: 'center', editor: { type: 'int' } },
+                { display: 'Tax Rate%', name: 'tax', width: 60, type: 'int', align: 'center', editor: { type: 'int' } },
                 { display: 'Unit Price Including Tax', name: 'priceTax', width: 70, type: 'float', align: 'center', editor: { type: 'float' } },
 
                 {
@@ -230,7 +230,7 @@ $(function () {
                     }
                 },
 
-                { display: 'Remoark', name: 'remarks', width: 150, align: 'left', type: 'text', editor: { type: 'text' } },
+                { display: 'Remarks', name: 'remarks', width: 150, align: 'left', type: 'text', editor: { type: 'text' } },
                 { display: 'Source Number', name: 'sourceNumber', width: 150, align: 'left', type: 'text' }
             ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '350',
             url: 'PurOrderListEdit.aspx?Action=GetData&id=' + param,

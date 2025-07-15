@@ -21,19 +21,19 @@
     <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:100%; line-height:40px;">
            <tr>
            <td style="text-align:right; width:50px;">
-            Keyword：
+            Keyword: 
             </td>
            <td style="text-align:left; width:180px;">
                <asp:TextBox ID="txtKeys" runat="server" placeholder="Please Enter Receipt No./Customer/Product/Remarks"></asp:TextBox>
             </td>
            <td style="text-align:right; width:70px;">
-               Start Date：
+               Start Date: 
               </td>
            <td style="text-align:left; width:180px;">
            <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
            </td>
            <td style="text-align:right; width:70px;">
-               End Date：
+               End Date: 
            </td>
             <td style="text-align:left; width:180px;">
             

@@ -191,7 +191,7 @@ function lock($, layer) {
 				},'json');
 				*/
                 isShowLock = false;
-                //演示：默认输入密码都算成功
+                //演示: 默认输入密码都算成功
                 //关闭锁屏层
                 layer.close(lockIndex);
             };

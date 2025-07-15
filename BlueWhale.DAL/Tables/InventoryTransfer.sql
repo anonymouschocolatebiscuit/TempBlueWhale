@@ -3,8 +3,8 @@ GO
 
 /****** Object:  Table [dbo].[inventoryTransfer]    Script Date: 2025/01/09 10:17:27 ******/
 /*
-** Description £º Create Inventory Transfer Table
-** Changes £º 2024-01-09 dev100  222#457 - Create [InventoryTransfer] & [InventoryTransferDetails] Datatable, DAL
+** Description :  Create Inventory Transfer Table
+** Changes :  2024-01-09 dev100  222#457 - Create [InventoryTransfer] & [InventoryTransferDetails] Datatable, DAL
 */
 SET ANSI_NULLS ON
 GO

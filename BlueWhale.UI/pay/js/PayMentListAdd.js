@@ -92,7 +92,7 @@ $(function () {
                     {
                         type: 'count',
                         render: function (e) {
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
 
@@ -151,7 +151,7 @@ function f_onAfterEdit() {
     }
 
     if (Number(sumPayPrice) > Number(sumPrice)) {
-        $.ligerDialog.warn("Amount written off cannot greater than payment amount！");
+        $.ligerDialog.warn("Amount written off cannot greater than payment amount!");
         return;
     }
 
@@ -183,7 +183,7 @@ $(function () {
                     {
                         type: 'count',
                         render: function (e) {
-                            return 'Total：';
+                            return 'Total: ';
                         }
                     }
                 },
@@ -331,7 +331,7 @@ function save() {
 
     var bizDate = $("#txtBizDate").val();
     if (bizDate == "") {
-        $.ligerDialog.warn("Please enter the payment date！");
+        $.ligerDialog.warn("Please enter the payment date!");
         return;
     }
 

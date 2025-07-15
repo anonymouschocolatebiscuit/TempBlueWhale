@@ -345,7 +345,7 @@ namespace BlueWhale.UI.UI.produce.ashx
                 LogsDAL logs = new LogsDAL();
                 logs.ShopId = users.ShopId;
                 logs.Users = users.Names;
-                logs.Events = "Edit Production Plan：" + dal.Number;
+                logs.Events = "Edit Production Plan: " + dal.Number;
                 logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                 logs.Add();
 

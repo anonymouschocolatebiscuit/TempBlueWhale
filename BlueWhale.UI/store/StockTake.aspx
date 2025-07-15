@@ -17,16 +17,16 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="text-align: right; width: 120px;">Select Warehouse：
+                <td style="text-align: right; width: 120px;">Select Warehouse: 
                 </td>
                 <td style="text-align: left; width: 120px;">
                     <input type="text" id="txtFlagList" />
                 </td>
-                <td style="text-align: right; width: 50px;">Type：</td>
+                <td style="text-align: right; width: 50px;">Type: </td>
                 <td style="text-align: left; width: 150px;">
                     <input type="text" id="txtTypeList" />
                 </td>
-                <td style="text-align: right; width: 70px;">Product：
+                <td style="text-align: right; width: 70px;">Product: 
                 </td>
                 <td style="text-align: left; width: 100px;">
                     <input type="text" id="txtGoodsList" />
@@ -46,7 +46,7 @@
 
         <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 50px;">
             <tr>
-                <td style="width: 80px; text-align: right;">Remarks：</td>
+                <td style="width: 80px; text-align: right;">Remarks: </td>
                 <td style="text-align: left;">
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>

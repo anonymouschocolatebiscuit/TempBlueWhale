@@ -83,7 +83,7 @@ $(function () {
 					{
 						type: 'count',
 						render: function (e) {  
-							return 'Total：';
+							return 'Total: ';
 						}
 					}
 				},
@@ -139,7 +139,7 @@ $(function () {
 					{
 						type: 'count',
 						render: function (e) {  
-							return 'Total：';
+							return 'Total: ';
 						}
 					}
 				},
@@ -487,7 +487,7 @@ function endAllEdit() {
 function deleteRow() {
 
 	if (managersub.rows.length == 1) {
-		$.ligerDialog.warn('Keep at least one row！')
+		$.ligerDialog.warn('Keep at least one row!')
 
 	}
 	else {
@@ -541,22 +541,22 @@ function save() {
 	}
 
 	if (data.length == 0) {
-		$.ligerDialog.warn('Please select Disassemble Goods！');
+		$.ligerDialog.warn('Please select Disassemble Goods!');
 		return;
-		alert("Execution skipped！");
+		alert("Execution skipped!");
 	}
 
 	for (var i = 0; i < data.length; i++) {
 		if (data[i].num <= 0 || data[i].num == "" || data[i].num == "0" || data[i].num == "0.00") {
-			$.ligerDialog.warn("Please enter the " + (i + 1) + " number of disassembled items in the row！");
+			$.ligerDialog.warn("Please enter the " + (i + 1) + " number of disassembled items in the row!");
 			return;
-			alert("Execution skipped！");
+			alert("Execution skipped!");
 		}
 
 		if (data[i].ckId == 0 || data[i].ckId == "" || data[i].ckId == "0" || data[i].ckName == "") {
-			$.ligerDialog.warn("Please enter the " + (i + 1) + " number of disassembled items in the row！");
+			$.ligerDialog.warn("Please enter the " + (i + 1) + " number of disassembled items in the row!");
 			return;
-			alert("Execution skipped！");
+			alert("Execution skipped!");
 		}
 	}
 
@@ -573,28 +573,28 @@ function save() {
 		}
 	}
 	if (datasub.length == 0) {
-		$.ligerDialog.warn('Please Select Disassembled items！');
+		$.ligerDialog.warn('Please Select Disassembled items!');
 		return;
-		alert("Execution skipped！");
+		alert("Execution skipped!");
 	}
 
 	for (var i = 0; i < datasub.length; i++) {
 		if (datasub[i].num <= 0 || datasub[i].num == "" || datasub[i].num == "0" || datasub[i].num == "0.00") {
 			$.ligerDialog.warn("Please enter the" + (i + 1) + "number of disassembled items in the ro");
 			return;
-			alert("Execution skipped！");
+			alert("Execution skipped!");
 		}
 
 		if (datasub[i].ckId == 0 || datasub[i].ckId == "" || datasub[i].ckId == "0" || datasub[i].ckName == "") {
 			$.ligerDialog.warn("Please enter the" + (i + 1) + "number of disassembled items in the ro");
 			return;
-			alert("Execution skipped！");
+			alert("Execution skipped!");
 		}
 	}
 
 	var bizDate = $("#txtBizDate").val();
 	if (bizDate == "") {
-		$.ligerDialog.warn("Please enter Disassemble Date！");
+		$.ligerDialog.warn("Please enter Disassemble Date!");
 		return;
 	}
 
@@ -631,8 +631,8 @@ function save() {
 		data: JSON.stringify(postData),  
 		success: function (jsonResult) {
 
-			if (jsonResult == "Execution successful！") {
-				$.ligerDialog.waitting('Execution successful！'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
+			if (jsonResult == "Execution successful!") {
+				$.ligerDialog.waitting('Execution successful!'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
 			}
 			else {
 				$.ligerDialog.warn(jsonResult);
