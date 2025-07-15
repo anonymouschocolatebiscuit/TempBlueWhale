@@ -70,7 +70,7 @@ namespace BlueWhale.DAL
         {
             bool flag = false;
 
-            string sql = "select * from inventory where code='" + code + "' and shopId='" + shopId + "' ";
+            string sql = "select * from cangku where code='" + code + "' and shopId='" + shopId + "' ";
 
             SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
             while (reader.Read())
@@ -89,7 +89,7 @@ namespace BlueWhale.DAL
         {
             bool flag = false;
 
-            string sql = "select * from inventory where code='" + code + "' and id<>'" + id + "' and shopId='" + shopId + "'  ";
+            string sql = "select * from cangku where code='" + code + "' and id<>'" + id + "' and shopId='" + shopId + "'  ";
 
             SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
             while (reader.Read())
@@ -108,7 +108,7 @@ namespace BlueWhale.DAL
         {
             bool flag = false;
 
-            string sql = "select * from inventory where names='" + names + "' and shopId='" + shopId + "'  ";
+            string sql = "select * from cangku where names='" + names + "' and shopId='" + shopId + "'  ";
 
             SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
             while (reader.Read())
@@ -127,7 +127,7 @@ namespace BlueWhale.DAL
         {
             bool flag = false;
 
-            string sql = "select * from inventory where names='" + names + "' and id<>'" + id + "' and shopId='" + shopId + "'  ";
+            string sql = "select * from cangku where names='" + names + "' and id<>'" + id + "' and shopId='" + shopId + "'  ";
 
             SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
             while (reader.Read())
@@ -147,7 +147,7 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public DataSet GetALLModelList()
         {
-            string sql = "select * from inventory order by code  ";
+            string sql = "select * from cangku order by code  ";
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
@@ -159,7 +159,7 @@ namespace BlueWhale.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select *,code+' '+names CodeName ");
-            strSql.Append(" FROM inventory ");
+            strSql.Append(" FROM cangku ");
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);
@@ -180,7 +180,7 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public DataSet GetALLModelList(int shopId)
         {
-            string sql = "select * from inventory where shopId='" + shopId + "' order by code  ";
+            string sql = "select * from cangku where shopId='" + shopId + "' order by code  ";
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
@@ -195,7 +195,7 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public int Add()
         {
-            string sql = "insert into inventory(shopId,code,names,flag) values('" + ShopId + "','" + Code + "','" + Names + "',1)";
+            string sql = "insert into cangku(shopId,code,names,flag) values('" + ShopId + "','" + Code + "','" + Names + "',1)";
 
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
@@ -216,7 +216,7 @@ namespace BlueWhale.DAL
 
             if (!this.isExistsCodeEdit(Id, ShopId, Code) && !this.isExistsNamesEdit(Id, ShopId, Names))
             {
-                sql = "update inventory set Names='" + Names + "',code='" + Code + "' where Id='" + Id + "'";
+                sql = "update cangku set Names='" + Names + "',code='" + Code + "' where Id='" + Id + "'";
 
                 return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
             }
@@ -238,10 +238,10 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public int UpdateFlag(int Id)
         {
-            string sqls = "if exists(select * from inventory where id='" + Id + "' and flag=1) ";
-            sqls += " update inventory set flag=0 where id='" + Id + "'";
+            string sqls = "if exists(select * from cangku where id='" + Id + "' and flag=1) ";
+            sqls += " update cangku set flag=0 where id='" + Id + "'";
 
-            sqls += " else update inventory set flag=1 where id='" + Id + "'";
+            sqls += " else update cangku set flag=1 where id='" + Id + "'";
 
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sqls, null);
 
@@ -258,7 +258,7 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public int Delete(int Id)
         {
-            string sql = "delete from inventory where id='" + Id + "' and flag=0 ";
+            string sql = "delete from cangku where id='" + Id + "' and flag=0 ";
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
 
@@ -274,7 +274,7 @@ namespace BlueWhale.DAL
         public int GetIdByName(int shopId, string names)
         {
             int id = 0;
-            string sql = "select * from inventory where names='" + names + "' and shopId='" + shopId + "' ";
+            string sql = "select * from cangku where names='" + names + "' and shopId='" + shopId + "' ";
 
             SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
             while (reader.Read())
