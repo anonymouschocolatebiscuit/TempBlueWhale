@@ -140,7 +140,7 @@
     
     <table id="form" border="0" cellpadding="0" cellspacing="10" style="width:380px; line-height:40px;">
     <tr>
-    <td style="width:80px; text-align:right;">类别名称：</td>
+    <td style="width:110px; text-align:right;">Category Name：</td>
     <td>
     
     
@@ -155,7 +155,7 @@
     
     
     <tr>
-    <td style="text-align:right;">显示顺序：</td>
+    <td style="text-align:right;">Display Order：</td>
     <td>
     
     
@@ -172,7 +172,7 @@
     
     
     <tr>
-    <td style="text-align:right;">所属类别：</td>
+    <td style="text-align:right;">Category Type：</td>
     <td>
     
     
@@ -193,11 +193,11 @@
     <td style="text-align:right; padding-right:30px;">
     
     
-        <asp:Button ID="btnSave" runat="server" Text="保 存"  class="ui_state_highlight" 
+        <asp:Button ID="btnSave" runat="server" Text="Save"  class="ui_state_highlight" 
             onclick="btnSave_Click"/>
     
    
-         <input id="btnCancel" class="ui-btn" type="button" value="关闭" onclick="closeDialog()" />
+         <input id="btnCancel" class="ui-btn" type="button" value="Close" onclick="closeDialog()" />
            
     
     </td>

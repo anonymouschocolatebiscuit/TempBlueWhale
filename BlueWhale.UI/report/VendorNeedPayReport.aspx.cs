@@ -17,10 +17,10 @@ namespace BlueWhale.UI.report
 
             if (!IsPostBack)
             {
-                if (!CheckPower("VendorNeedPayReport"))
-                {
-                    Response.Redirect("../OverPower.htm");
-                }
+                //if (!CheckPower("VendorNeedPayReport"))
+                //{
+                //    Response.Redirect("../OverPower.htm");
+                //}
 
                 txtDateStart.Text = DateTime.Now.ToString("yyyy-MM") + "-01";
                 txtDateEnd.Text = DateTime.Now.ToShortDateString();

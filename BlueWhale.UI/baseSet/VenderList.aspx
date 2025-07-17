@@ -46,16 +46,26 @@
                     onDblClickRow: function(data, rowindex, rowobj) {                  
                         editRow();
                     },        
-                    toolbar: { items: [
-                        { text: 'Refresh', click: reload, img: '../lib/ligerUI/skins/icons/refresh.png'},
-                        { line: true },          
-                        { text: "Approve", click:checkRow,img: '../lib/ligerUI/skins/icons/true.gif'},
-                        { line: true },  
-                        { text: "Reject", click:checkNoRow,img: '../lib/ligerUI/skins/icons/refresh.gif'},
-                        { line: true },
-                        { line: true },
-                        { text: 'Batch Import', click: excel, img: '../lib/ligerUI/skins/icons/xls.gif' }
-                    ]}      
+                    toolbar: {
+                        items: [
+                            { text: 'Refresh', click: reload, img: '../lib/ligerUI/skins/icons/refresh.png' },
+                            { line: true },
+                            { text: 'Filter Query', click: search, img: '../lib/ligerUI/skins/icons/search.gif' },
+                            { line: true },
+                            { text: "Add Supplier", click: addRowTop, img: '../lib/ligerUI/skins/icons/add.gif' },
+                            { line: true },
+                            { text: "Modify Supplier", click: editRow, img: '../lib/ligerUI/skins/icons/modify.gif' },
+                            { line: true },
+                            { text: "Administrative Contact", click: linkManForm, img: '../lib/ligerUI/skins/icons/customers.gif' },
+                            { line: true },
+                            { text: "Approve", click: checkRow, img: '../lib/ligerUI/skins/icons/true.gif' },
+                            { line: true },
+                            { text: "Reject", click: checkNoRow, img: '../lib/ligerUI/skins/icons/refresh.gif' },
+                            { line: true },
+                            { text: "Delete Supplier", click: deleteRow, img: '../lib/ligerUI/skins/icons/delete.gif' },
+                            { line: true },
+                            { text: 'Batch Import', click: excel, img: '../lib/ligerUI/skins/icons/xls.gif' }
+                        ]}      
                 });
             });
 
@@ -76,6 +86,30 @@
                     },
                     error: function (msg) {
                         $.ligerDialog.alert("Network error, please contact an administrator", 'Information');
+                    }
+                });
+            }
+
+            function deleteRow() {
+                var row = manager.getSelectedRow();
+                if (!row) { $.ligerDialog.warn('Please select the rows you want to delete'); return; }
+
+                var idString = checkedCustomer.join(',');
+
+                $.ligerDialog.confirm('Deletion cannot be restored. Confirm deletion?', function (type) {
+                    if (type) {
+                        $.ajax({
+                            type: "GET",
+                            url: "VenderList.aspx",
+                            data: "Action=delete&idString=" + idString + "&ranid=" + Math.random(), //encodeURI
+                            success: function (resultString) {
+                                $.ligerDialog.alert(resultString, 'Notification');
+                                reload();
+                            },
+                            error: function (msg) {
+                                $.ligerDialog.alert("Network error, please contact the administrator", 'Notification');
+                            }
+                        });
                     }
                 });
             }
@@ -115,9 +149,61 @@
           }
         
           function reload() {
-              manager.reload();
-          }
+                manager.reload();
+            }
 
+            function search() {
+                $.ligerDialog.prompt('Search by name/phone no./contact', '', function (yes, value) {
+                    if (yes) {
+                        var key = value;
+                        manager.changePage("first");
+                        manager._setUrl("VenderList.aspx?Action=GetDataListSearch&keys=" + key);
+                    }
+                });
+            }
+
+            function addRowTop() {
+                var title = "Add Supplier";
+
+                $.ligerDialog.open({
+                    title: title,
+                    url: 'VenderListAdd.aspx?id=0',
+                    height: 500,
+                    width: 650,
+                    modal: false
+                });
+            } 
+
+            function editRow() {
+                var row = manager.getSelectedRow();
+                if (!row) { $.ligerDialog.warn('Please select a row to edit！'); return; }
+
+                var title = "Modify Supplier-" + row.names;
+
+                $.ligerDialog.open({
+                    title: title,
+                    url: 'VenderListAdd.aspx?id=' + row.id,
+                    height: 500,
+                    width: 650,
+                    modal: true
+
+                });
+            }
+
+            function linkManForm() {
+                var row = manager.getSelectedRow();
+                if (!row) { $.ligerDialog.warn('Please select a supplier！'); return; }
+
+                var title = "Contact Management-" + row.names;
+
+                $.ligerDialog.open({
+                    title: title,
+                    url: 'VenderLinkMan.aspx?id=' + row.id,
+                    height: 400,
+                    width: 650,
+                    modal: true
+                });
+            }
 
           function f_onCheckAllRow(checked) {
               for (var rowid in this.records) {
@@ -156,7 +242,7 @@
           function f_getChecked() {
               alert(checkedCustomer.join(','));
           }  
-      </script>  
+        </script>  
     </head>
 
     <body style="padding-left:10px;padding-top:10px;">

@@ -47,7 +47,7 @@ namespace BlueWhaleUI.baseSet
                     names = ds.Tables[0].Rows[i]["names"].ToString(),
                     typeId = ds.Tables[0].Rows[i]["typeId"].ToString(),
                     typeName = ds.Tables[0].Rows[i]["typeName"].ToString(),
-                    dueDate = ds.Tables[0].Rows[i]["dueDate"].ToString(),
+                    dueDate = ds.Tables[0].Rows[i]["yueDate"].ToString(),
                     payNeed = ds.Tables[0].Rows[i]["payNeed"].ToString(),
                     payReady = ds.Tables[0].Rows[i]["payReady"].ToString(),
 
@@ -57,7 +57,7 @@ namespace BlueWhaleUI.baseSet
                     taxNumber = ds.Tables[0].Rows[i]["taxNumber"].ToString(),
                     bankName = ds.Tables[0].Rows[i]["bankName"].ToString(),
                     bankNumber = ds.Tables[0].Rows[i]["bankNumber"].ToString(),
-                    address = ds.Tables[0].Rows[i]["address"].ToString(),
+                    address = ds.Tables[0].Rows[i]["dizhi"].ToString(),
 
 
                     makeId = ds.Tables[0].Rows[i]["makeId"].ToString(),
