@@ -123,7 +123,7 @@
            
                <input id="btnCheck" type="button" value="Review" class="ui-btn" onclick="checkRow()" />
                 
-                  <input id="btnCheckNo" type="button" value="Cancel Review" class="ui-btn" onclick="checkNoRow()" />
+                  <input id="btnCheckNo" type="button" value="Reject" class="ui-btn" onclick="checkNoRow()" />
                 
                
              

@@ -239,12 +239,12 @@ namespace BlueWhale.UI.pay
                 }
                 if (num > 0)
                 {
-                    Response.Write("Cancel Review Successfully " + num + " rows records!");
+                    Response.Write("Reject Successfully " + num + " rows records!");
 
                 }
                 else
                 {
-                    Response.Write("Cancel Review Failed!");
+                    Response.Write("Reject Failed!");
                 }
             }
             else

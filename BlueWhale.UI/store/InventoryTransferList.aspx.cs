@@ -216,7 +216,7 @@ namespace BlueWhale.UI.store
                             num += 1;
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel Review Inventory Transfer-ID: " + delId.ToString();
+                            logs.Events = "Reject Inventory Transfer-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }

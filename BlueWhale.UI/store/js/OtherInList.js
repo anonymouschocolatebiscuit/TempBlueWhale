@@ -93,7 +93,7 @@
              
                  { display: 'Created By', name: 'makeName', width: 80, align: 'center' },
                  { display: 'Reviewed By', name: 'checkName', width: 80, align: 'center' },
-                 { display: 'Remark', name: 'remarks', width: 100, align: 'left' }
+                 { display: 'Remarks', name: 'remarks', width: 100, align: 'left' }
                 
             
                 ], width: '98%', 

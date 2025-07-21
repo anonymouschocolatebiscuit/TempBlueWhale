@@ -290,7 +290,7 @@ namespace BlueWhale.UI.sales
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel Review Sales Receipt-ID: " + delId.ToString();
+                            logs.Events = "Reject Sales Receipt-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -299,12 +299,12 @@ namespace BlueWhale.UI.sales
 
                 if (num > 0)
                 {
-                    Response.Write("Cancel Review Sucess");
+                    Response.Write("Reject Sucess");
 
                 }
                 else
                 {
-                    Response.Write("Cancel Review Fail");
+                    Response.Write("Reject Fail");
                 }
             }
             else
@@ -334,7 +334,7 @@ namespace BlueWhale.UI.sales
 
             string signTitle = "Delivery Unit (Signature and Seal): __________     Receiving Unit (Signature and Seal): ________";
 
-            string footerTitle = "White Copy: Sales Department        Red Copy: Customer       Blue Copy: Finance       Yellow Copy: General Manager"; ;
+            string footerTitle = "White Copy: Sales Department        Red Copy: Client       Blue Copy: Finance       Yellow Copy: General Manager"; ;
 
 
             string tel = SysInfo.Tel;
@@ -469,7 +469,7 @@ namespace BlueWhale.UI.sales
                 wlPhone = wlTel;
             }
 
-            string titleRowOne = "ID: " + number + "   Customer: " + wlName + "   Date: " + DateTime.Now.ToString("yyyy-MM-dd");
+            string titleRowOne = "ID: " + number + "   Client: " + wlName + "   Date: " + DateTime.Now.ToString("yyyy-MM-dd");
 
             Paragraph pleasure = new Paragraph(titleRowOne, font1);
             pleasure.Alignment = 0;

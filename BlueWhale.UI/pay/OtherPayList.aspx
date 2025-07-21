@@ -38,7 +38,7 @@
                 <td style="text-align: right; padding-right: 20px;">
                     <input id="btnAdd" type="button" value="Add" class="ui-btn" onclick="add()" />
                     <input id="btnCheck" type="button" value="Review" class="ui-btn" onclick="checkRow()" />
-                    <input id="btnCheckNo" type="button" value="Cancel Review" class="ui-btn" onclick="checkNoRow()" />
+                    <input id="btnCheckNo" type="button" value="Reject" class="ui-btn" onclick="checkNoRow()" />
                     <input id="btnReload" class="ui-btn" type="button" value="Delete" onclick="deleteRow()" />
                 </td>
             </tr>

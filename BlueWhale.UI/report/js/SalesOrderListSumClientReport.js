@@ -21,7 +21,7 @@
             
                 columns: [
 
-                   { display: 'Customer', name: 'wlName', width: 170, align: 'left',
+                   { display: 'Client', name: 'wlName', width: 170, align: 'left',
                    
                        totalSummary:
                     {

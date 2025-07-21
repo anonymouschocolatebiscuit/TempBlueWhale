@@ -314,7 +314,7 @@ namespace BlueWhale.UI.store
 
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel Review Disassemble Order-ID: " + delId.ToString();
+                            logs.Events = "Reject Disassemble Order-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 

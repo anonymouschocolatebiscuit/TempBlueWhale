@@ -62,7 +62,7 @@ $(function () {
 
 
             },
-            { display: 'Customer', name: 'wlName', width: 170, align: 'left' },
+            { display: 'Client', name: 'wlName', width: 170, align: 'left' },
             {
                 display: 'Quantity', name: 'sumNum', width: 150, align: 'right',
 
@@ -230,7 +230,7 @@ function f_set() {
 function search() {
 
     var keys = document.getElementById("txtKeys").value;
-    if (keys == "Please Enter Receipt No./Customer/Remarks") {
+    if (keys == "Please Enter Receipt No./Client/Remarks") {
 
         keys = "";
 

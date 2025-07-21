@@ -78,7 +78,7 @@ $(function () {
                 }
             },
             {
-                display: 'Total Price', name: 'sumPriceAll', width: 80, align: 'right',
+                display: 'Amount', name: 'sumPriceAll', width: 80, align: 'right',
 
                 totalSummary:
                 {
@@ -90,7 +90,7 @@ $(function () {
                 }
             },
 
-            { display: 'Send Date', name: 'sendDate', width: 80, align: 'center' }
+            { display: 'Delivery Date', name: 'sendDate', width: 80, align: 'center' }
 
         ], width: '98%',
         height: '98%',

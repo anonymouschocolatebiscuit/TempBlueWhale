@@ -262,11 +262,11 @@ namespace BlueWhale.UI.buy
 
                 if (num > 0)
                 {
-                    Response.Write("Cancel Review Success " + num + " rows records!!");
+                    Response.Write("Reject Success " + num + " rows records!!");
                 }
                 else
                 {
-                    Response.Write("Cancel Review Fail!");
+                    Response.Write("Reject Fail!");
                 }
             }
             else

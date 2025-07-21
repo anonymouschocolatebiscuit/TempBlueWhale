@@ -147,9 +147,9 @@ $(function () {
                         }
                     }
                 }, {
-                    display: 'Format',
+                    display: 'Specification',
                     name: 'spec',
-                    width: 100,
+                    width: 120,
                     align: 'center'
                 }, {
                     display: 'Unit',
@@ -169,7 +169,7 @@ $(function () {
                         textField: 'ckName'
                     }
                 }, {
-                    display: 'Amount',
+                    display: 'Quantity',
                     name: 'num',
                     width: 70,
                     type: 'float',
@@ -189,16 +189,16 @@ $(function () {
                 }, {
                     display: 'Original Price',
                     name: 'price',
-                    width: 70,
+                    width: 80,
                     type: 'float',
                     align: 'right',
                     editor: {
                         type: 'float'
                     }
                 }, {
-                    display: 'Discount Amount%',
+                    display: 'Discount%',
                     name: 'dis',
-                    width: 60,
+                    width: 80,
                     type: 'float',
                     align: 'right',
                     editor: {
@@ -207,7 +207,7 @@ $(function () {
                 }, {
                     display: 'Discount Amount',
                     name: 'sumPriceDis',
-                    width: 70,
+                    width: 80,
                     type: 'float',
                     align: 'right',
                     editor: {
@@ -224,16 +224,16 @@ $(function () {
                 }, {
                     display: 'Current Price',
                     name: 'priceNow',
-                    width: 70,
+                    width: 90,
                     type: 'float',
                     align: 'right',
                     editor: {
                         type: 'float'
                     }
                 }, {
-                    display: 'Total Price',
+                    display: 'Amount',
                     name: 'sumPriceNow',
-                    width: 80,
+                    width: 90,
                     type: 'float',
                     align: 'right',
                     editor: {
@@ -248,7 +248,7 @@ $(function () {
                         }
                     }
                 }, {
-                    display: 'Tax%',
+                    display: 'Tax Rate%',
                     name: 'tax',
                     width: 60,
                     type: 'int',
@@ -257,18 +257,18 @@ $(function () {
                         type: 'int'
                     }
                 }, {
-                    display: 'Price W/ Tax',
+                    display: 'Unit Price Including Tax',
                     name: 'priceTax',
-                    width: 70,
+                    width: 110,
                     type: 'float',
                     align: 'center',
                     editor: {
                         type: 'float'
                     }
                 }, {
-                    display: 'Total Tax Amount',
+                    display: 'Tax Amount',
                     name: 'sumPriceTax',
-                    width: 80,
+                    width: 90,
                     type: 'float',
                     align: 'right',
                     totalSummary: {
@@ -281,9 +281,9 @@ $(function () {
                         }
                     }
                 }, {
-                    display: 'Sum Price',
+                    display: 'Total Price Including Tax',
                     name: 'sumPriceAll',
-                    width: 80,
+                    width: 110,
                     type: 'float',
                     align: 'right',
                     editor: {
@@ -299,7 +299,7 @@ $(function () {
                         }
                     }
                 }, {
-                    display: 'Remark',
+                    display: 'Remarks',
                     name: 'remarks',
                     width: 150,
                     align: 'left',
@@ -308,9 +308,9 @@ $(function () {
                         type: 'text'
                     }
                 }, {
-                    display: 'Associated Sales Order Number',
+                    display: 'Source Order Number',
                     name: 'sourceNumber',
-                    width: 150,
+                    width: 160,
                     align: 'left',
                     type: 'text'
                 }],
@@ -605,7 +605,7 @@ function f_onAfterEdit(e) {
         //3. Total price and tax
         manager.updateCell('sumPriceAll', sumPriceAll.toString(), e.record);
     } //Discount amount changed---End
-    if (e.column.name == "priceNow") //Current price change---start
+    if (e.column.name == "priceNow") //Current Price change---start
     {
         priceNow = Number(e.value);
         if (price != 0) {
@@ -639,7 +639,7 @@ function f_onAfterEdit(e) {
         manager.updateCell('sumPriceTax', sumPriceTax.toString(), e.record);
         //3. Total price and tax
         manager.updateCell('sumPriceAll', sumPriceAll.toString(), e.record);
-    } //Current price changes --- End
+    } //Current Price changes --- End
     if (e.column.name == "sumPriceNow") //Amount Change
     {
         //Amount changes: [Quantity, discount amount, tax rate] Calculate [discount rate, unit price, tax amount, price and tax total]

@@ -57,11 +57,11 @@ function f_selectContactCancel(item, dialog) {
 
 //New style introduction line end
 
-//Customer starts
+//Client starts
 
 function f_selectClient() {
     $.ligerDialog.open({
-        title: 'Select Customer', name: 'winselector', width: 800, height: 540, url: '../baseSet/ClientListSelect.aspx', buttons: [
+        title: 'Select Client', name: 'winselector', width: 800, height: 540, url: '../baseSet/ClientListSelect.aspx', buttons: [
             { text: 'Confirm', onclick: f_selectClientOK },
             { text: 'Close', onclick: f_selectClientCancel }
         ]
@@ -87,7 +87,7 @@ function f_selectClientCancel(item, dialog) {
     dialog.close();
 }
 
-//Customer End
+//Client End
 
 //Extend the formatting function of the numberbox type
 $.ligerDefaults.Grid.formatters['numberbox'] = function (value, column) {
@@ -287,7 +287,7 @@ $(function () {
                         }
                     }
                 },
-                { display: 'Remark', name: 'remarks', width: '125px', align: 'left', type: 'text', editor: { type: 'text' } },
+                { display: 'Remarks', name: 'remarks', width: '125px', align: 'left', type: 'text', editor: { type: 'text' } },
                 { display: 'Source Order Number', name: 'sourceNumber', width: 180, align: 'left', type: 'text' }
             ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '350',
             url: 'SalesReceiptListAdd.aspx?Action=GetData&id=' + param,
@@ -724,7 +724,7 @@ function f_onAfterEdit(e) {
 
     } //Discount amount changed---end
 
-    if (e.column.name == "priceNow") //Current price changes---start
+    if (e.column.name == "priceNow") //Current Price changes---start
     {
         priceNow = Number(e.value);
 
@@ -768,7 +768,7 @@ function f_onAfterEdit(e) {
         //3. Price and tax total
         manager.updateCell('sumPriceAll', sumPriceAll.toString(), e.record);
 
-    } //Current price changes---end
+    } //Current Price changes---end
 
     if (e.column.name == "sumPriceNow") // amount changed
     {

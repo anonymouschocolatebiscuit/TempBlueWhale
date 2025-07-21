@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Add Customer</title>
+    <title>Add Client</title>
     <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
     <script src="../lib/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
@@ -37,19 +37,19 @@
         <table id="form" border="0" cellpadding="0" cellspacing="20" style="width:1000px; line-height:45px;">
             <tr>
                 <td style="width:100px;text-align:right;">
-                    Customer Number: </td>
+                    Client Number: </td>
                 <td style="width:180px;">
                     <asp:TextBox ID="txtCode" runat="server" validate="{required:true}"></asp:TextBox>
                     </td>
                 <td style="width:100px; text-align:right;">
-                    Customer Name: </td>
+                    Client Name: </td>
                 <td style="width:180px;">
                     <asp:TextBox ID="txtNames" runat="server" validate="{required:true}"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td style="text-align:right;">
-                    Customer Category: </td>
+                    Client Category: </td>
                 <td>
                     <asp:DropDownList ID="ddlVenderTypeList" runat="server">
                     </asp:DropDownList>

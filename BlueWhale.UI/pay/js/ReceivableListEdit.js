@@ -126,7 +126,7 @@
                
               
 
-                { display: 'Payment Amount', name: 'payPrice', width: 120, type: 'float', align: 'right',editor: { type: 'float' },
+                { display: 'Payment Amount', name: 'payPrice', width: 130, type: 'float', align: 'right',editor: { type: 'float' },
                 
                    totalSummary:
                     {
@@ -142,7 +142,7 @@
                 
                 },
              
-                { display: 'Payment Method', name: 'payTypeId', width: 120, isSort: false,textField:'payTypeName',
+                { display: 'Payment Method', name: 'payTypeId', width: 130, isSort: false,textField:'payTypeName',
                     editor: { type: 'select',
                               url:"../baseSet/PayTypeList.aspx?Action=GetDDLList&r=" + Math.random(), 
                               valueField: 'typeId',textField:'typeName'}
@@ -259,12 +259,12 @@
                 },
                 
                 { display: 'Business Type', name: 'bizType',width: 120, align: 'center' },
-                { display: 'Invoice Date', name: 'bizDate',width: 80, align: 'center' },
+                { display: 'Invoice Date', name: 'bizDate',width: 100, align: 'center' },
                 { display: 'Invoice Amount', name: 'sumPriceAll',width: 120, align: 'right' },
                 { display: 'Verified Amount', name: 'priceCheckNowSum',width: 120, align: 'right' },
-                { display: 'Unverified Amount', name: 'priceCheckNo',width: 120, align: 'right' },
+                { display: 'Unverified Amount', name: 'priceCheckNo',width: 140, align: 'right' },
                 
-                { display: 'Current Verification Amount', name: 'priceCheckNow', width: 120, type: 'float', align: 'right', editor: { type: 'float', precision: 4 },
+                { display: 'Current Verification Amount', name: 'priceCheckNow', width: 220, type: 'float', align: 'right', editor: { type: 'float', precision: 4 },
                 
                    totalSummary:
                     {

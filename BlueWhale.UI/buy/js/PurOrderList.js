@@ -55,7 +55,7 @@ $(function () {
 
             { display: 'Supplier', name: 'wlName', width: 170, align: 'left' },
             {
-                display: 'Total Price', name: 'sumPriceAll', width: 100, align: 'right',
+                display: 'Amount', name: 'sumPriceAll', width: 100, align: 'right',
 
                 totalSummary:
                 {
@@ -81,11 +81,11 @@ $(function () {
                 }
             },
             { display: 'Order Status', name: 'flag', width: 100, align: 'center' },
-            { display: 'Send Date', name: 'sendDate', width: 100, align: 'center' },
+            { display: 'Delivery Date', name: 'sendDate', width: 100, align: 'center' },
             { display: 'Created By', name: 'makeName', width: 100, align: 'center' },
             { display: 'Purchaser', name: 'bizName', width: 100, align: 'center' },
-            { display: 'Review By', name: 'checkName', width: 100, align: 'center' },
-            { display: 'Remark', name: 'remarks', width: 120, align: 'left' }
+            { display: 'Reviewed By', name: 'checkName', width: 100, align: 'center' },
+            { display: 'Remarks', name: 'remarks', width: 120, align: 'left' }
         ], width: '98%',
         //pageSizeOptions: [5, 10, 15, 20],
         height: '98%',

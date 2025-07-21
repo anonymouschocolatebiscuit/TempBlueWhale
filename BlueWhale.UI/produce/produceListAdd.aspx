@@ -41,7 +41,7 @@
                 <td style="text-align:left;">&nbsp;</td>
             </tr>
             <tr>
-                <td style="width:135px; text-align:right;">Product name: </td>
+                <td style="width:135px; text-align:right;">Item Name: </td>
                 <td style="text-align:left; width:250px;">
                     <asp:TextBox ID="txtGoodsName" runat="server"></asp:TextBox>
                     <input type="hidden" id="hfGoodsId" runat="server" value="" /> 
@@ -75,7 +75,7 @@
         <div id="maingrid"></div>
         <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width:99%; margin-top: 10px">
             <tr>
-                <td style="width:80px; text-align:right;">Remark: </td>
+                <td style="width:80px; text-align:right;">Remarks: </td>
                 <td style="text-align:left">
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>

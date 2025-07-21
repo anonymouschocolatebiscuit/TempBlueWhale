@@ -48,7 +48,7 @@ $(function () {
                     return html;
                 }
             },
-            { display: 'Customer', name: 'wlName', width: 85, align: 'left' },
+            { display: 'Client', name: 'wlName', width: 85, align: 'left' },
             {
                 display: 'Sales Quantity', name: 'sumNum', width: 120, align: 'right',
                 totalSummary:
@@ -95,7 +95,7 @@ $(function () {
 
 function search() {
     var keys = document.getElementById("txtKeys").value;
-    if (keys == "Please Enter Receipt No./Customer/Product/Remarks") {
+    if (keys == "Please Enter Receipt No./Client/Product/Remarks") {
 
         keys = "";
 

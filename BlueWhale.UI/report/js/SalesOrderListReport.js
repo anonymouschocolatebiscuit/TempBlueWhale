@@ -66,7 +66,7 @@ $(function () {
             { display: 'Order Date', name: 'bizDate', width: '6%', align: 'center' },
             { display: 'Order Number', name: 'number', width: '9%', align: 'center' },
 
-            { display: 'Customer', name: 'wlName', width: '9%', align: 'center' },
+            { display: 'Client', name: 'wlName', width: '9%', align: 'center' },
 
 
 
@@ -115,7 +115,7 @@ $(function () {
 
 
 
-            { display: 'Send Date', name: 'sendDate', width: '6%', align: 'center' }
+            { display: 'Delivery Date', name: 'sendDate', width: '6%', align: 'center' }
 
 
 

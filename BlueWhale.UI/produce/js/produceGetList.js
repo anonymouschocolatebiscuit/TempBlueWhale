@@ -80,7 +80,7 @@ $(function () {
             { display: 'Order Date', name: 'bizDate', width: 80, align: 'center', valign: 'center' },
             { display: 'Reviewed By', name: 'checkName', width: 80, align: 'center' },
             { display: 'Order Status', name: 'flag', width: 80, align: 'center' },
-            { display: 'Remark', name: 'remarks', width: 100, align: 'left' }
+            { display: 'Remarks', name: 'remarks', width: 100, align: 'left' }
         ], width: '1120',
         //pageSizeOptions: [5, 10, 15, 20],
         height: '98%',

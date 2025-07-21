@@ -24,7 +24,7 @@
             Keyword: 
             </td>
            <td style="text-align:left; width:180px;">
-               <asp:TextBox ID="txtKeys" runat="server" placeholder="Please Enter Receipt No./Customer/Product/Remarks"></asp:TextBox>
+               <asp:TextBox ID="txtKeys" runat="server" placeholder="Please Enter Receipt No./Client/Product/Remarks"></asp:TextBox>
             </td>
            <td style="text-align:right; width:70px;">
                Start Date: 
@@ -46,7 +46,7 @@
            <td style="text-align:right; padding-right:20px;">
                <input id="btnCheck" type="button" value="Review" class="ui-btn" onclick="checkRow()" />
                 
-                  <input id="btnCheckNo" type="button" value="Cancel Review" class="ui-btn" onclick="checkNoRow()" />   
+                  <input id="btnCheckNo" type="button" value="Reject" class="ui-btn" onclick="checkNoRow()" />   
             </td>
            </tr>
            <tr>

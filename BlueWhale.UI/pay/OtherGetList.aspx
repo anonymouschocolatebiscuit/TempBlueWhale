@@ -17,31 +17,31 @@
     <form id="form1" runat="server">
     <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:100%; line-height:40px;">
            <tr>
-           <td style="text-align:right; width:50px;">
+           <td style="text-align:right; width:70px; padding-right:0.5rem;">
             Keyword: 
             </td>
            <td style="text-align:left; width:250px;">
                <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter receipt number/customer/remark"></asp:TextBox>
             </td>
-           <td style="text-align:right; width:70px;">
+           <td style="text-align:right; width:90px; padding-right:0.5rem;">
                StartDate:
               </td>
            <td style="text-align:left; width:180px;">
             <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
            </td>
-           <td style="text-align:right; width:70px;">
+           <td style="text-align:right; width:90px; padding-right:0.5rem;">
                EndDate:
            </td>
-           <td style="text-align:left; width:180px;">
+           <td style="text-align:left; width:180px; padding-right:0.5rem;">
             <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox> 
             </td>
            <td style="text-align:center;width:100px;">
             <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
            </td>
-            <td style="text-align:right; padding-right:20px;">
+            <td style="text-align:right; padding-right:2rem;">
                 <input id="btnAdd" type="button" value="Add" class="ui-btn" onclick="add()" />
                 <input id="btnCheck" type="button" value="Review" class="ui-btn" onclick="checkRow()" />
-                <input id="btnCheckNo" type="button" value="UnReview" class="ui-btn" onclick="checkNoRow()" />
+                <input id="btnCheckNo" type="button" value="Reject" class="ui-btn" onclick="checkNoRow()" />
                 <input id="btnReload" class="ui-btn" type="button" value="Delete" onclick="deleteRow()" />
             </td>
            </tr>

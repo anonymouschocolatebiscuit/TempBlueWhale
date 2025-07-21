@@ -16,7 +16,7 @@
 
         function f_selectClient() {
             $.ligerDialog.open({
-                title: 'Select Customer', name: 'winselector', width: 800, height: 540, url: '../baseSet/ClientListSelect.aspx', buttons: [
+                title: 'Select Client', name: 'winselector', width: 800, height: 540, url: '../baseSet/ClientListSelect.aspx', buttons: [
                     { text: 'Confirm', onclick: f_selectClientOK },
                     { text: 'Close', onclick: f_selectClientCancel }
                 ]

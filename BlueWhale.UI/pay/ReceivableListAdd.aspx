@@ -63,7 +63,7 @@
                                     </asp:TextBox>
                                 </td>
                                 <td style="text-align:left;">
-                                    &nbsp;<input id="btnSelectBill" type="button" value="Search" class="ui-btn"
+                                    <input id="btnSelectBill" type="button" value="Search" class="ui-btn"
                                         onclick="selectBill()" /></td>
                             </tr>
                         </table>

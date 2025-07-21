@@ -41,7 +41,7 @@
                 columns: [
 
                     { display: 'Client Category', name: 'typeName', width: 100, type: 'int', align: 'center' },
-                    { display: 'Customer Number', name: 'code', width: 100, align: 'center' },
+                    { display: 'Client Number', name: 'code', width: 100, align: 'center' },
                     { display: 'Client Name', name: 'names', width: 230, align: 'left' },
                     { display: 'Balance Date', name: 'yueDate', width: 80, align: 'center' },
                     { display: 'Opening Balance', name: 'balance', width: 70, align: 'center' },

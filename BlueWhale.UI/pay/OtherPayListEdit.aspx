@@ -35,7 +35,7 @@
         <div id="maingrid"></div>
         <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 50px;">
             <tr>
-                <td style="width: 80px; text-align: right;">Remark: </td>
+                <td style="width: 80px; text-align: right;">Remarks: </td>
                 <td style="text-align: left;">
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>

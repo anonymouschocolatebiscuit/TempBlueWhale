@@ -43,7 +43,7 @@ $(function () {
             },
             { display: 'Receipt number', name: 'number', width: 150, align: 'center' },
             { display: 'Settlement Account', name: 'bkName', width: 150, align: 'center' },
-            { display: 'Customer', name: 'wlName', width: 80, align: 'left' },
+            { display: 'Client', name: 'wlName', width: 80, align: 'left' },
             {
                 display: 'Amount of payment', name: 'sumPrice', width: 180, align: 'right',
 
@@ -61,7 +61,7 @@ $(function () {
 
             { display: 'Make name', name: 'makeName', width: 80, align: 'center' },
             { display: 'Review name', name: 'checkName', width: 90, align: 'center' },
-            { display: 'Remark', name: 'remarks', width: 200, align: 'left' }
+            { display: 'Remarks', name: 'remarks', width: 200, align: 'left' }
 
 
         ], width: '98%',

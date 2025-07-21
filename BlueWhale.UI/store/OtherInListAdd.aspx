@@ -26,7 +26,7 @@
                     <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px">
                     </asp:DropDownList>
                 </td>
-                <td style="text-align: right; width: 120px;">Stock In Date: </td>
+                <td style="text-align: right; width: 120px;">Inbound Date: </td>
                 <td style="text-align: left; width: 180px;">
                     <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>

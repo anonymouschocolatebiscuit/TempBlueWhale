@@ -36,7 +36,7 @@
                     <input type="hidden" id="clientId" runat="server" value="" />
                     <input type="hidden" id="txtClientName" runat="server" value="" />
                 </td>
-                <td class="tdLbl">Stock In Date: </td>
+                <td class="tdLbl">Inbound Date: </td>
                 <td class="tdTxt">
                     <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
@@ -53,16 +53,16 @@
         <div id="maingrid"></div>
         <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 50px;">
             <tr>
-                <td class="tdLbl">Current Payment: </td>
+                <td class="tdLbl">Payment Received:</td>
                 <td class="tdTxt">
                     <asp:TextBox ID="txtPayNow" runat="server">0</asp:TextBox>
                 </td>
-                <td class="tdLbl">Current Debt: </td>
+                <td class="tdLbl">Outstanding Amount:</td>
                 <td class="tdTxt">
                     <asp:TextBox ID="txtPayNo" runat="server"
                         BackColor="#FFFFCC" ToolTip="Auto Calculation">0</asp:TextBox>
                 </td>
-                <td class="tdLbl">Settlement Account: </td>
+                <td class="tdLbl">Settlement Account:</td>
                 <td class="tdTxt">
                     <asp:DropDownList ID="ddlBankList" runat="server">
                     </asp:DropDownList>
@@ -70,7 +70,7 @@
                 <td style="text-align: right; padding-right: 30px;">&nbsp;</td>
             </tr>
             <tr>
-                <td class="tdLbl">Remarks: </td>
+                <td class="tdLbl">Remarks:</td>
                 <td class="tdTxt">
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>

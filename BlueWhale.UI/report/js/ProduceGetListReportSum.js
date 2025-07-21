@@ -59,7 +59,7 @@ $(function () {
                 }
             },
             {
-                display: 'Total Price', name: 'sumPrice', width: 180, type: 'float', align: 'right', editor: { type: 'float' },
+                display: 'Amount', name: 'sumPrice', width: 180, type: 'float', align: 'right', editor: { type: 'float' },
 
                 totalSummary:
                 {

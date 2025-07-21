@@ -292,7 +292,7 @@ namespace BlueWhale.UI.pay
 
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel Review Sales Payment-ID: " + delId.ToString();
+                            logs.Events = "Reject Sales Payment-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -306,12 +306,12 @@ namespace BlueWhale.UI.pay
                 {
 
 
-                    Response.Write("Cancel Review Successfully" + num + "rows records!");
+                    Response.Write("Reject Successfully" + num + "rows records!");
 
                 }
                 else
                 {
-                    Response.Write("Cancel Review Failed!");
+                    Response.Write("Reject Failed!");
                 }
 
 

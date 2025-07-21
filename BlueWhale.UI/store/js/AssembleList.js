@@ -177,7 +177,7 @@ $(function () {
                     display: 'Reviewed By', name: 'checkName', width: 90, align: 'center'
                 },
                 {
-                    display: 'Remark', name: 'remarks', width: 100, align: 'left', type: 'text'
+                    display: 'Remarks', name: 'remarks', width: 100, align: 'left', type: 'text'
                 }
             ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '250',
             rownumbers: true,
@@ -253,7 +253,7 @@ $(function () {
                     }
                 },
 
-                { display: 'Remark', name: 'remarks', width: 150, align: 'left', type: 'text' }
+                { display: 'Remarks', name: 'remarks', width: 150, align: 'left', type: 'text' }
             ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '210',
             rownumbers: true,
             frozenRownumbers: true,

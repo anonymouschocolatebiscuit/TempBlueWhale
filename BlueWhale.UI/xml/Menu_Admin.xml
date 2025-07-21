@@ -28,7 +28,7 @@
 
 			<siteMapNode id="315"  title="Review" url="PurOrderListCheck"  parentId="31"  seq="7" />
 
-			<siteMapNode id="316"  title="Cancel Review" url="PurOrderListCheckNo"  parentId="31"  seq="8" />
+			<siteMapNode id="316"  title="Reject" url="PurOrderListCheckNo"  parentId="31"  seq="8" />
 
 
 		</siteMapNode>
@@ -45,7 +45,7 @@
 
 			<siteMapNode id="325"  title="Review" url="PurReceiptListCheck"  parentId="32"  seq="6" />
 
-			<siteMapNode id="326"  title="Cancel Review" url="PurReceiptListCheckNo"  parentId="32"  seq="7" />
+			<siteMapNode id="326"  title="Reject" url="PurReceiptListCheckNo"  parentId="32"  seq="7" />
 
 
 		</siteMapNode>
@@ -67,7 +67,7 @@
 
 			<siteMapNode id="405"  title="Review" url="SalesQuoteListCheck"  parentId="40"  seq="5" />
 
-			<siteMapNode id="406"  title="Cancel Review" url="SalesQuoteListCheckNo"  parentId="40"  seq="6" />
+			<siteMapNode id="406"  title="Reject" url="SalesQuoteListCheckNo"  parentId="40"  seq="6" />
 
 
 		</siteMapNode>
@@ -84,7 +84,7 @@
 
 			<siteMapNode id="415"  title="Review" url="SalesOrderListCheck"  parentId="41"  seq="7" />
 
-			<siteMapNode id="416"  title="Cancel Review" url="SalesOrderListCheckNo"  parentId="41"  seq="8" />
+			<siteMapNode id="416"  title="Reject" url="SalesOrderListCheckNo"  parentId="41"  seq="8" />
 
 
 		</siteMapNode>
@@ -101,7 +101,7 @@
 
 			<siteMapNode id="425"  title="Review" url="SalesReceiptListCheck"  parentId="42"  seq="5" />
 
-			<siteMapNode id="426"  title="Cancel Review" url="SalesReceiptListCheckNo"  parentId="42"  seq="6" />
+			<siteMapNode id="426"  title="Reject" url="SalesReceiptListCheckNo"  parentId="42"  seq="6" />
 
 
 		</siteMapNode>
@@ -123,7 +123,7 @@
 
 			<siteMapNode id="515"  title="Review" url="OtherInListCheck"  parentId="51"  seq="7" />
 
-			<siteMapNode id="516"  title="Cancel Review" url="OtherInListCheckNo"  parentId="51"  seq="8" />
+			<siteMapNode id="516"  title="Reject" url="OtherInListCheckNo"  parentId="51"  seq="8" />
 
 
 		</siteMapNode>
@@ -140,7 +140,7 @@
 
 			<siteMapNode id="525"  title="Review" url="OtherOutListCheck"  parentId="52"  seq="6" />
 
-			<siteMapNode id="526"  title="Cancel Review" url="OtherOutListCheckNo"  parentId="52"  seq="7" />
+			<siteMapNode id="526"  title="Reject" url="OtherOutListCheckNo"  parentId="52"  seq="7" />
 
 
 		</siteMapNode>
@@ -159,7 +159,7 @@
 
 			<siteMapNode id="535"  title="Review" url="DiaoboListCheck"  parentId="53"  seq="6" />
 
-			<siteMapNode id="536"  title="Cancel Review" url="DiaoboListCheckNo"  parentId="53"  seq="7" />
+			<siteMapNode id="536"  title="Reject" url="DiaoboListCheckNo"  parentId="53"  seq="7" />
 
 
 		</siteMapNode>
@@ -176,7 +176,7 @@
 
 			<siteMapNode id="575"  title="Review" url="AssembleListCheck"  parentId="57"  seq="6" />
 
-			<siteMapNode id="576"  title="Cancel Review" url="AssembleListCheckNo"  parentId="57"  seq="7" />
+			<siteMapNode id="576"  title="Reject" url="AssembleListCheckNo"  parentId="57"  seq="7" />
 
 
 		</siteMapNode>
@@ -194,7 +194,7 @@
 
 			<siteMapNode id="585"  title="Review" url="DisAssembleListCheck"  parentId="58"  seq="6" />
 
-			<siteMapNode id="586"  title="Cancel Review" url="DisAssembleListCheckNo"  parentId="58"  seq="7" />
+			<siteMapNode id="586"  title="Reject" url="DisAssembleListCheckNo"  parentId="58"  seq="7" />
 
 
 		</siteMapNode>
@@ -212,7 +212,7 @@
 
 			<siteMapNode id="545"  title="Review" url="CostChangeListCheck"  parentId="54"  seq="6" />
 
-			<siteMapNode id="546"  title="Cancel Review" url="CostChangeListCheckNo"  parentId="54"  seq="7" />
+			<siteMapNode id="546"  title="Reject" url="CostChangeListCheckNo"  parentId="54"  seq="7" />
 
 
 		</siteMapNode>
@@ -235,7 +235,7 @@
 
 			<siteMapNode id="1115"  title="Review" url="PurTicketListCheck"  parentId="111"  seq="7" />
 
-			<siteMapNode id="1116"  title="Cancel Review" url="PurTicketListCheckNo"  parentId="111"  seq="8" />
+			<siteMapNode id="1116"  title="Reject" url="PurTicketListCheckNo"  parentId="111"  seq="8" />
 
 
 		</siteMapNode>
@@ -252,7 +252,7 @@
 
 			<siteMapNode id="1125"  title="Review" url="SalesTicketListCheck"  parentId="112"  seq="5" />
 
-			<siteMapNode id="1126"  title="Cancel Review" url="SalesTicketListCheckNo"  parentId="112"  seq="6" />
+			<siteMapNode id="1126"  title="Reject" url="SalesTicketListCheckNo"  parentId="112"  seq="6" />
 
 
 		</siteMapNode>
@@ -274,7 +274,7 @@
 
 			<siteMapNode id="615"  title="Review" url="ReceivableListCheck"  parentId="61"  seq="7" />
 
-			<siteMapNode id="616"  title="Cancel Review" url="ReceivableListCheckNo"  parentId="61"  seq="8" />
+			<siteMapNode id="616"  title="Reject" url="ReceivableListCheckNo"  parentId="61"  seq="8" />
 
 
 		</siteMapNode>
@@ -291,7 +291,7 @@
 
 			<siteMapNode id="625"  title="Review" url="PayMentListCheck"  parentId="62"  seq="6" />
 
-			<siteMapNode id="626"  title="Cancel Review" url="PayMentListCheckNo"  parentId="62"  seq="7" />
+			<siteMapNode id="626"  title="Reject" url="PayMentListCheckNo"  parentId="62"  seq="7" />
 
 
 		</siteMapNode>
@@ -308,7 +308,7 @@
 
 			<siteMapNode id="635"  title="Review" url="CheckBillGetListCheck"  parentId="63"  seq="6" />
 
-			<siteMapNode id="636"  title="Cancel Review" url="CheckBillGetListCheckNo"  parentId="63"  seq="7" />
+			<siteMapNode id="636"  title="Reject" url="CheckBillGetListCheckNo"  parentId="63"  seq="7" />
 
 
 		</siteMapNode>
@@ -325,7 +325,7 @@
 
 			<siteMapNode id="645"  title="Review" url="CheckBillPayListCheck"  parentId="64"  seq="6" />
 
-			<siteMapNode id="646"  title="Cancel Review" url="CheckBillPayListCheckNo"  parentId="64"  seq="7" />
+			<siteMapNode id="646"  title="Reject" url="CheckBillPayListCheckNo"  parentId="64"  seq="7" />
 
 
 		</siteMapNode>
@@ -342,7 +342,7 @@
 
 			<siteMapNode id="655"  title="Review" url="OtherGetListCheck"  parentId="65"  seq="6" />
 
-			<siteMapNode id="656"  title="Cancel Review" url="OtherGetListCheckNo"  parentId="65"  seq="7" />
+			<siteMapNode id="656"  title="Reject" url="OtherGetListCheckNo"  parentId="65"  seq="7" />
 
 
 		</siteMapNode>
@@ -361,7 +361,7 @@
 
 			<siteMapNode id="665"  title="Review" url="OtherPayListCheck"  parentId="66"  seq="6" />
 
-			<siteMapNode id="666"  title="Cancel Review" url="OtherPayListCheckNo"  parentId="66"  seq="7" />
+			<siteMapNode id="666"  title="Reject" url="OtherPayListCheckNo"  parentId="66"  seq="7" />
 
 
 		</siteMapNode>
@@ -393,7 +393,7 @@
 
 			<siteMapNode id="723"  title="Sales Summary (by Product)" url="SalesOrderListSumGoodsReport"  parentId="72"  seq="4" />
 
-			<siteMapNode id="724"  title="Sales Summary (by Customer)" url="SalesOrderListSumClientReport"  parentId="72"  seq="5" />
+			<siteMapNode id="724"  title="Sales Summary (by Client)" url="SalesOrderListSumClientReport"  parentId="72"  seq="5" />
 
 
 		</siteMapNode>
@@ -430,7 +430,7 @@
 
 	<siteMapNode id="8"   title="Basic information management" url="BaseSet" parentId="1"  seq="9" >
 
-		<siteMapNode id="81"  title="Customer Management" url="Client" parentId="8"  seq="2">
+		<siteMapNode id="81"  title="Client Management" url="Client" parentId="8"  seq="2">
 
 			<siteMapNode id="811"  title="Search" url="ClientList"  parentId="81"  seq="3" />
 
@@ -444,7 +444,7 @@
 
 			<siteMapNode id="811"  title="Review" url="ClientListCheck"  parentId="81"  seq="8" />
 
-			<siteMapNode id="811"  title="Cancel Review" url="ClientListCheckNo"  parentId="81"  seq="9" />
+			<siteMapNode id="811"  title="Reject" url="ClientListCheckNo"  parentId="81"  seq="9" />
 
 
 		</siteMapNode>
@@ -463,7 +463,7 @@
 
 			<siteMapNode id="811"  title="Review" url="VenderListCheck"  parentId="82"  seq="7" />
 
-			<siteMapNode id="811"  title="Cancel Review" url="VenderListCheckNo"  parentId="82"  seq="8" />
+			<siteMapNode id="811"  title="Reject" url="VenderListCheckNo"  parentId="82"  seq="8" />
 
 
 		</siteMapNode>
@@ -516,7 +516,7 @@
 
 	<siteMapNode id="9"   title="Auxiliary data management" url="TypeList" parentId="1"  seq="1" >
 
-		<siteMapNode id="91"  title="Customer Category" url="ClientType" parentId="9"  seq="2">
+		<siteMapNode id="91"  title="Client Category" url="ClientType" parentId="9"  seq="2">
 
 			<siteMapNode id="911"  title="Search" url="ClientTypeList"  parentId="91"  seq="3" />
 

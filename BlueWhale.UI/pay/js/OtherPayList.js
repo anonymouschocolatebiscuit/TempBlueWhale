@@ -59,7 +59,7 @@ $(function () {
             { display: 'Status', name: 'flag', width: 80, align: 'center' },
             { display: 'Created By', name: 'makeName', width: 80, align: 'center' },
             { display: 'Reviewed By', name: 'checkName', width: 100, align: 'center' },
-            { display: 'Remark', name: 'remarks', width: 200, align: 'left' }
+            { display: 'Remarks', name: 'remarks', width: 200, align: 'left' }
         ], width: '98%',
         height: '98%',
         dataAction: 'local',

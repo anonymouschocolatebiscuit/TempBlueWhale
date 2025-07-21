@@ -144,7 +144,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Original price', name: 'price', width: 110, type: 'float', align: 'right', editor: { type: 'float' }
+                    display: 'Original Price', name: 'price', width: 110, type: 'float', align: 'right', editor: { type: 'float' }
 
                 },
                 {
@@ -181,7 +181,7 @@ $(function () {
 
                 },
                 { display: 'Tax amount%', name: 'tax', width: 100, type: 'int', align: 'center', editor: { type: 'int' } },
-                { display: 'Unit Price Including Tax', name: 'priceTax', width: 180, type: 'float', align: 'center', editor: { type: 'float' } },
+                { display: 'Unit Price Including Tax', name: 'priceTax', width: 110, type: 'float', align: 'center', editor: { type: 'float' } },
                 {
                     display: 'Tax amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
 

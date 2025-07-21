@@ -153,7 +153,7 @@
                 var options = {
                     columns: [
                       { display: 'Product number', name: 'code', width: 100, align: 'center' },
-                    { display: 'Product name', name: 'names', width: 230, align: 'left'},
+                    { display: 'Item Name', name: 'names', width: 230, align: 'left'},
                      { display: 'Specification', name: 'spec', width: 70, align: 'center' },
                      { display: 'unit', name: 'unitName', width: 70, align: 'center' }
                      ], switchPageSizeApplyComboBox: false,

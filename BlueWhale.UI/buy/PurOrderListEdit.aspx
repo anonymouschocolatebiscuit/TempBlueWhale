@@ -14,7 +14,7 @@
         <script src="../lib/json2.js" type="text/javascript"></script>
         <script src="js/PurOrderListEdit.js?v=2018.11.13.01" type="text/javascript"></script>
         <style type="text/css"> 
-            .l-grid-header { height: 81px !important; } /* Increase height */
+            .l-grid-header { height: 53px !important; } /* Increase height */
         </style>
     </head>
 
@@ -32,7 +32,7 @@
                     <td style="text-align:left; width:180px;">
                         <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                     </td>
-                    <td style="text-align:right; width:100px; padding-right:0.5rem;">Send Date: </td>
+                    <td style="text-align:right; width:100px; padding-right:0.5rem;">Delivery Date: </td>
                     <td style="text-align:left; width:180px;" >
                         <asp:TextBox ID="txtSendDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                     </td>

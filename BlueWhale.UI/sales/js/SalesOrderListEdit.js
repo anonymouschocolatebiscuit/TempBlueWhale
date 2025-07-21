@@ -170,7 +170,7 @@ $(function () {
                 }
             },
             { display: 'Tax Rate%', name: 'tax', width: 100, type: 'int', align: 'center', editor: { type: 'int' } },
-            { display: 'Unit Price Including Tax', name: 'priceTax', width: 100, type: 'float', align: 'center', editor: { type: 'float' } },
+            { display: 'Unit Price Including Tax', name: 'priceTax', width: 110, type: 'float', align: 'center', editor: { type: 'float' } },
             {
                 display: 'Tax Amount', name: 'sumPriceTax', width: 90, type: 'float', align: 'right',
                 totalSummary: {

@@ -67,7 +67,7 @@
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
 
-                <td style="text-align: right; width: 60px;">Customer: 
+                <td style="text-align: right; width: 60px;">Client: 
                 </td>
 
                 <td style="text-align: left; width: 80px;">

@@ -34,7 +34,7 @@ $(function () {
                     return html;
                 }
             },
-            { display: 'Customer', name: 'wlName', width: 170, align: 'left' },
+            { display: 'Client', name: 'wlName', width: 170, align: 'left' },
             { display: 'Item Number', name: 'code', width: 70, align: 'center' },
             { display: 'Goods Name', name: 'goodsName', width: 120, align: 'left' },
             { display: 'Specification', name: 'spec', width: 80, align: 'center' },
@@ -92,7 +92,7 @@ $(function () {
 
             },
             { display: 'Tax rate%', name: 'tax', width: 60, type: 'int', align: 'center', editor: { type: 'int' } },
-            { display: 'Unit Price Including Tax', name: 'priceTax', width: 70, type: 'float', align: 'center', editor: { type: 'float' } },
+            { display: 'Unit Price Including Tax', name: 'priceTax', width: 110, type: 'float', align: 'center', editor: { type: 'float' } },
             {
                 display: 'Tax Amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
 

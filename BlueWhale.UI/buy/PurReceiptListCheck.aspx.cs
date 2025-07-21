@@ -246,7 +246,7 @@ namespace Lanwei.Weixin.UI.buy
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel Review Purchase Receipt-ID: " + delId.ToString();
+                            logs.Events = "Reject Purchase Receipt-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -255,11 +255,11 @@ namespace Lanwei.Weixin.UI.buy
 
                 if (num > 0)
                 {
-                    Response.Write("Cancel Review Successfully" + num + "rows records!");
+                    Response.Write("Reject Successfully" + num + "rows records!");
                 }
                 else
                 {
-                    Response.Write("Cancel Review Failed!");
+                    Response.Write("Reject Failed!");
                 }
             }
             else
