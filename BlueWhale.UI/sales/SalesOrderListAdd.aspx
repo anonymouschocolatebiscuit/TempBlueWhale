@@ -30,7 +30,7 @@
  <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
            <tr>
            <td style="width:100px; text-align:center;">
-               Sales unit: </td>
+               Sales Unit: </td>
            <td style="text-align:left; width:250px;">
       <input type="text" id="clientName" runat="server" value="" />
        <input type="hidden" id="clientId" runat="server" value="" />
@@ -39,14 +39,14 @@
            <td style="width:15px;"></td>
 
            <td style="text-align:right; width:100px;">
-                                                  Order date: </td>
+                                                  Order Date: </td>
            <td style="text-align:left; width:180px;">
                                                   <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                    </td>
             <td style="width:15px;"></td>
 
            <td style="text-align:right; width:115px;">
-                                                  Delivery date: </td>
+                                                  Delivery Date: </td>
            <td style="text-align:left; width:180px;" >
                                                   <asp:TextBox ID="txtSendDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                    </td>
@@ -54,7 +54,7 @@
             <td style="width:15px;"></td>
 
            <td style="text-align:right; width:115px;">
-                                                  Sales person: </td>
+                                                  Salesperson: </td>
            <td style="text-align:left;">
                                                   <asp:DropDownList ID="ddlYWYList" runat="server">
                                                   </asp:DropDownList>
@@ -79,7 +79,7 @@
               
               
                    
-               <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Create" onclick="save()"  />
+               <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Add" onclick="save()"  />
                       
                   
               

@@ -169,6 +169,7 @@
     <Content Include="appCss\WorkRecord.js" />
     <Content Include="appCss\WorkRecord_zh-cn.js" />
     <Content Include="baseSet\GoodsTypeListAdd.aspx" />
+    <Content Include="baseSet\VenderLinkMan.aspx" />
     <Content Include="bin\BlueWhale.BLL.dll" />
     <Content Include="bin\BlueWhale.BLL.pdb" />
     <Content Include="bin\BlueWhale.Common.dll" />
@@ -3947,6 +3948,13 @@
     </Compile>
     <Compile Include="baseSet\UnitListAdd.aspx.designer.cs">
       <DependentUpon>UnitListAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="baseSet\VenderLinkMan.aspx.cs">
+      <DependentUpon>VenderLinkMan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="baseSet\VenderLinkMan.aspx.designer.cs">
+      <DependentUpon>VenderLinkMan.aspx</DependentUpon>
     </Compile>
     <Compile Include="sales\ashx\SalesOrderListEdit.ashx.cs">
       <DependentUpon>SalesOrderListEdit.ashx</DependentUpon>

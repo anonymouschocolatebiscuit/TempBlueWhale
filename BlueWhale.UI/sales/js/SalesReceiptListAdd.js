@@ -185,7 +185,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Product Name', name: 'goodsName', width: '155px', align: 'left',
+                    display: 'Item Name', name: 'goodsName', width: '155px', align: 'left',
 
                     totalSummary:
                     {
@@ -199,7 +199,7 @@ $(function () {
                 { display: 'Specification', name: 'spec', width: '100px', align: 'center' },
                 { display: 'Unit', name: 'unitName', width: '80px', align: 'center' },
                 {
-                    display: 'Storehouse', name: 'ckId', width: '100px', isSort: false, textField: 'ckName',
+                    display: 'Inventory', name: 'ckId', width: '100px', isSort: false, textField: 'ckName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
@@ -226,7 +226,7 @@ $(function () {
                     display: 'Discount %', name: 'dis', width: '80px', type: 'float', align: 'right', editor: { type: 'float' }
                 },
                 {
-                    display: 'Discount amount', name: 'sumPriceDis', width: '120px', type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Discount Amount', name: 'sumPriceDis', width: '120px', type: 'float', align: 'right', editor: { type: 'float' },
                     totalSummary:
                     {
                         align: 'center',   //Alignment of summary cell contents: left/center/right
@@ -256,10 +256,10 @@ $(function () {
                     }
 
                 },
-                { display: 'Tax rate %', name: 'tax', width: '80px', type: 'int', align: 'center', editor: { type: 'int' } },
-                { display: 'Unit price including tax', name: 'priceTax', width: '150px', type: 'float', align: 'center', editor: { type: 'float' } },
+                { display: 'Tax Rate %', name: 'tax', width: '80px', type: 'int', align: 'center', editor: { type: 'int' } },
+                { display: 'Unit Price Including Tax', name: 'priceTax', width: '150px', type: 'float', align: 'center', editor: { type: 'float' } },
                 {
-                    display: 'Total tax', name: 'sumPriceTax', width: '80px', type: 'float', align: 'right',
+                    display: 'Total Tax', name: 'sumPriceTax', width: '80px', type: 'float', align: 'right',
 
                     totalSummary:
                     {
@@ -274,7 +274,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Price and tax total', name: 'sumPriceAll', width: '120px', type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Price and Tax Total', name: 'sumPriceAll', width: '120px', type: 'float', align: 'right', editor: { type: 'float' },
                     totalSummary:
                     {
                         align: 'center',   //Alignment of summary cell contents: left/center/right

@@ -128,7 +128,7 @@ $(function () {
             { display: 'Specification', name: 'spec', width: 100, align: 'center' },
             { display: 'Unit', name: 'unitName', width: 80, align: 'center' },
             {
-                display: 'Warehouse', name: 'ckId', width: 90, isSort: false, textField: 'ckName',
+                display: 'Inventory', name: 'ckId', width: 90, isSort: false, textField: 'ckName',
                 editor: {
                     type: 'select',
                     url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),

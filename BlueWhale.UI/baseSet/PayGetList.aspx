@@ -26,7 +26,7 @@
                 columns: [
                 
                  
-                 { display: 'Cateogry', name: 'types',id: 'types', width: 250, align: 'left' },
+                 { display: 'Category', name: 'types',id: 'types', width: 250, align: 'left' },
                   { display: 'Name', name: 'names',id: 'names', width: 250, align: 'left' }
                 
             

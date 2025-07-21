@@ -45,11 +45,11 @@
  
             <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:50px;">
                <tr>
-                   <td style="width:150px; text-align:right;">This payment: </td>
+                   <td style="width:150px; text-align:right;">Payment Received: </td>
                    <td style="text-align:left; width:100px;">
                        <asp:TextBox ID="txtPayNow" runat="server">0</asp:TextBox>
                    </td>
-                   <td style="text-align:right; width:150px;">This debt: </td>
+                   <td style="text-align:right; width:150px;">Debt: </td>
                    <td style="text-align:left; width:100px;">
                        <asp:TextBox ID="txtPayNo" runat="server" BackColor="#FFFFCC" ToolTip="Auto calculate">0</asp:TextBox>
                    </td>
@@ -71,7 +71,7 @@
                    <td style="text-align:left; width:100px;">
                        <asp:TextBox ID="txtSendNumber" runat="server"></asp:TextBox>
                    </td>
-                   <td style="text-align:right; width:150px;">Shipping method: </td>
+                   <td style="text-align:right; width:150px;">Shipping Method: </td>
                    <td style="text-align:left; ">
                        <asp:DropDownList ID="ddlSendPayTypeList" runat="server">
                            <asp:ListItem>Pay before ship</asp:ListItem>
@@ -84,7 +84,7 @@
                    </td>
                </tr>
                <tr>
-                   <td style="width:80px; text-align:right;">Consignee: </td>
+                   <td style="width:80px; text-align:right;">Recipient: </td>
                    <td style="text-align:left; width:100px;">
                        <asp:TextBox ID="txtGetName" runat="server"></asp:TextBox>
                    </td>
@@ -92,11 +92,11 @@
                    <td style="text-align:left; width:100px;">
                        <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
                    </td>
-                   <td style="text-align:right; width:150px;">Delivery address: </td>
+                   <td style="text-align:right; width:150px;">Delivery Address: </td>
                    <td style="text-align:left; ">
                        <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
                    </td>
-                   <td style="text-align:right; width:120px;">Shipping fee: </td>
+                   <td style="text-align:right; width:120px;">Shipping Fee: </td>
                    <td style="text-align:left; padding-right:30px; "> 
                        <asp:TextBox ID="txtSendPrice" runat="server" Text="0"></asp:TextBox>
                    </td>

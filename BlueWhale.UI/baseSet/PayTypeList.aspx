@@ -23,7 +23,7 @@
                 columns: [
                 
                  
-                 { display: 'PayTypeName', name: 'names',id: 'levelName', width: 250, align: 'left' }
+                 { display: 'Settlement Method', name: 'names',id: 'levelName', width: 250, align: 'left' }
                 
             
                 ], width: '99%', pageSizeOptions: [5, 10, 15, 20],height: '99%',

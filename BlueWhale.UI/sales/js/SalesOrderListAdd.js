@@ -112,7 +112,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Product name', name: 'goodsName', width: 200, align: 'left',
+                    display: 'Item Name', name: 'goodsName', width: 200, align: 'left',
                     totalSummary:
                     {
                         type: 'count',
@@ -124,7 +124,7 @@ $(function () {
                 { display: 'Specification', name: 'spec', width: 100, align: 'center' },
                 { display: 'Unit', name: 'unitName', width: 60, align: 'center' },
                 {
-                    display: 'Storage', name: 'ckId', width: 80, isSort: false, textField: 'ckName',
+                    display: 'Inventory', name: 'ckId', width: 80, isSort: false, textField: 'ckName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BlueWhale.UI.baseSet
+namespace BlueWhale.UI.BaseSet
 {
 
 
-    public partial class PayTypeListAdd
+    public partial class VenderLinkMan
     {
 
         /// <summary>
@@ -33,6 +33,33 @@ namespace BlueWhale.UI.baseSet
         protected global::System.Web.UI.WebControls.TextBox txtNames;
 
         /// <summary>
+        /// txtPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPhone;
+
+        /// <summary>
+        /// txtTel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTel;
+
+        /// <summary>
+        /// ddlMoren control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMoren;
+
+        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>
@@ -42,12 +69,12 @@ namespace BlueWhale.UI.baseSet
         protected global::System.Web.UI.WebControls.Button btnSave;
 
         /// <summary>
-        /// hfId control.
+        /// gvLevel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfId;
+        protected global::System.Web.UI.WebControls.GridView gvLevel;
     }
 }

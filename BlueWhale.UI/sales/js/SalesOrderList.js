@@ -180,27 +180,27 @@ function checkNoRow() {
 }
 
 function add() {
-    parent.f_addTab('SalesOrderListAdd', 'Add Sales Order', 'sales/SalesOrderListAdd.aspx');
+    parent.f_addTab('SalesOrderListAdd', 'Sales Order - Create', 'sales/SalesOrderListAdd.aspx');
 }
 
 function makeBill() {
     var row = manager.getSelectedRow();
 
-    parent.f_addTab('SalesReceiptListAdd', 'Add Sales Outbound', 'sales/SalesReceiptListAdd.aspx?id=' + row.id);
+    parent.f_addTab('SalesReceiptListAdd', 'Sales Outbound - Create', 'sales/SalesReceiptListAdd.aspx?id=' + row.id);
 }
 
 function editRow() {
     var row = manager.getSelectedRow();
     if (!row) { alert('Please select a row'); return; }
 
-    parent.f_addTab('SalesOrderListEdit', 'Edit Sales Order', 'sales/SalesOrderListEdit.aspx?id=' + row.id);
+    parent.f_addTab('SalesOrderListEdit', 'Sales Order - Edit', 'sales/SalesOrderListEdit.aspx?id=' + row.id);
 }
 
 function viewRow() {
     var row = manager.getSelectedRow();
     if (!row) { alert('Please select a row'); return; }
 
-    parent.f_addTab('SalesOrderListEdit', 'Sales Order = Details', 'sales/SalesOrderListEdit.aspx?id=' + row.id);
+    parent.f_addTab('SalesOrderListEdit', 'Sales Order - Edit', 'sales/SalesOrderListEdit.aspx?id=' + row.id);
 }
 
 function makePDF() {
