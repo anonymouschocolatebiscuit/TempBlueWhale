@@ -42,7 +42,7 @@ $(function () {
             { display: 'Receipt No', name: 'number', width: 150, align: 'center', frozen: true },
             { display: 'Business Type', name: 'bizType', width: 150, align: 'center' },
 
-            { display: 'Contact Unit', name: 'wlName', width: 170, align: 'left' },
+            { display: 'Business Counterpart', name: 'wlName', width: 170, align: 'left' },
             { display: 'Stock-in Warehouse', name: 'ckName', width: 150, align: 'center' },
 
             {

@@ -119,7 +119,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Goods Name', name: 'goodsName', width: 200, align: 'left',
+                    display: 'Item Name', name: 'goodsName', width: 200, align: 'left',
 
                     totalSummary:
                     {

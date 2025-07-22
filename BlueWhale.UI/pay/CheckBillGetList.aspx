@@ -10,7 +10,7 @@
     <script src="../lib/json2.js" type="text/javascript"></script>
     <script src="js/CheckBillGetList.js" type="text/javascript"></script>
             <style type="text/css">
-.l-grid-header { height: 28px !important; /* Increase height */}
+.l-grid-header { height: 53px !important; /* Increase height */}
 </style>
 
 

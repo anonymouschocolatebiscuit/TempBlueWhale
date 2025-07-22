@@ -30,7 +30,7 @@ $(function () {
             },
 
             {
-                display: 'Payment date', name: 'bizDate', width: 150, align: 'center', valign: 'center',
+                display: 'Collection Date', name: 'bizDate', width: 150, align: 'center', valign: 'center',
 
                 totalSummary:
                 {
@@ -41,11 +41,11 @@ $(function () {
                 }
 
             },
-            { display: 'Receipt number', name: 'number', width: 150, align: 'center' },
+            { display: 'Receipt No.', name: 'number', width: 150, align: 'center' },
             { display: 'Settlement Account', name: 'bkName', width: 150, align: 'center' },
             { display: 'Client', name: 'wlName', width: 80, align: 'left' },
             {
-                display: 'Amount of payment', name: 'sumPrice', width: 180, align: 'right',
+                display: 'Collection Amount', name: 'sumPrice', width: 180, align: 'right',
 
                 totalSummary:
                 {
@@ -59,8 +59,8 @@ $(function () {
             },
             { display: 'Status', name: 'flag', width: 80, align: 'center' },
 
-            { display: 'Make name', name: 'makeName', width: 80, align: 'center' },
-            { display: 'Review name', name: 'checkName', width: 90, align: 'center' },
+            { display: 'Created By', name: 'makeName', width: 100, align: 'center' },
+            { display: 'Reviewed By', name: 'checkName', width: 100, align: 'center' },
             { display: 'Remarks', name: 'remarks', width: 200, align: 'left' }
 
 
@@ -186,12 +186,12 @@ function checkNoRow() {
 
 function add() {
 
-    parent.f_addTab('OtherGetListAdd', 'Other Get List - Add', 'pay/OtherGetListAdd.aspx?id=0');
+    parent.f_addTab('OtherGetListAdd', 'Other Collection - Add', 'pay/OtherGetListAdd.aspx?id=0');
 
     top.topManager.openPage({
         id: 'OtherGetListAdd',
         href: 'pay/OtherGetListAdd.aspx',
-        title: 'Other Get List - Add'
+        title: 'Other Collection - Add'
     });
 
 
@@ -200,12 +200,12 @@ function add() {
 function editRow() {
     var row = manager.getSelectedRow();
 
-    parent.f_addTab('OtherGetListEdit', 'Other Get List - Edit', 'pay/OtherGetListEdit.aspx?id=' + row.id);
+    parent.f_addTab('OtherGetListEdit', 'Other Collection - Edit', 'pay/OtherGetListEdit.aspx?id=' + row.id);
 
     top.topManager.openPage({
         id: 'OtherGetListEdit',
         href: 'pay/OtherGetListEdit.aspx?id=' + row.id,
-        title: 'Other Get List - Edit'
+        title: 'Other Collection - Edit'
     });
 
 

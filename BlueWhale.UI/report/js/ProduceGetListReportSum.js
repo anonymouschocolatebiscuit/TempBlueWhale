@@ -28,7 +28,7 @@ $(function () {
                 }
 
             },
-            { display: 'Goods Name', name: 'goodsName', width: 220, align: 'left' },
+            { display: 'Item Name', name: 'goodsName', width: 220, align: 'left' },
             { display: 'Spec', name: 'spec', width: 120, align: 'center' },
             { display: 'Unit', name: 'unitName', width: 100, align: 'center' },
 

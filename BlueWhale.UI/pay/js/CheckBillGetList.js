@@ -7,7 +7,7 @@ $(function () {
         checkbox: true,
         columns: [
             {
-                display: 'Action', isSort: false, width: 50, align: 'center',
+                display: 'Action', isSort: false, width: 70, align: 'center',
                 render: function (rowdata, rowindex, value) {
                     var h = "";
                     if (!rowdata._editing) {
@@ -34,7 +34,7 @@ $(function () {
             { display: 'Receipt Number', name: 'number', width: 150, align: 'center' },
             { display: 'Client Name', name: 'clientName', width: 170, align: 'left' },
             {
-                display: 'Write-off Amount', name: 'checkPrice', width: 150, align: 'right',
+                display: 'Written-off Amount', name: 'checkPrice', width: 150, align: 'right',
                 totalSummary: {
                     align: 'right',
                     type: 'sum',
@@ -43,9 +43,9 @@ $(function () {
                     }
                 }
             },
-            { display: 'Status', name: 'flag', width: 60, align: 'center' },
-            { display: 'Created By', name: 'makeName', width: 70, align: 'center' },
-            { display: 'Reviewed By', name: 'checkName', width: 70, align: 'center' },
+            { display: 'Status', name: 'flag', width: 70, align: 'center' },
+            { display: 'Created By', name: 'makeName', width: 100, align: 'center' },
+            { display: 'Reviewed By', name: 'checkName', width: 100, align: 'center' },
             { display: 'Remarks', name: 'remarks', width: 150, align: 'left' }
         ],
         width: '98%',

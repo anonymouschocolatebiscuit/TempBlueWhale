@@ -96,12 +96,12 @@ $(function () {
                     }
                 },
                 { display: 'Business Type', name: 'bizType', width: 120, align: 'center' },
-                { display: 'Document Date', name: 'bizDate', width: 120, align: 'center' },
-                { display: 'Document Amount', name: 'sumPriceAll', width: 120, align: 'right' },
+                { display: 'Invoice Date', name: 'bizDate', width: 120, align: 'center' },
+                { display: 'Invoice Amount', name: 'sumPriceAll', width: 120, align: 'right' },
                 { display: 'Written-off Amount', name: 'priceCheckNowSum', width: 150, align: 'right' },
-                { display: 'Unwritten-off Amount', name: 'priceCheckNo', width: 160, align: 'right' },
+                { display: 'Remaining Balance', name: 'priceCheckNo', width: 160, align: 'right' },
                 {
-                    display: 'Current Write-off Amount', name: 'priceCheckNow', width: 180, type: 'float', align: 'right', editor: { type: 'float', precision: 4 },
+                    display: 'Write-off Amount', name: 'priceCheckNow', width: 180, type: 'float', align: 'right', editor: { type: 'float', precision: 4 },
                     totalSummary: {
                         align: 'right',
                         type: 'sum',
@@ -111,7 +111,7 @@ $(function () {
                     }
                 }
             ],
-            width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '190',
+            width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '200',
             url: 'CheckBillPayListAdd.aspx?Action=GetData',
             rownumbers: true,
             frozenRownumbers: true,
@@ -175,12 +175,12 @@ $(function () {
                     }
                 },
                 { display: 'Business Type', name: 'bizType', width: 120, align: 'center' },
-                { display: 'Document Date', name: 'bizDate', width: 120, align: 'center' },
-                { display: 'Document Amount', name: 'sumPriceAll', width: 120, align: 'right' },
+                { display: 'Invoice Date', name: 'bizDate', width: 120, align: 'center' },
+                { display: 'Invoice Amount', name: 'sumPriceAll', width: 120, align: 'right' },
                 { display: 'Written-off Amount', name: 'priceCheckNowSum', width: 150, align: 'right' },
-                { display: 'Unwritten-off Amount', name: 'priceCheckNo', width: 160, align: 'right' },
+                { display: 'Remaining Balance', name: 'priceCheckNo', width: 160, align: 'right' },
                 {
-                    display: 'Current Write-off Amount', name: 'priceCheckNow', width: 180, type: 'float', align: 'right', editor: { type: 'float', precision: 4 },
+                    display: 'Write-off Amount', name: 'priceCheckNow', width: 180, type: 'float', align: 'right', editor: { type: 'float', precision: 4 },
                     totalSummary: {
                         align: 'right',
                         type: 'sum',
@@ -190,7 +190,7 @@ $(function () {
                     }
                 }
             ],
-            width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '190',
+            width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '200',
             url: 'CheckBillPayListAdd.aspx?Action=GetDataSub',
             rownumbers: true,
             frozenRownumbers: true,
@@ -213,7 +213,7 @@ function f_onBeforeEdit(e) {
 function f_onBeforeSubmitEdit(e) {
     var data = manager.getData();
     if (Number(e.value) > Number(data[e.rowindex].priceCheckNo)) {
-        $.ligerDialog.warn("Write-off amount cannot exceed unwritten-off amount!");
+        $.ligerDialog.warn("Write-off amount cannot exceed Remaining Balance!");
         return false;
     }
     return true;
@@ -222,7 +222,7 @@ function f_onBeforeSubmitEdit(e) {
 function f_onBeforeSubmitEditSub(e) {
     var data = managersub.getData();
     if (Number(e.value) > Number(data[e.rowindex].priceCheckNo)) {
-        $.ligerDialog.warn("Write-off amount cannot exceed unwritten-off amount!");
+        $.ligerDialog.warn("Write-off amount cannot exceed Remaining Balance!");
         return false;
     }
     return true;

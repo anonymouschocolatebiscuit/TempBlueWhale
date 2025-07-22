@@ -38,7 +38,7 @@
           
           </td>
            <td style="text-align:right; width:100px; padding-right:0.5rem;">
-                                                  Payment Date: </td>
+                                                  Collection Date: </td>
            <td style="text-align:left; width:180px;">
             
                                                   <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
@@ -65,9 +65,9 @@
            
            <table id="Table1" border="0" cellpadding="0" cellspacing="0" style="line-height:40px;">
            <tr>
-           <td style="text-align:right; width:100px; padding-right:0.5rem;">
+           <td style="text-align:right; width:140px; padding-right:0.5rem;">
             
-            Pay Number: </td>
+            Source Order Number: </td>
            <td style="text-align:left; width:140px;">
             
              
@@ -124,11 +124,11 @@
                    
                    </td>
            <td style="text-align:right; width:230px; padding-right:0.5rem;">
-                                                  Advance Payment Received This Time: </td>
+                                                  Advanced Payment: </td>
            <td style="text-align:left; width:180px;">
             
            <asp:TextBox ID="txtPayPriceNowMore" runat="server" BackColor="#FFFFCC" 
-                   ToolTip="Pay number">0</asp:TextBox>
+                   ToolTip="Settlement Number">0</asp:TextBox>
               
                    
                    </td>

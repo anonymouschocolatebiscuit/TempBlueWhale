@@ -31,7 +31,7 @@ $(function () {
             },
 
             { display: 'Goods Code', name: 'code', width: 100, align: 'center' },
-            { display: 'Goods Name', name: 'goodsName', width: 180, align: 'left' },
+            { display: 'Item Name', name: 'goodsName', width: 180, align: 'left' },
             { display: 'Spec', name: 'spec', width: 100, align: 'center' },
             { display: 'Unit', name: 'unitName', width: 80, align: 'center' },
             { display: 'Warehouse', name: 'ckName', width: 100, align: 'center' },

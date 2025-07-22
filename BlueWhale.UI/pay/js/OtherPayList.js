@@ -17,7 +17,7 @@ $(function () {
         checkbox: true,
         columns: [
             {
-                display: 'Action', isSort: false, width: 50, align: 'center', render: function (rowdata, rowindex, value) {
+                display: 'Action', isSort: false, width: 70, align: 'center', render: function (rowdata, rowindex, value) {
                     var h = "";
                     if (!rowdata._editing) {
                         h += "<a href='javascript:editRow()' title='Edit Row' style='float:left;'><div class='ui-icon ui-icon-pencil'></div></a> ";
@@ -31,7 +31,7 @@ $(function () {
                 }
             },
             {
-                display: 'Payment Date', name: 'bizDate', width: 100, align: 'center', valign: 'center',
+                display: 'Collection Date', name: 'bizDate', width: 120, align: 'center', valign: 'center',
                 totalSummary:
                 {
                     type: 'count',
@@ -40,11 +40,11 @@ $(function () {
                     }
                 }
             },
-            { display: 'Document Number', name: 'number', width: 130, align: 'center' },
-            { display: 'Settlement Account', name: 'bkName', width: 130, align: 'center' },
+            { display: 'Receipt No.', name: 'number', width: 140, align: 'center' },
+            { display: 'Settlement Account', name: 'bkName', width: 140, align: 'center' },
             { display: 'Supplier', name: 'wlName', width: 150, align: 'left' },
             {
-                display: 'Payment Amount', name: 'sumPrice', width: 120, align: 'right',
+                display: 'Collection Amount', name: 'sumPrice', width: 140, align: 'right',
 
                 totalSummary:
                 {
@@ -57,7 +57,7 @@ $(function () {
 
             },
             { display: 'Status', name: 'flag', width: 80, align: 'center' },
-            { display: 'Created By', name: 'makeName', width: 80, align: 'center' },
+            { display: 'Created By', name: 'makeName', width: 100, align: 'center' },
             { display: 'Reviewed By', name: 'checkName', width: 100, align: 'center' },
             { display: 'Remarks', name: 'remarks', width: 200, align: 'left' }
         ], width: '98%',

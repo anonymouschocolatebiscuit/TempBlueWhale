@@ -15,7 +15,7 @@
         <script type="text/javascript">
             // Client Start
 
-            // Contact Unit Start
+            // Business Counterpart Start
             function f_selectClient() {
                 $.ligerDialog.open({
                     title: 'Choose Client', name: 'winselector', width: 800, height: 540, url: '../baseSet/ClientListSelect.aspx', buttons: [
@@ -44,7 +44,7 @@
                 dialog.close();
             }
 
-            // Contact Unit End
+            // Business Counterpart End
 
             // Product Start
             function f_selectContact() {

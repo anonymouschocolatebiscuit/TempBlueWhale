@@ -46,7 +46,7 @@ $(function () {
             { display: 'Item Code', name: 'code', width: '5%', align: 'center' },
 
             {
-                display: 'Goods Name', name: 'goodsName', width: '9%', align: 'center',
+                display: 'Item Name', name: 'goodsName', width: '9%', align: 'center',
 
                 totalSummary:
                 {

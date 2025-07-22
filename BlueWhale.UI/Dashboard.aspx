@@ -871,10 +871,10 @@
                             <div class="nav-item nav-JDstore last">
                                 <h3>Settlement</h3>
                                 <ul class="sub-nav" id="Ul8">
-                                    <li><a onclick="f_addTab('CheckBillGetListAdd',' Collection Settlement - Create','pay/CheckBillGetListAdd.aspx')"> Collection Settlement - Create</a></li>
-                                    <li><a onclick="f_addTab('CheckBillGetList','Collection Settlement - View','pay/CheckBillGetList.aspx')">Collection Settlement - View</a></li>
-                                    <li><a onclick="f_addTab('CheckBillPayListAdd','Payment Settlement - Create','pay/CheckBillPayListAdd.aspx')">Payment Settlement - Create</a></li>
-                                    <li><a onclick="f_addTab('PayMentList','Payment Settlement- View','pay/PayMentList.aspx')">Payment Settlement- View</a></li>
+                                    <li><a onclick="f_addTab('CheckBillGetListAdd',' Collection Write-Off - Create','pay/CheckBillGetListAdd.aspx')"> Collection Write-Off - Create</a></li>
+                                    <li><a onclick="f_addTab('CheckBillGetList','Collection Write-Off - View','pay/CheckBillGetList.aspx')">Collection Write-Off - View</a></li>
+                                    <li><a onclick="f_addTab('CheckBillPayListAdd','Payment Write-Off - Create','pay/CheckBillPayListAdd.aspx')">Payment Write-Off - Create</a></li>
+                                    <li><a onclick="f_addTab('PayMentList','Payment Write-Off - View','pay/PayMentList.aspx')">Payment Write-Off - View</a></li>
                                 </ul>
                             </div>
                         </div>

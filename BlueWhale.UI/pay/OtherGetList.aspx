@@ -20,17 +20,17 @@
            <td style="text-align:right; width:70px; padding-right:0.5rem;">
             Keyword: 
             </td>
-           <td style="text-align:left; width:250px;">
+           <td style="text-align:left; width:200px;">
                <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter receipt number/customer/remark"></asp:TextBox>
             </td>
            <td style="text-align:right; width:90px; padding-right:0.5rem;">
-               StartDate:
+               Start Date:
               </td>
            <td style="text-align:left; width:180px;">
             <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
            </td>
            <td style="text-align:right; width:90px; padding-right:0.5rem;">
-               EndDate:
+               End Date:
            </td>
            <td style="text-align:left; width:180px; padding-right:0.5rem;">
             <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox> 

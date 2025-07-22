@@ -180,7 +180,7 @@ $(function () {
                     }
 
                 },
-                { display: 'Tax amount%', name: 'tax', width: 100, type: 'int', align: 'center', editor: { type: 'int' } },
+                { display: 'Tax Rate%', name: 'tax', width: 100, type: 'int', align: 'center', editor: { type: 'int' } },
                 { display: 'Unit Price Including Tax', name: 'priceTax', width: 110, type: 'float', align: 'center', editor: { type: 'float' } },
                 {
                     display: 'Tax amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',

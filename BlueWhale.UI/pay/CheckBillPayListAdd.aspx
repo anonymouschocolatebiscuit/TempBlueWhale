@@ -21,7 +21,7 @@
    
  <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
            <tr>
-           <td style="width:110px; text-align:right;">
+           <td style="width:130px; text-align:right; padding-right: 0.5rem;">
                Purchasing Unit:</td>
            <td style="text-align:left; width:250px;">
             
@@ -29,8 +29,8 @@
           </asp:DropDownList>
           
           </td>
-           <td style="text-align:right; width:110px;">
-                                                  Verification Date:</td>
+           <td style="text-align:right; width:130px; padding-right: 0.5rem;">
+                                                  Write-off Date:</td>
            <td style="text-align:left; width:180px;">
             
                                                   <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
@@ -46,14 +46,14 @@
             
             <table id="Table2" border="0" cellpadding="0" cellspacing="0" style="line-height:40px;">
            <tr>
-           <td style="text-align:right; width:85px;">
+           <td style="text-align:right; width:120px; padding-right: 0.5rem;">
             
-               Payment ID:</td>
+               Payment Number:</td>
            <td style="text-align:left; width:140px;">
             
                <asp:TextBox ID="txtKeysGet" runat="server" placeholder="Please enter the document number"></asp:TextBox>
             </td>
-           <td style="text-align:right; width:70px;">
+           <td style="text-align:right; width:80px; padding-right: 0.5rem;">
             
                Date:
             
@@ -67,13 +67,12 @@
                To
 
            </td>
-            <td style="text-align:left; width:120px;">
+            <td style="text-align:left; width:120px; padding-right: 0.5rem;">
             
                 <asp:TextBox ID="txtDateEnd1" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
             </td>
            <td style="text-align:left;">
-           
-           &nbsp;<input id="btnSelectPay" type="button" value="Query Payment Document" class="ui-btn" 
+           <input id="btnSelectPay" type="button" value="Search" class="ui-btn" 
                    onclick="selectGet()" /></td>
            </tr>
            </table>
@@ -91,14 +90,14 @@
            
            <table id="Table1" border="0" cellpadding="0" cellspacing="0" style="line-height:40px;">
            <tr>
-           <td style="text-align:right; width:80px;">
+           <td style="text-align:right; width:130px; padding-right: 0.5rem;">
             
-               Payable ID:</td>
+               Payable Number:</td>
            <td style="text-align:left; width:140px;">
             
                <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter the document number"></asp:TextBox>
             </td>
-           <td style="text-align:right; width:70px;">
+           <td style="text-align:right; width:90px; padding-right: 0.5rem;">
             
                Date:
             
@@ -112,13 +111,13 @@
                To
 
            </td>
-            <td style="text-align:left; width:120px;">
+            <td style="text-align:left; width:120px; padding-right: 0.5rem;">
             
                 <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
             </td>
            <td style="text-align:left;">
            
-           &nbsp;<input id="btnSelectBill" type="button" value="Query Payable Document" class="ui-btn" 
+           <input id="btnSelectBill" type="button" value="Search" class="ui-btn" 
                    onclick="selectBill()" /></td>
            </tr>
            </table>
@@ -143,7 +142,7 @@
                &nbsp;</td>
            <td style="text-align:left;">
                                                   
-               <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Add" onclick="save()"  /></td>
+               <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Create" onclick="save()"  /></td>
            </tr>
            </table>
            

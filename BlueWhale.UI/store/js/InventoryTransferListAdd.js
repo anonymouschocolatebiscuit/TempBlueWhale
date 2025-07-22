@@ -75,7 +75,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Goods Name', name: 'goodsName', width: 250, align: 'left',
+                    display: 'Item Name', name: 'goodsName', width: 250, align: 'left',
                     totalSummary:
                     {
                         type: 'count',

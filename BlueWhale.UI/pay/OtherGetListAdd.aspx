@@ -21,20 +21,20 @@
    
  <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
            <tr>
-           <td style="width:80px; text-align:right;">
-               Contact Unit: </td>
+           <td style="width:130px; text-align:right; padding-right: 0.5rem;">
+               Business Counterpart: </td>
            <td style="text-align:left; width:250px;">
             
     <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px">
     </asp:DropDownList>
              
                    </td>
-           <td style="text-align:right; width:80px;">
-                                                  Payment Date: </td>
+           <td style="text-align:right; width:130px; padding-right: 0.5rem;">
+                                                  Collection Date: </td>
            <td style="text-align:left; width:180px;">
                                                   <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                    </td>
-           <td style="text-align:right; width:80px;">
+           <td style="text-align:right; width:140px; padding-right: 0.5rem;">
                                                   Settlement Account: </td>
            <td style="text-align:left;">
                                                   
@@ -48,7 +48,7 @@
  
  <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:50px;">
            <tr>
-           <td style="width:80px; text-align:right;">
+           <td style="width:80px; text-align:right; padding-right: 0.5rem;">
                Remarks: </td>
            <td style="text-align:left; ">
                <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>

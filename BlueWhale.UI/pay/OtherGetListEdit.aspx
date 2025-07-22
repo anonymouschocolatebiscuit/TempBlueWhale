@@ -16,21 +16,18 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
            <tr>
-                <td style="width:80px; text-align:right;">
-                    往来单位: </td>
+                <td style="width:130px; text-align:right; padding-right: 0.5rem;">Business Counterpart: </td>
                 <td style="text-align:left; width:250px;">
-                     <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px">
-                     </asp:DropDownList>
+                    <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px">
+                    </asp:DropDownList>
                 </td>
-                <td style="text-align:right; width:80px;">
-                     收款日期: </td>
+                <td style="text-align:right; width:130px; padding-right: 0.5rem;">Collection Date: </td>
                 <td style="text-align:left; width:180px;">
-                 <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
+                    <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align:right; width:80px;">
-                 结算账户: </td>
-                <td style="text-align:left;">        
-                     <asp:DropDownList ID="ddlBankList" runat="server">
+                <td style="text-align:right; width:140px; padding-right: 0.5rem;">Settlement Account: </td>
+                <td style="text-align:left;">          
+                    <asp:DropDownList ID="ddlBankList" runat="server">
                     </asp:DropDownList>
                 </td>
            </tr>
@@ -38,13 +35,12 @@
            <div id="maingrid"></div>
            <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:50px;">
                 <tr>
-                    <td style="width:80px; text-align:right;">
-                        备注信息: </td>
+                    <td style="width:80px; text-align:right; padding-right: 0.5rem;">Remarks: </td>
                     <td style="text-align:left; ">
                         <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                     </td>
                     <td style="text-align:right; padding-right:30px; ">
-                       <input id="btnSave" runat="server" class="ui-btn ui-btn-sp mrb" type="button" value="保 存" onclick="save()"  />
+                       <input id="btnSave" runat="server" class="ui-btn ui-btn-sp mrb" type="button" value="Save" onclick="save()"  />
                     </td>
                 </tr>
            </table>

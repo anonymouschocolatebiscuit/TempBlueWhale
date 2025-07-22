@@ -19,12 +19,12 @@
             <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
                 <tr>
                     <td style="width:80px; text-align:right; padding-right:0.5rem">
-                        Sales unit:</td>
+                        Sales Unit:</td>
                     <td style="text-align:left; width:250px;">
                         <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px"></asp:DropDownList>
                     </td>
                     <td style="text-align:right; width:80px; padding-right:0.5rem">
-                        Payment date:</td>
+                        Collection Date:</td>
                     <td style="text-align:left; width:180px;">
                         <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}">
                         </asp:TextBox>
@@ -80,7 +80,7 @@
                         <asp:TextBox ID="txtDisPrice" runat="server">0</asp:TextBox>
                     </td>
                     <td style="text-align:right; width:80px; padding-right:0.5rem">
-                        Current Advance payment received:</td>
+                        Advanced Payment:</td>
                     <td style="text-align:left; width:180px;">
                         <asp:TextBox ID="txtPayPriceNowMore" runat="server" BackColor="#FFFFCC"
                             ToolTip="Auto Calculation">0
