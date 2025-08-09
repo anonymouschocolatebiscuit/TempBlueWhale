@@ -53,7 +53,7 @@ function f_selectContactCancel(item, dialog) {
 
 function f_selectClient() {
     $.ligerDialog.open({
-        title: 'Select customer', name: 'winselector', width: 800, height: 540, url: '../baseSet/ClientListSelect.aspx', buttons: [
+        title: 'Select Client', name: 'winselector', width: 800, height: 540, url: '../baseSet/ClientListSelect.aspx', buttons: [
             { text: 'Confirm', onclick: f_selectClientOK },
             { text: 'Close', onclick: f_selectClientCancel }
         ]
@@ -180,10 +180,10 @@ $(function () {
                     }
 
                 },
-                { display: 'Tax amount%', name: 'tax', width: 100, type: 'int', align: 'center', editor: { type: 'int' } },
+                { display: 'Tax Amount%', name: 'tax', width: 100, type: 'int', align: 'center', editor: { type: 'int' } },
                 { display: 'Unit Price Including Tax', name: 'priceTax', width: 180, type: 'float', align: 'center', editor: { type: 'float' } },
                 {
-                    display: 'Tax amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
+                    display: 'Tax Amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
 
                     totalSummary:
                     {

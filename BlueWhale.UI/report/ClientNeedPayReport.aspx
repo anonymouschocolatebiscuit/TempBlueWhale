@@ -71,7 +71,7 @@
                     <input type="text" id="txtVenderList" />
                 </td>
                 <td style="text-align: right; padding-right: 20px;">
-                    <input id="btnSearch" type="button" value="search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
+                    <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
                 </td>
             </tr>
             <tr>

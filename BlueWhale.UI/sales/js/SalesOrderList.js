@@ -47,7 +47,7 @@ $(function () {
                 }
             },
             { display: 'Order Number', name: 'number', width: 150, align: 'center' },
-            { display: 'Customer', name: 'wlName', width: 170, align: 'left' },
+            { display: 'Client', name: 'wlName', width: 170, align: 'left' },
             {
                 display: 'Sales Amount', name: 'sumPriceAll', width: 120, align: 'right',
 

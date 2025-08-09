@@ -54,7 +54,7 @@ $(function () {
                 }
             },
             {
-                display: 'Quantity Stock In', name: 'getNum', width: 120, align: 'right',
+                display: 'Received Quantity', name: 'getNum', width: 120, align: 'right',
 
                 totalSummary:
                 {
@@ -66,7 +66,7 @@ $(function () {
                 }
             },
             {
-                display: 'Quantity Not Stock In', name: 'getNumNo', width: 150, align: 'right',
+                display: 'Pending Quantity', name: 'getNumNo', width: 150, align: 'right',
 
                 totalSummary:
                 {
@@ -90,7 +90,7 @@ $(function () {
                 }
             },
 
-            { display: 'Send Date', name: 'sendDate', width: 80, align: 'center' }
+            { display: 'Delivery Date', name: 'sendDate', width: 80, align: 'center' }
 
         ], width: '98%',
         height: '98%',

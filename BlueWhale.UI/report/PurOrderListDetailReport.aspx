@@ -177,7 +177,7 @@
            </td>
            <td style="text-align:right;width:70px;">
            
-           Product: 
+           Item: 
        
            
             
@@ -189,7 +189,7 @@
            </td>
            <td style="text-align:right;width:80px;">
            
-           Warehouse: 
+           Inventory: 
            </td>
            <td style="text-align:left;width:80px;">
            

@@ -26,16 +26,16 @@ $(function () {
                 }
             },
             {
-                display: 'Bill Date', name: 'bizDate', width: 80, align: 'center',
+                display: 'Invoice Date', name: 'bizDate', width: 80, align: 'center',
                 render: function (row) {
                     var html = row.bizType == "Opening Balance" ? "" : row.bizDate;
                     return html;
                 }
             },
-            { display: 'Bill No', name: 'number', width: 150, align: 'center' },
+            { display: 'Receipt No.', name: 'number', width: 150, align: 'center' },
             { display: 'Business Type', name: 'bizType', width: 120, align: 'center' },
             {
-                display: 'Increase in Receivables', name: 'payNeed', width: 180, align: 'right', type: 'float',
+                display: 'Added Receivable', name: 'payNeed', width: 180, align: 'right', type: 'float',
                 totalSummary:
                 {
                     align: 'right',
@@ -46,7 +46,7 @@ $(function () {
                 }
             },
             {
-                display: 'Increase in Advance Payments', name: 'payReady', width: 240, align: 'right', type: 'float',
+                display: 'Added Advance Received', name: 'payReady', width: 240, align: 'right', type: 'float',
                 totalSummary:
                 {
                     align: 'right',

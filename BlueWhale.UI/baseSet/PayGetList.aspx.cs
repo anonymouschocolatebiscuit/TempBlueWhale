@@ -71,7 +71,8 @@ namespace BlueWhale.UI.baseSet
 
         void GetDDLList(string types)
         {
-            string isWhere = " shopId='" + LoginUser.ShopId + "' and types='"+types+"' ";
+            //string isWhere = " shopId='" + LoginUser.ShopId + "' and types='"+types+"' ";
+            string isWhere = "";
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
