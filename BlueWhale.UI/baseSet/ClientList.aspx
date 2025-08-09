@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Customer Management</title>
+    <title>Client Management</title>
     <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
     <script src="../lib/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
@@ -56,7 +56,7 @@
                             { line: true },
                             { text: "Approve", click: checkRow, img: '../lib/ligerUI/skins/icons/true.gif' },
                             { line: true },
-                            { text: "Revoke Approval", click: checkNoRow, img: '../lib/ligerUI/skins/icons/refresh.gif' },
+                            { text: "Reject", click: checkNoRow, img: '../lib/ligerUI/skins/icons/refresh.gif' },
                             { line: true },
                             { text: "Reset Password", click: setPwd, img: '../lib/ligerUI/skins/icons/settings.gif' },
                             { line: true },
@@ -85,7 +85,7 @@
         }
 
         function addRowTop() {
-            var title = "Add Customer";
+            var title = "Add Client";
 
             $.ligerDialog.open({
                 title: title,
@@ -100,7 +100,7 @@
             var row = manager.getSelectedRow();
             if (!row) {  $.ligerDialog.warn('Please select the row to modify!'); return; }
 
-            var title="Modify Customer-"+row.names;
+            var title="Modify Client-"+row.names;
            
             $.ligerDialog.open({ 
                 title : title,

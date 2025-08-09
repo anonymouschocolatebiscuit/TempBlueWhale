@@ -78,7 +78,7 @@ $(function () {
                 }
             },
             {
-                display: 'Total Price', name: 'sumPriceAll', width: 80, align: 'right',
+                display: 'Amount', name: 'sumPriceAll', width: 80, align: 'right',
 
                 totalSummary:
                 {

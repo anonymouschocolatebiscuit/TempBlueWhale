@@ -114,7 +114,7 @@ namespace BlueWhale.UI.buy.ashx
             }
 
             /// <summary>
-            /// Discount price
+            /// Discount Price
             /// </summary>
             private decimal sumPriceDis;
             public decimal SumPriceDis

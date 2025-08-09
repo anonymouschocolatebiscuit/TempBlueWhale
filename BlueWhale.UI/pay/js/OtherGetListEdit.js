@@ -60,7 +60,7 @@ $(function () {
                     }
                 },
                 {
-                    display: '收入类别', name: 'typeId', width: 200, isSort: false, textField: 'typeName',
+                    display: 'Income Category', name: 'typeId', width: 200, isSort: false, textField: 'typeName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/PayGetList.aspx?Action=GetDDLList&type=收入&r=" + Math.random(),
@@ -68,7 +68,7 @@ $(function () {
                     }
                 },
                 {
-                    display: '金额', name: 'price', width: 190, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Amount', name: 'price', width: 190, type: 'float', align: 'right', editor: { type: 'float' },
                     totalSummary:
                     {
                         align: 'center',   
@@ -78,7 +78,7 @@ $(function () {
                         }
                     }
                 },
-                { display: '备注', name: 'remarks', width: 250, align: 'left', type: 'text', editor: { type: 'text' } }
+                { display: 'Remarks', name: 'remarks', width: 250, align: 'left', type: 'text', editor: { type: 'text' } }
             ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '450',
             url: "OtherGetListEdit.aspx?Action=GetData&id=" + getUrlParam("id"),
             rownumbers: true,//

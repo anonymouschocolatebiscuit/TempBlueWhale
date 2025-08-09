@@ -21,12 +21,12 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="width: 120px; text-align: center;">Contact Unit: </td>
+                <td style="width: 120px; text-align: center;">Business Counterpart: </td>
                 <td style="text-align: left; width: 250px;">
                     <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px">
                     </asp:DropDownList>
                 </td>
-                <td style="text-align: right; width: 120px;">Stock In Date: </td>
+                <td style="text-align: right; width: 120px;">Inbound Date: </td>
                 <td style="text-align: left; width: 180px;">
                     <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>

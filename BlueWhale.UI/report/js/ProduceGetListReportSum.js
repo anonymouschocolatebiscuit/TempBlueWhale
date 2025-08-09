@@ -28,7 +28,7 @@ $(function () {
                 }
 
             },
-            { display: 'Goods Name', name: 'goodsName', width: 220, align: 'left' },
+            { display: 'Item Name', name: 'goodsName', width: 220, align: 'left' },
             { display: 'Spec', name: 'spec', width: 120, align: 'center' },
             { display: 'Unit', name: 'unitName', width: 100, align: 'center' },
 
@@ -59,7 +59,7 @@ $(function () {
                 }
             },
             {
-                display: 'Total Price', name: 'sumPrice', width: 180, type: 'float', align: 'right', editor: { type: 'float' },
+                display: 'Amount', name: 'sumPrice', width: 180, type: 'float', align: 'right', editor: { type: 'float' },
 
                 totalSummary:
                 {

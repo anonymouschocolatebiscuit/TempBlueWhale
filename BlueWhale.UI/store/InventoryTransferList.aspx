@@ -53,7 +53,7 @@
                     <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
                     <input id="btnAdd" type="button" value="Create" class="ui-btn" onclick="add()" />
                     <input id="btnCheck" type="button" value="Review" class="ui-btn" onclick="checkRow()" />
-                    <input id="btnCheckNo" type="button" value="Cancel Review" class="ui-btn" onclick="checkNoRow()" />
+                    <input id="btnCheckNo" type="button" value="Reject" class="ui-btn" onclick="checkNoRow()" />
                     <input id="btnReload" class="ui-btn" type="button" value="Delete" onclick="deleteRow()" />
                 </td>
            </tr>

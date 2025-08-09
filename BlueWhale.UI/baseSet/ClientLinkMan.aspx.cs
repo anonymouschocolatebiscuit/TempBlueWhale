@@ -94,7 +94,7 @@ namespace BlueWhale.UI.BaseSet
             {
                 LogsDAL logs = new LogsDAL();
                 logs.ShopId = LoginUser.ShopId;logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                logs.Events = "Deleting a Customer Contact: " + Id.ToString();
+                logs.Events = "Deleting a Client Contact: " + Id.ToString();
                 logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                 logs.Add();
                 this.Bind();

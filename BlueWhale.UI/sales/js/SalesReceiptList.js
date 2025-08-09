@@ -230,7 +230,7 @@ function f_set() {
 function search() {
 
     var keys = document.getElementById("txtKeys").value;
-    if (keys == "Please Enter Receipt No./Customer/Remarks") {
+    if (keys == "Please Enter Receipt No./Client/Remarks") {
 
         keys = "";
 

@@ -18,7 +18,7 @@
         <form id="form1" runat="server">
             <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 100%; line-height: 40px;">
                 <tr>
-                    <td style="text-align: right; width: 50px; padding: 0 10px;">KeyWord: </td>
+                    <td style="text-align: right; width: 50px; padding: 0 10px;">Keyword: </td>
                     <td style="text-align: left; width: 180px;">
                         <asp:TextBox ID="txtKeys" runat="server" placeholder="Order No./Supplier/Remark"></asp:TextBox>
                         <asp:HiddenField ID="hfShopId" runat="server" />
@@ -40,7 +40,7 @@
                     <td style="text-align: right; padding-right: 20px;">
                         <input id="btnAdd" type="button" value="Add" class="ui-btn" onclick="add()" />
                         <input id="btnCheck" type="button" value="Review" class="ui-btn" onclick="checkRow()" />
-                        <input id="btnCheckNo" type="button" value="Cancel Review" class="ui-btn" onclick="checkNoRow()" />
+                        <input id="btnCheckNo" type="button" value="Reject" class="ui-btn" onclick="checkNoRow()" />
                         <input id="btnReload" class="ui-btn" type="button" value="Delete" onclick="deleteRow()" />
                     </td>
                 </tr>

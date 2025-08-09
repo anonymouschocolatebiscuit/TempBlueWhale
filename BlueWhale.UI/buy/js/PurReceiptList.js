@@ -29,7 +29,7 @@ $(function () {
 				}
 			},
 			{
-				display: 'Stock In Date', name: 'bizDate', width: 120, align: 'center', valign: 'center',
+				display: 'Inbound Date', name: 'bizDate', width: 120, align: 'center', valign: 'center',
 				totalSummary:
 				{
 					type: 'count',
@@ -83,7 +83,7 @@ $(function () {
 			{ display: 'Order Status', name: 'flag', width: 120, align: 'center' },
 			{ display: 'Created By', name: 'makeName', width: 120, align: 'center' },
 			{ display: 'Purchaser', name: 'bizName', width: 120, align: 'center' },
-			{ display: 'Review By', name: 'checkName', width: 120, align: 'center' },
+			{ display: 'Reviewed By', name: 'checkName', width: 120, align: 'center' },
 			{ display: 'Remarks', name: 'remarks', width: 120, align: 'left' }
 		], width: '98%',
 		//pageSizeOptions: [5, 10, 15, 20],

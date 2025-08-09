@@ -16,12 +16,12 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="line-height: 40px;">
             <tr>
-                <td style="text-align: right;">Contact Unit: </td>
+                <td style="text-align: right;">Business Counterpart: </td>
                 <td style="text-align: left; width: 250px; padding-right: 10px;">
                     <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px">
                     </asp:DropDownList>
                 </td>
-                <td style="text-align: right;">Payment Date: </td>
+                <td style="text-align: right;">Collection Date: </td>
                 <td style="text-align: left; width: 180px; padding-right: 10px;">
                     <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
@@ -35,7 +35,7 @@
         <div id="maingrid"></div>
         <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 50px;">
             <tr>
-                <td style="width: 80px; text-align: right;">Remark: </td>
+                <td style="width: 80px; text-align: right;">Remarks: </td>
                 <td style="text-align: left;">
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>

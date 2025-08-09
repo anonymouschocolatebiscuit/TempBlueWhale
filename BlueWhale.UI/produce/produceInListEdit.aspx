@@ -34,7 +34,7 @@
  <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
            <tr>
            <td style="width:80px; text-align:center;">
-                                                  Stock In Date: </td>
+                                                  Inbound Date: </td>
            <td style="text-align:left; width:250px;">
             
                                                   <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>

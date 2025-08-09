@@ -258,7 +258,7 @@ namespace BlueWhale.UI.buy
 
                 if (idString.Length > 0)
                 {
-                    Response.Write("Cancel Review Successfully");
+                    Response.Write("Reject Successfully");
                     for (int i = 0; i < idString.Length; i++)
                     {
                         int delId = ConvertTo.ConvertInt(idString[i].ToString());
@@ -271,7 +271,7 @@ namespace BlueWhale.UI.buy
 
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel Review Purchase Order - ID: " + delId.ToString();
+                            logs.Events = "Reject Purchase Order - ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -280,11 +280,11 @@ namespace BlueWhale.UI.buy
 
                 if (num > 0)
                 {
-                    Response.Write("Cancel Review Successfully" + num + "purchase order record");
+                    Response.Write("Reject Successfully" + num + "purchase order record");
                 }
                 else
                 {
-                    Response.Write("Cancel Review Failed !");
+                    Response.Write("Reject Failed !");
                 }
             }
             else
@@ -446,7 +446,7 @@ namespace BlueWhale.UI.buy
 
             #endregion
 
-            #region Get Customer Information
+            #region Get Client Information
 
             string wlName = "Bluw Whale Sdn.Bhd";
 
@@ -485,7 +485,7 @@ namespace BlueWhale.UI.buy
 
             PdfPCell cell = new PdfPCell(); // Create Cell
 
-            #region First Line ----------- Customer And Vender Name
+            #region First Line ----------- Client And Vender Name
 
             cell.Border = 0;
             Paragraph table_t = new Paragraph("Supplier: ", fontTitle10);
@@ -497,7 +497,7 @@ namespace BlueWhale.UI.buy
             cell = new PdfPCell();
             cell.Border = 0;
 
-            table_t = new Paragraph(wlName, fontTitle10); // Customer Name
+            table_t = new Paragraph(wlName, fontTitle10); // Client Name
             table_t.Alignment = 0;
             cell.AddElement(table_t);
             table.AddCell(cell);
@@ -531,7 +531,7 @@ namespace BlueWhale.UI.buy
 
             cell = new PdfPCell();
             cell.Border = 0;
-            table_t = new Paragraph(wlLinkMan, fontTitle10); // Customer contact person
+            table_t = new Paragraph(wlLinkMan, fontTitle10); // Client contact person
             table_t.Alignment = 0;
             cell.AddElement(table_t);
             table.AddCell(cell);
@@ -849,7 +849,7 @@ namespace BlueWhale.UI.buy
             cellFooter = new PdfPCell();
             cellFooter.Border = 0;
 
-            table_Footer = new Paragraph("_______________", fontTitle10); // Customer Name
+            table_Footer = new Paragraph("_______________", fontTitle10); // Client Name
             table_Footer.Alignment = 0;
             cellFooter.AddElement(table_Footer);
             tableFooter.AddCell(cellFooter);
@@ -1053,7 +1053,7 @@ namespace BlueWhale.UI.buy
 
             #endregion
 
-            #region Get Customer Information
+            #region Get Client Information
 
             string wlName = "Blue Whale Sdn.Bhd";
 
@@ -1089,7 +1089,7 @@ namespace BlueWhale.UI.buy
 
             PdfPCell cell = new PdfPCell(); // Create cell
 
-            #region First Line ----------- Customer And Vender Name
+            #region First Line ----------- Client And Vender Name
 
             cell.Border = 0;
             Paragraph table_t = new Paragraph("Supplier: ", fontTitle10);
@@ -1101,7 +1101,7 @@ namespace BlueWhale.UI.buy
             cell = new PdfPCell();
             cell.Border = 0;
 
-            table_t = new Paragraph(wlName, fontTitle10); // Customer Name
+            table_t = new Paragraph(wlName, fontTitle10); // Client Name
             table_t.Alignment = 0;
             cell.AddElement(table_t);
             table.AddCell(cell);
@@ -1135,7 +1135,7 @@ namespace BlueWhale.UI.buy
 
             cell = new PdfPCell();
             cell.Border = 0;
-            table_t = new Paragraph(wlLinkMan, fontTitle10); // Customer contact person
+            table_t = new Paragraph(wlLinkMan, fontTitle10); // Client contact person
             table_t.Alignment = 0;
             cell.AddElement(table_t);
             table.AddCell(cell);
@@ -1451,7 +1451,7 @@ namespace BlueWhale.UI.buy
             cellFooter = new PdfPCell();
             cellFooter.Border = 0;
 
-            table_Footer = new Paragraph("_______________", fontTitle10); // Customer Name
+            table_Footer = new Paragraph("_______________", fontTitle10); // Client Name
             table_Footer.Alignment = 0;
             cellFooter.AddElement(table_Footer);
             tableFooter.AddCell(cellFooter);

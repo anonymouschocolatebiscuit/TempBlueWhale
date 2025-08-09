@@ -30,7 +30,7 @@ $(function () {
                 }
             },
             {
-                display: 'Stock In Date', name: 'bizDate', width: 100, align: 'center', valign: 'center',
+                display: 'Inbound Date', name: 'bizDate', width: 100, align: 'center', valign: 'center',
 
                 totalSummary:
                 {
@@ -68,7 +68,7 @@ $(function () {
             { display: 'Status', name: 'flag', width: 100, align: 'center' },
             { display: 'Created By', name: 'makeName', width: 100, align: 'center' },
             { display: 'Stock-in Operator', name: 'bizName', width: 150, align: 'center' },
-            { display: 'Review By', name: 'checkName', width: 100, align: 'center' },
+            { display: 'Reviewed By', name: 'checkName', width: 100, align: 'center' },
             { display: 'Remarks', name: 'remarks', width: 200, align: 'left' }
         ], width: '98%',
         height: '98%',

@@ -17,12 +17,12 @@
         <form id="form1" runat="server">
             <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
                <tr>
-                   <td style="width:80px; text-align:right;">
-                       Purchasing Supplier: </td>
+                   <td style="width:80px; text-align:right; padding-right:0.5rem;">
+                       Purchase Unit: </td>
                    <td style="text-align:left; width:250px;">
                         <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px"> </asp:DropDownList>
                    </td>
-                   <td style="text-align:right; width:80px;"> Payment Date: </td>
+                   <td style="text-align:right; width:120px; padding-right:0.5rem;"> Collection Date: </td>
                    <td style="text-align:left; width:180px;">
                      <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                    </td>
@@ -38,24 +38,23 @@
                     <td align="left" colspan="6">
                        <table id="Table1" border="0" cellpadding="0" cellspacing="0" style="line-height:40px;">
                            <tr>
-                               <td style="text-align:right; width:80px;"> Source Order Number: </td>
+                               <td style="text-align:right; width:140px; padding-right:0.5rem;"> Source Order Number: </td>
                                <td style="text-align:left; width:140px;">
                                    <asp:TextBox ID="txtKeys" runat="server" placeholder="Please Enter Receipt No."></asp:TextBox>
                                </td>
-                               <td style="text-align:right; width:70px;">
+                               <td style="text-align:right; width:70px; padding-right:0.5rem;">
                                    Date: 
                                   </td>
                                <td style="text-align:left; width:120px;">
                                    <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                                </td>
                                <td style="text-align:center; width:30px;">            
-                                   Until
+                                   To
                                </td>
-                               <td style="text-align:left; width:120px;">
+                               <td style="text-align:left; width:120px; padding-right:0.5rem;">
                                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                                </td>
-                               <td style="text-align:left;"> 
-                                   &nbsp;
+                               <td style="text-align:left;">
                                    <input id="btnSelectBill" type="button" value="Search" class="ui-btn" onclick="selectBill()" />
                                </td>
                            </tr>
@@ -68,12 +67,12 @@
                 </td>
                </tr>
                <tr>
-                   <td align="right">
-                       overall discount: </td>
+                   <td align="right" style="width: 110px; padding-right:0.5rem;">
+                       Overall Discount: </td>
                    <td style="text-align:left; width:250px;">
                     <asp:TextBox ID="txtDisPrice" runat="server">0</asp:TextBox>
                    </td>
-                   <td style="text-align:right; width:80px;"> advance payment received this time: </td>
+                   <td style="text-align:right; width:120px; padding-right:0.5rem;"> Advanced Payment: </td>
                    <td style="text-align:left; width:180px;">
                     <asp:TextBox ID="txtPayPriceNowMore" runat="server" BackColor="#FFFFCC" ToolTip="Auto Calculation">0</asp:TextBox>
                    </td>
@@ -81,7 +80,7 @@
                    <td style="text-align:left;"> &nbsp;</td>
                </tr>
                <tr>
-                   <td align="right"> 
+                   <td align="right" style="padding-right:0.5rem;"> 
                        Remarks: 
                    </td>
                    <td style="text-align:left; " colspan="3">

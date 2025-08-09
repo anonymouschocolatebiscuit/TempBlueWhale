@@ -1,11 +1,10 @@
-﻿using System;
-using System.Data;
-
-using System.Collections.Generic;
-using System.Web.Script.Serialization;
+﻿using BlueWhale.Common;
 using BlueWhale.DAL;
 using BlueWhale.UI.src;
-using BlueWhale.Common;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Web.Script.Serialization;
 
 namespace BlueWhale.UI.baseSet
 {
@@ -55,15 +54,15 @@ namespace BlueWhale.UI.baseSet
                     id = ds.Tables[0].Rows[i]["id"].ToString(),
                     types = ds.Tables[0].Rows[i]["types"].ToString(),
                     names = ds.Tables[0].Rows[i]["names"].ToString()
-                 
+
                 });
-            
+
             }
             var griddata = new { Rows = list };
 
             string s = new JavaScriptSerializer().Serialize(griddata);//传给grid的时候才要
 
-        
+
 
             Response.Write(s);
         }
@@ -81,7 +80,7 @@ namespace BlueWhale.UI.baseSet
 
                 list.Add(new
                 {
-                    
+
                     typeId = ds.Tables[0].Rows[i]["id"].ToString(),
                     typeName = ds.Tables[0].Rows[i]["names"].ToString(),
 
@@ -91,7 +90,7 @@ namespace BlueWhale.UI.baseSet
                 });
 
             }
-          
+
 
             string s = new JavaScriptSerializer().Serialize(list);
 

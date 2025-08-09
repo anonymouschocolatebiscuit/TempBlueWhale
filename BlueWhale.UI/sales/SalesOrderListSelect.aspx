@@ -42,13 +42,13 @@
                     checkbox: false,
                     columns: [
                         { display: 'Order No.', name: 'number', width: 150, align: 'center' },
-                        { display: 'Customer', name: 'wlName', width: 170, align: 'left' },
+                        { display: 'Client', name: 'wlName', width: 170, align: 'left' },
                         { display: 'Item No.', name: 'code', width: 80, align: 'center' },
                         { display: 'Item Name', name: 'goodsName', width: 150, align: 'left' },
                         { display: 'Specification', name: 'spec', width: 100, align: 'center' },
                         { display: 'Unit', name: 'unitName', width: 70, align: 'center' },          
                         { display: 'Number', name: 'num', width: 80, align: 'center' },
-                        { display: 'Send Date', name: 'sendDate', width: 80, align: 'center' }
+                        { display: 'Delivery Date', name: 'sendDate', width: 80, align: 'center' }
                     ],
                     pageSize: 10,
                     rownumbers: true,

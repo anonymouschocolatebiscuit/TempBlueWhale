@@ -177,7 +177,7 @@
            <td style="text-align:right; width:60px;">
             
             
-             Customer: </td>
+             Client: </td>
             <td style="text-align:left; width:120px;">
             
            <input type="text" id="txtVenderList"/> 

@@ -721,10 +721,10 @@ namespace BlueWhale.DAL
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, strSql.ToString(), null);
         }
 
-        #region Query Sales Summary Table----------Customer
+        #region Query Sales Summary Table----------Client
 
         /// <summary>
-        /// Query Sales Summary Table----------Customer
+        /// Query Sales Summary Table----------Client
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
@@ -760,10 +760,10 @@ namespace BlueWhale.DAL
 
         #endregion
 
-        #region Query sales summary table----------Customer--------NewUI
+        #region Query sales summary table----------Client--------NewUI
 
         /// <summary>
-        /// Query sales summary table----------Customer--------NewUI
+        /// Query sales summary table----------Client--------NewUI
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>

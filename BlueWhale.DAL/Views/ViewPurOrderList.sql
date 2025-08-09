@@ -26,7 +26,7 @@ from PurOrder a
 left join company shop on a.shopId=shop.id --Branch                         
 left join vender v on a.wlId=v.id --Vender                 
 left join users make on a.makeId=make.Id --Create By                  
-left join users checks on a.checkId=checks.id --Review By                          
+left join users checks on a.checkId=checks.id --Reviewed By                          
 left join users biz on a.bizId=biz.id --Business Representative                            
 left join           
 (          

@@ -596,7 +596,7 @@ namespace BlueWhale.UI.sales
 
             PdfPCell cell = new PdfPCell();//Create Cell
 
-            #region First row - Customer and vender name
+            #region First row - Client and vender name
 
 
 
@@ -611,7 +611,7 @@ namespace BlueWhale.UI.sales
             cell = new PdfPCell();
             cell.Border = 0;
 
-            table_t = new Paragraph(wlName, fontTitle10);//Customer Name
+            table_t = new Paragraph(wlName, fontTitle10);//Client Name
             table_t.Alignment = 0;
             cell.AddElement(table_t);
             table.AddCell(cell);
@@ -651,7 +651,7 @@ namespace BlueWhale.UI.sales
 
             cell = new PdfPCell();
             cell.Border = 0;
-            table_t = new Paragraph(wlLinkMan, fontTitle10);//Customer contact person
+            table_t = new Paragraph(wlLinkMan, fontTitle10);//Client contact person
             table_t.Alignment = 0;
             cell.AddElement(table_t);
             table.AddCell(cell);
@@ -1178,7 +1178,7 @@ namespace BlueWhale.UI.sales
             cellFooter = new PdfPCell();
             cellFooter.Border = 0;
 
-            table_Footer = new Paragraph("_______________", fontTitle10);//Customer name
+            table_Footer = new Paragraph("_______________", fontTitle10);//Client name
             table_Footer.Alignment = 0;
             cellFooter.AddElement(table_Footer);
             tableFooter.AddCell(cellFooter);
@@ -1476,7 +1476,7 @@ namespace BlueWhale.UI.sales
 
             PdfPCell cell = new PdfPCell();//Create cell
 
-            #region First row - Customer and Supplier Name
+            #region First row - Client and Supplier Name
 
 
 
@@ -1491,7 +1491,7 @@ namespace BlueWhale.UI.sales
             cell = new PdfPCell();
             cell.Border = 0;
 
-            table_t = new Paragraph(wlName, fontTitle10);//Customer name
+            table_t = new Paragraph(wlName, fontTitle10);//Client name
             table_t.Alignment = 0;
             cell.AddElement(table_t);
             table.AddCell(cell);
@@ -1531,7 +1531,7 @@ namespace BlueWhale.UI.sales
 
             cell = new PdfPCell();
             cell.Border = 0;
-            table_t = new Paragraph(wlLinkMan, fontTitle10);//Customer contact person
+            table_t = new Paragraph(wlLinkMan, fontTitle10);//Client contact person
             table_t.Alignment = 0;
             cell.AddElement(table_t);
             table.AddCell(cell);

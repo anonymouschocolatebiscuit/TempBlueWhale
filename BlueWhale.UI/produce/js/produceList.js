@@ -92,7 +92,7 @@ $(function () {
             { display: 'Status', name: 'flag', width: 80, align: 'center' },
 
             { display: 'Created By', name: 'makeName', width: 80, align: 'center' },
-            { display: 'Review By', name: 'checkName', width: 80, align: 'center' },
+            { display: 'Reviewed By', name: 'checkName', width: 80, align: 'center' },
             { display: 'Remarks', name: 'remarks', width: 100, align: 'left' }
 
 
@@ -174,7 +174,7 @@ function inRow() {
 function search() {
 
     var keys = document.getElementById("txtKeys").value;
-    if (keys == "Please Enter Receipt No./Customer/Product/Remarks") {
+    if (keys == "Please Enter Receipt No./Client/Product/Remarks") {
 
         keys = "";
 

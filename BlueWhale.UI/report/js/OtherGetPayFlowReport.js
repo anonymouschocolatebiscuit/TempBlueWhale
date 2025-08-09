@@ -74,7 +74,7 @@ $(function () {
 
             { display: 'Summary', name: 'remarks', width: 170, align: 'left' },
 
-            { display: 'Remark', name: 'remarksMain', width: 170, align: 'left' },
+            { display: 'Remarks', name: 'remarksMain', width: 170, align: 'left' },
 
             { display: 'Status', name: 'flag', width: 70, align: 'center' }
         ], width: '98%',

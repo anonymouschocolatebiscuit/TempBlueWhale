@@ -93,7 +93,7 @@ $(function () {
 				{
 					display: 'Outbound unit price', name: 'price', width: 180, type: 'float', align: 'right', editor: { type: 'float', precision: 4 }
 				},
-				{ display: 'Total Price', name: 'sumPrice', width: 80, type: 'float', align: 'right', editor: { type: 'float' } },
+				{ display: 'Amount', name: 'sumPrice', width: 80, type: 'float', align: 'right', editor: { type: 'float' } },
 				{
 					display: 'Outbound warehouse', name: 'ckId', width: 180, isSort: false, textField: 'ckName',
 					editor: {
@@ -160,7 +160,7 @@ $(function () {
 					display: 'Unit Price', name: 'price', width: 70, type: 'float', align: 'right', editor: { type: 'float', precision: 4 }
 				},
 				{
-					display: 'Total Price', name: 'sumPrice', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
+					display: 'Amount', name: 'sumPrice', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
 					totalSummary:
 					{
 						align: 'center', 

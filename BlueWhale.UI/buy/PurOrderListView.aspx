@@ -29,7 +29,7 @@
                     <td style="text-align:left; width:180px;">
                         <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                     </td>
-                    <td style="text-align:right; width:80px;">Send Date: </td>
+                    <td style="text-align:right; width:80px;">Delivery Date: </td>
                     <td style="text-align:left; width:180px;" >
                         <asp:TextBox ID="txtSendDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                     </td>

@@ -225,7 +225,7 @@ namespace BlueWhale.UI.baseSet
 
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Customer-ID: " + id.ToString();
+                            logs.Events = "Delete Client-ID: " + id.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -322,11 +322,11 @@ namespace BlueWhale.UI.baseSet
 
                 if (num > 0)
                 {
-                    Response.Write("Cancel Review Successfully " + num + " rows records!");
+                    Response.Write("Reject Successfully " + num + " rows records!");
                 }
                 else
                 {
-                    Response.Write("Cancel Review Failed!");
+                    Response.Write("Reject Failed!");
                 }
             }
             else

@@ -42,18 +42,18 @@
 
                 //checkbox:true,
                 columns: [
-                    { display: 'Supplier Type', name: 'typeName', width: 100, type: 'int', align: 'center' },
+                    { display: 'Supplier Category', name: 'typeName', width: 100, type: 'int', align: 'center' },
                     { display: 'Supplier Code', name: 'code', width: 100, align: 'center' },
                     { display: 'Supplier Name', name: 'names', width: 100, align: 'left' },
                     { display: 'Balance Date', name: 'yueDate', width: 110, align: 'center' },
                     { display: 'Balance', name: 'balance', width: 70, align: 'center' },
-                    { display: 'Tax%', name: 'tax', width: 60, align: 'center' },
+                    { display: 'Tax Rate%', name: 'tax', width: 60, align: 'center' },
                     { display: 'Contact', name: 'linkMan', width: 120, align: 'center' },
 
-                    { display: 'Mobile', name: 'phone', width: 70, align: 'center' },
+                    { display: 'Mobile No.', name: 'phone', width: 80, align: 'center' },
                     { display: 'Tel', name: 'tel', width: 50, align: 'center', type: "date" },
                     { display: 'Status', name: 'flag', width: 70, align: 'center' },
-                    { display: 'Create Date', name: 'makeDate', width: 100, align: 'center', type: "date" }
+                    { display: 'Created Date', name: 'makeDate', width: 100, align: 'center', type: "date" }
                 ], pageSize: 10,
                 rownumbers: true,//序号
                 usePager: false,

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Data;
-using System.Web.UI.WebControls;
-
-using System.Collections.Generic;
-using System.Web.Script.Serialization;
+﻿using BlueWhale.Common;
 using BlueWhale.DAL;
-using BlueWhale.Common;
 using BlueWhale.UI.src;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Web.Script.Serialization;
+using System.Web.UI.WebControls;
 
 namespace BlueWhale.UI.baseSet
 {
@@ -50,7 +49,7 @@ namespace BlueWhale.UI.baseSet
             this.ddlTypeList.DataValueField = "id";
             this.ddlTypeList.DataBind();
 
-            ListItem item = new ListItem("Select Supplier Type", "0");
+            ListItem item = new ListItem("Select Supplier Category", "0");
 
             this.ddlTypeList.Items.Insert(0, item);
 

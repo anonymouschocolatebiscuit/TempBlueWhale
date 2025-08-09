@@ -244,7 +244,7 @@ namespace BlueWhale.UI.produce
                         {
                             num += 1;
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel Review-ID: " + delId.ToString();
+                            logs.Events = "Reject-ID: " + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -253,11 +253,11 @@ namespace BlueWhale.UI.produce
 
                 if (num > 0)
                 {
-                    Response.Write("Cancel Review Success" + num + "rows records!");
+                    Response.Write("Reject Success" + num + "rows records!");
                 }
                 else
                 {
-                    Response.Write("Cancel Review Failed!");
+                    Response.Write("Reject Failed!");
                 }
             }
             else

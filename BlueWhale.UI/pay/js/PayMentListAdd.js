@@ -98,7 +98,7 @@ $(function () {
 
                 },
                 {
-                    display: 'Payment Amount', name: 'payPrice', width: 130, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Collection Amount', name: 'payPrice', width: 140, type: 'float', align: 'right', editor: { type: 'float' },
 
                     totalSummary:
                     {
@@ -110,7 +110,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Payment Method', name: 'payTypeId', width: 130, isSort: false, textField: 'payTypeName',
+                    display: 'Settlement Method', name: 'payTypeId', width: 140, isSort: false, textField: 'payTypeName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/PayTypeList.aspx?Action=GetDDLList&r=" + Math.random(),
@@ -118,10 +118,10 @@ $(function () {
                     }
 
                 },
-                { display: 'Pay Number', name: 'payNumber', width: 120, align: 'left', type: 'text', editor: { type: 'text' } },
+                { display: 'Settlement Number', name: 'payNumber', width: 140, align: 'left', type: 'text', editor: { type: 'text' } },
 
                 { display: 'Remarks', name: 'remarks', width: 220, align: 'left', type: 'text', editor: { type: 'text' } }
-            ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '155',
+            ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '170',
             url: 'PayMentListAdd.aspx?Action=GetData',
             rownumbers: true,
             frozenRownumbers: true,
@@ -190,10 +190,10 @@ $(function () {
                 { display: 'Business Type', name: 'bizType', width: 120, align: 'center' },
                 { display: 'Invoice Date', name: 'bizDate', width: 160, align: 'center' },
                 { display: 'Invoice Amount', name: 'sumPriceAll', width: 180, align: 'right' },
-                { display: 'Verified Amount', name: 'priceCheckNowSum', width: 180, align: 'right' },
-                { display: 'Unverified Amount', name: 'priceCheckNo', width: 180, align: 'right' },
+                { display: 'Written-off Amount', name: 'priceCheckNowSum', width: 180, align: 'right' },
+                { display: 'Remaining Balance', name: 'priceCheckNo', width: 180, align: 'right' },
                 {
-                    display: 'Current Verification Amount', name: 'priceCheckNow', width: 280, type: 'float', align: 'right', editor: { type: 'float', precision: 4 },
+                    display: 'Write-off Amount', name: 'priceCheckNow', width: 280, type: 'float', align: 'right', editor: { type: 'float', precision: 4 },
                     totalSummary:
                     {
                         align: 'right',
@@ -204,7 +204,7 @@ $(function () {
                     }
                 }
             ],
-            width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '210',
+            width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '225',
             url: 'PayMentListAdd.aspx?Action=GetDataSub',
             rownumbers: true,
             frozenRownumbers: true,

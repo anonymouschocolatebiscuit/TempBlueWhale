@@ -27,7 +27,7 @@ $(function () {
                 }
             },
             {
-                display: 'Stock In Date', name: 'bizDate', width: 80, align: 'center', valign: 'center',
+                display: 'Inbound Date', name: 'bizDate', width: 80, align: 'center', valign: 'center',
 
                 totalSummary:
                 {
@@ -102,7 +102,7 @@ function f_set() {
 function search() {
 
     var keys = document.getElementById("txtKeys").value;
-    if (keys == "Please Enter Receipt No./Customer/Product/Remarks") {
+    if (keys == "Please Enter Receipt No./Client/Product/Remarks") {
         keys = "";
     }
     var start = document.getElementById("txtDateStart").value;

@@ -553,10 +553,10 @@ namespace BlueWhale.DAL
         #endregion
 
 
-        #region Query sales order -------------- Customer search
+        #region Query sales order -------------- Client search
 
         /// <summary>
-        /// Query sales order -------------- Customer search
+        /// Query sales order -------------- Client search
         /// </summary>
         /// <param name="key"></param>
         /// <param name="dateStart"></param>
@@ -638,10 +638,10 @@ namespace BlueWhale.DAL
         #endregion
 
 
-        #region Query sales order -------------- Customer search
+        #region Query sales order -------------- Client search
 
         /// <summary>
-        /// Query sales order -------------- Customer search
+        /// Query sales order -------------- Client search
         /// </summary>
         /// <param name="key"></param>
         /// <param name="dateStart"></param>
@@ -723,10 +723,10 @@ namespace BlueWhale.DAL
         #endregion
 
 
-        #region Query sales order -------------- Customer query
+        #region Query sales order -------------- Client query
 
         /// <summary>
-        /// Query sales order -------------- Customer query
+        /// Query sales order -------------- Client query
         /// </summary>
         /// <param name="key"></param>
         /// <param name="dateStart"></param>

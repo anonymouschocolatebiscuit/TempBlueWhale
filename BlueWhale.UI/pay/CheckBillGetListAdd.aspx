@@ -42,7 +42,7 @@
                                 <asp:TextBox ID="txtDateEnd1" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                             </td>
                             <td style="text-align:left;">
-                                <input id="btnSelectPay" type="button" value="Search Payment Receipt" class="ui-btn" style="margin-left:10px;" onclick="selectGet()" />
+                                <input id="btnSelectPay" type="button" value="Search" class="ui-btn" style="margin-left:10px;" onclick="selectGet()" />
                             </td>
                         </tr>
                     </table>
@@ -59,7 +59,7 @@
                 <td align="left" colspan="6">
                     <table id="Table1" border="0" cellpadding="0" cellspacing="0" style="line-height:40px;">
                         <tr>
-                            <td style="text-align:left; width:200px;">Accounts Receivable (AR) No.: </td>
+                            <td style="text-align:left; width:120px;">Receivable No.: </td>
                             <td style="text-align:left; width:140px;">
                                 <asp:TextBox ID="txtKeys" runat="server" placeholder="Please Enter Receipt No."></asp:TextBox>
                             </td>
@@ -72,7 +72,7 @@
                                 <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                             </td>
                             <td style="text-align:left;">
-                                <input id="btnSelectBill" type="button" value="Search AR Invoice" class="ui-btn" style="margin-left:10px;" onclick="selectBill()" />
+                                <input id="btnSelectBill" type="button" value="Search" class="ui-btn" style="margin-left:10px;" onclick="selectBill()" />
                             </td>
                         </tr>
                     </table>

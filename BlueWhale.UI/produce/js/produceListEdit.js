@@ -527,7 +527,7 @@ $(function () {
 
                 },
 
-                { display: 'Remark', name: 'remarks', width: 220, align: 'left', type: 'text', editor: { type: 'text' } }
+                { display: 'Remarks', name: 'remarks', width: 220, align: 'left', type: 'text', editor: { type: 'text' } }
             ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '350',
             url: "produceListEdit.aspx?Action=GetData&id=" + param,
             rownumbers: true,

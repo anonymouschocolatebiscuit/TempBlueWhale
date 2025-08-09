@@ -25,7 +25,7 @@
   
     <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:100%; line-height:40px;">
            <tr>
-           <td style="text-align:right; width:50px;">
+           <td style="text-align:right; width:70px; padding-right:0.5rem;">
             
             Keyword:  
             
@@ -35,7 +35,7 @@
             
              
             
-               <asp:TextBox ID="txtKeys" runat="server" placeholder="Please Enter Receipt No./Customer/Remarks"></asp:TextBox>
+               <asp:TextBox ID="txtKeys" runat="server" placeholder="Please Enter Receipt No./Client/Remarks"></asp:TextBox>
             
              
             
@@ -44,7 +44,7 @@
              
             
             </td>
-           <td style="text-align:right; width:70px;">
+           <td style="text-align:right; width:90px; padding-right:0.5rem;">
             
               Start Date: 
             
@@ -55,7 +55,7 @@
             
             
            </td>
-           <td style="text-align:right; width:70px;">
+           <td style="text-align:right; width:90px; padding-right:0.5rem;">
             
             
                End Date: 
@@ -80,7 +80,7 @@
            
             
             </td>
-           <td style="text-align:right; padding-right:20px;">
+           <td style="text-align:right; padding-right:2rem;">
            
           
            
@@ -95,7 +95,7 @@
            
                <input id="btnCheck" type="button" value="Review" class="ui-btn" onclick="checkRow()" />
                 
-                  <input id="btnCheckNo" type="button" value="Cancel Review" class="ui-btn" onclick="checkNoRow()" />
+                  <input id="btnCheckNo" type="button" value="Reject" class="ui-btn" onclick="checkNoRow()" />
                 
                
              

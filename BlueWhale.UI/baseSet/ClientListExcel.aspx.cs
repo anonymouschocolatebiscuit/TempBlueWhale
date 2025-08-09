@@ -176,9 +176,9 @@ namespace BlueWhale.UI.BaseSet
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                string code = dt.Rows[i]["Customer Number"].ToString();
-                string names = dt.Rows[i]["Customer Name"].ToString();
-                string typeName = dt.Rows[i]["Customer Category"].ToString();
+                string code = dt.Rows[i]["Client Number"].ToString();
+                string names = dt.Rows[i]["Client Name"].ToString();
+                string typeName = dt.Rows[i]["Client Category"].ToString();
                 int tax = ConvertTo.ConvertInt(dt.Rows[i]["Tax rate"].ToString());
                 DateTime yueDate = DateTime.Now;
 
@@ -295,7 +295,7 @@ namespace BlueWhale.UI.BaseSet
 
             #endregion
 
-            string result = "Imported【" + clientNum.ToString() + "】Customer information，【" + linkManNum.ToString() + "】Contact information。";
+            string result = "Imported【" + clientNum.ToString() + "】Client information，【" + linkManNum.ToString() + "】Contact information。";
 
             return result;
         }

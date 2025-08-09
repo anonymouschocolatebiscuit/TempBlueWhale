@@ -130,7 +130,7 @@ $(function () {
                 { display: 'Specification', name: 'spec', width: 100, align: 'center' },
                 { display: 'Unit', name: 'unitName', width: 60, align: 'center' },
                 {
-                    display: 'Warehouse', name: 'ckId', width: 80, isSort: false, textField: 'ckName',
+                    display: 'Inventory', name: 'ckId', width: 100, isSort: false, textField: 'ckName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
@@ -150,7 +150,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Original Price', name: 'price', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
+                    display: 'Original Price', name: 'price', width: 80, type: 'float', align: 'right', editor: { type: 'float' }
                 },
                 {
                     display: 'Discount%', name: 'dis', width: 90, type: 'float', align: 'right', editor: { type: 'float' }
@@ -183,8 +183,8 @@ $(function () {
                     }
                 },
 
-                { display: 'Tax rate%', name: 'tax', width: 70, type: 'int', align: 'center', editor: { type: 'int' } },
-                { display: 'Unit Price with Tax', name: 'priceTax', width: 70, type: 'float', align: 'center', editor: { type: 'float' } },
+                { display: 'Tax rate%', name: 'tax', width: 80, type: 'int', align: 'center', editor: { type: 'int' } },
+                { display: 'Unit Price Including Tax', name: 'priceTax', width: 110, type: 'float', align: 'center', editor: { type: 'float' } },
                 {
                     display: 'Tax amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
                     totalSummary:
@@ -198,7 +198,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Total Price with Tax', name: 'sumPriceAll', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Total Price Including Tax', name: 'sumPriceAll', width: 110, type: 'float', align: 'right', editor: { type: 'float' },
                     totalSummary:
                     {
                         align: 'center',  
@@ -210,7 +210,7 @@ $(function () {
                     }
                 },
                 { display: 'Remarks', name: 'remarks', width: 150, align: 'left', type: 'text', editor: { type: 'text' } },
-                { display: 'Source Order Number', name: 'sourceNumber', width: 150, align: 'left', type: 'text' }
+                { display: 'Source Order Number', name: 'sourceNumber', width: 160, align: 'left', type: 'text' }
 
             ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '350',
             url: 'PurReceiptListEdit.aspx?Action=GetData&id=' + param,

@@ -53,7 +53,7 @@ function f_selectContactCancel(item, dialog) {
 
 function f_selectClient() {
     $.ligerDialog.open({
-        title: 'Select Vender', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
+        title: 'Select Supplier', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
             { text: 'Confirm', onclick: f_selectClientOK },
             { text: 'Close', onclick: f_selectClientCancel }
         ]
@@ -119,7 +119,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Goods Name', name: 'goodsName', width: 200, align: 'left',
+                    display: 'Item Name', name: 'goodsName', width: 200, align: 'left',
 
                     totalSummary:
                     {
@@ -129,10 +129,10 @@ $(function () {
                         }
                     }
                 },
-                { display: 'Specification', name: 'spec', width: 80, align: 'center' },
-                { display: 'Unit', name: 'unitName', width: 40, align: 'center' },
+                { display: 'Specification', name: 'spec', width: 100, align: 'center' },
+                { display: 'Unit', name: 'unitName', width: 60, align: 'center' },
                 {
-                    display: 'Warehouse', name: 'ckId', width: 80, isSort: false, textField: 'ckName',
+                    display: 'Inventory', name: 'ckId', width: 100, isSort: false, textField: 'ckName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
@@ -140,7 +140,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Quantity', name: 'num', width: 60, type: 'float', align: 'right', editor: { type: 'float', precision: 3 },
+                    display: 'Quantity', name: 'num', width: 70, type: 'float', align: 'right', editor: { type: 'float', precision: 3 },
 
                     totalSummary:
                     {
@@ -158,7 +158,7 @@ $(function () {
                     display: 'Discount%', name: 'dis', width: 100, type: 'float', align: 'right', editor: { type: 'float' }
                 },
                 {
-                    display: 'Discount amount', name: 'sumPriceDis', width: 120, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Discount Amount', name: 'sumPriceDis', width: 120, type: 'float', align: 'right', editor: { type: 'float' },
                     totalSummary:
                     {
                         align: 'center',
@@ -186,10 +186,10 @@ $(function () {
                         }
                     }
                 },
-                { display: 'Tax rate%', name: 'tax', width: 80, type: 'int', align: 'center', editor: { type: 'int' } },
-                { display: 'Unit Price Including Tax', name: 'priceTax', width: 160, type: 'float', align: 'center', editor: { type: 'float' } },
+                { display: 'Tax Rate%', name: 'tax', width: 80, type: 'int', align: 'center', editor: { type: 'int' } },
+                { display: 'Unit Price Including Tax', name: 'priceTax', width: 110, type: 'float', align: 'center', editor: { type: 'float' } },
                 {
-                    display: 'Tax amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
+                    display: 'Tax Amount', name: 'sumPriceTax', width: 90, type: 'float', align: 'right',
                     totalSummary:
                     {
                         align: 'center',
@@ -201,7 +201,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Total Price Including Tax', name: 'sumPriceAll', width: 160, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Total Price Including Tax', name: 'sumPriceAll', width: 110, type: 'float', align: 'right', editor: { type: 'float' },
                     totalSummary:
                     {
                         align: 'center',

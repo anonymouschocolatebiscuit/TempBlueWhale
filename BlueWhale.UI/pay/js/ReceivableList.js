@@ -25,7 +25,7 @@
                      return h;
                  }
                  },
-                { display: 'Payment Date', name: 'bizDate', width: 140, align: 'center',valign:'center',
+                { display: 'Collection Date', name: 'bizDate', width: 140, align: 'center',valign:'center',
                  
                      totalSummary:
                     {
@@ -41,7 +41,7 @@
                  { display: 'Receipt Number', name: 'number', width: 150, align: 'center' },
                  
                  { display: 'Sales Unit', name: 'wlName', width: 170, align: 'left'},
-                 { display: 'Payment Amount', name: 'payPriceSum', width: 140, align: 'right',
+                 { display: 'Collection Amount', name: 'payPriceSum', width: 140, align: 'right',
                  
                       totalSummary:
                     {
@@ -55,7 +55,7 @@
                     }
                  
                  },
-                 { display: 'Amount Written Off This Time', name: 'priceCheckNowSum', width: 270, align: 'right',
+                 { display: 'Amount Written Off', name: 'priceCheckNowSum', width: 220, align: 'right',
                  
                      totalSummary:
                     {
@@ -84,7 +84,7 @@
                  
                  },
                  
-                 { display: 'Advance Payment Received This Time', name: 'payPriceNowMore', width: 290, align: 'right',
+                 { display: 'Advance Payment Received', name: 'payPriceNowMore', width: 220, align: 'right',
                  
                      totalSummary:
                     {
@@ -99,10 +99,10 @@
                  
                  },
                  
-                 { display: 'Status', name: 'flag', width: 60, align: 'center'},
+                 { display: 'Status', name: 'flag', width: 80, align: 'center'},
                 
                  { display: 'Created By', name: 'makeName', width: 90, align: 'center' },
-                 { display: 'Review By', name: 'checkName', width: 90, align: 'center' },
+                 { display: 'Reviewed By', name: 'checkName', width: 90, align: 'center' },
                  { display: 'Remarks', name: 'remarks', width: 100, align: 'left' }
                 
             
@@ -143,7 +143,7 @@
         function search() {
 
             var keys = document.getElementById("txtKeys").value;
-            if (keys == "Please Enter Receipt No./Customer/Remarks") {
+            if (keys == "Please Enter Receipt No./Client/Remarks") {
 
                 keys = "";
 
@@ -268,13 +268,13 @@
       {
           var row = manager.getSelectedRow();
          
-          parent.f_addTab('ReceivableListEdit','Sales Payment - Modify','pay/ReceivableListEdit.aspx?id='+row.id);
+          parent.f_addTab('ReceivableListEdit','Sales Collection - Edit','pay/ReceivableListEdit.aspx?id='+row.id);
          
          
           top.topManager.openPage({
             id : 'ReceivableListEdit',
             href : 'pay/ReceivableListEdit.aspx?id='+row.id,
-            title : 'Sales Payment - Modify'
+              title: 'Sales Collection - Edit'
           });
   
   

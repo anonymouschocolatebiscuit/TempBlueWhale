@@ -164,7 +164,7 @@ $(function () {
                             }
                         },
                         {
-                            display: 'Original price', name: 'price', width: '95px', type: 'float', align: 'right', editor: { type: 'float' }
+                            display: 'Original Price', name: 'price', width: '95px', type: 'float', align: 'right', editor: { type: 'float' }
                         },
                         {
                             display: 'Discount%', name: 'dis', width: '80px', type: 'float', align: 'right', editor: { type: 'float' }
@@ -616,7 +616,7 @@ function f_onAfterEdit(e) {
 
     } //Discount amount changed---end
 
-    if (e.column.name == "priceNow") //Current price changes---start
+    if (e.column.name == "priceNow") //Current Price changes---start
     {
         priceNow = Number(e.value);
 
@@ -660,7 +660,7 @@ function f_onAfterEdit(e) {
         //3. Price and tax total
         manager.updateCell('sumPriceAll', sumPriceAll.toString(), e.record);
 
-    } //Current price changes---end
+    } //Current Price changes---end
 
     if (e.column.name == "sumPriceNow") // amount changed
     {

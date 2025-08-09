@@ -102,7 +102,7 @@
                    </td>
                    </tr>
                <tr>
-                   <td style="width:150px; text-align:right;">Remark: </td>
+                   <td style="width:150px; text-align:right;">Remarks: </td>
                    <td style="text-align:left; " colspan="5">
                        <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                    </td>

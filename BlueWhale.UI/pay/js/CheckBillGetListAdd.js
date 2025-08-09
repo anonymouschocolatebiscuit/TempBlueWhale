@@ -110,10 +110,10 @@ $(function () {
             { display: 'Business Type', name: 'bizType', width: 120, align: 'center' },
             { display: 'Invoice Date', name: 'bizDate', width: 80, align: 'center' },
             { display: 'Invoice Amount', name: 'sumPriceAll', width: 120, align: 'center' },
-            { display: 'Amount Written Off', name: 'priceCheckNowSum', width: 170, align: 'center' },
-            { display: 'Unsettled Amount', name: 'priceCheckNo', width: 130, align: 'center' },
+            { display: 'Written-off Amount', name: 'priceCheckNowSum', width: 170, align: 'center' },
+            { display: 'Remaining Balance', name: 'priceCheckNo', width: 140, align: 'center' },
             {
-                display: 'Current Write-Off Amount', name: 'priceCheckNow', width: 170, type: 'float', align: 'center', editor: { type: 'float', precision: 4 },
+                display: 'Write-Off Amount', name: 'priceCheckNow', width: 140, type: 'float', align: 'center', editor: { type: 'float', precision: 4 },
                 totalSummary:
                 {
                     align: 'right', // Summary cell content alignment: left/center/right  
@@ -180,7 +180,7 @@ $(function () {
                 }
             },
             {
-                display: 'Accounts Receivable No. (AR No.).', name: 'sourceNumber', width: 220, align: 'center',
+                display: 'Receivable No.', name: 'sourceNumber', width: 120, align: 'center',
                 totalSummary:
                 {
                     type: 'count',
@@ -191,12 +191,12 @@ $(function () {
                 }
             },
             { display: 'Business Type', name: 'bizType', width: 120, align: 'center' },
-            { display: 'Invoice Date', name: 'bizDate', width: 80, align: 'center' },
+            { display: 'Invoice Date', name: 'bizDate', width: 100, align: 'center' },
             { display: 'Invoice Amount', name: 'sumPriceAll', width: 120, align: 'center' },
-            { display: 'Amount Written Off', name: 'priceCheckNowSum', width: 170, align: 'center' },
-            { display: 'Unsettled Amount', name: 'priceCheckNo', width: 130, align: 'center' },
+            { display: 'Written-Off Amount', name: 'priceCheckNowSum', width: 170, align: 'center' },
+            { display: 'Remaining Balance', name: 'priceCheckNo', width: 130, align: 'center' },
             {
-                display: 'Current Write-Off Amount', name: 'priceCheckNow', width: 170, type: 'float', align: 'center', editor: { type: 'float', precision: 4 },
+                display: 'Write-Off Amount', name: 'priceCheckNow', width: 170, type: 'float', align: 'center', editor: { type: 'float', precision: 4 },
                 totalSummary: {
                     align: 'right',   //Summary cell content alignment: left/center/right
                     type: 'sum',

@@ -83,7 +83,7 @@
                         { line: true },
                         { text: 'Review', click: checkRow, img: '../lib/ligerUI/skins/icons/ok.gif' },
                         { line: true },
-                        { text: 'Cancel Review', click: checkNoRow, img: '../lib/ligerUI/skins/icons/back.gif' },
+                        { text: 'Reject', click: checkNoRow, img: '../lib/ligerUI/skins/icons/back.gif' },
                         { line: true },
                         { text: 'Delete', click: deleteRow, img: '../lib/ligerUI/skins/icons/delete.gif' }
                     ]

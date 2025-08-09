@@ -17,7 +17,7 @@
       
       <script type="text/javascript">
 
-          //Customer start
+          //Client start
 
 
           //Client start
@@ -176,7 +176,7 @@
            <td style="text-align:right; width:60px;">
             
             
-             Customer: </td>
+             Client: </td>
             <td style="text-align:left; width:120px;">
             
            <input type="text" id="txtVenderList"/> 

@@ -155,7 +155,7 @@ namespace BlueWhale.UI.report
                 NPOI.SS.UserModel.IRow row3 = sheet.CreateRow(dt.Rows.Count + 1);
 
                 row3.CreateCell(0).SetCellValue("");//Product code
-                row3.CreateCell(1).SetCellValue("Total:");//Product name
+                row3.CreateCell(1).SetCellValue("Total:");//Item Name
                 row3.CreateCell(2).SetCellValue(""); //Specifications
                 row3.CreateCell(3).SetCellValue("");//Unit
                 row3.CreateCell(4).SetCellValue("");//Warehouse

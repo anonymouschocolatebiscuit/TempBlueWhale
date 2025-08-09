@@ -63,7 +63,7 @@ $(function () {
 
 
             },
-            { display: 'Customer', name: 'wlName', width: 170, align: 'left' },
+            { display: 'Client', name: 'wlName', width: 170, align: 'left' },
             {
                 display: 'Outbound Value', name: 'sumPriceAll', width: 200, align: 'right',
 
@@ -94,7 +94,7 @@ $(function () {
 
             { display: 'Created By', name: 'makeName', width: 100, align: 'center' },
             { display: 'Reviewed By', name: 'checkName', width: 100, align: 'center' },
-            { display: 'Remark', name: 'remarks', width: 180, align: 'left' }
+            { display: 'Remarks', name: 'remarks', width: 180, align: 'left' }
 
 
         ], width: '98%',

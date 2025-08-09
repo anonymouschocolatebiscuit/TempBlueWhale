@@ -165,7 +165,7 @@ function InitializeManager() {
             { display: 'Invoice status', name: 'flag', width: 80, align: 'center' },
             { display: 'Invoice Clerk', name: 'makeName', width: 80, align: 'center' },
             { display: 'Reviewer', name: 'checkName', width: 80, align: 'center' },
-            { display: 'Remark', name: 'remarks', width: 100, align: 'left' }
+            { display: 'Remarks', name: 'remarks', width: 100, align: 'left' }
 
         ],
         width: '98%',

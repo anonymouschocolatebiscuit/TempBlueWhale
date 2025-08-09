@@ -125,7 +125,7 @@ $(function () {
                 },
 
                 {
-                    display: 'Goods name', name: 'goodsName', width: 250, align: 'left',
+                    display: 'Item Name', name: 'goodsName', width: 250, align: 'left',
 
                     totalSummary:
                     {
@@ -136,8 +136,8 @@ $(function () {
                     }
                 },
 
-                { display: 'Specs', name: 'spec', width: 100, align: 'center' },
-                { display: 'Number', name: 'unitName', width: 80, align: 'center' },
+                { display: 'Specification', name: 'spec', width: 100, align: 'center' },
+                { display: 'Unit', name: 'unitName', width: 80, align: 'center' },
                 {
                     display: 'Inventory', name: 'ckId', width: 100, isSort: false, textField: 'ckName',
                     editor: {
@@ -148,7 +148,7 @@ $(function () {
                 },
 
                 {
-                    display: 'Number', name: 'num', width: 80, type: 'float', align: 'right', editor: { type: 'float', precision: 3 },
+                    display: 'Quantity', name: 'num', width: 80, type: 'float', align: 'right', editor: { type: 'float', precision: 3 },
 
                     totalSummary:
                     {
@@ -162,7 +162,7 @@ $(function () {
                 },
 
                 {
-                    display: 'Original price', name: 'price', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
+                    display: 'Original Price', name: 'price', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
                 },
 
                 {
@@ -170,7 +170,7 @@ $(function () {
                 },
 
                 {
-                    display: 'Discount price', name: 'sumPriceDis', width: 70, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Discount Price', name: 'sumPriceDis', width: 70, type: 'float', align: 'right', editor: { type: 'float' },
                     totalSummary:
                     {
                         align: 'center',
@@ -184,11 +184,11 @@ $(function () {
                 },
 
                 {
-                    display: 'Current price', name: 'priceNow', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
+                    display: 'Current Price', name: 'priceNow', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
                 },
 
                 {
-                    display: 'Price', name: 'sumPriceNow', width: 90, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Amount', name: 'sumPriceNow', width: 90, type: 'float', align: 'right', editor: { type: 'float' },
 
                     totalSummary:
                     {
@@ -202,10 +202,10 @@ $(function () {
                 },
 
                 { display: 'Tax Rate%', name: 'tax', width: 60, type: 'int', align: 'center', editor: { type: 'int' } },
-                { display: 'Unit Price Including Tax', name: 'priceTax', width: 70, type: 'float', align: 'center', editor: { type: 'float' } },
+                { display: 'Unit Price Including Tax', name: 'priceTax', width: 110, type: 'float', align: 'center', editor: { type: 'float' } },
 
                 {
-                    display: 'Tax Amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
+                    display: 'Tax Amount', name: 'sumPriceTax', width: 90, type: 'float', align: 'right',
 
                     totalSummary:
                     {
@@ -218,7 +218,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Price', name: 'sumPriceAll', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Total Price Including Tax', name: 'sumPriceAll', width: 110, type: 'float', align: 'right', editor: { type: 'float' },
                     totalSummary:
                     {
                         align: 'center',
