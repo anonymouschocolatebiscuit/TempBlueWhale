@@ -3,7 +3,6 @@ using System.Data;
 using System.Text;
 using System.Data.SqlClient;
 using BlueWhale.DBUtility;//Please add references
-
 namespace BlueWhale.DAL.produce
 {
 	/// <summary>

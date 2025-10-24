@@ -23,47 +23,34 @@
             </td>
            <td style="text-align:left; width:180px;">
            <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter the receipt number/customer/remarks."></asp:TextBox>
-               
             </td>
            <td style="text-align:right; width:70px;">          
                Start Date:           
               </td>
            <td style="text-align:left; width:180px;">
-               
            <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>         
-            
            </td>
            <td style="text-align:right; width:70px;">                 
                End Date:  
-           
            </td>
             <td style="text-align:left; width:180px;">
-            
             <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>     
             </td>
            <td style="text-align:center;width:100px;">
            
-           
            <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
-           
-            
             </td>
            <td style="text-align:right; padding-right:20px;">
                <input id="btnCheck" type="button" value="Approve" class="ui-btn" onclick="checkRow()" />
-                
-                  <input id="btnCheckNo" type="button" value="Reject" class="ui-btn" onclick="checkNoRow()" />
-                            
+               <input id="btnCheckNo" type="button" value="Reject" class="ui-btn" onclick="checkNoRow()" />
             </td>
            </tr>
            <tr>
            <td style="text-align:left; height:300px;" colspan="8">
-            
             <div id="maingrid"></div>  
             <div style="display:none;">
-   
 </div>
-            
-            </td>
+           </td>
            </tr>
            </table>
     </form>

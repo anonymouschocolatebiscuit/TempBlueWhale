@@ -23,17 +23,14 @@
                         <asp:TextBox ID="txtKeys" runat="server" placeholder="Order No./Supplier/Remark"></asp:TextBox>
                         <asp:HiddenField ID="hfShopId" runat="server" />
                     </td>
-
                     <td style="text-align: right; width: 70px; padding: 0 10px;">Start Date：</td>
                     <td style="text-align: left; width: 180px;">
                         <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                     </td>
-
                     <td style="text-align: right; width: 70px; padding: 0 10px;">End Date：</td>
                     <td style="text-align: left; width: 180px;">
                         <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                     </td>
-
                     <td style="text-align: center; width: 100px;">
                         <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
                     </td>

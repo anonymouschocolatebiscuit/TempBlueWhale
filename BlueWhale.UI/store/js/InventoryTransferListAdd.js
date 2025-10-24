@@ -117,7 +117,7 @@ $(function () {
                 },
                 { display: 'Remarks', name: 'remarks', width: 150, align: 'left', type: 'text', editor: { type: 'text' } }
             ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '450',
-            url: 'DiaoboListAdd.aspx?Action=GetData',
+            url: 'InventoryTransferListAdd.aspx?Action=GetData',
             rownumbers: true,
             frozenRownumbers: true,
             dataAction: 'local',
@@ -378,7 +378,7 @@ function save() {
 
     $.ajax({
         type: "POST",
-        url: 'ashx/DiaoboListAdd.ashx',
+        url: 'ashx/InventoryTransferListAdd.ashx',
         contentType: "application/json",
         data: JSON.stringify(postData),
         success: function (jsonResult) {

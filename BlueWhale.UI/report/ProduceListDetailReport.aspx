@@ -14,16 +14,21 @@
     <script src="../lib/json2.js" type="text/javascript"></script>
 
     <script type="text/javascript">
-
         function f_selectClient() {
             $.ligerDialog.open({
-                title: 'Select Vendor', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
+                title: 'Select Vendor',
+                name: 'winselector',
+                width: 800,
+                height: 540,
+                url: '../baseSet/VenderListSelect.aspx',
+                buttons: [
                     { text: 'Confirm', onclick: f_selectClientOK },
                     { text: 'Close', onclick: f_selectClientCancel }
                 ]
             });
             return false;
         }
+
         function f_selectClientOK(item, dialog) {
             var fn = dialog.frame.f_select || dialog.frame.window.f_select;
             var data = fn();
@@ -34,23 +39,28 @@
 
             $("#txtVenderList").val(data.names);
             $("#txtVenderCode").val(data.code);
-
             dialog.close();
-
         }
+
         function f_selectClientCancel(item, dialog) {
             dialog.close();
         }
 
         function f_selectContact() {
             $.ligerDialog.open({
-                title: 'Select Goods', name: 'winselector', width: 840, height: 540, url: '../baseSet/GoodsListSelect.aspx', buttons: [
+                title: 'Select Goods',
+                name: 'winselector',
+                width: 840,
+                height: 540,
+                url: '../baseSet/GoodsListSelect.aspx',
+                buttons: [
                     { text: 'Confirm', onclick: f_selectContactOK },
                     { text: 'Close', onclick: f_selectContactCancel }
                 ]
             });
             return false;
         }
+
         function f_selectContactOK(item, dialog) {
             var fn = dialog.frame.f_select || dialog.frame.window.f_select;
             var data = fn();
@@ -71,18 +81,18 @@
 
             $("#txtGoodsList").val(valueCode);
             $("#txtGoodsCode").val(valueCode);
-
             dialog.close();
-
         }
+
         function f_selectContactCancel(item, dialog) {
             dialog.close();
         }
 
-
         $(function () {
             $("#txtGoodsList").ligerComboBox({
-                onBeforeOpen: f_selectContact, valueFieldID: 'txtGoodsList', width: 300
+                onBeforeOpen: f_selectContact,
+                valueFieldID: 'txtGoodsList',
+                width: 300
             });
 
             $("#txtFlagList").ligerComboBox({
@@ -90,44 +100,42 @@
                 isMultiSelect: true,
                 url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
                 valueField: 'ckId',
-                textField: 'ckName'
-                , valueFieldID: 'ckId'
+                textField: 'ckName',
+                valueFieldID: 'ckId'
             });
         });
     </script>
 
     <script src="js/ProduceListDetailReport.js" type="text/javascript"></script>
 
+    <style type="text/css">
+        .l-grid-header {
+            height: 56px !important; /* Increase height */
+        }
+    </style>
 </head>
+
 <body>
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="text-align: right; width: 70px;">Enter Warehouse Date</td>
-
+                <td style="text-align: right; width: 150px;padding-right: 0.5rem;">Enter Warehouse Date:</td>
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-
                 <td style="text-align: center; width: 30px;">To</td>
-
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-
-                <td style="text-align: right; width: 50px;">Goods：</td>
-
+                <td style="text-align: right; width: 50px;padding-right: 0.5rem;">Goods:</td>
                 <td style="text-align: left; width: 180px;">
                     <input type="text" id="txtGoodsList" />
                 </td>
-
-                <td style="text-align: right; width: 60px;">Warehouse：</td>
-
-                <td style="text-align: left; width: 80px;">
+                <td style="text-align: right; width: 100px;padding-right: 0.5rem;">Warehouse:</td>
+                <td style="text-align: left; width: 100px;">
                     <input type="text" id="txtFlagList" />
                 </td>
-
-                <td style="text-align: right; padding-right: 20px;">
+                <td style="text-align: right; padding-right: 30px;">
                     <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
                 </td>
             </tr>
@@ -135,8 +143,7 @@
             <tr>
                 <td style="text-align: left; height: 300px;" colspan="11">
                     <div id="maingrid"></div>
-                    <div style="display: none;">
-                    </div>
+                    <div style="display: none;"></div>
                 </td>
             </tr>
         </table>

@@ -39,7 +39,6 @@ namespace BlueWhale.Common
             page.ClientScript.RegisterStartupScript(page.GetType(), "ajaxjs", string.Format("alert('{0}！')", msg), true);
         }
 
-        //字符串清理
         public static string InputText(string inputString, int maxLength)
         {
             StringBuilder retVal = new StringBuilder();
@@ -862,7 +861,7 @@ namespace BlueWhale.Common
             }
             else
             {
-                strResult = size + " 字节";
+                strResult = size + " Byte";
             }
 
             return strResult;

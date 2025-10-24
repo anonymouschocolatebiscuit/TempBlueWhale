@@ -2,14 +2,10 @@
 
     var keys = document.getElementById("txtKeys").value;
     if (keys == "Please enter the receipt no./bundled product/remarks") {
-
         keys = "";
-
     }
     var start = document.getElementById("txtDateStart").value;
     var end = document.getElementById("txtDateEnd").value;
-
-
     manager.changePage("first");
     manager._setUrl("DisassembleList.aspx?Action=GetDataListSearch&types=0&keys=" + keys + "&start=" + start + "&end=" + end);
 }
@@ -19,10 +15,8 @@ function reload() {
     managersub.reload();
 }
 
-
 function editRow() {
     var row = manager.getSelectedRow();
-
     parent.f_addTab('DisassembleListEdit', 'Product Disassembly Order - Edit', 'store/DisassembleListEdit.aspx?id=' + row.id);
 
     //          top.topManager.openPage({
@@ -30,8 +24,6 @@ function editRow() {
     //            href : 'store/DisassembleListEdit.aspx?id='+row.id,
     //            title : 'Product Disassembly Order - Edit'
     //          });
-
-
 }
 
 function deleteRow() {
@@ -40,43 +32,29 @@ function deleteRow() {
     if (!row) { $.ligerDialog.warn('Please select the row to delete'); return; }
 
     var idString = checkedCustomer.join(',');
-
     $.ligerDialog.confirm('Deletion cannot be undone. Confirm delete？', function (type) {
-
-
         if (type) {
-
             $.ajax({
                 type: "GET",
                 url: "DisassembleList.aspx",
                 data: "Action=delete&id=" + idString + " &ranid=" + Math.random(),
                 success: function (resultString) {
-
                     $.ligerDialog.alert(resultString, 'Notification');
-
                     reload();
                 },
                 error: function (msg) {
-
                     $.ligerDialog.alert("Network error, please contact the administrator", 'Notification');
                 }
             });
-
         }
-
     });
-
-
 }
 
-
 function checkRow() {
-
     var row = manager.getSelectedRow();
     if (!row) { $.ligerDialog.warn('Please select the row to operate'); return; }
 
     var idString = checkedCustomer.join(',');
-
     $.ajax({
         type: "GET",
         url: "DisassembleList.aspx",
@@ -84,27 +62,18 @@ function checkRow() {
         success: function (resultString) {
             $.ligerDialog.alert(resultString, 'Notification');
             reload();
-
         },
         error: function (msg) {
-
             $.ligerDialog.alert("Network error, please contact the administrator", 'Notification');
         }
     });
-
-
-
-
 }
 
-
 function checkNoRow() {
-
     var row = manager.getSelectedRow();
     if (!row) { $.ligerDialog.warn('Please select the row to operate'); return; }
 
     var idString = checkedCustomer.join(',');
-
     $.ajax({
         type: "GET",
         url: "DisassembleList.aspx",
@@ -112,20 +81,13 @@ function checkNoRow() {
         success: function (resultString) {
             $.ligerDialog.alert(resultString, 'Notification');
             reload();
-
         },
         error: function (msg) {
-
             $.ligerDialog.alert("Network error, please contact the administrator", 'Notification');
         }
     });
-
-
 }
-
-
 function add() {
-
     parent.f_addTab('DisassembleListAdd', 'Product Disassembly - Add', 'store/DisassembleListAdd.aspx');
 
     top.topManager.openPage({
@@ -133,25 +95,15 @@ function add() {
         href: 'store/DisassembleListAdd.aspx',
         title: 'Product Disassembly - Add'
     });
-
-
 }
-
-
-
 
 var manager;
 $(function () {
-
     var form = $("#form").ligerForm();
-
-
-
     window['g'] =
         manager = $("#maingrid").ligerGrid({
             checkbox: true,
             columns: [
-
                 {
                     display: 'Operation', isSort: false, width: '5%', minWidth: 85, align: 'center', render: function (rowdata, rowindex, value) {
                         var h = "";
@@ -169,21 +121,15 @@ $(function () {
 
                 { display: 'Disassembly Date', name: 'bizDate', width: '8%', minWidth: 135, align: 'center', valign: 'center' },
                 { display: 'Bill Number', name: 'number', width: '6%', minWidth: 100, align: 'center' },
-
                 { display: 'Bundled Product', name: 'goodsName', width: '10%', minWidth: 170, align: 'left' },
-
                 { display: 'Specification', name: 'spec', width: '6%', minWidth: 100, align: 'center' },
-
                 { display: 'Unit', name: 'unitName', width: '5%', minWidth: 85, align: 'center' },
                 { display: 'Outbound Quantity', name: 'num', width: '9%', minWidth: 155, type: 'float', align: 'right' },
-
                 {
                     display: 'Outbound Unit Price', name: 'price', width: '10%', minWidth: 160, type: 'float', align: 'right'
 
                 },
-
                 { display: 'Amount', name: 'sumPrice', width: '5%', type: 'float', align: 'right' },
-
                 {
                     display: 'Outbound Warehouse', name: 'ckId', width: '10%', minWidth: 160, isSort: false, textField: 'ckName',
                     editor: {
@@ -191,15 +137,10 @@ $(function () {
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
                         valueField: 'ckId', textField: 'ckName'
                     }
-
                 },
-
                 { display: 'Status', name: 'flag', width: '5%', minWidth: 85, align: 'center' },
-
                 { display: 'Created By', name: 'makeName', width: '5%', minWidth: 85, align: 'center' },
                 { display: 'Reviewed By', name: 'checkName', width: '5%', minWidth: 85, align: 'center' },
-
-
                 { display: 'Remarks', name: 'remarks', width: '7%', minWidth: 120, align: 'left', type: 'text' }
             ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '250',
             // url: 'DisassembleList.aspx?Action=GetData',
@@ -209,7 +150,6 @@ $(function () {
                 // $.ligerDialog.alert('The choice is' + data.id);
                 editRow();
             },
-
             frozenRownumbers: true,
             dataAction: 'local',
             usePager: true,
@@ -224,14 +164,11 @@ $(function () {
         );
 });
 
-
 var managersub;
 $(function () {
-
     window['gsub'] =
         managersub = $("#maingridsub").ligerGrid({
             columns: [
-
                 {
                     display: 'Disassembled Product Name', name: 'goodsName', width: '14%', minWidth: 240, align: 'left',
                     totalSummary:
@@ -244,11 +181,9 @@ $(function () {
                 },
 
                 { display: 'Specification', name: 'spec', width: '8%', minWidth: 135, align: 'center' },
-
                 { display: 'Unit', name: 'unitName', width: '6%', minWidth: 100, align: 'center' },
                 {
                     display: 'Inbound Quantity', name: 'num', width: '8%', minWidth: 140, type: 'float', align: 'right',
-
                     totalSummary:
                     {
                         align: 'right',
@@ -257,9 +192,7 @@ $(function () {
                             return Math.round(e.sum * 100) / 100;
                         }
                     }
-
                 },
-
                 { display: 'Inbound Unit Price', name: 'price', width: '9%', minWidth: 150, type: 'float', align: 'right' },
                 {
                     display: 'Amount', name: 'sumPrice', width: '6%', minWidth: 100, type: 'float', align: 'right',
@@ -268,15 +201,11 @@ $(function () {
                         align: 'center',
                         type: 'sum',
                         render: function (e) {
-
                             // alert("Summarized");
-
                             return Math.round(e.sum * 100) / 100;
                         }
                     }
-
                 },
-
                 {
                     display: 'Outbound Warehouse', name: 'ckId', width: '9%', minWidth: 150, isSort: false, textField: 'ckName',
                     editor: {
@@ -284,9 +213,7 @@ $(function () {
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
                         valueField: 'ckId', textField: 'ckName'
                     }
-
                 },
-
                 { display: 'Remarks', name: 'remarks', width: '12%', minWidth: 200, align: 'left', type: 'text' }
             ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '210',
             // url: 'DisassembleListAdd.aspx?Action=GetDataSub',
@@ -295,24 +222,18 @@ $(function () {
             dataAction: 'local',
             usePager: false,
             alternatingRow: false,
-
             totalSummary: true
-
         }
         );
 });
-
 
 var rowNumber = 9;
 
 function getItemList(pId) {
     if (pId != 0) {
-
         managersub._setUrl("DisassembleList.aspx?Action=GetDataListSearchSub&pId=" + pId);
     }
 }
-
-
 
 function f_onCheckAllRow(checked) {
     for (var rowid in this.records) {
@@ -351,4 +272,3 @@ function f_onCheckRow(checked, data) {
 function f_getChecked() {
     alert(checkedCustomer.join(','));
 }
-

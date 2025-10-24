@@ -13,7 +13,7 @@ namespace BlueWhale.Common
         /// <param name="obj">objectTarget</param>
         public static void Insert(string key, object obj)
         {
-            //创建缓存
+            // Create cache
             HttpContext.Current.Cache.Insert(key, obj);
         }
         /// <summary>
@@ -22,7 +22,7 @@ namespace BlueWhale.Common
         /// <param name="key">CacheKey</param>
         public static void Remove(string key)
         {
-            //创建缓存
+            // Create cache
             HttpContext.Current.Cache.Remove(key);
         }
         /// <summary>
@@ -33,9 +33,9 @@ namespace BlueWhale.Common
         /// <param name="fileName">pathAbsolutePath</param>
         public static void Insert(string key, object obj, string fileName)
         {
-            //Create cache dependancy
+            // Create cache dependancy
             CacheDependency dep = new CacheDependency(fileName);
-            //Create cache
+            // Create cache
             HttpContext.Current.Cache.Insert(key, obj, dep);
         }
 

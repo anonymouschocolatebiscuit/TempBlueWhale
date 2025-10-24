@@ -59,8 +59,11 @@ $(function () {
     var form = $("#form").ligerForm();
     var target1 = $("#target1").ligerForm();
 
-    var g = $.ligerui.get("ddlVenderList");
-    g.set("Width", 250);
+    var ddlVenderList = $.ligerui.get("ddlVenderList");
+    ddlVenderList.set("Width", 200);
+
+    var txtBizDate = $.ligerui.get("txtBizDate");
+    txtBizDate.set("Width", 120);
 
     var txtDateStart = $.ligerui.get("txtDateStart");
     txtDateStart.set("Width", 120);
@@ -68,8 +71,8 @@ $(function () {
     var txtDateEnd = $.ligerui.get("txtDateEnd");
     txtDateEnd.set("Width", 120);
 
-    var txtDateStar1 = $.ligerui.get("txtDateStar1");
-    txtDateStar1.set("Width", 120);
+    var txtDateStart1 = $.ligerui.get("txtDateStart1");
+    txtDateStart1.set("Width", 120);
 
     var txtDateEnd1 = $.ligerui.get("txtDateEnd1");
     txtDateEnd1.set("Width", 120);
@@ -81,7 +84,7 @@ $(function () {
                     display: '', isSort: false, width: 40, align: 'center', frozen: true, render: function (rowdata, rowindex, value) {
                         var h = "";
                         if (!rowdata._editing) {
-                            h += "<a href='javascript:deleteRow()' title='Delete row' style='text-align:center;'><div class='ui-icon ui-icon-trash'></div></a>";
+                            h += "<a href='javascript:deleteRow()' title='Delete row' style='display: flex; justify-content: center; align-items: center; width: 30px; height: 30px;'><div class='ui-icon ui-icon-trash'></div></a>";
                         }
                         return h;
                     }
@@ -97,13 +100,13 @@ $(function () {
                 },
                 { display: 'Business Type', name: 'bizType', width: 120, align: 'center' },
                 { display: 'Document Date', name: 'bizDate', width: 120, align: 'center' },
-                { display: 'Document Amount', name: 'sumPriceAll', width: 120, align: 'right' },
-                { display: 'Written-off Amount', name: 'priceCheckNowSum', width: 150, align: 'right' },
-                { display: 'Unwritten-off Amount', name: 'priceCheckNo', width: 160, align: 'right' },
+                { display: 'Document Amount', name: 'sumPriceAll', width: 140, align: 'center' },
+                { display: 'Written-off Amount', name: 'priceCheckNowSum', width: 150, align: 'center' },
+                { display: 'Unwritten-off Amount', name: 'priceCheckNo', width: 160, align: 'center' },
                 {
-                    display: 'Current Write-off Amount', name: 'priceCheckNow', width: 180, type: 'float', align: 'right', editor: { type: 'float', precision: 4 },
+                    display: 'Current Write-off Amount', name: 'priceCheckNow', width: 190, type: 'float', align: 'center', editor: { type: 'float', precision: 4 },
                     totalSummary: {
-                        align: 'right',
+                        align: 'center',
                         type: 'sum',
                         render: function (e) {
                             return Math.round(e.sum * 100) / 100;
@@ -111,7 +114,7 @@ $(function () {
                     }
                 }
             ],
-            width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '190',
+            width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '195',
             url: 'CheckBillPayListAdd.aspx?Action=GetData',
             rownumbers: true,
             frozenRownumbers: true,
@@ -160,7 +163,7 @@ $(function () {
                     display: '', isSort: false, width: 40, align: 'center', frozen: true, render: function (rowdata, rowindex, value) {
                         var h = "";
                         if (!rowdata._editing) {
-                            h += "<a href='javascript:deleteRowSub()' title='Delete row' style='text-align:center;'><div class='ui-icon ui-icon-trash'></div></a>";
+                            h += "<a href='javascript:deleteRowSub()' title='Delete row' style='display: flex; justify-content: center; align-items: center; width: 30px; height: 30px;'><div class='ui-icon ui-icon-trash'></div></a>";
                         }
                         return h;
                     }
@@ -176,13 +179,13 @@ $(function () {
                 },
                 { display: 'Business Type', name: 'bizType', width: 120, align: 'center' },
                 { display: 'Document Date', name: 'bizDate', width: 120, align: 'center' },
-                { display: 'Document Amount', name: 'sumPriceAll', width: 120, align: 'right' },
-                { display: 'Written-off Amount', name: 'priceCheckNowSum', width: 150, align: 'right' },
-                { display: 'Unwritten-off Amount', name: 'priceCheckNo', width: 160, align: 'right' },
+                { display: 'Document Amount', name: 'sumPriceAll', width: 140, align: 'center' },
+                { display: 'Written-off Amount', name: 'priceCheckNowSum', width: 150, align: 'center' },
+                { display: 'Unwritten-off Amount', name: 'priceCheckNo', width: 160, align: 'center' },
                 {
-                    display: 'Current Write-off Amount', name: 'priceCheckNow', width: 180, type: 'float', align: 'right', editor: { type: 'float', precision: 4 },
+                    display: 'Current Write-off Amount', name: 'priceCheckNow', width: 190, type: 'float', align: 'center', editor: { type: 'float', precision: 4 },
                     totalSummary: {
-                        align: 'right',
+                        align: 'center',
                         type: 'sum',
                         render: function (e) {
                             return Math.round(e.sum * 100) / 100;
@@ -190,7 +193,7 @@ $(function () {
                     }
                 }
             ],
-            width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '190',
+            width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '195',
             url: 'CheckBillPayListAdd.aspx?Action=GetDataSub',
             rownumbers: true,
             frozenRownumbers: true,

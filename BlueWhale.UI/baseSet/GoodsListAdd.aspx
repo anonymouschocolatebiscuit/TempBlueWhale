@@ -34,13 +34,12 @@
     </script>
 
     <style type="text/css">
-           body{ font-size:12px;}
+         body{ font-size:12px;}
         .l-table-edit {}
         .l-table-edit-td{ padding:4px;}
         .l-button-submit,.l-button-test{width:80px; float:left; margin-left:10px; padding-bottom:2px;}
-        .l-verify-tip{ left:230px
-                       ; top:120px;}
-           .l-radio-wrapper { width: 80px; padding-top:20px}
+        .l-verify-tip{ left:230px; top:120px;}
+        .l-radio-wrapper { width: 80px; padding-top:20px}
     </style>
 
 </head>
@@ -162,15 +161,16 @@
             <tr>
                 <td style="text-align: left;">Type:</td>
                 <td colspan="3">
-                    <asp:RadioButtonList ID="rbNoteList" runat="server" RepeatDirection="Horizontal">
-                        <asp:ListItem Text="Default" Value="Default" Selected="True"></asp:ListItem>
-                        <asp:ListItem Text="Recommend" Value="Recommend"></asp:ListItem>
-                        <asp:ListItem Text="Special Offer" Value="Special Offer"></asp:ListItem>
-                        <asp:ListItem Text="New Arrival" Value="New Arrival"></asp:ListItem>
-                        <asp:ListItem Text="Best Seller" Value="Best Seller"></asp:ListItem>
-                        <asp:ListItem Text="Free Gift" Value="Free Gift"></asp:ListItem>
-                        <asp:ListItem Text="Out of Stock" Value="Out of Stock"></asp:ListItem>
-                    </asp:RadioButtonList>
+                <asp:RadioButtonList ID="rbNoteList" runat="server" 
+                    RepeatDirection="Horizontal" >
+                    <asp:ListItem Text="Default" Value="Default" Selected="True"></asp:ListItem>
+                    <asp:ListItem Text="Recommend" Value="Recommend"></asp:ListItem>
+                    <asp:ListItem Text="Special Offer" Value="Special Offer"></asp:ListItem>
+                    <asp:ListItem Text="New Arrival" Value="New Arrival"></asp:ListItem>
+                    <asp:ListItem Text="Best Seller" Value="Best Seller"></asp:ListItem>
+                    <asp:ListItem Text="Free Gift" Value="Free Gift"></asp:ListItem>
+                    <asp:ListItem Text="Out of Stock" Value="Out of Stock"></asp:ListItem>
+                </asp:RadioButtonList>
                 </td>
             </tr>
             <tr>

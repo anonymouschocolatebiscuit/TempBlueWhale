@@ -16,16 +16,16 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="line-height: 40px;">
             <tr>
-                <td style="width: 120px; text-align: right;">Contact Unit：</td>
-                <td style="text-align: left; width: 250px; padding-right: 10px;">
-                    <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px">
+                <td style="width: 85px; text-align: right;">Contact Unit：</td>
+                <td style="text-align: left; width: 220px; padding-right: 10px;">
+                    <asp:DropDownList ID="ddlVenderList" runat="server" Width="220px">
                     </asp:DropDownList>
                 </td>
-                <td style="text-align: right; width: 120px;">Payment Date：</td>
-                <td style="text-align: left; width: 180px; padding-right: 10px;">
+                <td style="text-align: right; width: 110px;">Payment Date：</td>
+                <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 150px;">Settlement Account：</td>
+                <td style="text-align: right; width: 160px;">Settlement Account：</td>
                 <td style="text-align: left;">
                     <asp:DropDownList ID="ddlBankList" runat="server">
                     </asp:DropDownList>
@@ -35,11 +35,11 @@
         <div id="maingrid"></div>
         <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 50px;">
             <tr>
-                <td style="width: 80px; text-align: right;">Remark：</td>
+                <td style="width: 60px; text-align: right;">Remarks：</td>
                 <td style="text-align: left;">
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>
-                <td style="text-align: right; padding-right: 30px;">
+                <td style="text-align: right;">
                     <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Add" onclick="save()" />
                 </td>
             </tr>

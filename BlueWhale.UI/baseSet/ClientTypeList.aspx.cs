@@ -37,8 +37,18 @@ namespace BlueWhale.UI.baseSet
 
         void GetDataList()
         {
+            string sortColumn = Request.Params["sortname"];
+            string sortOrder = Request.Params["sortorder"];
+
             string isWhere = " shopId='" + LoginUser.ShopId + "' ";
-            DataSet ds = dal.GetList(isWhere);
+
+            string orderBy = "";
+            if (sortColumn != null && sortOrder != null)
+            {
+                orderBy = $" ORDER BY {sortColumn} {sortOrder}";
+            }
+
+            DataSet ds = dal.GetList(isWhere, orderBy);
 
             IList<object> list = new List<object>();
 

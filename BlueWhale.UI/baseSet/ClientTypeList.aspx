@@ -18,7 +18,7 @@
     <script src="../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
     <script src="../lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
     <script src="../lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
-    <script src="../jsData/TreeDeptData.js" type="text/javascript"></script>
+    <script src="../lib.1.3.1/Source/demos/grid/TreeDeptData.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         var manager;
@@ -36,6 +36,7 @@
                 url: 'ClientTypeList.aspx?Action=GetDataList',
                 alternatingRow: false,
                 rownumbers: true,
+                dataAction: 'local',
                 onDblClickRow: function () {
                     editRow();
                 },
@@ -62,7 +63,7 @@
             $.ligerDialog.open({
                 title: "Edit Client Category",
                 url: "ClientTypeListAdd.aspx?id=" + row.id + "&names=" + row.names + "&flag=" + row.flag,
-                height: 250,
+                height: 210,
                 width: 400,
                 modal: true
             });
@@ -114,7 +115,7 @@
             $.ligerDialog.open({
                 title: "Create Client Category",
                 url: 'ClientTypeListAdd.aspx',
-                height: 250,
+                height: 210,
                 width: 400,
                 modal: true
             });

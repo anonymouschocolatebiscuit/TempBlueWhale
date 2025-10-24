@@ -18,16 +18,11 @@ namespace BlueWhale.UI.store.ashx
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class DisassembleListAdd : IHttpHandler, IRequiresSessionState
     {
-
         public DisassembleDAL dal = new DisassembleDAL();
-
 
         public class OrderListModel<T>
         {
-
             #region Header Fields
-
-
 
             private DateTime _bizDate;
             public DateTime bizDate
@@ -42,7 +37,6 @@ namespace BlueWhale.UI.store.ashx
                 get { return _fee; }
                 set { _fee = value; }
             }
-
 
             private int _goodsId;
             public int goodsId
@@ -152,17 +146,14 @@ namespace BlueWhale.UI.store.ashx
             }
         }
 
-
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
 
             if (context.Session["userInfo"] == null)
             {
-
                 context.Response.Write("Login timeout, please log in again!");
                 return;
-
             }
             BasePage basePage = new BasePage();
             if (!basePage.CheckPower("DisassembleListAdd"))
@@ -172,53 +163,36 @@ namespace BlueWhale.UI.store.ashx
             }
             Users users = context.Session["userInfo"] as Users;
 
-
             StreamReader reader = new StreamReader(context.Request.InputStream);
             string strJson = HttpUtility.UrlDecode(reader.ReadToEnd());
 
             OrderListModel<OrderListItemModel> obj = Newtonsoft.Json.JsonConvert.DeserializeObject<OrderListModel<OrderListItemModel>>(strJson);
-
-
-
             OrderListModel<OrderListItemModel> itemList = obj;
-
-
 
             #region Main Table Assignment
 
             dal.ShopId = users.ShopId;
-
             dal.Number = dal.GetBillNumberAuto(users.ShopId);
-
             dal.BizDate = obj.bizDate;
-
             dal.Fee = obj.fee;
             dal.Remarks = obj.remarks.ToString();
             dal.MakeId = users.Id;
             dal.MakeDate = DateTime.Now;
-
             dal.Flag = "Save";
-
 
             #endregion
 
-
             int pId = dal.Add();
-
 
             #region Sub-table Assignment 
 
             if (pId > 0)
             {
-
                 int check = 0;
-
-
 
                 DisassembleItemDAL item = new DisassembleItemDAL();
 
                 #region Add disassembled products
-
 
                 item.PId = pId;
                 item.Types = -1;
@@ -226,32 +200,26 @@ namespace BlueWhale.UI.store.ashx
                 item.Num = obj.num;
                 item.Price = obj.price;
                 item.SumPrice = obj.price * obj.num;
-
                 item.CkId = obj.ckId;
                 item.Remarks = obj.remarksItem;
-
                 check = item.Add();
 
                 #endregion
 
-
                 for (int i = 0; i < itemList.Rows.Count; i++)
                 {
-
                     item.PId = pId;
                     item.Types = 1;
                     item.GoodsId = itemList.Rows[i].GoodsId;
                     item.Num = itemList.Rows[i].Num;
                     item.Price = itemList.Rows[i].Price;
                     item.SumPrice = itemList.Rows[i].SumPrice;
-
                     item.CkId = itemList.Rows[i].CkId;
                     item.Remarks = itemList.Rows[i].Remarks.ToString();
 
                     check = item.Add();
-
-
                 }
+
                 if (check > 0)
                 {
                     LogsDAL logs = new LogsDAL();
@@ -259,18 +227,12 @@ namespace BlueWhale.UI.store.ashx
                     logs.Events = "Add new product disassemble order：" + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
-
                     context.Response.Write("Execution successful!");
-
-
                 }
             }
             #endregion
 
         }
-
-
-
 
         public bool IsReusable
         {

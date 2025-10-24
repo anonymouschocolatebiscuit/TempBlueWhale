@@ -94,6 +94,8 @@ function InitializeManager() {
             ]
     });
 
+    $("#form").ligerForm();
+
     var dateStart = $.ligerui.get("txtDateStart");
     dateStart.set("Width", 110);
 
@@ -106,7 +108,7 @@ function InitializeManager() {
     manager = $("#maingrid").ligerGrid({
         columns: [
             {
-                display: 'Schedule date', name: 'makeDate', width: 80, align: 'center', valign: 'center',
+                display: 'Schedule Date', name: 'makeDate', width: 150, align: 'center', valign: 'center',
                 totalSummary:
                 {
                     type: 'count',
@@ -115,17 +117,16 @@ function InitializeManager() {
                     }
                 }
             },
-
-            { display: 'Invoice no', name: 'number', width: 150, align: 'center' },
-            { display: 'Schedule type', name: 'typeName', width: 80, align: 'center' },
-            { display: 'Order no', name: 'orderNumber', width: 150, align: 'center' },
+            { display: 'Invoice No.', name: 'number', width: 150, align: 'center' },
+            { display: 'Schedule Type', name: 'typeName', width: 150, align: 'center' },
+            { display: 'Order No.', name: 'orderNumber', width: 150, align: 'center' },
             { display: 'Vendor', name: 'wlName', width: 170, align: 'left' },
             { display: 'Product Id', name: 'code', width: 100, align: 'center' },
-            { display: 'Prioduct name', name: 'goodsName', width: 120, align: 'center' },
-            { display: 'Standard', name: 'spec', width: 100, align: 'center' },
+            { display: 'Product Name', name: 'goodsName', width: 120, align: 'center' },
+            { display: 'Specification', name: 'spec', width: 100, align: 'center' },
             { display: 'Unit', name: 'unitName', width: 70, align: 'center' },
             {
-                display: 'Schedule total', name: 'num', width: 80, align: 'center',
+                display: 'Planned Quantity', name: 'num', width: 120, align: 'center',
                 totalSummary:
                 {
                     align: 'right', 
@@ -136,7 +137,7 @@ function InitializeManager() {
                 }
             },
             {
-                display: 'Produced total', name: 'finishNum', width: 80, align: 'right',
+                display: 'Produced Quantity', name: 'finishNum', width: 120, align: 'right',
                 totalSummary:
                 {
                     align: 'right', 
@@ -147,7 +148,7 @@ function InitializeManager() {
                 }
             },
             {
-                display: 'Unproduce total', name: 'finishNumNo', width: 80, align: 'right',
+                display: 'Remaining Quantity', name: 'finishNumNo', width: 150, align: 'right',
                 totalSummary:
                 {
                     align: 'right',   //left/center/right 
@@ -157,15 +158,14 @@ function InitializeManager() {
                     }
                 }
             },
-
             { display: 'Progress', name: 'sendFlag', width: 60, align: 'center' },
-            { display: 'Schedule start date', name: 'dateStart', width: 80, align: 'center', valign: 'center' },
-            { display: 'Schedule end date', name: 'dateEnd', width: 80, align: 'center', valign: 'center' },
-            { display: 'Delivery Date', name: 'sendDate', width: 80, align: 'center' },
-            { display: 'Invoice status', name: 'flag', width: 80, align: 'center' },
-            { display: 'Invoice Clerk', name: 'makeName', width: 80, align: 'center' },
-            { display: 'Reviewer', name: 'checkName', width: 80, align: 'center' },
-            { display: 'Remark', name: 'remarks', width: 100, align: 'left' }
+            { display: 'Plan Start Date', name: 'dateStart', width: 120, align: 'center', valign: 'center' },
+            { display: 'Plan End Date', name: 'dateEnd', width:120, align: 'center', valign: 'center' },
+            { display: 'Delivery Date', name: 'sendDate', width: 120, align: 'center' },
+            { display: 'Invoice Status', name: 'flag', width: 120, align: 'center' },
+            { display: 'Created By', name: 'makeName', width: 90, align: 'center' },
+            { display: 'Reviewed By', name: 'checkName', width: 90, align: 'center' },
+            { display: 'Remarks', name: 'remarks', width: 100, align: 'left' }
 
         ],
         width: '98%',
@@ -244,5 +244,3 @@ function viewRow() {
 function reload() {
     manager.reload();
 }
-
-

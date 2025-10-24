@@ -1,23 +1,25 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="saleCharts.aspx.cs" Inherits="BlueWhale.UI.saleCharts" %>
+
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
-  <title>Sales Chart</title>
-  <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
-  <script src="build\dist\esl.js" type="text/javascript"></script>
-  <script src="build\dist\WapCharts.js" type="text/javascript"></script>
+    <title>Sales Chart</title>
+    <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="build\dist\esl.js" type="text/javascript"></script>
+    <script src="build\dist\WapCharts.js" type="text/javascript"></script>
 </head>
 
 <body>
-  <form id="form1" runat="server">
-    <table id="tb" border="0" cellpadding="0" cellspacing="0" style="width:100%; text-align:center; line-height:30px;">
-      <tr>
-        <td colspan="2">
-          <div id="chartsBar" style="height:300px; width:98%;"></div>
-          <script type="text/javascript">
+    <form id="form1" runat="server">
+        <table id="tb" border="0" cellpadding="0" cellspacing="0" style="width: 100%; text-align: center; line-height: 30px;">
+            <tr>
+                <td colspan="2">
+                    <div id="chartsBar" style="height: 300px; width: 98%;"></div>
+                    <script src="build/dist/echarts.js" type="text/javascript"></script>
+                    <script type="text/javascript">
               var dataNameBar;
               var dataValueBar;
               $(document).ready(
@@ -45,7 +47,7 @@
                   });
               require.config({
                   paths: {
-                      echarts: 'build/dist'
+                      echarts: 'build/dist/echarts'
                   }
               });
               require(
@@ -116,13 +118,13 @@
                       myChart.setOption(option);
                   }
               );
-          </script>
-        </td>
-      </tr>
-      <tr>
-        <td style="width:50%;">
-          <div id="chartsPie" style="height:300px; width:90%;"></div>
-          <script type="text/javascript">
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%;">
+                    <div id="chartsPie" style="height: 300px; width: 90%;"></div>
+                    <script type="text/javascript">
               function makeData(data) {
                   var categories = [];
                   var datas = [];
@@ -158,7 +160,7 @@
                   });
               require.config({
                   paths: {
-                      echarts: 'build/dist'
+                      echarts: 'build/dist/echarts'
                   }
               });
               require(
@@ -170,7 +172,7 @@
                       var myChart = ec.init(document.getElementById('chartsPie'));
                       option = {
                           title: {
-                              text: 'Sales proporion this year',
+                              text: 'Sales proportion this year',
                               subtext: '',
                               x: 'center'
                           },
@@ -227,12 +229,11 @@
                       myChart.setOption(option);
                   }
               );
-          </script>
-        </td>
-        <td style="width:50%;">
-          <div id="chartsLine" style="height:300px; width:100%;"></div>
-          <script src="build/dist/echarts.js" type="text/javascript"></script>
-          <script type="text/javascript">
+                    </script>
+                </td>
+                <td style="width: 50%;">
+                    <div id="chartsLine" style="height: 300px; width: 100%;"></div>
+                    <script type="text/javascript">
               var dataNameLine;
               var dataValueLine;
               $(document).ready(
@@ -259,7 +260,7 @@
                   });
               require.config({
                   paths: {
-                      echarts: 'build/dist'
+                      echarts: 'build/dist/echarts'
                   }
               });
               require(
@@ -308,17 +309,17 @@
                       myChart.setOption(option);
                   }
               );
-          </script>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">&nbsp;</td>
-      </tr>
-      <tr>
-        <td colspan="2">&nbsp;</td>
-      </tr>
-    </table>
-  </form>
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+        </table>
+    </form>
 </body>
 
 </html>

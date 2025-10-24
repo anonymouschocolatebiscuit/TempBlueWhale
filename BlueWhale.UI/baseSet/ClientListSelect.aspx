@@ -41,12 +41,12 @@
                 columns: [
 
                     { display: 'Client Category', name: 'typeName', width: 100, type: 'int', align: 'center' },
-                    { display: 'Customer Number', name: 'code', width: 100, align: 'center' },
+                    { display: 'Customer No', name: 'code', width: 100, align: 'center' },
                     { display: 'Client Name', name: 'names', width: 230, align: 'left' },
-                    { display: 'Balance Date', name: 'yueDate', width: 80, align: 'center' },
-                    { display: 'Opening Balance', name: 'balance', width: 70, align: 'center' },
+                    { display: 'Bal Date', name: 'yueDate', width: 80, align: 'center' },
+                    { display: 'Opn Bal', name: 'balance', width: 70, align: 'center' },
                     { display: 'Tax Rate', name: 'tax', width: 60, align: 'center' },
-                    { display: 'Primary Contact', name: 'linkMan', width: 70, align: 'center' },
+                    { display: 'P. Contact', name: 'linkMan', width: 70, align: 'center' },
 
                     { display: 'Mobile Phone', name: 'phone', width: 100, align: 'center' },
                     { display: 'Landline Phone', name: 'tel', width: 110, align: 'center', type: "date" },
@@ -63,11 +63,16 @@
 
         function f_select() {
             return manager.getSelectedRow();
+            if (!row) return null;
+            return {
+                names: row.names,
+                code: row.code
+            };
         }
 
         function search() {
             var keys = document.getElementById("txtKeys").value;
-            if (keys == "Please enter Phone Number/Name/Remarks/Address") {
+            if (keys == "Please enter Phone Number/Name/Contact") {
                 keys = "";
             }
 
@@ -89,7 +94,7 @@
                     </asp:DropDownList>
                 </td>
                 <td style="width: 300px;">
-                    <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter Phone Number/Name/Remarks/Address"></asp:TextBox>
+                    <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter Phone Number/Name/Contact"></asp:TextBox>
                 </td>
 
                 <td>

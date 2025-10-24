@@ -16,7 +16,7 @@ $(function () {
         checkbox: true,
         columns: [
             {
-                display: 'Operate', isSort: false, width: 75, align: 'center', render: function (rowdata, rowindex, value) {
+                display: 'Action', isSort: false, width: 50, align: 'center', render: function (rowdata, rowindex, value) {
                     var h = "";
                     if (!rowdata._editing) {
                         h += "<a href='javascript:editRow()' title='Edit Row' style='float:left;'><div class='ui-icon ui-icon-pencil'></div></a> ";
@@ -40,7 +40,7 @@ $(function () {
                     }
                 }
             },
-            { display: 'Receipt Number', name: 'number', width: 150, align: 'center' },
+            { display: 'Receipt No.', name: 'number', width: 150, align: 'center' },
             {
                 display: 'Business Category', name: 'types', width: 160, align: 'center',
                 render: function (row) {
@@ -48,7 +48,7 @@ $(function () {
                     return html;
                 }
             },
-            { display: 'Customer', name: 'wlName', width: 85, align: 'left' },
+            { display: 'Customer', name: 'wlName', width: 120, align: 'left' },
             {
                 display: 'Sales Quantity', name: 'sumNum', width: 120, align: 'right',
                 totalSummary:
@@ -61,13 +61,13 @@ $(function () {
                     }
                 }
             },
-            { display: 'Status', name: 'flag', width: 60, align: 'center' },
+            { display: 'Status', name: 'flag', width: 90, align: 'center' },
             { display: 'Logistics Company', name: 'sendName', width: 150, align: 'center' },
             { display: 'Logistics Tracking Number', name: 'sendNumber', width: 250, align: 'center' },
-            { display: 'Creator', name: 'makeName', width: 70, align: 'center' },
-            { display: 'Sales Person', name: 'bizName', width: 100, align: 'center' },
-            { display: 'Approver', name: 'checkName', width: 70, align: 'center' },
-            { display: 'Remarks', name: 'remarks', width: 100, align: 'left' }
+            { display: 'Creator', name: 'makeName', width: 120, align: 'center' },
+            { display: 'Sales Person', name: 'bizName', width: 120, align: 'center' },
+            { display: 'Reviewer', name: 'checkName', width: 70, align: 'center' },
+            { display: 'Remarks', name: 'remarks', width: 150, align: 'left' }
         ], width: '98%',
         //pageSizeOptions: [5, 10, 15, 20],
         height: '98%',
@@ -87,18 +87,14 @@ $(function () {
             menu.show({ top: e.pageY, left: e.pageX });
             return false;
         },
-
         isChecked: f_isChecked, onCheckRow: f_onCheckRow, onCheckAllRow: f_onCheckAllRow
-    }
-    );
+    });
 });
 
 function search() {
     var keys = document.getElementById("txtKeys").value;
     if (keys == "Please Enter Receipt No./Customer/Product/Remarks") {
-
         keys = "";
-
     }
     var start = document.getElementById("txtDateStart").value;
     var end = document.getElementById("txtDateEnd").value;
@@ -128,7 +124,7 @@ function makePDF() {
         },
         error: function (msg) {
 
-            $.ligerDialog.alert("Internet Error，Please Contact Admin", 'Information');
+            $.ligerDialog.alert("Network Error，Please Contact an Administrator", 'Information');
         }
     });
 }
@@ -170,4 +166,24 @@ function f_onCheckRow(checked, data) {
 }
 function f_getChecked() {
     alert(checkedCustomer.join(','));
+}
+
+function viewRow() {
+    var row = manager.getSelectedRow();
+
+    if (!row) $.ligerDialog.alert("Please Select a row", 'Information');
+
+    parent.f_addTab('SalesReceiptListView', 'Sales Outbound-Detail', 'sales/SalesReceiptListView.aspx?id=' + row.id);
+
+    //top.topManager.openPage({
+    //    id: 'SalesReceiptListView',
+    //    href: 'sales/SalesReceiptListView.aspx?id=' + row.id,
+    //    title: 'Sales Outbound-Detail'
+    //});
+}
+
+function editRow() {
+    var row = manager.getSelectedRow();
+
+    parent.f_addTab('SalesReceiptListView', '销售出库-详情', 'sales/SalesReceiptListView.aspx?id=' + row.id);
 }

@@ -100,13 +100,10 @@ $(function () {
                 { display: 'Specification', name: 'spec', width: 100, align: 'center' },
                 { display: 'UnitName', name: 'unitName', width: 80, align: 'center' },
                 { display: 'Number', name: 'num', width: 80, type: 'float', align: 'right', editor: { type: 'float' } },
+                { display: 'Price', name: 'price', width: 70, type: 'float', align: 'right', editor: { type: 'float', precision: 4 } },
+                { display: 'Total Price', name: 'sumPrice', width: 80, type: 'float', align: 'right', editor: { type: 'float' } },
                 {
-                    display: 'Price', name: 'price', width: 70, type: 'float', align: 'right', editor: { type: 'float', precision: 4 }
-
-                },
-                { display: 'TotalPrice', name: 'sumPrice', width: 80, type: 'float', align: 'right', editor: { type: 'float' } },
-                {
-                    display: 'In Warehouse', name: 'ckId', width: 120, isSort: false, textField: 'ckName',
+                    display: 'Inbound Warehouse', name: 'ckId', width: 150, isSort: false, textField: 'ckName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
@@ -175,7 +172,7 @@ $(function () {
                     display: 'Price', name: 'price', width: 70, type: 'float', align: 'right', editor: { type: 'float', precision: 4 }
                 },
                 {
-                    display: 'TotalPrice', name: 'sumPrice', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Total Price', name: 'sumPrice', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
                     totalSummary:
                     {
                         align: 'center',   //Summary cell content alignment: left/center/right
@@ -187,7 +184,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Out Warehouse', name: 'ckId', width: 120, isSort: false, textField: 'ckName',
+                    display: 'Outbound Warehouse', name: 'ckId', width: 150, isSort: false, textField: 'ckName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),

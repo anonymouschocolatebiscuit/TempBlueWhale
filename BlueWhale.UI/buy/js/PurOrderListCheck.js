@@ -1,5 +1,4 @@
-﻿
-var manager;
+﻿var manager;
 $(function () {
     var form = $("#form").ligerForm();
 

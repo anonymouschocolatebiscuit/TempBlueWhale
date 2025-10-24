@@ -112,7 +112,7 @@ $(function () {
                 { display: 'Pay number', name: 'payNumber', width: 120, align: 'left', type: 'text', editor: { type: 'text' } },
 
                 { display: 'Remark', name: 'remarks', width: 220, align: 'left', type: 'text', editor: { type: 'text' } }
-            ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '155',
+            ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '170',
             url: 'ReceivableListAdd.aspx?Action=GetData',
             rownumbers: true,//Display serial number
             frozenRownumbers: true,//Is the row number in a fixed column
@@ -194,7 +194,7 @@ $(function () {
                     }
                 }
 
-            ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '210',
+            ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '225',
             url: 'ReceivableListAdd.aspx?Action=GetDataSub',
             rownumbers: true,//Display serial number
             frozenRownumbers: true,//Is the row number in a fixed column

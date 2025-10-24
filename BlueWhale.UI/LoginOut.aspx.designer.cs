@@ -9,7 +9,6 @@
 
 namespace BlueWhale.UI
 {
-
     public partial class LoginOut
     {
         /// <summary>

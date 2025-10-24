@@ -17,7 +17,7 @@ $(function () {
 
         columns: [
 
-            { display: 'Insert Warehouse Date', name: 'bizDate', width: 80, align: 'center', valign: 'center' },
+            { display: 'Insert Warehouse Date', name: 'bizDate', width: 200, align: 'center', valign: 'center' },
             {
                 display: 'Invoice Number', name: 'number', width: 150, align: 'center',
 
@@ -30,9 +30,9 @@ $(function () {
                 }
             },
 
-            { display: 'Goods Code', name: 'code', width: 100, align: 'center' },
+            { display: 'Goods Code', name: 'code', width: 120, align: 'center' },
             { display: 'Goods Name', name: 'goodsName', width: 180, align: 'left' },
-            { display: 'Spec', name: 'spec', width: 100, align: 'center' },
+            { display: 'Spec', name: 'spec', width: 120, align: 'center' },
             { display: 'Unit', name: 'unitName', width: 80, align: 'center' },
             { display: 'Warehouse', name: 'ckName', width: 100, align: 'center' },
             {
@@ -47,10 +47,10 @@ $(function () {
                 }
             },
             {
-                display: 'Cost Unit Price', name: 'price', width: 80, type: 'float', align: 'right', editor: { type: 'float' }
+                display: 'Cost Unit Price', name: 'price', width: 120, type: 'float', align: 'right', editor: { type: 'float' }
             },
             {
-                display: 'Cost Price', name: 'sumPriceNow', width: 100, type: 'float', align: 'right', editor: { type: 'float' },
+                display: 'Cost Price', name: 'sumPriceNow', width: 120, type: 'float', align: 'right', editor: { type: 'float' },
 
                 totalSummary:
                 {

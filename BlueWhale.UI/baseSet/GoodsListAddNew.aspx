@@ -12,34 +12,20 @@
     <script src="../lib/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
     <script src="../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
     <script src="../lib/json2.js" type="text/javascript"></script>
-
-
-
     <script type="text/javascript"> 
-
         var dialog = frameElement.dialog;
 
-
         $(function () {
-
             var form = $("#form").ligerForm();
-
             var g = $.ligerui.get("txtNames");
             g.set("Width", 780);
-
-
         });
-
-
-
 
         function closeDialog() {
             var dialog = frameElement.dialog;
             dialog.close();
         }
-
     </script>
-
 
     <style type="text/css">
         body {
@@ -65,11 +51,6 @@
             top: 120px;
         }
     </style>
-
-
-
-
-
 
 </head>
 <body style="font-size: 10pt;">
@@ -163,7 +144,6 @@
                     <asp:TextBox ID="txtTichengRate" runat="server"></asp:TextBox>
                 </td>
             </tr>
-
             <tr>
                 <td style="text-align: right;">Wholesale Price:</td>
                 <td>
@@ -174,7 +154,6 @@
                     <asp:TextBox ID="txtPriceSalesRetail" runat="server"></asp:TextBox>
                 </td>
             </tr>
-
             <tr>
                 <td style="text-align: right;">Minimum Stock:</td>
                 <td>
@@ -185,7 +164,6 @@
                     <asp:TextBox ID="txtNumMax" runat="server"></asp:TextBox>
                 </td>
             </tr>
-
             <tr>
                 <td style="text-align: right;">Type:</td>
                 <td>
@@ -202,7 +180,6 @@
                     <asp:CheckBox ID="cbShow" runat="server" Text="Show at platform after checked" />
                 </td>
             </tr>
-
             <tr>
                 <td style="text-align: right;">&nbsp;</td>
                 <td>
@@ -210,8 +187,6 @@
                         Text="Save" OnClick="btnSave_Click" />
                     &nbsp;
                    <input id="btnCancel" class="ui-btn" type="button" value="Close" onclick="closeDialog()" />
-
-
                 </td>
                 <td>
                     <asp:HiddenField ID="hfImagePath" runat="server" />
@@ -224,6 +199,3 @@
     </form>
 </body>
 </html>
-
-
-

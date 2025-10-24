@@ -1,6 +1,5 @@
 
 function formatCurrency(x) {
-
     var f_x = parseFloat(x);
     if (isNaN(f_x)) {
         return "0.00";
@@ -90,13 +89,12 @@ $(function () {
 
 var manager;
 $(function () {
-
     var form = $("#form").ligerForm();
     var form1 = $("#tbFooter").ligerForm();
     var form2 = $("#form22").ligerForm();
-
     var g = $.ligerui.get("clientName");
     g.set("Width", 250);
+
     window['g'] =
         manager = $("#maingrid").ligerGrid({
             columns: [
@@ -459,7 +457,7 @@ function f_onAfterEdit(e) {
         sumPriceDis = Number(e.value);
 
         if (sumPriceDis >= num * price) {
-            alert("Please fill in the correct discount amount£¡");
+            alert("Please fill in the correct discount amount!");
             return;
         }
 
@@ -467,7 +465,7 @@ function f_onAfterEdit(e) {
             dis = (1 - sumPriceDis / (num * price)) * 100;
         }
         else {
-            alert("Please fill in the quantity and unit price£¡");
+            alert("Please fill in the quantity and unit price!");
             return;
         }
 
@@ -671,27 +669,27 @@ function save() {
     var bizId = $("#ddlYWYList").val();
 
     if (venderId == 0) {
-        $.ligerDialog.warn('Please select customer£¡');
+        $.ligerDialog.warn('Please select customer!');
 
         return;
     }
 
     if (bizId == 0) {
-        $.ligerDialog.warn('Please select sales person£¡');
+        $.ligerDialog.warn('Please select sales person!');
 
         return;
     }
 
     var bizDate = $("#txtBizDate").val();
     if (bizDate == "") {
-        $.ligerDialog.warn("Please enter order date£¡");
+        $.ligerDialog.warn("Please enter order date!");
         return;
 
     }
 
     var sendDate = $("#txtSendDate").val();
     if (sendDate == "") {
-        $.ligerDialog.warn("Please enter delivery date£¡");
+        $.ligerDialog.warn("Please enter delivery date!");
         return;
 
     }
@@ -709,19 +707,19 @@ function save() {
     }
 
     if (data.length == 0) {
-        $.ligerDialog.warn('Please select product£¡');
+        $.ligerDialog.warn('Please select product!');
 
         return;
-        alert("Execution skipped£¡");
+        alert("Execution skipped!");
     }
 
     for (var i = 0; i < data.length; i++) {
         if (data[i].num <= 0 || data[i].num == "" || data[i].num == "0" || data[i].num == "0.00") {
 
-            $.ligerDialog.warn("Please enter the" + (i + 1) + "£¡");
+            $.ligerDialog.warn("Please enter the" + (i + 1) + "!");
 
             return;
-            alert("Execution skipped£¡");
+            alert("Execution skipped!");
         }
     }
 
@@ -747,9 +745,9 @@ function save() {
         data: JSON.stringify(postData),
         success: function (jsonResult) {
 
-            if (jsonResult == "Operation Successful£¡") {
+            if (jsonResult == "Operation Successful!") {
 
-                $.ligerDialog.waitting('Operation Successful£¡'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
+                $.ligerDialog.waitting('Operation Successful!'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
 
             }
             else {

@@ -33,10 +33,10 @@ $(function () {
             { display: 'Specification', name: 'spec', width: 120, align: 'center' },
             { display: 'Unit', name: 'unitName', width: 60, align: 'center' },
 
-            { display: 'Field A', name: 'fieldA', width: 70, align: 'center' },
-            { display: 'Field B', name: 'fieldB', width: 70, align: 'center' },
-            { display: 'Field C', name: 'fieldC', width: 70, align: 'center' },
-            { display: 'Field D', name: 'fieldD', width: 70, align: 'center' },
+            { display: 'Field A', name: 'fieldA', width: 100, align: 'center' },
+            { display: 'Field B', name: 'fieldB', width: 100, align: 'center' },
+            { display: 'Field C', name: 'fieldC', width: 100, align: 'center' },
+            { display: 'Field D', name: 'fieldD', width: 100, align: 'center' },
 
             { display: 'Warehouse', name: 'ckName', width: 100, align: 'center' },
             { display: 'Inventory Price', name: 'priceCost', width: 100, align: 'center' },

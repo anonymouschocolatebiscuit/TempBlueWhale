@@ -23,8 +23,10 @@
                     { display: 'Unit', name: 'unitName', id: 'unitName', width: 80, align: 'center' },
                     { display: 'Unit Price', name: 'price', id: 'price', width: 100, align: 'right' },
                     { display: 'Display Order', name: 'seq', id: 'seq', width: 110, align: 'center' }
-                ], width: '99%', pageSizeOptions: [20,50,100,200], height: '99%',
-
+                ], width: '99%',
+                pageSizeOptions: [10, 20, 50, 100, 200],
+                height: '99%',
+                dataAction: 'local',
                 url: 'ProcessList.aspx?Action=GetDataList',
                 alternatingRow: false,
                 rownumbers: true,

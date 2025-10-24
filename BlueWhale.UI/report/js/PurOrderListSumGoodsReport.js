@@ -166,7 +166,15 @@ function search() {
         $.ligerDialog.warn('Please select a start date'); return;
     } else if (!end) {
         $.ligerDialog.warn('Please select a end date'); return;
-    } 
+    }
+
+    if (new Date(start) > new Date()) {
+        $.ligerDialog.warn('Start date cannot exceed current date'); return;
+    } else if (new Date(end) > new Date()) {
+        $.ligerDialog.warn('End date cannot exceed current date'); return;
+    } else if (start > end) {
+        $.ligerDialog.warn('Start date cannot be after end date'); return;
+    }
 
     manager._setUrl("PurOrderListSumGoodsReport.aspx?Action=GetDataList&start=" + start + "&end=" + end + "&wlId=" + wlId + "&goodsId=" + goodsList + "&typeId=" + typeId);
 }

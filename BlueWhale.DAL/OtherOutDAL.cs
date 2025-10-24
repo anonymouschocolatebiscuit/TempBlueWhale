@@ -144,6 +144,42 @@ namespace BlueWhale.DAL
 
         #endregion
 
+        #region update a record
+
+        public int Update()
+        {
+            string sql = @"UPDATE OtherOut
+                            SET 
+                                shopId = @shopId,
+                                wlId = @wlId,                                
+                                bizDate = @bizDate,
+                                types = @types,
+                                remarks = @remarks,
+                                makeId = @makeId,
+                                makeDate = @makeDate,
+                                BizId = @BizId,
+                                Flag = @Flag
+                            WHERE id=@id";
+
+            SqlParameter[] param =
+            {
+                new SqlParameter("@ShopId",ShopId),
+                new SqlParameter("@WlId",WlId),
+                new SqlParameter("@BizDate",BizDate),
+                new SqlParameter("@Types",Types),
+                new SqlParameter("@Remarks",Remarks),
+                new SqlParameter("@MakeId",MakeId),
+                new SqlParameter("@MakeDate",MakeDate),
+                new SqlParameter("@BizId",BizId),
+                new SqlParameter("@Flag",Flag),
+                new SqlParameter("@Id",Id)
+            };
+
+            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, param);
+        }
+
+        #endregion
+
         #region Delete member information
         /// <summary>
         /// Delete member information
@@ -152,20 +188,13 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public int Delete(int Id)
         {
-            string sql = " if not exists( ";
-            sql += "               select * from OtherOut where flag='review' and id='" + Id + "' )";
-
-            sql += " begin ";
-
-            sql += " delete from OtherOutItem  where pId='" + Id + "' delete from OtherOut where Id='" + Id + "'";
-
-            sql += " end ";
-
-
+            string sql = " if not exists (";
+            sql += "select * from OtherOut where flag='review' and id='" + Id + "') ";
+            sql += "begin ";
+            sql += "delete from OtherOutItem where pId='" + Id + "' delete from OtherOut where Id='" + Id + "'";
+            sql += "end";
 
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
-
-
         }
 
         #endregion
@@ -199,14 +228,14 @@ namespace BlueWhale.DAL
             }
             sql += " order by number ";
 
-            SqlParameter[] param = {
-                                       new SqlParameter("@start",start),
-                                       new SqlParameter("@end",end)
-                                   };
+            SqlParameter[] param =
+            {
+                new SqlParameter("@start",start),
+                new SqlParameter("@end",end)
+            };
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, param);
         }
-
 
         #endregion
 
@@ -241,7 +270,6 @@ namespace BlueWhale.DAL
             sql += " end ";
 
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
-
         }
 
         #endregion

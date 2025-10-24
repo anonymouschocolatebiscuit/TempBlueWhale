@@ -4,6 +4,7 @@ using BlueWhale.UI.src;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Web.Script.Serialization;
 
 namespace BlueWhale.UI.baseSet
@@ -37,7 +38,17 @@ namespace BlueWhale.UI.baseSet
         void GetDataList()
         {
             string isWhere = " shopId='" + LoginUser.ShopId + "' ";
-            DataSet ds = dal.GetList(isWhere);
+
+            string sortColumn = Request.Params["sortname"];
+            string sortOrder = Request.Params["sortorder"];
+
+            string orderBy = "";
+            if (sortColumn != null && sortOrder != null)
+            {
+                orderBy = $" ORDER BY {sortColumn} {sortOrder}";
+            }
+
+            DataSet ds = dal.GetList(isWhere, orderBy);
 
             IList<object> list = new List<object>();
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -60,6 +71,7 @@ namespace BlueWhale.UI.baseSet
         void GetDDLList()
         {
             string isWhere = " shopId='" + LoginUser.ShopId + "' ";
+
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();

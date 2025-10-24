@@ -75,7 +75,6 @@ namespace BlueWhale.Common
 
         }
 
-
         /// <summary>
         /// ajax message box
         /// </summary>
@@ -98,8 +97,6 @@ namespace BlueWhale.Common
         {
             System.Web.UI.ScriptManager.RegisterStartupScript(btn, page.GetType(), "test", "alert('" + msgText + "');window.location.href='" + url + "';", true);
         }
-
-
 
     }
 }

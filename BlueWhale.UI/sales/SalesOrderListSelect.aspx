@@ -17,10 +17,12 @@
             function keyDownSearch(e) {  
                 var theEvent = e || window.event;
                 var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+
                 if (code == 13) {
                     $("#btnSearch").click();
                     return false;
                 }
+
                 return true;
             }
 

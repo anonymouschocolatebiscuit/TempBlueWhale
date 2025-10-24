@@ -162,15 +162,15 @@ $(function () {
                 },
 
                 {
-                    display: 'Original price', name: 'price', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
+                    display: 'Original price', name: 'price', width: 105, type: 'float', align: 'right', editor: { type: 'float' }
                 },
 
                 {
-                    display: 'Discount%', name: 'dis', width: 60, type: 'float', align: 'right', editor: { type: 'float' }
+                    display: 'Discount%', name: 'dis', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
                 },
 
                 {
-                    display: 'Discount price', name: 'sumPriceDis', width: 70, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Discount price', name: 'sumPriceDis', width: 115, type: 'float', align: 'right', editor: { type: 'float' },
                     totalSummary:
                     {
                         align: 'center',
@@ -184,7 +184,7 @@ $(function () {
                 },
 
                 {
-                    display: 'Current price', name: 'priceNow', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
+                    display: 'Current price', name: 'priceNow', width: 100, type: 'float', align: 'right', editor: { type: 'float' }
                 },
 
                 {
@@ -201,11 +201,11 @@ $(function () {
                     }
                 },
 
-                { display: 'Tax Table%', name: 'tax', width: 60, type: 'int', align: 'center', editor: { type: 'int' } },
-                { display: 'Unit Price Including Tax', name: 'priceTax', width: 70, type: 'float', align: 'center', editor: { type: 'float' } },
+                { display: 'Tax Table%', name: 'tax', width: 85, type: 'int', align: 'center', editor: { type: 'int' } },
+                { display: 'Unit Price Including Tax', name: 'priceTax', width: 195, type: 'float', align: 'center', editor: { type: 'float' } },
 
                 {
-                    display: 'Tax Amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
+                    display: 'Tax Amount', name: 'sumPriceTax', width: 100, type: 'float', align: 'right',
 
                     totalSummary:
                     {
@@ -230,7 +230,7 @@ $(function () {
                     }
                 },
 
-                { display: 'Remoark', name: 'remarks', width: 150, align: 'left', type: 'text', editor: { type: 'text' } },
+                { display: 'Remark', name: 'remarks', width: 150, align: 'left', type: 'text', editor: { type: 'text' } },
                 { display: 'Source Number', name: 'sourceNumber', width: 150, align: 'left', type: 'text' }
             ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '350',
             url: 'PurOrderListEdit.aspx?Action=GetData&id=' + param,

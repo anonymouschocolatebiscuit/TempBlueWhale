@@ -200,7 +200,7 @@ function viewRow() {
     var row = manager.getSelectedRow();
     if (!row) { alert('Please select a row'); return; }
 
-    parent.f_addTab('SalesOrderListEdit', 'Sales Order = Details', 'sales/SalesOrderListEdit.aspx?id=' + row.id);
+    parent.f_addTab('SalesOrderListEdit', 'Sales Order - Details', 'sales/SalesOrderListEdit.aspx?id=' + row.id);
 }
 
 function makePDF() {

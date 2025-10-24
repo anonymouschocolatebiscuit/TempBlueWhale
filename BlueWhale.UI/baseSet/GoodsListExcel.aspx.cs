@@ -13,7 +13,6 @@ namespace BlueWhale.UI.BaseSet
         public GoodsTypeDAL typeDAL = new GoodsTypeDAL();
         public UnitDAL unitDAL = new UnitDAL();
         public InventoryDAL ckDAL = new InventoryDAL();
-
         public GoodsBrandDAL brandDAL = new GoodsBrandDAL();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -24,8 +23,6 @@ namespace BlueWhale.UI.BaseSet
                 {
                     Response.Redirect("../OverPower.htm");
                 }
-
-
             }
         }
 
@@ -42,13 +39,10 @@ namespace BlueWhale.UI.BaseSet
                 Response.ContentEncoding = System.Text.Encoding.UTF8;
 
                 Response.AddHeader("Content-Disposition", "attachment; filename=" + Server.UrlEncode(file.Name));
-
                 Response.AddHeader("Content-Length", file.Length.ToString());
                 Response.ContentType = "application/octet-stream";
                 Response.WriteFile(file.FullName);
                 Response.End();
-
-
             }
             catch (Exception) { }
         }
@@ -69,8 +63,6 @@ namespace BlueWhale.UI.BaseSet
                 Response.ContentType = "application/octet-stream";
                 Response.WriteFile(file.FullName);
                 Response.End();
-
-
             }
             catch (Exception) { }
         }
@@ -81,8 +73,6 @@ namespace BlueWhale.UI.BaseSet
 
         protected void btnExcelTo_Click(object sender, EventArgs e)
         {
-
-
             if (!CheckPower("GoodsListExcel"))
             {
                 MessageBox.Show(this, "You do not have this permission!");
@@ -95,7 +85,6 @@ namespace BlueWhale.UI.BaseSet
                 if (fileExt == ".xls" || fileExt == ".xlsx")
                 {
                     string fileName = DateTime.Now.ToString("yyyyMMddhhmmss") + fileExt;
-
                     string oPath = Server.MapPath("excel/" + fileName);
 
                     try
@@ -133,13 +122,8 @@ namespace BlueWhale.UI.BaseSet
                             dt.AcceptChanges();
                         }
 
-
-
                         this.Label1.Text = this.DataTableToSql(dt);
-
                         this.Label1.Visible = true;
-
-
                         LogsDAL logs = new LogsDAL();
                         logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
                         logs.Events = "Import Good Details：" + this.Label1.Text;
@@ -150,10 +134,6 @@ namespace BlueWhale.UI.BaseSet
                         //this.GridView1.DataBind();
 
                         System.IO.File.Delete(oPath);
-
-
-
-
                     }
                     catch (Exception ex)
                     {
@@ -163,21 +143,14 @@ namespace BlueWhale.UI.BaseSet
                 }
                 else
                 {
-
                     this.Label1.Text = "Error!!!";
-
                 }
-            }
-            else
-            {
-
             }
         }
 
         public DataSet ExcelDataSource(string fileName)
         {
             string oPath = Server.MapPath("excel/" + fileName);
-
             string strConn;
             strConn = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + oPath + ";Extended Properties=Excel 8.0;";
             OleDbConnection conn = new OleDbConnection(strConn);
@@ -191,7 +164,6 @@ namespace BlueWhale.UI.BaseSet
         public string DataTableToSql(DataTable dt)
         {
             int goodsId = 0;
-
             int goodsNum = 0;
             int kcNum = 0;
 
@@ -206,52 +178,36 @@ namespace BlueWhale.UI.BaseSet
                 string barcode = dt.Rows[i]["Good Barcode"].ToString();
                 string typeName = dt.Rows[i]["Good Type"].ToString();
                 string brandName = dt.Rows[i]["Brand"].ToString();
-
                 string spec = dt.Rows[i]["Specification"].ToString();
                 string unitName = dt.Rows[i]["Measurement Unit"].ToString();
-
                 string ckName = dt.Rows[i]["Default Warehouse"].ToString();
                 string place = dt.Rows[i]["Place of Origin"].ToString();
-
                 decimal priceCost = ConvertTo.ConvertDec(dt.Rows[i]["Purchase Price"].ToString());
-
                 decimal priceSalesWhole = ConvertTo.ConvertDec(dt.Rows[i]["Wholesale Price"].ToString());
                 decimal priceSalesRetail = ConvertTo.ConvertDec(dt.Rows[i]["Retail Price"].ToString());
-
                 int numMin = ConvertTo.ConvertInt(dt.Rows[i]["Minimum Stock"].ToString());
                 int numMax = ConvertTo.ConvertInt(dt.Rows[i]["Maximum Stock"].ToString());
                 int bzDays = ConvertTo.ConvertInt(dt.Rows[i]["Shelf Life (Days)"].ToString());
-
                 string isWeight = dt.Rows[i]["Weighing Product"].ToString();
-
                 string remarks = dt.Rows[i]["Remarks"].ToString();
-
                 string ckNameNm = dt.Rows[i]["Warehouse"].ToString();
                 decimal num = ConvertTo.ConvertDec(dt.Rows[i]["Initial Quantity"].ToString());
                 decimal price = ConvertTo.ConvertDec(dt.Rows[i]["Unit Cost"].ToString());
                 decimal sumPrice = num * price;
-
                 string FieldA = dt.Rows[i]["Custom Field 1"].ToString();
                 string FieldB = dt.Rows[i]["Custom Field 2"].ToString();
                 string FieldC = dt.Rows[i]["Custom Field 3"].ToString();
                 string FieldD = dt.Rows[i]["Custom Field 4"].ToString();
-
                 int brandId = 0;
                 int typeId = 0;
                 int unitId = 0;
                 int ckId = 0;
                 int ckIdNum = 0;
-
                 bool hasCode = false;
-
-
                 hasCode = goodsDAL.isExistsAdd(LoginUser.ShopId, code, barcode, names, spec);
-
-
 
                 if (code != "" && names != "")
                 {
-
                     #region if this is first row
 
                     if (!hasCode)
@@ -262,33 +218,22 @@ namespace BlueWhale.UI.BaseSet
                         ckId = ckDAL.GetIdByName(LoginUser.ShopId, ckName);
 
                         goodsDAL.ShopId = LoginUser.ShopId;
-
                         goodsDAL.Code = code;
                         goodsDAL.Barcode = barcode;
                         goodsDAL.Names = names;
-
                         goodsDAL.TypeId = typeId;
                         goodsDAL.BrandId = brandId;
-
                         goodsDAL.Spec = spec;
                         goodsDAL.UnitId = unitId;
-
                         goodsDAL.CkId = ckId;
                         goodsDAL.Place = place;
-
                         goodsDAL.PriceCost = priceCost;
-
                         goodsDAL.PriceSalesWhole = priceSalesWhole;
                         goodsDAL.PriceSalesRetail = priceSalesRetail;
-
-
                         goodsDAL.NumMin = numMin;
                         goodsDAL.NumMax = numMax;
-
                         goodsDAL.BzDays = bzDays;
-
                         goodsDAL.Remarks = remarks;
-
 
                         if (isWeight == "Yes")
                         {
@@ -298,7 +243,6 @@ namespace BlueWhale.UI.BaseSet
                             {
                                 continue;
                             }
-
                         }
                         else
                         {
@@ -312,16 +256,13 @@ namespace BlueWhale.UI.BaseSet
                         goodsDAL.FieldB = FieldB;
                         goodsDAL.FieldC = FieldC;
                         goodsDAL.FieldD = FieldD;
-
                         goodsDAL.Flag = "Save";
-
 
                         goodsId = goodsDAL.Add();
 
                         if (goodsId > 0)
                         {
                             goodsNum += 1;
-
                             TotalNumOK += 1;
                         }
 
@@ -340,13 +281,12 @@ namespace BlueWhale.UI.BaseSet
                             }
 
                         }
-
                     }
+
                     #endregion
                 }
                 else
                 {
-
                     #region if is empty, check next row
 
                     if (code != "" && names != "" && ckNameNm != "" && num != 0)
@@ -358,14 +298,10 @@ namespace BlueWhale.UI.BaseSet
                         {
                             kcNum += 1;
                         }
-
                     }
 
-
                     #endregion
-
                 }
-
             }
 
             #endregion
@@ -375,8 +311,6 @@ namespace BlueWhale.UI.BaseSet
             string result = "Total[" + TotalNumAll.ToString() + "】row of goods，success【" + goodsNum.ToString() + "】row，fail【" + TotalNumNo.ToString() + "】rows，import successful【" + kcNum.ToString() + "] row of stocks.";
 
             return result;
-
         }
-
     }
 }

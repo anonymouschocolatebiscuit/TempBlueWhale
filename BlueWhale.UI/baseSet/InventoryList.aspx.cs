@@ -1,26 +1,14 @@
-﻿using System;
-using System.Collections;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml.Linq;
-
-using System.Collections.Generic;
-using System.Web.Script.Serialization;
+﻿using BlueWhale.Common;
 using BlueWhale.DAL;
-using BlueWhale.Common;
-
 using BlueWhale.UI.src;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Web.Script.Serialization;
 
 namespace BlueWhale.UI.baseSet
 {
-    public partial class InventoryList :BasePage
+    public partial class InventoryList : BasePage
     {
         public InventoryDAL dal = new InventoryDAL();
 
@@ -48,7 +36,8 @@ namespace BlueWhale.UI.baseSet
             if (Request.Params["Action"] == "stop")
             {
                 int id = ConvertTo.ConvertInt(Request.Params["id"].ToString());
-                StopRow(id);
+                int flag = ConvertTo.ConvertInt(Request.Params["flag"].ToString());
+                StopRow(id, flag);
                 Response.End();
             }
 
@@ -101,7 +90,7 @@ namespace BlueWhale.UI.baseSet
                 });
 
             }
-          
+
             string s = new JavaScriptSerializer().Serialize(list);
 
 
@@ -113,10 +102,9 @@ namespace BlueWhale.UI.baseSet
             if (Session["userInfo"] != null)
             {
                 int del = dal.Delete(id);
-                if (del == 0)
+                if (del > 0)
                 {
                     Response.Write("Deletion successful!");
-
                 }
                 else
                 {
@@ -131,20 +119,19 @@ namespace BlueWhale.UI.baseSet
         }
 
 
-        void StopRow(int id)
+        void StopRow(int id, int flag)
         {
             if (Session["userInfo"] != null)
             {
-                int del = dal.UpdateFlag(id);
-                if (del == 0)
+                int del = dal.UpdateFlag(id, flag);
+                if (del == 1)
                 {
-                   
                     Response.Write("Modification successful!");
-
                 }
                 else
                 {
                     Response.Write("Modification failed!");
+
                 }
             }
             else
@@ -154,6 +141,6 @@ namespace BlueWhale.UI.baseSet
 
         }
 
-        
+
     }
 }

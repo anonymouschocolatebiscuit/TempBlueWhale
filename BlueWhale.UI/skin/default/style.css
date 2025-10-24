@@ -42,9 +42,9 @@
           font-weight:300; font-family:'Microsoft YaHei'; 
             }
 	.control-group{ position:relative; margin-bottom:6px; }
-	.login-field{ display:inline-block; padding:11px 0 11px 10px; width:296px; height:20px; line-height:20px; color:#ACB6C0; font-size:17px; background:#fff; border:1px solid #E5E5E5; border-radius:6px 6px 6px 6px; margin-bottom:10px; vertical-align:middle; }
+	.login-field{ display:inline-block; padding:11px 0 11px 10px; width:296px; height:20px; line-height:20px; color:#555; font-size:17px; background:#fff; border:1px solid #E5E5E5; border-radius:6px 6px 6px 6px; margin-bottom:10px; vertical-align:middle; }
 		.login-field:focus{ border:1px solid #BBD5EA; }
-	.placeholder{ color:#999; }
+	::placeholder{ color:#AAA; }
 	.login-field-icon{ position:absolute; display:block; top:14px; right:13px; width:16px; height:20px; cursor:pointer; background:url(skin_icons.png) no-repeat; }
 		.login-field-icon.user{ background-position:-1px -137px;}
 		.login-field-icon.pwd{ background-position:-28px -137px; }

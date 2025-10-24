@@ -21,7 +21,17 @@ namespace BlueWhale.UI.buy
         {
             this.hfShopId.Value = LoginUser.ShopId.ToString();
 
-            if (Request.Params["Action"] == "GetDataList")
+            bool isGetDataListSearch = Request.Params["Action"] == "GetDataListSearch";
+            bool isGetDataList = Request.Params["Action"] == "GetDataList";
+
+            if (!isGetDataListSearch && !isGetDataList)
+            {
+                txtDateStart.Text = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).ToString("yyyy-MM-dd");
+
+                txtDateEnd.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            }
+
+            if (isGetDataList)
             {
                 string keys = "";// 
 
@@ -38,10 +48,17 @@ namespace BlueWhale.UI.buy
             {
                 string keys = Request.Params["keys"].ToString();
 
-                DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                string startDateParam = Request.Params["start"].ToString();
 
-                GetDataList(keys, start, end);
+                string endDateParam = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now.ToString() : Request.Params["end"].ToString();
+
+                if (startDateParam != "" && endDateParam != "") {
+                    DateTime start = Convert.ToDateTime(startDateParam);
+                    DateTime end = Convert.ToDateTime(endDateParam);
+
+                    GetDataList(keys, start, end);
+                }
+
                 Response.End();
             }
 
@@ -263,7 +280,7 @@ namespace BlueWhale.UI.buy
                     {
                         int delId = ConvertTo.ConvertInt(idString[i].ToString());
 
-                        int del = dal.UpdateCheck(delId, LoginUser.Id, LoginUser.Names, DateTime.Now, "save");
+                        int del = dal.UpdateCheck(delId, LoginUser.Id, LoginUser.Names, DateTime.Now, "Save");
 
                         if (del > 0)
                         {
@@ -933,7 +950,7 @@ namespace BlueWhale.UI.buy
             // 4.1 First, add Chinese fonts
             BaseFont bfChinese = BaseFont.CreateFont("C:\\WINDOWS\\Fonts\\simsun.ttc,1", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
             iTextSharp.text.Font fontChinese = new iTextSharp.text.Font(bfChinese, 12, iTextSharp.text.Font.NORMAL, new iTextSharp.text.BaseColor(0, 0, 0));
-
+            
             // Define font styles
             Font fontTitle = new Font(bfChinese, 20);
             Font font1 = new Font(bfChinese, 12);

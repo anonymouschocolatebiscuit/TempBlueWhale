@@ -1,15 +1,15 @@
-﻿using BlueWhale.DBUtility;
-using System;
+﻿using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Text;
-
+using System.Data.SqlClient;
+using BlueWhale.DBUtility;
+using BlueWhale.Model.produce;
 namespace BlueWhale.DAL.produce
 {
-    /// <summary>
-    /// 数据访问类:goodsBomList
-    /// </summary>
-    public partial class goodsBomList
+	/// <summary>
+	/// 数据访问类:goodsBomList
+	/// </summary>
+	public partial class goodsBomList
 	{
 		public goodsBomList()
 		{}
@@ -240,11 +240,11 @@ namespace BlueWhale.DAL.produce
             sql += " begin ";
 
             sql += " update goodsBomList set flagCheck='" + flag + "' ";
-            if (flag == "已审核")
+            if (flag == "Reviewed")
             {
                 sql += " ,checkId='" + chekerId + "',checkDate='" + checkDate + "'";
             }
-            if (flag == "未审核")
+            if (flag == "Pending")
             {
                 sql += " ,checkId=null,checkDate=null ";
             }

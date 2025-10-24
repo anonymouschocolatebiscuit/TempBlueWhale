@@ -48,7 +48,7 @@ $(function () {
                 {
                     align: 'right',
                     type: 'sum',
-                    render: function (e) { 
+                    render: function (e) {
                         return Math.round(e.sum * 100) / 100;
                     }
                 }
@@ -79,7 +79,6 @@ $(function () {
         onDblClickRow: function (data, rowindex, rowobj) {
             viewRow();
         },
-
         onRClickToSelect: true,
         onContextmenu: function (parm, e) {
             actionCustomerID = parm.data.id;
@@ -87,8 +86,7 @@ $(function () {
             return false;
         },
         isChecked: f_isChecked, onCheckRow: f_onCheckRow, onCheckAllRow: f_onCheckAllRow
-    }
-    );
+    });
 });
 
 function f_set() {
@@ -116,7 +114,6 @@ function search() {
 }
 
 function deleteRow() {
-
     var row = manager.getSelectedRow();
     if (!row) { $.ligerDialog.warn('Please select the rows you want to delete'); return; }
 

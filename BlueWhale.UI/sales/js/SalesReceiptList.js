@@ -239,7 +239,25 @@ function search() {
     var end = document.getElementById("txtDateEnd").value;
 
     manager.changePage("first");
-    manager._setUrl("SalesReceiptList.aspx?Action=GetDataListSearch&types=0&keys=" + keys + "&start=" + start + "&end=" + end);
+
+    $.ajax({
+        type: "GET",
+        url: "SalesReceiptList.aspx",
+        data: {
+            Action: "GetDataListSearch",
+            types: 0,
+            keys: keys,
+            start: start,
+            end: end
+        },
+        success: function (resultString) {
+            $.ligerDialog.alert(resultString, 'Notification');
+            reload();
+        },
+        error: function () {
+            $.ligerDialog.alert("Network error, please contact the administrator", 'Notification');
+        }
+    });
 }
 
 
@@ -367,7 +385,7 @@ function viewRow() {
     top.topManager.openPage({
         id: 'SalesReceiptListView',
         href: 'sales/SalesReceiptListView.aspx?id=' + row.id,
-        title: 'Sales Outbount-View'
+        title: 'Sales Outbound-View'
     });
 
 

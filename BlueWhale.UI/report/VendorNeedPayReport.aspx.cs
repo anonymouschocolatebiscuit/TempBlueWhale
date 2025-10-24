@@ -14,14 +14,12 @@ namespace BlueWhale.UI.report
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
                 if (!CheckPower("VendorNeedPayReport"))
                 {
                     Response.Redirect("../OverPower.htm");
                 }
-
                 txtDateStart.Text = DateTime.Now.ToString("yyyy-MM") + "-01";
                 txtDateEnd.Text = DateTime.Now.ToShortDateString();
             }
@@ -29,10 +27,8 @@ namespace BlueWhale.UI.report
             if (Request.Params["Action"] == "GetDataList")
             {
                 DateTime bizStart = DateTime.Parse(Request.Params["start"].ToString());
-                DateTime bizEnd = DateTime.Parse(Request.Params["end"].ToString());
-
+                DateTime bizEnd = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
                 string typeId = Request.Params["typeId"].ToString();
-
                 GetDataList(bizStart, bizEnd, typeId);
                 Response.End();
             }
@@ -41,11 +37,9 @@ namespace BlueWhale.UI.report
         void GetDataList(DateTime bizStart, DateTime bizEnd, string typeId)
         {
             DataSet ds = dal.GetAllModelReportVenderNeedPay(LoginUser.ShopId, bizStart, bizEnd, typeId);
-
             decimal payEnd = 0;
             decimal payEndNow = 0;
             decimal payEndLastRow = 0;
-
 
             IList<object> list = new List<object>();
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)

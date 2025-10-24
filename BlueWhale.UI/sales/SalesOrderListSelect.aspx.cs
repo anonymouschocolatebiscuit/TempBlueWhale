@@ -38,7 +38,7 @@ namespace BlueWhale.UI.sales
                 string keys = Request.Params["keys"].ToString();
 
                 DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                DateTime end = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 GetDataList(keys, start, end);
                 Response.End();
@@ -60,7 +60,7 @@ namespace BlueWhale.UI.sales
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {

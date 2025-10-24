@@ -6,14 +6,10 @@
 //     the code is regenerated. 
 // </auto-generated>
 //------------------------------------------------------------------------------
-
 namespace BlueWhale.UI.produce
 {
-
-
     public partial class produceInListEdit
     {
-
         /// <summary>
         /// form1 control.
         /// </summary>

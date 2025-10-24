@@ -57,7 +57,15 @@ $(function () {
                 }
             },
             {
-                display: 'Receivable Balance', name: 'payEnd', width: 180, align: 'right', type: 'float'
+                display: 'Receivable Balance', name: 'payEnd', width: 180, align: 'right', type: 'float',
+                totalSummary:
+                {
+                    align: 'right',
+                    type: 'sum',
+                    render: function (e) {
+                        return Math.round(e.sum * 100) / 100;
+                    }
+                }
 
             }
         ], width: '100%%',

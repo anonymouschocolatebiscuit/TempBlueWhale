@@ -113,9 +113,8 @@ namespace BlueWhale.UI.baseSet
             string isWhere = " shopId='" + LoginUser.ShopId + "' ";
 
             isWhere += " and (names like'%" + key + "%'" +
-                    " or  code like'%" + key + "%' " +
                     " or  tel like'%" + key + "%' " +
-                    " or  remarks like'%" + key + "%' " +
+                    " or  phone like'%" + key + "%' " +
                     " or  address like'%" + key + "%') ";
 
             DataSet ds = dal.GetList(isWhere);

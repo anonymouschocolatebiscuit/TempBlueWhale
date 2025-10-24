@@ -15,9 +15,6 @@ namespace BlueWhale.UI.BaseSet
         {
             if (!this.IsPostBack)
             {
-
-
-
                 if (!CheckPower("GoodsListAdd"))
                 {
                     MessageBox.Show(this, "You do not have this permission!");
@@ -25,8 +22,6 @@ namespace BlueWhale.UI.BaseSet
                 }
 
                 this.txtCode.Focus();
-
-
                 this.Bind();
             }
         }
@@ -38,8 +33,6 @@ namespace BlueWhale.UI.BaseSet
             this.lbFieldC.Text = SysInfo.FieldC.ToString();
             this.lbFieldD.Text = SysInfo.FieldD.ToString();
 
-
-
             this.ddlUnitList.Items.Clear();
             this.ddlCangkuList.Items.Clear();
             this.ddlVenderTypeList.Items.Clear();
@@ -50,7 +43,6 @@ namespace BlueWhale.UI.BaseSet
 
             this.Bound(this.ddlVenderTypeList);
 
-
             InventoryDAL ckDal = new InventoryDAL();
             this.ddlCangkuList.DataSource = ckDal.GetList(isWhere);
             this.ddlCangkuList.DataTextField = "names";
@@ -58,7 +50,6 @@ namespace BlueWhale.UI.BaseSet
             this.ddlCangkuList.DataBind();
 
             this.ddlCangkuList.Items.Insert(0, new ListItem("Please select", "0"));
-
 
             UnitDAL unitDal = new UnitDAL();
             this.ddlUnitList.DataSource = unitDal.GetList(isWhere);
@@ -68,17 +59,12 @@ namespace BlueWhale.UI.BaseSet
 
             this.ddlUnitList.Items.Insert(0, new ListItem("Please select", "0"));
 
-
             GoodsBrandDAL brandDal = new GoodsBrandDAL();
             this.ddlBrandList.DataSource = brandDal.GetList(isWhere);
             this.ddlBrandList.DataTextField = "names";
             this.ddlBrandList.DataValueField = "id";
             this.ddlBrandList.DataBind();
             this.ddlBrandList.Items.Insert(0, new ListItem("Please select", "0"));
-
-
-
-
 
             int id = ConvertTo.ConvertInt(Request.QueryString["id"].ToString());
             if (id == 0)
@@ -89,7 +75,6 @@ namespace BlueWhale.UI.BaseSet
             {
                 this.Title = "Edit Good";
             }
-
 
             DataSet ds = dal.GetModelById(id);
             if (ds.Tables[0].Rows.Count > 0)
@@ -146,16 +131,11 @@ namespace BlueWhale.UI.BaseSet
                     this.cbShow.Checked = false;
                 }
 
-
-
-
-
                 this.hfImagePath.Value = ds.Tables[0].Rows[0]["imagePath"].ToString();
 
             }
             else
             {
-
                 this.ddlUnitList.SelectedValue = "0";
                 this.ddlCangkuList.SelectedValue = "0";
                 this.ddlVenderTypeList.SelectedValue = "0";
@@ -192,7 +172,6 @@ namespace BlueWhale.UI.BaseSet
                 return;
             }
 
-
             string imageName = "";
 
             dal.Id = ConvertTo.ConvertInt(this.hf.Value.ToString());
@@ -222,12 +201,10 @@ namespace BlueWhale.UI.BaseSet
             dal.Flag = "Save";
             dal.MakeDate = DateTime.Now;
 
-
             dal.FieldA = this.txtFieldA.Text;
             dal.FieldB = this.txtFieldB.Text;
             dal.FieldC = this.txtFieldC.Text;
             dal.FieldD = this.txtFieldD.Text;
-
 
             for (int i = 0; i < this.rbNoteList.Items.Count; i++)
             {
@@ -251,9 +228,6 @@ namespace BlueWhale.UI.BaseSet
             dal.Remarks = "";
             dal.ImagePath = imageName;
 
-
-
-
             if (id.ToString() == "0")//Add
             {
                 if (dal.isExistsAdd(LoginUser.ShopId, this.txtCode.Text, this.txtBarcode.Text, this.txtNames.Text, this.txtSpec.Text))
@@ -261,7 +235,6 @@ namespace BlueWhale.UI.BaseSet
                     MessageBox.Show(this, "Failed to add, same code, barcode, name, specificaiton exist!");
                     return;
                 }
-
 
                 if (dal.Add() > 0)
                 {
@@ -277,11 +250,9 @@ namespace BlueWhale.UI.BaseSet
                     MessageBox.ShowAndRedirect(this, "Operation Successful!", "GoodsListAdd.aspx?id=" + id.ToString());
                 }
 
-
             }
             else //Edit
             {
-
 
                 if (dal.isExistsCodeEdit(ConvertTo.ConvertInt(this.hf.Value.ToString()), LoginUser.ShopId, this.txtCode.Text))
                 {
@@ -294,7 +265,6 @@ namespace BlueWhale.UI.BaseSet
                     MessageBox.Show(this, "Failed to edit, same code, barcode, name, specificaiton exist!");
                     return;
                 }
-
 
                 if (dal.Update() > 0)
                 {
@@ -312,15 +282,8 @@ namespace BlueWhale.UI.BaseSet
                     MessageBox.Show(this, "Network error!");
                     return;
                 }
-
             }
-
-
-
         }
-
-
-
         #region Bind Tree Category
 
         /// <summary>
@@ -331,20 +294,20 @@ namespace BlueWhale.UI.BaseSet
         /// <param name="datatable">Input Data Table</param>
         /// <param name="depth">Hierarchy Level</param>
         /// <param name="dropdownList">Dropdown List Control Name</param>
-        public void DropDownListBoind(string Pading, int DirId, DataTable datatable, int deep, DropDownList list1)
+        public void DropDownListBound(string Pading, int DirId, DataTable datatable, int deep, DropDownList list1)
         {
             DataRow[] rowlist = datatable.Select("parentID='" + DirId + "'");
             foreach (DataRow row in rowlist)
             {
                 string strPading = "";
-                for (int j = 0; j < deep; j++)
-                {
-                    strPading += "　";
-                }
+                //for (int j = 0; j < deep; j++)
+                //{
+                //    strPading += "　";
+                //}
                 //添加节点
-                ListItem li = new ListItem(strPading + "├ " + row["names"].ToString(), row["id"].ToString());
+                ListItem li = new ListItem(strPading + row["names"].ToString(), row["id"].ToString());
                 list1.Items.Add(li);
-                DropDownListBoind(strPading, Convert.ToInt32(row["id"]), datatable, deep + 1, list1);
+                DropDownListBound(strPading, Convert.ToInt32(row["id"]), datatable, deep + 1, list1);
             }
         }
 
@@ -361,7 +324,7 @@ namespace BlueWhale.UI.BaseSet
                 ListItem li = new ListItem(row[j]["names"].ToString(), row[j]["id"].ToString());
                 list1.DataTextField = row[j]["names"].ToString();
                 list1.Items.Add(li);
-                DropDownListBoind("", Convert.ToInt32(row[j]["id"]), datatable, 1, list1);
+                DropDownListBound("", Convert.ToInt32(row[j]["id"]), datatable, 1, list1);
             }
             ListItem items = new ListItem("(Please select)", "0");
             list1.Items.Insert(0, items);

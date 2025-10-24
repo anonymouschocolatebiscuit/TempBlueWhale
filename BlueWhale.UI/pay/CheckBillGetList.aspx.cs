@@ -12,8 +12,6 @@ namespace BlueWhale.UI.pay
     {
         public CheckBillDAL dal = new CheckBillDAL();
 
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
@@ -29,14 +27,10 @@ namespace BlueWhale.UI.pay
 
             if (Request.Params["Action"] == "GetDataList")
             {
-
                 string keys = "";// 
 
                 DateTime start = DateTime.Now.AddDays(-7);
-
                 DateTime end = DateTime.Now;
-
-
 
                 GetDataList(keys, start, end);
                 Response.End();
@@ -44,14 +38,10 @@ namespace BlueWhale.UI.pay
 
             if (Request.Params["Action"] == "GetDataListSearch")
             {
-
                 string keys = Request.Params["keys"].ToString();
 
-
-
                 DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
-
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                DateTime end = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 GetDataList(keys, start, end);
                 Response.End();
@@ -92,47 +82,32 @@ namespace BlueWhale.UI.pay
                     id = ds.Tables[0].Rows[i]["id"].ToString(),
                     bizDate = ds.Tables[0].Rows[i]["bizDate"].ToString(),
                     number = ds.Tables[0].Rows[i]["number"].ToString(),
-
                     clientName = ds.Tables[0].Rows[i]["clientName"].ToString(),
-
                     checkPrice = ds.Tables[0].Rows[i]["checkPrice"].ToString(),
-
                     flag = ds.Tables[0].Rows[i]["flag"].ToString(),
-
                     makeName = ds.Tables[0].Rows[i]["makeName"].ToString(),
                     checkName = ds.Tables[0].Rows[i]["checkName"].ToString(),
                     remarks = ds.Tables[0].Rows[i]["remarks"].ToString()
-
-
-
                 });
-
             }
             var griddata = new { Rows = list };
-
-            string s = new JavaScriptSerializer().Serialize(griddata);//传给grid的时候才要
-
-
+            string s = new JavaScriptSerializer().Serialize(griddata);
 
             Response.Write(s);
         }
-
 
         void DeleteRow(string id)
         {
             if (Session["userInfo"] != null)
             {
-
                 if (!CheckPower("CheckBillGetListDelete"))
                 {
-                    Response.Write("无此操作权限，请联系管理员！");
+                    Response.Write("No permission, please contact admin");
                     return;
                 }
 
                 LogsDAL logs = new LogsDAL();
-
                 string[] idString = id.Split(',');
-
                 int num = 0;
 
                 if (idString.Length > 0)
@@ -140,41 +115,33 @@ namespace BlueWhale.UI.pay
                     for (int i = 0; i < idString.Length; i++)
                     {
                         int delId = ConvertTo.ConvertInt(idString[i].ToString());
-
                         int del = dal.Delete(delId);
+
                         if (del > 0)
                         {
                             num += 1;
 
-
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "删除销售收款-ID：" + delId.ToString();
+                            logs.Events = "Delete Sales Payment ID：" + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
-
-
                         }
                     }
                 }
 
-
                 if (num > 0)
                 {
-
-
-                    Response.Write("成功删除" + num + "条记录！");
-
+                    Response.Write("Delete Success " + num + " Row Records.");
                 }
                 else
                 {
-                    Response.Write("删除失败！");
+                    Response.Write("Delete Faile!");
                 }
             }
             else
             {
-                Response.Write("登录超时，请重新登陆！");
+                Response.Write("Login Timeout，please login again!");
             }
-
         }
 
         void CheckRow(string id)
@@ -184,15 +151,12 @@ namespace BlueWhale.UI.pay
 
                 if (!CheckPower("CheckBillGetListCheck"))
                 {
-                    Response.Write("无此操作权限！");
-
+                    Response.Write("No permission!");
                     return;
                 }
 
                 LogsDAL logs = new LogsDAL();
-
                 string[] idString = id.Split(',');
-
                 int num = 0;
 
                 if (idString.Length > 0)
@@ -201,63 +165,46 @@ namespace BlueWhale.UI.pay
                     {
                         int delId = ConvertTo.ConvertInt(idString[i].ToString());
 
-                        int del = dal.UpdateCheck(delId, LoginUser.Id, LoginUser.Names, DateTime.Now, "审核");
+                        int del = dal.UpdateCheck(delId, LoginUser.Id, LoginUser.Names, DateTime.Now, "Review");
                         if (del > 0)
                         {
                             num += 1;
 
-
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "审核销售收款-ID：" + delId.ToString();
+                            logs.Events = "Review Sales Payment ID：" + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
-
-
                         }
                     }
                 }
 
-
                 if (num > 0)
                 {
-
-
-                    Response.Write("成功审核" + num + "条记录！");
-
+                    Response.Write("Review Success " + num + " rows records.");
                 }
                 else
                 {
-                    Response.Write("审核失败！");
+                    Response.Write("Review failed");
                 }
-
-
-
-
             }
             else
             {
-                Response.Write("登录超时，请重新登陆！");
+                Response.Write("Login Timeout，please login again!");
             }
-
         }
-
 
         void CheckNoRow(string id)
         {
             if (Session["userInfo"] != null)
             {
-
                 if (!CheckPower("CheckBillGetListCheckNo"))
                 {
-                    Response.Write("无此操作权限！");
-
+                    Response.Write("No permission!");
                     return;
                 }
 
                 LogsDAL logs = new LogsDAL();
-
                 string[] idString = id.Split(',');
-
                 int num = 0;
 
                 if (idString.Length > 0)
@@ -266,14 +213,14 @@ namespace BlueWhale.UI.pay
                     {
                         int delId = ConvertTo.ConvertInt(idString[i].ToString());
 
-                        int del = dal.UpdateCheck(delId, LoginUser.Id, LoginUser.Names, DateTime.Now, "保存");
+                        int del = dal.UpdateCheck(delId, LoginUser.Id, LoginUser.Names, DateTime.Now, "Save");
                         if (del > 0)
                         {
                             num += 1;
 
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "反审核销售收款-ID：" + delId.ToString();
+                            logs.Events = "Cancel Review Sales Payment ID：" + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
 
@@ -282,29 +229,19 @@ namespace BlueWhale.UI.pay
                     }
                 }
 
-
                 if (num > 0)
                 {
-
-
-                    Response.Write("成功反审核" + num + "条记录！");
-
+                    Response.Write("Cancel review success " + num + " row records!");
                 }
                 else
                 {
-                    Response.Write("反审核失败！");
+                    Response.Write("Cancel Review Failed!");
                 }
-
-
-
-
             }
             else
             {
-                Response.Write("登录超时，请重新登陆！");
+                Response.Write("Login Timeout，please login again!");
             }
-
-
         }
     }
 }

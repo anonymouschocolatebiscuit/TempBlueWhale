@@ -1,11 +1,6 @@
 ﻿using BlueWhale.DBUtility;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace BlueWhale.DAL
 {
@@ -99,5 +94,32 @@ namespace BlueWhale.DAL
         }
         #endregion
 
+        #region Delete
+
+        /// <summary>
+        /// Delete
+        /// </summary>
+        /// <param name="PId"></param>
+        /// <returns></returns>
+        public int Delete(int PId)
+        {
+            string sql = "";
+            sql += "delete from OtherOutItem  where pId='" + PId + "' ";
+
+            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
+        }
+
+        #endregion
+
+        #region GetAllModel
+
+        public DataSet GetAllModel(int pId)
+        {
+            string sql = "select * from viewOtherOutItem where pId='" + pId + "' ";
+
+            return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
+        }
+
+        #endregion
     }
 }

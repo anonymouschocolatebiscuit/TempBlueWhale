@@ -12,49 +12,41 @@ $(function () {
 
     manager = $("#maingrid").ligerGrid({
         columns: [
-            { display: 'Goods Code', name: 'code', width: 70, align: 'center', frozen: true },
-            { display: 'Goods Name', name: 'goodsName', width: 160, align: 'center', frozen: true },
-            { display: 'Specific', name: 'spec', width: 80, align: 'center', frozen: true },
-            { display: 'Unit Name', name: 'unitName', width: 50, align: 'center', frozen: true },
-            { display: 'Store Name', name: 'storeName', width: 70, align: 'center' },
-
-            /
-            {
-                display: 'Begin Period', columns:
+            { display: 'Item Code', name: 'code', width: 110, align: 'center', frozen: true },
+            { display: 'Item Name', name: 'goodsName', width: 140, align: 'center', frozen: true },
+            { display: 'Specification', name: 'spec', width: 140, align: 'center', frozen: true },
+            { display: 'Unit Name', name: 'unitName', width: 90, align: 'center', frozen: true },
+            { display: 'Inventory Name', name: 'storeName', width: 130, align: 'center' },
+            { display: 'Begin Period', columns:
                     [
                         { display: 'Quantity', name: 'sumNumBegin', width: 70, align: 'right' },
                         { display: 'Cost', name: 'sumPriceBegin', width: 70, align: 'right' }
                     ]
-            }
-            ,/
-
-            /
+            },
             {
                 display: 'Current Period Revenue', columns:
                     [
-                        { display: 'Quantity', name: 'sumNumIn', width: 70, align: 'right' },
-                        { display: 'Cost', name: 'sumPriceIn', width: 70, align: 'right' }
+                        { display: 'Quantity', name: 'sumNumIn', width: 80, align: 'right' },
+                        { display: 'Cost', name: 'sumPriceIn', width: 80, align: 'right' }
                     ]
-            },/
+            },
             {
                 display: 'Year-to-Date Revenue', columns:
                     [
-                        { display: 'Quantity', name: 'sumNumInAll', width: 70, align: 'right' },
-                        { display: 'Cost', name: 'sumPriceInAll', width: 70, align: 'right' }
+                        { display: 'Quantity', name: 'sumNumInAll', width: 80, align: 'right' },
+                        { display: 'Cost', name: 'sumPriceInAll', width: 80, align: 'right' }
                     ]
-            },/
+            },
             {
                 display: 'Current Period Sale', columns:
                     [
-
                         { display: 'Quantity', name: 'sumNumOut', width: 70, align: 'right' },
                         { display: 'Cost', name: 'sumPriceOut', width: 70, align: 'right' }
                     ]
             },
             {
-                display: 'ear-to-Date Sales', columns:
+                display: 'Year-to-Date Sales', columns:
                     [
-
                         { display: 'Quantity', name: 'sumNumOutAll', width: 70, align: 'right' },
                         { display: 'Cost', name: 'sumPriceOutAll', width: 70, align: 'right' }
                     ]
@@ -62,18 +54,17 @@ $(function () {
             {
                 display: 'Current Period Balance', columns:
                     [
-
-                        { display: 'Quantity', name: 'sumNumEnd', width: 70, align: 'right' },
-                        { display: 'Cost', name: 'sumPriceEnd', width: 70, align: 'right' }
+                        { display: 'Quantity', name: 'sumNumEnd', width: 80, align: 'right' },
+                        { display: 'Cost', name: 'sumPriceEnd', width: 80, align: 'right' }
                     ]
             }
         ], width: '98%',
         //pageSizeOptions: [5, 10, 15, 20],
         height: '98%',
         // pageSize: 15,
-        dataAction: 'local', //
+        dataAction: 'local',
         usePager: false,
-        rownumbers: true,//
+        rownumbers: true,
         alternatingRow: false,
         onDblClickRow: function (data, rowindex, rowobj) {
             viewRow();

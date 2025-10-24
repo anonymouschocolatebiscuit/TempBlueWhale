@@ -7,10 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BlueWhale.UI.baseSet {
-    
-    
-    public partial class InventoryList {
+namespace BlueWhale.UI.baseSet
+{
+
+
+    public partial class InventoryList
+    {
 
         /// <summary>
         /// form1 control.

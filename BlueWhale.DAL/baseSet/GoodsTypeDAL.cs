@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using BlueWhale.DBUtility;
 
 namespace BlueWhale.DAL
@@ -129,6 +130,48 @@ namespace BlueWhale.DAL
             string sql = " delete from GoodsPriceClientType where typeId='" + id + "' delete from goodsType where id='" + Id + "'";
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
+
+        #endregion
+
+        #region Modify one line message
+        /// <summary>
+        /// Modify one line message
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="names"></param>
+        /// <returns></returns>
+        public int UpdatePic(int typeId, int isShowXCX, int isShowGZH, string picUrl)
+        {
+            string sql = "";
+
+            if (this.CheckPic(typeId))
+            {
+                sql = "update goodsTypePicList set isShowXCX='" + isShowXCX + "',isShowGZH='" + isShowGZH + "',picUrl='" + picUrl + "' where typeId='" + typeId + "'";
+            }
+            else
+            {
+                sql = "insert into goodsTypePicList(typeId,isShowXCX,isShowGZH,picUrl) values('" + typeId + "','" + isShowXCX + "','" + isShowGZH + "','" + picUrl + "')";
+
+            }
+
+            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
+
+        }
+
+        public bool CheckPic(int id)
+        {
+            bool flag = false;
+
+            string sql = "select * from goodsTypePicList where typeId='" + id + "' ";
+
+            SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
+            while (reader.Read())
+            {
+                flag = true;
+            }
+            return flag;
+        }
+
 
         #endregion
     }

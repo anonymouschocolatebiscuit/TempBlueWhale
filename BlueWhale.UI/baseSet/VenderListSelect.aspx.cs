@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Data;
-using System.Web.UI.WebControls;
-
 using System.Collections.Generic;
+using System.Data;
 using System.Web.Script.Serialization;
-using BlueWhale.DAL;
+using System.Web.UI.WebControls;
 using BlueWhale.Common;
+using BlueWhale.DAL;
 using BlueWhale.UI.src;
 
 namespace BlueWhale.UI.baseSet
@@ -77,7 +76,7 @@ namespace BlueWhale.UI.baseSet
                     names = ds.Tables[0].Rows[i]["names"].ToString(),
                     typeId = ds.Tables[0].Rows[i]["typeId"].ToString(),
                     typeName = ds.Tables[0].Rows[i]["typeName"].ToString(),
-                    yueDate = ds.Tables[0].Rows[i]["yueDate"].ToString(),
+                    yueDate = ds.Tables[0].Rows[i]["dueDate"].ToString(),
                     payNeed = ds.Tables[0].Rows[i]["payNeed"].ToString(),
                     payReady = ds.Tables[0].Rows[i]["payReady"].ToString(),
 
@@ -141,7 +140,7 @@ namespace BlueWhale.UI.baseSet
                     names = ds.Tables[0].Rows[i]["names"].ToString(),
                     typeId = ds.Tables[0].Rows[i]["typeId"].ToString(),
                     typeName = ds.Tables[0].Rows[i]["typeName"].ToString(),
-                    yueDate = ds.Tables[0].Rows[i]["yueDate"].ToString(),
+                    yueDate = ds.Tables[0].Rows[i]["dueDate"].ToString(),
                     payNeed = ds.Tables[0].Rows[i]["payNeed"].ToString(),
                     payReady = ds.Tables[0].Rows[i]["payReady"].ToString(),
 

@@ -12,17 +12,15 @@
     <script src="../lib/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
     <script src="../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
     <script src="../lib/json2.js" type="text/javascript"></script>
-
     <script src="js/ProduceListReport.js" type="text/javascript"></script>
-
 </head>
 <body onload="search()">
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="text-align: right; width: 70px;">Schedule date： 
+                <td style="text-align: right; width: 100px;">Schedule Date： 
                 </td>
-                <td style="text-align: left; width: 120px;">
+                <td style="text-align: left; width: 120px; padding-left: 2px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
                 <td style="text-align: center; width: 30px;">To
@@ -30,16 +28,16 @@
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 80px;">Order no：</td>
-                <td style="text-align: left; width: 180px;">
-                    <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter oder no/remark"></asp:TextBox>
+                <td style="text-align: right; width: 80px;">Order No.:</td>
+                <td style="text-align: left; width: 180px; padding-left: 2px;">
+                    <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter order no/remarks"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 60px;">Vendor：</td>
-                <td style="text-align: left; width: 120px;">
+                <td style="text-align: right; width: 60px;">Vendor:</td>
+                <td style="text-align: left; width: 120px; padding-left: 2px;">
                     <input type="text" id="clientName" runat="server" value="" />
                     <input type="hidden" id="clientId" runat="server" value="" />
                 </td>
-                <td style="text-align: right; width: 50px;">Product：
+                <td style="text-align: right; width: 50px;">Product:
                 </td>
                 <td style="text-align: left; width: 100px;">
                     <input type="text" id="txtGoodsName" runat="server" value="" />

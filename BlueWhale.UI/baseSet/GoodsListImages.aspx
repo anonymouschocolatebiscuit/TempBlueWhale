@@ -23,7 +23,6 @@
 
     </script>
 
-
     <style type="text/css">
         body {
             font-size: 12px;
@@ -48,8 +47,6 @@
             top: 120px;
         }
     </style>
-
-
 
 </head>
 <body>

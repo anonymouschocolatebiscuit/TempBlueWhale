@@ -1,7 +1,6 @@
 ﻿using BlueWhale.DAL;
 using BlueWhale.Model;
 using BlueWhale.Model.produce;
-using BlueWhale.UI.src;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +10,7 @@ using System.Web.SessionState;
 namespace BlueWhale.UI.produce.ashx
 {
     /// <summary>
-    /// produceListAdd
+    /// produceGetListAdd
     /// </summary>
     public class ProduceGetListAdd : IHttpHandler, IRequiresSessionState
     {
@@ -19,7 +18,6 @@ namespace BlueWhale.UI.produce.ashx
 
         public class OrderListModel<T>
         {
-
             #region Model
             private int _id;
             private int? _shopid;
@@ -35,6 +33,7 @@ namespace BlueWhale.UI.produce.ashx
             private int? _checkid;
             private DateTime? _checkdate;
             private string _remarks;
+
             /// <summary>
             /// 
             /// </summary>
@@ -43,6 +42,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _id = value; }
                 get { return _id; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -51,6 +51,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _shopid = value; }
                 get { return _shopid; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -59,6 +60,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _number = value; }
                 get { return _number; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -67,6 +69,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _deptid = value; }
                 get { return _deptid; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -75,6 +78,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _plannumber = value; }
                 get { return _plannumber; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -83,6 +87,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _goodsid = value; }
                 get { return _goodsid; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -91,6 +96,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _num = value; }
                 get { return _num; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -99,6 +105,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _makeid = value; }
                 get { return _makeid; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -107,6 +114,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _makedate = value; }
                 get { return _makedate; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -115,6 +123,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _bizid = value; }
                 get { return _bizid; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -123,6 +132,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _bizdate = value; }
                 get { return _bizdate; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -131,6 +141,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _checkid = value; }
                 get { return _checkid; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -139,6 +150,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _checkdate = value; }
                 get { return _checkdate; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -153,6 +165,7 @@ namespace BlueWhale.UI.produce.ashx
             /// Product Details
             /// </summary>
             public List<OrderListItemModel> _Rows;
+
             public List<OrderListItemModel> Rows
             {
                 get { return _Rows; }
@@ -174,6 +187,7 @@ namespace BlueWhale.UI.produce.ashx
             private decimal? _price;
             private decimal? _sumprice;
             private string _remarks;
+
             /// <summary>
             /// 
             /// </summary>
@@ -182,6 +196,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _id = value; }
                 get { return _id; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -190,6 +205,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _pid = value; }
                 get { return _pid; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -198,6 +214,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _goodsid = value; }
                 get { return _goodsid; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -206,6 +223,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _ckid = value; }
                 get { return _ckid; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -214,6 +232,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _pihao = value; }
                 get { return _pihao; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -222,6 +241,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _numapply = value; }
                 get { return _numapply; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -230,6 +250,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _num = value; }
                 get { return _num; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -238,6 +259,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _price = value; }
                 get { return _price; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -246,6 +268,7 @@ namespace BlueWhale.UI.produce.ashx
                 set { _sumprice = value; }
                 get { return _sumprice; }
             }
+
             /// <summary>
             /// 
             /// </summary>
@@ -263,12 +286,10 @@ namespace BlueWhale.UI.produce.ashx
 
             if (context.Session["userInfo"] == null)
             {
-
                 context.Response.Write("Login timeout, please log in again!");
                 return;
-
             }
-            BasePage basePage = new BasePage();
+
             Users users = context.Session["userInfo"] as Users;
 
             StreamReader reader = new StreamReader(context.Request.InputStream);
@@ -308,6 +329,7 @@ namespace BlueWhale.UI.produce.ashx
                 #region bom
 
                 DAL.produce.ProduceGetListItem itemDAL = new DAL.produce.ProduceGetListItem();
+
                 ProduceGetListItemModel item = new ProduceGetListItemModel();
 
                 for (int i = 0; i < itemList.Rows.Count; i++)

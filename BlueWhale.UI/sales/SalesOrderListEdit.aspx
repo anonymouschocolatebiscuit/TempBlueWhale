@@ -33,17 +33,14 @@
                     <input type="hidden" id="clientId" runat="server" value="" />
                     <input type="hidden" id="txtClientName" runat="server" value="" />
                 </td>
-
                 <td style="text-align:center; width:110px;">Inbound Date:</td>
                 <td style="text-align:left; width:180px;">
                     <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-
                 <td style="text-align:center; width:110px;">Delivery Date:</td>
                 <td style="text-align:left; width:180px;">
                     <asp:TextBox ID="txtSendDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-
                 <td style="text-align:center; width:100px;">Salesperson:</td>
                 <td style="text-align:left;">
                     <asp:DropDownList ID="ddlYWYList" runat="server"></asp:DropDownList>

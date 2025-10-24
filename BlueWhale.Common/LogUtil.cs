@@ -42,7 +42,6 @@ namespace BlueWhale.Common
                     }
                     if (fs != null)
                     {
-                        //     fs.Flush();
                         fs.Dispose();
                         fs = null;
                     }

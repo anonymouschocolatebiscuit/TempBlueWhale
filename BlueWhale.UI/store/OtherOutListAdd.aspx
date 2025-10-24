@@ -19,27 +19,25 @@
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
                 <td style="width: 80px; text-align: center;">Contact Unit:</td>
-                <td style="text-align: left; width: 250px;">
+                <td style="text-align: left; width: 250px; padding-left:2px">
                     <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px"></asp:DropDownList>
                 </td>
-                <td style="text-align: right; width: 80px;">Stock Outbound Date:</td>
-                <td style="text-align: left; width: 180px;">
+                <td style="text-align: right; width: 150px;">Stock Outbound Date:</td>
+                <td style="text-align: left; width: 180px; padding-left:5px">
                     <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 80px;">Stock Outbound Type:</td>
-                <td style="text-align: left;">
+                <td style="text-align: right; width: 150px;">Stock Outbound Type:</td>
+                <td style="text-align: left; padding-left:5px">
                     <asp:RadioButton ID="rb1" runat="server" Checked="True" GroupName="t" Text="Other Stock OutBound" />
                     <asp:RadioButton ID="rb2" runat="server" GroupName="t" Text="Stock OutBound with Loss" />
                 </td>
             </tr>
         </table>
-
         <div id="maingrid"></div>
-
         <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 50px;">
             <tr>
                 <td style="width: 80px; text-align: right;">Remarks:</td>
-                <td style="text-align: left;">
+                <td style="text-align: left; padding-left: 5px">
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>
                 <td style="text-align: right; padding-right: 30px;">
@@ -47,7 +45,6 @@
                 </td>
             </tr>
         </table>
-
         <div id="target1" style="width: 200px; margin: 3px; display: none; text-align: center;">
             <asp:DropDownList ID="ddlCangkuList" runat="server"></asp:DropDownList>
             <input id="btnSelect" type="button" value="Choose" onclick="selectCangku()" />

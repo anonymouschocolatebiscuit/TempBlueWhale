@@ -1,15 +1,5 @@
 using System;
-using System.Collections;
-using System.Configuration;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml.Linq;
 using BlueWhale.Common;
 using BlueWhale.DAL;
 using BlueWhale.UI.src;
@@ -28,10 +18,10 @@ namespace BlueWhale.UI.BaseSet
 
 			if (!this.IsPostBack)
 			{
-				//if (!CheckPower("VenderListAdd"))
-				//{
-				//    Response.Redirect("../OverPower.htm");
-				//}
+				if (!CheckPower("VenderListAdd"))
+				{
+					Response.Redirect("../OverPower.htm");
+				}
 
 
 				this.txtCode.Focus();
@@ -96,7 +86,7 @@ namespace BlueWhale.UI.BaseSet
 
 			if (!CheckPower("VenderListAdd"))
 			{
-				MessageBox.Show(this, "No permssion for this action!");
+				MessageBox.Show(this, "You do not have permission to perform this action!");
 				return;
 			}
 
@@ -105,13 +95,13 @@ namespace BlueWhale.UI.BaseSet
 
 			if (this.txtCode.Text.Trim() == "")
 			{
-				MessageBox.Show(this, "Please enter vender number!");
+				MessageBox.Show(this, "Please fill in the vender code£¡");
 				return;
 			}
 
 			if (this.txtNames.Text == "")
 			{
-				MessageBox.Show(this, "Please enter vender name!");
+				MessageBox.Show(this, "Please fill in the vender name£¡");
 				return;
 			}
 
@@ -134,15 +124,16 @@ namespace BlueWhale.UI.BaseSet
 			dal.Address = this.txtAddress.Text;
 
 			dal.Flag = "Save";
-
+			if (id == 0)
+			{
 				if (dal.isExistsCodeAdd(LoginUser.ShopId, this.txtCode.Text))
 				{
-					MessageBox.Show(this, "Add failed, vender number repeat!");
+					MessageBox.Show(this, "Fail to add. Vender code already exists!");
 					return;
 				}
 				if (dal.isExistsNamesAdd(LoginUser.ShopId, this.txtNames.Text))
 				{
-					MessageBox.Show(this, "Add failed, vender name repeat!");
+					MessageBox.Show(this, "Fail to add. Vender name already exists!");
 					return;
 				}
 
@@ -153,13 +144,40 @@ namespace BlueWhale.UI.BaseSet
 
 					logs.ShopId = LoginUser.ShopId;
 					logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-					logs.Events = "Add Vender:" + this.txtCode.Text + " Name£º" + this.txtNames.Text;
+					logs.Events = "New vender code£º" + this.txtCode.Text + " vender name£º" + this.txtNames.Text;
 					logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
 					logs.Add();
 
-					MessageBox.ShowAndRedirect(this, "Operation Successful!", "VenderListAdd.aspx?id=" + id.ToString());
+					MessageBox.ShowAndRedirect(this, "Success!", "VenderListAdd.aspx?id=" + id.ToString());
+				}
+			}
+			else
+			{
+				if (dal.isExistsCodeEdit(id, LoginUser.ShopId, this.txtCode.Text))
+				{
+					MessageBox.Show(this, "Fail to update. Vender code already exists!");
+					return;
 				}
 
+				if (dal.isExistsNamesEdit(LoginUser.ShopId, code, this.txtNames.Text))
+				{
+					MessageBox.Show(this, "Fail to update. Vender name already exists!");
+					return;
+				}
+
+				if (dal.Update() > 0)
+				{
+					LogsDAL logs = new LogsDAL();
+
+					logs.ShopId = LoginUser.ShopId;
+					logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
+					logs.Events = "Update vender code£º" + this.txtCode.Text + " vender name£º" + this.txtNames.Text;
+					logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
+					logs.Add();
+
+					MessageBox.Show(this, "Success!");
+				}
+			}
 		}
 	}
 }

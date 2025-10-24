@@ -112,10 +112,9 @@ namespace BlueWhale.UI.baseSet
             }
 
             isWhere += " and (names like'%" + key + "%'" +
-                   " or  code like'%" + key + "%' " +
                    " or  tel like'%" + key + "%' " +
-                   " or  remarks like'%" + key + "%' " +
-                   " or  address like'%" + key + "%') ";
+                   " or  phone like'%" + key + "%' " +
+                   " or  linkMan like'%" + key + "%') ";
 
             DataSet ds = dal.GetList(isWhere);
 

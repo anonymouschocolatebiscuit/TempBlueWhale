@@ -105,32 +105,32 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="text-align: right; width: 70px;">Obtain Date：</td>
+                <td style="text-align: right; width: 120px;">Obtain Date：</td>
 
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
 
-                <td style="text-align: center; width: 30px;">至</td>
+                <td style="text-align: center; width: 30px;">To</td>
 
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
 
-                <td style="text-align: right; width: 50px;">商品：</td>
+                <td style="text-align: right; width: 80px;">Product:</td>
 
                 <td style="text-align: left; width: 180px;">
                     <input type="text" id="txtGoodsList" />
                 </td>
 
-                <td style="text-align: right; width: 60px;">仓库：</td>
+                <td style="text-align: right; width: 100px;">Inventory:</td>
 
-                <td style="text-align: left; width: 80px;">
+                <td style="text-align: left; width: 100px;">
                     <input type="text" id="txtFlagList" />
                 </td>
 
                 <td style="text-align: right; padding-right: 20px;">
-                    <input id="btnSearch" type="button" value="查询" class="ui-btn ui-btn-sp mrb" onclick="search()" />
+                    <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
                 </td>
             </tr>
 

@@ -1,11 +1,11 @@
-﻿using System;
+﻿using BlueWhale.Common;
+using BlueWhale.DAL;
+using BlueWhale.UI.src;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Web.Script.Serialization;
-using BlueWhale.Common;
-using BlueWhale.DAL;
-using BlueWhale.UI.src;
 
 namespace BlueWhale.UI.report
 {
@@ -18,40 +18,21 @@ namespace BlueWhale.UI.report
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
             if (!this.IsPostBack)
             {
-
                 this.txtDateStart.Text = DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd");
                 this.txtDateEnd.Text = DateTime.Now.ToShortDateString();
-
-
-
-
             }
 
             if (Request.Params["Action"] == "GetDataList")
             {
-
                 DateTime bizStart = DateTime.Parse(Request.Params["start"].ToString());
-
-                DateTime bizEnd = DateTime.Parse(Request.Params["end"].ToString());
-
-
-
-
-
+                DateTime bizEnd = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
                 string wlId = Request.Params["wlId"].ToString();
                 string goodsId = Request.Params["goodsId"].ToString();
-
                 string typeId = Request.Params["typeId"].ToString();
-
                 string down = Request.Params["down"].ToString();
-
                 string path = Request.Params["path"].ToString();
-
-
                 this.GetDataList(bizStart, bizEnd, wlId, goodsId, typeId, down, path);
                 Response.End();
             }
@@ -59,8 +40,6 @@ namespace BlueWhale.UI.report
 
         void GetDataList(DateTime bizStart, DateTime bizEnd, string wlId, string goodsId, string typeId, string down, string path)
         {
-
-
             DataSet ds = dal.GetPurReceiptItemDetail(LoginUser.ShopId, bizStart, bizEnd, typeId, wlId, goodsId);
 
             #region 创建临时表
@@ -141,13 +120,8 @@ namespace BlueWhale.UI.report
                     sumPriceDis = ds.Tables[0].Rows[i]["sumPriceDis"].ToString(),
                     sumPriceTax = ds.Tables[0].Rows[i]["sumPriceTax"].ToString(),
                     sumPriceAll = ds.Tables[0].Rows[i]["sumPriceAll"].ToString()
-
-
                 });
             }
-
-
-
 
             var griddata = new { Rows = list, Total = list.Count.ToString() };
             string s = new JavaScriptSerializer().Serialize(griddata);
@@ -155,14 +129,10 @@ namespace BlueWhale.UI.report
 
             if (down == "1")
             {
-
                 string filePath = Server.MapPath("../excel/ProductPurchaseOrderDetails" + path) + ".xls";
                 this.WriteExcel(dt, filePath);
             }
-
         }
-
-
 
         public void WriteExcel(DataTable dt, string filePath)
         {
@@ -198,7 +168,6 @@ namespace BlueWhale.UI.report
                     }
                 }
 
-
                 NPOI.SS.UserModel.IRow row3 = sheet.CreateRow(dt.Rows.Count + 1);
 
                 row3.CreateCell(0).SetCellValue("");//Item Code
@@ -208,7 +177,6 @@ namespace BlueWhale.UI.report
                 row3.CreateCell(14).SetCellValue(sumPriceNow.ToString("0.00"));
                 row3.CreateCell(17).SetCellValue(sumPriceTax.ToString("0.00"));
                 row3.CreateCell(18).SetCellValue(sumPriceAll.ToString("0.00"));
-
 
                 // Write to the client
                 using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
@@ -222,7 +190,6 @@ namespace BlueWhale.UI.report
                     }
                     book = null;
                 }
-
 
                 #region Download
 
@@ -251,16 +218,7 @@ namespace BlueWhale.UI.report
                 catch (Exception) { }
 
                 #endregion
-
-
-
             }
         }
-
-
-
-
-
-
     }
 }

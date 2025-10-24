@@ -1,22 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml.Linq;
-using System.Collections.Generic;
-using System.Web.Script.Serialization;
+﻿using BlueWhale.Common;
 using BlueWhale.DAL;
-using BlueWhale.Common;
 using BlueWhale.UI.src;
-using System.Web.Services;
-using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Web.Script.Serialization;
 
 namespace BlueWhale.UI.pay
 {
@@ -41,7 +29,7 @@ namespace BlueWhale.UI.pay
                 this.txtDateStart.Text = DateTime.Now.ToString("yyyy-MM") + "-01";
                 this.txtDateEnd.Text = DateTime.Now.ToShortDateString();
 
-                this.txtDateStar1.Text = DateTime.Now.ToString("yyyy-MM") + "-01";
+                this.txtDateStart1.Text = DateTime.Now.ToString("yyyy-MM") + "-01";
                 this.txtDateEnd1.Text = DateTime.Now.ToShortDateString();
 
                 this.Bind();
@@ -55,7 +43,7 @@ namespace BlueWhale.UI.pay
 
                 DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
 
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                DateTime end = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 GetDataList(keys, start, end, wlId);
                 Response.End();
@@ -69,7 +57,7 @@ namespace BlueWhale.UI.pay
 
                 DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
 
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                DateTime end = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 GetDataListGet(keys, start, end, wlId);
                 Response.End();

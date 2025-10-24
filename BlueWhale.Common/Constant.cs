@@ -8,7 +8,7 @@
         /// </summary>
         public static string DefaultUrl = "/Dashboard.aspx";
         /// <summary>
-        /// 登陆页
+        /// Login Page
         /// </summary>
         public static string LoginUrl = "/Login.aspx";
 

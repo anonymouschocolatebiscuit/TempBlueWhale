@@ -13,7 +13,6 @@ namespace BlueWhale.UI.sales
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
             if (!this.IsPostBack)
             {
                 if (!CheckPower("SalesOrderListAdd"))
@@ -35,8 +34,6 @@ namespace BlueWhale.UI.sales
             }
         }
 
-
-
         public void Bind()
         {
 
@@ -54,14 +51,12 @@ namespace BlueWhale.UI.sales
 
             this.ddlYWYList.SelectedValue = LoginUser.Id.ToString();
 
-
         }
-
 
         void GetDataList()
         {
             IList<object> list = new List<object>();
-            for (var i = 1; i < 9; i++)
+            for (int i = 1; i < 9; i++)
             {
                 list.Add(new
                 {
@@ -86,7 +81,6 @@ namespace BlueWhale.UI.sales
                     sumPriceTax = "",
 
                     sumPriceAll = "",
-
 
                     ckId = "",
                     ckName = "",

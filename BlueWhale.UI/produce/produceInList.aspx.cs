@@ -23,7 +23,6 @@ namespace BlueWhale.UI.produce
 
             if (Request.Params["Action"] == "GetDataList")
             {
-
                 string keys = "";// 
 
                 DateTime start = DateTime.Now.AddDays(-7);
@@ -38,14 +37,30 @@ namespace BlueWhale.UI.produce
 
             if (Request.Params["Action"] == "GetDataListSearch")
             {
-
                 string keys = Request.Params["keys"].ToString();
 
                 int types = ConvertTo.ConvertInt(Request.Params["types"].ToString());
 
-                DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
+                DateTime start = new DateTime(1753, 1, 1);
+                DateTime end = new DateTime(9999, 12, 31);
 
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                string startStr = Request.Params["start"];
+                string endStr = Request.Params["end"];
+
+                if (!string.IsNullOrWhiteSpace(startStr) && DateTime.TryParse(startStr, out var parsedStart))
+                {
+                    start = parsedStart;
+                }
+
+                if (!string.IsNullOrWhiteSpace(endStr) && DateTime.TryParse(endStr, out var parsedEnd))
+                {
+                    end = parsedEnd;
+                }
+
+                if (end < start)
+                {
+                    end = start;
+                }
 
                 GetDataList(keys, start, end, types);
                 Response.End();
@@ -71,9 +86,6 @@ namespace BlueWhale.UI.produce
                 CheckNoRow(idString);
                 Response.End();
             }
-
-
-
         }
 
         void GetDataList(string key, DateTime start, DateTime end, int types)
@@ -94,9 +106,6 @@ namespace BlueWhale.UI.produce
 
                     number = ds.Tables[0].Rows[i]["number"].ToString(),
 
-
-
-
                     sumNum = ds.Tables[0].Rows[i]["sumNum"].ToString(),
                     sumPriceNow = ds.Tables[0].Rows[i]["sumPriceNow"].ToString(),
                     sumPriceDis = ds.Tables[0].Rows[i]["sumPriceDis"].ToString(),
@@ -105,13 +114,11 @@ namespace BlueWhale.UI.produce
 
                     flag = ds.Tables[0].Rows[i]["flag"].ToString(),
 
-
                     bizName = ds.Tables[0].Rows[i]["bizName"].ToString(),
                     makeName = ds.Tables[0].Rows[i]["makeName"].ToString(),
                     checkName = ds.Tables[0].Rows[i]["checkName"].ToString(),
                     remarks = ds.Tables[0].Rows[i]["remarks"].ToString()
                 });
-
             }
             var griddata = new { Rows = list };
 
@@ -124,7 +131,6 @@ namespace BlueWhale.UI.produce
         {
             if (Session["userInfo"] != null)
             {
-
                 LogsDAL logs = new LogsDAL();
 
                 string[] idString = id.Split(',');
@@ -142,25 +148,18 @@ namespace BlueWhale.UI.produce
                         {
                             num += 1;
 
-
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
                             logs.Events = "Delete Production-ID：" + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
-
-
                         }
                     }
                 }
 
-
                 if (num > 0)
                 {
-
-
                     Response.Write("Delete successfully" + num + "of records！");
-
                 }
                 else
                 {
@@ -171,7 +170,6 @@ namespace BlueWhale.UI.produce
             {
                 Response.Write("Login timed out. Please log in again!");
             }
-
         }
 
         void CheckRow(string id)
@@ -195,42 +193,29 @@ namespace BlueWhale.UI.produce
                         {
                             num += 1;
 
-
                             logs.ShopId = LoginUser.ShopId;
                             logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
                             logs.Events = "Check Production Warehour Entry-ID：" + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
-
-
                         }
                     }
                 }
 
-
                 if (num > 0)
                 {
-
-
                     Response.Write("Check successfully" + num + " records！");
-
                 }
                 else
                 {
                     Response.Write("Check failed！");
                 }
-
-
-
-
             }
             else
             {
                 Response.Write("Login timed out. Please log in again!");
             }
-
         }
-
 
         void CheckNoRow(string id)
         {
@@ -253,42 +238,27 @@ namespace BlueWhale.UI.produce
                         {
                             num += 1;
 
-
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
                             logs.Events = "Fail Check Production Warehour Entry-ID：" + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
-
-
                         }
                     }
                 }
 
-
                 if (num > 0)
                 {
-
-
                     Response.Write("Fail check successfully" + num + "records！");
-
                 }
                 else
                 {
                     Response.Write("Fail check failed！");
                 }
-
-
-
-
             }
             else
             {
                 Response.Write("Login timed out. Please log in again!");
             }
-
-
         }
-
-
     }
 }

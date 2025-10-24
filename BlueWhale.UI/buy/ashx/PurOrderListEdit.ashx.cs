@@ -17,9 +17,7 @@ namespace BlueWhale.UI.buy.ashx
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class PurOrderListEdit : IHttpHandler, IRequiresSessionState
     {
-
         public PurOrderDAL dal = new PurOrderDAL();
-
 
         public class OrderListModel<T>
         {
@@ -203,6 +201,7 @@ namespace BlueWhale.UI.buy.ashx
                 context.Response.Write("Login overtime, please relogin system!");
                 return;
             }
+
             BasePage basePage = new BasePage();
 
             if (!basePage.CheckPower("PurOrderListEdit"))
@@ -214,9 +213,11 @@ namespace BlueWhale.UI.buy.ashx
             Users users = context.Session["userInfo"] as Users;
 
             StreamReader reader = new StreamReader(context.Request.InputStream);
+
             string strJson = HttpUtility.UrlDecode(reader.ReadToEnd());
 
             OrderListModel<OrderListItemModel> obj = Newtonsoft.Json.JsonConvert.DeserializeObject<OrderListModel<OrderListItemModel>>(strJson);
+
             OrderListModel<OrderListItemModel> itemList = obj;
 
             dal.Id = obj.id;
@@ -261,6 +262,7 @@ namespace BlueWhale.UI.buy.ashx
 
                     check = item.Add();
                 }
+
                 if (check > 0)
                 {
                     LogsDAL logs = new LogsDAL();

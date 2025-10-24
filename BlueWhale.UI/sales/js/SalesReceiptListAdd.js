@@ -95,7 +95,6 @@ $.ligerDefaults.Grid.formatters['numberbox'] = function (value, column) {
     return value.toFixed(precision);
 };
 
-
 $(function () {
     $("#clientName").ligerComboBox({
         onBeforeOpen: f_selectClient, valueFieldID: 'clientId', width: 300
@@ -180,7 +179,6 @@ $(function () {
                             h += "<a href='javascript:deleteRow()' title='Delete row' style='float:left;'><div class='ui-icon ui-icon-trash'></div></a> ";
                             h += "<a href='javascript:f_selectContact()' title='Select product' style='float:left;'><div class='ui-icon ui-icon-search'></div></a> ";
                         }
-
                         return h;
                     }
                 },
@@ -192,7 +190,7 @@ $(function () {
                         type: 'count',
                         render: function (e) {  //Summary renderer, returns HTML loaded into the cell
                             //e Summary Object (including sum, max, min, avg, count)
-                            return 'Total£º';
+                            return 'Total:';
                         }
                     }
                 },
@@ -316,7 +314,6 @@ function f_totalRender(data, currentPageData) {
 }
 
 function addNewRow() {
-
     var gridData = manager.getData();
     var rowNum = gridData.length;
 
@@ -425,7 +422,6 @@ function f_onGoodsChanged(e) {
         goodsName: selected.names,
         spec: selected.spec,
         unitName: selected.unitName,
-
         num: 1,
         price: selected.priceSalesRetail,
         dis: 0,
@@ -436,13 +432,11 @@ function f_onGoodsChanged(e) {
         priceTax: selected.priceSalesRetail, //Unit price including tax, default is unit price excluding tax
         sumPriceTax: 0, //tax amount
         sumPriceAll: selected.priceSalesRetail,
-
         ckId: selected.ckId,
         ckName: selected.ckName,
         sourceNumber: "",
         itemId: 0,
         remarks: ""
-
     });
 
     if (e.length > 1) //If there are multiple lines, delete the blank lines first, then insert the following
@@ -462,7 +456,6 @@ function f_onGoodsChanged(e) {
                 goodsName: e[i].names,
                 spec: e[i].spec,
                 unitName: e[i].unitName,
-
                 num: 1,
                 price: e[i].priceSalesRetail,
                 dis: 0,
@@ -473,7 +466,6 @@ function f_onGoodsChanged(e) {
                 priceTax: e[i].priceSalesRetail, //Unit price including tax
                 sumPriceTax: 0, //tax amount
                 sumPriceAll: e[i].priceSalesRetail,
-
                 ckId: e[i].ckId,
                 ckName: e[i].ckName,
                 sourceNumber: "",
@@ -487,11 +479,9 @@ function f_onGoodsChanged(e) {
 
     updateTotal();
 }
-
 function updateTotal() {
 
     var data = manager.getData();//getData
-
     var sumPriceItemDis = 0; //discount amount
     var sumPriceItemNow = 0; //Amount before tax
     var sumPriceItemTax = 0; //tax amount
@@ -538,7 +528,6 @@ function updateTotal() {
 function f_onAfterEdit(e) {
 
     var num, price, dis, sumPriceDis, priceNow, sumPriceNow, tax, priceTax, sumPriceTax, sumPriceAll;
-
     num = Number(e.record.num);
     price = Number(e.record.price);
     dis = Number(e.record.dis);
@@ -549,12 +538,9 @@ function f_onAfterEdit(e) {
     priceTax = Number(e.record.priceTax);
     sumPriceTax = Number(e.record.sumPriceTax);
     sumPriceAll = Number(e.record.sumPriceAll);
-
     var goodsId, goodsName;
-
     goodsId = e.record.goodsId;
     goodsName = e.record.goodsName;
-
     if (goodsId == "" || goodsName == "") {
         return;
     }
@@ -597,17 +583,12 @@ function f_onAfterEdit(e) {
     if (e.column.name == "price") //Unit price changes---start
     {
         price = Number(e.value);
-
         sumPriceDis = num * price * dis / 100;
-
-
         priceNow = price * (1 + dis / 100);
         sumPriceNow = num * priceNow;
         sumPriceNow = Math.round(sumPriceNow * 10000) / 10000;
-
         priceTax = priceNow * (1 + tax / 100);
         sumPriceTax = num * priceNow * tax / 100; //Tax amount = quantity * current price * tax rate / 100;
-
         sumPriceAll = num * priceTax;
 
         //format
@@ -634,7 +615,6 @@ function f_onAfterEdit(e) {
 
     if (e.column.name == "dis") //Discount change---start
     {
-
         dis = Number(e.value);
 
         if (dis != 0) {
@@ -812,9 +792,7 @@ function f_onAfterEdit(e) {
         sumPriceAll = Number(num) * Number(priceTax);
         sumPriceAll = Math.round(sumPriceAll * 10000) / 10000;
 
-
         //Start assigning values
-
 
         //1. Variables
         manager.updateCell("price", price, e.record);
@@ -851,9 +829,7 @@ function f_onAfterEdit(e) {
         sumPriceAll = Number(num) * Number(priceTax);
         sumPriceAll = Math.round(sumPriceAll * 10000) / 10000;
 
-
         //Start assigning values
-
 
         //1. Variables
         manager.updateCell("priceTax", priceTax, e.record);
@@ -898,7 +874,6 @@ function f_onAfterEdit(e) {
         sumPriceAll = Math.round(sumPriceAll * 10000) / 10000;
 
         //Start assigning values
-
 
         //1. Variables
         manager.updateCell("dis", dis, e.record);
@@ -952,9 +927,7 @@ function f_onAfterEdit(e) {
         sumPriceAll = Number(num) * Number(priceTax);
         sumPriceAll = Math.round(sumPriceAll * 10000) / 10000;
 
-
         //Start assigning values
-
 
         //1. Variables
         manager.updateCell("priceNow", priceNow, e.record);
@@ -996,12 +969,10 @@ function f_onBeforeSubmitEdit(e) {
     return true;
 }
 
-
 function deleteRow() {
 
     if (manager.rows.length == 1) {
         $.ligerDialog.warn('Keep at least one line!')
-
     }
     else {
         manager.deleteSelectedRow();
@@ -1010,7 +981,6 @@ function deleteRow() {
 var newrowid = 100;
 
 function save() {
-
     var venderId = $("#clientId").val(); //Get the Value selected by Select
 
     if (venderId == "" || Number(venderId) == 0) {
@@ -1025,7 +995,6 @@ function save() {
     if (bizDate == "") {
         $.ligerDialog.warn("Please fill in the delivery date!");
         return;
-
     }
 
     // Delete the blank line first
@@ -1035,9 +1004,7 @@ function save() {
     for (var i = data.length - 1; i >= 0; i--) {
         if (data[i].goodsId == 0 || data[i].goodsId == "" || data[i].goodsName == "") {
             data.splice(i, 1);
-
         }
-
     }
 
     //2. Determine whether to select a product
@@ -1051,47 +1018,37 @@ function save() {
     //3. Determine whether the quantity of goods has been entered.
     for (var i = 0; i < data.length; i++) {
         if (data[i].num <= 0 || data[i].num == "" || data[i].num == "0" || data[i].num == "0.00") {
-
             $.ligerDialog.warn("Please enter the quantity of goods in the " + (i + 1) + " row!");
-
             return;
             alert("I won't execute it!");
         }
 
         if (data[i].ckId == 0 || data[i].ckId == "" || data[i].ckId == "0" || data[i].ckName == "") {
-
             $.ligerDialog.warn("Please enter the warehouse of line " + (i + 1) + "!");
-
             return;
             alert("I won't execute it!");
         }
     }
 
     var remarks = $("#txtRemarks").val();
-
     var payNow = $("#txtPayNow").val();
     var payNowNo = $("#txtPayNo").val();
-
     var dis = $("#txtDis").val();
     var disPrice = $("#txtDisPrice").val();
 
     if (Number(payNow) != 0) {
-
         if (bkId == "0") {
             $.ligerDialog.warn("Please select the settlement account!");
             return;
         }
-
     }
     var sendId = $("#ddlSendCompanyList").val();
     var sendNumber = $("#txtSendNumber").val();
     var sendPayType = $("#ddlSendPayTypeList").val();
     var sendPrice = $("#txtSendPrice").val();
-
     var getName = $("#txtGetName").val();
     var phone = $("#txtPhone").val();
     var address = $("#txtAddress").val();
-
     var headJson = {
         venderId: venderId,
         bizDate: bizDate,
@@ -1115,20 +1072,12 @@ function save() {
     dataNew.push(headJson);
 
     var list = JSON.stringify(headJson);
-
     var goodsList = [];
-
     list = list.substring(0, list.length - 1); // remove the last curly brace
-
     list += ",\"Rows\":";
     list += JSON.stringify(data);
     list += "}";
-
     var postData = JSON.parse(list); //final json
-
-    // alert(JSON.stringify(postData));
-    //
-    // return;
 
     $.ajax({
         type: "POST",
@@ -1137,15 +1086,12 @@ function save() {
         //dataType: "json", // indicates the return value type, not required
         data: JSON.stringify(postData), // equivalent to //data: "{'str1':'foovalue', 'str2':'barvalue'}",
         success: function (jsonResult) {
-
             if (jsonResult == "Operation successful!") {
 
                 $.ligerDialog.waitting('Operation successful!'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
-
             }
             else {
                 $.ligerDialog.warn(jsonResult);
-
             }
         },
         error: function (xhr) {
@@ -1155,7 +1101,6 @@ function save() {
 }
 
 function calcPayNo(payNow) {
-
     // Knowing this payment, calculate the current amount owed
 
     //1. Get the discounted amount
@@ -1172,7 +1117,6 @@ function calcPayNo(payNow) {
 
 //Calculate the security deposit
 function calcDisPrice(dis) {
-
     // Knowing this payment, calculate the current amount owed
 
     //1. Get the guarantee deposit ratio

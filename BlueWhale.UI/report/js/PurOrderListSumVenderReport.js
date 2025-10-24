@@ -167,6 +167,12 @@ function search() {
         $.ligerDialog.warn('Please select an end date'); return;
     } 
 
+    if (new Date(start) > new Date()) {
+        $.ligerDialog.warn('Start date cannot exceed current date'); return;
+    } else if (new Date(end) > new Date()){
+        $.ligerDialog.warn('End date cannot exceed current date'); return;
+    }
+
     manager._setUrl("PurOrderListSumVenderReport.aspx?Action=GetDataList&start=" + start + "&end=" + end + "&wlId=" + wlId + "&goodsId=" + goodsList + "&typeId=" + typeId);
 }
 

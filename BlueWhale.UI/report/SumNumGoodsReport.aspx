@@ -103,7 +103,7 @@
     <form id="form1" runat="server">
      <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
            <tr>
-               <td style="text-align:right; width:70px;">Expiration Date：</td>
+               <td style="text-align:right; width:120px;">Expiration Date：</td>
                <td style="text-align:left; width:120px;">
                 <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox> 
                </td>
@@ -112,7 +112,7 @@
                <td style="text-align:left;width:100px;">
                 <input type="text" id="txtGoodsList"/> 
                </td>
-               <td style="text-align:right;width:60px;">Warehouse：</td>
+               <td style="text-align:right;width:100px;">Warehouse：</td>
                <td style="text-align:left;width:80px;">
                 <input type="text" id="txtFlagList"/> 
                </td>

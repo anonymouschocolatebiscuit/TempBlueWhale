@@ -123,8 +123,6 @@ function search() {
     var end = document.getElementById("txtDateEnd").value;
     manager.changePage("first");
     manager._setUrl("produceGetList.aspx?Action=GetDataListSearch&types=0&keys=" + keys + "&start=" + start + "&end=" + end);
-
-    //  window.open("produceGetList.aspx?Action=GetDataListSearch&types=0&keys=" + keys + "&start=" + start + "&end=" + end);
 }
 
 function deleteRow() {

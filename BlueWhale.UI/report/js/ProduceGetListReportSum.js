@@ -49,7 +49,7 @@ $(function () {
 
             },
             {
-                display: 'Average Unit Price', name: 'sumPrice', width: 100, align: 'right',
+                display: 'Average Unit Price', name: 'sumPrice', width: 160, align: 'right',
 
                 render: function (row) {
                     var price = Number(row.sumPrice) / Number(row.sumNum);

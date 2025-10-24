@@ -6,94 +6,66 @@
 <head runat="server">
     <title>Create new sales order</title>
    
-   <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
  
     <script src="../lib/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
-    
-    
     <script src="../lib.1.3.1/Source/lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
     <script src="../lib/json2.js" type="text/javascript"></script>
-
-
      <script src="js/SalesOrderListAdd.js" type="text/javascript"></script>
-
-
-    
-    
 </head>
+
 <body style=" padding-top:10px; padding-left:10px;">
 
+<form id="form1" runat="server">
 
-    <form id="form1" runat="server">
-   
  <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
            <tr>
            <td style="width:100px; text-align:center;">
-               Sales unit：</td>
+               Sales unit：
+           </td>
            <td style="text-align:left; width:250px;">
       <input type="text" id="clientName" runat="server" value="" />
        <input type="hidden" id="clientId" runat="server" value="" />
-
-                   </td>
+           </td>
            <td style="width:15px;"></td>
-
            <td style="text-align:right; width:100px;">
-                                                  Order date：</td>
+                Order date：
+           </td>
            <td style="text-align:left; width:180px;">
-                                                  <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
-                   </td>
-            <td style="width:15px;"></td>
-
+                <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
+           </td>
+           <td style="width:15px;"></td>
            <td style="text-align:right; width:115px;">
-                                                  Delivery date：</td>
+                 Delivery date：</td>
            <td style="text-align:left; width:180px;" >
-                                                  <asp:TextBox ID="txtSendDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
-                   </td>
+                <asp:TextBox ID="txtSendDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
+           </td>
 
-            <td style="width:15px;"></td>
-
+           <td style="width:15px;"></td>
            <td style="text-align:right; width:115px;">
-                                                  Sales person：</td>
+               Sales person：</td>
            <td style="text-align:left;">
-                                                  <asp:DropDownList ID="ddlYWYList" runat="server">
-                                                  </asp:DropDownList>
-               </td>
+               <asp:DropDownList ID="ddlYWYList" runat="server">
+               </asp:DropDownList>
+           </td>
            </tr>
            </table>
  
  <div id="maingrid"></div>
-  
  
  <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:50px;">
            <tr>
            <td style="width:80px; text-align:right;">
                Remarks：</td>
            <td style="text-align:left; ">
-            
                <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
-              
-                   
-                   </td>
+           </td>
            <td style="text-align:right; padding-right:30px; ">
-              
-              
-                   
                <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Create" onclick="save()"  />
-                      
-                  
-              
-              
-                   
-               </td>
+           </td>
            </tr>
            </table>
-           
-           
-           
-         
-           
-           
     </form>
 </body>
 </html>

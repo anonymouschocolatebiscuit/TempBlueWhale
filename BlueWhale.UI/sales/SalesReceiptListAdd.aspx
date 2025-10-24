@@ -21,6 +21,14 @@
             $("#clientId").val("<%= wlId %>");
         });
     </script>
+                    <style type="text/css">
+                #txtKeys {
+                    width: 310px !important;
+                }
+                        #keys .l-text {
+                            width: 312px !important;
+                        }
+                    </style>
 </head>
 <body style=" padding-top:10px; padding-left:10px;">
 
@@ -28,7 +36,7 @@
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
            <tr>
                <td style="width:100px; text-align:center;">Scan product：</td>
-               <td style="text-align:left; width:250px;">
+               <td style="text-align:left; width:280px;" id="keys">
                    <asp:TextBox ID="txtKeys" runat="server" placeholder="Please use a scanner or enter and press Enter……"></asp:TextBox>
                </td>
                <td style="text-align:center; width:80px;">Sales Unit：</td>

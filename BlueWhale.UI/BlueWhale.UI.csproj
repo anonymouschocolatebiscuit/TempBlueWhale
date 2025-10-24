@@ -58,11 +58,8 @@
     <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
     </Reference>
-    <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MathNet.Numerics.5.0.0\lib\net48\MathNet.Numerics.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cd8b63ad3d691a37, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.Signed.5.0.0\lib\net48\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -129,6 +126,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="appCss\Analysis.js" />
     <Content Include="appCss\AnalysisAdd.js" />
     <Content Include="appCss\app.css" />
@@ -168,77 +170,18 @@
     <Content Include="appCss\Tooltip.js" />
     <Content Include="appCss\WorkRecord.js" />
     <Content Include="appCss\WorkRecord_zh-cn.js" />
-    <Content Include="bin\BlueWhale.BLL.dll" />
-    <Content Include="bin\BlueWhale.BLL.pdb" />
-    <Content Include="bin\BlueWhale.Common.dll" />
-    <Content Include="bin\BlueWhale.Common.pdb" />
-    <Content Include="bin\BlueWhale.DAL.dll" />
-    <Content Include="bin\BlueWhale.DAL.pdb" />
-    <Content Include="bin\BlueWhale.DBUtility.dll" />
-    <Content Include="bin\BlueWhale.DBUtility.pdb" />
-    <Content Include="bin\BlueWhale.Model.dll" />
-    <Content Include="bin\BlueWhale.Model.pdb" />
-    <Content Include="bin\BlueWhale.UI.dll" />
-    <Content Include="bin\BlueWhale.UI.pdb" />
-    <Content Include="bin\BouncyCastle.Cryptography.dll" />
-    <Content Include="bin\BouncyCastle.Cryptography.xml" />
-    <Content Include="bin\itextsharp.dll" />
-    <Content Include="bin\itextsharp.xml" />
-    <Content Include="bin\MathNet.Numerics.dll" />
-    <Content Include="bin\MathNet.Numerics.xml" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
-    <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\NPOI.dll" />
-    <Content Include="bin\roslyn\csc.exe" />
-    <Content Include="bin\roslyn\csi.exe" />
-    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
-    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
-    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
-    <Content Include="bin\roslyn\Microsoft.Win32.Primitives.dll" />
-    <Content Include="bin\roslyn\System.AppContext.dll" />
-    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
-    <Content Include="bin\roslyn\System.Console.dll" />
-    <Content Include="bin\roslyn\System.Diagnostics.DiagnosticSource.dll" />
-    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
-    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
-    <Content Include="bin\roslyn\System.Globalization.Calendars.dll" />
-    <Content Include="bin\roslyn\System.IO.Compression.dll" />
-    <Content Include="bin\roslyn\System.IO.Compression.ZipFile.dll" />
-    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
-    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
-    <Content Include="bin\roslyn\System.Net.Http.dll" />
-    <Content Include="bin\roslyn\System.Net.Sockets.dll" />
-    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
-    <Content Include="bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll" />
-    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
-    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
-    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
-    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
-    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
-    <Content Include="bin\roslyn\System.Threading.Tasks.Extensions.dll" />
-    <Content Include="bin\roslyn\System.ValueTuple.dll" />
-    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
-    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
-    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
-    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
-    <Content Include="bin\roslyn\vbc.exe" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe" />
-    <Content Include="bin\System.Buffers.dll" />
-    <Content Include="bin\System.Memory.dll" />
-    <Content Include="bin\System.Numerics.Vectors.dll" />
-    <Content Include="bin\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="produce\goodsBomList.aspx" />
+    <Content Include="baseSet\VenderLinkMan.aspx" />
+    <Content Include="baseSet\GoodsTypeListPic.aspx" />
+    <Content Include="buy\js\PurReceiptListCheck.js" />
+    <Content Include="buy\PurReceiptListView.aspx" />
+    <Content Include="produce\js\produceListAdd.js" />
     <Content Include="sales\ashx\SalesOrderListEdit.ashx" />
     <Content Include="sales\js\SalesOrderListEdit.js" />
+    <Content Include="sales\js\SalesReceiptListView.js" />
     <Content Include="sales\SalesOrderListEdit.aspx" />
     <Content Include="pay\js\OtherPayListEdit.js" />
     <Content Include="pay\js\OtherPayListAdd.js" />
+    <Content Include="sales\SalesReceiptListView.aspx" />
     <Content Include="store\AssembleListEdit.aspx" />
     <Content Include="Asset\auxiliar.html" />
     <Content Include="Asset\begtable.html" />
@@ -622,7 +565,6 @@
     <Content Include="buy\PurReceiptList.aspx" />
     <Content Include="buy\PurReceiptListCheck.aspx" />
     <Content Include="buy\PurReceiptListEdit.aspx" />
-    <Content Include="buy\PurReceiptListCheck.aspx" />
     <Content Include="images\bigloading.gif" />
     <Content Include="images\body_bg.png" />
     <Content Include="images\buy.png" />
@@ -3493,7 +3435,7 @@
     <Content Include="produce\js\produceInListEdit.js" />
     <Content Include="produce\js\produceList.js" />
     <Content Include="produce\js\produceListEdit.js" />
-    <Content Include="produce\js\productInListAdd.js" />
+    <Content Include="produce\js\produceInListAdd.js" />
     <Content Include="produce\ProduceGetList.aspx" />
     <Content Include="produce\ProduceGetListAdd.aspx" />
     <Content Include="produce\produceInListAdd.aspx" />
@@ -3629,17 +3571,20 @@
     <Content Include="pay\ashx\PayMentListEdit.ashx" />
     <Content Include="buy\ashx\PurOrderListAdd.ashx" />
     <Content Include="buy\ashx\PurReceiptListAdd.ashx" />
+    <Content Include="store\InventoryTransferListEdit.aspx" />
     <Content Include="store\js\AssembleList.js" />
     <Content Include="store\js\AssembleListEdit.js" />
-    <Content Include="store\js\getUrlParam.js" />
+    <Content Include="store\js\InventoryTransferListEdit.js" />
     <Content Include="store\js\OtherInListEdit.js" />
     <Content Include="store\js\OtherOutList.js" />
+    <Content Include="store\js\OtherOutListEdit.js" />
     <Content Include="store\OtherInListEdit.aspx" />
     <Content Include="store\OtherInListAdd.aspx" />
     <Content Include="store\OtherOutList.aspx" />
     <Content Include="store\js\OtherOutListAdd.js" />
     <Content Include="store\js\StockTake.js" />
     <Content Include="store\OtherOutListAdd.aspx" />
+    <Content Include="store\OtherOutListEdit.aspx" />
     <Content Include="store\StockTake.aspx" />
     <Content Include="store\InventoryTransferListAdd.aspx" />
     <Content Include="store\js\InventoryTransferListAdd.js" />
@@ -3714,18 +3659,7 @@
     <Content Include="Asset\README.md" />
     <Content Include="buy\ashx\PurOrderListEdit.ashx" />
     <Content Include="buy\PurOrderListEdit.aspx" />
-    <Content Include="bin\BlueWhale.UI.dll.config" />
-    <Content Include="bin\roslyn\csc.exe.config" />
-    <Content Include="bin\roslyn\csc.rsp" />
-    <Content Include="bin\roslyn\csi.exe.config" />
-    <Content Include="bin\roslyn\csi.rsp" />
-    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
-    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
-    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
-    <Content Include="bin\roslyn\vbc.exe.config" />
-    <Content Include="bin\roslyn\vbc.rsp" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
-    <None Include="packages.config" />
+    <Content Include="produce\ashx\ProduceGetListEdit.ashx" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -3924,6 +3858,34 @@
     <Compile Include="ashx\produceInListAdd.ashx.cs">
       <DependentUpon>produceInListAdd.ashx</DependentUpon>
     </Compile>
+    <Compile Include="baseSet\VenderLinkMan.aspx.cs">
+      <DependentUpon>VenderLinkMan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="baseSet\VenderLinkMan.aspx.designer.cs">
+      <DependentUpon>VenderLinkMan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="buy\PurReceiptListView.aspx.cs">
+      <DependentUpon>PurReceiptListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="buy\PurReceiptListView.aspx.designer.cs">
+      <DependentUpon>PurReceiptListView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="produce\ashx\ProduceGetListEdit.ashx.cs">
+      <DependentUpon>ProduceGetListEdit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="produce\goodsBomList.aspx.cs">
+      <DependentUpon>goodsBomList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="baseSet\GoodsTypeListPic.aspx.cs">
+      <DependentUpon>GoodsTypeListPic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="baseSet\GoodsTypeListPic.aspx.designer.cs">
+      <DependentUpon>GoodsTypeListPic.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sales\ashx\SalesOrderListEdit.ashx.cs">
       <DependentUpon>SalesOrderListEdit.ashx</DependentUpon>
     </Compile>
@@ -3933,6 +3895,25 @@
     </Compile>
     <Compile Include="sales\SalesOrderListEdit.aspx.designer.cs">
       <DependentUpon>SalesOrderListEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="store\ashx\InventoryTransferListAdd.ashx.cs">
+      <DependentUpon>InventoryTransferListAdd.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="store\ashx\InventoryTransferListEdit.ashx.cs">
+      <DependentUpon>InventoryTransferListEdit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="store\ashx\OtherInListEdit.ashx.cs">
+      <DependentUpon>OtherInListEdit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="store\ashx\OtherOutListEdit.ashx.cs">
+      <DependentUpon>OtherOutListEdit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\SalesReceiptListView.aspx.cs">
+      <DependentUpon>SalesReceiptListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\SalesReceiptListView.aspx.designer.cs">
+      <DependentUpon>SalesReceiptListView.aspx</DependentUpon>
     </Compile>
     <Compile Include="store\AssembleListEdit.aspx.cs">
       <DependentUpon>AssembleListEdit.aspx</DependentUpon>
@@ -4943,6 +4924,13 @@
     <Compile Include="store\InventoryTransferListAdd.aspx.designer.cs">
       <DependentUpon>InventoryTransferListAdd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="store\InventoryTransferListEdit.aspx.cs">
+      <DependentUpon>InventoryTransferListEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="store\InventoryTransferListEdit.aspx.designer.cs">
+      <DependentUpon>InventoryTransferListEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="store\OtherInList.aspx.cs">
       <DependentUpon>OtherInList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4977,6 +4965,13 @@
     </Compile>
     <Compile Include="store\OtherOutListAdd.aspx.designer.cs">
       <DependentUpon>OtherOutListAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="store\OtherOutListEdit.aspx.cs">
+      <DependentUpon>OtherOutListEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="store\OtherOutListEdit.aspx.designer.cs">
+      <DependentUpon>OtherOutListEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="store\StockTake.aspx.cs">
       <DependentUpon>StockTake.aspx</DependentUpon>
@@ -5032,6 +5027,10 @@
     <Content Include="store\ashx\StockTake.ashx" />
     <Content Include="store\ashx\DisassembleListAdd.ashx" />
     <Content Include="store\ashx\AssembleListEdit.ashx" />
+    <Content Include="store\ashx\InventoryTransferListEdit.ashx" />
+    <Content Include="store\ashx\OtherOutListEdit.ashx" />
+    <Content Include="store\ashx\InventoryTransferListAdd.ashx" />
+    <Content Include="store\ashx\OtherInListEdit.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5064,7 +5063,9 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="upload\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

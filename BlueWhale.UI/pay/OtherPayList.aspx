@@ -11,31 +11,47 @@
     <script src="../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
     <script src="../lib/json2.js" type="text/javascript"></script>
     <script src="js/OtherPayList.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        .ellipsis-input::placeholder {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .ellipsis-input {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
 </head>
 <body style="padding-left: 10px; padding-top: 10px;">
     <form id="form1" runat="server">
 
-        <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 100%; line-height: 40px;">
+        <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 98%; line-height: 40px;">
             <tr>
-                <td style="text-align: right; width: 50px;">Keyword： 
-                </td>
-                <td style="text-align: left; width: 180px;  padding-right: 5px">
-                    <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter the doc no/supplier/remarks"></asp:TextBox>
-                </td>
-                <td style="text-align: right; width: 70px;">Start Date：
+                <td style="text-align: right; width: 60px; padding-right: 0.25rem;">Keyword： 
                 </td>
                 <td style="text-align: left; width: 180px;">
+                    <asp:TextBox ID="txtKeys" runat="server" CssClass="ellipsis-input" placeholder="Please enter the doc no/supplier/remarks"></asp:TextBox>
+                </td>
+                <td style="text-align: right; width: 80px; padding-right: 0.25rem;">Start Date：
+                </td>
+                <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 70px;">End Date：
+                <td style="text-align: right; width: 80px; padding-right: 0.25rem;">End Date：
                 </td>
-                <td style="text-align: left; width: 180px;">
+                <td style="text-align: left; width: 120px; padding-right: 0.5rem;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
                 <td style="text-align: center; width: 100px;">
                     <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
                 </td>
-                <td style="text-align: right; padding-right: 20px;">
+                <td style="text-align: right; padding-right: 1.5rem;">
                     <input id="btnAdd" type="button" value="Add" class="ui-btn" onclick="add()" />
                     <input id="btnCheck" type="button" value="Review" class="ui-btn" onclick="checkRow()" />
                     <input id="btnCheckNo" type="button" value="Cancel Review" class="ui-btn" onclick="checkNoRow()" />

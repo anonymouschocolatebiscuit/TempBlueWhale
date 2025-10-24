@@ -12,6 +12,7 @@ namespace BlueWhale.UI.sales
     public partial class SalesReceiptListEdit : BasePage
     {
         public ClientDAL venderDAL = new ClientDAL();
+
         public InventoryDAL inventoryDAL = new InventoryDAL();
 
         public AccountDAL accountDAL = new AccountDAL();
@@ -24,7 +25,6 @@ namespace BlueWhale.UI.sales
 
         public UserDAL userDAL = new UserDAL();
 
-
         public LogisticsDAL wuliuDAL = new LogisticsDAL();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -33,17 +33,14 @@ namespace BlueWhale.UI.sales
 
             if (!this.IsPostBack)
             {
-
                 if (!CheckPower("SalesReceiptListEdit"))
                 {
                     Response.Redirect("../OverPower.htm");
                 }
 
                 this.txtBizDate.Text = DateTime.Now.ToShortDateString();
-
                 this.txtPayNow.Attributes.Add("onkeyup", "return calcPayNo(this.value)");
                 this.txtDis.Attributes.Add("onkeyup", "return calcDisPrice(this.value)");
-
                 this.Bind();
                 this.BindInfo();
             }
@@ -56,48 +53,28 @@ namespace BlueWhale.UI.sales
             }
         }
 
-
-
         public void Bind()
         {
-
             this.ddlBankList.Items.Clear();
             this.ddlSendCompanyList.Items.Clear();
-
             this.ddlYWYList.Items.Clear();
-
             ListItem items = new ListItem("(Please select)", "0");
-
             string isWhere = " shopId='" + LoginUser.ShopId + "' ";
-
-
-
             this.ddlBankList.DataSource = accountDAL.GetList(isWhere);
             this.ddlBankList.DataTextField = "CodeName";
             this.ddlBankList.DataValueField = "id";
             this.ddlBankList.DataBind();
-
             this.ddlBankList.Items.Insert(0, new ListItem("Please select", "0"));
-
-
-
-
             this.ddlYWYList.DataSource = userDAL.GetList(isWhere);
             this.ddlYWYList.DataTextField = "names";
             this.ddlYWYList.DataValueField = "id";
             this.ddlYWYList.DataBind();
-
             this.ddlYWYList.SelectedValue = LoginUser.Id.ToString();
-
             this.ddlSendCompanyList.DataSource = wuliuDAL.GetList(isWhere);
             this.ddlSendCompanyList.DataTextField = "names";
             this.ddlSendCompanyList.DataValueField = "id";
-
             this.ddlSendCompanyList.DataBind();
-
             this.ddlSendCompanyList.Items.Insert(0, new ListItem("Please select", "0"));
-
-
         }
 
         public void BindInfo()
@@ -159,14 +136,8 @@ namespace BlueWhale.UI.sales
             }
             else
             {
-
-
-
             }
-
-
         }
-
 
         void GetDataList(int id)
         {
@@ -177,7 +148,7 @@ namespace BlueWhale.UI.sales
 
             int rows = ds.Tables[0].Rows.Count;
 
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {
@@ -192,15 +163,12 @@ namespace BlueWhale.UI.sales
                     sumPriceDis = ds.Tables[0].Rows[i]["sumPriceDis"].ToString(),
                     priceNow = ds.Tables[0].Rows[i]["priceNow"].ToString(),
                     sumPriceNow = ds.Tables[0].Rows[i]["sumPriceNow"].ToString(),
-
                     tax = ds.Tables[0].Rows[i]["tax"].ToString(),
                     priceTax = ds.Tables[0].Rows[i]["priceTax"].ToString(),
                     sumPriceTax = ds.Tables[0].Rows[i]["sumPriceTax"].ToString(),
-
                     sumPriceAll = ds.Tables[0].Rows[i]["sumPriceAll"].ToString(),
                     ckId = ds.Tables[0].Rows[i]["ckId"].ToString(),
                     ckName = ds.Tables[0].Rows[i]["ckName"].ToString(),
-
                     itemId = ds.Tables[0].Rows[i]["itemId"].ToString(),
                     remarks = ds.Tables[0].Rows[i]["remarks"].ToString(),
                     sourceNumber = ds.Tables[0].Rows[i]["sourceNumber"].ToString()
@@ -210,7 +178,7 @@ namespace BlueWhale.UI.sales
 
             if (rows < 8)//Less than 8 lines
             {
-                for (var i = 0; i < 8 - rows; i++)
+                for (int i = 0; i < 8 - rows; i++)
                 {
                     list.Add(new
                     {
@@ -219,24 +187,16 @@ namespace BlueWhale.UI.sales
                         goodsName = "",
                         spec = "",
                         unitName = "",
-
                         num = "",
-
                         price = "",
-
                         dis = "",
                         sumPriceDis = "",
-
                         priceNow = "",
                         sumPriceNow = "",
-
                         tax = "",
                         priceTax = "",
                         sumPriceTax = "",
-
                         sumPriceAll = "",
-
-
                         ckId = "",
                         ckName = "",
                         remarks = "",
@@ -245,7 +205,6 @@ namespace BlueWhale.UI.sales
                     });
                 }
             }
-
 
             var griddata = new { Rows = list, Total = list.Count.ToString() };
             string s = new JavaScriptSerializer().Serialize(griddata);

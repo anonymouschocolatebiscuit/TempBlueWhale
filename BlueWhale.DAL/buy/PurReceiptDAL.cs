@@ -9,7 +9,6 @@ namespace BlueWhale.DAL
     {
         public PurReceiptDAL()
         {
-
         }
 
         #region Attributes
@@ -291,13 +290,16 @@ namespace BlueWhale.DAL
         public int UpdateCheck(int Id, int chekerId, string checker, DateTime checkDate, string flag)
         {
             string sql = " if not exists(select * from PurReceipt where flag='" + flag + "' and id='" + Id + "') ";
+
             sql += " begin ";
 
             sql += " update PurReceipt set flag='" + flag + "' ";
+
             if (flag == "Review")
             {
                 sql += " ,checkId='" + chekerId + "',checkDate='" + checkDate + "'";
             }
+
             if (flag == "Save")
             {
                 sql += " ,checkId=null,checkDate=null ";
@@ -308,7 +310,6 @@ namespace BlueWhale.DAL
             sql += " end ";
 
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
-
         }
 
         #endregion
@@ -322,7 +323,8 @@ namespace BlueWhale.DAL
         public int Delete(int Id)
         {
             string sql = " if not exists( ";
-            sql += "               select * from purReceipt where flag='审核' and id='" + Id + "' )";
+
+            sql += " select * from purReceipt where flag='审核' and id='" + Id + "' )";
 
             sql += " begin ";
 
@@ -330,11 +332,7 @@ namespace BlueWhale.DAL
 
             sql += " end ";
 
-
-
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
-
-
         }
 
         #endregion
@@ -351,7 +349,6 @@ namespace BlueWhale.DAL
             return ds.Tables[0].Rows[0][0].ToString();
 
         }
-
 
         #region Search Purchase Order List Sum Goods-----------By Item-------NewUI
 

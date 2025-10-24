@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>s</title>
+    <title>Sales Order List</title>
 
     <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
@@ -13,6 +13,14 @@
     <script src="../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
     <script src="../lib/json2.js" type="text/javascript"></script>
     <script src="js/SalesOrderList.js?v=2018.11.19.02" type="text/javascript"></script>
+    <style>
+        #txtKey .l-text{
+            width:240px !important;
+        }
+        #txtKey .l-text .l-text-field {
+            width: 236px !important;
+        }
+    </style>
 </head>
 <body style="padding-left: 10px; padding-top: 10px;">
     <form id="form1" runat="server">
@@ -21,7 +29,7 @@
             <tr>
                 <td style="text-align: right; width: 50px;">Keyword： 
                 </td>
-                <td style="text-align: left; width: 180px; padding-right: 15px;">
+                <td id="txtKey" style="text-align: left; padding-right: 15px;">
                     <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter sale order code / customer info /remark"></asp:TextBox>
                     <asp:HiddenField ID="hfShopId" runat="server" />
                 </td>

@@ -45,7 +45,7 @@ namespace BlueWhale.UI.produce
 
                 DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
 
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                DateTime end = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 GetDataList(keys, start, end, types);
                 Response.End();

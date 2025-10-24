@@ -17,7 +17,6 @@
                 {
                     checkbox: true,
                     columns: [
-                        { display: 'Operate', isSort: false, width: 60, align: 'center' },
                         { display: 'Customer Category', name: 'typeName', width: 130, type: 'int', align: 'center' },
                         { display: 'Customer Number', name: 'code', width: 125, align: 'center' },
                         { display: 'Customer Name', name: 'names', width: 115, align: 'left' },

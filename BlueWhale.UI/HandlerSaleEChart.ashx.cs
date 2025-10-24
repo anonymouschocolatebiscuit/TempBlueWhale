@@ -1,6 +1,4 @@
-﻿using BlueWhale.DAL;
-using BlueWhale.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
@@ -8,6 +6,8 @@ using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.Services;
 using System.Web.SessionState;
+using BlueWhale.DAL;
+using BlueWhale.Model;
 
 namespace BlueWhale.UI
 {
@@ -58,7 +58,7 @@ namespace BlueWhale.UI
 
 
         /// <summary>
-        /// Sales proporion - Pie Chart
+        /// Sales proportion - Pie Chart
         /// </summary>
         /// <param name="context"></param>
         public void GetPie(HttpContext context, int shopId)

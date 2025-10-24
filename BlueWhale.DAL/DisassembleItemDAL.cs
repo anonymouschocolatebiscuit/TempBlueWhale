@@ -13,7 +13,6 @@ namespace BlueWhale.DAL
     {
         public DisassembleItemDAL()
         {
-
         }
 
         #region Attribute
@@ -38,8 +37,6 @@ namespace BlueWhale.DAL
             get { return types; }
             set { types = value; }
         }
-
-
 
         private int goodsId;
         public int GoodsId
@@ -69,7 +66,6 @@ namespace BlueWhale.DAL
             set { sumPrice = value; }
         }
 
-
         private int ckId;
         public int CkId
         {
@@ -84,9 +80,7 @@ namespace BlueWhale.DAL
             set { remarks = value; }
         }
 
-
         #endregion
-
 
         #region Add a new record
         /// <summary>
@@ -95,11 +89,9 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public int Add()
         {
-
             string sql = "insert into GoodsOpenItem(pId,types,goodsId,num,price,sumPrice,ckId,remarks)";
             sql += " values(@pId,@types,@goodsId,@num,@price,@sumPrice,@ckId,@remarks)  ";
             SqlParameter[] param = {
-
                                        new SqlParameter("@PId",PId),
                                        new SqlParameter("@Types",Types),
                                        new SqlParameter("@GoodsId",GoodsId),
@@ -108,15 +100,9 @@ namespace BlueWhale.DAL
                                        new SqlParameter("@SumPrice",SumPrice),
                                        new SqlParameter("@CkId",CkId),
                                        new SqlParameter("@Remarks",Remarks)
-
-
                                      };
 
-
-
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, param);
-
-
         }
         #endregion
 
@@ -130,16 +116,9 @@ namespace BlueWhale.DAL
         {
             string sql = " ";
 
-
             sql += " delete from GoodsOpenItem  where pId='" + PId + "' ";
 
-
-
-
-
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
-
-
         }
 
         #endregion
@@ -157,9 +136,7 @@ namespace BlueWhale.DAL
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
 
-
         #endregion
-
 
         #region Get all models by id and types
 
@@ -179,9 +156,6 @@ namespace BlueWhale.DAL
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
 
-
         #endregion
-
-
     }
 }

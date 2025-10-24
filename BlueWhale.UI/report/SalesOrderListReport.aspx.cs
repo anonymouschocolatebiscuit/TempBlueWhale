@@ -1,10 +1,15 @@
 ﻿using BlueWhale.Common;
 using BlueWhale.DAL;
 using BlueWhale.UI.src;
+using Org.BouncyCastle.Asn1.Ocsp;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Web;
 using System.Web.Script.Serialization;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace BlueWhale.UI.report
 {
@@ -33,7 +38,7 @@ namespace BlueWhale.UI.report
 
                 DateTime bizStart = DateTime.Parse(Request.Params["start"].ToString());
 
-                DateTime bizEnd = DateTime.Parse(Request.Params["end"].ToString());
+                DateTime bizEnd = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
 
                 DateTime sendStart = DateTime.Parse("2000-1-1");

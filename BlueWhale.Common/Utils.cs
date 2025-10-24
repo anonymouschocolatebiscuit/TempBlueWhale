@@ -12,7 +12,7 @@ namespace BlueWhale.Common
 {
     public class Utils
     {
-        #region sysem version
+        #region system version
         /// <summary>
         /// system version class
         /// </summary>
@@ -642,7 +642,7 @@ namespace BlueWhale.Common
 
                 if (tempLen > len)
                     break;
-            }            
+            }
             byte[] mybyte = System.Text.Encoding.Default.GetBytes(inputString);
             if (mybyte.Length > len)
                 tempString += "…";
@@ -654,9 +654,9 @@ namespace BlueWhale.Common
         public static string DropHTML(string Htmlstring)
         {
             if (string.IsNullOrEmpty(Htmlstring)) return "";
-            //删除脚本  
+            //Delete Script 
             Htmlstring = Regex.Replace(Htmlstring, @"<script[^>]*?>.*?</script>", "", RegexOptions.IgnoreCase);
-            //删除HTML  
+            //Delete HTML  
             Htmlstring = Regex.Replace(Htmlstring, @"<(.[^>]*)>", "", RegexOptions.IgnoreCase);
             Htmlstring = Regex.Replace(Htmlstring, @"([\r\n])[\s]+", "", RegexOptions.IgnoreCase);
             Htmlstring = Regex.Replace(Htmlstring, @"-->", "", RegexOptions.IgnoreCase);
@@ -694,9 +694,9 @@ namespace BlueWhale.Common
             //Htmlstring = myReg.Replace(Htmlstring, "");
             //return Htmlstring;
 
-            //删除脚本
+            //Delete Script
             Htmlstring = Regex.Replace(Htmlstring, @"<script[^>]*?>.*?</script>", "", RegexOptions.IgnoreCase);
-            //删除HTML
+            //Delete HTML
             Htmlstring = Regex.Replace(Htmlstring, @"<(.[^>]*)>", "", RegexOptions.IgnoreCase);
             //Htmlstring = Regex.Replace(Htmlstring, @"([\r\n])[\s]+", "", RegexOptions.IgnoreCase);
             Htmlstring = Regex.Replace(Htmlstring, @"-->", "", RegexOptions.IgnoreCase);
@@ -750,7 +750,7 @@ namespace BlueWhale.Common
             theString = theString.Replace("&quot;", "\"");
             theString = theString.Replace("&#39;", "'");
             theString = theString.Replace("<br/> ", "\r\n");
-            theString = theString.Replace("&mdash;", "—");//2012-05-07新加的
+            theString = theString.Replace("&mdash;", "—"); //2012-05-07 new added
             return theString;
         }
 
@@ -1067,7 +1067,7 @@ namespace BlueWhale.Common
             }
             if (_filepath.LastIndexOf(".") > 0)
             {
-                return _filepath.Substring(_filepath.LastIndexOf(".") + 1); //文件extension，不含“.”
+                return _filepath.Substring(_filepath.LastIndexOf(".") + 1); // file extension，not include“.”
             }
             return "";
         }
@@ -1125,7 +1125,7 @@ namespace BlueWhale.Common
 
         #region read or write cookie
         /// <summary>
-        /// 写cookie value
+        /// Write cookie value
         /// </summary>
         /// <param name="strName">name</param>
         /// <param name="strValue">value</param>
@@ -1221,9 +1221,9 @@ namespace BlueWhale.Common
         /// <summary>
         /// convert to specific string
         /// </summary>
-        /// <param name="originalStr">原字符串</param>
-        /// <param name="oldStr">旧字符串</param>
-        /// <param name="newStr">新字符串</param>
+        /// <param name="originalStr">Original string</param>
+        /// <param name="oldStr">Old String</param>
+        /// <param name="newStr">New String</param>
         /// <returns></returns>
         public static string ReplaceStr(string originalStr, string oldStr, string newStr)
         {

@@ -236,12 +236,21 @@ namespace BlueWhale.DAL
         /// <param name="Id"></param>
         /// <param name="flag"></param>
         /// <returns></returns>
-        public int UpdateFlag(int Id)
+        public int UpdateFlag(int Id, int flag)
         {
-            string sqls = "if exists(select * from inventory where id='" + Id + "' and flag=1) ";
-            sqls += " update inventory set flag=0 where id='" + Id + "'";
+            string sqls;
 
-            sqls += " else update inventory set flag=1 where id='" + Id + "'";
+            if (flag == 0)
+            {
+                sqls = "if exists(select * from inventory where id='" + Id + "' and flag=1) ";
+                sqls += " update inventory set flag=0 where id='" + Id + "'";
+            }
+            else
+            {
+                sqls = "if exists(select * from inventory where id='" + Id + "' and flag=0) ";
+                sqls += " update inventory set flag=1 where id='" + Id + "'";
+            }
+            
 
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sqls, null);
 

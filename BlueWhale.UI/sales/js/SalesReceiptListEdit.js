@@ -78,7 +78,6 @@ function f_selectClientOK(item, dialog) {
     $("#clientName").val(data.names);
     $("#clientId").val(data.id);
 
-
     dialog.close();
 }
 
@@ -129,7 +128,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Product Name', name: 'goodsName', width: '155px', align: 'left',
+                    display: 'Product Name', name: 'goodsName', width: 250, align: 'left',
 
                     totalSummary:
                     {
@@ -140,18 +139,18 @@ $(function () {
                         }
                     }
                 },
-                { display: 'Specification', name: 'spec', width: '100px', align: 'center' },
-                { display: 'Unit', name: 'unitName', width: '80px', align: 'center' },
+                { display: 'Specification', name: 'spec', width: 100, align: 'center' },
+                { display: 'Unit', name: 'unitName', width: 80, align: 'center' },
                 {
-                    display: 'Storehouse', name: 'ckId', width: '100px', isSort: false, textField: 'ckName',
-                    editor: {
+                    display: 'warehouse', name: 'ckId', width: 80, isSort: false, textField: 'ckName',
+                    editor:
                         type: 'select',
-                        url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
-                        valueField: 'ckId', textField: 'ckName'
-                    }
+                    url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
+                    valueField: 'ckId', textField: 'ckName'
+                }
                 },
                         {
-                            display: 'Quantity', name: 'num', width: '70px', type: 'float', align: 'right', editor: { type: 'float' },
+                            display: 'Quantity', name: 'num', width: 70, type: 'float', align: 'right', editor: { type: 'float' },
 
                             totalSummary:
                             {
@@ -164,13 +163,13 @@ $(function () {
                             }
                         },
                         {
-                            display: 'Original price', name: 'price', width: '95px', type: 'float', align: 'right', editor: { type: 'float' }
+                            display: 'Original price', name: 'price', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
                         },
                         {
-                            display: 'Discount%', name: 'dis', width: '80px', type: 'float', align: 'right', editor: { type: 'float' }
+                            display: 'Discount%', name: 'dis', width: 60, type: 'float', align: 'right', editor: { type: 'float' }
                         },
                         {
-                            display: 'Discount amount', name: 'sumPriceDis', width: '120px', type: 'float', align: 'right', editor: { type: 'float' },
+                            display: 'Discount amount', name: 'sumPriceDis', width: 70, type: 'float', align: 'right', editor: { type: 'float' },
                             totalSummary:
                             {
                                 align: 'center', //Alignment of summary cell contents: left/center/right
@@ -183,10 +182,10 @@ $(function () {
                             }
                         },
                         {
-                            display: 'Current Price', name: 'priceNow', width: '90px', type: 'float', align: 'right', editor: { type: 'float' }
+                            display: 'Current Price', name: 'priceNow', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
                         },
                         {
-                            display: 'Amount', name: 'sumPriceNow', width: '75px', type: 'float', align: 'right', editor: { type: 'float' },
+                            display: 'Amount', name: 'sumPriceNow', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
 
                             totalSummary:
                             {
@@ -199,10 +198,10 @@ $(function () {
                                 }
                             }
                         },
-                        { display: 'Tax rate%', name: 'tax', width: '80px', type: 'int', align: 'center', editor: { type: 'int' } },
-                        { display: 'Unit price including tax', name: 'priceTax', width:  '150px', type: 'float', align: 'center', editor: { type: 'float' } },
+                        { display: 'Tax rate%', name: 'tax', width: 60, type: 'int', align: 'center', editor: { type: 'int' } },
+                        { display: 'Unit price including tax', name: 'priceTax', width: 70, type: 'float', align: 'center', editor: { type: 'float' } },
                         {
-                            display: 'Tax amount', name: 'sumPriceTax', width: '80px', type: 'float', align: 'right',
+                            display: 'Tax amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
 
                             totalSummary:
                             {
@@ -218,7 +217,7 @@ $(function () {
                             }
                         },
                         {
-                            display: 'Price and tax total', name: 'sumPriceAll', width: '120px', type: 'float', align: 'right', editor: { type: 'float' },
+                            display: 'Price and tax total', name: 'sumPriceAll', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
                             totalSummary:
                             {
                                 align: 'center', //Alignment of summary cell contents: left/center/right
@@ -232,7 +231,7 @@ $(function () {
                                 }
                             }
                         },
-                        { display: 'Remarks', name: 'remarks', width:  '125px', align: 'left', type: 'text', editor: { type: 'text' } },
+                        { display: 'Remarks', name: 'remarks', width: 150, align: 'left', type: 'text', editor: { type: 'text' } },
                         { display: 'Source order number', name: 'sourceNumber', width: 180, align: 'left', type: 'text' }
                      ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '350',
             url: 'SalesReceiptListEdit.aspx?Action=GetData&id=' + param,
@@ -269,12 +268,9 @@ function addNewRow() {
         id: rowNum + 1,
         goodsId: "",
         goodsName: "",
-
         spec: "",
         unitName: "",
-
         num: "",
-
         price: "",
         dis: "",
         sumPriceDis: "",
@@ -284,13 +280,11 @@ function addNewRow() {
         priceTax: "", //Unit price including tax
         sumPriceTax: "", //tax amount
         sumPriceAll: "",
-
         ckId: "",
         ckName: "",
         remarks: "",
         sourceNumber: "",
         itemId: 0
-
     });
 
     updateTotal();
@@ -311,12 +305,10 @@ function f_onGoodsChanged(e) {
     var selectedRow = manager.getSelected();
 
     grid.updateRow(selectedRow, {
-
         goodsId: selected.id,
         goodsName: selected.names,
         spec: selected.spec,
         unitName: selected.unitName,
-
         num: 1,
         price: selected.priceSalesRetail,
         dis: 0,
@@ -327,15 +319,12 @@ function f_onGoodsChanged(e) {
         priceTax: selected.priceSalesRetail, //Unit price including tax, default is unit price excluding tax
         sumPriceTax: 0, //tax amount
         sumPriceAll: selected.priceSalesRetail,
-
         ckId: selected.ckId,
         ckName: selected.ckName,
         sourceNumber: "",
         itemId: 0,
         remarks: ""
     });
-
-
 
     if (e.length > 1) //If there are multiple lines, delete the blank lines first, then insert the following
     {
@@ -385,7 +374,6 @@ function f_onGoodsChanged(e) {
 function updateTotal() {
 
     var data = manager.getData();//getData
-
     var sumPriceItemDis = 0; //discount amount
     var sumPriceItemNow = 0; //Amount before tax
     var sumPriceItemTax = 0; //tax amount
@@ -490,16 +478,12 @@ function f_onAfterEdit(e) {
     if (e.column.name == "price") //Unit price changes---start
     {
         price = Number(e.value);
-
         sumPriceDis = num * price * dis / 100;
-
         priceNow = price * (1 + dis / 100);
         sumPriceNow = num * priceNow;
         sumPriceNow = Math.round(sumPriceNow * 10000) / 10000;
-
         priceTax = priceNow * (1 + tax / 100);
         sumPriceTax = num * priceNow * tax / 100; //Tax amount = quantity * current price * tax rate / 100;
-
         sumPriceAll = num * priceTax;
 
         //format
@@ -1073,7 +1057,7 @@ function calcDisPrice(dis) {
     //2. Calculate the warranty amount
     var disPrice = sumPriceAll * dis / 100;
     $("#txtDisPrice").val(Math.round(disPrice * 10000) / 10000);
-}
+} }
 
 var param = getUrlParam("id");
 

@@ -247,7 +247,7 @@ namespace BlueWhale.DBUtility
                             isHave = Convert.ToInt32(obj) > 0;
                             if (isHave)
                             {
-                                //引发事件
+                                // Trigger Event
                                 myDE.OnSolicitationEvent();
                             }
                         }
@@ -671,7 +671,7 @@ namespace BlueWhale.DBUtility
                     SqlCommand cmd = new SqlCommand();
                     try
                     {
-                        //循环
+                        // Loop
                         foreach (DictionaryEntry myDE in SQLStringList)
                         {
                             string cmdText = myDE.Key.ToString();
@@ -706,7 +706,7 @@ namespace BlueWhale.DBUtility
                     try
                     {
                         int count = 0;
-                        //循环
+                        // Loop
                         foreach (CommandInfo myDE in cmdList)
                         {
                             string cmdText = myDE.CommandText;
