@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>BlueWhale ERP System</title>
+    <title>EmberHawk ERP System</title>
     <link href="skin/default/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="scripts/jquery/jquery-1.10.2.min.js"></script>
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
@@ -25,7 +25,7 @@
         <form id="form1" runat="server">
             <div class="login-title">
                <a href="Login.aspx" style=" text-decoration:none;">
-                <img src="images/logo.png" alt="BlueWhale ERP" height="80px" />
+                <img src="images/logo.png" alt="EmberHawk ERP" height="80px" />
                </a>
             </div>
             <div class="login-screen">

@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using MathNet.Numerics;
-
 namespace BlueWhale.UI.baseSet
 {
 

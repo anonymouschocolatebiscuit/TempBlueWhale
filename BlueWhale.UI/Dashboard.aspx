@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Welcome to BlueWhale ERP</title>
+    <title>Welcome to EmberHawk ERP</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,405 +17,406 @@
     <script src="appCss/jquery-1.10.2.min.js" type="text/javascript"></script>
 
     <style type="text/css">
-    .default #appHeader {
-        height: 46px;
-        position: fixed;
-        top: 0;
-        left: 0px;
-        z-index: 99;
-        width: 100%;
-        font-family: '微软雅黑', '宋体';
-    }
-
-    .default .menuList1 {
-        width: 63px;
-        height: 46px;
-    }
-
-    .default .headMessage {
-        height: 45px;
-        margin-right: 25px;
-    }
-
-    .default .mainLogo {
-        float: left;
-        display: block;
-        width: 300px;
-        height: 25px;
-        margin: 10px 0 0 14px;
-        font-size: 18px;
-        color: #fff;
-        font-family: '微软雅黑', '宋体';
-        position: relative;
-    }
-
-    .default .head-ask {
-        height: 45px;
-        line-height: 45px;
-        color: #f2f2f2;
-        font-size: 14px;
-        text-decoration: none;
-        max-width: 30em;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        text-align: right;
-    }
-
-    .default #appLeftSide {
-        position: fixed;
-        top: 46px;
-        left: 0;
-        width: 63px;
-        background: #393d48;
-        height: 100%;
-        z-index: 201;
-    }
-
-    #nav {
-        z-index: 1;
-        /*border-bottom:1px solid #28688b;border-color:rgba(0,0,0,0.15);*/
-    }
-
-        #nav .item {
-            position: relative;
-            margin-bottom: 1px;
-            zoom: 1;
-            float: left;
+        .default #appHeader {
+            height: 46px;
+            position: fixed;
+            top: 0;
+            left: 0px;
+            z-index: 99;
             width: 100%;
+            font-family: '微软雅黑', '宋体';
+            background: #ffaa66;
         }
 
-    .v-standard #nav .item {
-        margin-bottom: 0;
-    }
+        .default .menuList1 {
+            width: 63px;
+            height: 46px;
+        }
 
-    #nav .main-nav {
-        position: relative;
-        display: block;
-        height: 80px;
-        width: 100%;
-        float: left;
-        font-family: "新宋体", "宋体";
-    }
+        .default .headMessage {
+            height: 45px;
+            margin-right: 25px;
+        }
 
-    .v-standard #nav .item {
-        height: 84px;
-    }
-
-    #nav .on .main-nav {
-        background-position: 0 -80px;
-    }
-
-    #nav .current .main-nav {
-        background-position: 0 -160px;
-    }
-
-    #nav .sales {
-        background-position: -98px 0;
-    }
-
-    #nav .on .sales {
-        background-position: -98px -80px;
-    }
-
-    #nav .current .sales {
-        background-position: -98px -160px;
-    }
-
-    #nav .storage {
-        background-position: -196px 0;
-    }
-
-    #nav .on .storage {
-        background-position: -196px -80px;
-    }
-
-    #nav .current .storage {
-        background-position: -196px -160px;
-    }
-
-    #nav .money {
-        background-position: -294px 0;
-    }
-
-    #nav .on .money {
-        background-position: -294px -80px;
-    }
-
-    #nav .current .money {
-        background-position: -294px -160px;
-    }
-
-    #nav .report {
-        background-position: -392px 0;
-    }
-
-    #nav .on .report {
-        background-position: -392px -80px;
-    }
-
-    #nav .current .report {
-        background-position: -392px -160px;
-    }
-
-    #nav .setting {
-        background-position: -490px 0;
-    }
-
-    #nav .on .setting {
-        background-position: -490px -80px;
-    }
-
-    #nav .current .setting {
-        background-position: -490px -160px;
-    }
-
-    #nav .vip {
-        background-position: -582px 0;
-    }
-
-    #nav .on .vip {
-        background-position: -582px -80px;
-    }
-
-    #nav .current .vip {
-        background-position: -582px -160px;
-    }
-
-    #nav .arrow {
-        position: absolute;
-        left: 75px;
-        top: 55px;
-        display: block;
-        text-indent: 0;
-        font-weight: bold;
-    }
-
-    #nav .on .arrow {
-        text-indent: -99999px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 8px;
-        border-color: transparent;
-        border-right-color: white;
-        border-left: none;
-        left: 87px;
-        top: 50%;
-        margin-top: -8px;
-    }
-
-    #nav.static .current .arrow {
-        text-indent: -99999px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 8px;
-        border-color: transparent;
-        border-right-color: white;
-        border-left: none;
-        left: 87px;
-        top: 50%;
-        margin-top: -8px;
-    }
-
-    .v-standard #nav .on .arrow {
-        text-indent: -99999px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 8px;
-        border-color: transparent;
-        border-right-color: white;
-        border-left: none;
-        left: 87px;
-        top: 50%;
-        margin-top: -8px;
-    }
-
-    .v-standard #nav.static .current .arrow {
-        text-indent: -99999px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 8px;
-        border-color: transparent;
-        border-right-color: white;
-        border-left: none;
-        left: 87px;
-        top: 50%;
-        margin-top: -8px;
-    }
-
-    #nav .sub-nav-wrap {
-        display: none;
-        position: absolute;
-        left: 60px;
-        width: 120px;
-        border: 4px solid #c7c7c7;
-        border-color: rgba(0, 0, 0, 0.2);
-        border-left: 0;
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
-        z-index: 9999;
-        background-color: #fff;
-    }
-
-        #nav .sub-nav-wrap b {
-            position: absolute;
-            left: -8px;
-            margin-top: -8px;
+        .default .mainLogo {
+            float: left;
             display: block;
+            width: 300px;
+            height: 25px;
+            margin: 10px 0 0 14px;
+            font-size: 18px;
+            color: #fff;
+            font-family: '微软雅黑', '宋体';
+            position: relative;
+        }
+
+        .default .head-ask {
+            height: 45px;
+            line-height: 45px;
+            color: #f2f2f2;
+            font-size: 14px;
+            text-decoration: none;
+            max-width: 30em;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            text-align: right;
+        }
+
+        .default #appLeftSide {
+            position: fixed;
+            top: 46px;
+            left: 0;
+            width: 63px;
+            background: #3b1d00;
+            height: 100%;
+            z-index: 201;
+        }
+
+        #nav {
+            z-index: 1;
+            /*border-bottom:1px solid #28688b;border-color:rgba(0,0,0,0.15);*/
+        }
+
+            #nav .item {
+                position: relative;
+                margin-bottom: 1px;
+                zoom: 1;
+                float: left;
+                width: 100%;
+            }
+
+        .v-standard #nav .item {
+            margin-bottom: 0;
+        }
+
+        #nav .main-nav {
+            position: relative;
+            display: block;
+            height: 80px;
+            width: 100%;
+            float: left;
+            font-family: "新宋体", "宋体";
+        }
+
+        .v-standard #nav .item {
+            height: 84px;
+        }
+
+        #nav .on .main-nav {
+            background-position: 0 -80px;
+        }
+
+        #nav .current .main-nav {
+            background-position: 0 -160px;
+        }
+
+        #nav .sales {
+            background-position: -98px 0;
+        }
+
+        #nav .on .sales {
+            background-position: -98px -80px;
+        }
+
+        #nav .current .sales {
+            background-position: -98px -160px;
+        }
+
+        #nav .storage {
+            background-position: -196px 0;
+        }
+
+        #nav .on .storage {
+            background-position: -196px -80px;
+        }
+
+        #nav .current .storage {
+            background-position: -196px -160px;
+        }
+
+        #nav .money {
+            background-position: -294px 0;
+        }
+
+        #nav .on .money {
+            background-position: -294px -80px;
+        }
+
+        #nav .current .money {
+            background-position: -294px -160px;
+        }
+
+        #nav .report {
+            background-position: -392px 0;
+        }
+
+        #nav .on .report {
+            background-position: -392px -80px;
+        }
+
+        #nav .current .report {
+            background-position: -392px -160px;
+        }
+
+        #nav .setting {
+            background-position: -490px 0;
+        }
+
+        #nav .on .setting {
+            background-position: -490px -80px;
+        }
+
+        #nav .current .setting {
+            background-position: -490px -160px;
+        }
+
+        #nav .vip {
+            background-position: -582px 0;
+        }
+
+        #nav .on .vip {
+            background-position: -582px -80px;
+        }
+
+        #nav .current .vip {
+            background-position: -582px -160px;
+        }
+
+        #nav .arrow {
+            position: absolute;
+            left: 75px;
+            top: 55px;
+            display: block;
+            text-indent: 0;
+            font-weight: bold;
+        }
+
+        #nav .on .arrow {
+            text-indent: -99999px;
             width: 0;
             height: 0;
-            font-size: 0;
-            overflow: hidden;
             border-style: solid;
             border-width: 8px;
             border-color: transparent;
             border-right-color: white;
             border-left: none;
+            left: 87px;
+            top: 50%;
+            margin-top: -8px;
         }
 
-    #nav .single-nav b {
-        top: 50%;
-    }
-
-    #nav .sub-nav {
-        background-color: #fff;
-        padding: 10px 0 5px;
-        line-height: 24px;
-    }
-
-        #nav .sub-nav li {
-            padding-bottom: 8px;
-            font-size: 10px;
+        #nav.static .current .arrow {
+            text-indent: -99999px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px;
+            border-color: transparent;
+            border-right-color: white;
+            border-left: none;
+            left: 87px;
+            top: 50%;
+            margin-top: -8px;
         }
 
-        #nav .sub-nav a {
-            padding-left: 15px;
-            display: block;
-            color: #888;
-            zoom: 1;
+        .v-standard #nav .on .arrow {
+            text-indent: -99999px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px;
+            border-color: transparent;
+            border-right-color: white;
+            border-left: none;
+            left: 87px;
+            top: 50%;
+            margin-top: -8px;
         }
 
-            #nav .sub-nav a:hover {
-                background-color: #eee;
-                color: #555;
+        .v-standard #nav.static .current .arrow {
+            text-indent: -99999px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px;
+            border-color: transparent;
+            border-right-color: white;
+            border-left: none;
+            left: 87px;
+            top: 50%;
+            margin-top: -8px;
+        }
+
+        #nav .sub-nav-wrap {
+            display: none;
+            position: absolute;
+            left: 60px;
+            width: 120px;
+            border: 4px solid #c7c7c7;
+            border-color: rgba(0, 0, 0, 0.2);
+            border-left: 0;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            z-index: 9999;
+            background-color: #fff;
+        }
+
+            #nav .sub-nav-wrap b {
+                position: absolute;
+                left: -8px;
+                margin-top: -8px;
+                display: block;
+                width: 0;
+                height: 0;
+                font-size: 0;
+                overflow: hidden;
+                border-style: solid;
+                border-width: 8px;
+                border-color: transparent;
+                border-right-color: white;
+                border-left: none;
             }
 
-    #nav .group-nav {
-        width: 221px;
-        padding: 15px 0;
-        background-color: #fff;
-    }
-
-        #nav .group-nav .nav-item {
-            float: left;
-            width: 230px;
-            border-right: 1px dashed #ccc;
+        #nav .single-nav b {
+            top: 50%;
         }
 
-        #nav .group-nav .sub-nav {
-            padding-bottom: 0;
+        #nav .sub-nav {
+            background-color: #fff;
+            padding: 10px 0 5px;
+            line-height: 24px;
         }
 
-        #nav .group-nav h3 {
-            margin-left: 15px;
-            font-size: 12px;
+            #nav .sub-nav li {
+                padding-bottom: 8px;
+                font-size: 10px;
+            }
+
+            #nav .sub-nav a {
+                padding-left: 15px;
+                display: block;
+                color: #888;
+                zoom: 1;
+            }
+
+                #nav .sub-nav a:hover {
+                    background-color: #eee;
+                    color: #555;
+                }
+
+        #nav .group-nav {
+            width: 221px;
+            padding: 15px 0;
+            background-color: #fff;
         }
 
-        #nav .group-nav .last {
-            border-right: 0;
+            #nav .group-nav .nav-item {
+                float: left;
+                width: 230px;
+                border-right: 1px dashed #ccc;
+            }
+
+            #nav .group-nav .sub-nav {
+                padding-bottom: 0;
+            }
+
+            #nav .group-nav h3 {
+                margin-left: 15px;
+                font-size: 12px;
+            }
+
+            #nav .group-nav .last {
+                border-right: 0;
+            }
+
+            #nav .group-nav b {
+                bottom: 28px;
+                top: inherit
+            }
+
+        #nav .group-nav-t0 {
+            top: 0;
         }
 
-        #nav .group-nav b {
-            bottom: 28px;
+            #nav .group-nav-t0 b {
+                top: 36px;
+            }
+
+        #nav .group-nav-b0 {
+            bottom: 0;
+        }
+
+        .v-standard #nav .group-nav b {
+            bottom: 30px;
             top: inherit
         }
 
-    #nav .group-nav-t0 {
-        top: 0;
-    }
-
-        #nav .group-nav-t0 b {
-            top: 36px;
+        #nav .vip-nav {
+            width: auto;
+            display: flex;
         }
 
-    #nav .group-nav-b0 {
-        bottom: 0;
-    }
+            #nav .vip-nav .nav-onlineStore {
+                width: 200px;
+            }
 
-    .v-standard #nav .group-nav b {
-        bottom: 30px;
-        top: inherit
-    }
+            #nav .vip-nav .nav-JDstore {
+                width: 220px;
+            }
 
-    #nav .vip-nav {
-        width: auto;
-        display: flex;
-    }
-
-        #nav .vip-nav .nav-onlineStore {
-            width: 200px;
+        #nav .report-nav {
+            width: auto;
+            display: flex;
         }
 
-        #nav .vip-nav .nav-JDstore {
-            width: 220px;
+            #nav .report-nav .nav-pur {
+                width: 300px;
+            }
+
+            /*Report List, Purchase Report*/
+
+            #nav .report-nav .nav-sales {
+                width: 280px;
+            }
+
+            /*Report List、Sales Report*/
+
+            #nav .report-nav .nav-fund {
+                width: 350px;
+            }
+
+        /*Report List、Inventory Stock Report*/
+
+        #nav .setting-nav {
+            width: auto;
+            display: flex;
         }
 
-    #nav .report-nav {
-        width: auto;
-        display: flex;
-    }
-
-        #nav .report-nav .nav-pur {
-            width: 300px;
+        #nav .produce-nav {
+            width: auto;
+            display: flex;
         }
 
-        /*Report List, Purchase Report*/
-
-        #nav .report-nav .nav-sales {
-            width: 280px;
+        /*Production*/
+        #nav .store-nav {
+            width: auto;
+            display: flex;
         }
 
-        /*Report List、Sales Report*/
-
-        #nav .report-nav .nav-fund {
-            width: 350px;
+        #nav .setting-nav .nav-basic-setting {
+            width: 250px;
         }
 
-    /*Report List、Inventory Stock Report*/
-
-    #nav .setting-nav {
-        width: auto;
-        display: flex;
-    }
-
-    #nav .produce-nav {
-        width: auto;
-        display: flex;
-    }
-
-    /*Production*/
-    #nav .store-nav {
-        width: auto;
-        display: flex;
-    }
-
-    #nav .setting-nav .nav-basic-setting {
-        width: 250px;
-    }
-
-    /*Finnance */
-    #navScroll span {
-        display: block;
-        width: 47px;
-        height: 23px;
-        float: left;
-        border-radius: 3px;
-        cursor: pointer;
-    }
+        /*Finnance */
+        #navScroll span {
+            display: block;
+            width: 47px;
+            height: 23px;
+            float: left;
+            border-radius: 3px;
+            cursor: pointer;
+        }
 
         /*Left Navigation icon begin*/
         .moduleimg {
@@ -449,12 +450,12 @@
             subindexMenu();
         });
 
-            function moveMenu() {
-                $("#nav").find("li")(function () {
-                    $(this).removeClass("on");
-                    $(this).find("div").hide();
-                });
-            }
+        function moveMenu() {
+            $("#nav").find("li")(function () {
+                $(this).removeClass("on");
+                $(this).find("div").hide();
+            });
+        }
     </script>
 
     <!--Left Navigation and Top End-->
@@ -700,19 +701,26 @@
         <div id="appHeader">
             <div id="app/vm/Header_0">
                 <div>
-                    <a title="Return to Index" class="mainLogo">BlueWhale ERP
+                    <a title="Return to Index" style="float: left; display: flex; align-items: center; width: 300px; height: 45px; margin-left: 10px;">
+                        <img src="images/Hawk.png" alt="Ember Hawk ERP" style="height: 45px; width: 45px;" />
+                        <span style="display: flex; flex-direction: column; margin-left: 10px; font-size: 18px; color: #3b1d00; font-family: '微软雅黑', '宋体'; font-weight: bold;">
+                            <span>Ember Hawk</span>
+                            <span>ERP</span>
+                        </span>
                     </a>
                 </div>
                 <div class="fr headMessage" id="userList">
                     <a class="clearfix" onclick="logout()">
-                        <img src="images/logout_24.png" style="border: 0px;" alt="" />
-                        <span>Logout</span>
+                        <img src="images/logout_24.png"
+                            style="filter: brightness(0) saturate(100%) invert(17%) sepia(91%) saturate(400%) hue-rotate(2deg) brightness(95%) contrast(95%); border: 0px;"
+                            alt="Logout" />
+                        <span style="color: #3b1d00;">Logout</span>
                     </a>
                 </div>
                 <div class="fr headMessage" id="Div2">
                     <a class="clearfix" onclick="f_addTab('Pwd','Change Password','Pwd.aspx')">
-                        <img src="images/key_24.png" style="border: 0px;" alt="" />
-                        <span>Change Password</span>
+                        <img src="images/key_24.png" style="filter: brightness(0) saturate(100%) invert(17%) sepia(91%) saturate(400%) hue-rotate(2deg) brightness(95%) contrast(95%); border: 0px;" alt="" />
+                        <span style="color: #3b1d00;">Change Password</span>
                     </a>
                 </div>
             </div>

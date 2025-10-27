@@ -174,6 +174,9 @@
     <Content Include="baseSet\GoodsTypeListPic.aspx" />
     <Content Include="buy\js\PurReceiptListCheck.js" />
     <Content Include="buy\PurReceiptListView.aspx" />
+    <Content Include="images\Hawk.png" />
+    <Content Include="images\login.png" />
+    <Content Include="images\logo.png" />
     <Content Include="produce\js\produceListAdd.js" />
     <Content Include="sales\ashx\SalesOrderListEdit.ashx" />
     <Content Include="sales\js\SalesOrderListEdit.js" />
@@ -601,7 +604,6 @@
     <Content Include="images\login_11.gif" />
     <Content Include="images\login_12.gif" />
     <Content Include="images\login_bg.png" />
-    <Content Include="images\logo.png" />
     <Content Include="images\logout_24.png" />
     <Content Include="images\menu-item-over-l.gif" />
     <Content Include="images\menu-item-over-m.gif" />
