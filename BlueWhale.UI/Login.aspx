@@ -2,9 +2,9 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>BlueWhale ERP System</title>
+    <title>SteelViper ERP System</title>
     <link href="skin/default/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="scripts/jquery/jquery-1.10.2.min.js"></script>
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
@@ -20,35 +20,35 @@
             window.location.reload();
         }
     </script>
-    </head>
-    <body style="background: url(images/login_bg.png) no-repeat;background-position: center;background-attachment: fixed;">
-        <form id="form1" runat="server">
-            <div class="login-title">
-               <a href="Login.aspx" style=" text-decoration:none;">
-                <img src="images/logo.png" alt="BlueWhale ERP" height="80px" />
-               </a>
-            </div>
-            <div class="login-screen">
-                <div class="login-form">
-                    <h1>Login</h1>
-                    <div class="control-group">
-                        <asp:TextBox ID="txtUserName" runat="server" CssClass="login-field" Text="" placeholder="Account" title="Account"></asp:TextBox>
-                        <label class="login-field-icon user" for="txtUserName"></label>
-                    </div>
-                    <div class="control-group">
-                        <asp:TextBox ID="txtPassword" runat="server" CssClass="login-field" Text="" TextMode="Password" placeholder="Password" title="Password"></asp:TextBox>
-                        <label class="login-field-icon pwd" for="txtPassword"></label>
-                    </div>
-                       <div class="control-group">
-                        <asp:TextBox ID="captcha" runat="server" CssClass="login-field" Width="230px" Text="" placeholder="Captcha" title="Captcha"></asp:TextBox>
-                          <asp:Image ID="Image3" src="Captcha.aspx" ToolTip="Click to refresh captcha" style="cursor:pointer;" 
-                              onclick="this.src='Captcha.aspx?id='+Math.random()" runat="server" Height="35px" Width="60px" ImageAlign="Top"  />
-                        </div>
-                    <div>
-                        <asp:Button ID="btnSubmit" runat="server" Text="Login" CssClass="btn-login" onclick="BtnSubmit_Click"/>
-                    </div>
+</head>
+<body style="background: url(images/login_bg.png) no-repeat; background-position: center; background-attachment: fixed;">
+    <form id="form1" runat="server">
+        <div class="login-title" style="margin-top: 50px; margin-bottom: 30px; text-align: center;">
+            <a href="Login.aspx" style="text-decoration: none;">
+                <img src="images/logo.png" alt="SteelViper ERP" style="height: 100px; width: auto;" />
+            </a>
+        </div>
+        <div class="login-screen">
+            <div class="login-form">
+                <h1>Login</h1>
+                <div class="control-group">
+                    <asp:TextBox ID="txtUserName" runat="server" CssClass="login-field" Text="" placeholder="Account" title="Account"></asp:TextBox>
+                    <label class="login-field-icon user" for="txtUserName"></label>
+                </div>
+                <div class="control-group">
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="login-field" Text="" TextMode="Password" placeholder="Password" title="Password"></asp:TextBox>
+                    <label class="login-field-icon pwd" for="txtPassword"></label>
+                </div>
+                <div class="control-group">
+                    <asp:TextBox ID="captcha" runat="server" CssClass="login-field" Width="230px" Text="" placeholder="Captcha" title="Captcha"></asp:TextBox>
+                    <asp:Image ID="Image3" src="Captcha.aspx" ToolTip="Click to refresh captcha" Style="cursor: pointer;"
+                        onclick="this.src='Captcha.aspx?id='+Math.random()" runat="server" Height="35px" Width="60px" ImageAlign="Top" />
+                </div>
+                <div>
+                    <asp:Button ID="btnSubmit" runat="server" Text="Login" CssClass="btn-login" OnClick="BtnSubmit_Click" />
                 </div>
             </div>
-        </form>
-    </body>
+        </div>
+    </form>
+</body>
 </html>

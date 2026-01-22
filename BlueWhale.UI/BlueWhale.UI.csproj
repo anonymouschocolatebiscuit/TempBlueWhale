@@ -234,6 +234,8 @@
     <Content Include="bin\System.Numerics.Vectors.dll" />
     <Content Include="bin\System.Runtime.CompilerServices.Unsafe.dll" />
     <Content Include="produce\goodsBomList.aspx" />
+    <Content Include="report\js\ProduceGetListReportDetail.js" />
+    <Content Include="report\ProduceGetListReportDetail.aspx" />
     <Content Include="sales\ashx\SalesOrderListEdit.ashx" />
     <Content Include="sales\js\SalesOrderListEdit.js" />
     <Content Include="sales\SalesOrderListEdit.aspx" />
@@ -3923,6 +3925,13 @@
   <ItemGroup>
     <Compile Include="ashx\produceInListAdd.ashx.cs">
       <DependentUpon>produceInListAdd.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="report\ProduceGetListReportDetail.aspx.cs">
+      <DependentUpon>ProduceGetListReportDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\ProduceGetListReportDetail.aspx.designer.cs">
+      <DependentUpon>ProduceGetListReportDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="sales\ashx\SalesOrderListEdit.ashx.cs">
       <DependentUpon>SalesOrderListEdit.ashx</DependentUpon>
