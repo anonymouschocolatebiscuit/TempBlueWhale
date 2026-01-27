@@ -49,7 +49,7 @@ $(function () {
                 }
             },
             {
-                display: 'Inventory Transfer Date', name: 'bizDate', width: 160, align: 'center', valign: 'center',
+                display: 'Warehouse Transfer Date', name: 'bizDate', width: 160, align: 'center', valign: 'center',
                 totalSummary:
                 {
                     type: 'count',
@@ -220,24 +220,24 @@ function makeBill() {
 function editRow() {
     var row = manager.getSelectedRow();
 
-    parent.f_addTab('InventoryTransferListEdits', 'Inventory Transfer - Edit', 'store/InventoryTransferListEdit.aspx?id=' + row.id);
+    parent.f_addTab('InventoryTransferListEdits', 'Warehouse Transfer - Edit', 'store/InventoryTransferListEdit.aspx?id=' + row.id);
 
     top.topManager.openPage({
         id: 'InventoryTransferListEdits',
         href: 'store/InventoryTransferListEdit.aspx?id=' + row.id,
-        title: 'Inventory Transfer - Edit'
+        title: 'Warehouse Transfer - Edit'
     });
 }
 
 function viewRow() {
     var row = manager.getSelectedRow();
 
-    parent.f_addTab('InventoryTransferListView', 'Inventory Transfer - View', 'store/InventoryTransferListView.aspx?id=' + row.id);
+    parent.f_addTab('InventoryTransferListView', 'Warehouse Transfer - View', 'store/InventoryTransferListView.aspx?id=' + row.id);
 
     top.topManager.openPage({
         id: 'InventoryTransferListView',
         href: 'store/InventoryTransferListView.aspx?id=' + row.id,
-        title: 'Inventory Transfer - View'
+        title: 'Warehouse Transfer - View'
     });
 }
 

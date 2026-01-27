@@ -29,7 +29,7 @@ $(function () {
                 }
             },
             { display: 'Receipt Number', name: 'number', width: 150, align: 'center' },
-            { display: 'Vender', name: 'wlName', width: 120, align: 'left' },
+            { display: 'Supplier', name: 'wlName', width: 120, align: 'left' },
             {
                 display: 'Payment Amount', name: 'payPriceSum', width: 140, align: 'right',
                 totalSummary: {

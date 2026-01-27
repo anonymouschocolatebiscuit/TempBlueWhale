@@ -364,9 +364,9 @@
 
 		</siteMapNode>
 
-		<siteMapNode id="73"  title="Inventory report" url="ReportStore" parentId="7"  seq="1">
+		<siteMapNode id="73"  title="Warehouse report" url="ReportStore" parentId="7"  seq="1">
 
-			<siteMapNode id="731"  title="Commodity Inventory Balance Sheet" url="SumNumGoodsReport"  parentId="73"  seq="2" />
+			<siteMapNode id="731"  title="Commodity Warehouse Balance Sheet" url="SumNumGoodsReport"  parentId="73"  seq="2" />
 
 			<siteMapNode id="732"  title="Goods Out In Detail Report" url="GoodsOutInDetailReport"  parentId="73"  seq="3" />
 
@@ -410,7 +410,7 @@
 
 		</siteMapNode>
 
-		<siteMapNode id="82"  title="Vender Management" url="Vender" parentId="8"  seq="1">
+		<siteMapNode id="82"  title="Supplier Management" url="Supplier" parentId="8"  seq="1">
 
 			<siteMapNode id="821"  title="Search" url="VenderList"  parentId="82"  seq="2" />
 
@@ -482,7 +482,7 @@
 
 		</siteMapNode>
 
-		<siteMapNode id="92"  title="Vender Category" url="VenderType" parentId="9"  seq="1">
+		<siteMapNode id="92"  title="Supplier Category" url="VenderType" parentId="9"  seq="1">
 
 			<siteMapNode id="921"  title="Search" url="VenderTypeList"  parentId="92"  seq="2" />
 

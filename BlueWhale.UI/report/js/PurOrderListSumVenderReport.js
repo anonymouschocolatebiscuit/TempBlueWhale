@@ -14,7 +14,7 @@ $(function () {
     manager = $("#maingrid").ligerGrid({
         columns: [
             {
-                display: 'Vender', name: 'wlName', width: 170, align: 'left',
+                display: 'Supplier', name: 'wlName', width: 170, align: 'left',
 
                 totalSummary:
                 {

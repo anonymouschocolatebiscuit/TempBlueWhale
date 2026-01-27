@@ -36,7 +36,7 @@
                     Outbound Type：</td>
                 <td style="text-align:left;">
                     <asp:RadioButton ID="rb1" runat="server" Checked="True" GroupName="t" Text="Other Outbound" />
-                        <asp:RadioButton ID="rb2" runat="server" GroupName="t" Text="Inventory Loss Outbound" />
+                        <asp:RadioButton ID="rb2" runat="server" GroupName="t" Text="Warehouse Loss Outbound" />
                 </td>
             </tr>
         </table>

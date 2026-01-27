@@ -37,7 +37,7 @@
                 <td style="text-align:right; width:60px; padding-right: 0.5rem;">Keyword:
                 </td>
                 <td style="text-align:left; width:180px;">
-                    <asp:TextBox ID="txtKeys" runat="server" CssClass="ellipsis-input" placeholder="Search Receipt No./Vender/Remarks">
+                    <asp:TextBox ID="txtKeys" runat="server" CssClass="ellipsis-input" placeholder="Search Receipt No./Supplier/Remarks">
                     </asp:TextBox>
                 </td>
                 <td style="text-align:right; width:80px; padding-right: 0.5rem;">Start Date:</td>

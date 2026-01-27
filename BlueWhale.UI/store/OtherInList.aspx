@@ -53,7 +53,7 @@
                 Keyword： 
            </td>
            <td style="text-align:left; width:180px;">
-               <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter Receipt Number/Vender/Remarks"></asp:TextBox>
+               <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter Receipt Number/Supplier/Remarks"></asp:TextBox>
            </td>
 
            <td style="text-align:right; width:90px;">

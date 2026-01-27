@@ -128,7 +128,7 @@
                         <input type="text" id="txtGoodsList"/> 
                     </td>
 
-                    <td style="text-align:right;width:70px;">Inventory:&nbsp;</td>
+                    <td style="text-align:right;width:70px;">Warehouse:&nbsp;</td>
                     <td style="text-align:left;width:80px;">
                         <input type="text" id="txtFlagList"/>            
                     </td>

@@ -95,13 +95,13 @@ namespace BlueWhale.UI.BaseSet
 
 			if (this.txtCode.Text.Trim() == "")
 			{
-				MessageBox.Show(this, "Please fill in the vender code£¡");
+				MessageBox.Show(this, "Please fill in the vender codeï¿½ï¿½");
 				return;
 			}
 
 			if (this.txtNames.Text == "")
 			{
-				MessageBox.Show(this, "Please fill in the vender name£¡");
+				MessageBox.Show(this, "Please fill in the vender nameï¿½ï¿½");
 				return;
 			}
 
@@ -128,12 +128,12 @@ namespace BlueWhale.UI.BaseSet
 			{
 				if (dal.isExistsCodeAdd(LoginUser.ShopId, this.txtCode.Text))
 				{
-					MessageBox.Show(this, "Fail to add. Vender code already exists!");
+					MessageBox.Show(this, "Fail to add. Supplier code already exists!");
 					return;
 				}
 				if (dal.isExistsNamesAdd(LoginUser.ShopId, this.txtNames.Text))
 				{
-					MessageBox.Show(this, "Fail to add. Vender name already exists!");
+					MessageBox.Show(this, "Fail to add. Supplier name already exists!");
 					return;
 				}
 
@@ -144,7 +144,7 @@ namespace BlueWhale.UI.BaseSet
 
 					logs.ShopId = LoginUser.ShopId;
 					logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-					logs.Events = "New vender code£º" + this.txtCode.Text + " vender name£º" + this.txtNames.Text;
+					logs.Events = "New vender codeï¿½ï¿½" + this.txtCode.Text + " vender nameï¿½ï¿½" + this.txtNames.Text;
 					logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
 					logs.Add();
 
@@ -155,13 +155,13 @@ namespace BlueWhale.UI.BaseSet
 			{
 				if (dal.isExistsCodeEdit(id, LoginUser.ShopId, this.txtCode.Text))
 				{
-					MessageBox.Show(this, "Fail to update. Vender code already exists!");
+					MessageBox.Show(this, "Fail to update. Supplier code already exists!");
 					return;
 				}
 
 				if (dal.isExistsNamesEdit(LoginUser.ShopId, code, this.txtNames.Text))
 				{
-					MessageBox.Show(this, "Fail to update. Vender name already exists!");
+					MessageBox.Show(this, "Fail to update. Supplier name already exists!");
 					return;
 				}
 
@@ -171,7 +171,7 @@ namespace BlueWhale.UI.BaseSet
 
 					logs.ShopId = LoginUser.ShopId;
 					logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-					logs.Events = "Update vender code£º" + this.txtCode.Text + " vender name£º" + this.txtNames.Text;
+					logs.Events = "Update vender codeï¿½ï¿½" + this.txtCode.Text + " vender nameï¿½ï¿½" + this.txtNames.Text;
 					logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
 					logs.Add();
 

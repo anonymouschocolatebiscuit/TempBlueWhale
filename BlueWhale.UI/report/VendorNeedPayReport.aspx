@@ -14,7 +14,7 @@
     <script type="text/javascript">
         function f_selectClient() {
             $.ligerDialog.open({
-                title: 'Select Vender', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
+                title: 'Select Supplier', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
                     { text: 'Confirm', onclick: f_selectClientOK },
                     { text: 'Close', onclick: f_selectClientCancel }
                 ]
@@ -62,7 +62,7 @@
                     </asp:TextBox>
                 </td>
                 <td style="text-align:right; width:60px; white-space:nowrap; padding-right:0.5rem">
-                    Vender:
+                    Supplier:
                 </td>
                 <td style="text-align:left;width:80px;">
                     <input type="text" id="txtVenderList" />

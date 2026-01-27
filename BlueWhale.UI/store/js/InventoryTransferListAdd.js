@@ -99,7 +99,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Inventory Out', name: 'ckIdOut', width: 100, isSort: false, textField: 'ckNameOut',
+                    display: 'Warehouse Out', name: 'ckIdOut', width: 100, isSort: false, textField: 'ckNameOut',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
@@ -108,7 +108,7 @@ $(function () {
 
                 },
                 {
-                    display: 'Inventory In', name: 'ckIdIn', width: 100, isSort: false, textField: 'ckNameIn',
+                    display: 'Warehouse In', name: 'ckIdIn', width: 100, isSort: false, textField: 'ckNameIn',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),

@@ -49,7 +49,7 @@ namespace BlueWhale.UI.baseSet
             this.ddlTypeList.DataValueField = "id";
             this.ddlTypeList.DataBind();
 
-            ListItem item = new ListItem("Select Vender Type", "0");
+            ListItem item = new ListItem("Select Supplier Type", "0");
 
             this.ddlTypeList.Items.Insert(0, item);
 

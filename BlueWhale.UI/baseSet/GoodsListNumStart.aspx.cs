@@ -64,7 +64,7 @@ namespace BlueWhale.UI.BaseSet
             {
                 LogsDAL logs = new LogsDAL();
                 logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                logs.Events = "New goods number start：" + id.ToString() + " Number：" + this.txtNum.Text + " Inventory：" + this.ddlInventoryList.SelectedItem.Text;
+                logs.Events = "New goods number start：" + id.ToString() + " Number：" + this.txtNum.Text + " Warehouse：" + this.ddlInventoryList.SelectedItem.Text;
                 logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                 logs.Add();
 
@@ -121,7 +121,7 @@ namespace BlueWhale.UI.BaseSet
             {
                 LogsDAL logs = new LogsDAL();
                 logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                logs.Events = "Delete goods number start：" + this.lbNames.Text + "Inventory：" + this.gvLevel.Rows[e.RowIndex].Cells[1].Text + "Number：" + this.gvLevel.Rows[e.RowIndex].Cells[2].Text;
+                logs.Events = "Delete goods number start：" + this.lbNames.Text + "Warehouse：" + this.gvLevel.Rows[e.RowIndex].Cells[1].Text + "Number：" + this.gvLevel.Rows[e.RowIndex].Cells[2].Text;
                 logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                 logs.Add();
 

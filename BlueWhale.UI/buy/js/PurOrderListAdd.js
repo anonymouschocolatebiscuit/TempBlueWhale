@@ -59,7 +59,7 @@ function f_selectContactCancel(item, dialog) {
 // Client start
 function f_selectClient() {
     $.ligerDialog.open({
-        title: 'Please Select Vender',
+        title: 'Please Select Supplier',
         name: 'winselector',
         width: 800,
         height: 540,
@@ -157,7 +157,7 @@ $(function () {
                     width: 80,
                     align: 'center'
                 }, {
-                    display: 'Inventory',
+                    display: 'Warehouse',
                     name: 'ckId',
                     width: 80,
                     isSort: false,

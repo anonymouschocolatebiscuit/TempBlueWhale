@@ -115,7 +115,7 @@ namespace BlueWhale.UI.store
                             num += 1;
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Delete Inventory Transfer-ID：" + delId.ToString();
+                            logs.Events = "Delete Warehouse Transfer-ID：" + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -166,7 +166,7 @@ namespace BlueWhale.UI.store
                             num += 1;
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Review Inventory Transfer-ID：" + delId.ToString();
+                            logs.Events = "Review Warehouse Transfer-ID：" + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }
@@ -216,7 +216,7 @@ namespace BlueWhale.UI.store
                             num += 1;
 
                             logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                            logs.Events = "Cancel Review Inventory Transfer-ID：" + delId.ToString();
+                            logs.Events = "Cancel Review Warehouse Transfer-ID：" + delId.ToString();
                             logs.Ip = Request.UserHostAddress.ToString();
                             logs.Add();
                         }

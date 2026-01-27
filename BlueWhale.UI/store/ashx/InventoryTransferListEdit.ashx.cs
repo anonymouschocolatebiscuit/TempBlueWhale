@@ -170,7 +170,7 @@ namespace BlueWhale.UI.store.ashx
                 {
                     LogsDAL logs = new LogsDAL();
                     logs.Users = users.Names;
-                    logs.Events = "Edit Inventory Transfer List：" + dal.Number;
+                    logs.Events = "Edit Warehouse Transfer List：" + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
                     context.Response.Write("The operation was successful!");

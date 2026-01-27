@@ -16,7 +16,7 @@
     <script type="text/javascript">
         function f_selectClient() {
             $.ligerDialog.open({
-                title: 'Select Vender',
+                title: 'Select Supplier',
                 name: 'winselector',
                 width: 800,
                 height: 540,

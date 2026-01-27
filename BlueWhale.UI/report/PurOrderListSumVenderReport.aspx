@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
-    <title>Purchase Summary Report (By Vender)</title>
+    <title>Purchase Summary Report (By Supplier)</title>
     <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
     <script src="../lib/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
@@ -15,7 +15,7 @@
             //Business entity start
             function f_selectClient() {
                 $.ligerDialog.open({
-                    title: 'Select Vender', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
+                    title: 'Select Supplier', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
                         { text: 'Confirm', onclick: f_selectClientOK },
                         { text: 'Close', onclick: f_selectClientCancel }
                     ]
@@ -123,7 +123,7 @@
                 <td style="text-align: left; width: 120px; padding-right:10px;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 60px;">Vender：</td>
+                <td style="text-align: right; width: 60px;">Supplier：</td>
                 <td style="text-align: left; width: 120px; padding-right:10px;">
                     <input type="text" id="txtVenderList" />
                 </td>
@@ -132,7 +132,7 @@
                 <td style="text-align: left; width: 100px; padding-right:10px;">
                     <input type="text" id="txtGoodsList" />
                 </td>
-                <td style="text-align: right; width: 60px;">Inventory：
+                <td style="text-align: right; width: 60px;">Warehouse：
                 </td>
                 <td style="text-align: left; width: 80px;">
                     <input type="text" id="txtFlagList" />

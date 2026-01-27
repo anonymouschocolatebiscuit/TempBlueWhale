@@ -37,7 +37,7 @@ $(function () {
             { display: 'Goods Name', name: 'goodsName', width: 120, align: 'left' },
             { display: 'Specification', name: 'spec', width: 80, align: 'center' },
             { display: 'Unit', name: 'unitName', width: 50, align: 'center' },
-            { display: 'Inventory', name: 'ckName', width: 80, align: 'center' },
+            { display: 'Warehouse', name: 'ckName', width: 80, align: 'center' },
             { display: 'Unit Price', name: 'price', width: 80, align: 'right' },
             {
                 display: 'Quantity', name: 'num', width: 70, align: 'right',

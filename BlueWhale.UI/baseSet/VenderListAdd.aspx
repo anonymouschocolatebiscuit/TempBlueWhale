@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
-        <title>Add Vender</title>
+        <title>Add Supplier</title>
 
         <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
         <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
@@ -55,17 +55,17 @@
         <form id="form1" runat="server">
             <table id="form" border="0" cellpadding="0" cellspacing="20" style="width: 1200px; line-height: 45px;">
                 <tr>
-                    <td style="width: 100px; text-align: right;">Vender Number:</td>
+                    <td style="width: 100px; text-align: right;">Supplier Number:</td>
                     <td style="width: 180px;">
                         <asp:TextBox ID="txtCode" runat="server" validate="{required:true}"></asp:TextBox>
                     </td>
-                    <td style="width: 100px; text-align: right;">Vender name:</td>
+                    <td style="width: 100px; text-align: right;">Supplier name:</td>
                     <td style="width: 180px;">
                         <asp:TextBox ID="txtNames" runat="server" validate="{required:true}"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align: right;">Vender Category£º</td>
+                    <td style="text-align: right;">Supplier Categoryï¿½ï¿½</td>
                     <td>
                         <asp:DropDownList ID="ddlVenderTypeList" runat="server">
                         </asp:DropDownList>
@@ -86,7 +86,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align: right;">Tax Rate£º</td>
+                    <td style="text-align: right;">Tax Rateï¿½ï¿½</td>
                     <td>
                         <asp:TextBox ID="txtTax" runat="server"></asp:TextBox>
                     </td>

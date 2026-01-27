@@ -61,7 +61,7 @@ $(function () {
             },
             { display: 'Order Number', name: 'number', width: 150, align: 'center' },
 
-            { display: 'Vender', name: 'wlName', width: 170, align: 'left' },
+            { display: 'Supplier', name: 'wlName', width: 170, align: 'left' },
             {
                 display: 'Total Price', name: 'sumPriceAll', width: 100, align: 'right',
 
@@ -191,7 +191,7 @@ function search() {
 
     var keys = document.getElementById('txtKeys').value;
 
-    if (keys == 'Please Enter Order No./Vender/Remark') {
+    if (keys == 'Please Enter Order No./Supplier/Remark') {
         keys = '';
     }
 

@@ -90,7 +90,7 @@ $(function () {
                 { display: 'Specification', name: 'spec', width: 100, align: 'center' },
                 { display: 'Unit', name: 'unitName', width: 80, align: 'center' },
                 {
-                    display: 'Inbound Inventory', name: 'ckId', width: 120, isSort: false, textField: 'ckName',
+                    display: 'Inbound Warehouse', name: 'ckId', width: 120, isSort: false, textField: 'ckName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(), //Wating 125 pr

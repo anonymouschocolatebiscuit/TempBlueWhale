@@ -43,7 +43,7 @@ $(function () {
             {
                 display: 'Business Type', name: 'types', width: 120, align: 'center',
                 render: function (row) {
-                    var html = row.types == 1 ? "Other Stock Outbound" : "<span style='color:green'>Inventory Loss Outbound</span>";
+                    var html = row.types == 1 ? "Other Stock Outbound" : "<span style='color:green'>Warehouse Loss Outbound</span>";
                     return html;
                 }
             },
@@ -108,7 +108,7 @@ function f_set() {
 
 function search() {
     var keys = document.getElementById("txtKeys").value;
-    if (keys == "Please Enter Receipt No./Vender/Remarks") {
+    if (keys == "Please Enter Receipt No./Supplier/Remarks") {
         keys = "";
     }
 

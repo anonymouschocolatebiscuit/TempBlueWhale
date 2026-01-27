@@ -32,7 +32,7 @@
                 <td style="text-align: left;">
                     <asp:RadioButton ID="rb1" runat="server" Checked="True" GroupName="t"
                         Text="Other Stock In" />
-                    <asp:RadioButton ID="rb2" runat="server" GroupName="t" Text="Excess Inventory Stock In" />
+                    <asp:RadioButton ID="rb2" runat="server" GroupName="t" Text="Excess Warehouse Stock In" />
                 </td>
             </tr>
         </table>

@@ -12,7 +12,7 @@ $(function () {
             { display: 'Product Name', name: 'goodsName', width: 220, align: 'left' },
             { display: 'Specification', name: 'spec', width: 120, align: 'center' },
             { display: 'Unit', name: 'unitName', width: 120, align: 'center' },
-            { display: 'System Inventory', name: 'sumNum', width: 130, align: 'right' },
+            { display: 'System Warehouse', name: 'sumNum', width: 130, align: 'right' },
             { display: 'Stocktake', name: 'sumNumPD', width: 100, align: 'right', editor: { type: 'float' } },
             {
                 display: 'Surplus and Shortage', name: 'sumNumPK', width: 140, align: 'right',

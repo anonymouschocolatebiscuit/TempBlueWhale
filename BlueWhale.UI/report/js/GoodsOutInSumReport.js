@@ -21,7 +21,7 @@ $(function () {
             { display: 'Item Name', name: 'goodsName', width: 140, align: 'center', frozen: true },
             { display: 'Specification', name: 'spec', width: 140, align: 'center', frozen: true },
             { display: 'Unit Name', name: 'unitName', width: 90, align: 'center', frozen: true },
-            { display: 'Inventory Name', name: 'storeName', width: 130, align: 'center' },
+            { display: 'Warehouse Name', name: 'storeName', width: 130, align: 'center' },
             {
                 display: 'Begin Period', columns: [
                     { display: 'Quantity', name: 'sumNumBegin', width: 70, align: 'right' },

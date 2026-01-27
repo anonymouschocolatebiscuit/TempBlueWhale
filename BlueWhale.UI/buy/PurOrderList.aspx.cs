@@ -474,7 +474,7 @@ namespace BlueWhale.UI.buy
 
             PdfPCell cell = new PdfPCell(); // Create Cell
 
-            #region First Line ----------- Customer And Vender Name
+            #region First Line ----------- Customer And Supplier Name
 
             cell.Border = 0;
             Paragraph table_t = new Paragraph("Vendor：", fontTitle10);
@@ -829,7 +829,7 @@ namespace BlueWhale.UI.buy
             #region First Line
 
             cellFooter.Border = 0;
-            Paragraph table_Footer = new Paragraph("Vender(Signature and Seal)：", fontTitle10);
+            Paragraph table_Footer = new Paragraph("Supplier(Signature and Seal)：", fontTitle10);
             table_Footer.Alignment = 2;
 
             cellFooter.AddElement(table_Footer);
@@ -1063,7 +1063,7 @@ namespace BlueWhale.UI.buy
 
             PdfPCell cell = new PdfPCell(); // Create cell
 
-            #region First Line ----------- Customer And Vender Name
+            #region First Line ----------- Customer And Supplier Name
 
             cell.Border = 0;
             Paragraph table_t = new Paragraph("Vendor：", fontTitle10);
@@ -1416,7 +1416,7 @@ namespace BlueWhale.UI.buy
             #region First Line
 
             cellFooter.Border = 0;
-            Paragraph table_Footer = new Paragraph("Vender(Signature and Seal)：", fontTitle10);
+            Paragraph table_Footer = new Paragraph("Supplier(Signature and Seal)：", fontTitle10);
             table_Footer.Alignment = 2;
 
             cellFooter.AddElement(table_Footer);

@@ -386,7 +386,7 @@
             width: 350px;
         }
 
-    /*Report List、Inventory Stock Report*/
+    /*Report List、Warehouse Stock Report*/
 
     #nav .setting-nav {
         width: auto;
@@ -921,12 +921,12 @@
                             </ul>
                         </div>
                         <div class="nav-item nav-fund last">
-                            <h3>Inventory Management</h3>
+                            <h3>Warehouse Management</h3>
                             <ul class="sub-nav" id="Ul7">
-                                <li><a onclick="f_addTab('InventoryTransferListAdd','Inventory Transfer - Create','store/InventoryTransferListAdd.aspx')">Inventory Transfer - Create</a></li>
-                                <li><a onclick="f_addTab('InventoryTransferList','Inventory Transfer- View','store/InventoryTransferList.aspx')">Inventory Transfer- View</a></li>
+                                <li><a onclick="f_addTab('InventoryTransferListAdd','Warehouse Transfer - Create','store/InventoryTransferListAdd.aspx')">Warehouse Transfer - Create</a></li>
+                                <li><a onclick="f_addTab('InventoryTransferList','Warehouse Transfer- View','store/InventoryTransferList.aspx')">Warehouse Transfer- View</a></li>
                                 <li><a onclick="f_addTab('Stocktake','Stocktake - Create','store/Stocktake.aspx')">Stocktake - Create</a></li>
-                                <li><a onclick="f_addTab('SumNumGoodsReport','Inventory - View','report/SumNumGoodsReport.aspx')">Inventory - View</a> </li>
+                                <li><a onclick="f_addTab('SumNumGoodsReport','Warehouse - View','report/SumNumGoodsReport.aspx')">Warehouse - View</a> </li>
                             </ul>
                         </div>
                     </div>
@@ -957,9 +957,9 @@
                         <div class="nav-item nav-JDstore last">
                             <h3>Settlement</h3>
                             <ul class="sub-nav" id="Ul8">
-                                <li><a onclick="f_addTab('CheckBillGetListAdd',' Collection Settlement - Create','pay/CheckBillGetListAdd.aspx')">Collection Settlement - Create</a></li>
-                                <li><a onclick="f_addTab('CheckBillGetList','Collection Settlement - View','pay/CheckBillGetList.aspx')">Collection Settlement - View</a></li>
-                                <li><a onclick="f_addTab('CheckBillPayListAdd','Payment Settlement - Create','pay/CheckBillPayListAdd.aspx')">Payment Settlement - Create</a></li>
+                                <li><a onclick="f_addTab('CheckBillGetListAdd',' Collection Write-off - Create','pay/CheckBillGetListAdd.aspx')">Collection Write-off - Create</a></li>
+                                <li><a onclick="f_addTab('CheckBillGetList','Collection Write-off - View','pay/CheckBillGetList.aspx')">Collection Write-off - View</a></li>
+                                <li><a onclick="f_addTab('CheckBillPayListAdd','Payment Write-off - Create','pay/CheckBillPayListAdd.aspx')">Payment Write-off - Create</a></li>
                                 <li><a onclick="f_addTab('PayMentList','Payment Settlement- View','pay/PayMentList.aspx')">Payment Settlement- View</a></li>
                             </ul>
                         </div>
@@ -977,7 +977,7 @@
                                 <li><a onclick="f_addTab('PurOrderListReport','Purchase Order Tracking Report','Report/PurOrderListReport.aspx')">Purchase Order Tracking Report</a></li>
                                 <li><a onclick="f_addTab('PurOrderListDetailReport','Purchase Detail Report','Report/PurOrderListDetailReport.aspx')">Purchase Detail Report</a></li>
                                 <li><a onclick="f_addTab('PurOrderListSumGoodsReport','Purchase Summary Report (By Product)','Report/PurOrderListSumGoodsReport.aspx')">Purchase Summary Report (By Product)</a></li>
-                                <li><a onclick="f_addTab('PurOrderListSumVenderReport','Purchase Summary Report (By Vender)','Report/PurOrderListSumVenderReport.aspx')">Purchase Summary Report (By Vender)</a></li>
+                                <li><a onclick="f_addTab('PurOrderListSumVenderReport','Purchase Summary Report (By Supplier)','Report/PurOrderListSumVenderReport.aspx')">Purchase Summary Report (By Supplier)</a></li>
                             </ul>
                         </div>
                         <div class="nav-item nav-sales">
@@ -1002,7 +1002,7 @@
                         <div class="nav-item nav-fund">
                             <h3>Warehouse Reports</h3>
                             <ul class="sub-nav" id="report-storage">
-                                <li><a onclick="f_addTab('SumNumGoodsReport','Product Inventory Balance Report','Report/SumNumGoodsReport.aspx')">Product Inventory Balance Report</a></li>
+                                <li><a onclick="f_addTab('SumNumGoodsReport','Product Warehouse Balance Report','Report/SumNumGoodsReport.aspx')">Product Warehouse Balance Report</a></li>
                                 <li><a onclick="f_addTab('GoodsOutInDetailReport','Product Inbound & Outbound Detail Report','Report/GoodsOutInDetailReport.aspx')">Product Inbound & Outbound Detail Report</a></li>
                                 <li><a onclick="f_addTab('GoodsOutInSumReport','Product Inbound & Outbound Summary Report','Report/GoodsOutInSumReport.aspx')">Product Inbound & Outbound Summary Report</a></li>
                             </ul>
@@ -1014,7 +1014,7 @@
                                 <li><a onclick="f_addTab('VendorNeedPayReport','Accounts Payable Detail Report','Report/VendorNeedPayReport.aspx')">Accounts Payable Detail Report</a></li>
                                 <li><a onclick="f_addTab('ClientNeedPayReport','Accounts Receivable Detail Report','Report/ClientNeedPayReport.aspx')">Accounts Receivable Detail Report</a></li>
                                 <li><a onclick="f_addTab('StatementClient','Client Statement','Report/StatementClient.aspx')">Client Statement</a></li>
-                                <li><a onclick="f_addTab('StatementVender','Vender Statement','Report/StatementVender.aspx')">Vender Statement</a></li>
+                                <li><a onclick="f_addTab('StatementVender','Supplier Statement','Report/StatementVender.aspx')">Supplier Statement</a></li>
                                 <li><a onclick="f_addTab('OtherGetPayFlowReport','Other Income & Expense Detail Report','Report/OtherGetPayFlowReport.aspx')">Other Income & Expense Detail Report</a></li>
                             </ul>
                         </div>
@@ -1029,9 +1029,9 @@
                             <h3>Basic Settings</h3>
                             <ul class="sub-nav" id="setting-base">
                                 <li><a onclick="f_addTab('ClientList','Client Management','BaseSet/ClientList.aspx')">Client Management</a></li>
-                                <li><a onclick="f_addTab('VenderList','Vender Management','BaseSet/VenderList.aspx')">Vender Management</a></li>
+                                <li><a onclick="f_addTab('VenderList','Supplier Management','BaseSet/VenderList.aspx')">Supplier Management</a></li>
                                 <li><a onclick="f_addTab('GoodsList','Product Management','BaseSet/GoodsList.aspx')">Product Management</a></li>
-                                <li><a onclick="f_addTab('InventoryList','Inventory Management','BaseSet/InventoryList.aspx')">Inventory Management</a></li>
+                                <li><a onclick="f_addTab('InventoryList','Warehouse Management','BaseSet/InventoryList.aspx')">Warehouse Management</a></li>
                                 <li><a onclick="f_addTab('AccountList','Account Management','BaseSet/AccountList.aspx')">Account Management</a></li>
                                 <li><a onclick="f_addTab('UsersList','User Management','BaseSet/UsersList.aspx')">User Management</a></li>
                                 <li><a onclick="f_addTab('processList','Process Management','BaseSet/processList.aspx')">Process Management</a></li>
@@ -1041,7 +1041,7 @@
                             <h3>Auxiliary Settings</h3>
                             <ul class="sub-nav" id="setting-auxiliary">
                                 <li><a onclick="f_addTab('ClientTypeList','Client Category','BaseSet/ClientTypeList.aspx')">Client Category</a></li>
-                                <li><a onclick="f_addTab('VenderTypeList','Vender Category','BaseSet/VenderTypeList.aspx')">Vender Category</a></li>
+                                <li><a onclick="f_addTab('VenderTypeList','Supplier Category','BaseSet/VenderTypeList.aspx')">Supplier Category</a></li>
                                 <li><a onclick="f_addTab('GoodsTypeList','Item Category','BaseSet/GoodsTypeList.aspx')">Item Category</a></li>
                                 <li><a onclick="f_addTab('GoodsBrandList','Item Brand','BaseSet/GoodsBrandList.aspx')">Item Brand</a></li>
                                 <li><a onclick="f_addTab('PayGetList','Income & Expense Category','BaseSet/PayGetList.aspx')">Income & Expense Category</a></li>

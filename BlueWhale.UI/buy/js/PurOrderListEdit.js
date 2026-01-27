@@ -139,7 +139,7 @@ $(function () {
                 { display: 'Specs', name: 'spec', width: 100, align: 'center' },
                 { display: 'Number', name: 'unitName', width: 80, align: 'center' },
                 {
-                    display: 'Inventory', name: 'ckId', width: 80, isSort: false, textField: 'ckName',
+                    display: 'Warehouse', name: 'ckId', width: 80, isSort: false, textField: 'ckName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
@@ -775,7 +775,7 @@ function save() {
             }
         },
         error: function (xhr) {
-            alert("Error£¬try again later:" + xhr.responseText);
+            alert("Errorï¿½ï¿½try again later:" + xhr.responseText);
         }
     });
 }

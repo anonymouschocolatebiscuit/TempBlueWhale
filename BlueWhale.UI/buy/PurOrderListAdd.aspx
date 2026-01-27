@@ -19,7 +19,7 @@
         <form id="form1" runat="server">
             <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
                 <tr>
-                    <td style="width:70px; text-align:center;">Vender:</td>
+                    <td style="width:70px; text-align:center;">Supplier:</td>
                     <td style="text-align:left; width:250px;">
                         <input type="text" id="clientName" runat="server" value="" /> 
                         <input type="hidden" id="clientId" runat="server" value="" />

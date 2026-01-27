@@ -17,9 +17,9 @@ $(function () {
     manager = $("#maingrid").ligerGrid({
 
         columns: [
-            { display: 'Inventory Code', name: 'code', width: 120, align: 'center' },
+            { display: 'Warehouse Code', name: 'code', width: 120, align: 'center' },
             {
-                display: 'Inventory Name', name: 'goodsName', width: 220, align: 'left',
+                display: 'Warehouse Name', name: 'goodsName', width: 220, align: 'left',
 
                 totalSummary:
                 {
@@ -39,7 +39,7 @@ $(function () {
             { display: 'Field D', name: 'fieldD', width: 100, align: 'center' },
 
             { display: 'Warehouse', name: 'ckName', width: 100, align: 'center' },
-            { display: 'Inventory Price', name: 'priceCost', width: 100, align: 'center' },
+            { display: 'Warehouse Price', name: 'priceCost', width: 100, align: 'center' },
             {
                 display: 'Quantity', name: 'sumNum', width: 100, align: 'right',
                 totalSummary:
@@ -53,7 +53,7 @@ $(function () {
                 }
             },
             {
-                display: 'Inventory Cost Amount', name: 'sumPriceStore', width: 160, align: 'right',
+                display: 'Warehouse Cost Amount', name: 'sumPriceStore', width: 160, align: 'right',
                 totalSummary:
                 {
                     align: 'right', //Alignment of summary cell contents: left/center/right

@@ -113,7 +113,7 @@
                 return options;
             }
 
-            // Initialize Inventory combo box
+            // Initialize Warehouse combo box
             $("#txtFlagList").ligerComboBox({
                 isShowCheckBox: true,
                 isMultiSelect: true,
