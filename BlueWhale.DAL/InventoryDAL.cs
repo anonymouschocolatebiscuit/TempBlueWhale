@@ -155,7 +155,7 @@ namespace BlueWhale.DAL
         /// <summary>
         /// Get Data List
         /// </summary>
-        public DataSet GetList(string strWhere)
+        public DataSet GetList(string strWhere, string orderClause = "")
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select *,code+' '+names CodeName ");
@@ -165,7 +165,11 @@ namespace BlueWhale.DAL
                 strSql.Append(" where " + strWhere);
             }
 
-            strSql.Append(" order by code  ");
+            if (!string.IsNullOrEmpty(orderClause))
+            {
+                strSql.Append(orderClause);
+
+            }
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, strSql.ToString(), null);
         }
@@ -236,12 +240,21 @@ namespace BlueWhale.DAL
         /// <param name="Id"></param>
         /// <param name="flag"></param>
         /// <returns></returns>
-        public int UpdateFlag(int Id)
+        public int UpdateFlag(int Id, int flag)
         {
-            string sqls = "if exists(select * from inventory where id='" + Id + "' and flag=1) ";
-            sqls += " update inventory set flag=0 where id='" + Id + "'";
+            string sqls;
 
-            sqls += " else update inventory set flag=1 where id='" + Id + "'";
+            if (flag == 0)
+            {
+                sqls = "if exists(select * from inventory where id='" + Id + "' and flag=1) ";
+                sqls += " update inventory set flag=0 where id='" + Id + "'";
+            }
+            else
+            {
+                sqls = "if exists(select * from inventory where id='" + Id + "' and flag=0) ";
+                sqls += " update inventory set flag=1 where id='" + Id + "'";
+            }
+            
 
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sqls, null);
 

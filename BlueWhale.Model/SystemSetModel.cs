@@ -104,7 +104,7 @@ namespace BlueWhale.Model
         }
 
         /// <summary>
-        /// 税率
+        /// Tax
         /// </summary>
         private int tax;
         public int Tax

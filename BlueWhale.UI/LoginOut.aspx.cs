@@ -11,7 +11,6 @@ namespace BlueWhale.UI
         {
             if (!IsPostBack)
             {
-
                 LogsDAL logs = new LogsDAL
                 {
                     ShopId = ConvertTo.ConvertInt(Utils.GetCookie("shopId").ToString()),

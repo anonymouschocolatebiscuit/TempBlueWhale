@@ -258,7 +258,7 @@ function createGridToolbar(tName)
         {
             var items = [];
             items.push({ text: 'Add', click: grid_add, img: "../icons/page_add.png" });
-            items.push({ text: 'Modify', click: grid_edit, img: "../icons/edit.gif" });
+            items.push({ text: 'Edit', click: grid_edit, img: "../icons/edit.gif" });
             items.push({ text: '删除', click: grid_delete, img: "../icons/delete.png" });
             items.push({ text: '高级自定义查询', click: grid_search, icon: 'search2' });
             return { items: items };

@@ -6,7 +6,6 @@ using System.Web;
 using System.Web.Services;
 using System.Web.Services.Protocols;
 using System.Xml.Linq;
-
 using System.Web.SessionState;
 using BlueWhale.DAL;
 using BlueWhale.UI.src;
@@ -15,11 +14,8 @@ using BlueWhale.Model;
 using System.Collections.Generic;
 using System.IO;
 using System.Web.Script.Serialization;
-
 using System.Runtime.Serialization;
 using System.Text;
-
-
 
 namespace BlueWhale.UI.store.ashx
 {
@@ -30,15 +26,11 @@ namespace BlueWhale.UI.store.ashx
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class OtherInListAdd : IHttpHandler, IRequiresSessionState
     {
-
         public OtherInDAL dal = new OtherInDAL();
-
 
         public class OrderListModel<T>
         {
-
             #region Attributes
-
 
             private int _venderId;
             public int venderId
@@ -52,7 +44,6 @@ namespace BlueWhale.UI.store.ashx
                 get { return _bizDate; }
                 set { _bizDate = value; }
             }
-
 
             private int _typeId;
             public int typeId
@@ -141,10 +132,8 @@ namespace BlueWhale.UI.store.ashx
 
             if (context.Session["userInfo"] == null)
             {
-
                 context.Response.Write("Login timeout, please log in to the system again！");
                 return;
-
             }
             BasePage basePage = new BasePage();
             if (!basePage.CheckPower("OtherInListAdd"))
@@ -154,76 +143,50 @@ namespace BlueWhale.UI.store.ashx
             }
             Users users = context.Session["userInfo"] as Users;
 
-
             StreamReader reader = new StreamReader(context.Request.InputStream);
+
             string strJson = HttpUtility.UrlDecode(reader.ReadToEnd());
 
             OrderListModel<OrderListItemModel> obj = Newtonsoft.Json.JsonConvert.DeserializeObject<OrderListModel<OrderListItemModel>>(strJson);
 
-
-
             OrderListModel<OrderListItemModel> itemList = obj;
-
-
 
             #region Main table assignment
 
             dal.ShopId = users.ShopId;
             dal.Number = dal.GetBillNumberAuto(users.ShopId);
-
             dal.WlId = obj.venderId;
             dal.BizDate = obj.bizDate;
-
             dal.Types = obj.typeId;
             dal.Remarks = obj.remarks.ToString();
             dal.MakeId = users.Id;
             dal.MakeDate = DateTime.Now;
-
             dal.Flag = "Save";
-
 
             #endregion
 
-
             int pId = dal.Add();
-
 
             #region Dictionary assignment
 
             if (pId > 0)
             {
-
                 int check = 0;
-
-
 
                 OtherInItemDAL item = new OtherInItemDAL();
 
-
                 for (int i = 0; i < itemList.Rows.Count; i++)
                 {
-
-
-
-
-
-
                     item.PId = pId;
                     item.GoodsId = itemList.Rows[i].GoodsId;
                     item.Num = itemList.Rows[i].Num;
                     item.Price = itemList.Rows[i].Price;
                     item.SumPrice = itemList.Rows[i].SumPrice;
-
                     item.CkId = itemList.Rows[i].CkId;
                     item.Remarks = itemList.Rows[i].Remarks.ToString();
-
                     check = item.Add();
-
-
-
-
-
                 }
+
                 if (check > 0)
                 {
                     LogsDAL logs = new LogsDAL();
@@ -232,18 +195,12 @@ namespace BlueWhale.UI.store.ashx
                     logs.Events = "Add other inbound order：" + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
-
                     context.Response.Write("Operation successful！");
-
-
                 }
             }
+
             #endregion
-
         }
-
-
-
 
         public bool IsReusable
         {

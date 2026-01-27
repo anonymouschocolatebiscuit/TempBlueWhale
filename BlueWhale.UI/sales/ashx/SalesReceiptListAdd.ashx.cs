@@ -17,16 +17,13 @@ namespace BlueWhale.UI.sales.ashx
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class SalesReceiptListAdd : IHttpHandler, IRequiresSessionState  //When using Session, you must reference IRequiresSessionState
     {
-
         public SalesReceiptDAL dal = new SalesReceiptDAL();
 
         public GoodsDAL goodsDAL = new GoodsDAL();
 
         public class OrderListModel<T>
         {
-
             #region Header Fields
-
 
             private int _venderId;
             public int venderId
@@ -40,7 +37,6 @@ namespace BlueWhale.UI.sales.ashx
                 get { return _bizDate; }
                 set { _bizDate = value; }
             }
-
 
             private int _bizId;
             public int bizId
@@ -75,7 +71,6 @@ namespace BlueWhale.UI.sales.ashx
                 get { return _disPrice; }
                 set { _disPrice = value; }
             }
-
 
             private decimal _payNow;
             public decimal payNow
@@ -279,7 +274,6 @@ namespace BlueWhale.UI.sales.ashx
             }
         }
 
-
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";//返回格式
@@ -292,53 +286,40 @@ namespace BlueWhale.UI.sales.ashx
 
             }
             BasePage basePage = new BasePage();
+
             if (!basePage.CheckPower("SalesReceiptListAdd"))
             {
                 context.Response.Write("You do not have this permission, please contact the administrator！");
                 return;
             }
 
-
-
-
             Users users = context.Session["userInfo"] as Users;
 
-
             StreamReader reader = new StreamReader(context.Request.InputStream);
+
             string strJson = HttpUtility.UrlDecode(reader.ReadToEnd());
 
             OrderListModel<OrderListItemModel> obj = Newtonsoft.Json.JsonConvert.DeserializeObject<OrderListModel<OrderListItemModel>>(strJson);
 
-
-
             OrderListModel<OrderListItemModel> itemList = obj;
-
 
             #region Checking for negative inventory
 
             if (basePage.CheckStoreNum())//Whether to check negative inventory
             {
-
                 for (int i = 0; i < itemList.Rows.Count; i++)
                 {
-
-
                     int ckId = itemList.Rows[i].CkId;
                     int goodsId = itemList.Rows[i].GoodsId;
                     decimal Num = itemList.Rows[i].Num;
                     decimal storeNum = goodsDAL.GetGoodsStoreNumNow(goodsId, ckId);
-
 
                     if (Num > storeNum)//If it is greater than the stock quantity
                     {
                         context.Response.Write("No. " + (i + 1).ToString() + " row's product has insufficient remaining stock. The current stock is: " + storeNum.ToString("0.00"));
                         return;
                     }
-
-
-
                 }
-
             }
 
             #endregion
@@ -346,48 +327,36 @@ namespace BlueWhale.UI.sales.ashx
             #region Main table assignment
 
             dal.Number = dal.GetBillNumberAuto(users.ShopId);
-
             dal.ShopId = users.ShopId;
             dal.WlId = obj.venderId;
-
             dal.BizDate = obj.bizDate;
             dal.BizId = obj.bizId;
             dal.Types = 1;
             dal.Remarks = obj.remarks.ToString();
-
-
             dal.Dis = obj.dis;
             dal.DisPrice = obj.disPrice;
-
             dal.PayNow = obj.payNow;
             dal.PayNowNo = obj.payNowNo;
             dal.BkId = obj.bkId;
-
             dal.MakeId = users.Id;
             dal.MakeDate = DateTime.Now;
-
             dal.SendId = obj.SendId;
             dal.SendPayType = obj.SendPayType;
             dal.SendNumber = obj.SendNumber;
             dal.SendPrice = obj.SendPrice;
-
             dal.GetName = obj.GetName;
             dal.Phone = obj.Phone;
             dal.Address = obj.Address;
-
             dal.Flag = "Save";
 
             #endregion
 
-
             int pId = dal.Add();
-
 
             #region Word table assignment
 
             if (pId > 0)
             {
-
                 int check = 0;
 
                 SalesReceiptItemDAL item = new SalesReceiptItemDAL();
@@ -397,27 +366,23 @@ namespace BlueWhale.UI.sales.ashx
                     item.PId = pId;
                     item.GoodsId = itemList.Rows[i].GoodsId;
                     item.Num = itemList.Rows[i].Num;
-
                     item.CkId = itemList.Rows[i].CkId;
                     item.Price = itemList.Rows[i].Price;
-
                     item.Dis = itemList.Rows[i].Dis;
                     item.SumPriceDis = itemList.Rows[i].SumPriceDis;
-
                     item.PriceNow = itemList.Rows[i].PriceNow;
                     item.SumPriceNow = itemList.Rows[i].SumPriceNow;
-
                     item.Tax = itemList.Rows[i].Tax;
                     item.PriceTax = itemList.Rows[i].PriceTax;
                     item.SumPriceTax = itemList.Rows[i].SumPriceTax;
                     item.SumPriceAll = itemList.Rows[i].SumPriceAll;
-
                     item.Remarks = itemList.Rows[i].Remarks.ToString();
                     item.ItemId = itemList.Rows[i].ItemId;
                     item.SourceNumber = itemList.Rows[i].SourceNumber.ToString();
 
                     check = item.Add();
                 }
+
                 if (check > 0)
                 {
                     LogsDAL logs = new LogsDAL();

@@ -15,24 +15,28 @@ namespace BlueWhale.UI.baseSet
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (Request.Params["Action"] == "GetDataList")
             {
                 GetDataList();
+
                 Response.End();
             }
 
             if (Request.Params["Action"] == "GetDDLList")
             {
                 string typeId = Request.Params["typeId"].ToString();
+
                 GetDDLList(typeId);
+
                 Response.End();
             }
 
             if (Request.Params["Action"] == "delete")
             {
                 int id = ConvertTo.ConvertInt(Request.Params["id"].ToString());
+
                 DeleteRow(id);
+
                 Response.End();
             }
         }
@@ -43,7 +47,7 @@ namespace BlueWhale.UI.baseSet
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {
@@ -57,6 +61,7 @@ namespace BlueWhale.UI.baseSet
                     typeName = ds.Tables[0].Rows[i]["typeName"].ToString()
                 });
             }
+
             var griddata = new { Rows = list };
 
             string s = new JavaScriptSerializer().Serialize(griddata);
@@ -71,16 +76,16 @@ namespace BlueWhale.UI.baseSet
             {
                 isWhere += " and typeId='" + typeId + "' ";
             }
+
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {
                     processId = ds.Tables[0].Rows[i]["id"].ToString(),
                     processName = ds.Tables[0].Rows[i]["names"].ToString(),
-
                     id = ds.Tables[0].Rows[i]["id"].ToString(),
                     names = ds.Tables[0].Rows[i]["names"].ToString(),
                     text = ds.Tables[0].Rows[i]["names"].ToString(),
@@ -103,6 +108,7 @@ namespace BlueWhale.UI.baseSet
             if (Session["userInfo"] != null)
             {
                 int del = dal.Delete(id);
+
                 if (del > 0)
                 {
                     LogsDAL logs = new LogsDAL
@@ -115,16 +121,16 @@ namespace BlueWhale.UI.baseSet
 
                     logs.Add();
 
-                    Response.Write("Deletion successful!");
+                    Response.Write("Delete successful!");
                 }
                 else
                 {
-                    Response.Write("Deletion failed!");
+                    Response.Write("Delete failed!");
                 }
             }
             else
             {
-                Response.Write("Login timed out, please log in again!");
+                Response.Write("Login timed out, please login again!");
             }
         }
     }

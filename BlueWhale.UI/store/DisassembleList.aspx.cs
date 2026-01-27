@@ -59,7 +59,7 @@ namespace BlueWhale.UI.store
 
                 DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
 
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                DateTime end = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 GetDataList(keys, start, end, types);
                 Response.End();
@@ -203,7 +203,7 @@ namespace BlueWhale.UI.store
                 {
 
 
-                    Response.Write("Successfully delete" + num + "records！");
+                    Response.Write("Successfully delete " + num + " records！");
 
                 }
                 else
@@ -263,7 +263,7 @@ namespace BlueWhale.UI.store
                 {
 
 
-                    Response.Write("Successfully review" + num + "records！");
+                    Response.Write("Successfully review " + num + " records！");
 
                 }
                 else
@@ -328,7 +328,7 @@ namespace BlueWhale.UI.store
                 {
 
 
-                    Response.Write("Successfully cancel review" + num + "records！");
+                    Response.Write("Successfully cancel review " + num + " records！");
 
                 }
                 else

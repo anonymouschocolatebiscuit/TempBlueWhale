@@ -12,12 +12,10 @@ $(function () {
     txtFlagList.set("Width", 100);
 
     manager = $("#maingrid").ligerGrid({
-
         columns: [
             { display: 'Sales Date', name: 'bizDate', width: 80, align: 'center', valign: 'center' },
             {
                 display: 'Receipt Number', name: 'number', width: 150, align: 'center',
-
                 totalSummary:
                 {
                     type: 'count',
@@ -43,7 +41,6 @@ $(function () {
             { display: 'Unit Price', name: 'price', width: 80, align: 'right' },
             {
                 display: 'Quantity', name: 'num', width: 70, align: 'right',
-
                 totalSummary:
                 {
                     align: 'right',
@@ -71,31 +68,25 @@ $(function () {
                     }
                 }
             },
-
             {
                 display: 'Current Price', name: 'priceNow', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
             },
-
             {
                 display: 'Amount', name: 'sumPriceNow', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
-
                 totalSummary:
                 {
                     align: 'center',
                     type: 'sum',
                     render: function (e) {
-
                         var itemSumPriceNow = e.sum;
                         return "<span id='sumPriceItemNow'>" + Math.round(itemSumPriceNow * 10000) / 10000 + "</span>";
                     }
                 }
-
             },
             { display: 'Tax rate%', name: 'tax', width: 60, type: 'int', align: 'center', editor: { type: 'int' } },
-            { display: 'Unit Price Including Tax', name: 'priceTax', width: 70, type: 'float', align: 'center', editor: { type: 'float' } },
+            { display: 'Unit Price Including Tax', name: 'priceTax', width: 90, type: 'float', align: 'center', editor: { type: 'float' } },
             {
                 display: 'Tax Amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
-
                 totalSummary:
                 {
                     align: 'center',
@@ -107,10 +98,10 @@ $(function () {
                 }
             },
             {
-                display: 'Total Price Including Tax', name: 'sumPriceAll', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
+                display: 'Total Price Including Tax', name: 'sumPriceAll', width: 90, type: 'float', align: 'right', editor: { type: 'float' },
                 totalSummary:
                 {
-                    align: 'center', 
+                    align: 'center',
                     type: 'sum',
                     render: function (e) {
                         var itemSumPriceAll = e.sum;
@@ -128,8 +119,7 @@ $(function () {
         onDblClickRow: function (data, rowindex, rowobj) {
             viewRow();
         }
-    }
-    );
+    });
 });
 
 function search() {

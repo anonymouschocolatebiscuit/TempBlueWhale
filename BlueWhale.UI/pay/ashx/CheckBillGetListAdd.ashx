@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="CheckBillGetListAdd.ashx.cs" Class="Lanwei.Weixin.UI.pay.ashx.CheckBillGetListAdd" %>
+﻿<%@ WebHandler Language="C#" CodeBehind="CheckBillGetListAdd.ashx.cs" Class="BlueWhale.UI.pay.ashx.CheckBillGetListAdd" %>

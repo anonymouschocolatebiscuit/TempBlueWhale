@@ -1,6 +1,5 @@
 ﻿
 function formatCurrency(x) {
-
     var f_x = parseFloat(x);
     if (isNaN(f_x)) {
         return "0.00";

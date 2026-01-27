@@ -4,7 +4,6 @@ using BlueWhale.UI.src;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Web.SessionState;
@@ -16,7 +15,7 @@ namespace BlueWhale.UI.pay.ashx
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
-    public class OtherGetListAdd : IHttpHandler, IRequiresSessionState 
+    public class OtherGetListAdd : IHttpHandler, IRequiresSessionState
     {
         public OtherGetDAL dal = new OtherGetDAL();
 
@@ -97,24 +96,23 @@ namespace BlueWhale.UI.pay.ashx
             }
         }
 
-
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
 
             if (context.Session["userInfo"] == null)
             {
-
                 context.Response.Write("Login timeout, please log in again!");
                 return;
-
             }
+
             BasePage basePage = new BasePage();
             if (!basePage.CheckPower("OtherGetListAdd"))
             {
                 context.Response.Write("You do not have this permission, please contact the administrator!");
                 return;
             }
+
             Users users = context.Session["userInfo"] as Users;
             StreamReader reader = new StreamReader(context.Request.InputStream);
             string strJson = HttpUtility.UrlDecode(reader.ReadToEnd());
@@ -137,7 +135,7 @@ namespace BlueWhale.UI.pay.ashx
 
             int pId = dal.Add();
 
-            #region Sub-table Assignment 
+            #region Sub-table Assignment
 
             if (pId > 0)
             {
@@ -152,26 +150,27 @@ namespace BlueWhale.UI.pay.ashx
                     item.Remarks = itemList.Rows[i].Remarks.ToString();
                     check = item.Add();
                 }
+
                 if (check > 0)
                 {
-                    LogsDAL logs = new LogsDAL();
-                    logs.ShopId = users.ShopId;
-                    logs.Users = users.Names;
-                    logs.Events = "Create New OtherGet：" + dal.Number;
-                    logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
+                    LogsDAL logs = new LogsDAL
+                    {
+                        ShopId = users.ShopId,
+                        Users = users.Names,
+                        Events = "Create New OtherGet: " + dal.Number,
+                        Ip = HttpContext.Current.Request.UserHostAddress.ToString()
+                    };
                     logs.Add();
                     context.Response.Write("Execution successful!");
                 }
             }
+
             #endregion
         }
 
         public bool IsReusable
         {
-            get
-            {
-                return false;
-            }
+            get { return false; }
         }
     }
 }

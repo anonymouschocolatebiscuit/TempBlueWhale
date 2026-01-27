@@ -26,18 +26,18 @@
                 <td style="text-align: left; width: 180px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 70px;">End Date：
+                <td style="text-align: right; width: 85px;">End Date：
                 </td>
                 <td style="text-align: left; width: 180px;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align: center; width: 100px;">
+                <td style="text-align: center; width: 100px; padding-left:20pxy">
                     <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
                 </td>
                 <td style="text-align: right; padding-right: 20px;">
-                    <input id="btnAdd" type="button" value="Create" class="ui-btn" onclick="add()" />
-                    <input id="btnCheck" type="button" value="Check" class="ui-btn" onclick="checkRow()" />
-                    <input id="btnCheckNo" type="button" value="Uncheck" class="ui-btn" onclick="checkNoRow()" />
+                    <input id="btnAdd" type="button" value="Add" class="ui-btn" onclick="add()" />
+                    <input id="btnCheck" type="button" value="Approve" class="ui-btn" onclick="checkRow()" />
+                    <input id="btnCheckNo" type="button" value="Reject" class="ui-btn" onclick="checkNoRow()" />
                     <input id="btnReload" class="ui-btn" type="button" value="Delete" onclick="deleteRow()" />
                 </td>
             </tr>

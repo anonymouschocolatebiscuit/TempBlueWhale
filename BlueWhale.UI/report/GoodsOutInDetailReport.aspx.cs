@@ -4,11 +4,7 @@ using BlueWhale.UI.src;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
 using System.Web.Script.Serialization;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace BlueWhale.UI.report
 {
@@ -18,25 +14,25 @@ namespace BlueWhale.UI.report
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.IsPostBack)
+            if (!IsPostBack)
             {
                 if (!CheckPower("GoodsOutInDetailReport"))
                 {
                     Response.Redirect("../OverPower.htm");
                 }
 
-                this.txtDateStart.Text = DateTime.Now.ToString("yyyy-MM") + "-01";
-                this.txtDateEnd.Text = DateTime.Now.ToShortDateString();
+                txtDateStart.Text = DateTime.Now.ToString("yyyy-MM") + "-01";
+                txtDateEnd.Text = DateTime.Now.ToShortDateString();
             }
 
             if (Request.Params["Action"] == "GetDataList")
             {
                 DateTime bizStart = DateTime.Parse(Request.Params["start"].ToString());
-
-                DateTime bizEnd = DateTime.Parse(Request.Params["end"].ToString());
+                DateTime bizEnd = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
                 string goodsId = Request.Params["goodsId"].ToString();
                 string ckId = Request.Params["ckId"].ToString();
-                this.GetDataList(bizStart, bizEnd, goodsId, ckId);
+
+                GetDataList(bizStart, bizEnd, goodsId, ckId);
                 Response.End();
             }
         }
@@ -44,63 +40,65 @@ namespace BlueWhale.UI.report
         void GetDataList(DateTime bizStart, DateTime bizEnd, string goodsId, string typeId)
         {
             DataSet ds = dal.GetGoodsBalanceDetail(LoginUser.ShopId, bizStart, bizEnd, goodsId, typeId);
-            decimal numBegin = 0;
-            decimal priceBegin = 0;
-            decimal sumPriceBegin = 0;
+            decimal numIn = 0m;
+            decimal sumPriceIn = 0m;
 
-            decimal numIn = 0;
-            decimal priceIn = 0;
-            decimal sumPriceIn = 0;
+            decimal numOut = 0m;
+            decimal priceOut = 0m;
+            decimal sumPriceOut = 0m;
 
-            decimal numOut = 0;
-            decimal priceOut = 0;
-            decimal sumPriceOut = 0;
-
-            decimal numEnd = 0;
-            decimal priceEnd = 0;
-            decimal sumPriceEnd = 0;
-
-            decimal numEndLast = 0;
-            decimal priceEndLast = 0;
-            decimal sumPriceEndLast = 0;
-
+            decimal numEndLast = 0m;
+            decimal priceEndLast = 0m;
+            decimal sumPriceEndLast = 0m;
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
-            {
-                if (ds.Tables[0].Rows[i]["bizType"].ToString() == "Opening Balance")
-                {
-                    numBegin = ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["numBegin"].ToString());
-                    priceBegin = ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["priceBegin"].ToString());
-                    sumPriceBegin = ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["sumPriceBegin"].ToString());
+            int rowCount = ds.Tables[0].Rows.Count;
 
-                    numEnd = ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["numEnd"].ToString());
-                    priceEnd = ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["priceEnd"].ToString());
-                    sumPriceEnd = ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["sumPriceEnd"].ToString());
+            for (int i = 0; i < rowCount; i++)
+            {
+                DataRow row = ds.Tables[0].Rows[i];
+                string bizType = row["bizType"].ToString();
+
+
+                decimal numBegin;
+                decimal priceBegin;
+                decimal sumPriceBegin;
+
+                decimal numEnd;
+                decimal sumPriceEnd;
+
+                if (bizType == "Opening Balance")
+                {
+                    numBegin = ConvertTo.ConvertDec(row["numBegin"].ToString());
+                    priceBegin = ConvertTo.ConvertDec(row["priceBegin"].ToString());
+                    sumPriceBegin = ConvertTo.ConvertDec(row["sumPriceBegin"].ToString());
+
+                    numEnd = ConvertTo.ConvertDec(row["numEnd"].ToString());
+                    decimal priceEnd = ConvertTo.ConvertDec(row["priceEnd"].ToString());
+                    sumPriceEnd = ConvertTo.ConvertDec(row["sumPriceEnd"].ToString());
 
                     numEndLast = numEnd;
                     sumPriceEndLast = sumPriceEnd;
+                    priceEndLast = priceEnd;
                 }
                 else
                 {
                     numBegin = numEndLast;
-                    priceBegin = priceEnd;
+                    priceBegin = priceEndLast;
                     sumPriceBegin = sumPriceEndLast;
 
-                    numIn = ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["numIn"].ToString());
-                    priceIn = ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["priceIn"].ToString());
-                    sumPriceIn = ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["sumPriceIn"].ToString());
+                    numIn = ConvertTo.ConvertDec(row["numIn"].ToString());
+                    sumPriceIn = ConvertTo.ConvertDec(row["sumPriceIn"].ToString());
 
-                    numOut = ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["numOut"].ToString());
+                    numOut = ConvertTo.ConvertDec(row["numOut"].ToString());
                     priceOut = priceBegin;
                     sumPriceOut = numOut * priceOut;
 
                     numEnd = numBegin + numIn - numOut;
                     sumPriceEnd = sumPriceBegin + sumPriceIn - sumPriceOut;
 
-                    if (numEnd != 0)
+                    if (numEnd != 0m)
                     {
-
                         priceEndLast = sumPriceEnd / numEnd;
                     }
 
@@ -108,27 +106,23 @@ namespace BlueWhale.UI.report
                     sumPriceEndLast = sumPriceEnd;
                 }
 
-                string bizType = ds.Tables[0].Rows[i]["bizType"].ToString();
-
                 list.Add(new
                 {
-                    code = ds.Tables[0].Rows[i]["code"].ToString(),
-                    goodsName = ds.Tables[0].Rows[i]["goodsName"].ToString(),
-                    spec = ds.Tables[0].Rows[i]["spec"].ToString(),
-                    unitName = ds.Tables[0].Rows[i]["unitName"].ToString(),
-
-                    bizDate = ds.Tables[0].Rows[i]["bizDate"].ToString(),
-                    number = ds.Tables[0].Rows[i]["number"].ToString(),
-                    bizType = ds.Tables[0].Rows[i]["bizType"].ToString(),
-                    wlName = ds.Tables[0].Rows[i]["wlName"].ToString(),
-                    ckName = ds.Tables[0].Rows[i]["ckName"].ToString(),
+                    code = row["code"].ToString(),
+                    goodsName = row["goodsName"].ToString(),
+                    spec = row["spec"].ToString(),
+                    unitName = row["unitName"].ToString(),
+                    bizDate = row["bizDate"].ToString(),
+                    number = row["number"].ToString(),
+                    bizType = bizType,
+                    wlName = row["wlName"].ToString(),
+                    ckName = row["ckName"].ToString(),
 
                     numBegin = numBegin.ToString("0.00"),
                     priceBegin = priceBegin.ToString("0.00"),
                     sumPriceBegin = sumPriceBegin.ToString("0.00"),
 
                     numIn = numIn.ToString("0.00"),
-                    priceIn = priceIn.ToString("0.00"),
                     sumPriceIn = sumPriceIn.ToString("0.00"),
 
                     numOut = numOut.ToString("0.00"),
@@ -136,16 +130,14 @@ namespace BlueWhale.UI.report
                     sumPriceOut = sumPriceOut.ToString("0.00"),
 
                     numEnd = numEnd.ToString("0.00"),
-                    priceEnd = priceEnd.ToString("0.00"),
+                    priceEnd = priceEndLast.ToString("0.00"),
                     sumPriceEnd = sumPriceEnd.ToString("0.00")
-
                 });
             }
 
-            var griddata = new { Rows = list, Total = list.Count.ToString() };
-            string s = new JavaScriptSerializer().Serialize(griddata);
-            Response.Write(s);
+            var gridData = new { Rows = list, Total = list.Count.ToString() };
+            string json = new JavaScriptSerializer().Serialize(gridData);
+            Response.Write(json);
         }
-
     }
 }

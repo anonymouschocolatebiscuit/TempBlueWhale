@@ -267,17 +267,7 @@
       function editRow()
       {
           var row = manager.getSelectedRow();
-         
-          parent.f_addTab('ReceivableListEdit','Sales Payment - Modify','pay/ReceivableListEdit.aspx?id='+row.id);
-         
-         
-          top.topManager.openPage({
-            id : 'ReceivableListEdit',
-            href : 'pay/ReceivableListEdit.aspx?id='+row.id,
-            title : 'Sales Payment - Modify'
-          });
-  
-  
+          parent.f_addTab('ReceivableListEdit','Sales Payment - Edit','pay/ReceivableListEdit.aspx?id='+row.id);
       }
    
      function viewRow()

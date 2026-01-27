@@ -1,33 +1,19 @@
-﻿using System;
-using System.Collections;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml.Linq;
-
-using System.Collections.Generic;
-using System.Web.Script.Serialization;
+﻿using BlueWhale.Common;
 using BlueWhale.DAL;
-using BlueWhale.Common;
-
 using BlueWhale.UI.src;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Web.Script.Serialization;
 
 namespace BlueWhale.UI.baseSet
 {
     public partial class UnitList : BasePage
     {
-
         public UnitDAL dal = new UnitDAL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (Request.Params["Action"] == "GetDataList")
             {
                 GetDataList();
@@ -46,36 +32,35 @@ namespace BlueWhale.UI.baseSet
                 DeleteRow(id);
                 Response.End();
             }
-
-
         }
 
         void GetDataList()
         {
+            string sortColumn = Request.Params["sortname"];
+            string sortOrder = Request.Params["sortorder"];
+
             string isWhere = " shopId='" + LoginUser.ShopId + "' ";
-            DataSet ds = dal.GetList(isWhere);
+            string orderBy = "";
+            if (sortColumn != null && sortOrder != null)
+            {
+                orderBy = $" ORDER BY {sortColumn} {sortOrder}";
+            }
+            DataSet ds = dal.GetList(isWhere, orderBy);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-
                 list.Add(new
                 {
                     id = ds.Tables[0].Rows[i]["id"].ToString(),
                     names = ds.Tables[0].Rows[i]["names"].ToString()
-                 
                 });
-            
             }
-            var griddata = new { Rows = list };
 
-            string s = new JavaScriptSerializer().Serialize(griddata);
-
-        
-
-            Response.Write(s);
+            object griddata = new { Rows = list };
+            string json = new JavaScriptSerializer().Serialize(griddata);
+            Response.Write(json);
         }
-
 
         void GetDDLList()
         {
@@ -83,24 +68,17 @@ namespace BlueWhale.UI.baseSet
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-
                 list.Add(new
                 {
-                    
                     typeId = ds.Tables[0].Rows[i]["id"].ToString(),
                     typeName = ds.Tables[0].Rows[i]["names"].ToString()
-
                 });
-
             }
-          
 
-            string s = new JavaScriptSerializer().Serialize(list);
-
-
-            Response.Write(s);
+            string json = new JavaScriptSerializer().Serialize(list);
+            Response.Write(json);
         }
 
         void DeleteRow(int id)
@@ -110,16 +88,16 @@ namespace BlueWhale.UI.baseSet
                 int del = dal.Delete(id);
                 if (del > 0)
                 {
-                    LogsDAL logs = new LogsDAL();
-
-                    logs.ShopId = LoginUser.ShopId;
-                    logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Delete Unit Measurement-ID：" + id.ToString();
-                    logs.Ip = Request.UserHostAddress.ToString();
+                    LogsDAL logs = new LogsDAL
+                    {
+                        ShopId = LoginUser.ShopId,
+                        Users = LoginUser.Phone + "-" + LoginUser.Names,
+                        Events = "Deleted unit of measurement - ID: " + id.ToString(),
+                        Ip = Request.UserHostAddress.ToString()
+                    };
                     logs.Add();
 
                     Response.Write("Deletion successful!");
-
                 }
                 else
                 {
@@ -130,7 +108,6 @@ namespace BlueWhale.UI.baseSet
             {
                 Response.Write("Login timed out, please log in again!");
             }
-
         }
     }
 }

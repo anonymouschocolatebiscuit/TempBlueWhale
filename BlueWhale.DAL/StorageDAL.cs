@@ -191,9 +191,9 @@ namespace BlueWhale.DAL
 		}
 		#endregion
 
-		#region Modify an Entry
+		#region Edit an Entry
 		/// <summary>
-		/// Modify an entry.
+		/// Edit an entry.
 		/// </summary>
 		/// <param name="Id"></param>
 		/// <param name="names"></param>
@@ -212,9 +212,9 @@ namespace BlueWhale.DAL
 		}
 		#endregion
 
-		#region Modify Status
+		#region Edit Status
 		/// <summary>
-		/// Modify status.
+		/// Edit status.
 		/// </summary>
 		/// <param name="Id"></param>
 		/// <param name="flag"></param>

@@ -50,14 +50,11 @@ namespace BlueWhale.UI.sales
 
             if (Request.Params["Action"] == "GetDataListSearch")
             {
-
                 string keys = Request.Params["keys"].ToString();
+                int types = ConvertTo.ConvertInt(Request.Params["types"]);
 
-                int types = ConvertTo.ConvertInt(Request.Params["types"].ToString());
-
-                DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
-
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                DateTime start = string.IsNullOrEmpty(Request.Params["start"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["start"].ToString());
+                DateTime end = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 GetDataList(keys, start, end, types);
                 Response.End();
@@ -140,7 +137,7 @@ namespace BlueWhale.UI.sales
             DataSet ds = dal.GetAllModel(LoginUser.ShopId, key, start, end, types);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
 
 
@@ -237,7 +234,7 @@ namespace BlueWhale.UI.sales
                 {
 
 
-                    Response.Write("Successfully deleted" + num + "records！");
+                    Response.Write("Successfully deleted " + num + " records！");
 
                 }
                 else
@@ -297,7 +294,7 @@ namespace BlueWhale.UI.sales
                 {
 
 
-                    Response.Write("Successfully review" + num + "records！");
+                    Response.Write("Successfully review " + num + " records！");
 
                 }
                 else
@@ -363,7 +360,7 @@ namespace BlueWhale.UI.sales
                 {
 
 
-                    Response.Write("Successfully cancel review" + num + "records！");
+                    Response.Write("Successfully cancel review " + num + " records！");
 
                 }
                 else

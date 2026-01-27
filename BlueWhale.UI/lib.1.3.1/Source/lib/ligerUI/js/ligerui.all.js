@@ -2550,7 +2550,9 @@
                     }
                     g.setData(data);
                     g.trigger('success', [data]);
-                    if (callback) callback(data);
+                    if (typeof callback === 'function') {
+                        this.callback(data);
+                    }
                 },
                 error: function (XMLHttpRequest, textStatus) {
                     g.trigger('error', [XMLHttpRequest, textStatus]);

@@ -31,7 +31,7 @@
                 <td style="text-align: left; width: 100px;">
                     <input type="text" id="txtGoodsList" />
                 </td>
-                <td style="text-align: right; padding-right: 10px;">
+                <td style="text-align: right; padding-right: 25px;">
                     <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
                 </td>
             </tr>
@@ -51,7 +51,7 @@
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>
                 <td style="text-align: right; padding-right: 30px;">
-                    <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Generate Inventory Surplus and Shortage Report" onclick="save()" />
+                    <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Generate Inventory Surplus and Shortage Report" onclick="save()" style="margin:0px;"/>
                 </td>
             </tr>
         </table>

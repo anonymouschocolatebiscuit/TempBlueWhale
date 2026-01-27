@@ -82,9 +82,14 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public int Delete(int PId)
         {
-            string sql = " ";
-            sql += " delete from CheckBillItemPur where pId='" + PId + "' ";
-            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
+            string sql = "DELETE FROM CheckBillItemPur WHERE pId = @PId";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+        new SqlParameter("@PId", PId)
+            };
+
+            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, parameters);
         }
         #endregion
 
@@ -96,8 +101,14 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public DataSet GetAllModel(int pId)
         {
-            string sql = "select * from viewCheckBillItemPur where pId='" + pId + "' ";
-            return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
+            string sql = "SELECT * FROM viewCheckBillItemPur WHERE pId = @pId";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+        new SqlParameter("@pId", pId)
+            };
+
+            return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, parameters);
         }
 
         #endregion

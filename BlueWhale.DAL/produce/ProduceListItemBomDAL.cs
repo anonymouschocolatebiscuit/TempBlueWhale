@@ -12,7 +12,6 @@ namespace BlueWhale.DAL.produce
         }
 
         #region Attribute
-
         private int id;
         public int Id
         {
@@ -62,7 +61,6 @@ namespace BlueWhale.DAL.produce
             set { num = value; }
         }
 
-
         private int ckId;
         public int CkId
         {
@@ -76,7 +74,6 @@ namespace BlueWhale.DAL.produce
             get { return remarks; }
             set { remarks = value; }
         }
-
         #endregion
 
         #region Create new record
@@ -88,6 +85,7 @@ namespace BlueWhale.DAL.produce
         {
             string sql = "insert into ProduceListItemBom(pId,itemId,goodsId,numBom,rate,num,remarks)";
             sql += " values(@pId,@itemId,@goodsId,@numBom,@rate,@num,@remarks)  ";
+
             SqlParameter[] param = {
                                        new SqlParameter("@PId",PId),
                                        new SqlParameter("@ItemId",ItemId),
@@ -100,7 +98,6 @@ namespace BlueWhale.DAL.produce
                                      };
 
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, param);
-
         }
         #endregion
 
@@ -119,11 +116,9 @@ namespace BlueWhale.DAL.produce
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
 
         }
-
         #endregion
 
         #region Get All Model
-
         /// <summary>
         /// Get All Model
         /// </summary>
@@ -134,11 +129,9 @@ namespace BlueWhale.DAL.produce
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
-
         #endregion
 
         #region Get All Member
-
         /// <summary>
         /// Get All Member
         /// </summary>
@@ -152,10 +145,8 @@ namespace BlueWhale.DAL.produce
                 sql += " where " + isWhere;
 
             }
-
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
-
         #endregion
     }
 }

@@ -14,23 +14,13 @@ namespace BlueWhale.UI.produce
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
             if (!this.IsPostBack)
             {
-                //if (!CheckPower("SalesOrderListAdd"))
-                //{
-                //    Response.Redirect("../OverPower.htm");
-                //}
-
                 this.Bind();
 
                 this.txtBizDate.Text = DateTime.Now.ToShortDateString();
 
-
                 this.txtNum.Attributes.Add("onkeyup", "return getBomList()");
-
-
             }
 
             if (Request.Params["Action"] == "GetData")
@@ -47,10 +37,6 @@ namespace BlueWhale.UI.produce
                 this.GetDataListBom(pId,goodsId, num);
                 Response.End();
             }
-
-           
-
-
         }
 
         public void Bind()
@@ -65,19 +51,13 @@ namespace BlueWhale.UI.produce
             this.ddlYWYList.DataTextField = "names";
             this.ddlYWYList.DataValueField = "id";
             this.ddlYWYList.DataBind();
-
             this.ddlYWYList.SelectedValue = LoginUser.Id.ToString();
-
-           
-
-
         }
-
-   
 
         void GetDataList()
         {
             IList<object> list = new List<object>();
+
             for (var i = 1; i < 9; i++)
             {
                 list.Add(new
@@ -85,21 +65,15 @@ namespace BlueWhale.UI.produce
                     id = i,
                     processId = "",
                     processName = "",
-                 
                     num = "",
-
                     price = "",
-
-                  
-
                     sumPrice = "",
-
-
-             
                     remarks = ""
                 });
             }
+
             var griddata = new { Rows = list, Total = list.Count.ToString() };
+
             string s = new JavaScriptSerializer().Serialize(griddata);
             Response.Write(s);
         }
@@ -118,6 +92,7 @@ namespace BlueWhale.UI.produce
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 int numBom = ConvertTo.ConvertInt(ds.Tables[0].Rows[i]["numBom"].ToString());
+
                 int rate = ConvertTo.ConvertInt(ds.Tables[0].Rows[i]["rate"].ToString());
 
                 float price = ConvertTo.ConvertFloat(ds.Tables[0].Rows[i]["priceCost"].ToString());
@@ -130,7 +105,6 @@ namespace BlueWhale.UI.produce
 
                 float numApply = numBom * produceNumNo * rate / 100;
 
-
                 list.Add(new
                 {
                     id = i,
@@ -139,7 +113,6 @@ namespace BlueWhale.UI.produce
                     goodsName = ds.Tables[0].Rows[i]["goodsName"].ToString(),
                     spec = ds.Tables[0].Rows[i]["spec"].ToString(),
                     unitName = ds.Tables[0].Rows[i]["unitName"].ToString(),
-
                     ckId = ds.Tables[0].Rows[i]["ckId"].ToString(),
                     ckName = ds.Tables[0].Rows[i]["ckName"].ToString(),
                     pihao="",
@@ -151,7 +124,6 @@ namespace BlueWhale.UI.produce
                     remarks = ""
                 });
             }
-
 
             if (rows < 8)//少于8行
             {
@@ -178,14 +150,9 @@ namespace BlueWhale.UI.produce
                 }
             }
 
-            
-             
             var griddata = new { Rows = list, Total = list.Count.ToString() };
             string s = new JavaScriptSerializer().Serialize(griddata);
             Response.Write(s);
         }
-
-     
-
     }
 }

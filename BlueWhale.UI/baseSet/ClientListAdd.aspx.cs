@@ -74,6 +74,12 @@ namespace BlueWhale.UI.BaseSet
                 return;
             }
 
+            if (this.txtYueDate.Text.Trim() == "")
+            {
+                MessageBox.Show(this, "Please fill in the balance date！");
+                return;
+            }
+
             dal.Id = id;
             dal.ShopId = LoginUser.ShopId;
             dal.Code = this.txtCode.Text.Trim();
@@ -135,7 +141,7 @@ namespace BlueWhale.UI.BaseSet
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Modify Customer：" + this.txtCode.Text + " Name：" + this.txtNames.Text;
+                    logs.Events = "Edit Customer：" + this.txtCode.Text + " Name：" + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 

@@ -24,7 +24,7 @@ namespace BlueWhale.UI.report
             if (Request.Params["Action"] == "GetDataList")
             {
                 DateTime bizStart = DateTime.Parse(Request.Params["start"].ToString());
-                DateTime bizEnd = DateTime.Parse(Request.Params["end"].ToString());
+                DateTime bizEnd = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
                 DateTime sendStart = DateTime.Parse("2000-1-1");
                 DateTime sendEnd = DateTime.Parse("2050-1-1");
 

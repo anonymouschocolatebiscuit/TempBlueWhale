@@ -1,11 +1,7 @@
 ﻿using BlueWhale.DBUtility;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlueWhale.DAL.produce
 {
@@ -55,7 +51,7 @@ namespace BlueWhale.DAL.produce
         {
             bool flag = false;
 
-            string sql = "select * from processType where names='" + names + "' and shopId='" + shopId + "' ";
+            string sql = "SELECT * FROM processType WHERE names='" + names + "' AND shopId='" + shopId + "' ";
 
             SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
             while (reader.Read())
@@ -74,7 +70,7 @@ namespace BlueWhale.DAL.produce
         {
             bool flag = false;
 
-            string sql = "select * from processType where names='" + names + "' and id<>'" + id + "' and shopId='" + shopId + "' ";
+            string sql = "SELECT * FROM processType WHERE names='" + names + "' AND id<>'" + id + "' AND shopId='" + shopId + "' ";
 
             SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
             while (reader.Read())
@@ -93,7 +89,7 @@ namespace BlueWhale.DAL.produce
         {
             bool flag = false;
 
-            string sql = "select * from processType where typeId='" + id + "' ";
+            string sql = "SELECT * FROM processType WHERE typeId='" + id + "' ";
 
             SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
             while (reader.Read())
@@ -112,7 +108,7 @@ namespace BlueWhale.DAL.produce
         public int GetIdByName(int shopId, string names)
         {
             int id = 0;
-            string sql = "select * from processType where names='" + names + "' and shopId='" + shopId + "'  ";
+            string sql = "SELECT * FROM processType WHERE names='" + names + "' AND shopId='" + shopId + "'  ";
 
             DataSet ds = SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
             if (ds.Tables[0].Rows.Count > 0)
@@ -133,7 +129,7 @@ namespace BlueWhale.DAL.produce
         /// <returns></returns>
         public int Add()
         {
-            string sql = "insert into processType(shopId,names,seq) values('" + ShopId + "','" + Names + "','" + Seq + "')";
+            string sql = "INSERT INTO processType(shopId,names,seq) VALUES('" + ShopId + "','" + Names + "','" + Seq + "')";
 
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
@@ -152,7 +148,7 @@ namespace BlueWhale.DAL.produce
 
             if (!this.IsExistsNamesEdit(Id, ShopId, Names))
             {
-                sql = "update processType set ShopId='" + ShopId + "',Names='" + Names + "',Seq='" + Seq + "' where Id='" + Id + "'";
+                sql = "UPDATE processType SET ShopId='" + ShopId + "',Names='" + Names + "',Seq='" + Seq + "' where Id='" + Id + "'";
 
                 return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
             }
@@ -171,7 +167,7 @@ namespace BlueWhale.DAL.produce
         /// <returns></returns>
         public int Delete(int Id)
         {
-            string sql = " delete from processType where id='" + Id + "'";
+            string sql = " DELETE FROM processType WHERE id='" + Id + "'";
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
 
 
@@ -183,22 +179,22 @@ namespace BlueWhale.DAL.produce
         /// </summary>
         public DataSet GetList(string strWhere)
         {
-            string sql = @"select a.*,isnull(num,0) num
-                            from processType a
-                            left join
+            string sql = @"SELECT a.*,isnull(num,0) num
+                            FROM processType a
+                            LEFT JOIN
                             (
-                            select typeId,count(*) num
-                            from processList
-                            group by typeId
+                            SELECT typeId,count(*) num
+                            FROM processList
+                            GROUP BY typeId
                             ) b
-                            on a.id=b.typeId ";
+                            ON a.id=b.typeId ";
 
             if (strWhere != "")
             {
-                sql += " where " + strWhere;
+                sql += " WHERE " + strWhere;
             }
 
-            sql += "  order by seq ";
+            sql += "  ORDER BY seq ";
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql.ToString(), null);
         }
@@ -211,7 +207,7 @@ namespace BlueWhale.DAL.produce
         /// <returns></returns>
         public DataSet GetModelById(int Id)
         {
-            string sql = "select * from processType where Id='" + Id + "'";
+            string sql = "SELECT * FROM processType WHERE Id='" + Id + "'";
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
         #endregion

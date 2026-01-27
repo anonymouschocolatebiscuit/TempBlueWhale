@@ -19,12 +19,9 @@ namespace BlueWhale.UI.buy.ashx
     public class PurOrderListAdd : IHttpHandler, IRequiresSessionState
     {
         public PurOrderDAL dal = new PurOrderDAL();
-
         public class OrderListModel<T>
         {
-
             #region Header Fields
-
 
             private int _venderId;
             public int venderId
@@ -198,28 +195,26 @@ namespace BlueWhale.UI.buy.ashx
 
             if (context.Session["userInfo"] == null)
             {
-
                 context.Response.Write("Login timeout, please log in again!");
                 return;
-
             }
+
             BasePage basePage = new BasePage();
             if (!basePage.CheckPower("PurOrderListAdd"))
             {
                 context.Response.Write("You do not have this permission, please contact the administrator!");
                 return;
             }
+
             Users users = context.Session["userInfo"] as Users;
 
-
             StreamReader reader = new StreamReader(context.Request.InputStream);
+
             string strJson = HttpUtility.UrlDecode(reader.ReadToEnd());
 
             OrderListModel<OrderListItemModel> obj = Newtonsoft.Json.JsonConvert.DeserializeObject<OrderListModel<OrderListItemModel>>(strJson);
 
             OrderListModel<OrderListItemModel> itemList = obj;
-
-
 
             #region Main table assignment
 
@@ -232,53 +227,41 @@ namespace BlueWhale.UI.buy.ashx
             dal.Remarks = obj.remarks.ToString();
             dal.MakeId = users.Id;
             dal.MakeDate = DateTime.Now;
-
             dal.Flag = "Save";
-
 
             #endregion
 
-
             int pId = dal.Add();
 
-
-            #region Word table assignment
+            #region Child table assignment
 
             if (pId > 0)
             {
                 PurOrderItemDAL item = new PurOrderItemDAL();
 
                 int check = 0;
+
                 for (int i = 0; i < itemList.Rows.Count; i++)
                 {
-
                     item.PId = pId;
                     item.GoodsId = itemList.Rows[i].GoodsId;
                     item.Num = itemList.Rows[i].Num;
                     item.CkId = itemList.Rows[i].CkId;
                     item.Price = itemList.Rows[i].Price;
-
                     item.Dis = itemList.Rows[i].Dis;
                     item.SumPriceDis = itemList.Rows[i].SumPriceDis;
-
                     item.PriceNow = itemList.Rows[i].PriceNow;
                     item.SumPriceNow = itemList.Rows[i].SumPriceNow;
-
                     item.Tax = itemList.Rows[i].Tax;
                     item.PriceTax = itemList.Rows[i].PriceTax;
                     item.SumPriceTax = itemList.Rows[i].SumPriceTax;
                     item.SumPriceAll = itemList.Rows[i].SumPriceAll;
-
                     item.Remarks = itemList.Rows[i].Remarks.ToString();
                     item.ItemId = itemList.Rows[i].ItemId;
                     item.SourceNumber = itemList.Rows[i].SourceNumber.ToString();
-
-
                     check = item.Add();
-
-
-
                 }
+
                 if (check > 0)
                 {
                     LogsDAL logs = new LogsDAL();
@@ -287,14 +270,11 @@ namespace BlueWhale.UI.buy.ashx
                     logs.Events = "Add a new purchase order:" + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
-
                     context.Response.Write("The operation was successful!");
-
-
                 }
             }
-            #endregion
 
+            #endregion
         }
 
         public bool IsReusable

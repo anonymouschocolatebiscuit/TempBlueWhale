@@ -31,7 +31,7 @@
 
     </script>
 
-    <style>
+    <style type="text/css">
         .button-container {
             text-align: center;
         }
@@ -42,27 +42,28 @@
             vertical-align: middle;
         }
     </style>
+
 </head>
 <body>
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="10" style="width: 450px; line-height: 40px;">
             <tr>
-                <td style="width: 120px; text-align: right; padding-right: 10px;">Process Category:</td>
-                <td style="width: 360px;">
+                <td style="width: 170px; text-align: right; padding-right: 10px;">Process Category:</td>
+                <td style="width: 270px;">
                     <asp:DropDownList ID="ddlTypeList" Height="40px" runat="server" Width="100%">
                     </asp:DropDownList>
                 </td>
             </tr>
 
             <tr>
-                <td style="width: 120px; text-align: right; padding-right: 10px;">Process Name:</td>
+                <td style="width: 170px; text-align: right; padding-right: 10px;">Process Name:</td>
                 <td>
                     <asp:TextBox ID="txtNames" runat="server"></asp:TextBox>
                 </td>
             </tr>
 
             <tr>
-                <td style="width: 120px; text-align: right; padding-right: 10px;">Unit:</td>
+                <td style="width: 170px; text-align: right; padding-right: 10px;">Unit:</td>
                 <td>
                     <asp:DropDownList ID="ddlUnitList" Height="40px" runat="server" Width="100%">
                     </asp:DropDownList>
@@ -71,14 +72,14 @@
             </tr>
 
             <tr>
-                <td style="width: 120px; text-align: right; padding-right: 10px;">Unit Price:</td>
+                <td style="width: 170px; text-align: right; padding-right: 10px;">Unit Price:</td>
                 <td>
                     <asp:TextBox ID="txtPrice" runat="server" placeholder="Please enter default unit price"></asp:TextBox>
                 </td>
             </tr>
 
             <tr>
-                <td style="width: 120px; text-align: right; padding-right: 10px;">Display Order:</td>
+                <td style="width: 170px; text-align: right; padding-right: 10px;">Display Order:</td>
                 <td>
                     <asp:TextBox ID="txtSortId" runat="server" ltype='spinner'
                         ligerui="{type:'int'}" value="1"></asp:TextBox>

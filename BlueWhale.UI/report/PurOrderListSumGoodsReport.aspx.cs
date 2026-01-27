@@ -13,17 +13,19 @@ namespace BlueWhale.UI.report
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.IsPostBack)
+            var isGetDataList = Request.Params["Action"] == "GetDataList";
+
+            if (!isGetDataList)
             {
-                this.txtDateStart.Text = DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd");
-                this.txtDateEnd.Text = DateTime.Now.ToShortDateString();
+                this.txtDateStart.Text = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).ToString("yyyy-MM-dd");
+                this.txtDateEnd.Text = DateTime.Now.ToString("yyyy-MM-dd");
             }
 
-            if (Request.Params["Action"] == "GetDataList")
+            if (isGetDataList)
             {
                 string bizStartParam = Request.Params["start"].ToString();
 
-                string bizEndParam = Request.Params["end"].ToString();
+                string bizEndParam = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now.ToString() : Request.Params["end"].ToString();
 
                 string wlId = Request.Params["wlId"].ToString();
 

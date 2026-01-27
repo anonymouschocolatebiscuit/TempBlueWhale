@@ -74,13 +74,13 @@ namespace BlueWhale.UI.buy
                 {
                     decimal num = ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["num"].ToString());
 
-                    decimal priceCost = ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["priceCost"].ToString());
+                    decimal priceCost = ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["price"].ToString());
 
                     list.Add(new
                     {
                         id = ds.Tables[0].Rows[i]["id"].ToString(),
                         goodsId = ds.Tables[0].Rows[i]["goodsId"].ToString(),
-                        goodsName = ds.Tables[0].Rows[i]["names"].ToString(),
+                        goodsName = ds.Tables[0].Rows[i]["goodsName"].ToString(),
                         spec = ds.Tables[0].Rows[i]["spec"].ToString(),
                         unitName = ds.Tables[0].Rows[i]["unitName"].ToString(),
                         num = ds.Tables[0].Rows[i]["num"].ToString(),
@@ -101,7 +101,7 @@ namespace BlueWhale.UI.buy
 
                         itemId = ds.Tables[0].Rows[i]["id"].ToString(),
                         remarks = "",
-                        sourceNumber = ds.Tables[0].Rows[i]["number"].ToString()
+                        sourceNumber = ds.Tables[0].Rows[i]["sourceNumber"].ToString()
                     });
                 }
                 if (rows < 8)

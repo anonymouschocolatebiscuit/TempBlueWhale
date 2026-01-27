@@ -27,36 +27,19 @@ namespace BlueWhale.UI.report
      
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
             if (!this.IsPostBack)
             {
-
                 this.txtDateStart.Text = DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd");
                 this.txtDateEnd.Text = DateTime.Now.ToShortDateString();
-
-
-              
-
             }
 
             if (Request.Params["Action"] == "GetDataList")
             {
-
                 DateTime bizStart = DateTime.Parse(Request.Params["start"].ToString());
-
-                DateTime bizEnd = DateTime.Parse(Request.Params["end"].ToString());
-
-
-          
-
-
+                DateTime bizEnd = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
                 string wlId = Request.Params["wlId"].ToString();
                 string goodsId = Request.Params["goodsId"].ToString();
-
                 string typeId = Request.Params["typeId"].ToString();
-
-
                 this.GetDataList(bizStart,bizEnd,wlId,goodsId,typeId);
                 Response.End();
             }

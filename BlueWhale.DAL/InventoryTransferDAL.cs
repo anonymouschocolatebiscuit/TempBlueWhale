@@ -9,7 +9,6 @@ namespace BlueWhale.DAL
     {
         public InventoryTransferDAL()
         {
-
         }
 
         #region Attributes
@@ -154,7 +153,7 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public int Update()
         {
-            string sql = @"UPDATE diaobo
+            string sql = @"UPDATE InventoryTransfer
                             SET 
                                 shopId = @shopId                                                                   
                                 ,bizDate = @bizDate                  

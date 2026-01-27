@@ -106,7 +106,7 @@ namespace BlueWhale.DAL
         /// <summary>
         /// get pay type list
         /// </summary>
-        public DataSet GetList(string strWhere)
+        public DataSet GetList(string strWhere, string orderClause = "")
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select *  ");
@@ -116,7 +116,7 @@ namespace BlueWhale.DAL
                 strSql.Append(" where " + strWhere);
             }
 
-            strSql.Append(" order by names  ");
+            strSql.Append(orderClause);
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, strSql.ToString(), null);
         }

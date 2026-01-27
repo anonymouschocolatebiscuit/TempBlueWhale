@@ -140,8 +140,8 @@ namespace BlueWhale.UI.sales
                 DataSet ds = item.GetAllModel(id);
 
                 int rows = ds.Tables[0].Rows.Count;
-
-                for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                 {
                     list.Add(new
                     {
@@ -174,7 +174,7 @@ namespace BlueWhale.UI.sales
 
                 if (rows < 8)//Less than 8 lines
                 {
-                    for (var i = 0; i < 8 - rows; i++)
+                    for (int i = 0; i < 8 - rows; i++)
                     {
                         list.Add(new
                         {
@@ -217,7 +217,7 @@ namespace BlueWhale.UI.sales
             {
                 #region If it is newly added
 
-                for (var i = 1; i < 9; i++)
+                for (int i = 1; i < 9; i++) 
                 {
                     list.Add(new
                     {

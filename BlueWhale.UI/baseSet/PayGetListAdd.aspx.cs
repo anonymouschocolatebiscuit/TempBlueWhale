@@ -13,15 +13,12 @@ namespace BlueWhale.UI.baseSet
         {
             if (!this.IsPostBack)
             {
-               
                 this.BindDetail();
-
             }
         }
 
         public void BindDetail()
         {
-
             this.txtNames.Focus();
 
             if (Request.QueryString.Count>0)
@@ -30,22 +27,18 @@ namespace BlueWhale.UI.baseSet
                 this.hfId.Value = id.ToString();
                 this.txtNames.Text = Request.QueryString["names"].ToString();
                 this.ddlTypesList.SelectedValue = Request.QueryString["types"].ToString();
-                
-
             }
             else
             {
-               
                 this.hfId.Value = "0";
             }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-
             if (!CheckPower("PayGetListAdd"))
             {
-                MessageBox.Show(this, "无此操作权限！");
+                MessageBox.Show(this, "No permission to perform this action！");
                 return;
             }
 
@@ -53,10 +46,9 @@ namespace BlueWhale.UI.baseSet
             {
                 MessageBox.Show(this, "Please fill in the name！");
                 this.txtNames.Focus();
+
                 return;
-
             }
-
           
             int id = ConvertTo.ConvertInt(this.hfId.Value.ToString());
 
@@ -75,17 +67,15 @@ namespace BlueWhale.UI.baseSet
 
                 if (dal.Add() > 0)
                 {
-
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "新增收支类别：" + this.txtNames.Text;
+                    logs.Events = "Created Income and Expense Category：" + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
                     MessageBox.Show(this, "Operation Successful!");
                 }
-
             }
             else
             {
@@ -97,22 +87,17 @@ namespace BlueWhale.UI.baseSet
 
                 if (dal.Update() > 0)
                 {
-
                     LogsDAL logs = new LogsDAL();
 
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "修改收支类别：" + this.txtNames.Text;
+                    logs.Events = "Modified Income and Expense Category：" + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
                     MessageBox.Show(this, "Operation Successful!");
                 }
             }
-
-
-
-            
         }
     }
 }

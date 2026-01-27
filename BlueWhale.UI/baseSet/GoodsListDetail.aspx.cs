@@ -14,40 +14,29 @@ namespace BlueWhale.UI.baseSet
         {
             if (!this.IsPostBack)
             {
-
-
-
                 this.Bind();
             }
         }
         public void Bind()
         {
-
-
             int id = ConvertTo.ConvertInt(Request.QueryString["id"].ToString());
 
             DataSet ds = dal.GetModelById(id);
             if (ds.Tables[0].Rows.Count > 0)
             {
-
                 this.txtNeirong.Text = ds.Tables[0].Rows[0]["remarks"].ToString();
-
             }
             else
             {
-
                 this.txtNeirong.Text = "";
             }
         }
 
-
         protected void btnSave_Click(object sender, EventArgs e)
         {
-
             int id = ConvertTo.ConvertInt(Request.QueryString["id"].ToString());
 
             string remarks = this.txtNeirong.Text;
-
             int update = dal.UpdateRemarks(id, remarks);
             if (update > 0)
             {

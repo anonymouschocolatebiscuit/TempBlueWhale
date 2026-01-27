@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OtherInListAdd.aspx.cs" Inherits="BlueWhale.UI.store.OtherInListAdd" %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,7 +12,6 @@
     <%--  <script src="../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>--%>
     <script src="../lib.1.3.1/Source/lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
     <script src="../lib/json2.js" type="text/javascript"></script>
-
     <script src="js/OtherInListAdd.js" type="text/javascript"></script>
 </head>
 <body style="padding-top: 10px; padding-left: 10px;">
@@ -45,10 +43,10 @@
             <tr>
                 <td style="width: 80px; text-align: right;">Remarks：</td>
                 <td style="text-align: left;">
-                    <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
+                    <asp:TextBox ID="txtRemarks" runat="server" Width="540px" Style="margin-top: 5px;" TextMode="MultiLine"></asp:TextBox>
                 </td>
                 <td style="text-align: right; padding-right: 30px;">
-                    <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Create" onclick="save()" />
+                    <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Add" onclick="save()" />
                 </td>
             </tr>
         </table>

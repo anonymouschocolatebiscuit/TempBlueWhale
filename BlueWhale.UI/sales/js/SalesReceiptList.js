@@ -238,8 +238,33 @@ function search() {
     var start = document.getElementById("txtDateStart").value;
     var end = document.getElementById("txtDateEnd").value;
 
-    manager.changePage("first");
-    manager._setUrl("SalesReceiptList.aspx?Action=GetDataListSearch&types=0&keys=" + keys + "&start=" + start + "&end=" + end);
+    if (start && end) {
+        var startDate = new Date(start);
+        var endDate = new Date(end);
+
+        if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+            $.ligerDialog.alert("Invalid date format. Please check your input.", "Notification");
+            return;
+        }
+
+        if (startDate > endDate) {
+            $.ligerDialog.alert("Start date cannot be later than end date.", "Notification");
+            return;
+        }
+    }
+
+    manager.setOptions({
+        url: "SalesReceiptList.aspx",
+        parms: {
+            Action: "GetDataListSearch",
+            types: 0,
+            keys: keys.trim(),
+            start: start,
+            end: end
+        }
+    });
+
+    manager.loadData();
 }
 
 
@@ -349,28 +374,16 @@ function add() {
 
 function editRow() {
     var row = manager.getSelectedRow();
+    if (!row) { alert('Please select a row'); return; }
 
     parent.f_addTab('SalesReceiptListEdit', 'Sales Outbound-Edit', 'sales/SalesReceiptListEdit.aspx?id=' + row.id);
-
-    top.topManager.openPage({
-        id: 'SalesReceiptListEdit',
-        href: 'sales/SalesReceiptListEdit.aspx?id=' + row.id,
-        title: 'Sales Outbound-Edit'
-    });
-
-
 }
 
 function viewRow() {
     var row = manager.getSelectedRow();
+    if (!row) { alert('Please select a row'); return; }
 
-    top.topManager.openPage({
-        id: 'SalesReceiptListView',
-        href: 'sales/SalesReceiptListView.aspx?id=' + row.id,
-        title: 'Sales Outbount-View'
-    });
-
-
+    parent.f_addTab('SalesReceiptListView', 'Sales Outbound-View', 'sales/SalesReceiptListView.aspx?id=' + row.id);
 }
 
 

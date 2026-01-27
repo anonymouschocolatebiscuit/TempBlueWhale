@@ -193,6 +193,8 @@ namespace BlueWhale.UI.buy.ashx
 
         public void ProcessRequest(HttpContext context)
         {
+            BasePage basePage = new BasePage();
+
             context.Response.ContentType = "text/plain";//return format
 
             if (context.Session["userInfo"] == null)
@@ -202,7 +204,7 @@ namespace BlueWhale.UI.buy.ashx
                 return;
 
             }
-            BasePage basePage = new BasePage();
+
             if (!basePage.CheckPower("PurReceiptListAdd"))
             {
                 context.Response.Write("You do not have this permission, please contact the administrator!");
@@ -210,8 +212,8 @@ namespace BlueWhale.UI.buy.ashx
             }
             Users users = context.Session["userInfo"] as Users;
 
-
             StreamReader reader = new StreamReader(context.Request.InputStream);
+
             string strJson = HttpUtility.UrlDecode(reader.ReadToEnd());
 
             OrderListModel<OrderListItemModel> obj = Newtonsoft.Json.JsonConvert.DeserializeObject<OrderListModel<OrderListItemModel>>(strJson);
@@ -246,6 +248,7 @@ namespace BlueWhale.UI.buy.ashx
                 PurReceiptItemDAL item = new PurReceiptItemDAL();
 
                 int check = 0;
+
                 for (int i = 0; i < itemList.Rows.Count; i++)
                 {
                     item.PId = pId;
@@ -266,8 +269,8 @@ namespace BlueWhale.UI.buy.ashx
                     item.SourceNumber = itemList.Rows[i].SourceNumber.ToString();
 
                     check = item.Add();
-
                 }
+
                 if (check > 0)
                 {
                     LogsDAL logs = new LogsDAL();

@@ -23,7 +23,7 @@ namespace BlueWhale.UI.produce
         {
             if (!this.IsPostBack)
             {
-                this.txtAddDate.Text = DateTime.Now.ToShortDateString();
+                this.txtBizDate.Text = DateTime.Now.ToShortDateString();
                 produceId = ConvertTo.ConvertInt(Request.QueryString["id"].ToString());
                 this.Bind();
 

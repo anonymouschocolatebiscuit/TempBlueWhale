@@ -14,8 +14,6 @@ namespace BlueWhale.UI.report
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
             if (!this.IsPostBack)
             {
                 if (!CheckPower("ClientNeedPayReport"))
@@ -25,26 +23,15 @@ namespace BlueWhale.UI.report
 
                 this.txtDateStart.Text = DateTime.Now.ToString("yyyy-MM") + "-01";
                 this.txtDateEnd.Text = DateTime.Now.ToShortDateString();
-
-
-
-
             }
 
             if (Request.Params["Action"] == "GetDataList")
             {
-
                 DateTime bizStart = DateTime.Parse(Request.Params["start"].ToString());
 
-                DateTime bizEnd = DateTime.Parse(Request.Params["end"].ToString());
-
-
-
-
-
+                DateTime bizEnd = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 string typeId = Request.Params["typeId"].ToString();
-
 
                 this.GetDataList(bizStart, bizEnd, typeId);
                 Response.End();
@@ -53,55 +40,39 @@ namespace BlueWhale.UI.report
 
         void GetDataList(DateTime bizStart, DateTime bizEnd, string typeId)
         {
-
-
-
             DataSet ds = dal.GetAllModelReportClientNeedPay(LoginUser.ShopId, bizStart, bizEnd, typeId);
-
-
             decimal payEnd = 0;
             decimal payEndNow = 0;
             decimal payEndLastRow = 0;
-
             IList<object> list = new List<object>();
+
             for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-
                 if (ds.Tables[0].Rows[i]["bizType"].ToString() == "Opening Balance")
                 {
                     payEnd = ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["payEnd"].ToString());
                     payEndLastRow = payEnd;
-
                 }
                 else
                 {
-                    payEndNow = (payEndLastRow + ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["payNeed"].ToString()) - ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["payReady"].ToString()));
+                    payEndNow = (ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["payNeed"].ToString()) - ConvertTo.ConvertDec(ds.Tables[0].Rows[i]["payReady"].ToString()));
                     payEndLastRow = payEndNow;
-
-
                 }
 
                 list.Add(new
                 {
                     wlName = ds.Tables[0].Rows[i]["wlName"].ToString(),
-
-
                     bizDate = ds.Tables[0].Rows[i]["bizDate"].ToString(),
                     number = ds.Tables[0].Rows[i]["number"].ToString(),
                     bizType = ds.Tables[0].Rows[i]["bizType"].ToString(),
-
-
                     payNeed = ds.Tables[0].Rows[i]["payNeed"].ToString(),
                     payReady = ds.Tables[0].Rows[i]["payReady"].ToString(),
                     payEnd = (ds.Tables[0].Rows[i]["bizType"].ToString() == "Opening Balance") ? payEnd.ToString() : payEndNow.ToString()
-
-
                 });
             }
             var griddata = new { Rows = list, Total = list.Count.ToString() };
             string s = new JavaScriptSerializer().Serialize(griddata);
             Response.Write(s);
         }
-
     }
 }

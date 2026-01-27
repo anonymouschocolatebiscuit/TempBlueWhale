@@ -39,8 +39,8 @@
                 </td>
             </tr>
             <tr>
-                <td align="center" style="font-weight: bold; height: 30px;">Product After Assembly</td>
-                <td style="text-align: left;" colspan="7">&nbsp;</td>
+                <td align="left" colspan="2" style="font-weight: bold; height: 30px;">Product After Assembly</td>
+                <td style="text-align: left;" colspan="6">&nbsp;</td>
             </tr>
             <tr>
                 <td align="center" colspan="8">
@@ -48,8 +48,8 @@
                 </td>
             </tr>
             <tr>
-                <td align="center" style="font-weight: bold;">Assembled Product</td>
-                <td style="text-align: left;" colspan="7">&nbsp;</td>
+                <td align="left" colspan="2" style="font-weight: bold;">Assembled Product</td>
+                <td style="text-align: left;" colspan="6">&nbsp;</td>
             </tr>
             <tr>
                 <td align="center" colspan="8">

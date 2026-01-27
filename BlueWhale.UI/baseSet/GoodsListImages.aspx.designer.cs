@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using MathNet.Numerics;
-
 namespace BlueWhale.UI.baseSet
 {
 
@@ -35,7 +33,16 @@ namespace BlueWhale.UI.baseSet
         protected global::System.Web.UI.WebControls.FileUpload fload;
 
         /// <summary>
-        /// ddlDefault control。
+        /// customUploader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl customUploader;
+
+        /// <summary>
+        /// ddlDefault control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

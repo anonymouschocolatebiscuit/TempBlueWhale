@@ -2,21 +2,26 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Goods Out In Details Report</title>
-    
-     <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+
+    <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
- 
+
     <script src="../lib/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
     <script src="../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
     <script src="../lib/json2.js" type="text/javascript"></script>
-     
+
     <script type="text/javascript">
         function f_selectClient() {
             $.ligerDialog.open({
-                title: 'Select Vender', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
+                title: 'Select Vender',
+                name: 'winselector',
+                width: 800,
+                height: 540,
+                url: '../baseSet/VenderListSelect.aspx',
+                buttons: [
                     { text: 'Confirm', onclick: f_selectClientOK },
                     { text: 'Close', onclick: f_selectClientCancel }
                 ]
@@ -35,15 +40,20 @@
             $("#txtVenderList").val(data.names);
             $("#txtVenderCode").val(data.code);
             dialog.close();
-
         }
+
         function f_selectClientCancel(item, dialog) {
             dialog.close();
         }
 
         function f_selectContact() {
             $.ligerDialog.open({
-                title: 'Select Goods', name: 'winselector', width: 840, height: 540, url: '../baseSet/GoodsListSelect.aspx', buttons: [
+                title: 'Select Items',
+                name: 'winselector',
+                width: 840,
+                height: 540,
+                url: '../baseSet/GoodsListSelect.aspx',
+                buttons: [
                     { text: 'Confirm', onclick: f_selectContactOK },
                     { text: 'Cancel', onclick: f_selectContactCancel }
                 ]
@@ -80,9 +90,10 @@
         }
 
         $(function () {
-
             $("#txtGoodsList").ligerComboBox({
-                onBeforeOpen: f_selectContact, valueFieldID: 'txtGoodsList', width: 300
+                onBeforeOpen: f_selectContact,
+                valueFieldID: 'txtGoodsList',
+                width: 300
             });
 
             $("#txtFlagList").ligerComboBox({
@@ -90,66 +101,71 @@
                 isMultiSelect: true,
                 url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
                 valueField: 'ckId',
-                textField: 'ckName'
-                , valueFieldID: 'ckId'
+                textField: 'ckName',
+                valueFieldID: 'ckId'
             });
-
         });
-
     </script>
 
     <script src="js/GoodsOutInDetailReport.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        .l-grid-header.l-grid-header1,
+        .l-grid-header.l-grid-header2 {
+            height: 70px !important;
+        }
+
+        /* Cells in first header row */
+        .l-grid-header1 .l-grid-hd-cell {
+            height: 70px !important;
+        }
+
+        /* Cells in second header row */
+        .l-grid-header2 .l-grid-hd-cell {
+            height: 35px !important;
+        }
+
+        .l-grid-hd-cell-inner {
+            padding: 0 !important;
+        }
+    </style>
 </head>
 <body>
-
     <form id="form1" runat="server">
-     <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
-           <tr>
-           <td style="text-align:right; width:40px;">
-              Date： 
-            </td>
-           <td style="text-align:left; width:120px;">
-            
-           <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
-                   </td>
+        <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
+            <tr>
+                <td style="text-align:right; width:40px;">Date：</td>
+                <td style="text-align:left; width:120px;">
+                    <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
+                </td>
 
-           <td style="text-align:center; width:30px;">
-               Until
-              </td>
-           <td style="text-align:left; width:120px;">
-            
-            <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox> 
-           </td>
-          
-           <td style="text-align:right;width:50px;">
-           Goods：
-            </td>
+                <td style="text-align:center; width:30px;">To</td>
+                <td style="text-align:left; width:120px; padding-right: 0.5rem;">
+                    <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
+                </td>
 
-           <td style="text-align:left;width:170px;">
-            <input type="text" id="txtGoodsList"/> 
-           </td>
-                <td style="text-align:right; width:60px;">
-               Inventory：</td>
-            <td style="text-align:left; width:120px;">
-             <input type="text" id="txtFlagList"/>  
-           </td>
+                <td style="text-align:right; width:50px;">Items：</td>
+                <td style="text-align:left; width:200px; padding-right: 0.5rem;">
+                    <input type="text" id="txtGoodsList" />
+                </td>
 
-           <td style="text-align:right; padding-right:20px;">
-              <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
-           </td>
-           </tr>
-           <tr>
-           <td style="text-align:left; height:300px;" colspan="9">
-            
-            <div id="maingrid"></div>  
-            <div style="display:none;">
-</div>
-            
-            </td>
-           </tr>
-           </table>
-      
+                <td style="text-align:right; width:60px;">Warehouse：</td>
+                <td style="text-align:left; width:120px;">
+                    <input type="text" id="txtFlagList" />
+                </td>
+
+                <td style="text-align:right; padding-right:2rem;">
+                    <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align:left; height:300px;" colspan="9">
+                    <div id="maingrid"></div>
+                    <div style="display:none;"></div>
+                </td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>
-

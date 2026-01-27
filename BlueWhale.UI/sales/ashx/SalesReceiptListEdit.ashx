@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="SalesReceiptListEdit.ashx.cs" Class="BlueWhale.UI.Sales.ashx.SalesReceiptListEdit1" %>
+﻿<%@ WebHandler Language="C#" CodeBehind="SalesReceiptListEdit.ashx.cs" Class="BlueWhale.UI.sales.ashx.SalesReceiptListEdit" %>

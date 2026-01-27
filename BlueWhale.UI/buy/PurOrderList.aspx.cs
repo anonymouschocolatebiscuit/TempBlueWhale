@@ -21,7 +21,17 @@ namespace BlueWhale.UI.buy
         {
             this.hfShopId.Value = LoginUser.ShopId.ToString();
 
-            if (Request.Params["Action"] == "GetDataList")
+            bool isGetDataListSearch = Request.Params["Action"] == "GetDataListSearch";
+            bool isGetDataList = Request.Params["Action"] == "GetDataList";
+
+            if (!isGetDataListSearch && !isGetDataList)
+            {
+                txtDateStart.Text = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).ToString("yyyy-MM-dd");
+
+                txtDateEnd.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            }
+
+            if (isGetDataList)
             {
                 string keys = "";// 
 
@@ -38,10 +48,17 @@ namespace BlueWhale.UI.buy
             {
                 string keys = Request.Params["keys"].ToString();
 
-                DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                string startDateParam = Request.Params["start"].ToString();
 
-                GetDataList(keys, start, end);
+                string endDateParam = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now.ToString() : Request.Params["end"].ToString();
+
+                if (startDateParam != "" && endDateParam != "") {
+                    DateTime start = Convert.ToDateTime(startDateParam);
+                    DateTime end = Convert.ToDateTime(endDateParam);
+
+                    GetDataList(keys, start, end);
+                }
+
                 Response.End();
             }
 
@@ -258,12 +275,11 @@ namespace BlueWhale.UI.buy
 
                 if (idString.Length > 0)
                 {
-                    Response.Write("Cancel Review Successfully");
                     for (int i = 0; i < idString.Length; i++)
                     {
                         int delId = ConvertTo.ConvertInt(idString[i].ToString());
 
-                        int del = dal.UpdateCheck(delId, LoginUser.Id, LoginUser.Names, DateTime.Now, "save");
+                        int del = dal.UpdateCheck(delId, LoginUser.Id, LoginUser.Names, DateTime.Now, "Save");
 
                         if (del > 0)
                         {
@@ -280,7 +296,7 @@ namespace BlueWhale.UI.buy
 
                 if (num > 0)
                 {
-                    Response.Write("Cancel Review Successfully" + num + "purchase order record");
+                    Response.Write("Cancel Review Successfully !</br>" + num + " Purchase Order Record");
                 }
                 else
                 {
@@ -297,9 +313,8 @@ namespace BlueWhale.UI.buy
         {
             // Define a Document and set the page size to A4, portrait orientation
 
-            // iTextSharp.text.Document doc = new Document(PageSize.A4);
-
-            // iTextSharp.text.Rectangle rec = new Rectangle(PageSize.A4.Rotation()); // A4 paper in landscape orientation
+            //Document doc = new Document(PageSize.A4);
+            //Rectangle rec = new Rectangle(PageSize.A4.Rotation()); // A4 paper in landscape orientation
 
             // 1. Create an instance
             Document doc = new Document(PageSize.A4);
@@ -314,7 +329,7 @@ namespace BlueWhale.UI.buy
             // 4.1 First, add Chinese fonts
             BaseFont bfChinese = BaseFont.CreateFont("C:\\WINDOWS\\Fonts\\simsun.ttc,1", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
 
-            iTextSharp.text.Font fontChinese = new iTextSharp.text.Font(bfChinese, 12, iTextSharp.text.Font.NORMAL, new iTextSharp.text.BaseColor(0, 0, 0));
+            Font fontChinese = new Font(bfChinese, 12, Font.NORMAL, new BaseColor(0, 0, 0));
 
             // Define font styles
             Font fontTitle = new Font(bfChinese, 20);
@@ -325,15 +340,10 @@ namespace BlueWhale.UI.buy
             // 4.2 Then, add content
             // Complex content begins
             string company = SysInfo.Company;
-
             string remarks = SysInfo.RemarksPurOrder;
-
             string tel = SysInfo.Tel;
-
             string fax = SysInfo.Fax;
-
             string showLogo = SysInfo.PrintLogo;
-
             string showZhang = SysInfo.PrintZhang;
 
             #region Display LOGO ----------- Control
@@ -346,10 +356,9 @@ namespace BlueWhale.UI.buy
                     Response.End();
                 }
 
-                iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(Server.MapPath("../Sales/img/" + LoginUser.ShopId.ToString() + "logo.jpg"));
+                Image logo = Image.GetInstance(Server.MapPath("../Sales/img/" + LoginUser.ShopId.ToString() + "logo.jpg"));
 
                 float x = float.Parse("15");  // this.TextBox1.Text
-
                 float y = float.Parse("110"); // this.TextBox2.Text
 
                 logo.SetAbsolutePosition(x, doc.PageSize.Height - y);
@@ -368,8 +377,8 @@ namespace BlueWhale.UI.buy
                     Response.Write("Please Set Up Seal First !");
                     Response.End();
                 }
-
-                iTextSharp.text.Image zhang = iTextSharp.text.Image.GetInstance(Server.MapPath("img/" + LoginUser.ShopId.ToString() + "zhang.jpg"));
+                
+                Image zhang = Image.GetInstance(Server.MapPath("img/" + LoginUser.ShopId.ToString() + "zhang.jpg"));
 
                 float x1 = float.Parse("60"); // this.TextBox3.Text
                 float y1 = float.Parse("20"); // this.TextBox4.Text
@@ -384,19 +393,12 @@ namespace BlueWhale.UI.buy
             #region Get Table Information
 
             int clientId = 0;
-
             string bizDate = "";
-
             string bizName = "Blue Whale";
-
             string sumNum = "";
-
             string sumPriceAll = "";
-
             string checkName = "";
-
             string sendDate = "";
-
             string remarksOrder = "";
 
             DataSet ds = dal.GetAllModel(id);
@@ -404,21 +406,13 @@ namespace BlueWhale.UI.buy
             if (ds.Tables[0].Rows.Count > 0)
             {
                 clientId = ConvertTo.ConvertInt(ds.Tables[0].Rows[0]["wlId"].ToString());
-
                 number = ds.Tables[0].Rows[0]["number"].ToString();
-
                 bizDate = DateTime.Parse(ds.Tables[0].Rows[0]["bizDate"].ToString()).ToShortDateString();
-
                 sendDate = DateTime.Parse(ds.Tables[0].Rows[0]["sendDate"].ToString()).ToShortDateString();
-
                 sumNum = ds.Tables[0].Rows[0]["sumNum"].ToString();
-
                 sumPriceAll = ds.Tables[0].Rows[0]["sumPriceAll"].ToString();
-
                 bizName = ds.Tables[0].Rows[0]["bizName"].ToString();
-
                 checkName = ds.Tables[0].Rows[0]["checkName"].ToString();
-
                 remarksOrder = ds.Tables[0].Rows[0]["remarks"].ToString();
             }
 
@@ -449,13 +443,9 @@ namespace BlueWhale.UI.buy
             #region Get Customer Information
 
             string wlName = "Bluw Whale Sdn.Bhd";
-
             string wlPhone = "012-1595005";
-
             string wlTel = "07-6827683";
-
             string wlLinkMan = "";
-
             string isWhere = " id='" + clientId + "' ";
 
             DataSet dsClient = venderDAL.GetList(isWhere);
@@ -468,7 +458,7 @@ namespace BlueWhale.UI.buy
                 wlLinkMan = dsClient.Tables[0].Rows[0]["linkMan"].ToString();
             }
 
-            if (wlPhone == "")
+            if (string.IsNullOrEmpty(wlPhone))
             {
                 wlPhone = wlTel;
             }
@@ -480,7 +470,6 @@ namespace BlueWhale.UI.buy
             PdfPTable table = new PdfPTable(4); // The table has 4 columns
 
             table.SetTotalWidth(new float[] { 90, 190, 90, 190 }); // doc.PageSize.Width; //Width = 560
-
             table.LockedWidth = true;
 
             PdfPCell cell = new PdfPCell(); // Create Cell
@@ -915,10 +904,8 @@ namespace BlueWhale.UI.buy
         void MakePDFNoPrice(int id, string number)
         {
             // Define a Document and set the page size to A4, portrait orientation
-
-            // iTextSharp.text.Document doc = new Document(PageSize.A4);
-
-            // iTextSharp.text.Rectangle rec = new Rectangle(PageSize.A4.Rotation()); // A4 paper in landscape orientation
+            // Document doc = new Document(PageSize.A4);
+            // Rectangle rec = new Rectangle(PageSize.A4.Rotation()); // A4 paper in landscape orientation
 
             // 1. Create an instance
             Document doc = new Document(PageSize.A4);
@@ -932,8 +919,8 @@ namespace BlueWhale.UI.buy
             // 4. Add content to the current Document
             // 4.1 First, add Chinese fonts
             BaseFont bfChinese = BaseFont.CreateFont("C:\\WINDOWS\\Fonts\\simsun.ttc,1", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            iTextSharp.text.Font fontChinese = new iTextSharp.text.Font(bfChinese, 12, iTextSharp.text.Font.NORMAL, new iTextSharp.text.BaseColor(0, 0, 0));
-
+            Font fontChinese = new Font(bfChinese, 12, Font.NORMAL, new BaseColor(0, 0, 0));
+            
             // Define font styles
             Font fontTitle = new Font(bfChinese, 20);
             Font font1 = new Font(bfChinese, 12);
@@ -964,10 +951,9 @@ namespace BlueWhale.UI.buy
                     Response.End();
                 }
 
-                iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(Server.MapPath("../Sales/img/" + LoginUser.ShopId.ToString() + "logo.jpg"));
+                Image logo = Image.GetInstance(Server.MapPath("../Sales/img/" + LoginUser.ShopId.ToString() + "logo.jpg"));
 
                 float x = float.Parse("5"); // this.TextBox1.Text
-
                 float y = float.Parse("110"); // this.TextBox2.Text
 
                 logo.SetAbsolutePosition(x, doc.PageSize.Height - y);
@@ -987,10 +973,9 @@ namespace BlueWhale.UI.buy
                     Response.End();
                 }
 
-                iTextSharp.text.Image zhang = iTextSharp.text.Image.GetInstance(Server.MapPath("img/" + LoginUser.ShopId.ToString() + "zhang.jpg"));
+                Image zhang = Image.GetInstance(Server.MapPath("img/" + LoginUser.ShopId.ToString() + "zhang.jpg"));
 
                 float x1 = float.Parse("60"); // this.TextBox3.Text
-
                 float y1 = float.Parse("20"); // this.TextBox4.Text
 
                 zhang.SetAbsolutePosition(x1, y1);
@@ -1003,19 +988,12 @@ namespace BlueWhale.UI.buy
             #region Get Table Information
 
             int clientId = 0;
-
             string bizDate = "";
-
             string bizName = "Blue Whale";
-
             string sumNum = "";
-
             string sumPriceAll = "";
-
             string checkName = "";
-
             string sendDate = "";
-
             string remarksOrder = "";
 
             DataSet ds = dal.GetAllModel(id);
@@ -1056,13 +1034,9 @@ namespace BlueWhale.UI.buy
             #region Get Customer Information
 
             string wlName = "Blue Whale Sdn.Bhd";
-
             string wlPhone = "012-1595005";
-
             string wlTel = "07-6827683";
-
             string wlLinkMan = "";
-
             string isWhere = " id='" + clientId + "' ";
             DataSet dsClient = venderDAL.GetList(isWhere);
             if (dsClient.Tables[0].Rows.Count > 0)
@@ -1073,7 +1047,7 @@ namespace BlueWhale.UI.buy
                 wlLinkMan = dsClient.Tables[0].Rows[0]["linkMan"].ToString();
             }
 
-            if (wlPhone == "")
+            if (string.IsNullOrEmpty(wlPhone))
             {
                 wlPhone = wlTel;
             }

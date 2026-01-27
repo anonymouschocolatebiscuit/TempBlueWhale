@@ -55,9 +55,10 @@
                 usePager: false,
                 url: 'GoodsList.aspx?Action=GetDataList',
                 width: '690', height: '98%',
+                dataAction: 'local',
                 isChecked: f_isChecked, onCheckRow: f_onCheckRow, onCheckAllRow: f_onCheckAllRow,
                 onDblClickRow: function (data, rowindex, rowobj) {
-                    editRow();
+                    editRow(data);
                 },
                 rownumbers: true,
                 toolbar: {
@@ -66,7 +67,13 @@
                         { line: true },
                         { text: "Add Product", click: addRowTop, img: '../lib/ligerUI/skins/icons/add.gif' },
                         { line: true },
-                        { text: "Edit Product", click: editRow, img: '../lib/ligerUI/skins/icons/modify.gif' },
+                        {
+                          text: "Edit Product",
+                          click: function () {
+                            editRow(); // explicitly call with no args
+                          },
+                          img: '../lib/ligerUI/skins/icons/modify.gif'
+                        },
                         { line: true },
                         { text: "Delete Product", click: deleteRow, img: '../lib/ligerUI/skins/icons/delete.gif' },
                         { line: true },
@@ -105,8 +112,8 @@
             $.ligerDialog.open({
                 title: title,
                 url: 'GoodsListDetail.aspx?id=' + row.id,
-                height: 600,
-                width: 650,
+                height: 300,
+                width: 630,
                 modal: true
             });
         }
@@ -221,10 +228,26 @@
             });
         }
 
-        function editRow() {
-            var row = manager.getSelectedRow();
+        function editRow(data) {
+            var row;
 
-            if (!row) { $.ligerDialog.warn('Please select the row to modify!'); return; }
+            if (!data || !data.id) {
+                var selectedRows = manager.getSelectedRows();
+
+                if (selectedRows.length === 0) { 
+                    $.ligerDialog.warn('Please select the row to modify!'); 
+                    return; 
+                }
+                if (selectedRows.length > 1) { 
+                    $.ligerDialog.warn('You can only edit one row at a time!'); 
+                    return; 
+                }
+
+                row = selectedRows[0];
+            } 
+            else {
+                row = data;
+            }
 
             var title = "Edit Product-" + row.names;
             $.ligerDialog.open({

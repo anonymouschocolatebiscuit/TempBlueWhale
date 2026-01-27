@@ -9,7 +9,6 @@ namespace BlueWhale.UI
 {
     public partial class Login : Page
     {
-
         public UserDAL dal = new UserDAL();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -27,7 +26,6 @@ namespace BlueWhale.UI
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
-
             #region Validate Login Credential
 
             if (string.IsNullOrEmpty(txtUserName.Text))
@@ -78,8 +76,8 @@ namespace BlueWhale.UI
                         Events = "account not exist, password：" + txtPassword.Text + " captcha：" + this.captcha.Text,
                         Ip = HttpContext.Current.Request.UserHostAddress.ToString()
                     };
-                    logs.Add();
 
+                    logs.Add();
                     MessageBox.Show(this, "Account not exist");
                     return;
                 }
@@ -95,9 +93,7 @@ namespace BlueWhale.UI
                     };
 
                     logs.Add();
-
                     this.captcha.Text = "";
-
                     MessageBox.Show(this, "Account or password invalid, please try again!");
                     return;
                 }

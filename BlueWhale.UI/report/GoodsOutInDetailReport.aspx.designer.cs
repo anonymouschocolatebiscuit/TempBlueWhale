@@ -9,11 +9,8 @@
 
 namespace BlueWhale.UI.report
 {
-
-
     public partial class GoodsOutInDetailReport
     {
-
         /// <summary>
         /// form1 control.
         /// </summary>

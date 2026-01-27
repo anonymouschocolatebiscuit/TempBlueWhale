@@ -27,21 +27,21 @@
            <td style="text-align:left; width:180px;">
                <asp:TextBox ID="txtKeys" runat="server" placeholder="Please Enter Receipt No./Customer/Product/Remarks"></asp:TextBox>
             </td>
-           <td style="text-align:right; width:70px;">
+           <td style="text-align:right; width:70px; padding-left:5px;">
                Start Date：
               </td>
            <td style="text-align:left; width:180px;">
             
            <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
            </td>
-           <td style="text-align:right; width:70px;">
+           <td style="text-align:right; width:85px;">
                End Date：
            </td>
             <td style="text-align:left; width:180px;">
             
             <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox> 
             </td>
-           <td style="text-align:center;width:100px;">
+           <td style="text-align:center;width:100px; padding-left:20px">
            
            <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
             

@@ -3,16 +3,24 @@
 $(function () {
     var form = $("#form").ligerForm();
 
+    var txtDateStart = $.ligerui.get("txtDateStart");
+    txtDateStart.set("Width", 120);
+
+    var txtDateEnd = $.ligerui.get("txtDateEnd");
+    txtDateEnd.set("Width", 120);
+
     manager = $("#maingrid").ligerGrid({
         checkbox: true,
         columns: [
             {
-                display: 'Action', isSort: false, width: 50, align: 'center',
+                display: 'Action', isSort: false, width: 60, align: 'center',
                 render: function (rowdata, rowindex, value) {
                     var h = "";
                     if (!rowdata._editing) {
-                        h += "<a href='javascript:editRow()' title='Edit Row' style='float:left;'><div class='ui-icon ui-icon-pencil'></div></a> ";
-                        h += "<a href='javascript:deleteRow()' title='Delete Row' style='float:right;'><div class='ui-icon ui-icon-trash'></div></a> ";
+                        h += "<div style='display:flex; justify-content:center; align-items:center; height:100%; gap:6px;'>";
+                        h += "<a href='javascript:editRow()' title='Edit Row'><div class='ui-icon ui-icon-pencil'></div></a> ";
+                        h += "<a href='javascript:deleteRow()' title='Delete Row'><div class='ui-icon ui-icon-trash'></div></a> ";
+                        h += "</div>";
                     } else {
                         h += "<a href='javascript:endEdit(" + rowindex + ")'>Submit</a> ";
                         h += "<a href='javascript:cancelEdit(" + rowindex + ")'>Cancel</a> ";
@@ -22,7 +30,6 @@ $(function () {
             },
             {
                 display: 'Write-off Date', name: 'bizDate', width: 130, align: 'center', valign: 'center',
-
                 totalSummary:
                 {
                     type: 'count',
@@ -43,9 +50,9 @@ $(function () {
                     }
                 }
             },
-            { display: 'Status', name: 'flag', width: 60, align: 'center' },
-            { display: 'Created By', name: 'makeName', width: 70, align: 'center' },
-            { display: 'Reviewed By', name: 'checkName', width: 70, align: 'center' },
+            { display: 'Status', name: 'flag', width: 80, align: 'center' },
+            { display: 'Created By', name: 'makeName', width: 110, align: 'center' },
+            { display: 'Reviewed By', name: 'checkName', width: 110, align: 'center' },
             { display: 'Remarks', name: 'remarks', width: 150, align: 'left' }
         ],
         width: '98%',

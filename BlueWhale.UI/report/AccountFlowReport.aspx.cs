@@ -35,8 +35,14 @@ namespace BlueWhale.UI.report
 
             if (Request.Params["Action"] == "GetDataList")
             {
-                DateTime bizStart = DateTime.Parse(Request.Params["start"].ToString());
-                DateTime bizEnd = DateTime.Parse(Request.Params["end"].ToString());
+                DateTime bizStart = string.IsNullOrEmpty(Request.Params["start"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["start"].ToString());
+                DateTime bizEnd = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
+
+                if (bizStart > bizEnd)
+                {
+                    bizStart = bizEnd;
+                }
+
                 string typeId = Request.Params["typeId"].ToString();
 
                 this.GetDataList(bizStart, bizEnd, typeId);

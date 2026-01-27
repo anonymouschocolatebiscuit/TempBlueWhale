@@ -205,7 +205,7 @@ function f_onGoodsChangedSub(e) {
                 
                 },
                 
-                { display: 'Lose rate %', name: 'rate', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
+                { display: 'Lose Rate %', name: 'rate', width: 70, type: 'float', align: 'right', editor: { type: 'float' }
                 
                 },
 

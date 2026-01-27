@@ -1,24 +1,28 @@
 ﻿function formatCurrency(x) {
-
     var f_x = parseFloat(x);
+
     if (isNaN(f_x)) {
         return "0.00";
     }
+
     var f_x = Math.round(x * 100) / 100;
     var s_x = f_x.toString();
     var pos_decimal = s_x.indexOf('.');
+
     if (pos_decimal < 0) {
         pos_decimal = s_x.length;
         s_x += '.';
     }
+
     while (s_x.length <= pos_decimal + 2) {
         s_x += '0';
     }
+
     return s_x;
 }
 
 $(document).bind('keydown.grid', function (event) {
-    if (event.keyCode == 13 || event.keyCode == 39 || event.keyCode == 9) //enter,right arrow,tap
+    if (event.keyCode == 13 || event.keyCode == 39 || event.keyCode == 9) // Enter, right arrow, tap
     {
         manager.endEditToNext();
     }
@@ -31,12 +35,14 @@ function f_selectContact() {
             { text: 'Cancel', onclick: f_selectContactCancel }
         ]
     });
+
     return false;
 }
 
 function f_selectContactOK(item, dialog) {
     var fn = dialog.frame.f_select || dialog.frame.window.f_select;
     var data = fn();
+
     if (!data) {
         alert('Please select a row!');
         return;
@@ -58,12 +64,14 @@ function f_selectClient() {
             { text: 'Close', onclick: f_selectClientCancel }
         ]
     });
+
     return false;
 }
 
 function f_selectClientOK(item, dialog) {
     var fn = dialog.frame.f_select || dialog.frame.window.f_select;
     var data = fn();
+
     if (!data) {
         alert('Please select a row!');
         return;
@@ -87,7 +95,6 @@ $(function () {
 
 var manager;
 $(function () {
-
     $(function () {
         $("#clientName").ligerComboBox({
             onBeforeOpen: f_selectClient, valueFieldID: 'clientId', width: 300
@@ -95,6 +102,7 @@ $(function () {
     });
 
     var wlName = $("#txtClientName").val();
+
     $("#clientName").val(wlName);
 
     var form = $("#form").ligerForm();
@@ -102,6 +110,7 @@ $(function () {
     var form2 = $("#form22").ligerForm();
 
     var g = $.ligerui.get("clientName");
+
     g.set("Width", 250);
 
     window['g'] =
@@ -130,13 +139,15 @@ $(function () {
                     }
                 },
                 { display: 'Specification', name: 'spec', width: 80, align: 'center' },
-                { display: 'Unit', name: 'unitName', width: 40, align: 'center' },
+                { display: 'Unit', name: 'unitName', width: 62, align: 'center' },
                 {
                     display: 'Warehouse', name: 'ckId', width: 80, isSort: false, textField: 'ckName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
-                        valueField: 'ckId', textField: 'ckName'
+                        valueField: 'ckId',
+                        textField: 'ckName',
+                        ajaxType: 'get'
                     }
                 },
                 {
@@ -166,7 +177,7 @@ $(function () {
                         render: function (e) {
 
                             var itemSumPriceDis = e.sum;
-                            return "<span id='sumPriceItemDis'>" + Math.round(itemSumPriceDis * 10000) / 10000 + "</span>";//formatCurrency(suminf.sum)
+                            return "<span id='sumPriceItemDis'>" + Math.round(itemSumPriceDis * 10000) / 10000 + "</span>"; // formatCurrency(suminf.sum)
                         }
                     }
                 },
@@ -182,11 +193,11 @@ $(function () {
                         render: function (e) {
 
                             var itemSumPriceNow = e.sum;
-                            return "<span id='sumPriceItemNow'>" + Math.round(itemSumPriceNow * 10000) / 10000 + "</span>";//formatCurrency(suminf.sum)
+                            return "<span id='sumPriceItemNow'>" + Math.round(itemSumPriceNow * 10000) / 10000 + "</span>"; // formatCurrency(suminf.sum)
                         }
                     }
                 },
-                { display: 'Tax rate%', name: 'tax', width: 80, type: 'int', align: 'center', editor: { type: 'int' } },
+                { display: 'Tax rate%', name: 'tax', width: 70, type: 'int', align: 'center', editor: { type: 'int' } },
                 { display: 'Unit Price Including Tax', name: 'priceTax', width: 160, type: 'float', align: 'center', editor: { type: 'float' } },
                 {
                     display: 'Tax amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
@@ -196,7 +207,7 @@ $(function () {
                         type: 'sum',
                         render: function (e) {
                             var itemSumPriceTax = e.sum;
-                            return "<span id='sumPriceItemTax'>" + Math.round(itemSumPriceTax * 10000) / 10000 + "</span>";//formatCurrency(suminf.sum)
+                            return "<span id='sumPriceItemTax'>" + Math.round(itemSumPriceTax * 10000) / 10000 + "</span>"; // formatCurrency(suminf.sum)
                         }
                     }
                 },
@@ -208,14 +219,17 @@ $(function () {
                         type: 'sum',
                         render: function (e) {
                             var itemSumPriceAll = e.sum;
-                            return "<span id='sumPriceItemAll'>" + Math.round(itemSumPriceAll * 10000) / 10000 + "</span>";//formatCurrency(suminf.sum)
+                            return "<span id='sumPriceItemAll'>" + Math.round(itemSumPriceAll * 10000) / 10000 + "</span>"; // formatCurrency(suminf.sum)
                         }
                     }
                 },
                 { display: 'Remarks', name: 'remarks', width: 100, align: 'left', type: 'text', editor: { type: 'text' } },
                 { display: 'Source Order Number', name: 'sourceNumber', width: 150, align: 'left', type: 'text' }
 
-            ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '350',
+            ],
+            width: '99%',
+            pageSizeOptions: [5, 10, 15, 20],
+            height: 344,
             url: 'PurReceiptListAdd.aspx?Action=GetData&id=' + param,
             rownumbers: true,
             frozenRownumbers: true,
@@ -717,7 +731,7 @@ function save() {
 
     var bizDate = $("#txtBizDate").val();
     if (bizDate == "") {
-        $.ligerDialog.warn("Fill in the storage date!");
+        $.ligerDialog.warn("Fill in the stock in date!");
         return;
     }
 
@@ -759,7 +773,7 @@ function save() {
 
         if (data[i].ckId == 0 || data[i].ckId == "" || data[i].ckId == "0" || data[i].ckName == "") {
 
-            $.ligerDialog.warn("Please enter the storage for row " + (i + 1) + "!");
+            $.ligerDialog.warn("Please enter the warehouse for row " + (i + 1) + "!");
 
             return;
             alert("Execution skipped!");

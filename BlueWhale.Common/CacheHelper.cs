@@ -7,74 +7,76 @@ namespace BlueWhale.Common
     public class CacheHelper
     {
         /// <summary>
-        /// Create cache file
+        /// Inserts an object into the cache
         /// </summary>
-        /// <param name="key">CacheKey</param>
-        /// <param name="obj">objectTarget</param>
+        /// <param name="key">Cache key</param>
+        /// <param name="obj">Object to cache</param>
         public static void Insert(string key, object obj)
         {
-            //创建缓存
             HttpContext.Current.Cache.Insert(key, obj);
         }
+
         /// <summary>
-        /// Remove cache file
+        /// Removes an object from the cache
         /// </summary>
-        /// <param name="key">CacheKey</param>
+        /// <param name="key">Cache key</param>
         public static void Remove(string key)
         {
-            //创建缓存
             HttpContext.Current.Cache.Remove(key);
         }
+
         /// <summary>
-        /// Create cache file dependancy
+        /// Inserts an object into the cache with file dependency
         /// </summary>
-        /// <param name="key">CacheKey</param>
-        /// <param name="obj">objectTarget</param>
-        /// <param name="fileName">pathAbsolutePath</param>
+        /// <param name="key">Cache key</param>
+        /// <param name="obj">Object to cache</param>
+        /// <param name="fileName">Absolute path of the dependent file</param>
         public static void Insert(string key, object obj, string fileName)
         {
-            //Create cache dependancy
             CacheDependency dep = new CacheDependency(fileName);
-            //Create cache
             HttpContext.Current.Cache.Insert(key, obj, dep);
         }
 
         /// <summary>
-        /// Create cache expiry
+        /// Inserts an object into the cache with a time-based expiration
         /// </summary>
-        /// <param name="key">CacheKey</param>
-        /// <param name="obj">objectTarget</param>
-        /// <param name="expires">expire time (minute)</param>
+        /// <param name="key">Cache key</param>
+        /// <param name="obj">Object to cache</param>
+        /// <param name="expires">Expiration time in minutes</param>
         public static void Insert(string key, object obj, int expires)
         {
-            HttpContext.Current.Cache.Insert(key, obj, null, Cache.NoAbsoluteExpiration, new TimeSpan(0, expires, 0));
+            HttpContext.Current.Cache.Insert(
+                key,
+                obj,
+                null,
+                Cache.NoAbsoluteExpiration,
+                new TimeSpan(0, expires, 0)
+            );
         }
 
         /// <summary>
-        /// get target cache
+        /// Retrieves an object from the cache
         /// </summary>
-        /// <param name="key">CacheKey</param>
-        /// <returns>objectTarget</returns>
+        /// <param name="key">Cache key</param>
+        /// <returns>Cached object or null if not found</returns>
         public static object Get(string key)
         {
             if (string.IsNullOrEmpty(key))
-            {
                 return null;
-            }
+
             return HttpContext.Current.Cache.Get(key);
         }
 
         /// <summary>
-        /// get target cache
+        /// Retrieves a typed object from the cache
         /// </summary>
-        /// <typeparam name="T">T obejct</typeparam>
-        /// <param name="key">CacheKey</param>
-        /// <returns></returns>
+        /// <typeparam name="T">Type of object</typeparam>
+        /// <param name="key">Cache key</param>
+        /// <returns>Cached object cast to type T, or default(T) if not found</returns>
         public static T Get<T>(string key)
         {
             object obj = Get(key);
-            return obj == null ? default(T) : (T)obj;
+            return obj == null ? default : (T)obj;
         }
-
     }
 }

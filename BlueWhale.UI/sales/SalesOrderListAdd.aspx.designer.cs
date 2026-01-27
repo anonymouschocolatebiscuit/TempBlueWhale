@@ -9,8 +9,11 @@
 
 namespace BlueWhale.UI.sales
 {
+
+
     public partial class SalesOrderListAdd
     {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -57,13 +60,13 @@ namespace BlueWhale.UI.sales
         protected global::System.Web.UI.WebControls.TextBox txtSendDate;
 
         /// <summary>
-        /// ddlYWYList control.
+        /// ddlSalesPersonList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlYWYList;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSalesPersonList;
 
         /// <summary>
         /// txtRemarks control.

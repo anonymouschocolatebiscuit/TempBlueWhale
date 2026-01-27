@@ -195,12 +195,12 @@ namespace BlueWhale.DAL
 
         #region Update a Record
         /// <summary>
-        /// Update a Record
+        /// Update a Records
         /// </summary>
         /// <returns></returns>
         public int Update()
         {
-            string sql = @"UPDATE CheckBill
+            string sql = @"UPDATE CheckBill WITH (ROWLOCK)
                            SET 
                                clientIdA = @clientIdA,
                                shopId = @shopId,
@@ -246,7 +246,7 @@ namespace BlueWhale.DAL
         public int Delete(int Id)
         {
             string sql = " if not exists( ";
-            sql += "               select * from CheckBill where flag='Audited' and id='" + Id + "' )";
+            sql += "               select 1 from CheckBill WITH (NOLOCK) where flag='Audited' and id='" + Id + "' )";
 
             sql += " begin ";
 
@@ -323,10 +323,10 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public int UpdateCheck(int Id, int checkerId, string checker, DateTime checkDate, string flag)
         {
-            string sql = " if not exists(select * from CheckBill where flag='" + flag + "' and id='" + Id + "') ";
+            string sql = " if not exists(select 1 from CheckBill WITH (NOLOCK) where flag='" + flag + "' and id='" + Id + "') ";
             sql += " begin ";
 
-            sql += " update CheckBill set flag='" + flag + "' ";
+            sql += " update CheckBill WITH (ROWLOCK) set flag='" + flag + "' ";
             if (flag == "Audited")
             {
                 sql += " ,checkId='" + checkerId + "',checkDate='" + checkDate + "'";

@@ -18,10 +18,13 @@ namespace BlueWhale.UI.produce.ashx
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class goodsBomListEdit : IHttpHandler, IRequiresSessionState 
     {
+
         public DAL.produce.goodsBomList dal = new DAL.produce.goodsBomList();
         
+  
         public class ListModel<T>
         {
+
             #region Model
             private int _id;
             private int? _shopid;
@@ -311,7 +314,7 @@ namespace BlueWhale.UI.produce.ashx
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId=users.ShopId;
                     logs.Users = users.Names;
-                    logs.Events = "Modify product BOM list：" + model.number;
+                    logs.Events = "Edit product BOM list：" + model.number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 

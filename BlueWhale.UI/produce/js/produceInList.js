@@ -7,7 +7,7 @@ $(function () {
         width: 120, items:
             [
                 { text: 'Add', click: add, icon: 'add' },
-                { text: 'Modify', click: editRow },
+                { text: 'Edit', click: editRow },
                 { line: true }
             ]
     });
@@ -48,7 +48,7 @@ $(function () {
                 {
                     align: 'right',
                     type: 'sum',
-                    render: function (e) { 
+                    render: function (e) {
                         return Math.round(e.sum * 100) / 100;
                     }
                 }
@@ -79,7 +79,6 @@ $(function () {
         onDblClickRow: function (data, rowindex, rowobj) {
             viewRow();
         },
-
         onRClickToSelect: true,
         onContextmenu: function (parm, e) {
             actionCustomerID = parm.data.id;
@@ -87,8 +86,7 @@ $(function () {
             return false;
         },
         isChecked: f_isChecked, onCheckRow: f_onCheckRow, onCheckAllRow: f_onCheckAllRow
-    }
-    );
+    });
 });
 
 function f_set() {
@@ -116,7 +114,6 @@ function search() {
 }
 
 function deleteRow() {
-
     var row = manager.getSelectedRow();
     if (!row) { $.ligerDialog.warn('Please select the rows you want to delete'); return; }
 
@@ -188,34 +185,25 @@ function checkNoRow() {
 
 function add() {
     parent.f_addTab('produceInListAdd', 'Production Stock In - Create', 'produce/produceInListAdd.aspx?id=0');
-
-    top.topManager.openPage({
-        id: 'produceInListAdd',
-        href: 'produce/produceInListAdd.aspx?id=0',
-        title: 'Production Stock In - Create'
-    });
 }
 
 function editRow() {
     var row = manager.getSelectedRow();
 
-    parent.f_addTab('produceInListEdit', 'Production Stock In - Modify', 'produce/produceInListEdit.aspx?id=' + row.id);
+    parent.f_addTab('produceInListEdit', 'Production Stock In - Edit', 'produce/produceInListEdit.aspx?id=' + row.id);
 
     top.topManager.openPage({
         id: 'produceInListEdit',
         href: 'produce/produceInListEdit.aspx?id=' + row.id,
-        title: 'Production Stock In - Modify'
+        title: 'Production Stock In - Edit'
     });
 }
 
 function viewRow() {
     var row = manager.getSelectedRow();
+    if (!row) { alert('Please select a row'); return; }
 
-    top.topManager.openPage({
-        id: 'produceInListEdit',
-        href: 'produce/produceInListEdit.aspx?id=' + row.id,
-        title: 'Production Stock In - Details'
-    });
+    parent.f_addTab('produceInListEdit', 'Production Stock In - Details', 'produce/produceInListEdit.aspx?id=' + row.id);
 }
 
 function reload() {

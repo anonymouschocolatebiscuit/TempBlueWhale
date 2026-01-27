@@ -31,9 +31,9 @@ $(function () {
                     return h;
                 }
             },
-            { display: 'Material Receiver', name: 'bizName', width: 60, align: 'center' },
+            { display: 'Material Receiver', name: 'bizName', width: 110, align: 'center' },
             {
-                display: 'Material Pickup Date', name: 'bizDate', width: 80, align: 'center', valign: 'center',
+                display: 'Material Pickup Date', name: 'bizDate', width: 130, align: 'center', valign: 'center',
 
                 totalSummary:
                 {
@@ -44,14 +44,14 @@ $(function () {
                     }
                 }
             },
-            { display: 'Receipt Number', name: 'number', width: 150, align: 'center' },
+            { display: 'Receipt Number', name: 'number', width: 105, align: 'center' },
             { display: 'Production Plan No', name: 'planNumber', width: 150, align: 'center' },
             { display: 'Item Number', name: 'code', width: 100, align: 'center' },
             { display: 'Item Name', name: 'goodsName', width: 120, align: 'center' },
-            { display: 'Product Specification', name: 'spec', width: 100, align: 'center' },
+            { display: 'Product Specification', name: 'spec', width: 140, align: 'center' },
             { display: 'Item Unit', name: 'unitName', width: 70, align: 'center' },
             {
-                display: 'Total Material Quantity', name: 'sumNum', width: 120, align: 'center',
+                display: 'Total Material Quantity', name: 'sumNum', width: 150, align: 'center',
                 totalSummary:
                 {
                     align: 'right',   //Align:left/center/right 
@@ -123,8 +123,6 @@ function search() {
     var end = document.getElementById("txtDateEnd").value;
     manager.changePage("first");
     manager._setUrl("produceGetList.aspx?Action=GetDataListSearch&types=0&keys=" + keys + "&start=" + start + "&end=" + end);
-
-    //  window.open("produceGetList.aspx?Action=GetDataListSearch&types=0&keys=" + keys + "&start=" + start + "&end=" + end);
 }
 
 function deleteRow() {

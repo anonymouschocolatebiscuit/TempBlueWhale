@@ -7,13 +7,14 @@
     <title>System Settings</title>
     <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
- 
+
     <script src="../lib/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
     <script src="../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
     <script src="../lib/json2.js" type="text/javascript"></script>
     <script type="text/javascript">
+
     
- 
+
         $(function ()
         {
             var form = $("#form").ligerForm();
@@ -103,7 +104,7 @@
                 </td>
                 <td style="width:550px;">
                     <asp:CheckBox ID="cbBillCheckList" runat="server" 
-                        Text="Yes (If checked、changes on report data will only be made after review/approved）" />
+                        Text="Yes (If checked, changes on report data will only be made after review/approved）" />
                 </td>
             </tr>
             <tr>
@@ -111,7 +112,7 @@
                     Check Negative Inventory：
                 </td>
                 <td style="width:550px;">
-                    <asp:CheckBox ID="cbStoreNum" runat="server" Text="Yes（If checked、Stock cannot be moved if negative inventory is detected）" />
+                    <asp:CheckBox ID="cbStoreNum" runat="server" Text="Yes（If checked, stock cannot be moved if negative inventory is detected）" />
                 </td>
             </tr>
             <tr>
@@ -120,7 +121,7 @@
                 </td>
                 <td style="width:550px;">
                     <asp:CheckBox ID="cbPrintLogo" runat="server" 
-                        Text="Yes（If checked、company logo will be shown on receipt）" />
+                        Text="Yes（If checked, company logo will be shown on receipt）" />
                 </td>
             </tr>
             <tr>
@@ -128,7 +129,7 @@
                     Print Digital Stamp：</td>
                 <td style="width:550px;">
                     <asp:CheckBox ID="cbPrintStamp" runat="server" 
-                        Text="Yes（If checked、digital stamp will be shown on receipt）" />
+                        Text="Yes（If checked, digital stamp will be shown on receipt）" />
                 </td>
             </tr>
             <tr>

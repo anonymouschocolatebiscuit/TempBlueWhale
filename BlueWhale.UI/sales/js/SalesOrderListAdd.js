@@ -1,12 +1,13 @@
-
 function formatCurrency(x) {
-
     var f_x = parseFloat(x);
     if (isNaN(f_x)) {
         return "0.00";
     }
+
     var f_x = Math.round(x * 100) / 100;
+
     var s_x = f_x.toString();
+
     var pos_decimal = s_x.indexOf('.');
     if (pos_decimal < 0) {
         pos_decimal = s_x.length;
@@ -15,6 +16,7 @@ function formatCurrency(x) {
     while (s_x.length <= pos_decimal + 2) {
         s_x += '0';
     }
+
     return s_x;
 }
 
@@ -24,7 +26,6 @@ $(document).bind('keydown.grid', function (event) {
     }
 });
 
-
 function f_selectContact() {
     $.ligerDialog.open({
         title: 'Select product', name: 'winselector', width: 840, height: 540, url: '../baseSet/GoodsListSelect.aspx', buttons: [
@@ -32,8 +33,10 @@ function f_selectContact() {
             { text: 'Cancel', onclick: f_selectContactCancel }
         ]
     });
+
     return false;
 }
+
 function f_selectContactOK(item, dialog) {
     var fn = dialog.frame.f_select || dialog.frame.window.f_select;
     var data = fn();
@@ -58,6 +61,7 @@ function f_selectClient() {
             { text: 'Close', onclick: f_selectClientCancel }
         ]
     });
+
     return false;
 }
 function f_selectClientOK(item, dialog) {
@@ -70,6 +74,7 @@ function f_selectClientOK(item, dialog) {
 
     $("#clientName").val(data.names);
     $("#clientId").val(data.id);
+
     dialog.close();
 }
 
@@ -79,6 +84,7 @@ function f_selectClientCancel(item, dialog) {
 
 $.ligerDefaults.Grid.formatters['numberbox'] = function (value, column) {
     var precision = column.editor.precision;
+
     return value.toFixed(precision);
 };
 
@@ -90,29 +96,30 @@ $(function () {
 
 var manager;
 $(function () {
-
     var form = $("#form").ligerForm();
     var form1 = $("#tbFooter").ligerForm();
     var form2 = $("#form22").ligerForm();
-
     var g = $.ligerui.get("clientName");
     g.set("Width", 250);
+
     window['g'] =
         manager = $("#maingrid").ligerGrid({
             columns: [
                 {
                     display: '', isSort: false, width: 60, height: 50, align: 'center', frozen: true, render: function (rowdata, rowindex, value) {
                         var h = "";
+
                         if (!rowdata._editing) {
                             h += "<a href='javascript:addNewRow()' title='Add row' style='float:left;'><div class='ui-icon ui-icon-plus'></div></a> ";
                             h += "<a href='javascript:deleteRow()' title='Delete row' style='float:left;'><div class='ui-icon ui-icon-trash'></div></a> ";
                             h += "<a href='javascript:f_selectContact()' title='Select product' style='float:left;'><div class='ui-icon ui-icon-search'></div></a> ";
                         }
+
                         return h;
                     }
                 },
                 {
-                    display: 'Product name', name: 'goodsName', width: 200, align: 'left',
+                    display: 'Product name', name: 'goodsName', align: 'left',
                     totalSummary:
                     {
                         type: 'count',
@@ -121,18 +128,19 @@ $(function () {
                         }
                     }
                 },
-                { display: 'Specification', name: 'spec', width: 100, align: 'center' },
-                { display: 'Unit', name: 'unitName', width: 60, align: 'center' },
+                { display: 'Specification', name: 'spec', align: 'center' },
+                { display: 'Unit', name: 'unitName', align: 'center' },
                 {
-                    display: 'Storage', name: 'ckId', width: 80, isSort: false, textField: 'ckName',
-                    editor: {
+                    display: 'Storage', name: 'ckId', isSort: false, textField: 'ckName',
+                    editor:
+                    {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
                         valueField: 'ckId', textField: 'ckName'
                     }
                 },
                 {
-                    display: 'Amount', name: 'num', width: 70, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Amount', name: 'num', type: 'float', align: 'right', editor: { type: 'float' },
 
                     totalSummary:
                     {
@@ -144,30 +152,29 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Original price', name: 'price', width: 110, type: 'float', align: 'right', editor: { type: 'float' }
-
+                    display: 'Original price', name: 'price', type: 'float', align: 'right', editor: { type: 'float' }
                 },
                 {
-                    display: 'Discount%', name: 'dis', width: 80, type: 'float', align: 'right', editor: { type: 'float' }
-
+                    display: 'Discount%', name: 'dis', type: 'float', align: 'right', editor: { type: 'float' }
                 },
                 {
-                    display: 'Discount Amount', name: 'sumPriceDis', width: 150, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Discount Amount', name: 'sumPriceDis', type: 'float', align: 'right', editor: { type: 'float' },
                     totalSummary:
                     {
                         align: 'center',
                         type: 'sum',
                         render: function (e) {
                             var itemSumPriceDis = e.sum;
+
                             return "<span id='sumPriceItemDis'>" + Math.round(itemSumPriceDis * 10000) / 10000 + "</span>";
                         }
                     }
                 },
                 {
-                    display: 'Current Price', name: 'priceNow', width: 100, type: 'float', align: 'right', editor: { type: 'float' }
+                    display: 'Current Price', name: 'priceNow', type: 'float', align: 'right', editor: { type: 'float' }
                 },
                 {
-                    display: 'Amount', name: 'sumPriceNow', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Amount', name: 'sumPriceNow', type: 'float', align: 'right', editor: { type: 'float' },
 
                     totalSummary:
                     {
@@ -180,10 +187,10 @@ $(function () {
                     }
 
                 },
-                { display: 'Tax amount%', name: 'tax', width: 100, type: 'int', align: 'center', editor: { type: 'int' } },
-                { display: 'Unit Price Including Tax', name: 'priceTax', width: 180, type: 'float', align: 'center', editor: { type: 'float' } },
+                { display: 'Tax Rate%', name: 'tax', type: 'int', align: 'center', editor: { type: 'int' } },
+                { display: 'Unit Price Including Tax', name: 'priceTax', type: 'float', align: 'center', editor: { type: 'float' } },
                 {
-                    display: 'Tax amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
+                    display: 'Tax Amount', name: 'sumPriceTax', type: 'float', align: 'right',
 
                     totalSummary:
                     {
@@ -196,7 +203,7 @@ $(function () {
                     }
                 },
                 {
-                    display: 'Total Price Including Tax', name: 'sumPriceAll', width: 170, type: 'float', align: 'right', editor: { type: 'float' },
+                    display: 'Total Price Including Tax', name: 'sumPriceAll', type: 'float', align: 'right', editor: { type: 'float' },
                     totalSummary:
                     {
                         align: 'center',
@@ -208,10 +215,11 @@ $(function () {
                     }
 
                 },
-
-                { display: 'Remarks', name: 'remarks', width: 140, align: 'left', type: 'text', editor: { type: 'text' } }
-
-            ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '350',
+                { display: 'Remarks', name: 'remarks', align: 'left', type: 'text', editor: { type: 'text' } }
+            ],
+            width: 'auto',
+            pageSizeOptions: [5, 10, 15, 20],
+            height: 'auto',
             url: 'SalesOrderListAdd.aspx?Action=GetData&id=' + param,
             rownumbers: true,
             frozenRownumbers: true,
@@ -221,8 +229,7 @@ $(function () {
             totalSummary: true,
             enabledEdit: true,
             onAfterEdit: f_onAfterEdit
-        }
-        );
+        });
 });
 
 var rowNumber = 9;
@@ -305,7 +312,6 @@ function f_onGoodsChanged(e) {
                 goodsName: e[i].names,
                 spec: e[i].spec,
                 unitName: e[i].unitName,
-
                 num: 1,
                 price: e[i].priceSalesRetail,
                 dis: 0,
@@ -316,7 +322,6 @@ function f_onGoodsChanged(e) {
                 priceTax: e[i].priceSalesRetail,
                 sumPriceTax: 0,
                 sumPriceAll: e[i].priceSalesRetail,
-
                 ckId: e[i].ckId,
                 ckName: e[i].ckName,
                 sourceNumber: "",
@@ -344,24 +349,18 @@ function updateTotal() {
     }
 
     for (var i = 0; i < data.length; i++) {
-
         sumPriceItemDis += Number(data[i].sumPriceDis);
-
         sumPriceItemNow += Number(data[i].sumPriceNow);
-
         sumPriceItemTax += Number(data[i].sumPriceTax);
-
         sumPriceItemAll += Number(data[i].sumPriceAll);
     }
 
     $("#sumPriceItemDis").html(formatCurrency(sumPriceItemDis));
-
     $("#sumPriceItemNow").html(formatCurrency(sumPriceItemNow));
-
     $("#sumPriceItemTax").html(formatCurrency(sumPriceItemTax));
-
     $("#sumPriceItemAll").html(formatCurrency(sumPriceItemAll));
 }
+
 function f_onAfterEdit(e) {
 
     var num, price, dis, sumPriceDis, priceNow, sumPriceNow, tax, priceTax, sumPriceTax, sumPriceAll;
@@ -459,7 +458,7 @@ function f_onAfterEdit(e) {
         sumPriceDis = Number(e.value);
 
         if (sumPriceDis >= num * price) {
-            alert("Please fill in the correct discount amount£¡");
+            alert("Please fill in the correct discount amount!");
             return;
         }
 
@@ -467,7 +466,7 @@ function f_onAfterEdit(e) {
             dis = (1 - sumPriceDis / (num * price)) * 100;
         }
         else {
-            alert("Please fill in the quantity and unit price£¡");
+            alert("Please fill in the quantity and unit price!");
             return;
         }
 
@@ -568,6 +567,7 @@ function f_onAfterEdit(e) {
     if (e.column.name == "tax") {
         tax = Number(e.value);
         priceTax = priceNow * (1 + tax / 100);
+
         if (tax == 0) {
             priceTax = priceNow;
         }
@@ -588,9 +588,11 @@ function f_onAfterEdit(e) {
         priceNow = Math.round(priceNow * 10000) / 10000;
         priceTax = Math.round(priceTax * 10000) / 10000;
         dis = priceNow / price * 100;
+
         if (dis == 100) {
             dis = 0;
         }
+
         dis = Math.round(dis * 10000) / 10000;
         sumPriceDis = num * (price - priceNow);
         sumPriceDis = Math.round(sumPriceDis * 10000) / 10000;
@@ -621,7 +623,6 @@ function f_onAfterEdit(e) {
 
         sumPriceNow = priceNow * num;
         sumPriceNow = Math.round(sumPriceNow * 10000) / 10000;
-
 
         dis = priceNow / price * 100;
         if (dis == 100) {
@@ -657,41 +658,44 @@ function f_onBeforeSubmitEdit(e) {
 
 function deleteRow() {
     if (manager.rows.length == 1) {
-        $.ligerDialog.warn('At least keep one row!')
+        $.ligerDialog.warn('At least keep one row!', 'Warning')
     }
     else {
         manager.deleteSelectedRow();
     }
 }
+
 var newrowid = 100;
 
 function save() {
 
     var venderId = $("#clientId").val();
-    var bizId = $("#ddlYWYList").val();
+    var bizId = $("#ddlSalesPersonList").val();
 
     if (venderId == 0) {
-        $.ligerDialog.warn('Please select customer£¡');
+        $.ligerDialog.warn('Please select customer!', 'Warning');
 
         return;
     }
 
     if (bizId == 0) {
-        $.ligerDialog.warn('Please select sales person£¡');
+        $.ligerDialog.warn('Please select salesperson!', 'Warning');
 
         return;
     }
 
     var bizDate = $("#txtBizDate").val();
+
     if (bizDate == "") {
-        $.ligerDialog.warn("Please enter order date£¡");
+        $.ligerDialog.warn("Please enter order date!", 'Warning');
         return;
 
     }
 
     var sendDate = $("#txtSendDate").val();
+
     if (sendDate == "") {
-        $.ligerDialog.warn("Please enter delivery date£¡");
+        $.ligerDialog.warn("Please enter delivery date!", 'Warning');
         return;
 
     }
@@ -709,19 +713,19 @@ function save() {
     }
 
     if (data.length == 0) {
-        $.ligerDialog.warn('Please select product£¡');
+        $.ligerDialog.warn('Please select product!', 'Warning');
 
         return;
-        alert("Execution skipped£¡");
+        alert("Execution skipped!");
     }
 
     for (var i = 0; i < data.length; i++) {
         if (data[i].num <= 0 || data[i].num == "" || data[i].num == "0" || data[i].num == "0.00") {
 
-            $.ligerDialog.warn("Please enter the" + (i + 1) + "£¡");
+            $.ligerDialog.warn("Please enter the" + (i + 1) + "!", 'Warning');
 
             return;
-            alert("Execution skipped£¡");
+            alert("Execution skipped!");
         }
     }
 
@@ -731,9 +735,7 @@ function save() {
     dataNew.push(headJson);
 
     var list = JSON.stringify(headJson);
-
     list = list.substring(0, list.length - 1);
-
     list += ",\"Rows\":";
     list += JSON.stringify(data);
     list += "}";
@@ -746,15 +748,11 @@ function save() {
         contentType: "application/json",
         data: JSON.stringify(postData),
         success: function (jsonResult) {
-
-            if (jsonResult == "Operation Successful£¡") {
-
-                $.ligerDialog.waitting('Operation Successful£¡'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
-
+            if (jsonResult == "Operation Successful!") {
+                $.ligerDialog.waitting('Operation Successful!'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
             }
             else {
-                $.ligerDialog.warn(jsonResult);
-
+                $.ligerDialog.warn(jsonResult, 'Warning');
             }
         },
         error: function (xhr) {
@@ -778,13 +776,16 @@ function getthedate(dd, dadd) {
     a = a.valueOf()
     a = a + dadd * 24 * 60 * 60 * 1000
     a = new Date(a);
+
     var m = a.getMonth() + 1;
     if (m.toString().length == 1) {
         m = '0' + m;
     }
+
     var d = a.getDate();
     if (d.toString().length == 1) {
         d = '0' + d;
     }
+
     return a.getFullYear() + "-" + m + "-" + d;
 }

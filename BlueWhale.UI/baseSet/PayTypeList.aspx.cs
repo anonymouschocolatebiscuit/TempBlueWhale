@@ -10,12 +10,10 @@ namespace BlueWhale.UI.baseSet
 {
     public partial class PayTypeList : BasePage
     {
-
         public PayTypeDAL dal = new PayTypeDAL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (Request.Params["Action"] == "GetDataList")
             {
                 GetDataList();
@@ -34,36 +32,39 @@ namespace BlueWhale.UI.baseSet
                 DeleteRow(id);
                 Response.End();
             }
-
-
         }
 
         void GetDataList()
         {
             string isWhere = " shopId='" + LoginUser.ShopId + "' ";
-            DataSet ds = dal.GetList(isWhere);
+
+            string sortColumn = Request.Params["sortname"];
+            string sortOrder = Request.Params["sortorder"];
+
+            string orderBy = "";
+            if (sortColumn != null && sortOrder != null)
+            {
+                orderBy = $" ORDER BY {sortColumn} {sortOrder}";
+            }
+
+            DataSet ds = dal.GetList(isWhere,orderBy);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-
                 list.Add(new
                 {
                     id = ds.Tables[0].Rows[i]["id"].ToString(),
                     names = ds.Tables[0].Rows[i]["names"].ToString()
 
                 });
-
             }
             var griddata = new { Rows = list };
 
             string s = new JavaScriptSerializer().Serialize(griddata);
 
-
-
             Response.Write(s);
         }
-
 
         void GetDDLList()
         {
@@ -71,22 +72,16 @@ namespace BlueWhale.UI.baseSet
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-
                 list.Add(new
                 {
-
                     typeId = ds.Tables[0].Rows[i]["id"].ToString(),
                     typeName = ds.Tables[0].Rows[i]["names"].ToString()
-
                 });
-
             }
 
-
             string s = new JavaScriptSerializer().Serialize(list);
-
 
             Response.Write(s);
         }
@@ -107,7 +102,6 @@ namespace BlueWhale.UI.baseSet
                     logs.Add();
 
                     Response.Write("Deleted successfully!");
-
                 }
                 else
                 {
@@ -119,6 +113,5 @@ namespace BlueWhale.UI.baseSet
                 Response.Write("Login timed out, please log in again!");
             }
         }
-
     }
 }

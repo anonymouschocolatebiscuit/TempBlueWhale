@@ -1,20 +1,20 @@
-﻿using System;
-using System.Data;
-using BlueWhale.Common;
+﻿using BlueWhale.Common;
 using BlueWhale.DAL;
 using BlueWhale.UI.src;
+using System;
+using System.Data;
 
 namespace BlueWhale.UI.baseSet
 {
     public partial class PrintSet : BasePage
     {
-        SystemSetDAL dal = new SystemSetDAL();
+        private readonly SystemSetDAL dal = new SystemSetDAL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.IsPostBack)
+            if (!IsPostBack)
             {
-                this.Bind();
+                Bind();
             }
         }
 
@@ -25,30 +25,30 @@ namespace BlueWhale.UI.baseSet
 
             if (ds.Tables[0].Rows.Count > 0)
             {
-                this.txtRemarksPurOrder.Text = ds.Tables[0].Rows[0]["RemarksPurOrder"].ToString();
-                this.txtRemarksSalesOrder.Text = ds.Tables[0].Rows[0]["RemarksSalesOrder"].ToString();
+                txtRemarksPurOrder.Text = ds.Tables[0].Rows[0]["RemarksPurOrder"].ToString();
+                txtRemarksSalesOrder.Text = ds.Tables[0].Rows[0]["RemarksSalesOrder"].ToString();
             }
         }
 
-        protected void btnSave_Click(object sender, EventArgs e)
+        protected void BtnSave_Click(object sender, EventArgs e)
         {
-            string remarks = this.txtRemarksPurOrder.Text;
-
+            string remarks = txtRemarksPurOrder.Text;
             int update = dal.UpdatePrintSetPurOrderRemarks(LoginUser.ShopId, remarks);
+
             if (update > 0)
             {
-                MessageBox.Show(this, "Save success！");
+                MessageBox.Show(this, "Save success!");
             }
         }
 
-        protected void btnSaveSalesOrderRemarks_Click(object sender, EventArgs e)
+        protected void BtnSaveSalesOrderRemarks_Click(object sender, EventArgs e)
         {
-            string remarks = this.txtRemarksSalesOrder.Text;
-
+            string remarks = txtRemarksSalesOrder.Text;
             int update = dal.UpdatePrintSetSalesOrderRemarks(LoginUser.ShopId, remarks);
+
             if (update > 0)
             {
-                MessageBox.Show(this, "Save success！");
+                MessageBox.Show(this, "Save success!");
             }
         }
     }

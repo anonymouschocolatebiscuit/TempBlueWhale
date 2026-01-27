@@ -53,7 +53,7 @@ function checktxt(obj, txtId) {
         return false;
     }
     var smsLength = Math.ceil(txtCount / 62);
-    $("#" + txtId).html("您已输入<b>" + txtCount + "</b>个字符，将以<b>" + smsLength + "</b>条短信扣取费用。");
+    $("#" + txtId).html("You have entered <b>" + txtCount + "</b> characters, and fees will be charged based on <b>" + smsLength + "</b> SMS messages.");
 }
 //四舍五入函数
 function ForDight(Dight, How) {
@@ -158,7 +158,7 @@ function ShowMaxDialog(tit, url) {
 //执行回传函数
 function ExePostBack(objId, objmsg) {
     if ($(".checkall input:checked").size() < 1) {
-        $.dialog.alert('对不起，请选中您要操作的记录！');
+        $.dialog.alert('Sorry, please select the record(s) you want to operate on!');
         return false;
     }
     var msg = "删除记录后不可恢复，您确定吗？";
@@ -172,7 +172,7 @@ function ExePostBack(objId, objmsg) {
 }
 //检查是否有选中再决定回传
 function CheckPostBack(objId, objmsg) {
-    var msg = "对不起，请选中您要操作的记录！";
+    var msg = "Sorry, please select the record(s) you want to operate on!";
     if (arguments.length == 2) {
         msg = objmsg;
     }
@@ -186,7 +186,7 @@ function CheckPostBack(objId, objmsg) {
 //执行回传无复选框确认函数
 function ExeNoCheckPostBack(objId, objmsg) {
    
-    var msg = "删除记录后不可恢复，您确定吗？";
+    var msg = "The record cannot be recovered after deletion. Are you sure?";
     if (arguments.length == 2) {
         msg = objmsg;
     }

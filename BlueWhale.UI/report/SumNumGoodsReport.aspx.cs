@@ -28,16 +28,11 @@ namespace BlueWhale.UI.report
 
             if (Request.Params["Action"] == "GetDataList")
             {
-                DateTime bizEnd = DateTime.Parse(Request.Params["end"].ToString());
-
+                DateTime bizEnd = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
                 string code = Request.Params["goodsId"].ToString();
-
                 string ckName = Request.Params["typeId"].ToString();
-
                 string down = Request.Params["down"].ToString();
-
                 string path = Request.Params["path"].ToString();
-
                 this.GetDataList(bizEnd, code, ckName, down, path);
                 Response.End();
             }
@@ -67,9 +62,7 @@ namespace BlueWhale.UI.report
                     fieldB = ds.Tables[0].Rows[i]["fieldB"].ToString(),
                     fieldC = ds.Tables[0].Rows[i]["fieldC"].ToString(),
                     fieldD = ds.Tables[0].Rows[i]["fieldD"].ToString(),
-
                     sumNum = ds.Tables[0].Rows[i]["sumNum"].ToString(),
-
                     sumPriceStore = ds.Tables[0].Rows[i]["sumPriceStore"].ToString()
                 });
             }
@@ -79,109 +72,117 @@ namespace BlueWhale.UI.report
 
             if (down == "1")
             {
-                string filePath = Server.MapPath("../excel/InventoryBalanceSheet" + path) + ".xls";
+                string fileName = "InventoryBalanceSheet_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".xls";
 
-                this.hfPath.Value = filePath;
-                this.WriteExcel(dt, filePath);
+                byte[] excelData = GenerateExcelData(dt, fileName);
+
+                Response.Clear();
+                Response.ContentType = "application/vnd.ms-excel";
+                Response.AddHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
+                Response.AddHeader("Content-Length", excelData.Length.ToString());
+                Response.BinaryWrite(excelData);
+                Response.Flush();
+                Response.End();
             }
         }
 
-        public void WriteExcel(DataTable dt, string filePath)
+        public byte[] GenerateExcelData(DataTable dt, string filePath)
         {
-            if (!string.IsNullOrEmpty(filePath) && null != dt && dt.Rows.Count > 0)
+            if (dt == null || dt.Rows.Count == 0)
             {
-                NPOI.HSSF.UserModel.HSSFWorkbook book = new NPOI.HSSF.UserModel.HSSFWorkbook();
-                NPOI.SS.UserModel.ISheet sheet = book.CreateSheet(dt.TableName);
-                NPOI.SS.UserModel.IRow row = sheet.CreateRow(0);
+                return new byte[0];
+            }
 
-                row.CreateCell(0).SetCellValue("Product Code");
-                row.CreateCell(1).SetCellValue("Product Name");
-                row.CreateCell(2).SetCellValue("Specification");
-                row.CreateCell(3).SetCellValue("Unit");
+            byte[] excelBytes;
 
-                row.CreateCell(4).SetCellValue(SysInfo.FieldA);
-                row.CreateCell(5).SetCellValue(SysInfo.FieldB);
-                row.CreateCell(6).SetCellValue(SysInfo.FieldC);
-                row.CreateCell(7).SetCellValue(SysInfo.FieldD);
+            NPOI.HSSF.UserModel.HSSFWorkbook book = new NPOI.HSSF.UserModel.HSSFWorkbook();
+            NPOI.SS.UserModel.ISheet sheet = book.CreateSheet(dt.TableName);
+            NPOI.SS.UserModel.IRow row = sheet.CreateRow(0);
 
-                row.CreateCell(8).SetCellValue("Storehouse");
-                row.CreateCell(9).SetCellValue("Total quantity");
-                row.CreateCell(10).SetCellValue("Stock price");
-                row.CreateCell(11).SetCellValue("Total inventory cost");
+            row.CreateCell(0).SetCellValue("Product Code");
+            row.CreateCell(1).SetCellValue("Product Name");
+            row.CreateCell(2).SetCellValue("Specification");
+            row.CreateCell(3).SetCellValue("Unit");
 
-                sheet.SetColumnWidth(0, 15 * 256);//30 characters
-                sheet.SetColumnWidth(1, 30 * 256);//30 characters
-                sheet.SetColumnWidth(2, 30 * 256);//30 characters
-                sheet.SetColumnWidth(3, 10 * 256);//30 characters
+            row.CreateCell(4).SetCellValue(SysInfo.FieldA);
+            row.CreateCell(5).SetCellValue(SysInfo.FieldB);
+            row.CreateCell(6).SetCellValue(SysInfo.FieldC);
+            row.CreateCell(7).SetCellValue(SysInfo.FieldD);
 
-                sheet.SetColumnWidth(4, 10 * 256);//30 characters
-                sheet.SetColumnWidth(5, 10 * 256);//30 characters
-                sheet.SetColumnWidth(6, 10 * 256);//30 characters
-                sheet.SetColumnWidth(7, 10 * 256);//30 characters
+            row.CreateCell(8).SetCellValue("Storehouse");
+            row.CreateCell(9).SetCellValue("Total quantity");
+            row.CreateCell(10).SetCellValue("Stock price");
+            row.CreateCell(11).SetCellValue("Total inventory cost");
 
-                sheet.SetColumnWidth(8, 10 * 256);//30 characters
-                sheet.SetColumnWidth(9, 10 * 256);//30 characters
-                sheet.SetColumnWidth(10, 10 * 256);//30 characters
-                sheet.SetColumnWidth(11, 10 * 256);//30 characters
+            sheet.SetColumnWidth(0, 15 * 256); //30characters
+            sheet.SetColumnWidth(1, 30 * 256); //30characters
+            sheet.SetColumnWidth(2, 30 * 256); //30characters
+            sheet.SetColumnWidth(3, 10 * 256); //30characters
 
-                decimal sumNum = 0;
-                decimal sumPrice = 0;
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    sumNum += ConvertTo.ConvertDec(dt.Rows[i]["sumNum"].ToString());
-                    sumPrice += ConvertTo.ConvertDec(dt.Rows[i]["sumPriceStore"].ToString());
+            sheet.SetColumnWidth(4, 10 * 256); //30characters
+            sheet.SetColumnWidth(5, 10 * 256); //30characters
+            sheet.SetColumnWidth(6, 10 * 256); //30characters
+            sheet.SetColumnWidth(7, 10 * 256); //30characters
 
-                    NPOI.SS.UserModel.IRow row2 = sheet.CreateRow(i + 1);
+            sheet.SetColumnWidth(8, 10 * 256); //30characters
+            sheet.SetColumnWidth(9, 10 * 256); //30characters
+            sheet.SetColumnWidth(10, 10 * 256); //30characters
+            sheet.SetColumnWidth(11, 10 * 256); //30characters
 
-                    //goodsId,code,goodsName,spec,unitName,ckId,ckName,priceCost,fieldA,fieldB,fieldC,fieldD
-                    row2.CreateCell(0).SetCellValue(Convert.ToString(dt.Rows[i]["code"]));//Product Code
-                    row2.CreateCell(1).SetCellValue(Convert.ToString(dt.Rows[i]["goodsName"]));//Product Name
-                    row2.CreateCell(2).SetCellValue(Convert.ToString(dt.Rows[i]["spec"]));//Specification
+            decimal sumNum = 0;
+            decimal sumPrice = 0;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                sumNum += ConvertTo.ConvertDec(dt.Rows[i]["sumNum"].ToString());
+                sumPrice += ConvertTo.ConvertDec(dt.Rows[i]["sumPriceStore"].ToString());
 
-                    row2.CreateCell(3).SetCellValue(Convert.ToString(dt.Rows[i]["unitName"]));//Unit
+                NPOI.SS.UserModel.IRow row2 = sheet.CreateRow(i + 1);
 
-                    row2.CreateCell(4).SetCellValue(Convert.ToString(dt.Rows[i]["fieldA"]));//Unit
-                    row2.CreateCell(5).SetCellValue(Convert.ToString(dt.Rows[i]["fieldB"]));//Unit
-                    row2.CreateCell(6).SetCellValue(Convert.ToString(dt.Rows[i]["fieldC"]));//Unit
-                    row2.CreateCell(7).SetCellValue(Convert.ToString(dt.Rows[i]["fieldD"]));//Unit
+                //goodsId, code, goodsName, spec, unitName, ckId, ckName, priceCost, fieldA, fieldB, fieldC, fieldD
+                row2.CreateCell(0).SetCellValue(Convert.ToString(dt.Rows[i]["code"])); //Product Code
+                row2.CreateCell(1).SetCellValue(Convert.ToString(dt.Rows[i]["goodsName"])); //Product Name
+                row2.CreateCell(2).SetCellValue(Convert.ToString(dt.Rows[i]["spec"])); //Specification
 
-                    row2.CreateCell(8).SetCellValue(Convert.ToString(dt.Rows[i]["ckName"]));//Storehouse
+                row2.CreateCell(3).SetCellValue(Convert.ToString(dt.Rows[i]["unitName"])); //Unit
 
-                    row2.CreateCell(9).SetCellValue(Convert.ToString(dt.Rows[i]["sumNum"]));//Quantity
-                    row2.CreateCell(10).SetCellValue(Convert.ToString(dt.Rows[i]["priceCost"]));//Cost price
-                    row2.CreateCell(11).SetCellValue(Convert.ToString(dt.Rows[i]["sumPriceStore"]));//Inventory amount
-                }
+                row2.CreateCell(4).SetCellValue(Convert.ToString(dt.Rows[i]["fieldA"])); //Unit
+                row2.CreateCell(5).SetCellValue(Convert.ToString(dt.Rows[i]["fieldB"])); //Unit
+                row2.CreateCell(6).SetCellValue(Convert.ToString(dt.Rows[i]["fieldC"])); //Unit
+                row2.CreateCell(7).SetCellValue(Convert.ToString(dt.Rows[i]["fieldD"])); //Unit
 
-                NPOI.SS.UserModel.IRow row3 = sheet.CreateRow(dt.Rows.Count + 1);
+                row2.CreateCell(8).SetCellValue(Convert.ToString(dt.Rows[i]["ckName"])); //Storehouse
 
-                row3.CreateCell(0).SetCellValue("");//Product code
-                row3.CreateCell(1).SetCellValue("Total:");//Product name
-                row3.CreateCell(2).SetCellValue(""); //Specifications
-                row3.CreateCell(3).SetCellValue("");//Unit
-                row3.CreateCell(4).SetCellValue("");//Warehouse
-                row3.CreateCell(9).SetCellValue(sumNum.ToString("0.00"));//Quantity
-                row3.CreateCell(11).SetCellValue(sumPrice.ToString("0.00"));//Quantity
+                row2.CreateCell(9).SetCellValue(Convert.ToString(dt.Rows[i]["sumNum"])); //Quantity
+                row2.CreateCell(10).SetCellValue(Convert.ToString(dt.Rows[i]["priceCost"])); //Cost price
+                row2.CreateCell(11).SetCellValue(Convert.ToString(dt.Rows[i]["sumPriceStore"])); //Inventory amount
+            }
+
+            NPOI.SS.UserModel.IRow row3 = sheet.CreateRow(dt.Rows.Count + 1);
+
+            row3.CreateCell(0).SetCellValue(""); //Product code
+            row3.CreateCell(1).SetCellValue("Total:"); //Product name
+            row3.CreateCell(2).SetCellValue(""); //Specifications
+            row3.CreateCell(3).SetCellValue(""); //Unit
+            row3.CreateCell(4).SetCellValue(""); //Warehouse
+            row3.CreateCell(9).SetCellValue(sumNum.ToString("0.00")); //Quantity
+            row3.CreateCell(11).SetCellValue(sumPrice.ToString("0.00")); //Quantity
 
                 // Writing to the client side  
-                using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
+                using (MemoryStream ms = new MemoryStream())
                 {
                     book.Write(ms);
-                    using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write))
-                    {
-                        byte[] data = ms.ToArray();
-                        fs.Write(data, 0, data.Length);
-                        fs.Flush();
-                    }
-                    book = null;
+                    excelBytes = ms.ToArray();
                 }
 
-                #region download
+            File.WriteAllBytes(filePath, excelBytes);
 
-                string path = filePath;
+            #region download
+
+            string path = filePath;
 
                 try
                 {
-                    System.IO.FileInfo file = new System.IO.FileInfo(Server.MapPath(path));
+                    FileInfo file = new FileInfo(Server.MapPath(path));
 
                     Response.Clear();
                     Response.Charset = "GB2312";
@@ -199,9 +200,8 @@ namespace BlueWhale.UI.report
                 }
                 catch (Exception) { }
 
-                #endregion
-
-            }
+            #endregion
+            return excelBytes;
         }
     }
 }

@@ -101,7 +101,7 @@ namespace BlueWhale.UI.baseSet
                     {
                         ShopId = LoginUser.ShopId,
                         Users = LoginUser.Phone + "-" + LoginUser.Names,
-                        Events = "Modify customer category:" + this.txtNames.Text,
+                        Events = "Edit customer category:" + this.txtNames.Text,
                         Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString()
                     };
                     logs.Add();

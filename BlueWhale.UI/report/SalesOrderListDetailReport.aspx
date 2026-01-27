@@ -108,7 +108,7 @@
         <form id="form1" runat="server">
             <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
                 <tr>
-                    <td style="text-align:right; width:100px;">Sales Date:&nbsp;</td>
+                    <td style="text-align:right; width:70px;">Sales Date:&nbsp;</td>
                     <td style="text-align:left; width:120px;">                              
                         <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                     </td>
@@ -133,7 +133,7 @@
                         <input type="text" id="txtFlagList"/>            
                     </td>
 
-                    <td style="text-align:right; padding-right:20px;">
+                    <td style="text-align:right; padding-right:25px;">
                         <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
                     </td>
                 </tr>

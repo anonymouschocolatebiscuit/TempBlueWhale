@@ -19,7 +19,7 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="text-align: right; width: 100px;">Bussiness Date            
+                <td style="text-align: right; width: 100px; padding-right: 5px">Bussiness Date:            
                 </td>
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
@@ -29,15 +29,15 @@
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 70px;">Category</td>
+                <td style="text-align: right; width: 70px; padding-right: 5px">Category:</td>
                 <td style="text-align: left; width: 80px;">
                     <asp:TextBox ID="ddlTypeList" runat="server"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 100px;">Get Pay Item:</td>
+                <td style="text-align: right; width: 50px; padding-right: 5px">Item:</td>
                 <td style="text-align: left; width: 80px;">
                     <asp:TextBox ID="txtItemList" runat="server"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 100px;">Handled by:</td>
+                <td style="text-align: right; width: 100px; padding-right: 5px">Handled by:</td>
                 <td style="text-align: left; width: 80px;">
                     <asp:DropDownList ID="ddlYWYList" runat="server">
                     </asp:DropDownList>

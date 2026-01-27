@@ -2,102 +2,116 @@
 {
     public class Constant
     {
-        #region
+        #region Page URLs and Session Keys
+
         /// <summary>
-        /// Home Page
+        /// Home page URL
         /// </summary>
         public static string DefaultUrl = "/Dashboard.aspx";
+
         /// <summary>
-        /// 登陆页
+        /// Login page URL
         /// </summary>
         public static string LoginUrl = "/Login.aspx";
 
-
         /// <summary>
-        /// Login timeout
+        /// Login timeout page
         /// </summary>
         public static string OverTimePage = "/OverTime.htm";
 
         /// <summary>
-        /// Login timeout - client
+        /// Login timeout page for client
         /// </summary>
         public static string OverTimePageClient = "OverTimeClient.htm";
 
         /// <summary>
-        /// Login timeout - user
+        /// Login timeout page for user
         /// </summary>
         public static string OverTimePageUser = "OverTimeUser.htm";
 
         /// <summary>
-        /// Authorize expire
+        /// Authorization expired page
         /// </summary>
         public static string OverRightPage = "OverRight.htm";
 
         /// <summary>
-        /// Database id
+        /// Database ID
         /// </summary>
         public static string dbid = "";
 
         /// <summary>
-        /// Error Message
+        /// Error message key
         /// </summary>
         public static string ErrMessage = "errMsg";
 
         /// <summary>
-        /// Return Address name
+        /// Return URL key
         /// </summary>
         public static string ReturnUrl = "retUrl";
+
+        /// <summary>
+        /// Default error page
+        /// </summary>
         public const string ErrUrl = "/Error.htm";
+
+        /// <summary>
+        /// Cookie name for username
+        /// </summary>
         public const string CookieName = ".userName";
 
         /// <summary>
-        /// Login SESSION username
+        /// Session key for logged-in user info
         /// </summary>
         public const string SessionUserName = "userInfo";
 
         /// <summary>
-        /// Login SESSION user
+        /// Session key for user
         /// </summary>
-        public const string SessinUser = "User";
+        public const string SessionUser = "User";
 
         #endregion
 
-        #region
+        #region Messages
 
         /// <summary>
-        /// Login error
+        /// Login error message
         /// </summary>
         public static string LoginErrMsg = "Username or password invalid";
+
         /// <summary>
-        /// Unauthorize
+        /// Unauthorized access message
         /// </summary>
         public static string NoAuthority = "Unauthorize Access";
 
         /// <summary>
-        /// Login timeout
+        /// Login timeout message
         /// </summary>
         public static string OverTime = "Login timeout";
 
         /// <summary>
-        /// Authorize expire
+        /// Authorization expired message
         /// </summary>
         public static string OverRight = "Login timeout";
 
         /// <summary>
-        /// Logout
+        /// Logout message
         /// </summary>
         public static string LogOut = "Logout";
+
         #endregion
 
-        #region encryption
+        #region Encryption Types
+
         /// <summary>
-        /// md5 encryption
+        /// MD5 encryption
         /// </summary>
         public const string MD5 = "md5";
+
         /// <summary>
-        /// sha1 encryption
+        /// SHA1 encryption
         /// </summary>
         public const string Sha1 = "sha1";
+
         #endregion
     }
 }

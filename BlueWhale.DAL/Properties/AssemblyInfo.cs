@@ -2,35 +2,32 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// 有关程序集的常规信息通过以下
-// 特性集控制。更改这些特性值可修改
-// 与程序集关联的信息。
-[assembly: AssemblyTitle("Lanwei.Weixin.DAL")]
+// General Information about an assembly is controlled through the following
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("BlueWhale.DAL")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Lanwei.Weixin.DAL")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyProduct("BlueWhale.DAL")]
+[assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// 将 ComVisible 设置为 false 使此程序集中的类型
-// 对 COM 组件不可见。如果需要从 COM 访问此程序集中的类型，
-// 则将该类型上的 ComVisible 特性设置为 true。
+// Setting ComVisible to false makes the types in this assembly not visible
+// to COM components.  If you need to access a type in this assembly from
+// COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
-// 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("0d4e6b45-c7fe-412b-88e3-a622f31f24cc")]
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("6010e9bc-75dc-42f0-a399-96623cc187b1")]
 
-// 程序集的版本信息由下面四个值组成:
+// Version information for an assembly consists of the following four values:
 //
-//      主版本
-//      次版本 
-//      生成号
-//      修订号
+//      Major Version
+//      Minor Version
+//      Build Number
+//      Revision
 //
-// 可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值，
-// 方法是按如下所示使用“*”:
-// [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

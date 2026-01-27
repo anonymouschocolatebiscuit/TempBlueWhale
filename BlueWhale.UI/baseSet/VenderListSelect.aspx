@@ -42,10 +42,10 @@
 
                 //checkbox:true,
                 columns: [
-                    { display: 'Vendor Type', name: 'typeName', width: 100, type: 'int', align: 'center' },
-                    { display: 'Vendor Code', name: 'code', width: 100, align: 'center' },
-                    { display: 'Vendor Name', name: 'names', width: 100, align: 'left' },
-                    { display: 'Balance Date', name: 'yueDate', width: 110, align: 'center' },
+                    { display: 'Vender Type', name: 'typeName', width: 100, type: 'int', align: 'center' },
+                    { display: 'Vender Code', name: 'code', width: 100, align: 'center' },
+                    { display: 'Vender Name', name: 'names', width: 100, align: 'left' },
+                    { display: 'Balance Date', name: 'dueDate', width: 110, align: 'center' },
                     { display: 'Balance', name: 'balance', width: 70, align: 'center' },
                     { display: 'Tax%', name: 'tax', width: 60, align: 'center' },
                     { display: 'Contact', name: 'linkMan', width: 120, align: 'center' },
@@ -99,7 +99,7 @@
 
             <tr>
                 <td colspan="3">
-                    <div id="maingrid4" style="margin: 0; padding: 0"></div>
+                    <div id="maingrid4" style="margin-top:18px ; padding: 0"></div>
                 </td>
             </tr>
         </table>

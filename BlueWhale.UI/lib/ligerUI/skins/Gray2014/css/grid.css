@@ -160,7 +160,7 @@ padding-left: 15px;
 }
 .l-panel-bar
 {
-    background:#F5F5F5  url('../images/ui/gridbar.jpg') repeat-x; height:30px;  line-height:30px;overflow:hidden;
+    background:#F5F5F5  url('../images/ui/gridbar.jpg') repeat-x; height:30px;  line-height:25px;overflow:hidden;
     border-top:1px solid #D6D6D6;
 }
 .l-panel-bbar-inner
@@ -178,9 +178,11 @@ float: left;
 background: none;
 height: 31px; 
 }
-.l-bar-right
-{
-    float:right;
+.l-bar-selectpagesize{
+    margin-top: 2.5px;
+}
+.l-bar-right {
+    float: right;
 }
 .l-bar-separator {
 float: left;
@@ -297,6 +299,7 @@ margin: 2px; margin-top:9px;
 */
 .l-panel .l-toolbar
 {    
+    max-height:100%;
     background:white  url('../images/ui/gridbar.jpg') repeat-x; height:28px;  line-height:28px;
     border:none; 
 }

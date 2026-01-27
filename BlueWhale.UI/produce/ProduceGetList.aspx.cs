@@ -42,7 +42,7 @@ namespace BlueWhale.UI.produce
 
                 DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
 
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                DateTime end = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 GetDataList(keys, start, end);
 
@@ -78,19 +78,16 @@ namespace BlueWhale.UI.produce
             isWhere += " and CONVERT(varchar(100),bizDate, 23)>='" + start.ToString("yyyy-MM-dd")
              + "'  and CONVERT(varchar(100),bizDate, 23)<='" + end.ToString("yyyy-MM-dd") + "' ";
 
-
             if (key != "")
             {
                 isWhere += " and (goodsName like '%" + key + "%' or number like '%" + key + "%' or remarks like '%" + key + "%') ";
             }
-
 
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
             for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-
                 list.Add(new
                 {
                     id = ds.Tables[0].Rows[i]["id"].ToString(),
@@ -220,7 +217,6 @@ namespace BlueWhale.UI.produce
             {
                 Response.Write("Login timeout, please log in again!");
             }
-
         }
 
         void CheckNoRow(string id)

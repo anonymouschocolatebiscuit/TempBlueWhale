@@ -96,7 +96,7 @@
                     </td>
                     <td style="text-align:left; ">&nbsp;</td>
                     <td style="text-align:left;">
-                        <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Create"
+                        <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Add"
                             onclick="save()" />
                     </td>
                 </tr>

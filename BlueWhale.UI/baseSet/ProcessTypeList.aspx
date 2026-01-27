@@ -5,7 +5,7 @@
 <head runat="server">
     <title>Process Category</title>
 
-    <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
 
     <script src="../lib/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
@@ -30,9 +30,9 @@
                 onDblClickRow: editRow,
                 toolbar: {
                     items: [
-                        { text: 'Reload', click: reload, img: '../lib/ligerUI/skins/icons/refresh.png' },
+                        { text: 'Refresh', click: reload, img: '../lib/ligerUI/skins/icons/refresh.png' },
                         { line: true },
-                        { text: 'Create', click: addRow, img: '../lib/ligerUI/skins/icons/add.gif' },
+                        { text: 'Add', click: addRow, img: '../lib/ligerUI/skins/icons/add.gif' },
                         { line: true },
                         { text: 'Edit', click: editRow, img: '../lib/ligerUI/skins/icons/modify.gif' },
                         { line: true },
@@ -48,10 +48,10 @@
 
         function addRow() {
             $.ligerDialog.open({
-                title: "Create Process Category",
+                title: "Add Process Category",
                 url: 'ProcessTypeListAdd.aspx',
-                height: 300,
-                width: 500,
+                height: 200,
+                width: 400,
                 modal: true
             });
         }
@@ -59,15 +59,15 @@
         function editRow() {
             var row = manager.getSelectedRow();
             if (!row) {
-                $.ligerDialog.warn('Please select the row to modify!');
+                $.ligerDialog.warn('Please select the row to edit!');
                 return;
             }
 
             $.ligerDialog.open({
                 title: "Edit Process Category",
                 url: "ProcessTypeListAdd.aspx?id=" + row.id + "&names=" + encodeURIComponent(row.names) + "&seq=" + row.seq,
-                height: 300,
-                width: 500,
+                height: 200,
+                width: 400,
                 modal: true
             });
         }

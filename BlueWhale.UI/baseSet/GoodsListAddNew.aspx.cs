@@ -15,8 +15,6 @@ namespace BlueWhale.UI.BaseSet
         {
             if (!this.IsPostBack)
             {
-
-
                 if (!CheckPower("GoodsListAdd"))
                 {
                     MessageBox.Show(this, "No permission for this operation!");
@@ -25,46 +23,36 @@ namespace BlueWhale.UI.BaseSet
 
                 this.txtCode.Focus();
 
-
                 this.Bind();
             }
         }
         public void Bind()
         {
-
             this.lbFieldA.Text = SysInfo.FieldA.ToString();
             this.lbFieldB.Text = SysInfo.FieldB.ToString();
             this.lbFieldC.Text = SysInfo.FieldC.ToString();
             this.lbFieldD.Text = SysInfo.FieldD.ToString();
-
-
 
             this.ddlUnitList.Items.Clear();
             this.ddlCangkuList.Items.Clear();
             this.ddlVenderTypeList.Items.Clear();
             this.ddlBrandList.Items.Clear();
 
-
             this.Bound(this.ddlVenderTypeList);
-
 
             InventoryDAL inventoryDal = new InventoryDAL();
             this.ddlCangkuList.DataSource = inventoryDal.GetALLModelList(LoginUser.ShopId);
             this.ddlCangkuList.DataTextField = "names";
             this.ddlCangkuList.DataValueField = "id";
             this.ddlCangkuList.DataBind();
-
             this.ddlCangkuList.Items.Insert(0, new ListItem("Please select", "0"));
-
 
             SpecDAL specDal = new SpecDAL();
             this.ddlUnitList.DataSource = specDal.GetALLModelList();
             this.ddlUnitList.DataTextField = "names";
             this.ddlUnitList.DataValueField = "id";
             this.ddlUnitList.DataBind();
-
             this.ddlUnitList.Items.Insert(0, new ListItem("Please select", "0"));
-
 
             GoodsBrandDAL brandDal = new GoodsBrandDAL();
             this.ddlBrandList.DataSource = brandDal.GetALLModelList();
@@ -72,10 +60,6 @@ namespace BlueWhale.UI.BaseSet
             this.ddlBrandList.DataValueField = "id";
             this.ddlBrandList.DataBind();
             this.ddlBrandList.Items.Insert(0, new ListItem("Please select", "0"));
-
-
-
-
 
             int id = ConvertTo.ConvertInt(Request.QueryString["id"].ToString());
             if (id == 0)
@@ -87,49 +71,34 @@ namespace BlueWhale.UI.BaseSet
                 this.Title = "修改商品";
             }
 
-
             DataSet ds = dal.GetModelById(id);
+
             if (ds.Tables[0].Rows.Count > 0)
             {
                 this.hf.Value = ds.Tables[0].Rows[0]["id"].ToString();
                 this.txtCode.Text = ds.Tables[0].Rows[0]["code"].ToString();
                 this.txtBarcode.Text = ds.Tables[0].Rows[0]["barcode"].ToString();
                 this.txtNames.Text = ds.Tables[0].Rows[0]["names"].ToString();
-
                 this.ddlVenderTypeList.SelectedValue = ds.Tables[0].Rows[0]["typeId"].ToString();
                 this.ddlBrandList.SelectedValue = ds.Tables[0].Rows[0]["brandId"].ToString();
-
                 this.txtSpec.Text = ds.Tables[0].Rows[0]["spec"].ToString();
                 this.ddlUnitList.SelectedValue = ds.Tables[0].Rows[0]["unitId"].ToString();
-
                 this.ddlCangkuList.SelectedValue = ds.Tables[0].Rows[0]["ckId"].ToString();
                 this.txtPlace.Text = ds.Tables[0].Rows[0]["place"].ToString();
-
                 this.txtPriceCost.Text = ds.Tables[0].Rows[0]["PriceCost"].ToString();
-
                 this.txtPriceSalesWhole.Text = ds.Tables[0].Rows[0]["PriceSalesWhole"].ToString();
                 this.txtPriceSalesRetail.Text = ds.Tables[0].Rows[0]["PriceSalesRetail"].ToString();
-
                 this.txtNumMax.Text = ds.Tables[0].Rows[0]["numMax"].ToString();
                 this.txtNumMin.Text = ds.Tables[0].Rows[0]["numMin"].ToString();
-
                 this.txtFieldA.Text = ds.Tables[0].Rows[0]["fieldA"].ToString();
                 this.txtFieldB.Text = ds.Tables[0].Rows[0]["fieldB"].ToString();
                 this.txtFieldC.Text = ds.Tables[0].Rows[0]["fieldC"].ToString();
                 this.txtFieldD.Text = ds.Tables[0].Rows[0]["fieldD"].ToString();
-
                 string isWeight = ds.Tables[0].Rows[0]["isWeight"].ToString();
-
-
-
-
-
                 this.hfImagePath.Value = ds.Tables[0].Rows[0]["imagePath"].ToString();
-
             }
             else
             {
-
                 this.ddlUnitList.SelectedValue = "0";
                 this.ddlCangkuList.SelectedValue = "0";
                 this.ddlVenderTypeList.SelectedValue = "0";
@@ -156,34 +125,24 @@ namespace BlueWhale.UI.BaseSet
             dal.Names = this.txtNames.Text;
             dal.TypeId = ConvertTo.ConvertInt(this.ddlVenderTypeList.SelectedValue.ToString());
             dal.BrandId = ConvertTo.ConvertInt(this.ddlBrandList.SelectedValue.ToString());
-
             dal.Spec = this.txtSpec.Text;
             dal.UnitId = ConvertTo.ConvertInt(this.ddlUnitList.SelectedValue.ToString());
-
             dal.CkId = ConvertTo.ConvertInt(this.ddlCangkuList.SelectedValue.ToString());
             dal.Place = this.txtPlace.Text;
-
             dal.PriceCost = ConvertTo.ConvertDec(this.txtPriceCost.Text);
             dal.PriceSalesWhole = ConvertTo.ConvertDec(this.txtPriceSalesWhole.Text);
             dal.PriceSalesRetail = ConvertTo.ConvertDec(this.txtPriceSalesRetail.Text);
-
             dal.NumMin = ConvertTo.ConvertInt(this.txtNumMin.Text);
             dal.NumMax = ConvertTo.ConvertInt(this.txtNumMax.Text);
-
             dal.BzDays = 0;
             dal.Flag = "Save";
             dal.MakeDate = DateTime.Now;
-
-
             dal.FieldA = this.txtFieldA.Text;
             dal.FieldB = this.txtFieldB.Text;
             dal.FieldC = this.txtFieldC.Text;
             dal.FieldD = this.txtFieldD.Text;
-
-
             dal.Remarks = "";
             dal.ImagePath = imageName;
-
 
             if (id.ToString() == "0")
             {
@@ -193,10 +152,8 @@ namespace BlueWhale.UI.BaseSet
                     return;
                 }
 
-
                 if (dal.Add() > 0)
                 {
-
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId; logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
                     logs.Events = "Add Good：" + this.txtCode.Text + " Name：" + this.txtNames.Text;
@@ -205,8 +162,6 @@ namespace BlueWhale.UI.BaseSet
 
                     MessageBox.ShowAndRedirect(this, "Operation Successful!", "GoodsListAdd.aspx?id=" + id.ToString());
                 }
-
-
             }
             else //Edit
             {
@@ -215,7 +170,6 @@ namespace BlueWhale.UI.BaseSet
                     MessageBox.Show(this, "Failed to edit, same code, barcode, name, specificaiton exist!");
                     return;
                 }
-
 
                 if (dal.Update() > 0)
                 {
@@ -227,13 +181,8 @@ namespace BlueWhale.UI.BaseSet
 
                     MessageBox.ShowAndRedirect(this, "Operation Successful!", "GoodsListAdd.aspx?id=" + id.ToString());
                 }
-
             }
-
-
-
         }
-
         public void DropDownListBoind(string Pading, int DirId, DataTable datatable, int deep, DropDownList list1)
         {
             DataRow[] rowlist = datatable.Select("parentID='" + DirId + "'");
@@ -253,7 +202,6 @@ namespace BlueWhale.UI.BaseSet
 
         public void Bound(DropDownList list1)
         {
-
             list1.Items.Clear();
 
             DataTable datatable = GetDataTable();
@@ -270,6 +218,7 @@ namespace BlueWhale.UI.BaseSet
             list1.Items.Insert(0, items);
             list1.SelectedValue = "0";
         }
+
         public DataTable GetDataTable()
         {
             GoodsTypeDAL typesDal = new GoodsTypeDAL();
@@ -278,6 +227,5 @@ namespace BlueWhale.UI.BaseSet
             DataTable tb = ds.Tables[0];
             return tb;
         }
-
     }
 }

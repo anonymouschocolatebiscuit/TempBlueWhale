@@ -129,7 +129,7 @@
                                 <FooterStyle HorizontalAlign="Right" />
                                 <ItemStyle Width="100px" HorizontalAlign="Right" />
                             </asp:BoundField>
-                            <asp:CommandField HeaderText="Delete" ShowDeleteButton="True">
+                            <asp:CommandField HeaderText="Delete" ShowDeleteButton="True" DeleteText="Delete">
                                 <ItemStyle Width="80px" />
                             </asp:CommandField>
                         </Columns>

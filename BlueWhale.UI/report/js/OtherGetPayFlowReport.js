@@ -32,7 +32,7 @@ $(function () {
     manager = $("#maingrid").ligerGrid({
         columns: [
             { display: 'Bussiness Date', name: 'bizDate', width: 120, align: 'center' },
-            { display: 'Account Number', name: 'code', width: 110, align: 'center' },
+            { display: 'Account Number', name: 'code', width: 120, align: 'center' },
             { display: 'Account Name', name: 'bkName', width: 120, align: 'center' },
             { display: 'Receipt Number', name: 'number', width: 150, align: 'center' },
             { display: 'Business Category', name: 'bizType', width: 130, align: 'center' },
@@ -70,7 +70,7 @@ $(function () {
                     }
                 }
             },
-            { display: 'Handle By', name: 'bizName', width: 100, align: 'center' },
+            { display: 'Handled By', name: 'bizName', width: 100, align: 'center' },
 
             { display: 'Summary', name: 'remarks', width: 170, align: 'left' },
 

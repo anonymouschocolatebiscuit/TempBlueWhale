@@ -22,7 +22,7 @@ namespace BlueWhale.UI.report
             if (Request.Params["Action"] == "GetDataList")
             {
                 DateTime bizStart = DateTime.Parse(Request.Params["start"].ToString());
-                DateTime bizEnd = DateTime.Parse(Request.Params["end"].ToString());
+                DateTime bizEnd = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 string goodsId = Request.Params["goodsId"].ToString();
                 string typeId = Request.Params["typeId"].ToString();
@@ -34,7 +34,6 @@ namespace BlueWhale.UI.report
 
         void GetDataList(DateTime bizStart, DateTime bizEnd, string goodsId, string typeId)
         {
-
             DataSet ds = dal.GetProduceGetListItemSumGoods(LoginUser.ShopId, bizStart, bizEnd, typeId, goodsId);
 
             IList<object> list = new List<object>();
@@ -57,6 +56,5 @@ namespace BlueWhale.UI.report
             string s = new JavaScriptSerializer().Serialize(griddata);
             Response.Write(s);
         }
-
     }
 }

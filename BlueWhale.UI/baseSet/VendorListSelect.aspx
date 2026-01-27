@@ -32,22 +32,22 @@
             $(function () {
                 var form = $("#formTB").ligerForm();
                 var ddlTypeList = $.ligerui.get("ddlTypeList");
-                ddlTypeList.set("Width", 130);
+                ddlTypeList.set("Width", 160);
 
                 var txtKeys = $.ligerui.get("txtKeys");
-                txtKeys.set("Width", 300);
+                txtKeys.set("Width", 400);
 
                 manager = $("#maingrid4").ligerGrid({
                     columns: [
-                        { display: 'Vender Category', name: 'typeName', width: 100, type: 'int', align: 'center' },
-                        { display: 'Vender Number', name: 'code', width: 100, align: 'center' },
+                        { display: 'Vender Category', name: 'typeName', width: 120, type: 'int', align: 'center' },
+                        { display: 'Vender Number', name: 'code', width: 110, align: 'center' },
                         { display: 'Vender Name', name: 'names', width: 230, align: 'left' },
                         { display: 'Balance Date', name: 'yueDate', width: 80, align: 'center' },
-                        { display: 'Opening Balance', name: 'balance', width: 70, align: 'center' },
-                        { display: 'Tax rate%', name: 'tax', width: 60, align: 'center' },
-                        { display: 'Primary contact person', name: 'linkMan', width: 70, align: 'center' },
-                        { display: 'Mobile Phone', name: 'phone', width: 100, align: 'center' },
-                        { display: 'Landline Phone', name: 'tel', width: 110, align: 'center', type: "date" },
+                        { display: 'Opening Balance', name: 'balance', width: 120, align: 'center' },
+                        { display: 'Tax rate%', name: 'tax', width: 70, align: 'center' },
+                        { display: 'Primary contact person', name: 'linkMan', width: 180, align: 'center' },
+                        { display: 'Mobile Phone', name: 'phone', width: 110, align: 'center' },
+                        { display: 'Landline Phone', name: 'tel', width: 120, align: 'center', type: "date" },
                         { display: 'Status', name: 'flag', width: 80, align: 'center' },
                         { display: 'Entry Date', name: 'makeDate', width: 80, align: 'center', type: "date" }
                     ], pageSize: 10,

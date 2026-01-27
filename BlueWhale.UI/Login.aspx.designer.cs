@@ -9,11 +9,8 @@
 
 namespace BlueWhale.UI
 {
-
-
     public partial class Login
     {
-
         /// <summary>
         /// form1 control.
         /// </summary>

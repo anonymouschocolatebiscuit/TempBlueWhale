@@ -53,7 +53,7 @@
                 { text: "Add", click: addRowTop,img: '../lib/ligerUI/skins/icons/add.gif'},
                 { line: true },
                
-                { text: "Modify", click:editRow,img: '../lib/ligerUI/skins/icons/modify.gif'},
+                { text: "Edit", click:editRow,img: '../lib/ligerUI/skins/icons/modify.gif'},
                 { line: true },
                
                 { text: "Delete", click: deleteRow,img: '../lib/ligerUI/skins/icons/delete.gif'}
@@ -69,7 +69,7 @@
             var row = manager.getSelectedRow();
             if (!row) { $.ligerDialog.warn('Please select the row to modify!'); return; }
             
-            var title="Modify Measure Unit";
+            var title="Edit Measure Unit";
            
             $.ligerDialog.open({ 
                 title : title,

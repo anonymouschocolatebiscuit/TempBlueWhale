@@ -82,20 +82,44 @@
             });
         });
     </script>
+
+    <style type="text/css">
+        .button-cell {
+            margin-top: 0.5rem;
+            text-align: center !important;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding-right:1rem;
+        }
+
+        .save-btn {
+            margin-right: 0.25rem;
+        }
+
+        .l-text {
+            width: 240px !important;
+        }
+
+        .l-text-field {
+            padding-left: 0.5rem !important;
+            width: 230px !important;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <table id="form" border="0" cellpadding="0" cellspacing="10" style="width:380px; line-height:40px;">
+        <table id="form" border="0" cellpadding="0" cellspacing="10" style="width:320px; line-height:40px;">
             <tr>
-                <td style="width:80px; text-align:right;">Name:</td>
+                <td style="width:40px; text-align:left; padding: 0 0.5rem;">Name:</td>
                 <td>
                     <asp:TextBox ID="txtNames" runat="server"></asp:TextBox>
                 </td>
             </tr>
-            <tr>
+            <tr style="align-items: center;">
                 <td style="text-align:right;">&nbsp;</td>
-                <td style="text-align:right; padding-right:30px;">
-                    <asp:Button ID="btnSave" runat="server" Text="Save" class="ui_state_highlight" onclick="btnSave_Click" />
+                <td class="button-cell">
+                    <asp:Button ID="btnSave" runat="server" Text="Save" class="ui_state_highlight save-btn" onclick="btnSave_Click"/>
                     <input id="btnCancel" class="ui-btn" type="button" value="Close" onclick="closeDialog()" />
                 </td>
             </tr>

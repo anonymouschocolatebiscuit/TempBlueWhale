@@ -1,10 +1,10 @@
-﻿using System;
-using System.Data;
-using System.Web.UI.WebControls;
-using BlueWhale.Common;
+﻿using BlueWhale.Common;
 using BlueWhale.DAL;
 using BlueWhale.DAL.produce;
 using BlueWhale.UI.src;
+using System;
+using System.Data;
+using System.Web.UI.WebControls;
 
 namespace BlueWhale.UI.baseSet
 {
@@ -130,7 +130,7 @@ namespace BlueWhale.UI.baseSet
                     {
                         ShopId = LoginUser.ShopId,
                         Users = LoginUser.Phone + "-" + LoginUser.Names,
-                        Events = "Modify process-ID:" + id.ToString() + " To:" + this.txtNames.Text,
+                        Events = "Edit Process-ID:" + id.ToString() + " To:" + this.txtNames.Text,
                         Ip = Request.UserHostAddress.ToString()
                     };
                     logs.Add();

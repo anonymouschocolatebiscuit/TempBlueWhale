@@ -1,10 +1,11 @@
-﻿using BlueWhale.Common;
+﻿using BlueWhale.UI.src;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Web.Script.Serialization;
 using System.Web.UI;
-using BlueWhale.UI.src;
+using BlueWhale.DAL.produce;
+using BlueWhale.Common;
 using BlueWhale.DAL;
 
 namespace BlueWhale.UI.produce
@@ -13,7 +14,7 @@ namespace BlueWhale.UI.produce
     {
         DAL.produce.goodsBomListType dalType = new DAL.produce.goodsBomListType();
         DAL.produce.goodsBomList dal = new DAL.produce.goodsBomList();
-        DAL.produce.goodsBomListItem itemDAL = new DAL.produce.goodsBomListItem();
+        goodsBomListItem itemDAL = new goodsBomListItem();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -60,7 +61,7 @@ namespace BlueWhale.UI.produce
 
             if (!Page.IsPostBack)
             {
-
+                // do nothing
             }
         }
 
@@ -95,8 +96,7 @@ namespace BlueWhale.UI.produce
             }
 
             var griddata = new { Rows = listTree };
-
-            string s = new JavaScriptSerializer().Serialize(listTree);
+            string s = new JavaScriptSerializer().Serialize(listTree);//传给grid的时候才要
 
             Response.Write(s);
         }
@@ -110,7 +110,7 @@ namespace BlueWhale.UI.produce
                 isWhere += "  and typeId='" + typeId + "'  ";
             }
             DataSet ds = dal.GetList(isWhere);
-            DataTable dt = ds.Tables[0];
+             DataTable dt = ds.Tables[0];
 
             for (var i = 0; i < dt.Rows.Count; i++)
             {
@@ -130,11 +130,9 @@ namespace BlueWhale.UI.produce
                     num = dt.Rows[i]["num"].ToString(),
                     rate = dt.Rows[i]["rate"].ToString(),
                     remarks = dt.Rows[i]["remarks"].ToString(),
-
                     makeId = dt.Rows[i]["makeId"].ToString(),
                     makeName = dt.Rows[i]["makeName"].ToString(),
                     makeDate = dt.Rows[i]["makeDate"].ToString(),
-
                     checkId = dt.Rows[i]["checkId"].ToString(),
                     checkName = dt.Rows[i]["checkName"].ToString(),
                     checkDate = dt.Rows[i]["checkDate"].ToString()
@@ -142,8 +140,7 @@ namespace BlueWhale.UI.produce
             }
 
             var griddata = new { Rows = list };
-
-            string s = new JavaScriptSerializer().Serialize(griddata);
+            string s = new JavaScriptSerializer().Serialize(griddata);//传给grid的时候才要
 
             Response.Write(s);
         }
@@ -167,13 +164,12 @@ namespace BlueWhale.UI.produce
                     num = dt.Rows[i]["num"].ToString(),
                     rate = dt.Rows[i]["rate"].ToString(),
                     remarks = dt.Rows[i]["remarks"].ToString()
-
+               
                 });
             }
 
             var griddata = new { Rows = list };
-
-            string s = new JavaScriptSerializer().Serialize(griddata);
+            string s = new JavaScriptSerializer().Serialize(griddata);//传给grid的时候才要
 
             Response.Write(s);
         }
@@ -185,9 +181,7 @@ namespace BlueWhale.UI.produce
                 LogsDAL logs = new LogsDAL();
 
                 int delId = ConvertTo.ConvertInt(id);
-
                 int num = 0;
-
                 bool del = dal.Delete(delId);
                 if (del)
                 {
@@ -195,25 +189,24 @@ namespace BlueWhale.UI.produce
 
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Delete BOM checklist - ID：" + delId.ToString();
+                    logs.Events = "Delete BOM List-ID：" + delId.ToString();
                     logs.Ip = Request.UserHostAddress.ToString();
                     logs.Add();
                 }
 
                 if (num > 0)
                 {
-                    Response.Write("Delete successfully " + num + "rows records!");
+                    Response.Write("Successfully deleted " + num + " entries!");
                 }
                 else
                 {
-                    Response.Write("Delete failed!");
+                    Response.Write("Deletion failed！");
                 }
             }
             else
             {
-                Response.Write("Login timed out, please log in again!");
+                Response.Write("Login timeout，please login and try again!");
             }
-
         }
 
         void CheckRow(string id)
@@ -223,9 +216,7 @@ namespace BlueWhale.UI.produce
                 LogsDAL logs = new LogsDAL();
 
                 int delId = ConvertTo.ConvertInt(id);
-
                 int num = 0;
-
                 int del = dal.UpdateCheck(delId, LoginUser.Id, LoginUser.Names, DateTime.Now, "Reviewed");
                 if (del > 0)
                 {
@@ -233,23 +224,23 @@ namespace BlueWhale.UI.produce
 
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Review BOM checklist - ID：" + delId.ToString();
+                    logs.Events = "Reviewed BOM List-ID：" + delId.ToString();
                     logs.Ip = Request.UserHostAddress.ToString();
                     logs.Add();
                 }
 
                 if (num > 0)
                 {
-                    Response.Write("Review successfully " + num + "rows records!");
+                    Response.Write("Successfully approved " + num + " entries!");
                 }
                 else
                 {
-                    Response.Write("Review failed!");
+                    Response.Write("Approval failed!");
                 }
             }
             else
             {
-                Response.Write("Login timed out, please log in again!");
+                Response.Write("Login timeout，please login and try again!");
             }
         }
 
@@ -260,9 +251,7 @@ namespace BlueWhale.UI.produce
                 LogsDAL logs = new LogsDAL();
 
                 int delId = ConvertTo.ConvertInt(id);
-
                 int num = 0;
-
                 int del = dal.UpdateCheck(delId, LoginUser.Id, LoginUser.Names, DateTime.Now, "Pending");
                 if (del > 0)
                 {
@@ -270,23 +259,23 @@ namespace BlueWhale.UI.produce
 
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Cancel review BOM checklist - ID：" + delId.ToString();
+                    logs.Events = "Rejected BOM List-ID：" + delId.ToString();
                     logs.Ip = Request.UserHostAddress.ToString();
                     logs.Add();
                 }
 
                 if (num > 0)
                 {
-                    Response.Write("Cancel review successfully " + num + "rows records!");
+                    Response.Write("Successfully rejected " + num + " entries!");
                 }
                 else
                 {
-                    Response.Write("Cancel review failed!");
+                    Response.Write("Rejection failed!");
                 }
             }
             else
             {
-                Response.Write("Login timed out, please log in again!");
+                Response.Write("Login timeout，please login and try again!");
             }
         }
     }

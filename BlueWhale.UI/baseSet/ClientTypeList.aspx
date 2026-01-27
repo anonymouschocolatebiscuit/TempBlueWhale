@@ -18,7 +18,7 @@
     <script src="../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
     <script src="../lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
     <script src="../lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
-    <script src="../jsData/TreeDeptData.js" type="text/javascript"></script>
+    <script src="../lib.1.3.1/Source/demos/grid/TreeDeptData.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         var manager;
@@ -36,14 +36,15 @@
                 url: 'ClientTypeList.aspx?Action=GetDataList',
                 alternatingRow: false,
                 rownumbers: true,
+                dataAction: 'local',
                 onDblClickRow: function () {
                     editRow();
                 },
                 toolbar: {
                     items: [
-                        { text: 'Reload', click: reload, img: '../lib/ligerUI/skins/icons/refresh.png' },
+                        { text: 'Refresh', click: reload, img: '../lib/ligerUI/skins/icons/refresh.png' },
                         { line: true },
-                        { text: 'Create', click: addRowTop, img: '../lib/ligerUI/skins/icons/add.gif' },
+                        { text: 'Add', click: addRowTop, img: '../lib/ligerUI/skins/icons/add.gif' },
                         { line: true },
                         { text: 'Edit', click: editRow, img: '../lib/ligerUI/skins/icons/modify.gif' },
                         { line: true },
@@ -59,13 +60,23 @@
                 $.ligerDialog.warn('Please select the row to edit！');
                 return;
             }
-            $.ligerDialog.open({
+            var win = $.ligerDialog.open({
                 title: "Edit Client Category",
                 url: "ClientTypeListAdd.aspx?id=" + row.id + "&names=" + row.names + "&flag=" + row.flag,
-                height: 250,
+                height: 210,
                 width: 400,
-                modal: true
+                modal: true,
+                onClosed: function () {
+                    reload();
+                }
             });
+
+            setTimeout(function () {
+                $(".l-dialog-winbtn.l-dialog-close").unbind('click').bind('click', function () {
+                    win.close();  // close dialog
+                    reload();
+                });
+            }, 100);
         }
 
         function deleteRow() {
@@ -111,13 +122,23 @@
         }
 
         function addRowTop() {
-            $.ligerDialog.open({
+            var win = $.ligerDialog.open({
                 title: "Create Client Category",
                 url: 'ClientTypeListAdd.aspx',
-                height: 250,
+                height: 210,
                 width: 400,
-                modal: true
+                modal: true,
+                onClosed: function () {
+                    reload();
+                }
             });
+
+            setTimeout(function () {
+                $(".l-dialog-winbtn.l-dialog-close").unbind('click').bind('click', function () {
+                    win.close();  // close dialog
+                    reload();
+                });
+            }, 100);
         }
     </script>
 

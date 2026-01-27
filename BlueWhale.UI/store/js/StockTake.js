@@ -112,10 +112,9 @@ function save() {
         //|| data[i].sumNumPD=="0" || data[i].sumNumPD=="0.00"
 
         if (data[i].sumNumPD < 0 || data[i].sumNumPD == "") {
-            $.ligerDialog.warn("请输入第" + (i + 1) + "行的商品数量！");
+            $.ligerDialog.warn("Please enter the product quantity for row " + (i + 1) + "!");
 
             return;
-            alert("我就不执行了！");
         }
     }
 

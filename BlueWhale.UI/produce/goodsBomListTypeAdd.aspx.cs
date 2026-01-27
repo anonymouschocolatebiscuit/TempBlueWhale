@@ -2,6 +2,7 @@
 using BlueWhale.DAL;
 using BlueWhale.UI.src;
 using System;
+using System.Text.RegularExpressions;
 
 namespace BlueWhale.UI.produce
 {
@@ -37,6 +38,7 @@ namespace BlueWhale.UI.produce
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            // 1. Empty check
             if (this.txtNames.Text == "")
             {
                 MessageBox.Show(this, "Please enter a name!");
@@ -44,6 +46,22 @@ namespace BlueWhale.UI.produce
                 return;
             }
 
+            // 2. Name Pattern check (only letters and digits allowed)
+            Regex regex = new Regex("^[a-zA-Z0-9]+$");
+            if (!regex.IsMatch(this.txtNames.Text))
+            {
+                MessageBox.Show(this, "No symbol allowed!");
+                this.txtNames.Focus();
+                return;
+            }
+
+            // 3. SortId Patterb cgecj (only number allowed)
+            if (string.IsNullOrWhiteSpace(this.txtSortId.Text) || !int.TryParse(this.txtSortId.Text, out _))
+            {
+                MessageBox.Show(this, "Sort must be a valid number!");
+                this.txtSortId.Focus();
+                return;
+            }
 
             int id = ConvertTo.ConvertInt(this.hfId.Value.ToString());
 

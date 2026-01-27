@@ -9,11 +9,10 @@ namespace BlueWhale.Common
     {
         private static readonly object writeFile = new object();
 
-
         /// <summary>
         /// Create local log
         /// </summary>
-        /// <param name="exception"></param> 
+        /// <param name="exception"></param>
         public static void WriteLog(string debugstr)
         {
             lock (writeFile)
@@ -24,13 +23,14 @@ namespace BlueWhale.Common
                 try
                 {
                     string filename = DateTime.Now.ToString("yyyy-MM-dd") + ".txt";
-                    //Server log menu
+                    // Server log directory
                     string folder = HttpContext.Current.Server.MapPath("~/Log");
                     if (!Directory.Exists(folder))
                         Directory.CreateDirectory(folder);
-                    fs = new FileStream(folder + "/" + filename, System.IO.FileMode.Append, System.IO.FileAccess.Write);
+
+                    fs = new FileStream(Path.Combine(folder, filename), FileMode.Append, FileAccess.Write);
                     sw = new StreamWriter(fs, Encoding.UTF8);
-                    sw.WriteLine(DateTime.Now.ToString() + "     " + debugstr + "\r\n");
+                    sw.WriteLine($"{DateTime.Now:yyyy-MM-dd HH:mm:ss}     {debugstr}\r\n");
                 }
                 finally
                 {
@@ -42,7 +42,6 @@ namespace BlueWhale.Common
                     }
                     if (fs != null)
                     {
-                        //     fs.Flush();
                         fs.Dispose();
                         fs = null;
                     }
