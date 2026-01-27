@@ -5030,37 +5030,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ashx\produceInListAdd.ashx" />
-    <Content Include="Scripts\bootstrap\css\vssver2.scc" />
-    <Content Include="Scripts\bootstrap\datetimepicker\css\vssver2.scc" />
-    <Content Include="Scripts\bootstrap\datetimepicker\js\locales\vssver2.scc" />
-    <Content Include="Scripts\bootstrap\datetimepicker\js\vssver2.scc" />
-    <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Scripts\bootstrap\fonts\vssver2.scc" />
-    <Content Include="Scripts\bootstrap\js\vssver2.scc" />
-    <Content Include="Scripts\datepicker\lang\vssver2.scc" />
-    <Content Include="Scripts\datepicker\skin\default\vssver2.scc" />
-    <Content Include="Scripts\datepicker\skin\vssver2.scc" />
-    <Content Include="Scripts\datepicker\vssver2.scc" />
-    <Content Include="Scripts\jscolor\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\skins\blue\ie6\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\skins\blue\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\skins\chrome\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\skins\iblack\ie6\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\skins\iblack\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\skins\iblue\ie6\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\skins\iblue\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\skins\icons\32X32\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\skins\icons\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\skins\idialog\ie6\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\skins\idialog\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\skins\igreen\ie6\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\skins\igreen\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\skins\vssver2.scc" />
-    <Content Include="Scripts\lhgdialog\vssver2.scc" />
-    <Content Include="Scripts\music\vssver2.scc" />
-    <Content Include="Scripts\swfupload\vssver2.scc" />
     <Content Include="sales\ashx\SalesReceiptListAdd.ashx" />
     <Content Include="sales\ashx\SalesOrderListAdd.ashx" />
     <Content Include="sales\ashx\SalesReceiptListEdit.ashx" />
