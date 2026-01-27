@@ -17,6 +17,7 @@ namespace BlueWhale.UI.baseSet
                 this.Bind();
             }
         }
+
         public void Bind()
         {
             int id = ConvertTo.ConvertInt(Request.QueryString["id"].ToString());

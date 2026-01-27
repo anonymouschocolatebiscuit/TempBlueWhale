@@ -21,8 +21,6 @@ function formatCurrency(x) {
         s_x += '0';
     }
     return s_x;
-
-
 }
 
 $(document).bind('keydown.grid', function (event) {
@@ -174,7 +172,6 @@ function f_onGoodsChanged(e) {
 
     var grid = liger.get("maingrid");
     var selected = e[0];// e.data[0]; 
-    // alert(selected.names);
     var selectedRow = manager.getSelected();
 
     grid.updateRow(selectedRow, {
@@ -239,10 +236,6 @@ $(function () {
                             h += "<a href='javascript:addNewRow()' title='Add a new row' style='float:left;'><div class='ui-icon ui-icon-plus'></div></a> ";
                             h += "<a href='javascript:deleteRow()' title='Delete row' style='float:left;'><div class='ui-icon ui-icon-trash'></div></a> ";
                             h += "<a href='javascript:f_selectContact()' title='Select process' style='float:right;'><div class='ui-icon ui-icon-search'></div></a> ";
-                        }
-                        else {
-                            //                        h += "<a href='javascript:endEdit(" + rowindex + ")'>Submit</a> ";
-                            //                        h += "<a href='javascript:cancelEdit(" + rowindex + ")'>Cancel</a> "; 
                         }
                         return h;
                     }
@@ -373,12 +366,14 @@ function getSelected() {
     if (!row) { alert('Please select a row'); return; }
     alert(JSON.stringify(row));
 }
+
 function getData() {
     var data = manager.getData();
     alert(JSON.stringify(data));
 }
 
 var manager;
+
 $(function () {
     window['gBom'] =
         manager = $("#maingrid").ligerGrid({
@@ -391,15 +386,11 @@ $(function () {
                             h += "<a href='javascript:deleteRow()' title='Delete row' style='text-align :center;'><div class='ui-icon ui-icon-trash'></div></a> ";
                             //h += "<a href='javascript:f_selectContact()' title='Select contact' style='float:right;'><div class='ui-icon ui-icon-search'></div></a> ";
                         }
-                        else {
-                            //                        h += "<a href='javascript:endEdit(" + rowindex + ")'>Submit</a> ";
-                            //                        h += "<a href='javascript:cancelEdit(" + rowindex + ")'>Cancel</a> "; 
-                        }
                         return h;
                     }
                 }
                 ,
-                { display: 'Product Code', name: 'code', width: 100, align: 'center' },
+                { display: 'Product Code', name: 'code', width: 110, align: 'center' },
                 {
                     display: 'Product Name', name: 'goodsName', width: 250, align: 'left',
 
@@ -416,7 +407,7 @@ $(function () {
                 { display: 'Specifications', name: 'spec', width: 100, align: 'center' },
                 { display: 'Unit', name: 'unitName', width: 70, align: 'center' },
                 {
-                    display: 'Picking Warehouse', name: 'ckId', width: 80, isSort: false, textField: 'ckName',
+                    display: 'Picking Warehouse', name: 'ckId', width: 130, isSort: false, textField: 'ckName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
@@ -424,9 +415,8 @@ $(function () {
                     }
 
                 },
-
                 {
-                    display: 'Number of applications', name: 'numApply', width: 80, type: 'float', align: 'right',
+                    display: 'Number of applications', name: 'numApply', width: 180, type: 'float', align: 'right',
 
                     totalSummary:
                     {
@@ -442,7 +432,7 @@ $(function () {
                 },
 
                 {
-                    display: 'Actual quantity', name: 'num', width: 80, align: 'right', type: 'float', editor: { type: 'float' },
+                    display: 'Actual Quantity', name: 'num', width: 120, align: 'right', type: 'float', editor: { type: 'float' },
                     totalSummary:
                     {
                         align: 'right',   //Summary cell content alignment: left/center/right
@@ -522,8 +512,6 @@ function save() {
 
     }
 
-    //先删掉空白行
-
     var data = manager.getData();
 
     //1, First delete the blank rows
@@ -534,8 +522,6 @@ function save() {
         }
     }
 
-    var isGongxu = false;
-
     //2, Check if a product is selected
     if (data.length == 0) {
         $.ligerDialog.warn("Please select the product to be picked up!");
@@ -545,8 +531,6 @@ function save() {
 
     }
     for (var i = 0; i < data.length; i++) {
-
-
         if (data[i].ckId == 0 || data[i].ckId == "" || data[i].ckId == "0" || data[i].ckName == "") {
 
             $.ligerDialog.warn("Please enter the" + (i + 1) + "row of Warehouse");
@@ -585,8 +569,6 @@ function save() {
         remarks: remarks
     };
 
-    // alert(JSON.stringify(headJson));
-
     var dataNew = [];
 
     dataNew.push(headJson);
@@ -601,21 +583,6 @@ function save() {
     list += "}";
 
     var postData = JSON.parse(list);// Final json
-
-    //   alert(JSON.stringify(postData));
-
-    //  return;
-    //        alert(postData.Rows[0].id);
-    //        
-    //        alert(postData.bizDate);
-    //        
-    //        alert(postData.Rows[0].goodsName);
-
-    //   alert(JSON.stringify(postData));
-
-    //       $("#txtRemarks").val(JSON.stringify(postData));
-
-    // return;
 
     $.ajax({
         type: "POST",
@@ -642,8 +609,6 @@ function getBomList() {
     var pId = $("#hfPId").val();
     var goodsId = $("#hfGoodsId").val();
     var num = $("#txtNum").val();
-
-    //alert("goodsId:" + goodsId + " num:" + num);
 
     if (goodsId > 0 && num > 0) {
         manager.changePage("first");

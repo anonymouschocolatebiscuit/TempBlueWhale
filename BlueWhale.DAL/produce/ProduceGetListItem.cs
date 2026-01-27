@@ -13,8 +13,8 @@ namespace BlueWhale.DAL.produce
     {
         public ProduceGetListItem()
         { }
-        #region  BasicMethod
 
+        #region  BasicMethod
         /// <summary>
         /// Get the maximum ID
         /// </summary>
@@ -31,6 +31,7 @@ namespace BlueWhale.DAL.produce
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) from produceGetListItem");
             strSql.Append(" where id=@id");
+
             SqlParameter[] parameters = {
                     new SqlParameter("@id", SqlDbType.Int,4)
             };
@@ -51,6 +52,7 @@ namespace BlueWhale.DAL.produce
             strSql.Append(" values (");
             strSql.Append("@pId,@goodsId,@ckId,@pihao,@numApply,@num,@price,@sumPrice,@remarks)");
             strSql.Append(";select @@IDENTITY");
+
             SqlParameter[] parameters = {
                     new SqlParameter("@pId", SqlDbType.Int,4),
                     new SqlParameter("@goodsId", SqlDbType.Int,4),
@@ -98,6 +100,7 @@ namespace BlueWhale.DAL.produce
             strSql.Append("sumPrice=@sumPrice,");
             strSql.Append("remarks=@remarks");
             strSql.Append(" where id=@id");
+
             SqlParameter[] parameters = {
                     new SqlParameter("@pId", SqlDbType.Int,4),
                     new SqlParameter("@goodsId", SqlDbType.Int,4),
@@ -121,6 +124,7 @@ namespace BlueWhale.DAL.produce
             parameters[9].Value = model.id;
 
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+
             if (rows > 0)
             {
                 return true;
@@ -132,7 +136,6 @@ namespace BlueWhale.DAL.produce
         }
 
         #region produce get list new ui
-
         /// <summary>
         /// produce get list new ui
         /// </summary>
@@ -170,11 +173,9 @@ namespace BlueWhale.DAL.produce
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, param);
         }
-
         #endregion
 
         #region Query the production inventory summary table NewUI
-
         /// <summary>
         /// Query the production inventory summary table NewUI
         /// </summary>
@@ -215,7 +216,6 @@ namespace BlueWhale.DAL.produce
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, param);
         }
-
         #endregion
 
         /// <summary>
@@ -226,12 +226,14 @@ namespace BlueWhale.DAL.produce
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from produceGetListItem ");
             strSql.Append(" where pId=@pId");
+
             SqlParameter[] parameters = {
                     new SqlParameter("@pId", SqlDbType.Int,4)
             };
             parameters[0].Value = pId;
 
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+
             if (rows > 0)
             {
                 return true;
@@ -241,6 +243,7 @@ namespace BlueWhale.DAL.produce
                 return false;
             }
         }
+
         /// <summary>
         /// Batch Delete
         /// </summary>
@@ -249,7 +252,9 @@ namespace BlueWhale.DAL.produce
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from produceGetListItem ");
             strSql.Append(" where id in (" + idlist + ")  ");
+
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString());
+
             if (rows > 0)
             {
                 return true;
@@ -269,13 +274,16 @@ namespace BlueWhale.DAL.produce
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select  top 1 id,pId,goodsId,ckId,pihao,numApply,num,price,sumPrice,remarks from produceGetListItem ");
             strSql.Append(" where id=@id");
+            
             SqlParameter[] parameters = {
                     new SqlParameter("@id", SqlDbType.Int,4)
             };
             parameters[0].Value = id;
 
             Model.produce.ProduceGetListItemModel model = new Model.produce.ProduceGetListItemModel();
+
             DataSet ds = DbHelperSQL.Query(strSql.ToString(), parameters);
+
             if (ds.Tables[0].Rows.Count > 0)
             {
                 return DataRowToModel(ds.Tables[0].Rows[0]);
@@ -292,6 +300,7 @@ namespace BlueWhale.DAL.produce
         public Model.produce.ProduceGetListItemModel DataRowToModel(DataRow row)
         {
             Model.produce.ProduceGetListItemModel model = new Model.produce.ProduceGetListItemModel();
+
             if (row != null)
             {
                 if (row["id"] != null && row["id"].ToString() != "")
@@ -346,10 +355,12 @@ namespace BlueWhale.DAL.produce
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select * ");
             strSql.Append(" FROM viewProduceGetListItem ");
+
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);
             }
+
             return DbHelperSQL.Query(strSql.ToString());
         }
 
@@ -360,17 +371,22 @@ namespace BlueWhale.DAL.produce
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select ");
+
             if (Top > 0)
             {
                 strSql.Append(" top " + Top.ToString());
             }
+
             strSql.Append(" id,pId,goodsId,ckId,pihao,numApply,num,price,sumPrice,remarks ");
             strSql.Append(" FROM produceGetListItem ");
+
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);
             }
+
             strSql.Append(" order by " + filedOrder);
+
             return DbHelperSQL.Query(strSql.ToString());
         }
 
@@ -381,11 +397,14 @@ namespace BlueWhale.DAL.produce
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) FROM produceGetListItem ");
+
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);
             }
+
             object obj = DbHelperSQL.GetSingle(strSql.ToString());
+
             if (obj == null)
             {
                 return 0;
@@ -404,6 +423,7 @@ namespace BlueWhale.DAL.produce
             StringBuilder strSql = new StringBuilder();
             strSql.Append("SELECT * FROM ( ");
             strSql.Append(" SELECT ROW_NUMBER() OVER (");
+
             if (!string.IsNullOrEmpty(orderby.Trim()))
             {
                 strSql.Append("order by T." + orderby);
@@ -412,19 +432,19 @@ namespace BlueWhale.DAL.produce
             {
                 strSql.Append("order by T.id desc");
             }
+
             strSql.Append(")AS Row, T.*  from produceGetListItem T ");
+
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 strSql.Append(" WHERE " + strWhere);
             }
+
             strSql.Append(" ) TT");
             strSql.AppendFormat(" WHERE TT.Row between {0} and {1}", startIndex, endIndex);
+
             return DbHelperSQL.Query(strSql.ToString());
         }
         #endregion  BasicMethod
-
-        #region  ExtensionMethod
-
-        #endregion  ExtensionMethod
     }
 }

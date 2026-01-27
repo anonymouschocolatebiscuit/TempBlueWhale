@@ -13,13 +13,10 @@ namespace BlueWhale.UI.store.ashx
     public class OtherOutListAdd : IHttpHandler, IRequiresSessionState
     {
         public OtherOutDAL dal = new OtherOutDAL();
-
-
         public class OrderListModel<T>
         {
 
             #region Header Fields
-
 
             private int _venderId;
             public int venderId
@@ -33,7 +30,6 @@ namespace BlueWhale.UI.store.ashx
                 get { return _bizDate; }
                 set { _bizDate = value; }
             }
-
 
             private int _typeId;
             public int typeId
@@ -114,7 +110,6 @@ namespace BlueWhale.UI.store.ashx
                 set { remarks = value; }
             }
         }
-
 
         public void ProcessRequest(HttpContext context)
         {

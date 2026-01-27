@@ -2,21 +2,21 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-  
+
     <title>Inventory Settings</title>
 
-   <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" /> 
+    <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
- 
+
     <script src="../lib/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
     <script src="../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
     <script src="../lib/json2.js" type="text/javascript"></script>
 
     <script src="../jsData/TreeDeptData.js" type="text/javascript"></script>
-    
-       <script type="text/javascript">
+
+    <script type="text/javascript">
       
         var manager;
         $(function ()
@@ -24,7 +24,7 @@
             manager = $("#maingrid").ligerGrid({
                 columns: [
                 
-                 { display: 'Inventory Code', name: 'code',id: 'code', width: 100, align: 'center' },
+                 { display: 'Inventory Code', name: 'code',id: 'code', width: 120, align: 'center' },
                  { display: 'Inventory Name', name: 'names',id: 'levelName', width: 250, align: 'left' },
                  { display: 'Status', name: 'flag', width: 100, type: 'int', align: 'center',
                     render: function (row) {  
@@ -52,13 +52,13 @@
                 { text: "Add", click: addRowTop,img: '../lib/ligerUI/skins/icons/add.gif'},
                 { line: true },
                
-                { text: "Modify", click:editRow,img: '../lib/ligerUI/skins/icons/modify.gif'},
+                { text: "Edit", click:editRow,img: '../lib/ligerUI/skins/icons/modify.gif'},
                 { line: true },
                 
-                 { text: "Enable", click:stopRow,img: '../lib/ligerUI/skins/icons/ok.gif'},
+                 { text: "Enable", click:function () { stopRow(1); },img: '../lib/ligerUI/skins/icons/ok.gif'},
                 { line: true },
                 
-                 { text: "Disable", click:stopRow,img: '../lib/ligerUI/skins/icons/busy.gif'},
+                 { text: "Disable", click:function () { stopRow(0); },img: '../lib/ligerUI/skins/icons/busy.gif'},
                 { line: true },
                
                 { text: "Delete", click: deleteRow,img: '../lib/ligerUI/skins/icons/delete.gif'}
@@ -74,7 +74,7 @@
             var row = manager.getSelectedRow();
             if (!row) { $.ligerDialog.warn('Please select the row to modify!'); return; }
             
-            var title ="Modify Inventory";
+            var title ="Edit Inventory";
            
             $.ligerDialog.open({ 
                 title : title,
@@ -109,15 +109,14 @@
             });
         }
         
-         function stopRow()
+           function stopRow(flag)
         {
              var row = manager.getSelectedRow();
              if (!row) { $.ligerDialog.warn('Please select the row to operate on'); return; }
-
              $.ajax({
                         type: "GET",
                         url: "InventoryList.aspx",
-                        data: "Action=stop&id=" + row.id + "&ranid=" + Math.random(), //encodeURI
+                        data: "Action=stop&id=" + row.id + "&flag=" + flag + "&ranid="  + Math.random(), //encodeURI
                         success: function(resultString) {
                             $.ligerDialog.alert(resultString, 'Notification');
                             reload();
@@ -161,16 +160,16 @@
                 modal:true
             });
         } 
-       </script>
+    </script>
     <style type="text/css">
     .l-button{width: 120px; float: left; margin-left: 10px; margin-bottom:2px; margin-top:2px;}
     </style>
 
 </head>
-<body style="padding-left:10px; padding-top:10px;">
+<body style="padding-left: 10px; padding-top: 10px;">
     <form id="form1" runat="server">
-    <div id="maingrid">
-    </div>
+        <div id="maingrid">
+        </div>
     </form>
 </body>
 </html>

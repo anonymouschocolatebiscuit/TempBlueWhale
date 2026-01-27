@@ -42,7 +42,7 @@
                 },
                 toolbar: {
                     items: [
-                        { text: 'Reload', click: reload, img: '../lib/ligerUI/skins/icons/refresh.png' },
+                        { text: 'Refresh', click: reload, img: '../lib/ligerUI/skins/icons/refresh.png' },
                         { line: true },
                         { text: "Create User", click: addRowTop, img: '../lib/ligerUI/skins/icons/add.gif' },
                         { line: true },

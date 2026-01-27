@@ -1,5 +1,6 @@
 ﻿using BlueWhale.DBUtility;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
@@ -84,9 +85,15 @@ namespace BlueWhale.DAL
         {
             bool flag = false;
 
-            string sql = "select * from account where code='" + code + "' and shopId='" + shopId + "' ";
+            string sql = "SELECT * FROM account WITH (NOLOCK) WHERE code = @code AND shopId = @shopId";
 
-            SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@code", code),
+                new SqlParameter("@shopId", shopId)
+            };
+
+            SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, parameters);
             while (reader.Read())
             {
                 flag = true;
@@ -103,7 +110,7 @@ namespace BlueWhale.DAL
         {
             bool flag = false;
 
-            string sql = "select * from account where code='" + code + "' and id<>'" + id + "' and shopId='" + shopId + "' ";
+            string sql = "select * from account WITH (NOLOCK) where code='" + code + "' and id<>'" + id + "' and shopId='" + shopId + "' ";
 
             SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
             while (reader.Read())
@@ -122,7 +129,13 @@ namespace BlueWhale.DAL
         {
             bool flag = false;
 
-            string sql = "select * from account where names='" + names + "' and shopId='" + shopId + "' ";
+            string sql = "SELECT 1 FROM account WITH (NOLOCK) WHERE names = @names AND shopId = @shopId";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@names", names),
+                new SqlParameter("@shopId", shopId)
+            };
 
             SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
             while (reader.Read())
@@ -141,7 +154,14 @@ namespace BlueWhale.DAL
         {
             bool flag = false;
 
-            string sql = "select * from account where names='" + names + "' and id<>'" + id + "' and shopId='" + shopId + "' ";
+            string sql = "SELECT 1 FROM account WITH (NOLOCK) WHERE names = @names AND id <> @id AND shopId = @shopId";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@names", names),
+                new SqlParameter("@id", id),
+                new SqlParameter("@shopId", shopId)
+            };
 
             SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
             while (reader.Read())
@@ -161,7 +181,12 @@ namespace BlueWhale.DAL
         {
             bool flag = false;
 
-            string sql = " select * from PayMentAccountItem ReceivableAccountItem where bkId='" + id + "' ";
+            string sql = "SELECT 1 FROM PayMentAccountItem WITH (NOLOCK) WHERE bkId = @id";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@id", id)
+            };
 
             SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
             while (reader.Read())
@@ -180,7 +205,7 @@ namespace BlueWhale.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select *,code+' '+names CodeName ");
-            strSql.Append(" FROM account ");
+            strSql.Append(" FROM account WITH (NOLOCK)");
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);
@@ -199,7 +224,7 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public DataSet GetAllModel()
         {
-            string sql = " select *,code+' '+names CodeName from account order by code ";
+            string sql = " select *,code+' '+names CodeName from account WITH (NOLOCK) order by code ";
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
@@ -214,7 +239,7 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public DataSet GetAllModel(int id)
         {
-            string sql = "select *,code+' '+names CodeName from account where id='" + id + "' order by code ";
+            string sql = "select *,code+' '+names CodeName from account WITH (NOLOCK) where id='" + id + "' order by code ";
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
@@ -476,10 +501,10 @@ namespace BlueWhale.DAL
 
         #endregion
 
-        #region 获取客户应收账款报表
+        #region Get All Model Report Client Need Pay
 
         /// <summary>
-        /// 获取客户应收账款报表
+        /// GetAllModelReportClientNeedPay
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
@@ -527,10 +552,10 @@ namespace BlueWhale.DAL
 
         #endregion
 
-        #region 获取客户应收账款报表-----------------NewUI
+        #region GetAll Model Report Client Need Pay-----------------NewUI
 
         /// <summary>
-        /// 获取客户应收账款报表-----------------NewUI
+        /// GetAllModelReportClientNeedPay-----------------NewUI
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
@@ -538,30 +563,20 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public DataSet GetAllModelReportClientNeedPay(int shopId, DateTime start, DateTime end, string wlId)
         {
-            string sql = @"select wlId, wlName,'' number,'Opening Balance' bizType,'' bizDate,
+            string sql = @"select wlId,wlName,number,
 
-                            sum(payNeed) payNeed,sum(payReady) payReady,sum(payNeed-payReady) payEnd
+                            CASE 
+                                WHEN bizType = N'期初收款' THEN 'Opening Balance'
+                                WHEN bizType = N'其他收款' THEN 'Other Balance'
+                                WHEN bizType = N'销售收款' THEN 'Sales Balance'
+                                ELSE 'Default Balance'
+                            END AS bizType,
 
-                            from viewClientNeedPayFlow where bizDate<@start ";
-            if (shopId != 0)
-            {
-                sql += " and shopId ='" + shopId + "' ";
-            }
-
-            if (wlId != "")
-            {
-                sql += " and wlName in(" + wlId + ")";
-            }
-
-            sql += " group by wlId,wlName ";
-
-            sql += " union all ";
-
-            sql += @"select wlId,wlName,number,bizType,bizDate,payNeed,payReady,payNeed-payReady payEnd
+                            bizDate,payNeed,payReady,payNeed-payReady payEnd
 
                             from viewClientNeedPayFlow
 
-                            where bizDate>=@start and bizDate<=@end ";
+                            where bizDate>=@start AND bizDate<=@end";
 
             if (shopId != 0)
             {
@@ -587,10 +602,10 @@ namespace BlueWhale.DAL
 
         #endregion
 
-        #region 获取客户对账单报表
+        #region Get All Model Client Statement
 
         /// <summary>
-        /// 获取客户对账单报表
+        /// GetAllModelClientStatement
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
@@ -638,10 +653,10 @@ namespace BlueWhale.DAL
 
         #endregion
 
-        #region 获取客户对账单报表----------NewUI
+        #region Get AllModel Client Statement----------NewUI
 
         /// <summary>
-        /// 获取客户对账单报表----------NewUI
+        /// GetAllModelClientStatement----------NewUI
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
@@ -814,10 +829,10 @@ namespace BlueWhale.DAL
 
         #endregion
 
-        #region 获取其他收支报表-------------NewUI
+        #region Get Other Get Pay Flow Report-------------NewUI
 
         /// <summary>
-        /// 获取其他收支报表-------------NewUI
+        /// GetOtherGetPayFlowReport-------------NewUI
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
@@ -825,50 +840,71 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public DataSet GetOtherGetPayFlowReport(int shopId, DateTime start, DateTime end, string bizType, string typeIdString, string bizId)
         {
-            string sql = @"select * from viewOtherGetPayFlow where bizDate>=@start and bizDate<=@end ";
+            StringBuilder sql = new StringBuilder();
+            sql.Append("SELECT * FROM viewOtherGetPayFlow WHERE bizDate >= @start AND bizDate <= @end");
+
+            List<SqlParameter> parameters = new List<SqlParameter>
+            {
+                new SqlParameter("@start", start),
+                new SqlParameter("@end", end)
+            };
 
             if (shopId >= 0)
             {
-                sql += " and shopId='" + shopId + "'  ";
+                sql.Append(" AND shopId = @shopId");
+                parameters.Add(new SqlParameter("@shopId", shopId));
             }
 
             if (bizType != "ALL")
             {
-                sql += " and bizType='" + bizType + "'  ";
+                sql.Append(" AND bizType = @bizType");
+                parameters.Add(new SqlParameter("@bizType", bizType));
             }
 
-            if (typeIdString != "")
+            if (!string.IsNullOrWhiteSpace(typeIdString))
             {
-                sql += " and typeId in(" + typeIdString + ") ";
+                // typeIdString 必須是數字列表，例如 "1,2,3"
+                sql.Append(" AND typeId IN (" + typeIdString + ")");
+                // 這裡 IN 無法用參數化，只能保證 typeIdString 已驗證為安全數字列表
             }
 
             if (bizId != "0")
             {
-                sql += " and bizId='" + bizId + "'  ";
+                sql.Append(" AND bizId = @bizId");
+                parameters.Add(new SqlParameter("@bizId", bizId));
             }
 
-            sql += " order by wlName,bizDate";
+            sql.Append(" ORDER BY wlName, bizDate");
 
-            SqlParameter[] param = {
-                                       new SqlParameter("@start",start),
-                                       new SqlParameter("@end",end)
-                                   };
-
-            return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, param);
+            return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql.ToString(), parameters.ToArray());
         }
+
 
         #endregion
 
-        #region 新增成员信息
+        #region Add new member information
         /// <summary>
         /// Add new member information
         /// </summary>
         /// <returns></returns>
         public int Add()
         {
-            string sql = "insert into account(shopId,code,names,yueDate,yuePrice,types,makeDate) values('" + ShopId + "','" + Code + "','" + Names + "','" + YueDate + "','" + YuePrice + "','" + Types + "',getdate())";
+            string sql = @" INSERT INTO account 
+                            (shopId, code, names, yueDate, yuePrice, types, makeDate) 
+                            VALUES 
+                            (@ShopId, @Code, @Names, @YueDate, @YuePrice, @Types, GETDATE())";
 
-            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@ShopId", ShopId),
+                new SqlParameter("@Code", Code),
+                new SqlParameter("@Names", Names),
+                new SqlParameter("@YueDate", YueDate),
+                new SqlParameter("@YuePrice", YuePrice),
+                new SqlParameter("@Types", Types)
+            };
+
+            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, parameters);
         }
 
         #endregion
@@ -882,18 +918,36 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public int Update()
         {
-            string sql = "";
             if (!this.isExistsCodeEdit(Id, ShopId, Code) && !this.isExistsNamesEdit(Id, ShopId, Names))
             {
-                sql = "update account set shopId='" + shopId + "',Names='" + Names + "',Code='" + Code + "',YueDate='" + YueDate + "',YuePrice='" + YuePrice + "',Types='" + Types + "' where Id='" + Id + "'";
+                string sql = @" UPDATE account WITH (ROWLOCK)
+                                SET shopId = @shopId,
+                                    Names = @Names,
+                                    Code = @Code,
+                                    YueDate = @YueDate,
+                                    YuePrice = @YuePrice,
+                                    Types = @Types
+                                WHERE Id = @Id";
 
-                return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                    new SqlParameter("@shopId", ShopId),
+                    new SqlParameter("@Names", Names),
+                    new SqlParameter("@Code", Code),
+                    new SqlParameter("@YueDate", YueDate),
+                    new SqlParameter("@YuePrice", YuePrice),
+                    new SqlParameter("@Types", Types),
+                    new SqlParameter("@Id", Id)
+                };
+
+                return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, parameters);
             }
             else
             {
                 return 0;
             }
         }
+
         #endregion
 
         #region Delete Member Information
@@ -904,8 +958,14 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public int Delete(int Id)
         {
-            string sql = "delete from account where id='" + Id + "'";
-            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
+            string sql = "DELETE FROM account WHERE id = @Id";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Id", Id)
+            };
+
+            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, parameters);
         }
 
         #endregion

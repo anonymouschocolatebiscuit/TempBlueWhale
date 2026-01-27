@@ -1,6 +1,6 @@
-﻿using System;
-using BlueWhale.Common;
+﻿using BlueWhale.Common;
 using BlueWhale.UI.src;
+using System;
 
 namespace BlueWhale.UI.baseSet
 {
@@ -33,9 +33,6 @@ namespace BlueWhale.UI.baseSet
 
             if (type.ToLower() == "jpg")
             {
-
-                string ProductImgUrl = "sales/pdf/" + imageName;
-
                 string oPath = "../sales/pdf/" + imageName;
                 string tPath = "../sales/img/" + imageName;
 

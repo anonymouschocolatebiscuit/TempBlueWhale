@@ -1,10 +1,10 @@
 ﻿using System;
 namespace BlueWhale.Model.produce
 {
-	/// <summary>
-	/// goodsBomListType:实体类(属性说明自动提取数据库字段的描述信息)
-	/// </summary>
-	[Serializable]
+    /// <summary>
+    /// goodsBomListType:Entity class (attribute description automatically extracts description information of database fields)
+    /// </summary>
+    [Serializable]
 	public partial class goodsBomListType
 	{
 		public goodsBomListType()

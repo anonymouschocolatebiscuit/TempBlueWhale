@@ -7,17 +7,17 @@ $(function () {
     var menu = $.ligerMenu({
         width: 100, items:
             [
-                { text: 'Add', click: add, icon: 'add' },
+                { text: 'Add', click: add },
+                { line: true },
                 { text: 'Edit', click: editRow },
                 { line: true },
                 { text: 'View', click: viewRow },
                 { line: true },
                 { text: 'Inbound', click: makeBill },
                 { line: true },
-                { text: 'Print(Including Unit Price)', click: makePDF },
+                { text: 'Print (IUP)', click: makePDF },
                 { line: true },
-                { text: 'Print(No Unit Price)', click: makePDFNoPrice },
-
+                { text: 'Print (NUP)', click: makePDFNoPrice },
             ]
     });
 
@@ -28,13 +28,21 @@ $(function () {
                 display: 'Operate', isSort: false, width: 90, align: 'center', render: function (rowdata, rowindex, value) {
                     var h = '';
                     if (!rowdata._editing) {
-                        h += '<a href="javascript:editRow()" title="EditRow" style="float:left;"><div class="ui-icon ui-icon-pencil"></div></a> ';
-                        h += '<a href="javascript:deleteRow()" title="DeleteRow" style="float:right;"><div class="ui-icon ui-icon-trash"></div></a> ';
+                        h += '<div style="text-align: center;">';
+                        if (rowdata.flag === 'Save') {
+                            h += '<a href="javascript:editRow()" title="EditRow" style="margin-right: 10px; display: inline-block;"><div class="ui-icon ui-icon-pencil" style="margin: auto;"></div></a>';
+                        } else {
+                            h += '<a href="javascript:viewRow()" title="ViewRow" style="margin-right: 10px; display: inline-block;"><div class="ui-icon ui-icon-search" style="margin: auto;"></div></a>';
+                        }
+                        h += '<a href="javascript:deleteRow()" title="DeleteRow" style="display: inline-block;"><div class="ui-icon ui-icon-trash" style="margin: auto;"></div></a>';
+                        h += '</div>';
+                    } else {
+                        h += '<div style="text-align: center;">';
+                        h += '<a href="javascript:endEdit(' + rowindex + ')" style="margin-right: 10px;">Submit</a>';
+                        h += '<a href="javascript:cancelEdit(' + rowindex + ')">Cancel</a>';
+                        h += '</div>';
                     }
-                    else {
-                        h += '<a href="javascript:endEdit(' + rowindex + ')">Submit</a> ';
-                        h += '<a href="javascript:cancelEdit(' + rowindex + ')">Cancel</a> ';
-                    }
+
                     return h;
                 }
             },
@@ -47,7 +55,7 @@ $(function () {
                     type: 'count',
                     render: function (e) {  // Summary renderer, returns HTML to be loaded into the cell
                         // e Aggregation of Objects (including sum, max, min, avg, count)
-                        return 'Total£º';
+                        return 'Total:';
                     }
                 }
             },
@@ -191,6 +199,18 @@ function search() {
 
     var end = document.getElementById('txtDateEnd').value;
 
+    if (!start) {
+        $.ligerDialog.warn('Please select a start date'); return;
+    } else if (!end) {
+        $.ligerDialog.warn('Please select a end date'); return;
+    } 
+
+    if (new Date(start) > new Date()) {
+        $.ligerDialog.warn('Start date cannot exceed current date'); return;
+    } else if (new Date(end) > new Date()) {
+        $.ligerDialog.warn('End date cannot exceed current date'); return;
+    }
+
     manager.changePage('first');
 
     manager._setUrl('PurOrderList.aspx?Action=GetDataListSearch&types=0&keys=' + keys + '&start=' + start + '&end=' + end);
@@ -267,7 +287,11 @@ function checkNoRow() {
 }
 
 function add() {
-    parent.f_addTab('PurOrderListAdd', 'Purchase Order - Add', 'buy/PurOrderListAdd.aspx');
+    var row = manager.getSelectedRow();
+
+    if (!row) { $.ligerDialog.warn('Please select the row to operate on'); return; }
+
+    parent.f_addTab('PurOrderListAdd', 'Purchase Order - Add', 'buy/PurOrderListAdd.aspx?id=' + row.id);
 }
 
 function makeBill() {

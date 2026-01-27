@@ -137,7 +137,7 @@ $(function () {
                 }, {
                     display: 'Item Name',
                     name: 'goodsName',
-                    width: 250,
+                    width: 218,
                     align: 'left',
                     totalSummary: {
                         type: 'count',
@@ -171,7 +171,7 @@ $(function () {
                 }, {
                     display: 'Amount',
                     name: 'num',
-                    width: 70,
+                    width: 80,
                     type: 'float',
                     align: 'right',
                     editor: {
@@ -189,7 +189,7 @@ $(function () {
                 }, {
                     display: 'Original Price',
                     name: 'price',
-                    width: 70,
+                    width: 100,
                     type: 'float',
                     align: 'right',
                     editor: {
@@ -198,7 +198,7 @@ $(function () {
                 }, {
                     display: 'Discount Amount%',
                     name: 'dis',
-                    width: 60,
+                    width: 90,
                     type: 'float',
                     align: 'right',
                     editor: {
@@ -207,7 +207,7 @@ $(function () {
                 }, {
                     display: 'Discount Amount',
                     name: 'sumPriceDis',
-                    width: 70,
+                    width: 100,
                     type: 'float',
                     align: 'right',
                     editor: {
@@ -224,7 +224,7 @@ $(function () {
                 }, {
                     display: 'Current Price',
                     name: 'priceNow',
-                    width: 70,
+                    width: 100,
                     type: 'float',
                     align: 'right',
                     editor: {
@@ -233,7 +233,7 @@ $(function () {
                 }, {
                     display: 'Total Price',
                     name: 'sumPriceNow',
-                    width: 80,
+                    width: 90,
                     type: 'float',
                     align: 'right',
                     editor: {
@@ -259,7 +259,7 @@ $(function () {
                 }, {
                     display: 'Price W/ Tax',
                     name: 'priceTax',
-                    width: 70,
+                    width: 100,
                     type: 'float',
                     align: 'center',
                     editor: {
@@ -268,7 +268,7 @@ $(function () {
                 }, {
                     display: 'Total Tax Amount',
                     name: 'sumPriceTax',
-                    width: 80,
+                    width: 100,
                     type: 'float',
                     align: 'right',
                     totalSummary: {
@@ -283,7 +283,7 @@ $(function () {
                 }, {
                     display: 'Sum Price',
                     name: 'sumPriceAll',
-                    width: 80,
+                    width: 100,
                     type: 'float',
                     align: 'right',
                     editor: {
@@ -310,13 +310,13 @@ $(function () {
                 }, {
                     display: 'Associated Sales Order Number',
                     name: 'sourceNumber',
-                    width: 150,
+                    width: 155,
                     align: 'left',
                     type: 'text'
                 }],
                 width: '99%',
                 pageSizeOptions: [5, 10, 15, 20],
-                height: '350',
+                height: 342,
                 url: 'PurOrderListAdd.aspx?Action=GetData&id=' + param,
                 rownumbers: true, //Display row number
                 frozenRownumbers: true, //Whether the row number is in a fixed column

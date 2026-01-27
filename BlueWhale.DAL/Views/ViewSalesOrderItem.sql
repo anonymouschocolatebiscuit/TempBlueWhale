@@ -16,8 +16,9 @@ SELECT
     g.code code,       
     g.barcode barcode,         
     g.spec,          
-    g.imagePath,      
-    g.imagesPathMoren,     
+    g.imagePath,
+    g.priceCost,
+    g.imagesPathMoren,  
     i.names iName            
 FROM salesOrderItem a            
 LEFT JOIN viewgoods g on a.goodsId=g.id            

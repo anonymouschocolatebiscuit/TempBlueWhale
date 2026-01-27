@@ -87,7 +87,7 @@
                 <td colspan="4" align="center">
              
                     <asp:GridView ID="gvLevel" runat="server" AutoGenerateColumns="False" 
-                        DataKeyNames="id" onrowcancelingedit="gvLevel_RowCancelingEdit"  Width="600px"
+                        DataKeyNames="id" onrowcancelingedit="gvLevel_RowCancelingEdit"  Width="700px"
                         onrowdatabound="gvLevel_RowDataBound" onrowdeleting="gvLevel_RowDeleting" 
                         onrowediting="gvLevel_RowEditing" onrowupdating="gvLevel_RowUpdating" 
                         PageSize="15">
@@ -153,10 +153,10 @@
                             </asp:DropDownList>
                            
                                 </EditItemTemplate>
-                                <ItemStyle Width="80px" />
+                                <ItemStyle Width="100px" />
                             </asp:TemplateField>
                     
-                            <asp:CommandField HeaderText="Delete" ShowDeleteButton="True">
+                            <asp:CommandField HeaderText="Delete" ShowDeleteButton="True" DeleteText="Delete">
                                 <ItemStyle Width="40px" />
                             </asp:CommandField>
                         </Columns>

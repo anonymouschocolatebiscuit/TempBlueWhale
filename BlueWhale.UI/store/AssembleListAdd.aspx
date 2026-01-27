@@ -27,7 +27,7 @@
                 <td style="text-align: left;">&nbsp;</td>
             </tr>
             <tr>
-                <td align="center" style="font-weight: bold;">Assembled Product</td>
+                <td align="left" style="font-weight: bold;">Assembled Product</td>
                 <td style="text-align: left; width: 250px;">&nbsp;</td>
                 <td style="text-align: right; width: 80px;">&nbsp;</td>
                 <td style="text-align: left; width: 180px;">&nbsp;</td>
@@ -40,7 +40,7 @@
                 </td>
             </tr>
             <tr>
-                <td align="center" style="font-weight: bold;">Assembled Item</td>
+                <td align="left" style="font-weight: bold;">Assembled Item</td>
                 <td style="text-align: left; width: 250px;">&nbsp;</td>
                 <td style="text-align: right; width: 80px;">&nbsp;</td>
                 <td style="text-align: left; width: 180px;">&nbsp;</td>
@@ -60,7 +60,7 @@
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>
                 <td style="text-align: right; padding-right: 30px;">
-                    <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Create" onclick="save()" />
+                    <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Add" onclick="save()" />
                 </td>
             </tr>
         </table>

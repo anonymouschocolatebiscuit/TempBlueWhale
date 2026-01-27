@@ -41,7 +41,6 @@ function f_selectContactOK(item, dialog) {
 	if (!data) {
 		alert('Please select a row!');
 		return;
-
 	}
 
 	if (itemType == "main") {
@@ -50,7 +49,6 @@ function f_selectContactOK(item, dialog) {
 	if (itemType == "sub") {
 		f_onGoodsChangedSub(data);
 	}
-
 	dialog.close();
 }
 function f_selectContactCancel(item, dialog) {
@@ -268,7 +266,6 @@ function f_onGoodsChangedSub(e) {
 
 	var selectedRow = managersub.getSelected();
 	grid.updateRow(selectedRow, {
-
 		goodsId: selected.id,
 		goodsName: selected.names,
 		unitName: selected.unitName,
@@ -580,13 +577,13 @@ function save() {
 
 	for (var i = 0; i < datasub.length; i++) {
 		if (datasub[i].num <= 0 || datasub[i].num == "" || datasub[i].num == "0" || datasub[i].num == "0.00") {
-			$.ligerDialog.warn("Please enter the" + (i + 1) + "number of disassembled items in the ro");
+			$.ligerDialog.warn("Please enter the " + (i + 1) + " number of disassembled items in the ro");
 			return;
 			alert("Execution skipped！");
 		}
 
 		if (datasub[i].ckId == 0 || datasub[i].ckId == "" || datasub[i].ckId == "0" || datasub[i].ckName == "") {
-			$.ligerDialog.warn("Please enter the" + (i + 1) + "number of disassembled items in the ro");
+			$.ligerDialog.warn("Please enter the " + (i + 1) + " number of disassembled items in the ro");
 			return;
 			alert("Execution skipped！");
 		}
@@ -639,7 +636,7 @@ function save() {
 			}
 		},
 		error: function (xhr) {
-			alert("Execution An error occurred, please try again later:" + xhr.responseText);
+			alert("Execution An error occurred, please try again later: " + xhr.responseText);
 		}
 	});
 }

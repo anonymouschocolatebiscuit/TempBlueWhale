@@ -69,7 +69,7 @@ namespace BlueWhale.DAL.BaseSet
             return flag;
         }
 
-        public DataSet GetList(string strWhere)
+        public DataSet GetList(string strWhere, string orderClause = "")
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("SELECT * FROM viewClientType WITH (NOLOCK) ");
@@ -78,7 +78,12 @@ namespace BlueWhale.DAL.BaseSet
                 strSql.Append(" WHERE " + strWhere);
             }
 
-            strSql.Append(" ORDER BY flag  ");
+            if(string.IsNullOrEmpty(orderClause))
+            {
+                orderClause = " ORDER BY flag  ";
+            }
+            
+            strSql.Append(orderClause);
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, strSql.ToString(), null);
         }

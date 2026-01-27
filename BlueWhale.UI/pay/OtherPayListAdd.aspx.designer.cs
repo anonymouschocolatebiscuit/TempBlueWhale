@@ -11,7 +11,6 @@ namespace BlueWhale.UI.pay
 {
     public partial class OtherPayListAdd
     {
-
         /// <summary>
         /// form1 control.
         /// </summary>

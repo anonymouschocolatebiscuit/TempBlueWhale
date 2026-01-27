@@ -37,12 +37,22 @@ namespace BlueWhale.UI.baseSet
 
         void GetDataList()
         {
+            string sortColumn = Request.Params["sortname"];
+            string sortOrder = Request.Params["sortorder"];
+
             string isWhere = " shopId='" + LoginUser.ShopId + "' ";
-            DataSet ds = dal.GetList(isWhere);
+
+            string orderBy = "";
+            if (sortColumn != null && sortOrder != null)
+            {
+                orderBy = $" ORDER BY {sortColumn} {sortOrder}";
+            }
+
+            DataSet ds = dal.GetList(isWhere, orderBy);
 
             IList<object> list = new List<object>();
 
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {
@@ -66,7 +76,7 @@ namespace BlueWhale.UI.baseSet
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {

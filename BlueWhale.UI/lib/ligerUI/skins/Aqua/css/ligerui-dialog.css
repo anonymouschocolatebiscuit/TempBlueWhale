@@ -189,7 +189,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EFF5FE', endC
     background: -ms-linear-gradient(top, #ffffff 0%,#f4f4f4 100%);
     background: linear-gradient(top, #ffffff, #f4f4f4);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f4f4f4');
-    font: 12px 宋体b8b\4f53;
+    font: 12px;
     color: #555;
     vertical-align: middle;
     cursor: pointer;

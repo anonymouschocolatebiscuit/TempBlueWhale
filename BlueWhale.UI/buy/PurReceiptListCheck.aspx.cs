@@ -48,7 +48,7 @@ namespace Lanwei.Weixin.UI.buy
 
                 DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
 
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                DateTime end = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 GetDataList(keys, start, end, types);
                 Response.End();
@@ -241,7 +241,7 @@ namespace Lanwei.Weixin.UI.buy
                     {
                         int delId = ConvertTo.ConvertInt(idString[i].ToString());
 
-                        int del = dal.UpdateCheck(delId, LoginUser.Id, LoginUser.Names, DateTime.Now, "保存");
+                        int del = dal.UpdateCheck(delId, LoginUser.Id, LoginUser.Names, DateTime.Now, "Save");
                         if (del > 0)
                         {
                             num += 1;

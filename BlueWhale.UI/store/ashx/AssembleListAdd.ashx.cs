@@ -18,7 +18,6 @@ namespace BlueWhale.UI.store.ashx
     public class AssembleListAdd : IHttpHandler, IRequiresSessionState
     {
         public AssembleDAL dal = new AssembleDAL();
-
         public class OrderListModel<T>
         {
             #region Attributes

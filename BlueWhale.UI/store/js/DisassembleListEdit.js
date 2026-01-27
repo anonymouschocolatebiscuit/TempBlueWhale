@@ -17,12 +17,7 @@ function formatCurrency(x) {
         s_x += '0';
     }
     return s_x;
-
-
 }
-
-
-
 
 var itemType = "main";
 
@@ -33,7 +28,6 @@ function f_selectContact(type) {
     if (type == 1) {
         itemType = "sub";
     }
-
 
     $.ligerDialog.open({
         title: 'Select Item', name: 'winselector', width: 840, height: 540, url: '../baseSet/GoodsListSelect.aspx', buttons: [
@@ -49,10 +43,7 @@ function f_selectContactOK(item, dialog) {
     if (!data) {
         alert('Please select a row!');
         return;
-
     }
-
-
 
     if (itemType == "main") {
         f_onGoodsChanged(data);
@@ -62,7 +53,6 @@ function f_selectContactOK(item, dialog) {
     }
 
     dialog.close();
-
 }
 
 
@@ -70,43 +60,29 @@ function f_selectContactCancel(item, dialog) {
     dialog.close();
 }
 
-
-
 $.ligerDefaults.Grid.formatters['numberbox'] = function (value, column) {
     var precision = column.editor.precision;
     return value.toFixed(precision);
 };
 
-
-
 var manager;
 $(function () {
-
     var form = $("#form").ligerForm();
-
-
 
     window['g'] =
         manager = $("#maingrid").ligerGrid({
             columns: [
-
-
-
                 {
                     display: '', isSort: false, width: '6%', minWidth: 60, align: 'center', frozen: true, render: function (rowdata, rowindex, value) {
                         var h = "";
                         if (!rowdata._editing) {
                             h += "<a href='javascript:f_selectContact(0)' title='Select Item'><div class='ui-icon ui-icon-search' style='margin:0 auto;'></div></a> ";
                         }
-
                         return h;
                     }
-                }
-                ,
-
+                },
                 {
                     display: 'Item Name', name: 'goodsName', width: '14%', minWidth: 140, align: 'left',
-
                     totalSummary:
                     {
                         type: 'count',
@@ -114,22 +90,15 @@ $(function () {
                             return 'Total：';
                         }
                     }
-
-
                 },
 
                 { display: 'Specification', name: 'spec', width: '10%', minWidth: 100, align: 'center' },
-
                 { display: 'Unit', name: 'unitName', width: '6%', minWidth: 60, align: 'center' },
                 { display: 'Outbound Quantity', name: 'num', width: '15%', minWidth: 150, type: 'float', align: 'right', editor: { type: 'float' } },
-
                 {
                     display: 'Outbound Unit Price', name: 'price', width: '15%', minWidth: 150, type: 'float', align: 'right', editor: { type: 'float', precision: 4 }
-
                 },
-
                 { display: 'Amount', name: 'sumPrice', width: '6%', minWidth: 60, type: 'float', align: 'right', editor: { type: 'float' } },
-
                 {
                     display: 'Outbound Warehouse', name: 'ckId', width: '15%', minWidth: 150, isSort: false, textField: 'ckName',
                     editor: {
@@ -137,7 +106,6 @@ $(function () {
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
                         valueField: 'ckId', textField: 'ckName'
                     }
-
                 },
 
                 { display: 'Remarks', name: 'remarks', width: '10%', minWidth: 100, align: 'left', type: 'text', editor: { type: 'text' } }
@@ -148,25 +116,18 @@ $(function () {
             dataAction: 'local',
             usePager: false,
             alternatingRow: false,
-
             totalSummary: false,
             enabledEdit: true, 
-
             onAfterEdit: f_onAfterEdit 
         }
         );
 });
 
-
 var managersub;
 $(function () {
-
-
-
     window['gsub'] =
         managersub = $("#maingridsub").ligerGrid({
             columns: [
-
                 {
                     display: '', isSort: false, width: '6%', minWidth: 60, align: 'center', frozen: true, render: function (rowdata, rowindex, value) {
                         var h = "";
@@ -175,15 +136,11 @@ $(function () {
                             h += "<a href='javascript:deleteRow()' title='Delete Row' style='float:left;'><div class='ui-icon ui-icon-trash'></div></a> ";
                             h += "<a href='javascript:f_selectContact(1)' title='Select Item' style='float:left;'><div class='ui-icon ui-icon-search'></div></a> ";
                         }
-
                         return h;
                     }
-                }
-                ,
-
+                },
                 {
                     display: 'Item Name', name: 'goodsName', width: '14%', minWidth: 140, align: 'left',
-
                     totalSummary:
                     {
                         type: 'count',
@@ -191,16 +148,11 @@ $(function () {
                             return 'Total：';
                         }
                     }
-
-
                 },
-
                 { display: 'Specification', name: 'spec', width: '10%', minWidth: 100, align: 'center' },
-
                 { display: 'Unit', name: 'unitName', width: '6%', minWidth: 60, align: 'center' },
                 {
                     display: 'Inbound Quantity', name: 'num', width: '15%', minWidth: 150, type: 'float', align: 'right', editor: { type: 'float' },
-
                     totalSummary:
                     {
                         align: 'right', 
@@ -209,45 +161,22 @@ $(function () {
                             return Math.round(e.sum * 100) / 100;
                         }
                     }
-
                 },
-
                 {
                     display: 'Inbound Unit Price', name: 'price', width: '15%', minWidth: 150, type: 'float', align: 'right', editor: { type: 'float', precision: 4 }
-
                 },
-
-
-
-
                 {
                     display: 'Amount', name: 'sumPrice', width: '6%', minWidth: 60, type: 'float', align: 'right', editor: { type: 'float' },
-
-
-
                     totalSummary:
                     {
                         align: 'center',  
                         type: 'sum',
                         render: function (e) { 
-
-
                             var itemSumPrice = e.sum;
-
-
-
-
                             return "<span id='sumPriceItem'>" + Math.round(itemSumPrice * 10000) / 10000 + "</span>";//formatCurrency(suminf.sum)
-
-
                         }
                     }
-
-
                 },
-
-
-
                 {
                     display: 'Inbound Warehouse', name: 'ckId', width: '15%', minWidth: 150, isSort: false, textField: 'ckName',
                     editor: {
@@ -255,7 +184,6 @@ $(function () {
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
                         valueField: 'ckId', textField: 'ckName'
                     }
-
                 },
 
                 { display: 'Remarks', name: 'remarks', width: '10%', minWidth: 100, align: 'left', type: 'text', editor: { type: 'text' } }
@@ -266,42 +194,29 @@ $(function () {
             dataAction: 'local',
             usePager: false,
             alternatingRow: false,
-
             totalSummary: true,
             enabledEdit: true, 
-
-
             onAfterEdit: f_onAfterEditSub 
         }
         );
 });
 
 function updateTotal() {
-
-
     var data = managersub.getData();//getData
     var sumPriceItem = 0;
 
     for (var i = data.length - 1; i >= 0; i--) {
         if (data[i].goodsId == 0 || data[i].goodsId == "" || data[i].goodsName == "") {
             data.splice(i, 1);
-
         }
-
     }
 
     for (var i = 0; i < data.length; i++) {
-
         sumPriceItem += Number(data[i].num) * Number(data[i].price);
-
     }
 
     $("#sumPriceItem").html(formatCurrency(sumPriceItem));
-
-
-
 }
-
 
 var rowNumber = 9;
 
@@ -312,8 +227,6 @@ function f_totalRender(data, currentPageData) {
 function setInventory() {
 
     $.ligerDialog.open({ target: $("#target1") });
-
-
     // $.ligerDialog.open({ url: '../../welcome.htm', height: 250,width:null, buttons: [ { text: 'Confirm', onclick: function (item, dialog) { alert(item.text); } }, { text: 'Cancel', onclick: function (item, dialog) { dialog.close(); } } ] });
 }
 
@@ -328,16 +241,11 @@ function selectInventory() {
     var data = manager.getData();
 
     alert(data.length);
-
-
     for (var i = 0; i < data.length; i++) {
         alert(data[i].goodsId);
-
         grid.updateCell("ckId", ckId, i);
         grid.updateCell("ckName", ckName, i);
-
     }
-
 
     $(".l-dialog,.l-window-mask").remove();
 
@@ -348,13 +256,8 @@ function selectInventory() {
     $.ligerDialog.close();
 }
 
-
-
 function f_onGoodsChanged(e) {
-
-
     if (!e || !e.length) return;
-
 
     var grid = liger.get("maingrid");
 
@@ -365,7 +268,6 @@ function f_onGoodsChanged(e) {
     var selectedRow = manager.getSelected();
 
     grid.updateRow(selectedRow, {
-
         goodsId: selected.id,
         goodsName: selected.names,
         unitName: selected.unitName,
@@ -376,21 +278,11 @@ function f_onGoodsChanged(e) {
         ckId: selected.ckId,
         ckName: selected.ckName,
         remarks: ""
-
     });
-
-
-
 }
 
-
-
-
 function f_onGoodsChangedSub(e) {
-
-
     if (!e || !e.length) return;
-
 
     var grid = liger.get("maingridsub");
 
@@ -401,7 +293,6 @@ function f_onGoodsChangedSub(e) {
     var selectedRow = managersub.getSelected();
 
     grid.updateRow(selectedRow, {
-
         goodsId: selected.id,
         goodsName: selected.names,
         unitName: selected.unitName,
@@ -417,14 +308,12 @@ function f_onGoodsChangedSub(e) {
 
     if (e.length > 1)
     {
-
         var data = managersub.getData();
         for (var i = data.length - 1; i >= 0; i--) {
             if (data[i].goodsId == 0 || data[i].goodsName == "") {
                 managersub.deleteRow(i);
                 // alert("Delete Row："+i);
             }
-
         }
 
         for (var i = 1; i < e.length; i++) {
@@ -437,26 +326,16 @@ function f_onGoodsChangedSub(e) {
                 price: e[i].priceCost,
                 spec: e[i].spec,
                 sumPrice: e[i].priceCost,
-
                 ckId: e[i].ckId,
                 ckName: e[i].ckName,
                 remarks: ""
-
             });
 
             rowNumber = rowNumber + 1;
-
         }
-
     }
-
     updateTotal();
-
-
 }
-
-
-
 
 function f_createCityData(e) {
     var Country = e.record.Country;
@@ -470,7 +349,6 @@ function f_onSelected(e) {
     if (!e.data || !e.data.length) return;
 
     var grid = liger.get("maingrid");
-
     var selected = e.data[0];
     grid.updateRow(grid.lastEditRow, {
         CustomerID: selected.CustomerID,
@@ -481,20 +359,13 @@ function f_onSelected(e) {
     $("#message").html('Final selection:' + out);
 }
 
-
 function f_onAfterEdit(e) {
     var num, price, sumPrice;
-
-
     num = Number(e.record.num);
-
     price = Number(e.record.price);
-
-
     sumPrice = Number(e.record.sumPrice);
 
     var goodsId, goodsName;
-
     goodsId = e.record.goodsId;
     goodsName = e.record.goodsName;
 
@@ -502,72 +373,31 @@ function f_onAfterEdit(e) {
         return;
     }
 
-
     if (e.column.name == "num")
     {
         num = Number(e.value);
-
         sumPrice = Number(num) * Number(price);
-
         num = Math.round(num * 100) / 100;
         price = Math.round(price * 100) / 100;
-
         sumPrice = Math.round(sumPrice * 100) / 100;
-
-
-
-
-
         manager.updateCell("num", num, e.record);
-
-
-
         manager.updateCell('sumPrice', sumPrice, e.record);
-
-
-
-
-
-
-
-
     }
 
     if (e.column.name == "price")
     {
         price = Number(e.value);
-
-
-
         sumPrice = Number(num) * Number(price);
-
-
-
-
         num = Math.round(num * 100) / 100;
         price = Math.round(price * 100) / 100;
-
         sumPrice = Math.round(sumPrice * 100) / 100;
-
-
-
         manager.updateCell("price", price, e.record);
-
-
         manager.updateCell('sumPrice', sumPrice, e.record);
-
-
-
     }
-
-
-
 
     if (e.column.name == "sumPrice")
     {
-
         sumPrice = Number(e.value);
-
 
         if (num != 0) {
             price = (sumPrice) / num;
@@ -576,52 +406,21 @@ function f_onAfterEdit(e) {
             price = 0;
         }
 
-
-
         num = Math.round(num * 100) / 100;
         price = Math.round(price * 100) / 100;
-
         sumPrice = Math.round(sumPrice * 100) / 100;
-
-
         manager.updateCell("price", price, e.record);
-
-
-
         manager.updateCell('sumPrice', sumPrice, e.record);
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
 
 function f_onAfterEditSub(e) {
     var num, price, sumPrice;
-
-
     num = Number(e.record.num);
-
     price = Number(e.record.price);
-
-
     sumPrice = Number(e.record.sumPrice);
 
     var goodsId, goodsName;
-
     goodsId = e.record.goodsId;
     goodsName = e.record.goodsName;
 
@@ -629,72 +428,31 @@ function f_onAfterEditSub(e) {
         return;
     }
 
-
     if (e.column.name == "num")
     {
         num = Number(e.value);
-
         sumPrice = Number(num) * Number(price);
-
         num = Math.round(num * 100) / 100;
         price = Math.round(price * 100) / 100;
-
         sumPrice = Math.round(sumPrice * 100) / 100;
-
-
-
-
-
         managersub.updateCell("num", num, e.record);
-
-
-
         managersub.updateCell('sumPrice', sumPrice, e.record);
-
-
-
-
-
-
-
-
     }
 
     if (e.column.name == "price")
     {
         price = Number(e.value);
-
-
-
         sumPrice = Number(num) * Number(price);
-
-
-
-
         num = Math.round(num * 100) / 100;
         price = Math.round(price * 100) / 100;
-
         sumPrice = Math.round(sumPrice * 100) / 100;
-
-
-
         managersub.updateCell("price", price, e.record);
-
-
         managersub.updateCell('sumPrice', sumPrice, e.record);
-
-
-
     }
-
-
-
 
     if (e.column.name == "sumPrice")
     {
-
         sumPrice = Number(e.value);
-
 
         if (num != 0) {
             price = (sumPrice) / num;
@@ -703,39 +461,14 @@ function f_onAfterEditSub(e) {
             price = 0;
         }
 
-
-
         num = Math.round(num * 100) / 100;
         price = Math.round(price * 100) / 100;
-
         sumPrice = Math.round(sumPrice * 100) / 100;
-
-
         managersub.updateCell("price", price, e.record);
-
-
-
         managersub.updateCell('sumPrice', sumPrice, e.record);
-
-
-
     }
-
-
-
-
-
-
-
-
     updateTotal();
-
-
-
-
 }
-
-
 
 function f_onBeforeEdit(e) {
 
@@ -744,10 +477,6 @@ function f_onBeforeEdit(e) {
     //            
     //            if(e.rowindex<=2) return true;
     //            return false;
-
-
-
-
 }
 
 function f_onBeforeSubmitEdit(e) {
@@ -759,10 +488,8 @@ function f_onBeforeSubmitEdit(e) {
         if (e.value < 0 || e.value > 100) return false;
     }
 
-
     return true;
 }
-
 
 function beginEdit() {
     var row = manager.getSelectedRow();
@@ -802,7 +529,6 @@ function addNewRow() {
     var gridData = managersub.getData();
     var rowNum = gridData.length;
 
-
     managersub.addRow({
         id: rowNum + 1,
         id: rowNum + 1,
@@ -812,23 +538,16 @@ function addNewRow() {
         num: "",
         spec: "",
         sumPrice: "",
-
-
         ckId: "",
         ckName: "",
-
         remarks: ""
     });
-
-
 }
-
 function updateRow() {
     var selected = manager.getSelected();
     if (!selected) { alert('Please select a row'); return; }
 
 }
-
 
 function getSelected() {
     var row = manager.getSelectedRow();
@@ -840,24 +559,14 @@ function getData() {
     alert(JSON.stringify(data));
 }
 
-
-
 function save() {
-
-
-
-
     var data = manager.getData();
-
 
     for (var i = data.length - 1; i >= 0; i--) {
         if (data[i].goodsId == 0 || data[i].goodsName == "") {
             data.splice(i, 1);
-
         }
-
     }
-
 
     if (data.length == 0) {
         $.ligerDialog.warn('Please select the disassembled product！');
@@ -866,26 +575,18 @@ function save() {
         alert("Execution skipped！");
     }
 
-
-
     for (var i = 0; i < data.length; i++) {
         if (data[i].num <= 0 || data[i].num == "" || data[i].num == "0" || data[i].num == "0.00") {
-
             $.ligerDialog.warn("Please enter row " + (i + 1) + "quantity of disassembled products！");
-
             return;
             alert("Execution skipped！");
         }
 
         if (data[i].ckId == 0 || data[i].ckId == "" || data[i].ckId == "0" || data[i].ckName == "") {
-
             $.ligerDialog.warn("Please enter row " + (i + 1) + "warehouse of the disassembled products！");
-
             return;
             alert("Execution skipped！");
         }
-
-
     }
 
     var goodsId = data[0].goodsId;
@@ -893,99 +594,50 @@ function save() {
     var price = data[0].price;
     var ckId = data[0].ckId;
     var remarksItem = data[0].remarks;
-
-    //     alert("ID："+data[0].goodsId);
-    //     alert("Amount："+data[0].num);
-    //     alert("Price："+data[0].price);
-    //     alert("Warehouse："+data[0].ckId);
-
-
     var datasub = managersub.getData();
-
 
     for (var i = datasub.length - 1; i >= 0; i--) {
         if (datasub[i].goodsId == 0 || datasub[i].goodsName == "") {
             datasub.splice(i, 1);
-
         }
-
     }
-
 
     if (datasub.length == 0) {
         $.ligerDialog.warn('Please select products after disassembly！');
-
         return;
         alert("Execution skipped！");
     }
 
-
-
     for (var i = 0; i < datasub.length; i++) {
         if (datasub[i].num <= 0 || datasub[i].num == "" || datasub[i].num == "0" || datasub[i].num == "0.00") {
-
             $.ligerDialog.warn("Please enter row " + (i + 1) + "quantity of products after disassembly！");
-
             return;
             alert("Execution skipped！");
         }
 
         if (datasub[i].ckId == 0 || datasub[i].ckId == "" || datasub[i].ckId == "0" || datasub[i].ckName == "") {
-
             $.ligerDialog.warn("Please enter row " + (i + 1) + "warehouse of products after disassembly！");
-
             return;
             alert("Execution skipped！");
         }
-
-
     }
-
-
-
-
-
-
     var bizDate = $("#txtBizDate").val();
     if (bizDate == "") {
         $.ligerDialog.warn("Please enter the disassembly date！");
         return;
-
     }
 
-
-
     var remarks = $("#txtRemarks").val();
-
     var fee = $("#txtFee").val() == "" ? 0 : $("#txtFee").val();
-
-
-
     var headJson = { id: getUrlParam("id"), fee: fee, bizDate: bizDate, remarks: remarks, goodsId: goodsId, num: num, price: price, ckId: ckId, remarksItem: remarksItem };
-
-
-
     var dataNew = [];
     dataNew.push(headJson);
-
-
-
     var list = JSON.stringify(headJson);
-
-
     var goodsList = [];
-
-
-
-
     list = list.substring(0, list.length - 1);
-
     list += ",\"Rows\":";
     list += JSON.stringify(datasub);
     list += "}";
-
-
-
     var postData = JSON.parse(list);
 
     //        alert(postData.Rows[0].id);
@@ -993,11 +645,8 @@ function save() {
     //        alert(postData.bizDate);
     //        
     //        alert(postData.Rows[0].goodsName);
-
     //    alert(JSON.stringify(postData));
-
     //       $("#txtRemarks").val(JSON.stringify(postData));
-
     // return;
 
     $.ajax({
@@ -1007,31 +656,21 @@ function save() {
         //dataType: "json",
         data: JSON.stringify(postData),   //data: "{'str1':'foovalue', 'str2':'barvalue'}",
         success: function (jsonResult) {
-
             if (jsonResult == "Operation successful！") {
-
                 $.ligerDialog.waitting('Operation successful！'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);
-
             }
             else {
                 $.ligerDialog.warn(jsonResult);
-
             }
         },
         error: function (xhr) {
-            alert("An error occurred, please try again later:" + xhr.responseText);
+            alert("An error occurred, please try again later: " + xhr.responseText);
         }
     });
-
-
 }
-
-
 
 function getUrlParam(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-
     var r = window.location.search.substr(1).match(reg);
-
     if (r != null) return unescape(r[2]); return null;
 }

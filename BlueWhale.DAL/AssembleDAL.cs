@@ -12,7 +12,7 @@ namespace BlueWhale.DAL
 
         }
 
-        #region 成员属性
+        #region Attribute
 
         private int id;
         public int Id
@@ -115,7 +115,12 @@ namespace BlueWhale.DAL
                                      };
 
             DataSet ds = SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.StoredProcedure, "makeBillNumber", param);
-            return ds.Tables[0].Rows[0][0].ToString();
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                return ds.Tables[0].Rows[0][0]?.ToString() ?? string.Empty;
+            }
+
+            return string.Empty;
 
         }
 
@@ -155,9 +160,9 @@ namespace BlueWhale.DAL
         }
         #endregion
 
-        #region Modify a record
+        #region Edit a record
         /// <summary>
-        /// Modify a record
+        /// Edit a record
         /// </summary>
         /// <returns></returns>
         public int Update()
@@ -194,13 +199,20 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public int Delete(int Id)
         {
-            string sql = " IF NOT EXISTS( ";
-            sql += "               SELECT * FROM GoodsClose WHERE flag='审核' AND id='" + Id + "' )";
-            sql += " BEGIN ";
-            sql += " DELETE FROM GoodsCloseItem WHERE pId='" + Id + "' DELETE FROM GoodsClose WHERE Id='" + Id + "'";
-            sql += " END ";
+            string sql = @" IF NOT EXISTS (
+                                SELECT 1 FROM GoodsClose WITH (NOLOCK) WHERE flag = '审核' AND id = @Id
+                            )
+                            BEGIN
+                                DELETE FROM GoodsCloseItem WHERE pId = @Id;
+                                DELETE FROM GoodsClose WHERE Id = @Id;
+                            END";
 
-            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Id", Id)
+            };
+
+            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, parameters);
         }
 
         #endregion
@@ -301,10 +313,10 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public int UpdateCheck(int Id, int chekerId, DateTime checkDate, string flag)
         {
-            string sql = " IF NOT EXISTS(SELECT * FROM GoodsClose WHERE flag='" + flag + "' AND id='" + Id + "') ";
+            string sql = " IF NOT EXISTS(SELECT 1 FROM GoodsClose WITH (NOLOCK) WHERE flag='" + flag + "' AND id='" + Id + "') ";
             sql += " BEGIN ";
 
-            sql += " UPADTE GoodsClose SET flag='" + flag + "' ";
+            sql += " UPADTE GoodsClose WITH (ROWLOCK) SET flag='" + flag + "' ";
 
             if (flag == "Check")
             {

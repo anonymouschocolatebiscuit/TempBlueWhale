@@ -226,8 +226,6 @@ function f_onGoodsChanged(e) {
 
     }
 
-}
-
 var managerProcess;
 $(function () {
 

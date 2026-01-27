@@ -36,7 +36,6 @@ namespace BlueWhale.UI.store
                 }
 
                 this.txtBizDate.Text = DateTime.Now.ToShortDateString();
-
                 this.Bind();
             }
 
@@ -50,14 +49,11 @@ namespace BlueWhale.UI.store
         public void Bind()
         {
             string isWhere = " shopId='" + LoginUser.ShopId + "' ";
-
             this.ddlVenderList.DataSource = venderDAL.GetList(isWhere);
             this.ddlVenderList.DataTextField = "CodeName";
             this.ddlVenderList.DataValueField = "id";
             this.ddlVenderList.DataBind();
-
             this.ddlVenderList.Items.Insert(0, new ListItem("(Please select)", "0"));
-
             this.ddlVenderList.SelectedValue = "0";
         }
 

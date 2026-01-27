@@ -40,7 +40,7 @@ $(function () {
                 }
             },
             {
-                display: 'Average cost unit price', name: 'sumPriceAll', width: 100, align: 'right',
+                display: 'Average cost unit price', name: 'sumPriceAll', width: 160, align: 'right',
                 render: function (row) {
 
                     var price = Number(row.sumPriceAll) / Number(row.sumNum);

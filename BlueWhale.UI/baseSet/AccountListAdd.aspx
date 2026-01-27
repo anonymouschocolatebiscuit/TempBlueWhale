@@ -29,64 +29,64 @@
     </script>
 
     <style type="text/css">
-        body {
-            font-size: 12px;
-        }
+    body {
+        font-size: 12px;
+    }
 
-        .l-table-edit-td {
-            padding: 4px;
-        }
+    .l-table-edit-td {
+        padding: 4px;
+    }
 
-        .l-button-submit,
-        .l-button-test {
-            width: 80px;
-            float: left;
-            margin-left: 10px;
-            padding-bottom: 2px;
-        }
+    .l-button-submit,
+    .l-button-test {
+        width: 80px;
+        float: left;
+        margin-left: 10px;
+        padding-bottom: 2px;
+    }
 
-        .l-verify-tip {
-            left: 230px;
-            top: 120px;
-        }
+    .l-verify-tip {
+        left: 230px;
+        top: 120px;
+    }
+
+    .ui_state_highlight {
+        vertical-align: middle !important;
+    }
+
     </style>
 </head>
 
 <body>
     <form id="form1" runat="server">
-        <table id="form" style="height:250px;">
+        <table id="form" style="height: 250px;">
             <tr>
-                <td style="text-align:right; white-space: nowrap;">
-                    Account Number：</td>
-                <td style="width:300px;">
+                <td style="text-align: right; white-space: nowrap;">Account Number：</td>
+                <td style="width: 300px;">
                     <asp:TextBox ID="txtCode" runat="server" validate="{required:true}"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td style="text-align:right; white-space: nowrap;">
-                    Account Name：</td>
+                <td style="text-align: right; white-space: nowrap;">Account Name：</td>
                 <td>
                     <asp:TextBox ID="txtNames" runat="server" validate="{required:true}"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td style="text-align:right; white-space: nowrap;">
-                    Balance Date：</td>
+                <td style="text-align: right; white-space: nowrap;">Balance Date：</td>
                 <td>
                     <asp:TextBox data-name="addDate" ID="txtYueDate" runat="server" ltype="date"
                         validate="{required:true}"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td style="text-align:right; white-space: nowrap;">
-                    Account Balance：</td>
+                <td style="text-align: right; white-space: nowrap;">Account Balance：</td>
                 <td>
                     <asp:TextBox ID="txtYuePrice" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td style="text-align:right; white-space: nowrap;">
-                    Account Type：</td>
+                <td style="text-align: right; white-space: nowrap;">Account Type：</td>
                 <td>
                     <asp:DropDownList ID="ddlTypes" runat="server">
                         <asp:ListItem>Cash</asp:ListItem>
@@ -95,11 +95,9 @@
                 </td>
             </tr>
             <tr>
-                <td style="text-align:right; white-space: nowrap;">
-                    &nbsp;</td>
-                <td>
+                <td colspan="2" style="text-align: center; padding-top: 20px;">
                     <asp:Button ID="btnSave" runat="server" Text="Save" class="ui_state_highlight"
-                        onclick="btnSave_Click" />
+                        OnClick="btnSave_Click" />
                     &nbsp;<input id="btnCancel" class="ui-btn" type="button" value="Cancel" onclick="closeDialog()" />
                 </td>
             </tr>

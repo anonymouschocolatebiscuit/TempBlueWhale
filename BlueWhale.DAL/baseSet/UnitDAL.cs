@@ -105,7 +105,7 @@ namespace BlueWhale.DAL
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public DataSet GetList(string strWhere)
+        public DataSet GetList(string strWhere, string orderClause = "")
         {
             string sql = @"select *  ";
             sql += " from unit ";
@@ -115,7 +115,10 @@ namespace BlueWhale.DAL
                 sql += " where " + strWhere;
             }
 
-
+            if (!string.IsNullOrEmpty(orderClause))
+            {
+                sql += orderClause;
+            }
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql.ToString(), null);
         }

@@ -1,23 +1,38 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="saleCharts.aspx.cs" Inherits="BlueWhale.UI.saleCharts" %>
+
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
-  <title>Sales Chart</title>
-  <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
-  <script src="build\dist\esl.js" type="text/javascript"></script>
-  <script src="build\dist\WapCharts.js" type="text/javascript"></script>
+    <title>Sales Chart</title>
+    <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="build\dist\esl.js" type="text/javascript"></script>
+    <script src="build\dist\WapCharts.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
+    <style type="text/css">
+    body, body * {
+        font-family: 'Nunito Sans', sans-serif !important;
+    }
+
+    input,
+    button,
+    select,
+    textarea {
+        font-family: 'Nunito Sans', sans-serif !important;
+    }
+</style>
 </head>
 
 <body>
-  <form id="form1" runat="server">
-    <table id="tb" border="0" cellpadding="0" cellspacing="0" style="width:100%; text-align:center; line-height:30px;">
-      <tr>
-        <td colspan="2">
-          <div id="chartsBar" style="height:300px; width:98%;"></div>
-          <script type="text/javascript">
+    <form id="form1" runat="server">
+        <table id="tb" border="0" cellpadding="0" cellspacing="0" style="width: 100%; text-align: center; line-height: 30px;">
+            <tr>
+                <td colspan="2">
+                    <div id="chartsBar" style="height: 300px; width: 98%;"></div>
+                    <script src="build/dist/echarts.js" type="text/javascript"></script>
+                    <script type="text/javascript">
               var dataNameBar;
               var dataValueBar;
               $(document).ready(
@@ -45,7 +60,7 @@
                   });
               require.config({
                   paths: {
-                      echarts: 'build/dist'
+                      echarts: 'build/dist/echarts'
                   }
               });
               require(
@@ -56,14 +71,22 @@
                   function (ec) {
                       var myChart = ec.init(document.getElementById('chartsBar'));
                       option = {
+                          textStyle: {
+                              fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif',
+                          },
                           title: {
-                              text: 'Monthly sales summary for this year',
-                              subtext: 'Unit: RM'
+                              text: 'Monthly Sales Summary For This Year',
+                              subtext: 'Unit: RM',
+                              textStyle: {
+                                  fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif',
+                              }
                           },
                           tooltip: {
-                              trigger: 'axis'
+                              trigger: 'axis',
+                              textStyle: {
+                                  fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
+                              }
                           },
-
                           toolbox: {
                               show: true,
                               feature: {
@@ -72,18 +95,31 @@
                                   magicType: { show: true, type: ['line', 'bar'] },
                                   restore: { show: true },
                                   saveAsImage: { show: true }
+                              },
+                              textStyle: {
+                                  fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
                               }
                           },
                           calculable: true,
                           xAxis: [
                               {
                                   type: 'category',
-                                  data: dataNameBar
+                                  data: dataNameBar,
+                                  axisLabel: {
+                                      textStyle: {
+                                          fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
+                                      }
+                                  }
                               }
                           ],
                           yAxis: [
                               {
-                                  type: 'value'
+                                  type: 'value',
+                                  axisLabel: {
+                                      textStyle: {
+                                          fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
+                                      }
+                                  }
                               }
                           ],
                           series: [
@@ -92,7 +128,10 @@
                                       normal: {
                                           label: {
                                               show: true,
-                                              formatter: '{c}'
+                                              formatter: '{c}',
+                                              textStyle: {
+                                                  fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
+                                              }
                                           },
                                           labelLine: { show: true }
                                       }
@@ -116,13 +155,13 @@
                       myChart.setOption(option);
                   }
               );
-          </script>
-        </td>
-      </tr>
-      <tr>
-        <td style="width:50%;">
-          <div id="chartsPie" style="height:300px; width:90%;"></div>
-          <script type="text/javascript">
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%;">
+                    <div id="chartsPie" style="height: 300px; width: 90%;"></div>
+                    <script type="text/javascript">
               function makeData(data) {
                   var categories = [];
                   var datas = [];
@@ -158,7 +197,7 @@
                   });
               require.config({
                   paths: {
-                      echarts: 'build/dist'
+                      echarts: 'build/dist/echarts'
                   }
               });
               require(
@@ -169,19 +208,31 @@
                   function (ec) {
                       var myChart = ec.init(document.getElementById('chartsPie'));
                       option = {
+                          textStyle: {
+                              fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
+                          },
                           title: {
-                              text: 'Sales proporion this year',
+                              text: 'Sales Proportion This Year',
                               subtext: '',
-                              x: 'center'
+                              x: 'center',
+                              textStyle: {
+                                  fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
+                              }
                           },
                           tooltip: {
                               trigger: 'item',
-                              formatter: "{a} <br/>{b} : {c} ({d}%)"
+                              formatter: "{a} <br/>{b} : {c} ({d}%)",
+                              textStyle: {
+                                  fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
+                              }
                           },
                           legend: {
                               orient: 'vertical',
                               x: 'left',
-                              data: dataNamePie
+                              data: dataNamePie,
+                              textStyle: {
+                                  fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
+                              }
                           },
                           toolbox: {
                               show: true,
@@ -202,6 +253,9 @@
                                   },
                                   restore: { show: true },
                                   saveAsImage: { show: true }
+                              },
+                              textStyle: {
+                                  fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
                               }
                           },
                           calculable: true,
@@ -211,6 +265,9 @@
                                       normal: {
                                           label: {
                                               show: true,
+                                              textStyle: {
+                                                  fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
+                                              },
                                               formatter: '{b} :({d}%)'
                                           },
                                           labelLine: { show: true }
@@ -227,12 +284,11 @@
                       myChart.setOption(option);
                   }
               );
-          </script>
-        </td>
-        <td style="width:50%;">
-          <div id="chartsLine" style="height:300px; width:100%;"></div>
-          <script src="build/dist/echarts.js" type="text/javascript"></script>
-          <script type="text/javascript">
+                    </script>
+                </td>
+                <td style="width: 50%;">
+                    <div id="chartsLine" style="height: 300px; width: 100%;"></div>
+                    <script type="text/javascript">
               var dataNameLine;
               var dataValueLine;
               $(document).ready(
@@ -259,7 +315,7 @@
                   });
               require.config({
                   paths: {
-                      echarts: 'build/dist'
+                      echarts: 'build/dist/echarts'
                   }
               });
               require(
@@ -272,20 +328,36 @@
 
                       var option = {
                           tooltip: {
-                              show: true
+                              show: true,
+                              textStyle: {
+                                  fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
+                              }
                           },
                           legend: {
-                              data: ['Total Sales']
+                              data: ['Total Sales'],
+                              textStyle: {
+                                  fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
+                              }
                           },
                           xAxis: [
                               {
                                   type: 'category',
-                                  data: dataNameLine
+                                  data: dataNameLine,
+                                  axisLabel: {
+                                      textStyle: {
+                                          fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
+                                      }
+                                  }
                               }
                           ],
                           yAxis: [
                               {
-                                  type: 'value'
+                                  type: 'value',
+                                  axisLabel: {
+                                      textStyle: {
+                                          fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
+                                      }
+                                  }
                               }
                           ],
                           series: [
@@ -294,6 +366,9 @@
                                       normal: {
                                           label: {
                                               show: true,
+                                              textStyle: {
+                                                  fontFamily: 'Nunito Sans, Arial, Verdana, sans-serif'
+                                              },
                                               formatter: '{c}'
                                           },
                                           labelLine: { show: true }
@@ -308,17 +383,17 @@
                       myChart.setOption(option);
                   }
               );
-          </script>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">&nbsp;</td>
-      </tr>
-      <tr>
-        <td colspan="2">&nbsp;</td>
-      </tr>
-    </table>
-  </form>
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+        </table>
+    </form>
 </body>
 
 </html>

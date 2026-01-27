@@ -26,7 +26,7 @@ namespace BlueWhale.UI.pay
                 this.txtDateStart.Text = DateTime.Now.ToString("yyyy-MM") + "-01";
                 this.txtDateEnd.Text = DateTime.Now.ToShortDateString();
 
-                this.txtDateStar1.Text = DateTime.Now.ToString("yyyy-MM") + "-01";
+                this.txtDateStart1.Text = DateTime.Now.ToString("yyyy-MM") + "-01";
                 this.txtDateEnd1.Text = DateTime.Now.ToShortDateString();
 
                 this.Bind();
@@ -39,7 +39,7 @@ namespace BlueWhale.UI.pay
                 int wlId = ConvertTo.ConvertInt(Request.Params["wlId"].ToString());
 
                 DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                DateTime end = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 GetDataList(keys, start, end, wlId);
                 Response.End();
@@ -52,7 +52,7 @@ namespace BlueWhale.UI.pay
                 int wlId = ConvertTo.ConvertInt(Request.Params["wlId"].ToString());
 
                 DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                DateTime end = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 GetDataListGet(keys, start, end, wlId);
                 Response.End();

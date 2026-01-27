@@ -1,6 +1,7 @@
-﻿body
-{
-	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif; 
+﻿@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+body {
+	font-size: 12px;
+	font-family: 'Nunito Sans', sans-serif;
 }
 PRE {
 	background-color: #FFFEF8;
@@ -51,10 +52,10 @@ a.postTitle2:hover{
     list-style: disc;
 }
 .postBody {
-    font-size: 14px;
-    line-height: 1.8;
-    font-family: 'Microsoft Yahei', Tahoma, Arial, Helvetica, STHeiti;
-    font-size: 15px;
+	font-size: 14px;
+	line-height: 1.8;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 15px;
 }
 p {
     display: block; 

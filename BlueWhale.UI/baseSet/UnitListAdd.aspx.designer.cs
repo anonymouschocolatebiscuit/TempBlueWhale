@@ -9,11 +9,8 @@
 
 namespace BlueWhale.UI.baseSet
 {
-
-
     public partial class UnitListAdd
     {
-
         /// <summary>
         /// form1 control.
         /// </summary>

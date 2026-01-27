@@ -1,6 +1,4 @@
-﻿using BlueWhale.DAL;
-using BlueWhale.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
@@ -8,6 +6,8 @@ using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.Services;
 using System.Web.SessionState;
+using BlueWhale.DAL;
+using BlueWhale.Model;
 
 namespace BlueWhale.UI
 {
@@ -31,14 +31,11 @@ namespace BlueWhale.UI
 
             if (context.Session["userInfo"] == null)
             {
-
                 context.Response.Write("Login timeout, please log in again!");
                 return;
-
             }
 
             Users users = context.Session["userInfo"] as Users;
-
 
             switch (command)
             {
@@ -58,17 +55,16 @@ namespace BlueWhale.UI
 
 
         /// <summary>
-        /// Sales proporion - Pie Chart
+        /// Sales proportion - Pie Chart
         /// </summary>
         /// <param name="context"></param>
         public void GetPie(HttpContext context, int shopId)
         {
             DateTime start = DateTime.Parse(DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-1");
             DateTime end = DateTime.Now;
-
             DataSet ds = salesDAL.getSalesPercent(shopId, start, end);
-
             lists = new List<object>();
+
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 var obj = new { name = dr["typeName"], value = dr["sumPriceAll"] };
@@ -78,7 +74,6 @@ namespace BlueWhale.UI
             jsS = new JavaScriptSerializer();
             result = jsS.Serialize(lists);
             context.Response.Write(result);
-
         }
 
         /// <summary>
@@ -88,9 +83,7 @@ namespace BlueWhale.UI
         public void GetBars(HttpContext context, int shopId)
         {
             int years = DateTime.Now.Year;
-
             DataSet ds = salesDAL.getSalesSumByMoth(years, shopId);
-
             lists = new List<object>();
 
             foreach (DataRow dr in ds.Tables[0].Rows)
@@ -112,9 +105,7 @@ namespace BlueWhale.UI
         public void GetLine(HttpContext context, int shopId)
         {
             int years = DateTime.Now.Year;
-
             DataSet ds = salesDAL.getSalesSumNumByMoth(years, shopId);
-
             lists = new List<object>();
 
             foreach (DataRow dr in ds.Tables[0].Rows)

@@ -84,7 +84,7 @@ namespace BlueWhale.UI.baseSet
 
         private void AddLog(string eventDescription)
         {
-            var logs = new LogsDAL
+            LogsDAL logs = new LogsDAL
             {
                 ShopId = LoginUser.ShopId,
                 Users = $"{LoginUser.Phone}-{LoginUser.Names}",

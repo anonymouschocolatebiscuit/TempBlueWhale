@@ -1,8 +1,8 @@
-﻿using BlueWhale.DBUtility;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using BlueWhale.DBUtility;
 
 namespace BlueWhale.DAL
 {
@@ -271,9 +271,9 @@ namespace BlueWhale.DAL
 
         #endregion
 
-        #region Modify a record
+        #region Edit a record
         /// <summary>
-        /// Modify a record
+        /// Edit a record
         /// </summary>
         /// <returns></returns>
         public int Update()

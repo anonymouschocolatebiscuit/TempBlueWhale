@@ -127,6 +127,8 @@
     <Content Include="Tables\Shop.sql" />
     <Content Include="Tables\Storage.sql" />
     <Content Include="Tables\Unit.sql" />
+    <Content Include="Tables\VenderLinkMan.sql" />
+    <Content Include="Tables\VenderType.sql" />
     <Content Include="Views\ViewSalesOrderItem.sql" />
     <Content Include="Views\ViewSalesOrderListSelect.sql" />
     <Content Include="Views\viewGoodsBomList.sql" />
@@ -139,6 +141,9 @@
     <Content Include="Views\ViewUser.sql">
       <SubType>Component</SubType>
     </Content>
+    <Content Include="Views\ViewVender.sql" />
+    <Content Include="Views\ViewVenderNeedPayFlow.sql" />
+    <Content Include="Views\ViewVenderType.sql" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

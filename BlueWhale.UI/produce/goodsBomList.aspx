@@ -48,21 +48,21 @@
 
             manager = $("#maingrid").ligerGrid({
                 columns: [
-                    { display: 'BOM Group', name: 'typeName', width: 70, align: 'center' },
+                    { display: 'BOM Group', name: 'typeName', width: 140, align: 'center' },
                     { display: 'BOM Number', name: 'number', width: 160, align: 'center' },
                     { display: 'Edition', name: 'edition', width: 70, align: 'center' },
-                    { display: 'Drawing Number', name: 'tuhao', width: 70, align: 'center' },
-                    { display: 'Status', name: 'flagCheck', width: 50, align: 'center' },
+                    { display: 'Draw No', name: 'tuhao', width: 70, align: 'center' },
+                    { display: 'Status', name: 'flagCheck', width: 100, align: 'center' },
                     { display: 'Material Code', name: 'code', width: 100, align: 'center' },
                     { display: 'Material Name', name: 'goodsName', width: 180, align: 'center' },
-                    { display: 'Specification Model', name: 'spec', width: 100, align: 'center' },
+                    { display: 'Spec Model', name: 'spec', width: 100, align: 'center' },
                     { display: 'Unit', name: 'unitName', width: 70, align: 'center' },
-                    { display: 'Quantity', name: 'num', width: 70, align: 'center' },
-                    { display: 'Yield Rate %', name: 'rate', width: 70, align: 'center' },
-                    { display: 'Created By', name: 'makeName', width: 70, align: 'center' },
-                    { display: 'Created Date', name: 'makeDate', width: 80, align: 'center' },
-                    { display: 'Reviewed By', name: 'checkName', width: 70, align: 'center' },
-                    { display: 'Review Date', name: 'checkDate', width: 80, align: 'center' },
+                    { display: 'Qty', name: 'num', width: 60, align: 'center' },
+                    { display: 'Yield Rate %', name: 'rate', width: 85, align: 'center' },
+                    { display: 'Created By', name: 'makeName', width: 75, align: 'center' },
+                    { display: 'Created Date', name: 'makeDate', width: 85, align: 'center' },
+                    { display: 'Reviewed By', name: 'checkName', width: 90, align: 'center' },
+                    { display: 'Review Date', name: 'checkDate', width: 85, align: 'center' },
                     { display: 'Remarks', name: 'remarks', width: 180, align: 'center' }
                 ],
                 width: '99%',
@@ -92,11 +92,11 @@
 
             maingridItem = $("#maingridItem").ligerGrid({
                 columns: [
-                    { display: 'Material Code', name: 'code', width: 80, align: 'center' },
+                    { display: 'Material Code', name: 'code', width: 100, align: 'left' },
                     { display: 'Material Name', name: 'goodsName', width: 150, align: 'center' },
-                    { display: 'Specification Model', name: 'spec', width: 100, align: 'center' },
+                    { display: 'Spec Model', name: 'spec', width: 100, align: 'center' },
                     { display: 'Unit', name: 'unitName', width: 100, align: 'center' },
-                    { display: 'Quantity', name: 'num', width: 100, align: 'left' },
+                    { display: 'Qty', name: 'num', width: 100, align: 'center' },
                     { display: 'Loss Rate', name: 'rate', width: 100, type: 'int', align: 'center' },
                     { display: 'Remarks', name: 'remarks', width: 150, align: 'center' }
                 ],

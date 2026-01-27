@@ -125,11 +125,11 @@
 
         },
 
-        { display: 'Tax rate%', name: 'tax', width: 60, type: 'int', align: 'center', editor: { type: 'int' } },
+        { display: 'Tax Rate%', name: 'tax', width: 60, type: 'int', align: 'center', editor: { type: 'int' } },
         { display: 'Unit Price with Tax', name: 'priceTax', width: 130, type: 'float', align: 'center', editor: { type: 'float' } },
 
         {
-            display: 'Tax amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
+            display: 'Tax Amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
 
             totalSummary:
              {

@@ -1,17 +1,21 @@
 ﻿var manager;
+
 $(function () {
-    var form = $("#form").ligerForm();
+    $("#form").ligerForm();
+
     var dateStart = $.ligerui.get("txtDateStart");
     dateStart.set("Width", 110);
+
     var dateEnd = $.ligerui.get("txtDateEnd");
     dateEnd.set("Width", 110);
+
     var txtVenderList = $.ligerui.get("txtVenderList");
     txtVenderList.set("Width", 310);
 
     manager = $("#maingrid").ligerGrid({
         columns: [
             {
-                display: 'Vendor', name: 'wlName', width: 200, align: 'left',
+                display: 'Vender', name: 'wlName', width: 200, align: 'left',
                 totalSummary:
                 {
                     type: 'count',
@@ -30,7 +34,7 @@ $(function () {
             { display: 'Receipt Number', name: 'number', width: 150, align: 'center' },
             { display: 'Business Type', name: 'bizType', width: 150, align: 'center' },
             {
-                display: 'Add payable', name: 'payNeed', width: 180, align: 'right',
+                display: 'Added Payable', name: 'payNeed', width: 180, align: 'right',
                 totalSummary:
                 {
                     align: 'right',
@@ -41,7 +45,7 @@ $(function () {
                 }
             },
             {
-                display: 'Add prepayment', name: 'payReady', width: 180, align: 'right',
+                display: 'Added Advance Payment', name: 'payReady', width: 180, align: 'right',
                 totalSummary:
                 {
                     align: 'right',
@@ -51,9 +55,10 @@ $(function () {
                     }
                 }
             },
-            { display: 'Payable balance', name: 'payEnd', width: 180, align: 'right' }
+            { display: 'Payable Balance', name: 'payEnd', width: 180, align: 'right' }
 
-        ], width: '98%',
+        ],
+        width: '98%',
         height: '98%',
         dataAction: 'local',
         usePager: false,
@@ -62,8 +67,7 @@ $(function () {
         onDblClickRow: function (data, rowindex, rowobj) {
             viewRow();
         }
-    }
-    );
+    });
 });
 
 function search() {
@@ -77,6 +81,7 @@ function search() {
         for (var i = 0; i < typeIdString.length; i++) { typeId += "'" + typeIdString[i] + "'" + ","; }
         typeId = typeId.substring(0, typeId.length - 1);
     }
+
     manager._setUrl("VendorNeedPayReport.aspx?Action=GetDataList&start=" + start + " &end=" + end + " &typeId=" + typeId);
 }
 
@@ -89,8 +94,13 @@ function reload() {
 }
 
 function openBill(number, bizType) {
-    if (bizType == "Regular Purchase" || bizType == "Purchase Return") {
-        window.location.href = "../buy/PurReceiptListView.aspx?id=0&number="
-            + number;
-    } if (bizType == "Purchase") { window.location.href = "../pay/PayMentListView.aspx?id=0&number=" + number; }
+    if (bizType == "Regular Purchase" || bizType == "Purchase Return")
+    {
+        window.location.href = "../buy/PurReceiptListView.aspx?id=0&number=" + number;
+    }
+
+    if (bizType == "Purchase")
+    {
+        window.location.href = "../pay/PayMentListView.aspx?id=0&number=" + number;
+    }
 }

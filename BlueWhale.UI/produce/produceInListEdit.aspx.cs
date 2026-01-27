@@ -1,6 +1,5 @@
 ﻿using BlueWhale.Common;
 using BlueWhale.DAL;
-using BlueWhale.DAL.produce;
 using BlueWhale.UI.src;
 using System;
 using System.Collections.Generic;
@@ -21,27 +20,13 @@ namespace BlueWhale.UI.produce
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
             if (!this.IsPostBack)
             {
-
-                //if (!CheckPower("PurReceiptListAdd"))
-                //{
-                //    Response.Redirect("../OverPower.htm");
-                //}
-
-
                 this.txtBizDate.Text = DateTime.Now.ToShortDateString();
-
-
 
                 produceId = ConvertTo.ConvertInt(Request.QueryString["id"].ToString());
 
-                // Response.Write("orderId:"+orderId.ToString()+Request.Url.ToString());
-
                 this.Bind();
-
             }
 
             if (Request.Params["Action"] == "GetData")
@@ -53,30 +38,17 @@ namespace BlueWhale.UI.produce
             }
         }
 
-
-
         public void Bind()
         {
             ListItem items = new ListItem("(Empty)", "0");
 
             string isWhere = " shopId='" + LoginUser.ShopId + "' ";
 
-
-
             this.ddlYWYList.DataSource = userDAL.GetList(isWhere);
             this.ddlYWYList.DataTextField = "names";
             this.ddlYWYList.DataValueField = "id";
             this.ddlYWYList.DataBind();
-
             this.ddlYWYList.SelectedValue = LoginUser.Id.ToString();
-
-            // this.ddlYWYList.Enabled = false;
-
-
-
-
-
-
         }
 
 
@@ -118,7 +90,6 @@ namespace BlueWhale.UI.produce
                     itemId = ds.Tables[0].Rows[i]["itemId"].ToString(),
                     remarks = ds.Tables[0].Rows[i]["remarks"].ToString(),
                     sourceNumber = ds.Tables[0].Rows[i]["sourceNumber"].ToString()
-
                 });
             }
 
@@ -152,18 +123,15 @@ namespace BlueWhale.UI.produce
                         itemId = 0,
                         remarks = "",
                         sourceNumber = ""
-
                     });
                 }
             }
 
             #endregion
 
-
             var griddata = new { Rows = list, Total = list.Count.ToString() };
             string s = new JavaScriptSerializer().Serialize(griddata);
             Response.Write(s);
         }
-
     }
 }

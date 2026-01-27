@@ -2,6 +2,7 @@
 /* CSS Document */
 @import url("../layout.css");
 @import url("../base.css");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
 /* =========================登录页样式.开始======================= */
 
@@ -22,7 +23,7 @@
     padding: 0 20px;
     background-color:rgba(0,0,0,0.2);
     color: #ffffff;
-    font-family: Microsoft Yahei;
+    font-family: 'Nunito Sans', sans-serif;
     border-radius: 0.3em;
     text-decoration:none;
     transition:.5s;
@@ -39,12 +40,12 @@
 	.login-form h1{
          display:block; margin-bottom:20px; border-bottom:1px solid #DFDFDF; 
          text-align:left; height:40px; line-height:30px; color:#304b65; font-size:21px;
-          font-weight:300; font-family:'Microsoft YaHei'; 
+          font-weight:300; font-family: 'Nunito Sans', sans-serif;
             }
 	.control-group{ position:relative; margin-bottom:6px; }
-	.login-field{ display:inline-block; padding:11px 0 11px 10px; width:296px; height:20px; line-height:20px; color:#ACB6C0; font-size:17px; background:#fff; border:1px solid #E5E5E5; border-radius:6px 6px 6px 6px; margin-bottom:10px; vertical-align:middle; }
+	.login-field{ display:inline-block; padding:11px 0 11px 10px; width:296px; height:20px; line-height:20px; color:#555; font-size:17px; background:#fff; border:1px solid #E5E5E5; border-radius:6px 6px 6px 6px; margin-bottom:10px; vertical-align:middle; }
 		.login-field:focus{ border:1px solid #BBD5EA; }
-	.placeholder{ color:#999; }
+	::placeholder{ color:#AAA; }
 	.login-field-icon{ position:absolute; display:block; top:14px; right:13px; width:16px; height:20px; cursor:pointer; background:url(skin_icons.png) no-repeat; }
 		.login-field-icon.user{ background-position:-1px -137px;}
 		.login-field-icon.pwd{ background-position:-28px -137px; }
@@ -242,7 +243,7 @@ textarea.input{ width:300px; height:65px; }
 	.toolbar .r-list .img-view{ display:block; float:left; margin-left:10px; width:30px; height:30px; border:1px solid #dbdbdb; background:url(skin_icons.png) -187px -20px no-repeat #fafafa; text-indent:-9999px; }
 	.toolbar .r-list .txt-view{ display:block; float:left; width:30px; height:30px; border:1px solid #dbdbdb; border-left:none; background:url(skin_icons.png) -216px -20px no-repeat #fafafa; text-indent:-9999px; }
 
-.ltable{ width:100%; border:1px solid #e1e1e1; font-family:"Microsoft YaHei"; font-size:12px; }
+.ltable{ width:100%; border:1px solid #e1e1e1; font-family: 'Nunito Sans', sans-serif; font-size:12px; }
 	.ltable th{ padding:8px 0; color:#333; font-size:12px; font-weight:500; background:#f3f3f3; border-bottom:1px solid #E1E1E1; line-height:1.5em; }
 	.ltable td{ padding:8px 0; border-bottom:1px solid #e8e8e8; line-height:1.5em; color:#666; }
 	.ltable td .sort{ display:inline-block; padding:0 3px; border:1px solid #d7d7d7; width:40px; height:20px; line-height:18px; color:#666; font-size:12px; background:#fff; vertical-align:middle; }
@@ -278,9 +279,9 @@ textarea.input{ width:300px; height:65px; }
 	.ltable td.comment{ padding:10px; line-height:1em; }
 		.ltable td.comment .title{ margin-bottom:5px; line-height:180%; font-weight:bold; }
 		.ltable td.comment .title .note{ float:right; font-weight:normal; }
-		.ltable td.comment .title .note i{ margin-left:10px; font-style:normal; font-family:'Microsoft YaHei'; color:#999; }
+		.ltable td.comment .title .note i{ margin-left:10px; font-style:normal; font-family: 'Nunito Sans', sans-serif; color:#999; }
 		.ltable td.comment .title .note i.reply{ padding-left:18px; }
-		.ltable td.comment .ask{ line-height:180%; font-family:'Microsoft YaHei'; }
+		.ltable td.comment .ask{ line-height:180%; font-family: 'Nunito Sans', sans-serif; }
 		.ltable td.comment .ask .audit{ margin-right:3px; display:inline-block; vertical-align:middle; width:14px; height:14px; background:url(skin_icons.png) -362px -112px  no-repeat; }
 		.ltable td.comment .ask .answer{ margin-top:10px; padding:6px 10px; border:1px solid #f6e8b9; background:#fbf8e7; color:#666; }
 		.ltable td.comment .ask .answer b{ color:#090; }
@@ -385,7 +386,7 @@ textarea.input{ width:300px; height:65px; }
 	.photo-list ul li .img-box{ margin:5px 5px 5px auto; position:relative; width:128px; height:128px; overflow:hidden; border:3px #efefed solid; cursor:pointer; }
 	.photo-list ul li .img-box.selected{ border:3px #f60 solid }
 	.photo-list ul li .img-box img{ width:128px; height:128px; opacity:1; }
-	.photo-list ul li .img-box .remark{ top:106px; left:0px; margin:0; padding:3px 2px; position:absolute; display:block; width:124px; height:122px; overflow:hidden; background:#000; filter:alpha(opacity=50); opacity:0.5; -moz-opacity:0.5; text-align:left; font-family:"Microsoft Yahei"; }
+	.photo-list ul li .img-box .remark{ top:106px; left:0px; margin:0; padding:3px 2px; position:absolute; display:block; width:124px; height:122px; overflow:hidden; background:#000; filter:alpha(opacity=50); opacity:0.5; -moz-opacity:0.5; text-align:left; font-family: 'Nunito Sans', sans-serif; }
 	.photo-list ul li .img-box .remark:hover{ top:0px; }
 	.photo-list ul li .img-box .remark i{ color:#fff; font-style:normal; position:relative; line-height:18px; }
 	.photo-list ul li a{ padding-right:1em; }
@@ -408,7 +409,7 @@ textarea.input{ width:300px; height:65px; }
 	.border-table td{ margin:0; padding:2px 10px; line-height:26px; height:28px; border:1px solid #e1e1e1; vertical-align:middle; white-space:nowrap; word-break:keep-all; }
 	.border-table td input{ vertical-align:middle; }
 	.border-table td .position{ position:relative; min-height:100%; }
-	.border-table td .ibtn{ position:absolute;top:0; right:-7px; background:#cc; border:none; color:#666; cursor:pointer; font-family:"Microsoft Yahei"; font-size:12px; height:25px; line-height:25px; padding:0 12px; }
+	.border-table td .ibtn{ position:absolute;top:0; right:-7px; background:#cc; border:none; color:#666; cursor:pointer; font-family: 'Nunito Sans', sans-serif; font-size:12px; height:25px; line-height:25px; padding:0 12px; }
 	.border-table td .ibtn:hover{ color:#fff; background:#FF9C30; }
 	.border-table thead th{ color:#333; font-weight:normal; white-space:nowrap; text-align:center; background:#f9f9f9; }
 	.border-table tbody th{padding-right:5px; text-align:right;color:#707070;background-color:#f9f9f9}
@@ -420,7 +421,7 @@ textarea.input{ width:300px; height:65px; }
 
 /*订单状态样式*/
 .order-flow{ margin:0 auto; padding:0; font-size:12px; font-weight:normal; padding-bottom:4px; }
-    .order-flow-left, .order-flow-arrive, .order-flow-wait, .order-flow-right-arrive, .order-flow-right-wait{ margin:0; padding:0; background: url(order_speed.gif) no-repeat scroll 0 0; float:left; font-family:Arial; line-height:16px; text-align:center; width:140px; }
+    .order-flow-left, .order-flow-arrive, .order-flow-wait, .order-flow-right-arrive, .order-flow-right-wait{ margin:0; padding:0; background: url(order_speed.gif) no-repeat scroll 0 0; float:left; font-family: 'Nunito Sans', sans-serif; line-height:16px; text-align:center; width:140px; }
     .order-flow div span{ margin:0; padding:0; background:none repeat scroll 0 0 #fff; display:block;}
     .order-flow div span p{ margin:0; padding:0; }
     .order-flow .name { margin:0; padding:0 0 4px 0; }
@@ -432,7 +433,7 @@ textarea.input{ width:300px; height:65px; }
 
 /*按钮样式*/
 .td-input{ display:inline-block; padding:0 3px; border:1px solid #d7d7d7; height:20px; line-height:18px; color:#666; font-size:12px; background:#fff; vertical-align:middle; }
-.btn{ background:#16a0d3; border:none; color:#fff; cursor:pointer; display:inline-block; font-family:"Microsoft Yahei"; font-size:12px; height:32px; line-height:32px; margin:0 1px 0 0; padding:0 20px; }
+.btn{ background:#16a0d3; border:none; color:#fff; cursor:pointer; display:inline-block; font-family: 'Nunito Sans', sans-serif; font-size:12px; height:32px; line-height:32px; margin:0 1px 0 0; padding:0 20px; }
 	.btn:hover{ background:#117ea6; }
 	.btn.green{ background:#52A152; }
 	.btn.green:hover{ background:#328032; }

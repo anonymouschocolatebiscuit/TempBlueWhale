@@ -1,6 +1,7 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 /* CSS Document */
-*{ padding:0; margin:0; font-family:"Microsoft YaHei"; }
+*{ padding:0; margin:0; font-family: 'Nunito Sans', sans-serif; }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

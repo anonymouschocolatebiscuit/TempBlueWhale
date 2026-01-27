@@ -13,7 +13,6 @@ namespace BlueWhale.DAL
     {
         public DisassembleDAL()
         {
-
         }
 
         #region Attribute
@@ -38,8 +37,6 @@ namespace BlueWhale.DAL
             get { return number; }
             set { number = value; }
         }
-
-
 
         private DateTime bizDate;
         public DateTime BizDate
@@ -104,12 +101,9 @@ namespace BlueWhale.DAL
             set { flag = value; }
         }
 
-
         #endregion
 
-
         #region Automatically generate bill number
-
 
         /// <summary>
         /// Automatically generate bill number
@@ -119,18 +113,13 @@ namespace BlueWhale.DAL
         {
             DataSet ds = new DataSet();
             SqlParameter[] param = {
-
                                       new SqlParameter("@shopId",shopId),
-                                       new SqlParameter("@NumberHeader","SPCX"),//First four letters of the bill no
-                                       new SqlParameter("@tableName","GoodsOpen")//Table
-                                      
-                                       
-
+                                      new SqlParameter("@NumberHeader","SPCX"),//First four letters of the bill no
+                                      new SqlParameter("@tableName","GoodsOpen")//Table
                                      };
 
             ds = SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.StoredProcedure, "makeBillNumber", param);
             return ds.Tables[0].Rows[0][0].ToString();
-
         }
 
         #endregion
@@ -143,45 +132,36 @@ namespace BlueWhale.DAL
         public int Add()
         {
             string id = "0";
-
             string sql = "insert into GoodsOpen(shopId,number,bizDate,fee,remarks,makeId,makeDate,bizId,flag)";
             sql += " values(@shopId,@number,@bizDate,@fee,@remarks,@makeId,@makeDate,@bizId,@flag)   select @@identity ";
             SqlParameter[] param = {
-
                                        new SqlParameter("@ShopId",ShopId),
-
                                        new SqlParameter("@number",Number),
-
                                        new SqlParameter("@bizDate",bizDate),
-
                                        new SqlParameter("@Fee",Fee),
                                        new SqlParameter("@remarks",remarks),
                                        new SqlParameter("@makeId",makeId),
                                        new SqlParameter("@MakeDate",MakeDate),
                                        new SqlParameter("@BizId",BizId),
                                        new SqlParameter("@Flag",Flag)
-
                                      };
 
             SqlDataReader sdr = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, param);
             if (sdr.Read())
             {
                 id = sdr[0].ToString();
-
             }
-
             return int.Parse(id);
         }
         #endregion
 
-        #region Modify a record
+        #region Edit a record
         /// <summary>
-        /// Modify a record
+        /// Edit a record
         /// </summary>
         /// <returns></returns>
         public int Update()
         {
-
             string sql = @"UPDATE GoodsOpen
                                        SET 
                                           shopId=@shopId                                
@@ -194,20 +174,16 @@ namespace BlueWhale.DAL
                                         
                                      WHERE id=@id";
             SqlParameter[] param = {
-
                                            new SqlParameter("@ShopId",ShopId),
                                            new SqlParameter("@BizDate",BizDate),
                                            new SqlParameter("@Fee",Fee),
                                            new SqlParameter("@Remarks",Remarks),
-
                                            new SqlParameter("@BizId",BizId),
                                            new SqlParameter("@Flag",Flag),
                                            new SqlParameter("@Id",Id)
-
                                        };
 
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, param);
-
         }
 
         #endregion
@@ -229,11 +205,7 @@ namespace BlueWhale.DAL
 
             sql += " end ";
 
-
-
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
-
-
         }
 
         #endregion
@@ -250,7 +222,6 @@ namespace BlueWhale.DAL
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
-
 
         #endregion
 
@@ -275,7 +246,7 @@ namespace BlueWhale.DAL
 
             if (key != "")
             {
-                sql += " and( number like '%" + key + "%' or remarks  like '%" + key + "%' or remarksItem  like '%" + key + "%') ";
+                sql += " and( number like '%" + key + "%' or remarks  like '%" + key + "%' or goodsName  like '%" + key + "%') ";
             }
 
             sql += " order by number ";
@@ -287,7 +258,6 @@ namespace BlueWhale.DAL
 
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, param);
         }
-
 
         #endregion
 
@@ -305,7 +275,6 @@ namespace BlueWhale.DAL
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
 
-
         #endregion
 
         #region View product disassembly order by number
@@ -322,9 +291,7 @@ namespace BlueWhale.DAL
             return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
         }
 
-
         #endregion
-
 
         #region Review a record
 
@@ -357,13 +324,9 @@ namespace BlueWhale.DAL
             sql += " end ";
 
             return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
-
         }
 
         #endregion
-
-
-
 
     }
 }

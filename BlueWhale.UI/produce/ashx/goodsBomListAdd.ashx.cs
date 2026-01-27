@@ -17,10 +17,13 @@ namespace BlueWhale.UI.produce.ashx
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class goodsBomListAdd : IHttpHandler, IRequiresSessionState
     {
+
         public DAL.produce.goodsBomList dal = new DAL.produce.goodsBomList();
         
+  
         public class ListModel<T>
         {
+
             #region Model
             private int _id;
             private int? _shopid;
@@ -121,6 +124,7 @@ namespace BlueWhale.UI.produce.ashx
             }
             #endregion Model
 
+
             /// <summary>
             /// Product Detail
             /// </summary>
@@ -130,11 +134,14 @@ namespace BlueWhale.UI.produce.ashx
                 get { return _Rows; }
                 set { _Rows = value; }
             }
+
+         
         }
  
         [Serializable]
         public class ListItemModel
         {
+
             #region Model
             private int _id;
             private int? _pid;
@@ -179,16 +186,22 @@ namespace BlueWhale.UI.produce.ashx
                 get { return _remarks; }
             }
             #endregion Model
+
         }
 
+
+
+      
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
 
             if (context.Session["userInfo"] == null)
             {
+
                 context.Response.Write("Login timeout, please log in again!");
                 return;
+ 
             }
             BasePage basePage = new BasePage();
             //if (!basePage.CheckPower("goodsBomListAdd"))
@@ -198,12 +211,16 @@ namespace BlueWhale.UI.produce.ashx
             //}
             Users users = context.Session["userInfo"] as Users;
 
+    
             StreamReader reader = new StreamReader(context.Request.InputStream);
             string strJson = HttpUtility.UrlDecode(reader.ReadToEnd());
+
+         
 
             ListModel<ListItemModel> obj = Newtonsoft.Json.JsonConvert.DeserializeObject<ListModel<ListItemModel>>(strJson);
 
             ListModel<ListItemModel> itemList = obj;
+
 
             if (dal.ExistsBomList(obj.goodsId))
             {
@@ -231,9 +248,12 @@ namespace BlueWhale.UI.produce.ashx
             model.flagCheck = "Pending";
             model.flagUse = "Available";
 
+
             #endregion
 
+
             int pId = dal.Add(model);
+
 
             #region 
 
@@ -278,6 +298,7 @@ namespace BlueWhale.UI.produce.ashx
                 }
             }
             #endregion
+
         }
 
         public bool IsReusable

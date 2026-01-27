@@ -1,12 +1,15 @@
 ﻿var manager;
+
 $(function () {
-    var form = $("#form").ligerForm();
+    $("#form").ligerForm();
+
     var dateStart = $.ligerui.get("txtDateStart");
     dateStart.set("Width", 110);
     var dateEnd = $.ligerui.get("txtDateEnd");
     dateEnd.set("Width", 110);
     var txtVenderList = $.ligerui.get("txtVenderList");
     txtVenderList.set("Width", 310);
+
     manager = $("#maingrid").ligerGrid({
         columns: [
             {
@@ -26,7 +29,7 @@ $(function () {
             { display: 'Receipt Number', name: 'number', width: 120, align: 'center' },
             { display: 'Business Type', name: 'bizType', width: 120, align: 'center' },
             {
-                display: 'Purchase amount', name: 'sumPrice', width: 120, align: 'right',
+                display: 'Purchase Amount', name: 'sumPrice', width: 120, align: 'right',
                 totalSummary:
                 {
                     align: 'right',
@@ -37,7 +40,7 @@ $(function () {
                 }
             },
             {
-                display: 'Overall Discount Amount', name: 'disPrice', width: 180, align: 'right',
+                display: 'Discount Amount', name: 'disPrice', width: 180, align: 'right',
 
                 totalSummary:
                 {
@@ -49,7 +52,7 @@ $(function () {
                 }
             },
             {
-                display: 'Amount payable', name: 'payNeed', width: 120, align: 'right',
+                display: 'Payable Amount', name: 'payNeed', width: 120, align: 'right',
                 totalSummary:
                 {
                     align: 'right',
@@ -60,7 +63,7 @@ $(function () {
                 }
             },
             {
-                display: 'Actual payment amount', name: 'payReady', width: 165, align: 'right',
+                display: 'Actual Amount Paid', name: 'payReady', width: 165, align: 'right',
                 totalSummary:
                 {
                     align: 'right',
@@ -70,7 +73,7 @@ $(function () {
                     }
                 }
             },
-            { display: 'Payable balance', name: 'payEnd', width: 120, align: 'right' }
+            { display: 'Payable Balance', name: 'payEnd', width: 120, align: 'right' }
         ], width: '98%',
         height: '98%',
         dataAction: 'local',

@@ -183,7 +183,7 @@ namespace BlueWhale.UI.pay.ashx
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = users.ShopId;
                     logs.Users = users.Names;
-                    logs.Events = "Modify other payment orders：" + obj.id.ToString();
+                    logs.Events = "Edit other payment orders：" + obj.id.ToString();
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
                     context.Response.Write("Succefull!");

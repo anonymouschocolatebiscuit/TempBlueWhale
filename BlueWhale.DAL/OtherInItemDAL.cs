@@ -8,7 +8,6 @@ namespace BlueWhale.DAL
     {
         public OtherInItemDAL()
         {
-
         }
 
         #region Attribute

@@ -8,21 +8,16 @@ using System.Web;
 using System.Web.Services;
 using System.Web.SessionState;
 
-
-
 namespace BlueWhale.UI.sales.ashx
 {
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class SalesOrderListAdd : IHttpHandler, IRequiresSessionState
     {
-
         public SalesOrderDAL dal = new SalesOrderDAL();
-
 
         public class OrderListModel<T>
         {
-
             #region Header
 
             private int _venderId;
@@ -31,6 +26,7 @@ namespace BlueWhale.UI.sales.ashx
                 get { return _venderId; }
                 set { _venderId = value; }
             }
+
             private DateTime _bizDate;
             public DateTime bizDate
             {
@@ -191,24 +187,23 @@ namespace BlueWhale.UI.sales.ashx
 
             if (context.Session["userInfo"] == null)
             {
-
-                context.Response.Write("Login timeout, please log in again!");
+                context.Response.Write("Login timeout, please login again!");
                 return;
-
             }
+
             BasePage basePage = new BasePage();
             if (!basePage.CheckPower("PurOrderListAdd"))
             {
                 context.Response.Write("You do not have this permission, please contact the administrator!");
                 return;
             }
+
             Users users = context.Session["userInfo"] as Users;
 
             StreamReader reader = new StreamReader(context.Request.InputStream);
             string strJson = HttpUtility.UrlDecode(reader.ReadToEnd());
 
             OrderListModel<OrderListItemModel> obj = Newtonsoft.Json.JsonConvert.DeserializeObject<OrderListModel<OrderListItemModel>>(strJson);
-
             OrderListModel<OrderListItemModel> itemList = obj;
 
             #region Main Table
@@ -222,22 +217,16 @@ namespace BlueWhale.UI.sales.ashx
             dal.Remarks = obj.remarks.ToString();
             dal.MakeId = users.Id;
             dal.MakeDate = DateTime.Now;
-
             dal.Flag = "Save";
-
 
             #endregion
 
 
             int pId = dal.Add();
 
-
-
             if (pId > 0)
             {
-
                 #region Product Table
-
 
                 SalesOrderItemDAL item = new SalesOrderItemDAL();
 
@@ -249,18 +238,14 @@ namespace BlueWhale.UI.sales.ashx
                     item.Num = itemList.Rows[i].Num;
                     item.CkId = itemList.Rows[i].CkId;
                     item.Price = itemList.Rows[i].Price;
-
                     item.Dis = itemList.Rows[i].Dis;
                     item.SumPriceDis = itemList.Rows[i].SumPriceDis;
-
                     item.PriceNow = itemList.Rows[i].PriceNow;
                     item.SumPriceNow = itemList.Rows[i].SumPriceNow;
-
                     item.Tax = itemList.Rows[i].Tax;
                     item.PriceTax = itemList.Rows[i].PriceTax;
                     item.SumPriceTax = itemList.Rows[i].SumPriceTax;
                     item.SumPriceAll = itemList.Rows[i].SumPriceAll;
-
                     item.Remarks = itemList.Rows[i].Remarks.ToString();
                     item.ItemId = itemList.Rows[i].ItemId;
                     item.SourceNumber = itemList.Rows[i].SourceNumber.ToString();
@@ -269,7 +254,6 @@ namespace BlueWhale.UI.sales.ashx
                 }
 
                 #endregion              
-
 
                 if (check > 0)
                 {
@@ -281,14 +265,9 @@ namespace BlueWhale.UI.sales.ashx
                     logs.Add();
 
                     context.Response.Write("Execution successful！");
-
-
                 }
             }
         }
-
-
-
 
         public bool IsReusable
         {

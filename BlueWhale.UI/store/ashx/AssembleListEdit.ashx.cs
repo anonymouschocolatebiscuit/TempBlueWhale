@@ -17,14 +17,11 @@ namespace BlueWhale.UI.store.ashx
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class AssembleListEdit : IHttpHandler, IRequiresSessionState  //用Session必须引用IRequiresSessionState
     {
-
         public AssembleDAL dal = new AssembleDAL();
-
 
         public class OrderListModel<T>
         {
-
-            #region 表头字段
+            #region Header
 
             private int _id;
             public int id
@@ -32,7 +29,6 @@ namespace BlueWhale.UI.store.ashx
                 get { return _id; }
                 set { _id = value; }
             }
-
 
             private DateTime _bizDate;
             public DateTime bizDate
@@ -47,7 +43,6 @@ namespace BlueWhale.UI.store.ashx
                 get { return _fee; }
                 set { _fee = value; }
             }
-
 
             private int _goodsId;
             public int goodsId
@@ -180,7 +175,7 @@ namespace BlueWhale.UI.store.ashx
             OrderListModel<OrderListItemModel> obj = Newtonsoft.Json.JsonConvert.DeserializeObject<OrderListModel<OrderListItemModel>>(strJson);
             OrderListModel<OrderListItemModel> itemList = obj;
 
-            #region 主表赋值
+            #region Main Table
 
             dal.Id = obj.id;
             dal.ShopId = users.ShopId;
@@ -196,7 +191,7 @@ namespace BlueWhale.UI.store.ashx
 
             int pId = dal.Update();
 
-            #region 字表赋值
+            #region Sub-table
 
             if (pId > 0)
             {
@@ -204,10 +199,10 @@ namespace BlueWhale.UI.store.ashx
                 AssembleItemDAL item = new AssembleItemDAL();
                 int deleteItem = item.Delete(obj.id);
 
-                #region 增加组合的商品
+                #region Cobination
 
                 item.PId = obj.id;
-                item.Types = 1;//要组合的商品，所以是入库，数量增加。
+                item.Types = 1;
                 item.GoodsId = obj.goodsId;
                 item.Num = obj.num;
                 item.Price = obj.price;
@@ -230,6 +225,7 @@ namespace BlueWhale.UI.store.ashx
                     item.Remarks = itemList.Rows[i].Remarks.ToString();
                     check = item.Add();
                 }
+
                 if (check > 0)
                 {
                     LogsDAL logs = new LogsDAL();
@@ -237,10 +233,7 @@ namespace BlueWhale.UI.store.ashx
                     logs.Events = "Edit Assembled Product：" + obj.id.ToString();
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
-
                     context.Response.Write("Execution successful!");
-
-
                 }
             }
             #endregion

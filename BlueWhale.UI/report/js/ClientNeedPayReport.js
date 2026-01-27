@@ -36,28 +36,48 @@ $(function () {
             { display: 'Business Type', name: 'bizType', width: 120, align: 'center' },
             {
                 display: 'Increase in Receivables', name: 'payNeed', width: 180, align: 'right', type: 'float',
+                render: function (rowdata) {
+                    if (!rowdata.payNeed) return "0.00"; // handle null/undefined and force 2 decimal places
+                    return parseFloat(rowdata.payNeed).toFixed(2);
+                },
                 totalSummary:
                 {
                     align: 'right',
                     type: 'sum',
                     render: function (e) {
-                        return Math.round(e.sum * 100) / 100;
+                        return (Math.round(e.sum * 100) / 100).toFixed(2);
                     }
                 }
             },
             {
                 display: 'Increase in Advance Payments', name: 'payReady', width: 240, align: 'right', type: 'float',
+                render: function (rowdata) {
+                    if (!rowdata.payReady) return "0.00"; // handle null/undefined and force 2 decimal places
+                    return parseFloat(rowdata.payReady).toFixed(2);
+                },
                 totalSummary:
                 {
                     align: 'right',
                     type: 'sum',
                     render: function (e) {
-                        return Math.round(e.sum * 100) / 100;
+                        return (Math.round(e.sum * 100) / 100).toFixed(2);
                     }
                 }
             },
             {
-                display: 'Receivable Balance', name: 'payEnd', width: 180, align: 'right', type: 'float'
+                display: 'Receivable Balance', name: 'payEnd', width: 180, align: 'right', type: 'float',
+                render: function (rowdata) {
+                    if (!rowdata.payEnd) return "0.00"; // handle null/undefined and force 2 decimal places
+                    return parseFloat(rowdata.payEnd).toFixed(2);
+                },
+                totalSummary:
+                {
+                    align: 'right',
+                    type: 'sum',
+                    render: function (e) {
+                        return (Math.round(e.sum * 100) / 100).toFixed(2);
+                    }
+                }
 
             }
         ], width: '100%%',
@@ -80,6 +100,11 @@ function search() {
     var end = $("#txtDateEnd").val();
     var typeId = $("#txtVenderList").val();
     var typeIdString = typeId.split(";");
+
+    if (!start || !end) {
+        $.ligerDialog.warn('Start Date Or End Date Cannot Be Null!'); 
+        return;
+    }
 
     if (typeIdString != "") {
         typeId = "";

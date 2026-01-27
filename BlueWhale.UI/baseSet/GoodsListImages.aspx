@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>No Title</title>
+    <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
     <script src="../lib/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
     <script src="../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
     <script src="../lib/json2.js" type="text/javascript"></script>
@@ -23,8 +24,19 @@
 
     </script>
 
-
     <style type="text/css">
+        body, 
+        body * {
+            font-family: 'Nunito Sans', sans-serif !important;
+        }
+
+        input,
+        button,
+        select,
+        textarea {
+            font-family: 'Nunito Sans', sans-serif !important;
+        }
+
         body {
             font-size: 12px;
         }
@@ -47,9 +59,30 @@
             left: 230px;
             top: 120px;
         }
+
+        .hidden-uploader {
+            display: none;
+        }
+
+        .upload-panel {
+            height: 50px;
+            color: gray;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px black dashed;
+        }
+
+        .my-1 {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .ui_state_highlight{
+            width: fit-content;
+        }
     </style>
-
-
 
 </head>
 <body>
@@ -57,13 +90,16 @@
         <table border="0" cellpadding="0" width="800px">
             <tr>
                 <td align="left" style="line-height: 40px;">
-                    <asp:FileUpload ID="fload" runat="server" />
+                    <asp:FileUpload ID="fload" runat="server" CssClass="hidden-uploader" />
+                    <div id="customUploader" class="upload-panel" runat="server">
+                        Upload
+                    </div>
                     &nbsp; Default Display：<asp:DropDownList ID="ddlDefault" runat="server">
                         <asp:ListItem Selected="True" Value="1">Yes</asp:ListItem>
                         <asp:ListItem Value="0">No</asp:ListItem>
                     </asp:DropDownList>
                     &nbsp;
-                    <asp:Button ID="btnSave" runat="server" OnClick="btnSave_Click" Text="Upload" />
+                    <asp:Button ID="btnSave" runat="server" OnClick="btnSave_Click" Text="Upload"  CssClass="ui_state_highlight"/>
                     &nbsp; &nbsp;   
                     <input id="btnCancel" class="ui-btn" type="button" value="Close" onclick="closeDialog()" />
                 </td>
@@ -85,7 +121,7 @@
                                     <td>
                                         <asp:Label ID="lbDefault" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"moren") %>'></asp:Label>
                                         <asp:Button ID="btnDefault" runat="server" Text="Set To Default" CommandArgument='<%# DataBinder.Eval(Container.DataItem,"id") %>'
-                                            CommandName="moren" />
+                                            CommandName="moren"/>
                                         &nbsp;          
                 <asp:Button ID="btnDelete" runat="server" Text="Delete" CommandArgument='<%# DataBinder.Eval(Container.DataItem,"id") %>'
                     CommandName="del" />

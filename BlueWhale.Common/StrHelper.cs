@@ -39,7 +39,6 @@ namespace BlueWhale.Common
             page.ClientScript.RegisterStartupScript(page.GetType(), "ajaxjs", string.Format("alert('{0}！')", msg), true);
         }
 
-        //字符串清理
         public static string InputText(string inputString, int maxLength)
         {
             StringBuilder retVal = new StringBuilder();
@@ -177,8 +176,6 @@ namespace BlueWhale.Common
             #endregion
         }
 
-
-
         static public string getSpells(string input)
         {
             #region
@@ -216,7 +213,6 @@ namespace BlueWhale.Common
             else return cn;
             #endregion
         }
-
 
         /// <summary>
         /// Half-width to Full-width symbol
@@ -284,7 +280,6 @@ namespace BlueWhale.Common
             MD5
         }
         #endregion
-
 
         /// <summary>
         /// encrypt password
@@ -401,7 +396,6 @@ namespace BlueWhale.Common
             return "星期" + week;
             #endregion
         }
-
 
         /// <summary>
         /// generate string to specific length
@@ -525,13 +519,11 @@ namespace BlueWhale.Common
             // Step 1: Calculate content block          
             string content = str.Replace("\r\n", "§");
             string[] strContent = content.Split(Convert.ToChar("§"));
-
             int strCount = rowsnum * strnum;
             int cutrow = rowsnum - strContent.Length;
             cutrow = rowsnum > 10 ? rowsnum : 10;
             int pStrCount;
             string setOkStr = "";
-
 
             // Step 2: Process content block
             for (int i = 0; i < strContent.Length; i++)
@@ -560,7 +552,6 @@ namespace BlueWhale.Common
 
             setOkStr = setOkStr.Replace("  ", "　"); // Convert soft (half-width) spaces to hard (full-width) spaces
             return setOkStr;
-
         }
 
         //String truncation function
@@ -807,10 +798,8 @@ namespace BlueWhale.Common
                 count = sr.Read(read, 0, 256);
             }
 
-
             // release resource
             sr.Close();
-
             return strResult;
             #endregion
         }
@@ -862,7 +851,7 @@ namespace BlueWhale.Common
             }
             else
             {
-                strResult = size + " 字节";
+                strResult = size + " Byte";
             }
 
             return strResult;

@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Services;
 using System.Web.SessionState;//Session must be referenced
 
-namespace BlueWhale.UI.Sales.ashx
+namespace BlueWhale.UI.sales.ashx
 {
     /// <summary>
     /// $codebehindclassname$ 的Summary
@@ -17,14 +17,12 @@ namespace BlueWhale.UI.Sales.ashx
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class SalesReceiptListEdit : IHttpHandler, IRequiresSessionState  //When using Session, you must reference IRequiresSessionState
     {
-
         public SalesReceiptDAL dal = new SalesReceiptDAL();
 
         public GoodsDAL goodsDAL = new GoodsDAL();
 
         public class OrderListModel<T>
         {
-
             #region Header Fields
 
             private int _Id;
@@ -294,6 +292,7 @@ namespace BlueWhale.UI.Sales.ashx
                 return;
             }
             BasePage basePage = new BasePage();
+
             if (!basePage.CheckPower("SalesReceiptListAdd"))
             {
                 context.Response.Write("You do not have this permission, please contact the administrator! ");
@@ -303,11 +302,10 @@ namespace BlueWhale.UI.Sales.ashx
             Users users = context.Session["userInfo"] as Users;
 
             StreamReader reader = new StreamReader(context.Request.InputStream);
+
             string strJson = HttpUtility.UrlDecode(reader.ReadToEnd());
 
             OrderListModel<OrderListItemModel> obj = Newtonsoft.Json.JsonConvert.DeserializeObject<OrderListModel<OrderListItemModel>>(strJson);
-
-            //string sendDate = obj.sendDate.ToShortDateString();
 
             OrderListModel<OrderListItemModel> itemList = obj;
 
@@ -335,33 +333,26 @@ namespace BlueWhale.UI.Sales.ashx
             #region Main table assignment
 
             dal.Number = "";// dal.GetBillNumberAuto(users.ShopId);
-
             dal.ShopId = users.ShopId;
             dal.WlId = obj.venderId;
             dal.BizDate = obj.bizDate;
             dal.BizId = obj.bizId;
             dal.Types = 1;
             dal.Remarks = obj.remarks.ToString();
-
             dal.Dis = obj.dis;
             dal.DisPrice = obj.disPrice;
-
             dal.PayNow = obj.payNow;
             dal.PayNowNo = obj.payNowNo;
             dal.BkId = obj.bkId;
-
             dal.MakeId = users.Id;
             dal.MakeDate = DateTime.Now;
-
             dal.SendId = obj.SendId;
             dal.SendPayType = obj.SendPayType;
             dal.SendNumber = obj.SendNumber;
             dal.SendPrice = obj.SendPrice;
-
             dal.GetName = obj.GetName;
             dal.Phone = obj.Phone;
             dal.Address = obj.Address;
-
             dal.Flag = "Save";
             dal.Id = obj.Id;
 
@@ -380,38 +371,30 @@ namespace BlueWhale.UI.Sales.ashx
                 for (int i = 0; i < itemList.Rows.Count; i++)
                 {
                     item.PId = obj.Id;
-
                     item.GoodsId = itemList.Rows[i].GoodsId;
                     item.Num = itemList.Rows[i].Num;
-
                     item.CkId = itemList.Rows[i].CkId;
                     item.Price = itemList.Rows[i].Price;
-
                     item.Dis = itemList.Rows[i].Dis;
                     item.SumPriceDis = itemList.Rows[i].SumPriceDis;
-
                     item.PriceNow = itemList.Rows[i].PriceNow;
                     item.SumPriceNow = itemList.Rows[i].SumPriceNow;
-
                     item.Tax = itemList.Rows[i].Tax;
                     item.PriceTax = itemList.Rows[i].PriceTax;
                     item.SumPriceTax = itemList.Rows[i].SumPriceTax;
                     item.SumPriceAll = itemList.Rows[i].SumPriceAll;
-
                     item.Remarks = itemList.Rows[i].Remarks.ToString();
                     item.ItemId = itemList.Rows[i].ItemId;
                     item.SourceNumber = itemList.Rows[i].SourceNumber.ToString();
-
 
                     check = item.Add();
                 }
                 if (check > 0)
                 {
                     LogsDAL logs = new LogsDAL();
-
                     logs.ShopId = users.ShopId;
                     logs.Users = users.Names;
-                    logs.Events = "Modify sales delivery：" + dal.Number;
+                    logs.Events = "Edit sales delivery：" + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 

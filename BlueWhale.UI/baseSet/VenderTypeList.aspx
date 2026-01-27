@@ -32,9 +32,9 @@
                 onDblClickRow: editRow,
                 toolbar: {
                     items: [
-                        { text: 'Reload', click: reload, img: '../lib/ligerUI/skins/icons/refresh.png' },
+                        { text: 'Refresh', click: reload, img: '../lib/ligerUI/skins/icons/refresh.png' },
                         { line: true },
-                        { text: 'Create', click: addRow, img: '../lib/ligerUI/skins/icons/add.gif' },
+                        { text: 'Add', click: addRow, img: '../lib/ligerUI/skins/icons/add.gif' },
                         { line: true },
                         { text: 'Edit', click: editRow, img: '../lib/ligerUI/skins/icons/modify.gif' },
                         { line: true },
@@ -48,7 +48,7 @@
             $.ligerDialog.open({
                 title: "Create Vender Category",
                 url: 'VenderTypeListAdd.aspx',
-                height: 250,
+                height: 230,
                 width: 400,
                 modal: true
             });
@@ -64,7 +64,7 @@
             $.ligerDialog.open({
                 title: "Edit Vender Category",
                 url: "VenderTypeListAdd.aspx?id=" + row.id + "&names=" + encodeURIComponent(row.names) + "&flag=" + row.flag,
-                height: 250,
+                height: 230,
                 width: 400,
                 modal: true
             });
@@ -116,7 +116,7 @@
 </head>
 
 <body style="padding-left: 10px; padding-top: 10px;">
-    <form id="form1" runat="server">
+    <form id="form2" runat="server">
         <div id="maingrid"></div>
     </form>
 </body>

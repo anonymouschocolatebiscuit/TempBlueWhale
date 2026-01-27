@@ -69,7 +69,7 @@ namespace BlueWhale.UI.baseSet
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {
@@ -113,15 +113,14 @@ namespace BlueWhale.UI.baseSet
             string isWhere = " shopId='" + LoginUser.ShopId + "' ";
 
             isWhere += " and (names like'%" + key + "%'" +
-                    " or  code like'%" + key + "%' " +
                     " or  tel like'%" + key + "%' " +
-                    " or  remarks like'%" + key + "%' " +
+                    " or  phone like'%" + key + "%' " +
                     " or  address like'%" + key + "%') ";
 
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {
@@ -153,8 +152,7 @@ namespace BlueWhale.UI.baseSet
                     flag = ds.Tables[0].Rows[i]["flag"].ToString()
                 });
             }
-            var griddata = new { Rows = list };
-            string s = new JavaScriptSerializer().Serialize(griddata);
+            string s = new JavaScriptSerializer().Serialize(new { Rows = list });
             Response.Write(s);
         }
 
@@ -165,7 +163,7 @@ namespace BlueWhale.UI.baseSet
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {

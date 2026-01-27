@@ -615,7 +615,7 @@ namespace BlueWhale.DAL
             sql += " update client set flag='" + flag + "' ";
             if (flag == "Review")
             {
-                sql += " ,checkId='" + chekerId + "',checkDate='" + checkDate + "'";
+                sql += " ,checkId='" + chekerId + "',checkDate='" + checkDate.ToString("yyyy-MM-dd HH:mm:ss") + "'";
             }
             if (flag == "Save")
             {

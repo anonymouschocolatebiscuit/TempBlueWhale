@@ -174,9 +174,9 @@ $(function () {
                     display: 'Amount', name: 'sumPriceNow', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
                     totalSummary:
                     {
-                        align: 'center',   
+                        align: 'center',
                         type: 'sum',
-                        render: function (e) { 
+                        render: function (e) {
                             var itemSumPriceNow = e.sum;
                             return "<span id='sumPriceItemNow'>" + Math.round(itemSumPriceNow * 10000) / 10000 + "</span>";//formatCurrency(suminf.sum)
                         }
@@ -189,9 +189,9 @@ $(function () {
                     display: 'Tax amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
                     totalSummary:
                     {
-                        align: 'center',  
+                        align: 'center',
                         type: 'sum',
-                        render: function (e) {  
+                        render: function (e) {
                             var itemSumPriceTax = e.sum;
                             return "<span id='sumPriceItemTax'>" + Math.round(itemSumPriceTax * 10000) / 10000 + "</span>";//formatCurrency(suminf.sum)
                         }
@@ -201,9 +201,9 @@ $(function () {
                     display: 'Total Price with Tax', name: 'sumPriceAll', width: 80, type: 'float', align: 'right', editor: { type: 'float' },
                     totalSummary:
                     {
-                        align: 'center',  
+                        align: 'center',
                         type: 'sum',
-                        render: function (e) {  
+                        render: function (e) {
                             var itemSumPriceAll = e.sum;
                             return "<span id='sumPriceItemAll'>" + Math.round(itemSumPriceAll * 10000) / 10000 + "</span>";//formatCurrency(suminf.sum)
                         }
@@ -220,12 +220,12 @@ $(function () {
             usePager: false,
             alternatingRow: false,
             totalSummary: true,
-            enabledEdit: true, 
+            enabledEdit: true,
             width: '100%',
             // onBeforeEdit: f_onBeforeEdit,
             // onBeforeSubmitEdit: f_onBeforeSubmitEdit,
             //totalRender:f_totalRender,
-            onAfterEdit: f_onAfterEdit 
+            onAfterEdit: f_onAfterEdit
         }
         );
 });
@@ -266,8 +266,7 @@ function f_onGoodsChanged(e) {
         remarks: ""
     });
 
-    if (e.length > 1) 
-    {
+    if (e.length > 1) {
         var data = manager.getData();
         for (var i = data.length - 1; i >= 0; i--) {
             if (data[i].goodsId == 0 || data[i].goodsName == "") {
@@ -376,10 +375,9 @@ function f_onAfterEdit(e) {
         manager.updateCell('sumPriceNow', sumPriceNow.toString(), e.record);
         manager.updateCell('sumPriceTax', sumPriceTax.toString(), e.record);
         manager.updateCell('sumPriceAll', sumPriceAll.toString(), e.record);
-    } 
+    }
 
-    if (e.column.name == "price") 
-    {
+    if (e.column.name == "price") {
         price = Number(e.value);
         sumPriceDis = num * price * dis / 100;
         priceNow = price * (1 + dis / 100);
@@ -402,10 +400,9 @@ function f_onAfterEdit(e) {
         manager.updateCell('sumPriceNow', sumPriceNow.toString(), e.record);
         manager.updateCell('sumPriceTax', sumPriceTax.toString(), e.record);
         manager.updateCell('sumPriceAll', sumPriceAll.toString(), e.record);
-    } 
+    }
 
-    if (e.column.name == "dis") 
-    {
+    if (e.column.name == "dis") {
         dis = Number(e.value);
 
         if (dis != 0) {
@@ -436,10 +433,9 @@ function f_onAfterEdit(e) {
         manager.updateCell('sumPriceNow', sumPriceNow.toString(), e.record);
         manager.updateCell('sumPriceTax', sumPriceTax.toString(), e.record);
         manager.updateCell('sumPriceAll', sumPriceAll.toString(), e.record);
-    } 
+    }
 
-    if (e.column.name == "sumPriceDis") 
-    {
+    if (e.column.name == "sumPriceDis") {
         sumPriceDis = Number(e.value);
 
         if (sumPriceDis >= num * price) {
@@ -479,8 +475,7 @@ function f_onAfterEdit(e) {
         manager.updateCell('sumPriceAll', sumPriceAll.toString(), e.record);
     }
 
-    if (e.column.name == "priceNow") 
-    {
+    if (e.column.name == "priceNow") {
         priceNow = Number(e.value);
 
         if (price != 0) {
@@ -516,8 +511,7 @@ function f_onAfterEdit(e) {
         manager.updateCell('sumPriceAll', sumPriceAll.toString(), e.record);
     }
 
-    if (e.column.name == "sumPriceNow") 
-    {
+    if (e.column.name == "sumPriceNow") {
         sumPriceNow = Number(e.value);
         if (num != 0) {
             priceNow = (sumPriceNow) / num;
@@ -560,10 +554,9 @@ function f_onAfterEdit(e) {
         manager.updateCell('sumPriceNow', sumPriceNow, e.record);
         manager.updateCell('sumPriceTax', sumPriceTax, e.record);
         manager.updateCell('sumPriceAll', sumPriceAll, e.record);
-    } 
+    }
 
-    if (e.column.name == "tax") 
-    {
+    if (e.column.name == "tax") {
         tax = Number(e.value);
         priceTax = priceNow * (1 + tax / 100);
         if (tax == 0) {
@@ -579,10 +572,9 @@ function f_onAfterEdit(e) {
         manager.updateCell("priceTax", priceTax, e.record);
         manager.updateCell('sumPriceTax', sumPriceTax.toString(), e.record);
         manager.updateCell('sumPriceAll', sumPriceAll.toString(), e.record);
-    } 
+    }
 
-    if (e.column.name == "priceTax") 
-    {
+    if (e.column.name == "priceTax") {
         priceTax = Number(e.value);
         priceNow = priceTax / (1 + tax / 100);
         priceNow = Math.round(priceNow * 10000) / 10000;
@@ -609,10 +601,9 @@ function f_onAfterEdit(e) {
         manager.updateCell('sumPriceNow', sumPriceNow, e.record);
         manager.updateCell('sumPriceTax', sumPriceTax.toString(), e.record);
         manager.updateCell('sumPriceAll', sumPriceAll.toString(), e.record);
-    } 
+    }
 
-    if (e.column.name == "sumPriceAll") 
-    {
+    if (e.column.name == "sumPriceAll") {
         sumPriceAll = Number(e.value);
 
         if (num != 0) {
@@ -648,7 +639,7 @@ function f_onAfterEdit(e) {
         manager.updateCell('sumPriceNow', sumPriceNow, e.record);
         manager.updateCell('sumPriceTax', sumPriceTax, e.record);
         manager.updateCell('sumPriceAll', sumPriceAll, e.record);
-    } 
+    }
     updateTotal();
 }
 function f_onBeforeEdit(e) {
@@ -707,9 +698,9 @@ function addNewRow() {
 
 function save() {
 
-    var venderId = $("#clientId").val();  
+    var venderId = $("#clientId").val();
     var bizId = $("#ddlYWYList").val();
-    var bkId = $("#ddlBankList").val(); 
+    var bkId = $("#ddlBankList").val();
 
     var bizDate = $("#txtBizDate").val();
     if (bizDate == "") {
@@ -743,7 +734,7 @@ function save() {
 
         if (data[i].ckId == 0 || data[i].ckId == "" || data[i].ckId == "0" || data[i].ckName == "") {
 
-            $.ligerDialog.warn("Please enter the storage for row " + (i + 1) + "!");
+            $.ligerDialog.warn("Please enter the warehouse for row " + (i + 1) + "!");
             return;
             alert("Execution skipped！");
         }
@@ -773,7 +764,7 @@ function save() {
         url: 'ashx/PurReceiptListEdit.ashx',
         contentType: "application/json",
         //dataType: "json",
-        data: JSON.stringify(postData), 
+        data: JSON.stringify(postData),
         success: function (jsonResult) {
             if (jsonResult == "Execution successful！") {
                 $.ligerDialog.waitting('Execution successful！'); setTimeout(function () { $.ligerDialog.closeWaitting(); location.reload(); }, 2000);

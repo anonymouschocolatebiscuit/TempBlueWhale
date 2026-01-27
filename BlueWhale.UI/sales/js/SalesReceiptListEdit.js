@@ -28,14 +28,14 @@ $(document).bind('keydown.grid', function (event) {
 
 //New version
 function f_selectContact() {
-    $.ligerDialog.Open({
+    $.ligerDialog.open({
         title: 'Select Goods', name: 'winselector', width: 840, height: 540, url: '../baseSet/GoodsListSelect.aspx', buttons: [
             { text: 'OK', onclick: f_selectContactOK },
             { text: 'Cancel', onclick: f_selectContactCancel }
         ]
     });
     return false;
-} 
+}
 
 function f_selectContactOK(item, dialog) {
     var fn = dialog.frame.f_select || dialog.frame.window.f_select;
@@ -78,7 +78,6 @@ function f_selectClientOK(item, dialog) {
     $("#clientName").val(data.names);
     $("#clientId").val(data.id);
 
-
     dialog.close();
 }
 
@@ -120,16 +119,16 @@ $(function () {
                     display: '', isSort: false, width: 60, align: 'center', frozen: true, render: function (rowdata, rowindex, value) {
                         var h = "";
                         if (!rowdata._editing) {
-                            h += "<a href='javascript:addNewRow()' title='Add new row' style='float:left;'><div class='ui-icon ui-icon-plus'></div> </a> ";
-                            h += "<a href='javascript:deleteRow()' title='Delete row' style='float:left;'><div class='ui-icon ui-icon-trash'></div>< /a> ";
-                            h += "<a href='javascript:f_selectContact()' title='Select Products' style='float:left;'><div class='ui-icon ui-icon-search'></div>< /a> ";
+                            h += "<a href='javascript:addNewRow()' title='Add new row' style='float:left; width:16px;'><div class='ui-icon ui-icon-plus'></div> </a> ";
+                            h += "<a href='javascript:deleteRow()' title='Delete row' style='float:left;; width:16px;'><div class='ui-icon ui-icon-trash'></div>< /a> ";
+                            h += "<a href='javascript:f_selectContact()' title='Select Products' style='float:left;; width:16px;'><div class='ui-icon ui-icon-search'></div>< /a> ";
                         }
 
                         return h;
                     }
                 },
                 {
-                    display: 'Product Name', name: 'goodsName', width: '155px', align: 'left',
+                    display: 'Product Name', name: 'goodsName', width: 155, align: 'left',
 
                     totalSummary:
                     {
@@ -140,114 +139,113 @@ $(function () {
                         }
                     }
                 },
-                { display: 'Specification', name: 'spec', width: '100px', align: 'center' },
-                { display: 'Unit', name: 'unitName', width: '80px', align: 'center' },
+                { display: 'Specification', name: 'spec', width: 100, align: 'center' },
+                { display: 'Unit', name: 'unitName', width: 80, align: 'center' },
                 {
-                    display: 'Storehouse', name: 'ckId', width: '100px', isSort: false, textField: 'ckName',
+                    display: 'warehouse', name: 'ckId', width: 100, isSort: false, textField: 'ckName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(),
                         valueField: 'ckId', textField: 'ckName'
                     }
                 },
-                        {
-                            display: 'Quantity', name: 'num', width: '70px', type: 'float', align: 'right', editor: { type: 'float' },
+                {
+                    display: 'Quantity', name: 'num', width: 70, type: 'float', align: 'right', editor: { type: 'float' },
 
-                            totalSummary:
-                            {
-                                align: 'right', //Alignment of summary cell contents: left/center/right
-                                type: 'sum',
-                                render: function (e) { //Summary renderer, return HTML to load into cell
-                                    //e Summary Object (including sum, max, min, avg, count)
-                                    return Math.round(e.sum * 100) / 100;
-                                }
-                            }
-                        },
-                        {
-                            display: 'Original price', name: 'price', width: '95px', type: 'float', align: 'right', editor: { type: 'float' }
-                        },
-                        {
-                            display: 'Discount%', name: 'dis', width: '80px', type: 'float', align: 'right', editor: { type: 'float' }
-                        },
-                        {
-                            display: 'Discount amount', name: 'sumPriceDis', width: '120px', type: 'float', align: 'right', editor: { type: 'float' },
-                            totalSummary:
-                            {
-                                align: 'center', //Alignment of summary cell contents: left/center/right
-                                type: 'sum',
-                                render: function (e) { //Summary renderer, return HTML to load into cell
+                    totalSummary:
+                    {
+                        align: 'right', //Alignment of summary cell contents: left/center/right
+                        type: 'sum',
+                        render: function (e) { //Summary renderer, return HTML to load into cell
+                            //e Summary Object (including sum, max, min, avg, count)
+                            return Math.round(e.sum * 100) / 100;
+                        }
+                    }
+                },
+                {
+                    display: 'Original price', name: 'price', width: 95, type: 'float', align: 'right', editor: { type: 'float' }
+                },
+                {
+                    display: 'Discount%', name: 'dis', width: 80, type: 'float', align: 'right', editor: { type: 'float' }
+                },
+                {
+                    display: 'Discount amount', name: 'sumPriceDis', width: 120, type: 'float', align: 'right', editor: { type: 'float' },
+                    totalSummary:
+                    {
+                        align: 'center', //Alignment of summary cell contents: left/center/right
+                        type: 'sum',
+                        render: function (e) { //Summary renderer, return HTML to load into cell
 
-                                    var itemSumPriceDis = e.sum;
-                                    return "<span id='sumPriceItemDis'>" + Math.round(itemSumPriceDis * 10000) / 10000 + "</span>";//formatCurrency(suminf.sum)
-                                }
-                            }
-                        },
-                        {
-                            display: 'Current Price', name: 'priceNow', width: '90px', type: 'float', align: 'right', editor: { type: 'float' }
-                        },
-                        {
-                            display: 'Amount', name: 'sumPriceNow', width: '75px', type: 'float', align: 'right', editor: { type: 'float' },
+                            var itemSumPriceDis = e.sum;
+                            return "<span id='sumPriceItemDis'>" + Math.round(itemSumPriceDis * 10000) / 10000 + "</span>";//formatCurrency(suminf.sum)
+                        }
+                    }
+                },
+                {
+                    display: 'Current Price', name: 'priceNow', width: 90, type: 'float', align: 'right', editor: { type: 'float' }
+                },
+                {
+                    display: 'Amount', name: 'sumPriceNow', width: 75, type: 'float', align: 'right', editor: { type: 'float' },
 
-                            totalSummary:
-                            {
-                                align: 'center', //Alignment of summary cell contents: left/center/right
-                                type: 'sum',
-                                render: function (e) { //Summary renderer, return HTML to load into cell
+                    totalSummary:
+                    {
+                        align: 'center', //Alignment of summary cell contents: left/center/right
+                        type: 'sum',
+                        render: function (e) { //Summary renderer, return HTML to load into cell
 
-                                    var itemSumPriceNow = e.sum;
-                                    return "<span id='sumPriceItemNow'>" + Math.round(itemSumPriceNow * 10000) / 10000 + "</span>"; //formatCurrency(suminf.sum)
-                                }
-                            }
-                        },
-                        { display: 'Tax rate%', name: 'tax', width: '80px', type: 'int', align: 'center', editor: { type: 'int' } },
-                        { display: 'Unit price including tax', name: 'priceTax', width:  '150px', type: 'float', align: 'center', editor: { type: 'float' } },
-                        {
-                            display: 'Tax amount', name: 'sumPriceTax', width: '80px', type: 'float', align: 'right',
+                            var itemSumPriceNow = e.sum;
+                            return "<span id='sumPriceItemNow'>" + Math.round(itemSumPriceNow * 10000) / 10000 + "</span>"; //formatCurrency(suminf.sum)
+                        }
+                    }
+                },
+                { display: 'Tax rate%', name: 'tax', width: 80, type: 'int', align: 'center', editor: { type: 'int' } },
+                { display: 'Unit price including tax', name: 'priceTax', width: 150, type: 'float', align: 'center', editor: { type: 'float' } },
+                {
+                    display: 'Tax amount', name: 'sumPriceTax', width: 80, type: 'float', align: 'right',
 
-                            totalSummary:
-                            {
-                                align: 'center', //Alignment of summary cell contents: left/center/right
-                                type: 'sum',
-                                render: function (e) { //Summary renderer, return HTML to load into the cell
-                                    //e Summary Object (including sum, max, min, avg, count)
+                    totalSummary:
+                    {
+                        align: 'center', //Alignment of summary cell contents: left/center/right
+                        type: 'sum',
+                        render: function (e) { //Summary renderer, return HTML to load into the cell
+                            //e Summary Object (including sum, max, min, avg, count)
 
-                                    var itemSumPriceTax = e.sum;
-                                    return "<span id='sumPriceItemTax'>" + Math.round(itemSumPriceTax * 10000) / 10000 + "</span>"; //formatCurrency(suminf.sum)
+                            var itemSumPriceTax = e.sum;
+                            return "<span id='sumPriceItemTax'>" + Math.round(itemSumPriceTax * 10000) / 10000 + "</span>"; //formatCurrency(suminf.sum)
 
-                                }
-                            }
-                        },
-                        {
-                            display: 'Price and tax total', name: 'sumPriceAll', width: '120px', type: 'float', align: 'right', editor: { type: 'float' },
-                            totalSummary:
-                            {
-                                align: 'center', //Alignment of summary cell contents: left/center/right
-                                type: 'sum',
-                                render: function (e) { //Summary renderer, return HTML to load into the cell
-                                    //e Summary Object (including sum, max, min, avg, count)
+                        }
+                    }
+                },
+                {
+                    display: 'Price and tax total', name: 'sumPriceAll', width: 120, type: 'float', align: 'right', editor: { type: 'float' },
+                    totalSummary:
+                    {
+                        align: 'center', //Alignment of summary cell contents: left/center/right
+                        type: 'sum',
+                        render: function (e) { //Summary renderer, return HTML to load into the cell
+                            //e Summary Object (including sum, max, min, avg, count)
 
-                                    var itemSumPriceAll = e.sum;
-                                    return "<span id='sumPriceItemAll'>" + Math.round(itemSumPriceAll * 10000) / 10000 + "</span>"; //formatCurrency(suminf.sum)
+                            var itemSumPriceAll = e.sum;
+                            return "<span id='sumPriceItemAll'>" + Math.round(itemSumPriceAll * 10000) / 10000 + "</span>"; //formatCurrency(suminf.sum)
 
-                                }
-                            }
-                        },
-                        { display: 'Remarks', name: 'remarks', width:  '125px', align: 'left', type: 'text', editor: { type: 'text' } },
-                        { display: 'Source order number', name: 'sourceNumber', width: 180, align: 'left', type: 'text' }
-                     ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '350',
+                        }
+                    }
+                },
+                { display: 'Remarks', name: 'remarks', width: 125, align: 'left', type: 'text', editor: { type: 'text' } },
+                { display: 'Source order number', name: 'sourceNumber', width: 180, align: 'left', type: 'text' }
+            ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '350',
             url: 'SalesReceiptListEdit.aspx?Action=GetData&id=' + param,
             rownumbers: true, //display serial number
             frozenRownumbers: true, //Whether the row number is in a fixed column
             dataAction: 'local', // local sorting
             usePager: false,
             alternatingRow: false,
-
             totalSummary: true,
             enabledEdit: true, //Control whether it can be edited
+
             // onBeforeEdit: f_onBeforeEdit, //If the product has not been selected, the following columns cannot be edited
             // onBeforeSubmitEdit: f_onBeforeSubmitEdit, // Check before submitting the edit
-
-            //totalRender:f_totalRender, //summary
+            // totalRender:f_totalRender, //summary
 
             onAfterEdit: f_onAfterEdit //Operations after updating the cell
         });
@@ -269,12 +267,9 @@ function addNewRow() {
         id: rowNum + 1,
         goodsId: "",
         goodsName: "",
-
         spec: "",
         unitName: "",
-
         num: "",
-
         price: "",
         dis: "",
         sumPriceDis: "",
@@ -284,13 +279,11 @@ function addNewRow() {
         priceTax: "", //Unit price including tax
         sumPriceTax: "", //tax amount
         sumPriceAll: "",
-
         ckId: "",
         ckName: "",
         remarks: "",
         sourceNumber: "",
         itemId: 0
-
     });
 
     updateTotal();
@@ -311,12 +304,10 @@ function f_onGoodsChanged(e) {
     var selectedRow = manager.getSelected();
 
     grid.updateRow(selectedRow, {
-
         goodsId: selected.id,
         goodsName: selected.names,
         spec: selected.spec,
         unitName: selected.unitName,
-
         num: 1,
         price: selected.priceSalesRetail,
         dis: 0,
@@ -327,15 +318,12 @@ function f_onGoodsChanged(e) {
         priceTax: selected.priceSalesRetail, //Unit price including tax, default is unit price excluding tax
         sumPriceTax: 0, //tax amount
         sumPriceAll: selected.priceSalesRetail,
-
         ckId: selected.ckId,
         ckName: selected.ckName,
         sourceNumber: "",
         itemId: 0,
         remarks: ""
     });
-
-
 
     if (e.length > 1) //If there are multiple lines, delete the blank lines first, then insert the following
     {
@@ -354,7 +342,6 @@ function f_onGoodsChanged(e) {
                 goodsName: e[i].names,
                 spec: e[i].spec,
                 unitName: e[i].unitName,
-
                 num: 1,
                 price: e[i].priceSalesRetail,
                 dis: 0,
@@ -365,14 +352,11 @@ function f_onGoodsChanged(e) {
                 priceTax: e[i].priceSalesRetail, //Unit price including tax
                 sumPriceTax: 0, //tax amount
                 sumPriceAll: e[i].priceSalesRetail,
-
                 ckId: e[i].ckId,
                 ckName: e[i].ckName,
                 sourceNumber: "",
                 itemId: 0,
                 remarks: ""
-
-
             });
 
             rowNumber = rowNumber + 1;
@@ -385,7 +369,6 @@ function f_onGoodsChanged(e) {
 function updateTotal() {
 
     var data = manager.getData();//getData
-
     var sumPriceItemDis = 0; //discount amount
     var sumPriceItemNow = 0; //Amount before tax
     var sumPriceItemTax = 0; //tax amount
@@ -490,16 +473,12 @@ function f_onAfterEdit(e) {
     if (e.column.name == "price") //Unit price changes---start
     {
         price = Number(e.value);
-
         sumPriceDis = num * price * dis / 100;
-
         priceNow = price * (1 + dis / 100);
         sumPriceNow = num * priceNow;
         sumPriceNow = Math.round(sumPriceNow * 10000) / 10000;
-
         priceTax = priceNow * (1 + tax / 100);
         sumPriceTax = num * priceNow * tax / 100; //Tax amount = quantity * current price * tax rate / 100;
-
         sumPriceAll = num * priceTax;
 
         //format
@@ -551,7 +530,6 @@ function f_onAfterEdit(e) {
         sumPriceAll = Math.round(sumPriceAll * 10000) / 10000;
 
         //Start assigning values
-
         manager.updateCell("dis", dis, e.record);
         manager.updateCell("priceNow", priceNow, e.record);
         manager.updateCell("priceTax", priceTax, e.record);
@@ -705,8 +683,6 @@ function f_onAfterEdit(e) {
         sumPriceAll = Math.round(sumPriceAll * 10000) / 10000;
 
         //Start assigning values
-
-
         //1. Variables
         manager.updateCell("price", price, e.record);
         manager.updateCell("dis", dis, e.record);
@@ -728,7 +704,6 @@ function f_onAfterEdit(e) {
         tax = Number(e.value);
 
         //1. Calculate the unit price including tax
-
         priceTax = priceNow * (1 + tax / 100);
         if (tax == 0) {
             priceTax = priceNow;
@@ -745,8 +720,6 @@ function f_onAfterEdit(e) {
         sumPriceAll = Math.round(sumPriceAll * 10000) / 10000;
 
         //Start assigning values
-
-
         //1. Variables
         manager.updateCell("priceTax", priceTax, e.record);
 
@@ -790,8 +763,6 @@ function f_onAfterEdit(e) {
         sumPriceAll = Math.round(sumPriceAll * 10000) / 10000;
 
         //Start assigning values
-
-
         //1. Variables
         manager.updateCell("dis", dis, e.record);
         manager.updateCell("priceNow", priceNow, e.record);
@@ -843,10 +814,7 @@ function f_onAfterEdit(e) {
         sumPriceAll = Number(num) * Number(priceTax);
         sumPriceAll = Math.round(sumPriceAll * 10000) / 10000;
 
-
         //Start assigning values
-
-
         //1. Variables
         manager.updateCell("priceNow", priceNow, e.record);
         manager.updateCell("dis", dis, e.record);
@@ -863,14 +831,12 @@ function f_onAfterEdit(e) {
 
     } // Price and tax total changed --- end
 
-
     //Finally change the value of the summary row
     updateTotal();
 }
 
 //Only allow editing of rows where products have been added
 function f_onBeforeEdit(e) {
-
     //            if(e.data.goodsId!="" && e.data.goodsName!="") return true;
     //            return false;
     //            
@@ -888,7 +854,6 @@ function f_onBeforeSubmitEdit(e) {
 }
 
 function deleteRow() {
-
     if (manager.rows.length == 1) {
         $.ligerDialog.warn('Keep at least one line!')
 
@@ -900,7 +865,6 @@ function deleteRow() {
 var newrowid = 100;
 
 function save() {
-
     var venderId = $("#clientId").val(); //Get the Selected Value
 
     if (venderId == "" || Number(venderId) == 0) {
@@ -910,13 +874,14 @@ function save() {
 
     var bizId = $("#ddlYWYList").val();
     var bkId = $("#ddlBankList").val(); //Get the Selected Value
-
     var bizDate = $("#txtBizDate").val();
+
     if (bizDate == "") {
         $.ligerDialog.warn("Please fill in the delivery date!");
         return;
 
     }
+
     // Delete the blank line first
     var data = manager.getData();
 
@@ -956,7 +921,6 @@ function save() {
     }
 
     var remarks = $("#txtRemarks").val();
-
     var payNow = $("#txtPayNow").val();
     var payNowNo = $("#txtPayNo").val();
 
@@ -999,26 +963,20 @@ function save() {
         Address: address,
         dis: dis,
         disPrice: disPrice
-
     };
 
     var dataNew = [];
     dataNew.push(headJson);
 
     var list = JSON.stringify(headJson);
-
     var goodsList = [];
-
     list = list.substring(0, list.length - 1); // remove the last curly brace
-
     list += ",\"Rows\":";
     list += JSON.stringify(data);
     list += "}";
-
     var postData = JSON.parse(list); //final json
 
     // alert(JSON.stringify(postData));
-    //
     // return;
 
     $.ajax({

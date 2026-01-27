@@ -216,14 +216,9 @@ function deleteRow() {
                     $.ligerDialog.alert("Network error, please contact the administrator", 'Notification');
                 }
             });
-
         }
-
     });
-
-
 }
-
 
 function checkRow() {
 
@@ -246,10 +241,6 @@ function checkRow() {
             $.ligerDialog.alert("Network error, please contact the administrator", 'Notification');
         }
     });
-
-
-
-
 }
 
 
@@ -281,14 +272,6 @@ function checkNoRow() {
 
 function add() {
     parent.f_addTab('produceListAdd', 'Production Plan-Add', 'produce/produceListAdd.aspx');
-
-    top.topManager.openPage({
-        id: 'produceListAdd',
-        href: 'produce/produceListAdd.aspx',
-        title: 'Production Plan-Add'
-    });
-
-
 }
 
 
@@ -296,16 +279,7 @@ function add() {
 
 function editRow() {
     var row = manager.getSelectedRow();
-
     parent.f_addTab('produceListEdit', 'Production Plan-Edit', 'produce/produceListEdit.aspx?id=' + row.id);
-
-    top.topManager.openPage({
-        id: 'produceListEdit',
-        href: 'produce/produceListEdit.aspx?id=' + row.id,
-        title: 'Production Plan-Edit'
-    });
-
-
 }
 
 

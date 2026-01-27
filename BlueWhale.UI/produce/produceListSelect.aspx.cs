@@ -39,9 +39,13 @@ namespace BlueWhale.UI.produce
             {
                 string keys = Request.Params["keys"].ToString();
 
-                DateTime start = Convert.ToDateTime(Request.Params["start"].ToString());
+                DateTime start = string.IsNullOrEmpty(Request.Params["start"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["start"].ToString());
+                DateTime end = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
-                DateTime end = Convert.ToDateTime(Request.Params["end"].ToString());
+                if (start > end)
+                {
+                    start = end;
+                }
 
                 GetDataList(keys, start, end);
                 Response.End();

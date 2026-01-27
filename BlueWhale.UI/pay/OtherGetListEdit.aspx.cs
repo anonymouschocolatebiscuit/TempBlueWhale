@@ -42,7 +42,7 @@ namespace BlueWhale.UI.pay
 
         public void Bind()
         {
-            ListItem items = new ListItem("(空)", "0");
+            ListItem items = new ListItem("(Empty)", "0");
             string isWhere = " shopId='" + LoginUser.ShopId + "' ";
 
             this.ddlVenderList.DataSource = venderDAL.GetList(isWhere);
@@ -69,14 +69,12 @@ namespace BlueWhale.UI.pay
                 this.ddlBankList.SelectedValue = ds.Tables[0].Rows[0]["bkId"].ToString();
                 this.txtRemarks.Text = ds.Tables[0].Rows[0]["remarks"].ToString();
                 string flag = ds.Tables[0].Rows[0]["flag"].ToString();
-                if (flag == "审核")
+                if (flag == "Review")
                 {
                     this.btnSave.Visible = false;
                 }
             }
         }
-
-
 
         void GetDataList(int pId)
         {
@@ -96,7 +94,7 @@ namespace BlueWhale.UI.pay
                 });
             }
 
-            if (rows < 8)//少于8行
+            if (rows < 8)
             {
                 for (var i = 0; i < 8 - rows; i++)
                 {
@@ -107,7 +105,6 @@ namespace BlueWhale.UI.pay
                         typeName = "",
                         price = "",
                         remarks = ""
-
                     });
                 }
             }

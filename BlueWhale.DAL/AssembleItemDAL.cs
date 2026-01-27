@@ -1,6 +1,8 @@
 ﻿using BlueWhale.DBUtility;
 using System.Data.SqlClient;
 using System.Data;
+using System.Collections.Generic;
+using System.Text;
 
 namespace BlueWhale.DAL
 {
@@ -103,12 +105,16 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public int Delete(int PId)
         {
-            string sql = " ";
+            string sql = "DELETE FROM GoodsCloseItem WHERE pId = @PId";
 
-            sql += " DELETE FROM GoodsCloseItem WHERE pId='" + PId + "' ";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@PId", PId)
+            };
 
-            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
+            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, parameters);
         }
+
         #endregion
 
         #region GetAllModel
@@ -119,10 +125,16 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public DataSet GetAllModel(int pId)
         {
-            string sql = "SELECT * FROM viewGoodsCloseItem WHERE pId='" + pId + "' ";
+            string sql = "SELECT * FROM viewGoodsCloseItem WHERE pId = @pId";
 
-            return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@pId", pId)
+            };
+
+            return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, parameters);
         }
+
 
         #endregion
 
@@ -134,14 +146,21 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public DataSet GetAllModel(int pId, int types)
         {
-            string sql = "SELECT * FROM viewGoodsCloseItem WHERE pId='" + pId + "' ";
+            StringBuilder sql = new StringBuilder();
+            sql.Append("SELECT * FROM viewGoodsCloseItem WHERE pId = @pId");
+
+            List<SqlParameter> parameters = new List<SqlParameter>
+            {
+                new SqlParameter("@pId", pId)
+            };
 
             if (types != 0)
             {
-                sql += " AND types='" + types + "'";
+                sql.Append(" AND types = @types");
+                parameters.Add(new SqlParameter("@types", types));
             }
 
-            return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
+            return SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql.ToString(), parameters.ToArray());
         }
 
         #endregion

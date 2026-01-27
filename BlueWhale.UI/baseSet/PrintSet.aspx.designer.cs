@@ -9,11 +9,8 @@
 
 namespace BlueWhale.UI.baseSet
 {
-
-
     public partial class PrintSet
     {
-
         /// <summary>
         /// form1 control.
         /// </summary>

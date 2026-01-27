@@ -9,11 +9,8 @@
 
 namespace BlueWhale.UI.pay
 {
-
-
     public partial class OtherGetListAdd
     {
-
         /// <summary>
         /// form1 control.
         /// </summary>

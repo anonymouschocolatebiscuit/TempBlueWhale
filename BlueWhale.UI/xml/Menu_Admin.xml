@@ -2,7 +2,6 @@
 
 <siteMapNode id="1"  title="BlueWhale ERP System" url="BlueWhale" description="" target="mainFrame" image="" parentId="0" seq="1" >
 
-
 	<siteMapNode id="2"   title="Ordering platform management" url="OrderOnline" description="" target=""  parentId="1"  seq="2" >
 
 		<siteMapNode id="21"  title="Order View" url="GoodsListSet.aspx" description=""  target="mainFrame" image="" parentId="2"   seq="2"  />
@@ -10,7 +9,6 @@
 		<siteMapNode  id="22" title="Logistics Company Setup" url="WuliuList" description=""  target="mainFrame" image="" parentId="2"   seq="3" />
 
 		<siteMapNode  id="23" title="Order Delete" url="order/SearchShaxianBuy.aspx?typeId=1" description=""  target="mainFrame" image="" parentId="2"   seq="4" />
-
 
 	</siteMapNode>
 
@@ -30,7 +28,6 @@
 
 			<siteMapNode id="316"  title="Cancel Review" url="PurOrderListCheckNo"  parentId="31"  seq="8" />
 
-
 		</siteMapNode>
 
 		<siteMapNode id="32"  title="Purchase receipt" url="PurReceipt" parentId="3"  seq="3">
@@ -47,9 +44,7 @@
 
 			<siteMapNode id="326"  title="Cancel Review" url="PurReceiptListCheckNo"  parentId="32"  seq="7" />
 
-
 		</siteMapNode>
-
 
 	</siteMapNode>
 
@@ -69,7 +64,6 @@
 
 			<siteMapNode id="406"  title="Cancel Review" url="SalesQuoteListCheckNo"  parentId="40"  seq="6" />
 
-
 		</siteMapNode>
 
 		<siteMapNode id="41"  title="Sales Order" url="SalesOrder" parentId="4"  seq="2">
@@ -85,7 +79,6 @@
 			<siteMapNode id="415"  title="Review" url="SalesOrderListCheck"  parentId="41"  seq="7" />
 
 			<siteMapNode id="416"  title="Cancel Review" url="SalesOrderListCheckNo"  parentId="41"  seq="8" />
-
 
 		</siteMapNode>
 
@@ -103,9 +96,7 @@
 
 			<siteMapNode id="426"  title="Cancel Review" url="SalesReceiptListCheckNo"  parentId="42"  seq="6" />
 
-
 		</siteMapNode>
-
 
 	</siteMapNode>
 
@@ -125,7 +116,6 @@
 
 			<siteMapNode id="516"  title="Cancel Review" url="OtherInListCheckNo"  parentId="51"  seq="8" />
 
-
 		</siteMapNode>
 
 		<siteMapNode id="52"  title="Other delivery orders" url="OtherOut" parentId="5"  seq="1">
@@ -142,10 +132,7 @@
 
 			<siteMapNode id="526"  title="Cancel Review" url="OtherOutListCheckNo"  parentId="52"  seq="7" />
 
-
 		</siteMapNode>
-
-
 
 		<siteMapNode id="53"  title="Warehouse transfer order" url="Diaobo" parentId="5"  seq="1">
 
@@ -160,7 +147,6 @@
 			<siteMapNode id="535"  title="Review" url="DiaoboListCheck"  parentId="53"  seq="6" />
 
 			<siteMapNode id="536"  title="Cancel Review" url="DiaoboListCheckNo"  parentId="53"  seq="7" />
-
 
 		</siteMapNode>
 
@@ -178,9 +164,7 @@
 
 			<siteMapNode id="576"  title="Cancel Review" url="AssembleListCheckNo"  parentId="57"  seq="7" />
 
-
 		</siteMapNode>
-
 
 		<siteMapNode id="58"  title="Product disassembly order" url="Disassemble" parentId="5"  seq="1">
 
@@ -196,9 +180,7 @@
 
 			<siteMapNode id="586"  title="Cancel Review" url="DisAssembleListCheckNo"  parentId="58"  seq="7" />
 
-
 		</siteMapNode>
-
 
 		<siteMapNode id="54"  title="Cost Adjustment Sheet" url="CostChange" parentId="5"  seq="1">
 
@@ -213,7 +195,6 @@
 			<siteMapNode id="545"  title="Review" url="CostChangeListCheck"  parentId="54"  seq="6" />
 
 			<siteMapNode id="546"  title="Cancel Review" url="CostChangeListCheckNo"  parentId="54"  seq="7" />
-
 
 		</siteMapNode>
 
@@ -237,7 +218,6 @@
 
 			<siteMapNode id="1116"  title="Cancel Review" url="PurTicketListCheckNo"  parentId="111"  seq="8" />
 
-
 		</siteMapNode>
 
 		<siteMapNode id="112"  title="Sales Invoice" url="SalesTicket" parentId="11"  seq="3">
@@ -254,9 +234,7 @@
 
 			<siteMapNode id="1126"  title="Cancel Review" url="SalesTicketListCheckNo"  parentId="112"  seq="6" />
 
-
 		</siteMapNode>
-
 
 	</siteMapNode>
 
@@ -276,7 +254,6 @@
 
 			<siteMapNode id="616"  title="Cancel Review" url="ReceivableListCheckNo"  parentId="61"  seq="8" />
 
-
 		</siteMapNode>
 
 		<siteMapNode id="62"  title="Purchase to Pay" url="PayMent" parentId="6"  seq="1">
@@ -292,7 +269,6 @@
 			<siteMapNode id="625"  title="Review" url="PayMentListCheck"  parentId="62"  seq="6" />
 
 			<siteMapNode id="626"  title="Cancel Review" url="PayMentListCheckNo"  parentId="62"  seq="7" />
-
 
 		</siteMapNode>
 
@@ -310,7 +286,6 @@
 
 			<siteMapNode id="636"  title="Cancel Review" url="CheckBillGetListCheckNo"  parentId="63"  seq="7" />
 
-
 		</siteMapNode>
 
 		<siteMapNode id="64"  title="Payment verification" url="CheckBillPay" parentId="6"  seq="1">
@@ -326,7 +301,6 @@
 			<siteMapNode id="645"  title="Review" url="CheckBillPayListCheck"  parentId="64"  seq="6" />
 
 			<siteMapNode id="646"  title="Cancel Review" url="CheckBillPayListCheckNo"  parentId="64"  seq="7" />
-
 
 		</siteMapNode>
 
@@ -344,10 +318,7 @@
 
 			<siteMapNode id="656"  title="Cancel Review" url="OtherGetListCheckNo"  parentId="65"  seq="7" />
 
-
 		</siteMapNode>
-
-
 
 		<siteMapNode id="66"  title="Other Payment" url="OtherPay" parentId="6"  seq="1">
 
@@ -363,12 +334,9 @@
 
 			<siteMapNode id="666"  title="Cancel Review" url="OtherPayListCheckNo"  parentId="66"  seq="7" />
 
-
 		</siteMapNode>
 
-
 	</siteMapNode>
-
 
 	<siteMapNode id="7"   title="Analytical Reports Search" url="Report" parentId="1"  seq="8" >
 
@@ -382,7 +350,6 @@
 
 			<siteMapNode id="714"  title="Purchase Summary (by vender)" url="PurOrderListSumVenderReport"  parentId="71"  seq="6" />
 
-
 		</siteMapNode>
 
 		<siteMapNode id="72"  title="Sales Report" url="ReportSales" parentId="7"  seq="1">
@@ -395,7 +362,6 @@
 
 			<siteMapNode id="724"  title="Sales Summary (by Customer)" url="SalesOrderListSumClientReport"  parentId="72"  seq="5" />
 
-
 		</siteMapNode>
 
 		<siteMapNode id="73"  title="Inventory report" url="ReportStore" parentId="7"  seq="1">
@@ -405,7 +371,6 @@
 			<siteMapNode id="732"  title="Goods Out In Detail Report" url="GoodsOutInDetailReport"  parentId="73"  seq="3" />
 
 			<siteMapNode id="733"  title="Goods Out In Sum Report" url="GoodsOutInSumReport"  parentId="73"  seq="4" />
-
 
 		</siteMapNode>
 
@@ -421,12 +386,9 @@
 
 			<siteMapNode id="745"  title="Statement Voucher" url="StatementVender"  parentId="74"  seq="6" />
 
-
 		</siteMapNode>
 
-
 	</siteMapNode>
-
 
 	<siteMapNode id="8"   title="Basic information management" url="BaseSet" parentId="1"  seq="9" >
 
@@ -446,7 +408,6 @@
 
 			<siteMapNode id="811"  title="Cancel Review" url="ClientListCheckNo"  parentId="81"  seq="9" />
 
-
 		</siteMapNode>
 
 		<siteMapNode id="82"  title="Vender Management" url="Vender" parentId="8"  seq="1">
@@ -465,7 +426,6 @@
 
 			<siteMapNode id="811"  title="Cancel Review" url="VenderListCheckNo"  parentId="82"  seq="8" />
 
-
 		</siteMapNode>
 
 		<siteMapNode id="83"  title="Product Management" url="Goods" parentId="8"  seq="1">
@@ -480,7 +440,6 @@
 
 			<siteMapNode id="835"  title="Import" url="GoodsListExcel"  parentId="83"  seq="6" />
 
-
 		</siteMapNode>
 
 		<siteMapNode id="84"  title="Warehouse Management" url="Store" parentId="8"  seq="1">
@@ -492,8 +451,6 @@
 			<siteMapNode id="843"  title="Edit" url="InventoryListEdit"  parentId="84"  seq="4" />
 
 			<siteMapNode id="844"  title="Delete" url="InventoryListDelete"  parentId="84"  seq="5" />
-
-
 
 		</siteMapNode>
 
@@ -507,10 +464,7 @@
 
 			<siteMapNode id="854"  title="Delete" url="AccountListDelete"  parentId="85"  seq="5" />
 
-
-
 		</siteMapNode>
-
 
 	</siteMapNode>
 
@@ -526,7 +480,6 @@
 
 			<siteMapNode id="911"  title="Delete" url="ClientTypeListDelete"  parentId="91"  seq="6" />
 
-
 		</siteMapNode>
 
 		<siteMapNode id="92"  title="Vender Category" url="VenderType" parentId="9"  seq="1">
@@ -538,7 +491,6 @@
 			<siteMapNode id="921"  title="Edit" url="VenderTypeListEdit"  parentId="92"  seq="4" />
 
 			<siteMapNode id="921"  title="Delete" url="VenderTypeListDelete"  parentId="92"  seq="5" />
-
 
 		</siteMapNode>
 
@@ -564,8 +516,6 @@
 
 			<siteMapNode id="941"  title="Delete" url="SpecListDelete"  parentId="94"  seq="5" />
 
-
-
 		</siteMapNode>
 
 		<siteMapNode id="95"  title="Settlement Method" url="Pay" parentId="9"  seq="1">
@@ -578,10 +528,7 @@
 
 			<siteMapNode id="951"  title="Delete" url="PayTypeListDelete"  parentId="95"  seq="5" />
 
-
-
 		</siteMapNode>
-
 
 		<siteMapNode id="96"  title="Income and Expenditure Category" url="PayGet" parentId="9"  seq="1">
 
@@ -593,10 +540,7 @@
 
 			<siteMapNode id="961"  title="Delete" url="PayGetListDelete"  parentId="96"  seq="5" />
 
-
-
 		</siteMapNode>
-
 
 	</siteMapNode>
 
@@ -605,7 +549,6 @@
 		<siteMapNode id="1001"  title="System Parameters" url="SystemSet" parentId="10"  seq="2"></siteMapNode>
 
 		<siteMapNode id="1002"  title="User Management" url="Users" parentId="10"  seq="3">
-
 
 			<siteMapNode id="100201"  title="View" url="UsersList" parentId="1002"  seq="1"></siteMapNode>
 
@@ -617,7 +560,6 @@
 
 			<siteMapNode id="100205"  title="Permissions" url="UsersListPowerSet" parentId="1002"  seq="5"></siteMapNode>
 
-
 		</siteMapNode>
 
 		<siteMapNode id="1003"  title="Operation log" url="LogsList" parentId="10"  seq="4"></siteMapNode>
@@ -626,9 +568,4 @@
 
 	</siteMapNode>
 
-
 </siteMapNode>
-
-
-
-

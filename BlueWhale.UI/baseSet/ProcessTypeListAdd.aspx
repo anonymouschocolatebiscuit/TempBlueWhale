@@ -26,33 +26,77 @@
             dialog.close();
         }
     </script>
+    <style type="text/css">
+        .form-container {
+            width: 380px;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+            .form-row label {
+                width: 150px;
+                text-align: right;
+                margin-right: 10px;
+            }
+
+        .form-control {
+            width: 200px;
+            padding: 4px 6px;
+        }
+
+        .form-actions {
+            text-align: right;
+            padding-right: 4px;
+        }
+
+            .form-actions input,
+            .form-actions button {
+                margin-left: 10px;
+            }
+    </style>
 </head>
 
 <body>
     <form id="form1" runat="server">
-        <table id="form" border="0" cellpadding="0" cellspacing="10" style="width: 380px; line-height: 40px;">
-            <tr>
-                <td style="width: 150px; text-align: right;">Process Category Name:</td>
-                <td>
-                    <asp:TextBox ID="txtNames" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 150px; text-align: right;">Display Order:</td>
-                <td>
-                    <asp:TextBox ID="txtSeq" runat="server" ltype="spinner" ligerui="{type:'int'}" value="1"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td style="text-align: right; padding-right: 30px;">
-                    <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="ui_state_highlight" OnClick="btnSave_Click" />
-                    <input id="btnCancel" class="ui-btn" type="button" value="Close" onclick="closeDialog()" />
-                </td>
-            </tr>
-        </table>
+        <div class="form-container">
 
-        <asp:HiddenField ID="hfId" runat="server" />
+            <div class="form-row">
+                <label for="txtNames">Process Category Name:</label>
+                <asp:TextBox ID="txtNames" runat="server" CssClass="form-control" />
+            </div>
+
+            <div class="form-row">
+                <label for="txtSeq">Display Order:</label>
+                <asp:TextBox
+                    ID="txtSeq"
+                    runat="server"
+                    CssClass="form-control"
+                    ltype="spinner"
+                    ligerui="{type:'int'}"
+                    Text="1" />
+            </div>
+
+            <div class="form-actions">
+                <asp:Button
+                    ID="btnSave"
+                    runat="server"
+                    Text="Save"
+                    CssClass="ui_state_highlight"
+                    OnClick="btnSave_Click" />
+                <input
+                    id="btnCancel"
+                    class="ui-btn"
+                    type="button"
+                    value="Close"
+                    onclick="closeDialog()" />
+            </div>
+
+            <asp:HiddenField ID="hfId" runat="server" />
+        </div>
     </form>
 </body>
 </html>

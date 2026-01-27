@@ -61,7 +61,7 @@ namespace BlueWhale.UI.sales
             DataSet ds = dal.GetAllModel(id);
             if (ds.Tables[0].Rows.Count > 0)
             {
-                var row = ds.Tables[0].Rows[0];
+                DataRow row = ds.Tables[0].Rows[0];
 
                 this.clientId.Value = row["wlId"].ToString();
                 this.clientName.Text = row["wlName"].ToString();
@@ -90,7 +90,7 @@ namespace BlueWhale.UI.sales
 
             for (int i = 0; i < rows; i++)
             {
-                var row = ds.Tables[0].Rows[i];
+                DataRow row = ds.Tables[0].Rows[i];
                 list.Add(new
                 {
                     id = row["id"].ToString(),

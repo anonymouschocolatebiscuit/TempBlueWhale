@@ -1,4 +1,5 @@
-﻿var data = [{
+﻿
+var data = [{
     UnitPrice: 10,
     Quantity: 2,
     Price: 20
@@ -37,23 +38,22 @@ $(function () {
     var form = $("#form").ligerForm();
 
     var g = $.ligerui.get("ddlVenderList");
-    g.set("Width", 250);
+    g.set("Width", 200);
 
+    var dateStart = $.ligerui.get("txtBizDate");
+    dateStart.set("Width", 120);
+    
     window['g'] =
         manager = $("#maingrid").ligerGrid({
             columns: [
-
-                // { display: 'Primary Key', name: 'id', width: 50, type: 'int',hide:true},
                 {
                     display: '', isSort: false, width: 40, align: 'center', frozen: true, render: function (rowdata, rowindex, value) {
                         var h = "";
                         if (!rowdata._editing) {
-                            h += "<a href='javascript:addNewRow()' title='Add row' style='float:left;'><div class='ui-icon ui-icon-plus'></div></a> ";
-                            h += "<a href='javascript:deleteRow()' title='Delete row' style='float:right;'><div class='ui-icon ui-icon-trash'></div></a> ";
-                        }
-                        else {
-                            //                        h += "<a href='javascript:endEdit(" + rowindex + ")'>Submit</a> ";
-                            //                        h += "<a href='javascript:cancelEdit(" + rowindex + ")'>Cancel</a> "; 
+                            h += "<div style='display:flex; justify-content:center; align-items:center; height:100%; gap:0.25rem;'>"
+                            h += "<a href='javascript:addNewRow()' title='Add row'><div class='ui-icon ui-icon-plus'></div></a> ";
+                            h += "<a href='javascript:deleteRow()' title='Delete row'><div class='ui-icon ui-icon-trash'></div></a> ";
+                            h += "</div>"
                         }
                         return h;
                     }

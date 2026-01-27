@@ -1,6 +1,7 @@
 ﻿using BlueWhale.Common;
 using BlueWhale.DAL;
 using BlueWhale.UI.src;
+using iTextSharp.text;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -40,8 +41,13 @@ namespace BlueWhale.UI.produce
 
         void GetDataList()
         {
+            int page = Convert.ToInt32(Request["page"] ?? "1");
+            int pageSize = Convert.ToInt32(Request["pagesize"] ?? "10");
             string isWhere = " shopId='" + LoginUser.ShopId + "' ";
-            DataSet ds = dal.GetList(isWhere);
+            int total = dal.GetRecordCount(isWhere);
+            int startIndex = (page - 1) * pageSize + 1;
+            int endIndex = page * pageSize;
+            DataSet ds = dal.GetListByPage(isWhere, "sortId asc", startIndex, endIndex);
 
             IList<object> list = new List<object>();
             for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -56,15 +62,16 @@ namespace BlueWhale.UI.produce
                 });
 
             }
-            var griddata = new { Rows = list };
+            var griddata = new
+            {
+                Total = total,
+                Rows = list
+            };
 
             string s = new JavaScriptSerializer().Serialize(griddata);
 
-
-
             Response.Write(s);
         }
-
 
         void GetDDLList()
         {
@@ -74,20 +81,14 @@ namespace BlueWhale.UI.produce
             IList<object> list = new List<object>();
             for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-
                 list.Add(new
                 {
-
                     typeId = ds.Tables[0].Rows[i]["id"].ToString(),
                     typeName = ds.Tables[0].Rows[i]["names"].ToString()
-
                 });
-
             }
 
-
             string s = new JavaScriptSerializer().Serialize(list);
-
 
             Response.Write(s);
         }
@@ -97,6 +98,7 @@ namespace BlueWhale.UI.produce
             if (Session["userInfo"] != null)
             {
                 bool del = dal.Delete(id);
+
                 if (del)
                 {
                     LogsDAL logs = new LogsDAL();
@@ -109,17 +111,16 @@ namespace BlueWhale.UI.produce
 
                     Response.Write("Delete successfully！");
 
-                }
+                } 
                 else
                 {
                     Response.Write("Delete failed！");
                 }
-            }
+            } 
             else
             {
                 Response.Write("Session timeout, please log in again！");
             }
-
         }
     }
 }

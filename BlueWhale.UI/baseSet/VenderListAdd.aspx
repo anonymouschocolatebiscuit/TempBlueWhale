@@ -53,7 +53,7 @@
 
     <body style="font-size: 10pt;">
         <form id="form1" runat="server">
-            <table id="form" border="0" cellpadding="0" cellspacing="20" style="width: 600px; line-height: 45px;">
+            <table id="form" border="0" cellpadding="0" cellspacing="20" style="width: 1200px; line-height: 45px;">
                 <tr>
                     <td style="width: 100px; text-align: right;">Vender Number:</td>
                     <td style="width: 180px;">

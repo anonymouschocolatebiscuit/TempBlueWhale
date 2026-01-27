@@ -19,12 +19,12 @@
     <form id="form2" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="width: 130px; text-align: right;">Purchasing Vendor：</td>
+                <td style="width: 130px; text-align: right; padding-right: 0.5rem;">Purchasing Vendor：</td>
                 <td style="text-align: left; width: 250px;">
                     <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px">
                     </asp:DropDownList>
                 </td>
-                <td style="text-align: right; width: 130px;">Payment Date：</td>
+                <td style="text-align: right; width: 130px; padding-right: 0.5rem;">Payment Date：</td>
                 <td style="text-align: left; width: 180px;">
                     <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
@@ -40,26 +40,26 @@
                 <td align="left" colspan="6">
                     <table id="Table1" border="0" cellpadding="0" cellspacing="0" style="line-height: 40px;">
                         <tr>
-                            <td style="text-align: right; width: 80px;"> Source Order Number：</td>
+                            <td style="text-align: right; width: 150px; padding-right: 0.5rem;"> Source Order Number：</td>
 
                             <td style="text-align: left; width: 140px;">
                                 <asp:TextBox ID="txtKeys" runat="server" placeholder="Please Enter Receipt No."></asp:TextBox>
                             </td>
 
-                            <td style="text-align: right; width: 70px;">Date：
+                            <td style="text-align: right; width: 70px; padding-right: 0.5rem;">Date：
                             </td>
 
                             <td style="text-align: left; width: 120px;">
                                 <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                             </td>
 
-                            <td style="text-align: center; width: 30px;">To
+                            <td style="text-align: center; width: 30px; padding-right: 0.5rem;">To
                             </td>
 
-                            <td style="text-align: left; width: 120px;">
+                            <td style="text-align: left; width: 120px; padding-right: 0.5rem;">
                                 <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                             </td>
-                            <td style="text-align: left;">&nbsp;<input id="btnSelectBill" type="button" value="Search" class="ui-btn"
+                            <td style="text-align: left;"><input id="btnSelectBill" type="button" value="Search" class="ui-btn"
                                 onclick="selectBill()" /></td>
                         </tr>
                     </table>

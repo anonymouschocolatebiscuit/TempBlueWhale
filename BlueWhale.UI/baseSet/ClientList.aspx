@@ -17,7 +17,6 @@
                 {
                     checkbox: true,
                     columns: [
-                        { display: 'Operate', isSort: false, width: 60, align: 'center' },
                         { display: 'Customer Category', name: 'typeName', width: 130, type: 'int', align: 'center' },
                         { display: 'Customer Number', name: 'code', width: 125, align: 'center' },
                         { display: 'Customer Name', name: 'names', width: 115, align: 'left' },
@@ -46,11 +45,11 @@
                         items: [
                             { text: 'Refresh', click: reload, img: '../lib/ligerUI/skins/icons/refresh.png'},
                             { line: true },
-                            { text: 'Filter Query', click: search, img: '../lib/ligerUI/skins/icons/search.gif'},
+                            { text: 'Search', click: search, img: '../lib/ligerUI/skins/icons/search.gif'},
                             { line: true },
                             { text: "Add Customer", click: addRowTop, img: '../lib/ligerUI/skins/icons/add.gif'},
                             { line: true },
-                            { text: "Modify Customer", click: editRow, img: '../lib/ligerUI/skins/icons/modify.gif' },
+                            { text: "Edit Customer", click: editRow, img: '../lib/ligerUI/skins/icons/modify.gif' },
                             { line: true },
                             { text: "Administrative Contact", click: linkManForm, img: '../lib/ligerUI/skins/icons/customers.gif' },
                             { line: true },
@@ -74,14 +73,40 @@
         }
 
         function search() {
-            $.ligerDialog.prompt('Can search by name, mobile phone, telephone number, address, remarks','', function (yes,value) {
-                 if(yes) 
-                 {
-                    var key = value;
-                    manager.changePage("first");
-                    manager._setUrl("ClientList.aspx?Action=GetDataListSearch&keys="+key);
-                 }
-             });
+            $.ligerDialog.prompt(
+                'Search Client',
+                '',
+                function (yes, value) {
+                    if (yes) {
+                        var key = value;
+                        manager.changePage("first");
+                        manager._setUrl("ClientList.aspx?Action=GetDataListSearch&keys=" + encodeURIComponent(key));
+                    }
+                }
+            );
+
+            setTimeout(function () {
+                var content = $(".l-dialog-content");
+                if (content.length > 0) {
+                    // Tip text
+                    content.prepend(
+                        "<div style='margin-bottom:8px; color:#555; font-size:12px; line-height:1.4em; text-align:left;'>" +
+                        "💡 <b>Tip :</b> Filter with <b>Name, Mobile no. </b>, <b>Telephone no. </b>, <b>Address,</b> or <b>Remarks</b>.<br>" +
+                        "Filter with <b>empty</b> input to display <b>all clients</b>." +
+                        "</div>"
+                    );
+
+                    // Placeholder text
+                    var inputElement = content.find("input[type='text']");
+                    inputElement.attr("placeholder", "Enter keyword or empty");
+                    inputElement.css({
+                        "padding": "6px 10px",
+                        "border": "1px solid #ccc",
+                        "width": "80%",
+                        "box-sizing": "border-box"
+                    });
+                }
+            }, 100);
         }
 
         function addRowTop() {
@@ -100,7 +125,7 @@
             var row = manager.getSelectedRow();
             if (!row) {  $.ligerDialog.warn('Please select the row to modify!'); return; }
 
-            var title="Modify Customer-"+row.names;
+            var title="Edit Customer-"+row.names;
            
             $.ligerDialog.open({ 
                 title : title,

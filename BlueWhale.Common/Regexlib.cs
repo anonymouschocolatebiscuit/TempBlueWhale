@@ -13,6 +13,7 @@ namespace BlueWhale.Common
         {
             return Regex.IsMatch(strIn, @"^[A-Za-z0-9_]{3,50}$");
         }
+
         /// <summary>
         /// Validate email
         /// </summary>
@@ -22,6 +23,7 @@ namespace BlueWhale.Common
         {
             return Regex.IsMatch(strIn, @"^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
         }
+
         /// <summary>
         /// validate is mobile number
         /// </summary>
@@ -29,8 +31,9 @@ namespace BlueWhale.Common
         /// <returns></returns>
         public static bool IsValidMobile(string strIn)
         {
-            return Regex.IsMatch(strIn, @"^[1]+[3,4,5,6,7,8,9]+\d{9}");
+            return Regex.IsMatch(strIn, @"^[1][3-9]\d{9}$");
         }
+
         /// <summary>
         /// validate mobile number
         /// </summary>

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Produce List Sum Report</title>
+    <title>Material Requisition Summary Report</title>
 
     <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
@@ -12,7 +12,6 @@
     <script src="../lib/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
     <script src="../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
     <script src="../lib/json2.js" type="text/javascript"></script>
-
     <script type="text/javascript">
         function f_selectClient() {
             $.ligerDialog.open({
@@ -23,6 +22,7 @@
             });
             return false;
         }
+
         function f_selectClientOK(item, dialog) {
             var fn = dialog.frame.f_select || dialog.frame.window.f_select;
             var data = fn();
@@ -34,10 +34,9 @@
             $("#txtVenderList").val(data.names);
             $("#txtVenderCode").val(data.code);
 
-
             dialog.close();
-
         }
+
         function f_selectClientCancel(item, dialog) {
             dialog.close();
         }
@@ -51,6 +50,7 @@
             });
             return false;
         }
+
         function f_selectContactOK(item, dialog) {
             var fn = dialog.frame.f_select || dialog.frame.window.f_select;
             var data = fn();
@@ -72,16 +72,14 @@
             $("#txtGoodsList").val(valueCode);
             $("#txtGoodsCode").val(valueCode);
 
-
             dialog.close();
-
         }
+
         function f_selectContactCancel(item, dialog) {
             dialog.close();
         }
 
         $(function () {
-
             $("#txtGoodsList").ligerComboBox({
                 onBeforeOpen: f_selectContact, valueFieldID: 'txtGoodsList', width: 300
             });
@@ -96,44 +94,33 @@
             });
         });
     </script>
-
     <script src="js/ProduceGetListReportSum.js" type="text/javascript"></script>
-
-
 </head>
 <body>
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="text-align: right; width: 70px;">Obtain Date：</td>
-
+                <td style="text-align: right; width: 90px;">Pickup Date：</td>
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-
-                <td style="text-align: center; width: 30px;">至</td>
+                <td style="text-align: center; width: 30px;">To</td>
 
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-
-                <td style="text-align: right; width: 50px;">商品：</td>
-
+                <td style="text-align: right; width: 60px;">Item：</td>
                 <td style="text-align: left; width: 180px;">
                     <input type="text" id="txtGoodsList" />
                 </td>
-
-                <td style="text-align: right; width: 60px;">仓库：</td>
-
-                <td style="text-align: left; width: 80px;">
+                <td style="text-align: right; width: 90px;">Warehouse：</td>
+                <td style="text-align: left; width: 180px;">
                     <input type="text" id="txtFlagList" />
                 </td>
-
                 <td style="text-align: right; padding-right: 20px;">
-                    <input id="btnSearch" type="button" value="查询" class="ui-btn ui-btn-sp mrb" onclick="search()" />
+                    <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
                 </td>
             </tr>
-
             <tr>
                 <td style="text-align: left; height: 300px;" colspan="9">
                     <div id="maingrid"></div>
@@ -142,9 +129,7 @@
                 </td>
             </tr>
         </table>
-
-
-        <%--    <script type="text/javascript">
+        <%--<script type="text/javascript">
             
             $("#btn1").ligerButton({
                 text: 'Returned Value',
@@ -192,7 +177,6 @@
                 textField:'ckName'
                 ,valueFieldID: 'ckId'
             }); 
-
         </script>
         --%>
     </form>

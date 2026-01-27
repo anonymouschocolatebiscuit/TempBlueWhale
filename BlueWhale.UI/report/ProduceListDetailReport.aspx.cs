@@ -24,7 +24,7 @@ namespace BlueWhale.UI.report
             if (Request.Params["Action"] == "GetDataList")
             {
                 DateTime bizStart = DateTime.Parse(Request.Params["start"].ToString());
-                DateTime bizEnd = DateTime.Parse(Request.Params["end"].ToString());
+                DateTime bizEnd = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 string wlId = Request.Params["wlId"].ToString();
                 string goodsId = Request.Params["goodsId"].ToString();
@@ -48,12 +48,10 @@ namespace BlueWhale.UI.report
                     number = ds.Tables[0].Rows[i]["number"].ToString(),
                     types = ds.Tables[0].Rows[i]["types"].ToString(),
                     wlName = ds.Tables[0].Rows[i]["wlName"].ToString(),
-
                     code = ds.Tables[0].Rows[i]["code"].ToString(),
                     goodsName = ds.Tables[0].Rows[i]["goodsName"].ToString(),
                     spec = ds.Tables[0].Rows[i]["spec"].ToString(),
                     unitName = ds.Tables[0].Rows[i]["unitName"].ToString(),
-
                     ckName = ds.Tables[0].Rows[i]["ckName"].ToString(),
                     price = ds.Tables[0].Rows[i]["price"].ToString(),
                     num = ds.Tables[0].Rows[i]["num"].ToString(),
@@ -61,7 +59,6 @@ namespace BlueWhale.UI.report
                     dis = ds.Tables[0].Rows[i]["dis"].ToString(),
                     tax = ds.Tables[0].Rows[i]["tax"].ToString(),
                     priceTax = ds.Tables[0].Rows[i]["priceTax"].ToString(),
-
                     sumPriceNow = ds.Tables[0].Rows[i]["sumPriceNow"].ToString(),
                     sumPriceDis = ds.Tables[0].Rows[i]["sumPriceDis"].ToString(),
                     sumPriceTax = ds.Tables[0].Rows[i]["sumPriceTax"].ToString(),
@@ -72,6 +69,5 @@ namespace BlueWhale.UI.report
             string s = new JavaScriptSerializer().Serialize(griddata);
             Response.Write(s);
         }
-
     }
 }

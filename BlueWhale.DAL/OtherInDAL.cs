@@ -9,7 +9,6 @@ namespace BlueWhale.DAL
     {
         public OtherInDAL()
         {
-
         }
 
         #region Attribute
@@ -340,24 +339,27 @@ namespace BlueWhale.DAL
 		/// <returns></returns>
 		public int UpdateCheck(int Id, int chekerId, string checker, DateTime checkDate, string flag)
 		{
-			string sql = " if not exists(select * from OtherIn where flag='" + flag + "' and id='" + Id + "') ";
-			sql += " begin ";
+			string sql = @"
+				IF NOT EXISTS(SELECT 1 FROM OtherIn WHERE flag = @flag AND id = @id)
+				BEGIN
+					UPDATE OtherIn 
+					SET flag = @flag
+						/* only set checkId and checkDate if Review */
+						" + (flag == "Review" ? " ,checkId = @chekerId, checkDate = @checkDate " : "") + @"
+						/* reset checkId and checkDate if Save */
+						" + (flag == "Save" ? " ,checkId = NULL, checkDate = NULL " : "") + @"
+					WHERE id = @id
+				END";
 
-			sql += " update OtherIn set flag='" + flag + "' ";
-			if (flag == "Review")
+			var parameters = new[]
 			{
-				sql += " ,checkId='" + chekerId + "',checkDate='" + checkDate + "'";
-			}
-			if (flag == "Save")
-			{
-				sql += " ,checkId=null,checkDate=null ";
-			}
+				new SqlParameter("@flag", SqlDbType.VarChar) { Value = flag },
+				new SqlParameter("@id", SqlDbType.Int) { Value = Id },
+				new SqlParameter("@chekerId", SqlDbType.Int) { Value = chekerId },
+				new SqlParameter("@checkDate", SqlDbType.DateTime) { Value = checkDate }
+			};
 
-			sql += "  where id = '" + Id + "'";
-
-			sql += " end ";
-
-			return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
+			return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, parameters);
 
 		}
 

@@ -69,7 +69,7 @@ namespace BlueWhale.UI
                     logs.Add();
 
 
-                    MessageBox.ShowAndRedirect(this, "Success change password, Please relogin with new password", "OverPwd.htm");
+                    MessageBox.ShowAndRedirects(this, "Success change password, Please relogin with new password", "Login.aspx");
                 }
 
             }

@@ -33,6 +33,11 @@ namespace BlueWhale.UI.baseSet
 
                 string keys = Request.Params["keys"].ToString();
 
+                if (!System.Text.RegularExpressions.Regex.IsMatch(keys, @"^[a-zA-Z0-9\s]*$"))
+                {
+                    keys = "";
+                }
+
                 GetDataListSearch(typeId, keys);
                 Response.End();
             }
@@ -62,7 +67,7 @@ namespace BlueWhale.UI.baseSet
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {
@@ -112,15 +117,14 @@ namespace BlueWhale.UI.baseSet
             }
 
             isWhere += " and (names like'%" + key + "%'" +
-                   " or  code like'%" + key + "%' " +
                    " or  tel like'%" + key + "%' " +
-                   " or  remarks like'%" + key + "%' " +
-                   " or  address like'%" + key + "%') ";
+                   " or  phone like'%" + key + "%' " +
+                   " or  linkMan like'%" + key + "%') ";
 
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {

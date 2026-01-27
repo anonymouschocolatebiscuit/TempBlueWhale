@@ -43,7 +43,7 @@ $(function () {
         columns: [
 
 
-            { display: 'Item Code', name: 'code', width: '5%', align: 'center' },
+            { display: 'Item Code', name: 'code', width: '7%', align: 'center' },
 
             {
                 display: 'Goods Name', name: 'goodsName', width: '9%', align: 'center',
@@ -66,14 +66,14 @@ $(function () {
             { display: 'Order Date', name: 'bizDate', width: '6%', align: 'center' },
             { display: 'Order Number', name: 'number', width: '9%', align: 'center' },
 
-            { display: 'Customer', name: 'wlName', width: '9%', align: 'center' },
+            { display: 'Customer', name: 'wlName', width: '7%', align: 'center' },
 
 
 
-            { display: 'Delivery Status', name: 'sendFlag', width: '6%', align: 'center' },
+            { display: 'Delivery Status', name: 'sendFlag', width: '8%', align: 'center' },
 
             {
-                display: 'Purchase Quantity', name: 'Num', width: '8%', align: 'right',
+                display: 'Purchase Quantity', name: 'Num', width: '9%', align: 'right',
 
                 totalSummary:
                 {
@@ -86,7 +86,7 @@ $(function () {
 
             },
             {
-                display: 'Delivered Quantity', name: 'getNum', width: '8%', align: 'right',
+                display: 'Delivered Quantity', name: 'getNum', width: '9%', align: 'right',
 
                 totalSummary:
                 {

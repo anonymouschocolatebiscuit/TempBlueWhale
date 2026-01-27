@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using BlueWhale.DBUtility;
 
 namespace BlueWhale.DAL
@@ -40,6 +41,7 @@ namespace BlueWhale.DAL
             get { return parentId; }
             set { parentId = value; }
         }
+
         private int seq;
         public int Seq
         {
@@ -67,7 +69,7 @@ namespace BlueWhale.DAL
         #region GetAllGoodType
 
         /// <summary>
-        /// 获得数据列表
+        /// Get Data List
         /// </summary>
         public DataSet GetList(string strWhere)
         {
@@ -105,18 +107,28 @@ namespace BlueWhale.DAL
         {
             int id = 0;
             string sql = "select * from goodsType where names='" + names + "' and shopId='" + shopId + "'  ";
-
             DataSet ds = SQLHelper.SqlDataAdapter(SQLHelper.ConStr, CommandType.Text, sql, null);
+
             if (ds.Tables[0].Rows.Count > 0)
             {
                 id = Convert.ToInt32(ds.Tables[0].Rows[0]["id"].ToString());
             }
 
-
             return id;
         }
 
         #endregion
+
+        #region Insert
+
+        public int Add()
+        {
+            string sql = "insert into goodsType(shopId,names,parentId,seq) values('" + ShopId + "','" + Names + "','" + ParentId + "','" + Seq + "')";
+
+            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
+        }
+
+        #endregion Insert
 
         #region Delete
         /// <summary>
@@ -131,6 +143,88 @@ namespace BlueWhale.DAL
         }
 
         #endregion
-    }
 
+        #region CheckIsNameExist
+
+        public bool isExistsNamesAdd(int shopId, int parentId, string names)
+        {
+            bool flag = false;
+            string sql = "select * from goodsType where names='" + names + "' and parentId='" + parentId + "' and shopId='" + shopId + "' ";
+            SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
+
+            while (reader.Read())
+            {
+                flag = true;
+            }
+
+            return flag;
+        }
+
+        public bool isExistsNamesEdit(int id, int shopId, int parentId, string names)
+        {
+            bool flag = false;
+            string sql = "select * from goodsType where names='" + names + "' and id<>'" + id + "' and parentId='" + parentId + "' and shopId='" + shopId + "' ";
+            SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
+
+            while (reader.Read())
+            {
+                flag = true;
+            }
+
+            return flag;
+        }
+
+        #endregion CheckIsNameExist
+
+        #region Edit
+
+        public int Update()
+        {
+            string sql = "";
+
+            if (!this.isExistsNamesEdit(Id, ShopId, ParentId, Names))
+            {
+                sql = "update goodsType set ShopId='" + ShopId + "',Names='" + Names + "',ParentId='" + ParentId + "',Seq='" + Seq + "' where Id='" + Id + "'";
+
+                return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public int UpdatePic(int typeId, int isShowXCX, int isShowGZH, string picUrl)
+        {
+            string sql = "";
+
+            if (this.CheckPic(typeId))
+            {
+                sql = "update goodsTypePicList set isShowXCX='" + isShowXCX + "',isShowGZH='" + isShowGZH + "',picUrl='" + picUrl + "' where typeId='" + typeId + "'";
+            }
+            else
+            {
+                sql = "insert into goodsTypePicList(typeId,isShowXCX,isShowGZH,picUrl) values('" + typeId + "','" + isShowXCX + "','" + isShowGZH + "','" + picUrl + "')";
+
+            }
+
+            return SQLHelper.ExecuteNonQuery(SQLHelper.ConStr, CommandType.Text, sql, null);
+        }
+
+        public bool CheckPic(int id)
+        {
+            bool flag = false;
+            string sql = "select * from goodsTypePicList where typeId='" + id + "' ";
+            SqlDataReader reader = SQLHelper.ExecuteReader(SQLHelper.ConStr, CommandType.Text, sql, null);
+
+            while (reader.Read())
+            {
+                flag = true;
+            }
+
+            return flag;
+        }
+
+        #endregion
+    }
 }

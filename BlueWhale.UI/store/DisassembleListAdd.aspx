@@ -22,20 +22,14 @@
          text-align: left;
          width: 280px;
      }
-    
-    /* div.l-text, div.l-text-over, div.l-text, div.l-text-date, div.l-text-wrapper, div.l-text-date{
-         width: 260px !important;
-         margin: 0 10px;
+
+     .t-Start{
+         text-align: left;
      }
 
-     input.l-text-field, input.l-text-field-null {
-         width: 250px !important;
+     .t-End {
+         text-align: right;
      }
-
-     .tdBtn{
-         margin: 0 10px;
-         text-align: center;
-     }*/
  </style>
 </head>
 <body style="padding-top: 10px; padding-left: 10px;">
@@ -43,22 +37,22 @@
 
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td class="tdLbl">Disassemble Date：</td>
+                <td style="width: 130px; padding-left: 4px;">Disassembly Date：</td>
                 <td class="tdTxt">
                     <asp:TextBox ID="txtBizDate" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td class="tdLbl">Disambled：</td>
+                <td style="text-align: right; width: 130px; padding-left: 4px;">Disassembly Cost：</td>
                 <td class="tdTxt">
                     <asp:TextBox ID="txtFee" runat="server" Text="0"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td align="center" style="font-weight: bold; white-space:nowrap;">Disassembly Items</td>
-                <td style="text-align: left; width: 250px;">&nbsp;</td>
-                <td style="text-align: right; width: 80px;">&nbsp;</td>
-                <td style="text-align: left; width: 180px;">&nbsp;</td>
-                <td style="text-align: right; width: 80px;">&nbsp;</td>
-                <td style="text-align: left;">&nbsp;</td>
+                <td align="center" style="font-weight: bold; white-space:nowrap;">Disassembled Product</td>
+                <td class="t-Start" style="width: 250px;">&nbsp;</td>
+                <td class="t-End" style="width: 80px;">&nbsp;</td>
+                <td class="t-Start" style="width: 180px;">&nbsp;</td>
+                <td class="t-End" style="width: 80px;">&nbsp;</td>
+                <td class="t-Start">&nbsp;</td>
             </tr>
             <tr>
                 <td align="center" colspan="6">
@@ -66,12 +60,12 @@
                 </td>
             </tr>
             <tr>
-                <td align="center" style="font-weight: bold; white-space:nowrap;">Disassembled Items</td>
-                <td style="text-align: left; width: 250px;">&nbsp;</td>
-                <td style="text-align: right; width: 80px;">&nbsp;</td>
-                <td style="text-align: left; width: 180px;">&nbsp;</td>
-                <td style="text-align: right; width: 80px;">&nbsp;</td>
-                <td style="text-align: left;">&nbsp;</td>
+                <td align="center" style="font-weight: bold; white-space:nowrap;">Product After Disassembly</td>
+                <td class="t-Start" style="width: 250px;">&nbsp;</td>
+                <td class="t-End" style="width: 80px;">&nbsp;</td>
+                <td class="t-Start" style="width: 180px;">&nbsp;</td>
+                <td class="t-End" style="width: 80px;">&nbsp;</td>
+                <td class="t-Start">&nbsp;</td>
             </tr>
             <tr>
                 <td align="center" colspan="6">
@@ -83,11 +77,11 @@
         <table id="tbFooter" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 50px;">
             <tr>
                 <td style="width: 80px; text-align: right;">Remarks：</td>
-                <td style="text-align: left;">
+                <td class="t-Start">
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>
-                <td style="text-align: right; padding-right: 30px;">
-                    <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Create" onclick="save()" />
+                <td class="t-End" padding-right: 30px;">
+                    <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Add" onclick="save()" />
                 </td>
             </tr>
         </table>

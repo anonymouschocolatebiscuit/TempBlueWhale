@@ -1,21 +1,9 @@
 ﻿using System;
-using System.Collections;
-using System.Configuration;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml.Linq;
-
 using System.Collections.Generic;
 using System.Web.Script.Serialization;
 using BlueWhale.DAL;
 using BlueWhale.Common;
-
 using BlueWhale.UI.src;
 
 
@@ -27,9 +15,7 @@ namespace BlueWhale.UI.baseSet
         public AccountDAL dal = new AccountDAL();
 
         protected void Page_Load(object sender, EventArgs e)
-        {
-           
-
+        {          
             if (Request.Params["Action"] == "GetDataList")
             {
                 GetDataList();
@@ -56,7 +42,7 @@ namespace BlueWhale.UI.baseSet
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {
@@ -79,12 +65,11 @@ namespace BlueWhale.UI.baseSet
 
         void GetDDLList()
         {
-
             string isWhere = " shopId='" + LoginUser.ShopId + "' ";
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
 
                 list.Add(new
@@ -102,10 +87,7 @@ namespace BlueWhale.UI.baseSet
                 });
 
             }
-
             string s = new JavaScriptSerializer().Serialize(list);
-
-
             Response.Write(s);
         }
 
@@ -137,8 +119,6 @@ namespace BlueWhale.UI.baseSet
             }
 
         }
-
-        
-
+      
     }
 }

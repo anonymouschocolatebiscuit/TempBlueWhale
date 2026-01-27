@@ -121,7 +121,7 @@ $(function () {
                 { display: 'Pay Number', name: 'payNumber', width: 120, align: 'left', type: 'text', editor: { type: 'text' } },
 
                 { display: 'Remarks', name: 'remarks', width: 220, align: 'left', type: 'text', editor: { type: 'text' } }
-            ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '155',
+            ], width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '170',
             url: 'PayMentListAdd.aspx?Action=GetData',
             rownumbers: true,
             frozenRownumbers: true,
@@ -204,7 +204,7 @@ $(function () {
                     }
                 }
             ],
-            width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '210',
+            width: '99%', pageSizeOptions: [5, 10, 15, 20], height: '225',
             url: 'PayMentListAdd.aspx?Action=GetDataSub',
             rownumbers: true,
             frozenRownumbers: true,

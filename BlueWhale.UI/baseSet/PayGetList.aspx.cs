@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-
 using System.Collections.Generic;
 using System.Web.Script.Serialization;
 using BlueWhale.DAL;
@@ -11,12 +10,10 @@ namespace BlueWhale.UI.baseSet
 {
     public partial class PayGetList : BasePage
     {
-
         public PayGetDAL dal = new PayGetDAL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (Request.Params["Action"] == "GetDataList")
             {
                 GetDataList();
@@ -37,8 +34,6 @@ namespace BlueWhale.UI.baseSet
                 DeleteRow(id);
                 Response.End();
             }
-
-
         }
 
         void GetDataList()
@@ -47,9 +42,8 @@ namespace BlueWhale.UI.baseSet
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-
                 list.Add(new
                 {
                     id = ds.Tables[0].Rows[i]["id"].ToString(),
@@ -57,17 +51,12 @@ namespace BlueWhale.UI.baseSet
                     names = ds.Tables[0].Rows[i]["names"].ToString()
                  
                 });
-            
             }
             var griddata = new { Rows = list };
-
-            string s = new JavaScriptSerializer().Serialize(griddata);//传给grid的时候才要
-
-        
+            string s = new JavaScriptSerializer().Serialize(griddata);
 
             Response.Write(s);
         }
-
 
         void GetDDLList(string types)
         {
@@ -75,25 +64,17 @@ namespace BlueWhale.UI.baseSet
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-
                 list.Add(new
                 {
-                    
                     typeId = ds.Tables[0].Rows[i]["id"].ToString(),
                     typeName = ds.Tables[0].Rows[i]["names"].ToString(),
-
                     id = ds.Tables[0].Rows[i]["id"].ToString(),
                     text = ds.Tables[0].Rows[i]["names"].ToString()
-
                 });
-
             }
-          
-
             string s = new JavaScriptSerializer().Serialize(list);
-
 
             Response.Write(s);
         }
@@ -108,23 +89,21 @@ namespace BlueWhale.UI.baseSet
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "删除收支类别-ID：" + id.ToString();
+                    logs.Events = "Deleted Income and Expense Category-ID：" + id.ToString();
                     logs.Ip = Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    Response.Write("删除成功！");
-
+                    Response.Write("Deleted succesfully！");
                 }
                 else
                 {
-                    Response.Write("删除失败！");
+                    Response.Write("Deletion failed！");
                 }
             }
             else
             {
-                Response.Write("登录超时，请重新登陆！");
+                Response.Write("Session timed out，please login and try again！");
             }
-
         }
     }
 }

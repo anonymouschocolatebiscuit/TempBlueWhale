@@ -70,7 +70,10 @@ $(function () {
     var target1 = $("#target1").ligerForm();
 
     var g = $.ligerui.get("ddlVenderList");
-    g.set("Width", 250);
+    g.set("Width", 200);
+
+    var txtBizDate = $.ligerui.get("txtBizDate");
+    txtBizDate.set("Width", 120);
 
     var txtDateStart = $.ligerui.get("txtDateStart");
     txtDateStart.set("Width", 120);
@@ -78,8 +81,8 @@ $(function () {
     var txtDateEnd = $.ligerui.get("txtDateEnd");
     txtDateEnd.set("Width", 120);
 
-    var txtDateStar1 = $.ligerui.get("txtDateStar1");
-    txtDateStar1.set("Width", 120);
+    var txtDateStart1 = $.ligerui.get("txtDateStart1");
+    txtDateStart1.set("Width", 120);
 
     var txtDateEnd1 = $.ligerui.get("txtDateEnd1");
     txtDateEnd1.set("Width", 120);
@@ -90,7 +93,9 @@ $(function () {
                 display: '', isSort: false, width: 40, align: 'center', frozen: true, render: function (rowdata, rowindex, value) {
                     var h = "";
                     if (!rowdata._editing) {
+                        h += "<div style='display:flex; justify-content:center; align-items:center; height:100%; gap:6px;'>";
                         h += "<a href= \"javascript: deleteRow()\" title=\"Delete row\" style=\"display: flex; justify-content: center; align-items: center; width: 30px; height: 30px; \"><div class=\"ui-icon ui-icon-trash\"></div></a>";
+                        h += "</div>";
                     }
                     return h;
                 }
@@ -108,12 +113,12 @@ $(function () {
                 }
             },
             { display: 'Business Type', name: 'bizType', width: 120, align: 'center' },
-            { display: 'Invoice Date', name: 'bizDate', width: 80, align: 'center' },
+            { display: 'Invoice Date', name: 'bizDate', width: 100, align: 'center' },
             { display: 'Invoice Amount', name: 'sumPriceAll', width: 120, align: 'center' },
             { display: 'Amount Written Off', name: 'priceCheckNowSum', width: 170, align: 'center' },
             { display: 'Unsettled Amount', name: 'priceCheckNo', width: 130, align: 'center' },
             {
-                display: 'Current Write-Off Amount', name: 'priceCheckNow', width: 170, type: 'float', align: 'center', editor: { type: 'float', precision: 4 },
+                display: 'Current Write-Off Amount', name: 'priceCheckNow', width: 180, type: 'float', align: 'center', editor: { type: 'float', precision: 4 },
                 totalSummary:
                 {
                     align: 'right', // Summary cell content alignment: left/center/right  
@@ -174,7 +179,9 @@ $(function () {
                 display: '', isSort: false, width: 40, align: 'center', frozen: true, render: function (rowdata, rowindex, value) {
                     var h = "";
                     if (!rowdata._editing) {
+                        h += "<div style='display:flex; justify-content:center; align-items:center; height:100%; gap:6px;'>";
                         h += "<a href= \"javascript: deleteRowSub()\" title=\"Delete row\" style=\"display: flex; justify-content: center; align-items: center; width: 30px; height: 30px; \"><div class=\"ui-icon ui-icon-trash\"></div></a>";
+                        h += "</div>";
                     }
                     return h;
                 }
@@ -191,12 +198,12 @@ $(function () {
                 }
             },
             { display: 'Business Type', name: 'bizType', width: 120, align: 'center' },
-            { display: 'Invoice Date', name: 'bizDate', width: 80, align: 'center' },
+            { display: 'Invoice Date', name: 'bizDate', width: 100, align: 'center' },
             { display: 'Invoice Amount', name: 'sumPriceAll', width: 120, align: 'center' },
             { display: 'Amount Written Off', name: 'priceCheckNowSum', width: 170, align: 'center' },
             { display: 'Unsettled Amount', name: 'priceCheckNo', width: 130, align: 'center' },
             {
-                display: 'Current Write-Off Amount', name: 'priceCheckNow', width: 170, type: 'float', align: 'center', editor: { type: 'float', precision: 4 },
+                display: 'Current Write-Off Amount', name: 'priceCheckNow', width: 180, type: 'float', align: 'center', editor: { type: 'float', precision: 4 },
                 totalSummary: {
                     align: 'right',   //Summary cell content alignment: left/center/right
                     type: 'sum',

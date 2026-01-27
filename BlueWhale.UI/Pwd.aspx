@@ -40,7 +40,7 @@
                 <td style="text-align: right;">&nbsp;</td>
                 <td style="text-align: left; padding-left: 30px;">
                     <asp:Button ID="ButtonUpdate" runat="server" CssClass="ui_state_highlight" 
-                                OnClick="ButtonUpdate_Click" Text="Change" Style="padding: 10px 20px;width:auto;height:auto;"/>
+                                OnClick="ButtonUpdate_Click" Text="Change" Style="width:auto;height:auto;"/>
                 </td>
             </tr>
         </table>

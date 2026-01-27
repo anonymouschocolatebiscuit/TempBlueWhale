@@ -14,7 +14,7 @@
     <script type="text/javascript">
         function f_selectClient() {
             $.ligerDialog.open({
-                title: 'Select vender', name: 'winselector', width: 800, height: 540, url: '../baseSet/VendorListSelect.aspx', buttons: [
+                title: 'Select Vender', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
                     { text: 'Confirm', onclick: f_selectClientOK },
                     { text: 'Close', onclick: f_selectClientCancel }
                 ]
@@ -43,7 +43,6 @@
                 onBeforeOpen: f_selectClient, valueFieldID: 'txtVenderCode', width: 300
             });
         });
-
     </script>
     <script src="js/VendorNeedPayReport.js" type="text/javascript"></script>
 </head>
@@ -51,7 +50,7 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width:99%; line-height:40px;">
             <tr>
-                <td style="text-align:right; width:70px; white-space:nowrap"> Start and End Date: </td>
+                <td style="text-align:right; width:70px; white-space:nowrap"> Start Date: </td>
                 <td style="text-align:left; width:120px; padding-left:0.5rem">
                     <asp:TextBox ID="txtDateStart" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
@@ -63,21 +62,19 @@
                     </asp:TextBox>
                 </td>
                 <td style="text-align:right; width:60px; white-space:nowrap; padding-right:0.5rem">
-                    Vendor:
+                    Vender:
                 </td>
                 <td style="text-align:left;width:80px;">
                     <input type="text" id="txtVenderList" />
                 </td>
                 <td style="text-align:right; padding-right:20px;">
-                    <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb"
-                        onclick="search()" />
+                    <input id="btnSearch" type="button" value="Search" class="ui-btn ui-btn-sp mrb" onclick="search()" />
                 </td>
             </tr>
             <tr>
                 <td style="text-align:left; height:300px; white-space:nowrap" colspan="7">
                     <div id="maingrid"></div>
-                    <div style="display:none;">
-                    </div>
+                    <div style="display:none;"></div>
                 </td>
             </tr>
         </table>

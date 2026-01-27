@@ -14,7 +14,7 @@ using BlueWhale.DAL;
 using BlueWhale.Model;
 using BlueWhale.UI.src;
 
-namespace Lanwei.Weixin.UI.produce.ashx
+namespace BlueWhale.UI.produce.ashx
 {
     /// <summary>
     /// produceListAdd summary

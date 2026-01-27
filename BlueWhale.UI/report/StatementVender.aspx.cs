@@ -34,7 +34,7 @@ namespace BlueWhale.UI.report
 
                 DateTime bizStart = DateTime.Parse(Request.Params["start"].ToString());
 
-                DateTime bizEnd = DateTime.Parse(Request.Params["end"].ToString());
+                DateTime bizEnd = string.IsNullOrEmpty(Request.Params["end"].ToString()) ? DateTime.Now : Convert.ToDateTime(Request.Params["end"].ToString());
 
                 string typeId = Request.Params["typeId"].ToString();
 

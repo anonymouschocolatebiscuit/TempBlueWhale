@@ -14,7 +14,6 @@ namespace BlueWhale.UI.baseSet
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (Request.Params["Action"] == "GetDataList")
             {
                 GetDataList();
@@ -47,7 +46,7 @@ namespace BlueWhale.UI.baseSet
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
 
                 list.Add(new
@@ -81,7 +80,7 @@ namespace BlueWhale.UI.baseSet
                 pid = -1
             });
 
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {
@@ -103,7 +102,7 @@ namespace BlueWhale.UI.baseSet
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {

@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml.Linq;
-
+﻿using BlueWhale.Common;
 using BlueWhale.DAL;
-using BlueWhale.Common;
 using BlueWhale.UI.src;
+using System;
 
 namespace BlueWhale.UI.baseSet
 {
@@ -61,7 +49,7 @@ namespace BlueWhale.UI.baseSet
                 return;
             }
 
-          
+
 
             if (this.txtCode.Text == "")
             {
@@ -91,13 +79,13 @@ namespace BlueWhale.UI.baseSet
             if (id == 0)
             {
 
-                if (dal.isExistsCodeAdd(LoginUser.ShopId,this.txtCode.Text))
+                if (dal.isExistsCodeAdd(LoginUser.ShopId, this.txtCode.Text))
                 {
                     MessageBox.Show(this, "Failed to add, code already exists!");
                     return;
                 }
 
-                if (dal.isExistsNamesAdd(LoginUser.ShopId,this.txtNames.Text))
+                if (dal.isExistsNamesAdd(LoginUser.ShopId, this.txtNames.Text))
                 {
                     MessageBox.Show(this, "Failed to add, name already exists!");
                     return;
@@ -121,7 +109,7 @@ namespace BlueWhale.UI.baseSet
             else
             {
 
-                if (dal.isExistsCodeEdit(id,LoginUser.ShopId, this.txtCode.Text))
+                if (dal.isExistsCodeEdit(id, LoginUser.ShopId, this.txtCode.Text))
                 {
                     MessageBox.Show(this, "Failed to update, code already exists!");
                     return;

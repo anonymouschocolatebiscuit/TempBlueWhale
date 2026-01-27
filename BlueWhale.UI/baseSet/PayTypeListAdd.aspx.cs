@@ -1,8 +1,7 @@
-﻿using System;
+﻿using BlueWhale.Common;
 using BlueWhale.DAL;
-using BlueWhale.Common;
 using BlueWhale.UI.src;
-using Org.BouncyCastle.Asn1.Ocsp;
+using System;
 
 namespace BlueWhale.UI.baseSet
 {
@@ -14,15 +13,12 @@ namespace BlueWhale.UI.baseSet
         {
             if (!this.IsPostBack)
             {
-
                 this.BindDetail();
-
             }
         }
 
         public void BindDetail()
         {
-
             this.txtNames.Focus();
 
             if (Request.QueryString.Count > 0)
@@ -30,20 +26,15 @@ namespace BlueWhale.UI.baseSet
                 int id = ConvertTo.ConvertInt(Request.QueryString["id"].ToString());
                 this.hfId.Value = id.ToString();
                 this.txtNames.Text = Request.QueryString["names"].ToString();
-
-
-
             }
             else
             {
-
                 this.hfId.Value = "0";
             }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-
             if (!CheckPower("PayTypeListAdd"))
             {
                 MessageBox.Show(this, "No permission for this operation!");
@@ -55,9 +46,7 @@ namespace BlueWhale.UI.baseSet
                 MessageBox.Show(this, "Please enter name!");
                 this.txtNames.Focus();
                 return;
-
             }
-
 
             int id = ConvertTo.ConvertInt(this.hfId.Value.ToString());
 
@@ -75,7 +64,6 @@ namespace BlueWhale.UI.baseSet
 
                 if (dal.Add() > 0)
                 {
-
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
@@ -83,9 +71,8 @@ namespace BlueWhale.UI.baseSet
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    MessageBox.Show(this, "successful!");
+                    MessageBox.Show(this, "Operation successful!");
                 }
-
             }
             else
             {
@@ -97,7 +84,6 @@ namespace BlueWhale.UI.baseSet
 
                 if (dal.Update() > 0)
                 {
-
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
@@ -105,13 +91,9 @@ namespace BlueWhale.UI.baseSet
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
-                    MessageBox.Show(this, "successful!");
+                    MessageBox.Show(this, "Operation successful!");
                 }
             }
-
-
-
-
         }
     }
 }

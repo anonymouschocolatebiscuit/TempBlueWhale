@@ -167,7 +167,7 @@ namespace BlueWhale.DAL
         /// <summary>
         /// AutoGenerateInvoiceNo
         /// </summary>
-        public string GetBillNumberAuto(int shopId) 
+        public string GetBillNumberAuto(int shopId)
         {
             DataSet ds = new DataSet();
             SqlParameter[] param = {
@@ -363,7 +363,7 @@ namespace BlueWhale.DAL
         /// <returns></returns>
         public DataSet GetAllModel(int shopId, DateTime start, DateTime end)
         {
-            string sql = "select * from viewSalesOrderList  where bizDate>=@start and bizDate<=@end  and flag='审核' ";
+            string sql = "select * from viewSalesOrderList  where bizDate>=@start and bizDate<=@end  and flag='Review' ";
 
             if (shopId != 0)
             {
@@ -534,7 +534,7 @@ namespace BlueWhale.DAL
         #region Update payment status
 
         /// <summary>
-        /// 更新支付状态
+        /// Update payment status
         /// </summary>
         /// <param name="number">System order number</param>
         /// <param name="flagPay">Payment status</param>
@@ -663,7 +663,7 @@ namespace BlueWhale.DAL
 	                                select sourceNumber,
 	                                sum(num) sumNumGet 
 	                                from viewSalesReceiptItem
-	                                where flag='审核'
+	                                where flag='Review'
 	                                group by sourceNumber
                                 )
                                 b on a.number=b.sourceNumber
@@ -748,7 +748,7 @@ namespace BlueWhale.DAL
 	                                select sourceNumber,
 	                                sum(num) sumNumGet 
 	                                from viewSalesReceiptItem
-	                                where flag='审核'
+	                                where flag='Review'
 	                                group by sourceNumber
                                 )
                                 b on a.number=b.sourceNumber
@@ -800,7 +800,7 @@ namespace BlueWhale.DAL
         #region Review a record
 
         /// <summary>
-        /// 审核一条记录
+        /// Review a record
         /// </summary>
         /// <param name="Id"></param>
         /// <param name="chekerId"></param>
@@ -922,48 +922,48 @@ namespace BlueWhale.DAL
                 sql += " and code in(" + code + ")";
             }
 
-            if (types != "") //0 所有 1 未入库 2 部分入库 3 全部入库
+            if (types != "") //0 All 1 Not Out 2 Partially Out 3 All Out
             {
                 sql += " and ( ";
-                if (types.Contains("未出库"))
+                if (types.Contains("Not Out"))
                 {
                     sql += "  getNumNo = num ";
                 }
 
-                if (types.Contains("未出库") && types.Contains("部分出库"))
+                if (types.Contains("Not Out") && types.Contains("Partially Out"))
                 {
                     sql += " or (getNum>0 and num>getNum )";
                 }
 
-                if (!types.Contains("未出库") && types.Contains("部分出库"))
+                if (!types.Contains("Not Out") && types.Contains("Partially Out"))
                 {
                     sql += " (getNum>0 and num>getNum )";
                 }
 
 
-                if (types.Contains("全部出库") && !types.Contains("未出库") && !types.Contains("部分出库"))
+                if (types.Contains("All Out") && !types.Contains("Not Out") && !types.Contains("Partially Out"))
                 {
                     sql += " getNumNo <= 0 ";
                 }
 
-                if (types.Contains("全部出库") && (types.Contains("未出库") || types.Contains("部分出库")))
+                if (types.Contains("All Out") && (types.Contains("Not Out") || types.Contains("Partially Out")))
                 {
                     sql += " or getNumNo <= 0 ";
                 }
 
                 sql += " )";
 
-                //if (types == 1)//未入库
+                //if (types == 1)//Not Out
                 //{
                 //    sql += " and getNumNo = num ";
                 //}
 
-                //if (types == 2)//部分入库
+                //if (types == 2)//Partially Out
                 //{
                 //    sql += " and getNum>0 and num>getNum ";
                 //}
 
-                //if (types == 3)//全部入库
+                //if (types == 3)//All Out
                 //{
                 //    sql += " and getNumNo <= 0 ";
                 //}

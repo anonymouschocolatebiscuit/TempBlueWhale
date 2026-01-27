@@ -47,7 +47,7 @@ namespace BlueWhale.UI.baseSet
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {
@@ -57,9 +57,7 @@ namespace BlueWhale.UI.baseSet
                 });
             }
 
-            var griddata = new { Rows = list };
-
-            string s = new JavaScriptSerializer().Serialize(griddata); // Only when pass to grid
+            string s = new JavaScriptSerializer().Serialize(new { Rows = list }); // Only when pass to grid
 
             Response.Write(s);
         }
@@ -79,7 +77,7 @@ namespace BlueWhale.UI.baseSet
                 }
             };
 
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {
@@ -88,8 +86,6 @@ namespace BlueWhale.UI.baseSet
                     pid = 0
                 });
             }
-
-            var griddata = new { Rows = list };
 
             string s = new JavaScriptSerializer().Serialize(list); // Only when pass to grid
 
@@ -102,7 +98,7 @@ namespace BlueWhale.UI.baseSet
             DataSet ds = dal.GetList(isWhere);
 
             IList<object> list = new List<object>();
-            for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new
                 {

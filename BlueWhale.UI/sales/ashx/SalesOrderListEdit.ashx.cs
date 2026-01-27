@@ -205,6 +205,7 @@ namespace BlueWhale.UI.sales.ashx
             }
 
             BasePage basePage = new BasePage();
+
             if (!basePage.CheckPower("PurOrderListAdd"))
             {
                 context.Response.Write("You do not have permission for this operation. Please contact the administrator.");
@@ -214,9 +215,11 @@ namespace BlueWhale.UI.sales.ashx
             Users users = context.Session["userInfo"] as Users;
 
             StreamReader reader = new StreamReader(context.Request.InputStream);
+
             string strJson = HttpUtility.UrlDecode(reader.ReadToEnd());
 
             OrderListModel<OrderListItemModel> obj = Newtonsoft.Json.JsonConvert.DeserializeObject<OrderListModel<OrderListItemModel>>(strJson);
+
             OrderListModel<OrderListItemModel> itemList = obj;
 
             #region Assign header values
@@ -242,6 +245,7 @@ namespace BlueWhale.UI.sales.ashx
                 #region Assign item details
 
                 SalesOrderItemDAL item = new SalesOrderItemDAL();
+
                 item.Delete(obj.Id);
 
                 int check = 0;
@@ -267,7 +271,6 @@ namespace BlueWhale.UI.sales.ashx
 
                     check = item.Add();
                 }
-
                 #endregion
 
                 if (check > 0)

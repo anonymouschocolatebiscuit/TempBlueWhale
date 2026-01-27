@@ -7,7 +7,7 @@ $(function () {
         checkbox: true,
         columns: [
             {
-                display: 'Action', isSort: false, width: 170, align: 'center', render: function (rowdata, rowindex, value) {
+                display: 'Action', isSort: false, width: 60, align: 'center', render: function (rowdata, rowindex, value) {
                     var h = "";
                     if (!rowdata._editing) {
                         h += "<a href='javascript:editRow()' title='Edit Row' style='float:left;'><div class='ui-icon ui-icon-pencil'></div></a> ";
@@ -191,11 +191,6 @@ function add() {
 function editRow() {
     var row = manager.getSelectedRow();
     parent.f_addTab('PayMentListEdit', 'Purchase Payment - Edit', 'pay/PayMentListEdit.aspx?id=' + row.id);
-    top.topManager.openPage({
-        id: 'PayMentListEdit',
-        href: 'pay/PayMentListEdit.aspx?id=' + row.id,
-        title: 'Purchase Payment - Edit'
-    });
 }
 
 function viewRow() {

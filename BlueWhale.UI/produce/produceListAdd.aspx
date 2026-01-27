@@ -80,7 +80,7 @@
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>
                 <td style="text-align:right; padding-right:30px; ">
-                    <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Create" onclick="save()"  />
+                    <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Add" onclick="save()"  />
                 </td>
             </tr>
         </table>    

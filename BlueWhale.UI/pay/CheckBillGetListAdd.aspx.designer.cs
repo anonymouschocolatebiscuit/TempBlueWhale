@@ -51,13 +51,13 @@ namespace BlueWhale.UI.pay
         protected global::System.Web.UI.WebControls.TextBox txtKeysGet;
 
         /// <summary>
-        /// txtDateStar1 control.
+        /// txtDateStart1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDateStar1;
+        protected global::System.Web.UI.WebControls.TextBox txtDateStart1;
 
         /// <summary>
         /// txtDateEnd1 control.

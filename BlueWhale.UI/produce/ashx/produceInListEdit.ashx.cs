@@ -282,7 +282,7 @@ namespace BlueWhale.UI.produce.ashx
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = users.ShopId;
                     logs.Users = users.Phone + "-" + users.Names;
-                    logs.Events = "Modify Production Stock In：" + dal.Number;
+                    logs.Events = "Edit Production Stock In：" + dal.Number;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
