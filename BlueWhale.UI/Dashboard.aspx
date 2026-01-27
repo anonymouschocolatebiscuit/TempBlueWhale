@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="BlueWhale.UI.Dashboard" %>
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="BlueWhale.UI.Dashboard" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Welcome to BlueWhale ERP</title>
+    <title>Welcome to SteelViper ERP</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,512 +12,417 @@
 
     <!--Left Navigation & Top Begin-->
 
-        <link rel="stylesheet" type="text/css" href="appCss/app.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"/>
-
+    <link rel="stylesheet" type="text/css" href="appCss/app.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="appCss/jquery-1.10.2.min.js" type="text/javascript"></script>
 
-        <style type="text/css">
-            .default #appHeader {
-                height: 46px;
-                position: fixed;
-                top: 0;
-                left: 0px;
-                z-index: 99;
-                width: 100%;
-                font-family: 'Nunito Sans', sans-serif !important;
-            }
-
-    .default .menuList1 {
-        width: 63px;
-        height: 46px;
-    }
-
-    .default .headMessage {
-        height: 45px;
-        margin-right: 10px;
-    }
-
-            .default .mainLogo {
-                float: left;
-                display: block;
-                width: 300px;
-                height: 25px;
-                margin: 10px 0 0 14px;
-                font-size: 18px;
-                color: #fff;
-                font-family: 'Nunito Sans', sans-serif;
-                position: relative;
-            }
-
-    .default .head-ask {
-        height: 45px;
-        line-height: 45px;
-        color: #f2f2f2;
-        font-size: 14px;
-        text-decoration: none;
-        max-width: 30em;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        text-align: right;
-    }
-
-    .default #appLeftSide {
-        position: fixed;
-        top: 46px;
-        left: 0;
-        width: 63px;
-        background: #393d48;
-        height: 100%;
-        z-index: 201;
-    }
-
-    #nav {
-        z-index: 1;
-        /*border-bottom:1px solid #28688b;border-color:rgba(0,0,0,0.15);*/
-    }
-
-        #nav .item {
-            position: relative;
-            margin-bottom: 1px;
-            zoom: 1;
-            float: left;
+    <style type="text/css">
+        .default #appHeader {
+            height: 46px;
+            position: fixed;
+            top: 0;
+            left: 0px;
+            z-index: 99;
             width: 100%;
+            font-family: '微软雅黑', '宋体';
+            background: #4e565e;
         }
 
-    .v-standard #nav .item {
-        margin-bottom: 0;
-    }
+        .default .menuList1 {
+            width: 63px;
+            height: 46px;
+        }
 
-            #nav .main-nav {
+        .default .headMessage {
+            height: 45px;
+            margin-right: 25px;
+        }
+
+        .default .mainLogo {
+            float: left;
+            display: block;
+            width: 300px;
+            height: 25px;
+            margin: 10px 0 0 14px;
+            font-size: 18px;
+            color: #fff;
+            font-family: '微软雅黑', '宋体';
+            position: relative;
+        }
+
+        .default .head-ask {
+            height: 45px;
+            line-height: 45px;
+            color: #f2f2f2;
+            font-size: 14px;
+            text-decoration: none;
+            max-width: 30em;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            text-align: right;
+        }
+
+        .default #appLeftSide {
+            position: fixed;
+            top: 46px;
+            left: 0;
+            width: 63px;
+            background: #2c3136;
+            height: 100%;
+            z-index: 201;
+        }
+
+        #nav {
+            z-index: 1;
+            /*border-bottom:1px solid #28688b;border-color:rgba(0,0,0,0.15);*/
+        }
+
+            #nav .item {
                 position: relative;
-                display: block;
-                height: 80px;
-                width: 100%;
+                margin-bottom: 1px;
+                zoom: 1;
                 float: left;
-                font-family: 'Nunito Sans', sans-serif;
+                width: 100%;
             }
 
-    .v-standard #nav .item {
-        height: 84px;
-    }
+        .v-standard #nav .item {
+            margin-bottom: 0;
+        }
 
-    #nav .on .main-nav {
-        background-position: 0 -80px;
-    }
-
-    #nav .current .main-nav {
-        background-position: 0 -160px;
-    }
-
-    #nav .sales {
-        background-position: -98px 0;
-    }
-
-    #nav .on .sales {
-        background-position: -98px -80px;
-    }
-
-    #nav .current .sales {
-        background-position: -98px -160px;
-    }
-
-    #nav .storage {
-        background-position: -196px 0;
-    }
-
-    #nav .on .storage {
-        background-position: -196px -80px;
-    }
-
-    #nav .current .storage {
-        background-position: -196px -160px;
-    }
-
-    #nav .money {
-        background-position: -294px 0;
-    }
-
-    #nav .on .money {
-        background-position: -294px -80px;
-    }
-
-    #nav .current .money {
-        background-position: -294px -160px;
-    }
-
-    #nav .report {
-        background-position: -392px 0;
-    }
-
-    #nav .on .report {
-        background-position: -392px -80px;
-    }
-
-    #nav .current .report {
-        background-position: -392px -160px;
-    }
-
-    #nav .setting {
-        background-position: -490px 0;
-    }
-
-    #nav .on .setting {
-        background-position: -490px -80px;
-    }
-
-    #nav .current .setting {
-        background-position: -490px -160px;
-    }
-
-    #nav .vip {
-        background-position: -582px 0;
-    }
-
-    #nav .on .vip {
-        background-position: -582px -80px;
-    }
-
-    #nav .current .vip {
-        background-position: -582px -160px;
-    }
-
-    #nav .arrow {
-        position: absolute;
-        left: 75px;
-        top: 55px;
-        display: block;
-        text-indent: 0;
-        font-weight: bold;
-    }
-
-    #nav .on .arrow {
-        text-indent: -99999px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 8px;
-        border-color: transparent;
-        border-right-color: white;
-        border-left: none;
-        left: 87px;
-        top: 50%;
-        margin-top: -8px;
-    }
-
-    #nav.static .current .arrow {
-        text-indent: -99999px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 8px;
-        border-color: transparent;
-        border-right-color: white;
-        border-left: none;
-        left: 87px;
-        top: 50%;
-        margin-top: -8px;
-    }
-
-    .v-standard #nav .on .arrow {
-        text-indent: -99999px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 8px;
-        border-color: transparent;
-        border-right-color: white;
-        border-left: none;
-        left: 87px;
-        top: 50%;
-        margin-top: -8px;
-    }
-
-    .v-standard #nav.static .current .arrow {
-        text-indent: -99999px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 8px;
-        border-color: transparent;
-        border-right-color: white;
-        border-left: none;
-        left: 87px;
-        top: 50%;
-        margin-top: -8px;
-    }
-
-    #nav .sub-nav-wrap {
-        display: none;
-        position: absolute;
-        left: 60px;
-        width: 120px;
-        border: 4px solid #c7c7c7;
-        border-color: rgba(0, 0, 0, 0.2);
-        border-left: 0;
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
-        z-index: 9999;
-        background-color: #fff;
-    }
-
-        #nav .sub-nav-wrap b {
-            position: absolute;
-            left: -8px;
-            margin-top: -8px;
+        #nav .main-nav {
+            position: relative;
             display: block;
+            height: 80px;
+            width: 100%;
+            float: left;
+            font-family: "新宋体", "宋体";
+        }
+
+        .v-standard #nav .item {
+            height: 84px;
+        }
+
+        #nav .on .main-nav {
+            background-position: 0 -80px;
+        }
+
+        #nav .current .main-nav {
+            background-position: 0 -160px;
+        }
+
+        #nav .sales {
+            background-position: -98px 0;
+        }
+
+        #nav .on .sales {
+            background-position: -98px -80px;
+        }
+
+        #nav .current .sales {
+            background-position: -98px -160px;
+        }
+
+        #nav .storage {
+            background-position: -196px 0;
+        }
+
+        #nav .on .storage {
+            background-position: -196px -80px;
+        }
+
+        #nav .current .storage {
+            background-position: -196px -160px;
+        }
+
+        #nav .money {
+            background-position: -294px 0;
+        }
+
+        #nav .on .money {
+            background-position: -294px -80px;
+        }
+
+        #nav .current .money {
+            background-position: -294px -160px;
+        }
+
+        #nav .report {
+            background-position: -392px 0;
+        }
+
+        #nav .on .report {
+            background-position: -392px -80px;
+        }
+
+        #nav .current .report {
+            background-position: -392px -160px;
+        }
+
+        #nav .setting {
+            background-position: -490px 0;
+        }
+
+        #nav .on .setting {
+            background-position: -490px -80px;
+        }
+
+        #nav .current .setting {
+            background-position: -490px -160px;
+        }
+
+        #nav .vip {
+            background-position: -582px 0;
+        }
+
+        #nav .on .vip {
+            background-position: -582px -80px;
+        }
+
+        #nav .current .vip {
+            background-position: -582px -160px;
+        }
+
+        #nav .arrow {
+            position: absolute;
+            left: 75px;
+            top: 55px;
+            display: block;
+            text-indent: 0;
+            font-weight: bold;
+        }
+
+        #nav .on .arrow {
+            text-indent: -99999px;
             width: 0;
             height: 0;
-            font-size: 0;
-            overflow: hidden;
             border-style: solid;
             border-width: 8px;
             border-color: transparent;
             border-right-color: white;
             border-left: none;
+            left: 87px;
+            top: 50%;
+            margin-top: -8px;
         }
 
-    #nav .single-nav b {
-        top: 50%;
-    }
-
-    #nav .sub-nav {
-        background-color: #fff;
-        padding: 10px 0 5px;
-        line-height: 24px;
-    }
-
-        #nav .sub-nav li {
-            padding-bottom: 8px;
-            font-size: 10px;
+        #nav.static .current .arrow {
+            text-indent: -99999px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px;
+            border-color: transparent;
+            border-right-color: white;
+            border-left: none;
+            left: 87px;
+            top: 50%;
+            margin-top: -8px;
         }
 
-        #nav .sub-nav a {
-            padding-left: 15px;
-            display: block;
-            color: #888;
-            zoom: 1;
+        .v-standard #nav .on .arrow {
+            text-indent: -99999px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px;
+            border-color: transparent;
+            border-right-color: white;
+            border-left: none;
+            left: 87px;
+            top: 50%;
+            margin-top: -8px;
         }
 
-            #nav .sub-nav a:hover {
-                background-color: #eee;
-                color: #555;
+        .v-standard #nav.static .current .arrow {
+            text-indent: -99999px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px;
+            border-color: transparent;
+            border-right-color: white;
+            border-left: none;
+            left: 87px;
+            top: 50%;
+            margin-top: -8px;
+        }
+
+        #nav .sub-nav-wrap {
+            display: none;
+            position: absolute;
+            left: 60px;
+            width: 120px;
+            border: 4px solid #c7c7c7;
+            border-color: rgba(0, 0, 0, 0.2);
+            border-left: 0;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            z-index: 9999;
+            background-color: #fff;
+        }
+
+            #nav .sub-nav-wrap b {
+                position: absolute;
+                left: -8px;
+                margin-top: -8px;
+                display: block;
+                width: 0;
+                height: 0;
+                font-size: 0;
+                overflow: hidden;
+                border-style: solid;
+                border-width: 8px;
+                border-color: transparent;
+                border-right-color: white;
+                border-left: none;
             }
 
-    #nav .group-nav {
-        width: 221px;
-        padding: 15px 0;
-        background-color: #fff;
-    }
-
-        #nav .group-nav .nav-item {
-            float: left;
-            width: 230px;
-            border-right: 1px dashed #ccc;
+        #nav .single-nav b {
+            top: 50%;
         }
 
-        #nav .group-nav .sub-nav {
-            padding-bottom: 0;
+        #nav .sub-nav {
+            background-color: #fff;
+            padding: 10px 0 5px;
+            line-height: 24px;
         }
 
-        #nav .group-nav h3 {
-            margin-left: 15px;
-            font-size: 15px;
+            #nav .sub-nav li {
+                padding-bottom: 8px;
+                font-size: 10px;
+            }
+
+            #nav .sub-nav a {
+                padding-left: 15px;
+                display: block;
+                color: #888;
+                zoom: 1;
+            }
+
+                #nav .sub-nav a:hover {
+                    background-color: #eee;
+                    color: #555;
+                }
+
+        #nav .group-nav {
+            width: 221px;
+            padding: 15px 0;
+            background-color: #fff;
         }
 
-        #nav .group-nav .last {
-            border-right: 0;
+            #nav .group-nav .nav-item {
+                float: left;
+                width: 230px;
+                border-right: 1px dashed #ccc;
+            }
+
+            #nav .group-nav .sub-nav {
+                padding-bottom: 0;
+            }
+
+            #nav .group-nav h3 {
+                margin-left: 15px;
+                font-size: 12px;
+            }
+
+            #nav .group-nav .last {
+                border-right: 0;
+            }
+
+            #nav .group-nav b {
+                bottom: 28px;
+                top: inherit
+            }
+
+        #nav .group-nav-t0 {
+            top: 0;
         }
 
-        #nav .group-nav b {
-            bottom: 28px;
+            #nav .group-nav-t0 b {
+                top: 36px;
+            }
+
+        #nav .group-nav-b0 {
+            bottom: 0;
+        }
+
+        .v-standard #nav .group-nav b {
+            bottom: 30px;
             top: inherit
         }
 
-    #nav .group-nav-t0 {
-        top: 0;
-    }
-
-        #nav .group-nav-t0 b {
-            top: 36px;
+        #nav .vip-nav {
+            width: auto;
+            display: flex;
         }
 
-    #nav .group-nav-b0 {
-        bottom: 0;
-    }
+            #nav .vip-nav .nav-onlineStore {
+                width: 200px;
+            }
 
-    .v-standard #nav .group-nav b {
-        bottom: 30px;
-        top: inherit
-    }
+            #nav .vip-nav .nav-JDstore {
+                width: 220px;
+            }
 
-    #nav .vip-nav {
-        width: auto;
-        display: flex;
-    }
-
-        #nav .vip-nav .nav-onlineStore {
-            width: 200px;
+        #nav .report-nav {
+            width: auto;
+            display: flex;
         }
 
-        #nav .vip-nav .nav-JDstore {
-            width: 220px;
+            #nav .report-nav .nav-pur {
+                width: 300px;
+            }
+
+            /*Report List, Purchase Report*/
+
+            #nav .report-nav .nav-sales {
+                width: 280px;
+            }
+
+            /*Report List、Sales Report*/
+
+            #nav .report-nav .nav-fund {
+                width: 350px;
+            }
+
+        /*Report List、Inventory Stock Report*/
+
+        #nav .setting-nav {
+            width: auto;
+            display: flex;
         }
 
-    #nav .report-nav {
-        width: auto;
-        display: flex;
-    }
-
-        #nav .report-nav .nav-pur {
-            width: 300px;
+        #nav .produce-nav {
+            width: auto;
+            display: flex;
         }
 
-        /*Report List, Purchase Report*/
-
-        #nav .report-nav .nav-sales {
-            width: 280px;
+        /*Production*/
+        #nav .store-nav {
+            width: auto;
+            display: flex;
         }
 
-        /*Report List、Sales Report*/
-
-        #nav .report-nav .nav-fund {
-            width: 350px;
+        /*Finnance */
+        #navScroll span {
+            display: block;
+            width: 47px;
+            height: 23px;
+            float: left;
+            border-radius: 3px;
+            cursor: pointer;
         }
 
-    /*Report List、Inventory Stock Report*/
-
-    #nav .setting-nav {
-        width: auto;
-        display: flex;
-    }
-
-    #nav .produce-nav {
-        width: auto;
-        display: flex;
-    }
-
-    /*Production*/
-    #nav .store-nav {
-        width: auto;
-        display: flex;
-    }
-
-    #nav .setting-nav .nav-basic-setting {
-        width: 250px;
-    }
-
-    /*Finnance */
-    #navScroll span {
-        display: block;
-        width: 47px;
-        height: 23px;
-        float: left;
-        border-radius: 3px;
-        cursor: pointer;
-    }
-
-    /*Left Navigation icon begin*/
-    .moduleimg {
-        background: url(images/tubiao.png) no-repeat scroll 0 0 transparent;
-        height: 32px;
-        width: 32px;
-        margin: 0 auto;
-    }
-    /* Left Navigation icon end */
-
-    .LogoutBtn {
-      width: 40px;
-      height: 40px;
-      top: 2.5px;
-      border-radius: 50%;
-      background-color: rgb(57, 61, 72);
-      border: none;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
-      cursor: pointer;
-      transition-duration: .3s;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .svgIcon {
-      width: 14px;
-      transition-duration: .3s;
-    }
-
-    .svgIcon path {
-      fill: white;
-    }
-
-    .LogoutBtn:hover {
-      width: 140px;
-      border-radius: 50px;
-      transition-duration: .3s;
-      background-color: rgb(255, 69, 69);
-      align-items: center;
-    }
-
-    .Btn:hover .svgIcon {
-      width: 50px;
-      transition-duration: .3s;
-      opacity: 0;
-    }
-
-    .LogoutBtn::before {
-      position: absolute;
-      top: -20px;
-      content: "Logout";
-      color: white;
-      transition-duration: .3s;
-      font-size: 2px;
-    }
-
-    .Btn:hover::before {
-      font-size: 13px;
-      opacity: 1;
-      transform: translateY(30px);
-      transition-duration: .3s;
-    }
-
-    .ChangePasswordBtn {
-      width: 40px;
-      height: 40px;
-      top: 2.5px;
-      border-radius: 50%;
-      background-color: rgb(57, 61, 72);
-      border: none;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
-      cursor: pointer;
-      transition-duration: .3s;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .ChangePasswordBtn:hover {
-      width: 140px;
-      border-radius: 50px;
-      transition-duration: .3s;
-      background-color: rgb(14, 209, 24);
-      align-items: center;
-    }
-
-    .ChangePasswordBtn::before {
-      position: absolute;
-      top: -20px;
-      content: "Change Password";
-      color: white;
-      transition-duration: .3s;
-      font-size: 2px;
-    }
+        /*Left Navigation icon begin*/
+        .moduleimg {
+            background: url(images/tubiao.png) no-repeat scroll 0 0 transparent;
+            height: 32px;
+            width: 32px;
+            margin: 0 auto;
+            filter: invert(72%) sepia(85%) saturate(1853%) hue-rotate(145deg) brightness(108%) contrast(106%);
+        }
+        /* Left Navigation icon end */
     </style>
 
     <script type="text/javascript">
@@ -542,12 +447,12 @@
             subindexMenu();
         });
 
-            function moveMenu() {
-                $("#nav").find("li")(function () {
-                    $(this).removeClass("on");
-                    $(this).find("div").hide();
-                });
-            }
+        function moveMenu() {
+            $("#nav").find("li")(function () {
+                $(this).removeClass("on");
+                $(this).find("div").hide();
+            });
+        }
     </script>
 
     <!--Left Navigation and Top End-->
@@ -790,25 +695,33 @@
 <body class="default">
     <form id="form1" runat="server">
         <!--HEADER-->
-        <div id="appHeader">
-            <div id="app/vm/Header_0">
-                <div>
-                    <a title="Return to Index" class="mainLogo">BlueWhale ERP
-                    </a>
-                </div>
-                <div class="fr headMessage" id="userList">
-                    <button type="button" class="Btn LogoutBtn" onclick="logout()">
-                      <svg viewBox="0 0 512 512" class="svgIcon">
-                        <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
-                      </svg>
-                    </button>
-                </div>
-                <div class="fr headMessage" id="Div2">
-                    <button type="button" class="Btn ChangePasswordBtn" onclick="f_addTab('Pwd','Change Password','Pwd.aspx')">
-                      <svg viewBox="0 0 128 128" class="svgIcon">
-                        <path d="M92.6 16.8c-19.5 0-35.4 15.8-35.4 35.4 0 1.3.2 4 .2 4L6.7 87.6 0 104.5l16.8 6.7 3.4-13.5 13.5 6.7 3.4-13.5 13.5 6.7L54 84.1l10 3.5s4-2 9.6-5.6c5.5 3.5 12 5.6 19 5.6 19.5 0 35.4-15.8 35.4-35.4 0-19.5-15.8-35.4-35.4-35.4zm5.1 43.8c-5.6 0-10.1-4.5-10.1-10.1s4.5-10.1 10.1-10.1 10.1 4.5 10.1 10.1-4.5 10.1-10.1 10.1z"/>
-                      </svg>
-                    </button>
+        <div id="appHeader" class="default">
+            <div id="app/vm/Header_0" style="display: flex; justify-content: space-between; align-items: center; height: 46px; padding: 0 15px;">
+
+                <a title="Return to Index" style="display: flex; align-items: center; text-decoration: none;">
+                    <img src="images/SteelViper.png" alt="STEELVIPER ERP" style="height: 35px; width: auto;" />
+                    <div style="display: flex; flex-direction: column; margin-left: 12px; line-height: 1.1;">
+                        <span style="font-size: 18px; color: #00f2ff; font-family: '微软雅黑', '宋体'; font-weight: bold; letter-spacing: 1px;">STEELVIPER</span>
+                        <span style="font-size: 18px; color: #00f2ff; font-family: '微软雅黑', '宋体'; font-weight: bold; letter-spacing: 1px">ERP</span>
+                    </div>
+                </a>
+
+                <div style="display: flex; align-items: center; gap: 25px;">
+
+                    <div class="headMessage" id="Div2">
+                        <a href="javascript:void(0)" onclick="f_addTab('Pwd','Change Password','Pwd.aspx')" style="display: flex; align-items: center; text-decoration: none; color: #ffffff; font-size: 14px;">
+                            <i class="fas fa-key" style="margin-right: 8px; color: #00f2ff; font-size: 16px;"></i>
+                            <span style="font-family: '微软雅黑';">Change Password</span>
+                        </a>
+                    </div>
+
+                    <div class="headMessage" id="userList">
+                        <a href="javascript:void(0)" onclick="logout()" style="display: flex; align-items: center; text-decoration: none; color: #ffffff; font-size: 14px;">
+                            <i class="fas fa-sign-out-alt" style="margin-right: 8px; color: #00f2ff; font-size: 18px;"></i>
+                            <span style="font-family: '微软雅黑';">Logout</span>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -817,7 +730,7 @@
         <div id="appLeftSide" class="app-menu app-left-menu admin">
             <span></span>
             <ul id="nav">
-                <li class="a2">
+                <%--<li class="a2">
                     <a href="javascript:void(0);" page="workrecord">
                         <span class="moduleimg" style="background-position: -36px -96px;"></span>
                     </a>
@@ -837,7 +750,7 @@
                             </ul>
                         </div>
                     </div>
-                </li>
+                </li>--%>
                 <li class="a1">
                     <a href="javascript:void(0);">
                         <span class="moduleimg" style="background-position: -36px -160px;"></span>
@@ -904,7 +817,7 @@
                             <h3>Inbounds & Outbounds</h3>
                             <ul class="sub-nav" id="Ul4">
                                 <li><a onclick="f_addTab('PurReceiptListCheck','Purchase Inbound(Approval)','buy/PurReceiptListCheck.aspx')">Purchase Inbound (Approval)</a></li>
-                                <li><a onclick="f_addTab('SalesReceiptListCheck','Sales Outbound(Approval)','sales/SalesReceiptListCheck.aspx')">Sales Outbound (Approval)</a> </li>
+                                <%--<li><a onclick="f_addTab('SalesReceiptListCheck','Sales Outbound(Approval)','sales/SalesReceiptListCheck.aspx')">Sales Outbound (Approval)</a> </li>--%>
                                 <li><a onclick="f_addTab('OtherInListAdd','Other Inbound - Create','store/OtherInListAdd.aspx')">Other Inbound - Create</a> </li>
                                 <li><a onclick="f_addTab('OtherInList','Other Inbound- View','store/OtherInList.aspx')">Other Inbound- View</a></li>
                                 <li><a onclick="f_addTab('OtherOutListAdd','Other Outbound - Create','store/OtherOutListAdd.aspx')">Other Outbound - Create</a></li>
@@ -931,7 +844,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="a4">
+               <%-- <li class="a4">
                     <a href="javascript:void(0);">
                         <span class="moduleimg" style="background-position: -36px -220px;"></span>
                     </a>
@@ -964,7 +877,7 @@
                             </ul>
                         </div>
                     </div>
-                </li>
+                </li>--%>
                 <li class="a4">
                     <a href="javascript:void(0);" page="baidu" class="baidu ">
                         <span class="moduleimg" style="background-position: -36px -256px;"></span>
@@ -980,7 +893,7 @@
                                 <li><a onclick="f_addTab('PurOrderListSumVenderReport','Purchase Summary Report (By Vender)','Report/PurOrderListSumVenderReport.aspx')">Purchase Summary Report (By Vender)</a></li>
                             </ul>
                         </div>
-                        <div class="nav-item nav-sales">
+                        <%--<div class="nav-item nav-sales">
                             <h3>Sales Reports</h3>
                             <ul class="sub-nav" id="report-sales">
                                 <li><a onclick="f_addTab('SalesOrderListReport','Sales Order Tracking Report','Report/SalesOrderListReport.aspx')">Sales Order Tracking Report</a></li>
@@ -988,7 +901,7 @@
                                 <li><a onclick="f_addTab('SalesOrderListSumGoodsReport','Sales Summary Report (By Product)','Report/SalesOrderListSumGoodsReport.aspx')">Sales Summary Report (By Product)</a></li>
                                 <li><a onclick="f_addTab('SalesOrderListSumVenderReport','Sales Summary Report (By Client)','Report/SalesOrderListSumClientReport.aspx')">Sales Summary Report (By Client)</a></li>
                             </ul>
-                        </div>
+                        </div>--%>
                         <div class="nav-item nav-sales">
                             <h3>Production Reports</h3>
                             <ul class="sub-nav" id="Ul17">
@@ -1007,7 +920,7 @@
                                 <li><a onclick="f_addTab('GoodsOutInSumReport','Product Inbound & Outbound Summary Report','Report/GoodsOutInSumReport.aspx')">Product Inbound & Outbound Summary Report</a></li>
                             </ul>
                         </div>
-                        <div class="nav-item nav-fund last">
+                        <%--<div class="nav-item nav-fund last">
                             <h3>Financial Reports</h3>
                             <ul class="sub-nav" id="report-money">
                                 <li><a onclick="f_addTab('AccountFlowReport','Cash & Bank Report','Report/AccountFlowReport.aspx')">Cash & Bank Report</a></li>
@@ -1017,7 +930,7 @@
                                 <li><a onclick="f_addTab('StatementVender','Vender Statement','Report/StatementVender.aspx')">Vender Statement</a></li>
                                 <li><a onclick="f_addTab('OtherGetPayFlowReport','Other Income & Expense Detail Report','Report/OtherGetPayFlowReport.aspx')">Other Income & Expense Detail Report</a></li>
                             </ul>
-                        </div>
+                        </div>--%>
                     </div>
                 </li>
                 <li class="a4">
@@ -1028,11 +941,11 @@
                         <div class="nav-item">
                             <h3>Basic Settings</h3>
                             <ul class="sub-nav" id="setting-base">
-                                <li><a onclick="f_addTab('ClientList','Client Management','BaseSet/ClientList.aspx')">Client Management</a></li>
-                                <li><a onclick="f_addTab('VenderList','Vender Management','BaseSet/VenderList.aspx')">Vender Management</a></li>
+                                <%--<li><a onclick="f_addTab('ClientList','Client Management','BaseSet/ClientList.aspx')">Client Management</a></li>--%>
+                                <%--<li><a onclick="f_addTab('VenderList','Vender Management','BaseSet/VenderList.aspx')">Vender Management</a></li>--%>
                                 <li><a onclick="f_addTab('GoodsList','Product Management','BaseSet/GoodsList.aspx')">Product Management</a></li>
                                 <li><a onclick="f_addTab('InventoryList','Inventory Management','BaseSet/InventoryList.aspx')">Inventory Management</a></li>
-                                <li><a onclick="f_addTab('AccountList','Account Management','BaseSet/AccountList.aspx')">Account Management</a></li>
+                                <%--<li><a onclick="f_addTab('AccountList','Account Management','BaseSet/AccountList.aspx')">Account Management</a></li>--%>
                                 <li><a onclick="f_addTab('UsersList','User Management','BaseSet/UsersList.aspx')">User Management</a></li>
                                 <li><a onclick="f_addTab('processList','Process Management','BaseSet/processList.aspx')">Process Management</a></li>
                             </ul>
@@ -1040,14 +953,14 @@
                         <div class="nav-item">
                             <h3>Auxiliary Settings</h3>
                             <ul class="sub-nav" id="setting-auxiliary">
-                                <li><a onclick="f_addTab('ClientTypeList','Client Category','BaseSet/ClientTypeList.aspx')">Client Category</a></li>
-                                <li><a onclick="f_addTab('VenderTypeList','Vender Category','BaseSet/VenderTypeList.aspx')">Vender Category</a></li>
+                                <%--<li><a onclick="f_addTab('ClientTypeList','Client Category','BaseSet/ClientTypeList.aspx')">Client Category</a></li>--%>
+                                <%--<li><a onclick="f_addTab('VenderTypeList','Vender Category','BaseSet/VenderTypeList.aspx')">Vender Category</a></li>--%>
                                 <li><a onclick="f_addTab('GoodsTypeList','Item Category','BaseSet/GoodsTypeList.aspx')">Item Category</a></li>
                                 <li><a onclick="f_addTab('GoodsBrandList','Item Brand','BaseSet/GoodsBrandList.aspx')">Item Brand</a></li>
-                                <li><a onclick="f_addTab('PayGetList','Income & Expense Category','BaseSet/PayGetList.aspx')">Income & Expense Category</a></li>
+                                <%--<li><a onclick="f_addTab('PayGetList','Income & Expense Category','BaseSet/PayGetList.aspx')">Income & Expense Category</a></li>--%>
                                 <li><a onclick="f_addTab('UnitList','Unit of Measurement','BaseSet/UnitList.aspx')">Unit of Measurement</a></li>
-                                <li><a onclick="f_addTab('PayTypeList','Settlement Method','BaseSet/PayTypeList.aspx')">Settlement Method</a></li>
-                                <li><a onclick="f_addTab('processTypeList','Process Category','BaseSet/ProcessTypeList.aspx')">Process Category</a></li>
+                                <%--<li><a onclick="f_addTab('PayTypeList','Settlement Method','BaseSet/PayTypeList.aspx')">Settlement Method</a></li>--%>
+                                <li><a onclick="f_addTab('processTypeList','Process Category','BaseSet/processTypeList.aspx')">Process Category</a></li>
                             </ul>
                         </div>
                         <div class="nav-item cf last">

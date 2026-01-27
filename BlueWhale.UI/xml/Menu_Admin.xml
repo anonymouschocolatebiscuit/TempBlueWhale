@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<siteMapNode id="1"  title="BlueWhale ERP System" url="BlueWhale" description="" target="mainFrame" image="" parentId="0" seq="1" >
+<siteMapNode id="1"  title="SteelViper ERP System" url="BlueWhale" description="" target="mainFrame" image="" parentId="0" seq="1" >
 
 	<siteMapNode id="2"   title="Ordering platform management" url="OrderOnline" description="" target=""  parentId="1"  seq="2" >
 
