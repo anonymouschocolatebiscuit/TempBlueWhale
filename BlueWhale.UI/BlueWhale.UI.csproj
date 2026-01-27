@@ -176,6 +176,7 @@
     <Content Include="buy\js\PurReceiptListCheck.js" />
     <Content Include="buy\js\PurReceiptListView.js" />
     <Content Include="buy\PurReceiptListView.aspx" />
+    <Content Include="images\SteelViper.png" />
     <Content Include="pay\CheckBillPayList.aspx" />
     <Content Include="pay\js\CheckBillPayList.js" />
     <Content Include="produce\js\goodsBomListAdd.js" />
@@ -183,6 +184,8 @@
     <Content Include="produce\js\produceGetListEdit.js" />
     <Content Include="produce\js\produceListAdd.js" />
     <Content Include="produce\produceGetListEdit.aspx" />
+    <Content Include="report\js\ProduceGetListReportDetail.js" />
+    <Content Include="report\ProduceGetListReportDetail.aspx" />
     <Content Include="sales\ashx\SalesOrderListEdit.ashx" />
     <Content Include="sales\js\SalesOrderListEdit.js" />
     <Content Include="sales\js\SalesReceiptListView.js" />
@@ -3932,6 +3935,13 @@
     </Compile>
     <Compile Include="produce\produceGetListEdit.aspx.designer.cs">
       <DependentUpon>produceGetListEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\ProduceGetListReportDetail.aspx.cs">
+      <DependentUpon>ProduceGetListReportDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\ProduceGetListReportDetail.aspx.designer.cs">
+      <DependentUpon>ProduceGetListReportDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="sales\ashx\SalesOrderListEdit.ashx.cs">
       <DependentUpon>SalesOrderListEdit.ashx</DependentUpon>

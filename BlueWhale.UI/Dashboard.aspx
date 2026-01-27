@@ -13,7 +13,7 @@
     <!--Left Navigation & Top Begin-->
 
     <link rel="stylesheet" type="text/css" href="appCss/app.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <script src="appCss/jquery-1.10.2.min.js" type="text/javascript"></script>
 
     <style type="text/css">
@@ -710,14 +710,15 @@
 
                     <div class="headMessage" id="Div2">
                         <a href="javascript:void(0)" onclick="f_addTab('Pwd','Change Password','Pwd.aspx')" style="display: flex; align-items: center; text-decoration: none; color: #ffffff; font-size: 14px;">
-                            <i class="fas fa-key" style="margin-right: 8px; color: #00f2ff; font-size: 16px;"></i>
+                           
+                            <i class="fas fa-key" style="display: inline-block; font-family: 'Font Awesome 5 Free' !important; font-weight: 900 !important; margin-right: 8px; color: #00f2ff; font-size: 16px;"></i>
                             <span style="font-family: '微软雅黑';">Change Password</span>
                         </a>
                     </div>
 
                     <div class="headMessage" id="userList">
                         <a href="javascript:void(0)" onclick="logout()" style="display: flex; align-items: center; text-decoration: none; color: #ffffff; font-size: 14px;">
-                            <i class="fas fa-sign-out-alt" style="margin-right: 8px; color: #00f2ff; font-size: 18px;"></i>
+                             <i class="fas fa-sign-out-alt" style="margin-right: 8px; color: #00f2ff; font-size: 18px; font-family: 'Font Awesome 5 Free' !important; font-weight: 900 !important;"></i>
                             <span style="font-family: '微软雅黑';">Logout</span>
                         </a>
                     </div>
@@ -980,9 +981,9 @@
         <div id="appContainer" class="wide-container" style="padding-left: 40px; margin-right: 30px;">
             <div id="layout1" style="width: 100%; margin: 0 auto; margin-top: 4px; margin-left: 20px;">
                 <div position="center" id="framecenter">
-                    <div tabid="home" title="Sales Report" style="height: 400px">
+                    <%--<div tabid="home" title="Sales Report" style="height: 400px">
                         <iframe frameborder="0" id="home" src="saleCharts.aspx"></iframe>
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </div>
