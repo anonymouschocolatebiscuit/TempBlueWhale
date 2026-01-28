@@ -77,7 +77,7 @@ namespace BlueWhale.UI.BaseSet
 
 				logs.ShopId = LoginUser.ShopId;
 				logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-				logs.Events = "New vender contact added, name :" + this.txtNames.Text;
+				logs.Events = "New Supplier contact added, name :" + this.txtNames.Text;
 				logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
 				logs.Add();
 

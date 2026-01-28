@@ -960,7 +960,7 @@
                                 <li><a onclick="f_addTab('CheckBillGetListAdd',' Collection Write-off - Create','pay/CheckBillGetListAdd.aspx')">Collection Write-off - Create</a></li>
                                 <li><a onclick="f_addTab('CheckBillGetList','Collection Write-off - View','pay/CheckBillGetList.aspx')">Collection Write-off - View</a></li>
                                 <li><a onclick="f_addTab('CheckBillPayListAdd','Payment Write-off - Create','pay/CheckBillPayListAdd.aspx')">Payment Write-off - Create</a></li>
-                                <li><a onclick="f_addTab('PayMentList','Payment Settlement- View','pay/PayMentList.aspx')">Payment Settlement- View</a></li>
+                                <li><a onclick="f_addTab('PayMentList',' Payment Write-off - View','pay/PayMentList.aspx')"> Payment Write-off - View</a></li>
                             </ul>
                         </div>
                     </div>

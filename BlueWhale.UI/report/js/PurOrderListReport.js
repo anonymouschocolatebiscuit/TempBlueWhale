@@ -39,7 +39,7 @@ $(function () {
             { display: 'Order Date', name: 'bizDate', width: 80, align: 'center' },
             { display: 'Order Number', name: 'number', width: 150, align: 'center' },
 
-            { display: 'Vendor', name: 'wlName', width: 170, align: 'left' },
+            { display: 'Supplier', name: 'wlName', width: 170, align: 'left' },
             { display: 'Delivery Status', name: 'sendFlag', width: 100, align: 'center' },
             {
                 display: 'Quantity', name: 'Num', width: 70, align: 'right',

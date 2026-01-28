@@ -112,7 +112,7 @@
                     Check Negative Warehouse：
                 </td>
                 <td style="width:550px;">
-                    <asp:CheckBox ID="cbStoreNum" runat="server" Text="Yes（If checked, stock cannot be moved if negative inventory is detected）" />
+                    <asp:CheckBox ID="cbStoreNum" runat="server" Text="Yes（If checked, stock cannot be moved if negative Warehouse is detected）" />
                 </td>
             </tr>
             <tr>

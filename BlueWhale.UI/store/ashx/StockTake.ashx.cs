@@ -120,7 +120,7 @@ namespace BlueWhale.UI.store.ashx
             bool hasDes = false;
             string result = "Execution successful！";
 
-            #region Traverse the situation of inventory surplus and shortage
+            #region Traverse the situation of Warehouse surplus and shortage
 
             for (int i = 0; i < itemList.Rows.Count; i++)
             {
@@ -144,13 +144,13 @@ namespace BlueWhale.UI.store.ashx
 
             #endregion
 
-            #region Marked as inventory surplus 
+            #region Marked as Warehouse surplus 
 
             if (hasMore)
             {
                 string numberIn = inDAL.GetBillNumberAuto(users.ShopId);
 
-                result += " Generate surplus inventory receipt：" + numberIn;
+                result += " Generate surplus Warehouse receipt：" + numberIn;
 
                 inDAL.ShopId = users.ShopId;
                 inDAL.Number = numberIn;
@@ -195,7 +195,7 @@ namespace BlueWhale.UI.store.ashx
                             item.CkId = ckId;
                             item.Price = 0;
                             item.SumPrice = 0;
-                            item.Remarks = "Put inventory surplus into stock";
+                            item.Remarks = "Put Warehouse surplus into stock";
 
                             item.PId = pId;
                             item.Add();
@@ -206,13 +206,13 @@ namespace BlueWhale.UI.store.ashx
 
             #endregion
 
-            #region Marked as inventory shortage
+            #region Marked as Warehouse shortage
 
             if (hasDes)
             {
                 string numberOut = outDAL.GetBillNumberAuto(users.ShopId);
 
-                result += " Generate stock-out form for inventory shortage：" + numberOut;
+                result += " Generate stock-out form for Warehouse shortage：" + numberOut;
 
                 outDAL.ShopId = users.ShopId;
                 outDAL.Number = numberOut;
@@ -253,7 +253,7 @@ namespace BlueWhale.UI.store.ashx
                             item.CkId = ckId;
                             item.Price = 0;
                             item.SumPrice = 0;
-                            item.Remarks = "Stock out for inventory shortage";
+                            item.Remarks = "Stock out for Warehouse shortage";
 
                             item.PId = pId;
                             item.Add();

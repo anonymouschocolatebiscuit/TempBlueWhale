@@ -103,7 +103,7 @@ function search() {
 
     }
     if (typeId == "") {
-        $.ligerDialog.warn('Please select a vendor！');
+        $.ligerDialog.warn('Please select a Supplier！');
         return;
     }
     manager._setUrl("StatementVender.aspx?Action=GetDataList&start=" + start + "&end=" + end + "&typeId=" + typeId);

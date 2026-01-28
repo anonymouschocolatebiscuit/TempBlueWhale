@@ -52,7 +52,7 @@ window.Modernizr = (function( window, document, undefined ) {
     // List of property values to set for css tests. See ticket #21
     prefixes = ' -webkit- -moz- -o- -ms- '.split(' '),
 
-    // Following spec is to expose vendor-specific style properties as:
+    // Following spec is to expose Supplier-specific style properties as:
     //   elem.style.WebkitBorderRadius
     // and the following would be incorrect:
     //   elem.style.webkitBorderRadius
@@ -261,7 +261,7 @@ window.Modernizr = (function( window, document, undefined ) {
     }
 
     /**
-     * setCssAll extrapolates all vendor-specific css strings.
+     * setCssAll extrapolates all Supplier-specific css strings.
      */
     function setCssAll( str1, str2 ) {
         return setCss(prefixes.join(str1 + ';') + ( str2 || '' ));
@@ -323,7 +323,7 @@ window.Modernizr = (function( window, document, undefined ) {
     /**
      * testPropsAll tests a list of DOM properties we want to check against.
      *   We specify literally ALL possible (known and/or likely) properties on
-     *   the element including the non-vendor prefixed one, for forward-
+     *   the element including the non-Supplier prefixed one, for forward-
      *   compatibility.
      */
     function testPropsAll( prop, prefixed, elem ) {
@@ -1212,7 +1212,7 @@ window.Modernizr = (function( window, document, undefined ) {
     };        
 
     // Modernizr.testAllProps() investigates whether a given style property,
-    //   or any of its vendor-prefixed variants, is recognized
+    //   or any of its Supplier-prefixed variants, is recognized
     // Note that the property names must be provided in the camelCase variant.
     // Modernizr.testAllProps('boxSizing')    
     Modernizr.testAllProps  = testPropsAll;     

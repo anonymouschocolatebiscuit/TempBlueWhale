@@ -815,7 +815,7 @@ function save() {
     var bizId = $("#ddlYWYList")
         .val();
     if (venderId == 0) {
-        $.ligerDialog.warn('Please choose a vender!');
+        $.ligerDialog.warn('Please choose a Supplier!');
         return;
     }
     if (bizId == 0) {

@@ -127,7 +127,7 @@ namespace BlueWhaleUI.baseSet
                         LogsDAL logs = new LogsDAL();
                         logs.ShopId = LoginUser.ShopId;
                         logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                        logs.Events = "Import vender: " + this.Label1.Text;
+                        logs.Events = "Import Supplier: " + this.Label1.Text;
                         logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                         logs.Add();
                     }
@@ -292,7 +292,7 @@ namespace BlueWhaleUI.baseSet
 
             #endregion
 
-            string result = "Has imported【" + VenderNum.ToString() + "】rows vender detail,【" + linkManNum.ToString() + "】rows contact detail.";
+            string result = "Has imported【" + VenderNum.ToString() + "】rows Supplier detail,【" + linkManNum.ToString() + "】rows contact detail.";
 
             return result;
 

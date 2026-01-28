@@ -53,7 +53,7 @@ namespace BlueWhale.UI.baseSet
 
             if (this.txtCode.Text == "")
             {
-                MessageBox.Show(this, "Please enter inventory number!");
+                MessageBox.Show(this, "Please enter Warehouse number!");
                 this.txtCode.Focus();
                 return;
 
@@ -61,7 +61,7 @@ namespace BlueWhale.UI.baseSet
 
             if (this.txtNames.Text == "")
             {
-                MessageBox.Show(this, "Please enter inventory name!");
+                MessageBox.Show(this, "Please enter Warehouse name!");
                 this.txtNames.Focus();
                 return;
 

@@ -95,13 +95,13 @@ namespace BlueWhale.UI.BaseSet
 
 			if (this.txtCode.Text.Trim() == "")
 			{
-				MessageBox.Show(this, "Please fill in the vender code��");
+				MessageBox.Show(this, "Please fill in the Supplier code��");
 				return;
 			}
 
 			if (this.txtNames.Text == "")
 			{
-				MessageBox.Show(this, "Please fill in the vender name��");
+				MessageBox.Show(this, "Please fill in the Supplier name��");
 				return;
 			}
 
@@ -144,7 +144,7 @@ namespace BlueWhale.UI.BaseSet
 
 					logs.ShopId = LoginUser.ShopId;
 					logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-					logs.Events = "New vender code��" + this.txtCode.Text + " vender name��" + this.txtNames.Text;
+					logs.Events = "New Supplier code��" + this.txtCode.Text + " Supplier name��" + this.txtNames.Text;
 					logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
 					logs.Add();
 
@@ -171,7 +171,7 @@ namespace BlueWhale.UI.BaseSet
 
 					logs.ShopId = LoginUser.ShopId;
 					logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-					logs.Events = "Update vender code��" + this.txtCode.Text + " vender name��" + this.txtNames.Text;
+					logs.Events = "Update Supplier code��" + this.txtCode.Text + " Supplier name��" + this.txtNames.Text;
 					logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
 					logs.Add();
 

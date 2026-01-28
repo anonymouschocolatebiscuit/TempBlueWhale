@@ -46,7 +46,7 @@ $(function () {
                     return html;
                 }
             },
-            { display: 'Vendor', name: 'wlName', width: 170, align: 'left' },
+            { display: 'Supplier', name: 'wlName', width: 170, align: 'left' },
             {
                 display: 'Purchase Quantity', name: 'sumNum', width: 100, align: 'right',
 

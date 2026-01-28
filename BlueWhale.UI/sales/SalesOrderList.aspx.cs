@@ -593,7 +593,7 @@ namespace BlueWhale.UI.sales
 
             PdfPCell cell = new PdfPCell();//Create Cell
 
-            #region First row - Customer and vender name
+            #region First row - Customer and Supplier name
 
 
 
@@ -617,7 +617,7 @@ namespace BlueWhale.UI.sales
             cell = new PdfPCell();
             cell.Border = 0;
 
-            table_t = new Paragraph("Vendor：", fontTitle10);
+            table_t = new Paragraph("Supplier：", fontTitle10);
             table_t.Alignment = 0;
             cell.AddElement(table_t);
             table.AddCell(cell);
@@ -747,7 +747,7 @@ namespace BlueWhale.UI.sales
             //End of the nightmare  We have the pleasure to offer you under motioned products and service。
 
 
-            //string titleRowOne = "No:" + number + "  Vendor:" + wlName + "  Purchase Date:" + bizDate + " Delivery Date：" + sendDate;
+            //string titleRowOne = "No:" + number + "  Supplier:" + wlName + "  Purchase Date:" + bizDate + " Delivery Date：" + sendDate;
 
             //Paragraph pleasure = new Paragraph(titleRowOne, font1);
             //pleasure.Alignment = 0;
@@ -1184,7 +1184,7 @@ namespace BlueWhale.UI.sales
             cellFooter = new PdfPCell();
             cellFooter.Border = 0;
 
-            table_Footer = new Paragraph("Vendor (Signature and Seal)：", fontTitle10);
+            table_Footer = new Paragraph("Supplier (Signature and Seal)：", fontTitle10);
             table_Footer.Alignment = 2;
             cellFooter.AddElement(table_Footer);
             tableFooter.AddCell(cellFooter);
@@ -1473,7 +1473,7 @@ namespace BlueWhale.UI.sales
 
             PdfPCell cell = new PdfPCell();//Create cell
 
-            #region First row - Customer and Vendor Name
+            #region First row - Customer and Supplier Name
 
 
 
@@ -1497,7 +1497,7 @@ namespace BlueWhale.UI.sales
             cell = new PdfPCell();
             cell.Border = 0;
 
-            table_t = new Paragraph("Vendor：", fontTitle10);
+            table_t = new Paragraph("Supplier：", fontTitle10);
             table_t.Alignment = 0;
             cell.AddElement(table_t);
             table.AddCell(cell);
@@ -1951,7 +1951,7 @@ namespace BlueWhale.UI.sales
             cellFooter = new PdfPCell();
             cellFooter.Border = 0;
 
-            table_Footer = new Paragraph("Vendor(Signature and Seal)：", fontTitle10);
+            table_Footer = new Paragraph("Supplier(Signature and Seal)：", fontTitle10);
             table_Footer.Alignment = 2;
             cellFooter.AddElement(table_Footer);
             tableFooter.AddCell(cellFooter);

@@ -45,7 +45,7 @@ namespace BlueWhale.UI.baseSet
 
             if (this.txtNames.Text == "")
             {
-                MessageBox.Show(this, "Please enter inventory name!");
+                MessageBox.Show(this, "Please enter Warehouse name!");
                 this.txtNames.Focus();
                 return;
             }

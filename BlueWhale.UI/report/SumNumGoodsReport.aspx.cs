@@ -112,7 +112,7 @@ namespace BlueWhale.UI.report
             row.CreateCell(8).SetCellValue("Storehouse");
             row.CreateCell(9).SetCellValue("Total quantity");
             row.CreateCell(10).SetCellValue("Stock price");
-            row.CreateCell(11).SetCellValue("Total inventory cost");
+            row.CreateCell(11).SetCellValue("Total Warehouse cost");
 
             sheet.SetColumnWidth(0, 15 * 256); //30characters
             sheet.SetColumnWidth(1, 30 * 256); //30characters

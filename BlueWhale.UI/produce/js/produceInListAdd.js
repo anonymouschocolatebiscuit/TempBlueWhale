@@ -657,7 +657,7 @@ function save() {
         }
 
         if (data[i].ckId == 0 || data[i].ckId == "" || data[i].ckId == "0" || data[i].ckName == "") {
-            $.ligerDialog.warn("Please select the inventory for row " + (i + 1) + "！");
+            $.ligerDialog.warn("Please select the Warehouse for row " + (i + 1) + "！");
 
             return;
             alert("Execution skipped!");

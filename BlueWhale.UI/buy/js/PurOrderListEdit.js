@@ -57,7 +57,7 @@ function f_selectContactCancel(item, dialog) {
 
 function f_selectClient() {
     $.ligerDialog.open({
-        title: 'Choose vender', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
+        title: 'Choose Supplier', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
             { text: 'Confirm', onclick: f_selectClientOK },
             { text: 'Close', onclick: f_selectClientCancel }
         ]
@@ -698,7 +698,7 @@ function save() {
     var bizId = $("#ddlSalesPersonList").val();
 
     if (venderId == 0) {
-        $.ligerDialog.warn('Please select vender!');
+        $.ligerDialog.warn('Please select Supplier!');
         return;
     }
 

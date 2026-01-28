@@ -477,7 +477,7 @@ namespace BlueWhale.UI.buy
             #region First Line ----------- Customer And Supplier Name
 
             cell.Border = 0;
-            Paragraph table_t = new Paragraph("Vendor：", fontTitle10);
+            Paragraph table_t = new Paragraph("Supplier：", fontTitle10);
             table_t.Alignment = 0;
 
             cell.AddElement(table_t);
@@ -1066,7 +1066,7 @@ namespace BlueWhale.UI.buy
             #region First Line ----------- Customer And Supplier Name
 
             cell.Border = 0;
-            Paragraph table_t = new Paragraph("Vendor：", fontTitle10);
+            Paragraph table_t = new Paragraph("Supplier：", fontTitle10);
             table_t.Alignment = 0;
 
             cell.AddElement(table_t);

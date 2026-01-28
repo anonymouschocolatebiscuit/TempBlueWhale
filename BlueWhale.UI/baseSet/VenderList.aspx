@@ -72,7 +72,7 @@
 
         function linkManForm() {
             var row = manager.getSelectedRow();
-            if (!row) { $.ligerDialog.warn('Please select a vender !'); return; }
+            if (!row) { $.ligerDialog.warn('Please select a Supplier !'); return; }
 
             var title = "Contact Management - " + row.names;
 
@@ -126,7 +126,7 @@
             var row = manager.getSelectedRow();
 
             if(!row){ 
-                $.ligerDialog.warn('Please select a vender.'); 
+                $.ligerDialog.warn('Please select a Supplier.'); 
                 return; 
             }
 
@@ -154,7 +154,7 @@
 
 
         function addRowTop() {
-            var title = "Add vender";
+            var title = "Add Supplier";
 
             $.ligerDialog.open({
                 title: title,
@@ -167,7 +167,7 @@
 
         function editRow() {
             var row = manager.getSelectedRow();
-            if (!row) { $.ligerDialog.warn('Please select a vender.'); return; }
+            if (!row) { $.ligerDialog.warn('Please select a Supplier.'); return; }
 
             var title = "Edit Supplier -" + row.names;
 

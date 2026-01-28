@@ -19,7 +19,7 @@
     <form id="form2" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td style="width: 130px; text-align: right; padding-right: 0.5rem;">Purchasing Vendor：</td>
+                <td style="width: 130px; text-align: right; padding-right: 0.5rem;">Purchasing Supplier：</td>
                 <td style="text-align: left; width: 250px;">
                     <asp:DropDownList ID="ddlVenderList" runat="server" Width="250px">
                     </asp:DropDownList>
