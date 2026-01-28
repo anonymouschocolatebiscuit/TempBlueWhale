@@ -90,7 +90,7 @@ $(function () {
                 { display: 'Specification', name: 'spec', width: 100, align: 'center' },
                 { display: 'Unit', name: 'unitName', width: 80, align: 'center' },
                 {
-                    display: 'Inbound Inventory', name: 'ckId', width: 120, isSort: false, textField: 'ckName',
+                    display: 'Inbound Warehouse', name: 'ckId', width: 120, isSort: false, textField: 'ckName',
                     editor: {
                         type: 'select',
                         url: "../baseSet/InventoryList.aspx?Action=GetDDLList&r=" + Math.random(), //Wating 125 pr
@@ -657,7 +657,7 @@ function save() {
         }
 
         if (data[i].ckId == 0 || data[i].ckId == "" || data[i].ckId == "0" || data[i].ckName == "") {
-            $.ligerDialog.warn("Please select the inventory for row " + (i + 1) + "！");
+            $.ligerDialog.warn("Please select the Warehouse for row " + (i + 1) + "！");
 
             return;
             alert("Execution skipped!");

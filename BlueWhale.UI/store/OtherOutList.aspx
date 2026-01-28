@@ -21,7 +21,7 @@
             Keyword： 
             </td>
            <td style="text-align:left; width:180px; padding-right:20px;">
-               <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter receipt number/vender/remark"></asp:TextBox>
+               <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter receipt number/Supplier/remark"></asp:TextBox>
             </td>
            <td style="text-align:right; width:70px;">
                Start Date：

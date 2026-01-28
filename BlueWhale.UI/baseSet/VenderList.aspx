@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Vender Management</title>
+    <title>Supplier Management</title>
     <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
 
@@ -17,9 +17,9 @@
             manager = $("#maingrid").ligerGrid({
                 checkbox: true,
                 columns: [
-                    { display: 'Vender Category', name: 'typeName', width: 130, type: 'int', align: 'center' },
-                    { display: 'Vender Code', name: 'code', width: 100, align: 'center' },
-                    { display: 'Vender Name', name: 'names', width: 150, align: 'left' },
+                    { display: 'Supplier Category', name: 'typeName', width: 130, type: 'int', align: 'center' },
+                    { display: 'Supplier Code', name: 'code', width: 100, align: 'center' },
+                    { display: 'Supplier Name', name: 'names', width: 150, align: 'left' },
                     { display: 'Balance Date', name: 'dueDate', width: 90, align: 'center' },
                     { display: 'Opening Balance', name: 'balance', width: 120, align: 'center' },
                     { display: 'Tax Rate%', name: 'tax', width: 80, align: 'center' },
@@ -52,9 +52,9 @@
                         { line: true },
                         { text: 'Search', click: search, img: '../lib/ligerUI/skins/icons/search.gif' },
                         { line: true },
-                        { text: "Add Vender", click: addRowTop, img: '../lib/ligerUI/skins/icons/add.gif' },
+                        { text: "Add Supplier", click: addRowTop, img: '../lib/ligerUI/skins/icons/add.gif' },
                         { line: true },
-                        { text: "Edit Vender", click: editRow, img: '../lib/ligerUI/skins/icons/modify.gif' },
+                        { text: "Edit Supplier", click: editRow, img: '../lib/ligerUI/skins/icons/modify.gif' },
                         { line: true },
                         { text: "Manage Contact", click: linkManForm, img: '../lib/ligerUI/skins/icons/customers.gif' },
                         { line: true },
@@ -62,7 +62,7 @@
                         { line: true },
                         { text: "Reject", click: checkNoRow, img: '../lib/ligerUI/skins/icons/refresh.gif' },
                         { line: true },
-                        { text: "Delete Vender", click: deleteRow, img: '../lib/ligerUI/skins/icons/delete.gif' },
+                        { text: "Delete Supplier", click: deleteRow, img: '../lib/ligerUI/skins/icons/delete.gif' },
                         { line: true },
                         { text: 'Batch Import', click: excel, img: '../lib/ligerUI/skins/icons/xls.gif' }
                     ]
@@ -72,7 +72,7 @@
 
         function linkManForm() {
             var row = manager.getSelectedRow();
-            if (!row) { $.ligerDialog.warn('Please select a vender !'); return; }
+            if (!row) { $.ligerDialog.warn('Please select a Supplier !'); return; }
 
             var title = "Contact Management - " + row.names;
 
@@ -87,7 +87,7 @@
 
         function search() {
             $.ligerDialog.prompt(
-                'Search Vender',
+                'Search Supplier',
                 '',
                 function (yes, value) {
                     if (yes) {
@@ -126,7 +126,7 @@
             var row = manager.getSelectedRow();
 
             if(!row){ 
-                $.ligerDialog.warn('Please select a vender.'); 
+                $.ligerDialog.warn('Please select a Supplier.'); 
                 return; 
             }
 
@@ -154,7 +154,7 @@
 
 
         function addRowTop() {
-            var title = "Add vender";
+            var title = "Add Supplier";
 
             $.ligerDialog.open({
                 title: title,
@@ -167,9 +167,9 @@
 
         function editRow() {
             var row = manager.getSelectedRow();
-            if (!row) { $.ligerDialog.warn('Please select a vender.'); return; }
+            if (!row) { $.ligerDialog.warn('Please select a Supplier.'); return; }
 
-            var title = "Edit Vender -" + row.names;
+            var title = "Edit Supplier -" + row.names;
 
             $.ligerDialog.open({
                 title: title,
@@ -224,7 +224,7 @@
         }
 
         function excel() {
-            var title = "Import Vender";
+            var title = "Import Supplier";
 
             $.ligerDialog.open({
                 title: title,

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Vendor List</title>
+    <title>Supplier List</title>
 
     <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
@@ -42,9 +42,9 @@
 
                 //checkbox:true,
                 columns: [
-                    { display: 'Vender Type', name: 'typeName', width: 100, type: 'int', align: 'center' },
-                    { display: 'Vender Code', name: 'code', width: 100, align: 'center' },
-                    { display: 'Vender Name', name: 'names', width: 100, align: 'left' },
+                    { display: 'Supplier Type', name: 'typeName', width: 100, type: 'int', align: 'center' },
+                    { display: 'Supplier Code', name: 'code', width: 100, align: 'center' },
+                    { display: 'Supplier Name', name: 'names', width: 100, align: 'left' },
                     { display: 'Balance Date', name: 'dueDate', width: 110, align: 'center' },
                     { display: 'Balance', name: 'balance', width: 70, align: 'center' },
                     { display: 'Tax%', name: 'tax', width: 60, align: 'center' },

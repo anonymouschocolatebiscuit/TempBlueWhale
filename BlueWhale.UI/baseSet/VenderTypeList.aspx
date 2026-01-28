@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Vender Category</title>
+    <title>Supplier Category</title>
 
     <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
@@ -20,7 +20,7 @@
             manager = $("#maingrid").ligerGrid({
                 columns: [
                     { display: 'Category Name', name: 'names', width: 250, align: 'left' },
-                    { display: 'Vender Quantity', name: 'num', width: 180, type: 'int', align: 'center' },
+                    { display: 'Supplier Quantity', name: 'num', width: 180, type: 'int', align: 'center' },
                     { display: 'Display Order', name: 'flag', width: 140, align: 'center' }
                 ],
                 url: 'VenderTypeList.aspx?Action=GetDataList',
@@ -46,7 +46,7 @@
 
         function addRow() {
             $.ligerDialog.open({
-                title: "Create Vender Category",
+                title: "Create Supplier Category",
                 url: 'VenderTypeListAdd.aspx',
                 height: 230,
                 width: 400,
@@ -62,7 +62,7 @@
             }
 
             $.ligerDialog.open({
-                title: "Edit Vender Category",
+                title: "Edit Supplier Category",
                 url: "VenderTypeListAdd.aspx?id=" + row.id + "&names=" + encodeURIComponent(row.names) + "&flag=" + row.flag,
                 height: 230,
                 width: 400,

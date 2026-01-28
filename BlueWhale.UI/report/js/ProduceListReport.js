@@ -24,7 +24,7 @@
 
 function f_selectClient() {
     $.ligerDialog.open({
-        title: 'Choose vendor', name: 'winselector', width: 800, height: 540, url: '../baseSet/ClientListSelect.aspx', buttons: [
+        title: 'Choose Supplier', name: 'winselector', width: 800, height: 540, url: '../baseSet/ClientListSelect.aspx', buttons: [
             { text: 'Confirm', onclick: f_selectClientOK },
             { text: 'Close', onclick: f_selectClientCancel }
         ]
@@ -120,7 +120,7 @@ function InitializeManager() {
             { display: 'Invoice No.', name: 'number', width: 150, align: 'center' },
             { display: 'Schedule Type', name: 'typeName', width: 150, align: 'center' },
             { display: 'Order No.', name: 'orderNumber', width: 150, align: 'center' },
-            { display: 'Vendor', name: 'wlName', width: 170, align: 'left' },
+            { display: 'Supplier', name: 'wlName', width: 170, align: 'left' },
             { display: 'Product Id', name: 'code', width: 100, align: 'center' },
             { display: 'Product Name', name: 'goodsName', width: 120, align: 'center' },
             { display: 'Specification', name: 'spec', width: 100, align: 'center' },

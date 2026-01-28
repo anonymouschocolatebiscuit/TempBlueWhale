@@ -87,13 +87,13 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="10" style="width: 380px; line-height: 40px;">
             <tr>
-                <td style="width: 120px; text-align: right; padding-right: 10px;">Inventory code:</td>
+                <td style="width: 120px; text-align: right; padding-right: 10px;">Warehouse code:</td>
                 <td>
                     <asp:TextBox ID="txtCode" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td style="text-align: right; padding-right: 10px;">Inventory name:</td>
+                <td style="text-align: right; padding-right: 10px;">Warehouse name:</td>
                 <td>
                     <asp:TextBox ID="txtNames" runat="server"></asp:TextBox>
                 </td>

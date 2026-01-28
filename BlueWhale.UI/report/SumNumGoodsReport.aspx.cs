@@ -112,7 +112,7 @@ namespace BlueWhale.UI.report
             row.CreateCell(8).SetCellValue("Storehouse");
             row.CreateCell(9).SetCellValue("Total quantity");
             row.CreateCell(10).SetCellValue("Stock price");
-            row.CreateCell(11).SetCellValue("Total inventory cost");
+            row.CreateCell(11).SetCellValue("Total Warehouse cost");
 
             sheet.SetColumnWidth(0, 15 * 256); //30characters
             sheet.SetColumnWidth(1, 30 * 256); //30characters
@@ -154,7 +154,7 @@ namespace BlueWhale.UI.report
 
                 row2.CreateCell(9).SetCellValue(Convert.ToString(dt.Rows[i]["sumNum"])); //Quantity
                 row2.CreateCell(10).SetCellValue(Convert.ToString(dt.Rows[i]["priceCost"])); //Cost price
-                row2.CreateCell(11).SetCellValue(Convert.ToString(dt.Rows[i]["sumPriceStore"])); //Inventory amount
+                row2.CreateCell(11).SetCellValue(Convert.ToString(dt.Rows[i]["sumPriceStore"])); //Warehouse amount
             }
 
             NPOI.SS.UserModel.IRow row3 = sheet.CreateRow(dt.Rows.Count + 1);

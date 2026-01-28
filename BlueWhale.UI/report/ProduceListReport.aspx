@@ -32,7 +32,7 @@
                 <td style="text-align: left; width: 180px; padding-left: 2px;">
                     <asp:TextBox ID="txtKeys" runat="server" placeholder="Please enter order no/remarks"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 60px;">Vendor:</td>
+                <td style="text-align: right; width: 60px;">Supplier:</td>
                 <td style="text-align: left; width: 120px; padding-left: 2px;">
                     <input type="text" id="clientName" runat="server" value="" />
                     <input type="hidden" id="clientId" runat="server" value="" />

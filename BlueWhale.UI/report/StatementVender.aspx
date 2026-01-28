@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Vender Statement</title>
+    <title>Supplier Statement</title>
 
     <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
         function f_selectClient() {
             $.ligerDialog.open({
-                title: 'Vender Statement', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
+                title: 'Supplier Statement', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
                     { text: 'Confirm', onclick: f_selectClientOK },
                     { text: 'Close', onclick: f_selectClientCancel }
                 ]
@@ -63,7 +63,7 @@
                 <td style="text-align: left; width: 120px;">
                     <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox>
                 </td>
-                <td style="text-align: right; width: 60px;">Vender：
+                <td style="text-align: right; width: 60px;">Supplier：
                 </td>
                 <td style="text-align: left; width: 80px;">
                     <input type="text" id="txtVenderList" />

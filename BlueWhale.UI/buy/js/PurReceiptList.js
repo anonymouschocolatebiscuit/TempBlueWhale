@@ -46,7 +46,7 @@ $(function () {
 					return html;
 				}
 			},
-			{ display: 'Vender', name: 'wlName', width: 170, align: 'left' },
+			{ display: 'Supplier', name: 'wlName', width: 170, align: 'left' },
 			{
 				display: 'Purchase Quantity', name: 'sumNum', width: 150, align: 'right',
 				totalSummary:
@@ -118,7 +118,7 @@ function f_set() {
 
 function search() {
 	var keys = document.getElementById("txtKeys").value;
-	if (keys == "Please Enter Receipt No./Vender/Remark") {
+	if (keys == "Please Enter Receipt No./Supplier/Remark") {
 		keys = "";
 	}
 	var start = document.getElementById("txtDateStart").value;

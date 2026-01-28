@@ -53,7 +53,7 @@ namespace BlueWhale.UI.baseSet
 
             if (this.txtCode.Text == "")
             {
-                MessageBox.Show(this, "Please enter inventory number!");
+                MessageBox.Show(this, "Please enter Warehouse number!");
                 this.txtCode.Focus();
                 return;
 
@@ -61,7 +61,7 @@ namespace BlueWhale.UI.baseSet
 
             if (this.txtNames.Text == "")
             {
-                MessageBox.Show(this, "Please enter inventory name!");
+                MessageBox.Show(this, "Please enter Warehouse name!");
                 this.txtNames.Focus();
                 return;
 
@@ -98,7 +98,7 @@ namespace BlueWhale.UI.baseSet
 
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "New Inventory:" + this.txtNames.Text;
+                    logs.Events = "New Warehouse:" + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 
@@ -127,7 +127,7 @@ namespace BlueWhale.UI.baseSet
                     LogsDAL logs = new LogsDAL();
                     logs.ShopId = LoginUser.ShopId;
                     logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                    logs.Events = "Edit Inventory:" + this.txtNames.Text;
+                    logs.Events = "Edit Warehouse:" + this.txtNames.Text;
                     logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                     logs.Add();
 

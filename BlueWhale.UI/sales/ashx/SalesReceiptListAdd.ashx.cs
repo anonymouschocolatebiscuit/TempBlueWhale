@@ -303,9 +303,9 @@ namespace BlueWhale.UI.sales.ashx
 
             OrderListModel<OrderListItemModel> itemList = obj;
 
-            #region Checking for negative inventory
+            #region Checking for negative Warehouse
 
-            if (basePage.CheckStoreNum())//Whether to check negative inventory
+            if (basePage.CheckStoreNum())//Whether to check negative Warehouse
             {
                 for (int i = 0; i < itemList.Rows.Count; i++)
                 {

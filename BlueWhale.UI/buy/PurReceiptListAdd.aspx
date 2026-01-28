@@ -18,7 +18,7 @@
         <form id="form1" runat="server">
             <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
                 <tr>
-                    <td style="width: 80px; text-align: left;">Vender:</td>
+                    <td style="width: 80px; text-align: left;">Supplier:</td>
                     <td style="text-align: center; width: 250px;">
                         <asp:TextBox ID="clientName" runat="server"></asp:TextBox>
                         <input type="hidden" id="clientId" runat="server" value="" />

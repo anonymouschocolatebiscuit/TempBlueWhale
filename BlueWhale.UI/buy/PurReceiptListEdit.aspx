@@ -30,7 +30,7 @@
     <form id="form1" runat="server">
         <table id="form" border="0" cellpadding="0" cellspacing="0" style="width: 99%; line-height: 40px;">
             <tr>
-                <td class="tdLbl">Vendor：</td>
+                <td class="tdLbl">Supplier：</td>
                 <td class="tdTxt">
                     <asp:TextBox ID="clientName" runat="server"></asp:TextBox>
                     <input type="hidden" id="clientId" runat="server" value="" />

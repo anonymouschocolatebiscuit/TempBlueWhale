@@ -102,7 +102,7 @@
                 { url: "demos/form/v125/afterContent.htm", text: "应付账款明细表" },
                 { url: "demos/form/v125/enabled.htm", text: "应收账款明细表" },
                 { url: "demos/form/v125/afterContent.htm", text: "对账单-客户" },
-                { url: "demos/form/v125/enabled.htm", text: "Statement-Vender" }
+                { url: "demos/form/v125/enabled.htm", text: "Statement-Supplier" }
            
              ]
              

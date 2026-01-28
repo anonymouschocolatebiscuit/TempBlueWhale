@@ -52,13 +52,13 @@
                  
                  
                  },
-                  { display: 'Vender', name: 'wlName', width: 70, align: 'left'},
+                  { display: 'Supplier', name: 'wlName', width: 70, align: 'left'},
                   { display: 'Item Number', name: 'code', width: 100, align: 'center'},
                  { display: 'Item Name', name: 'goodsName', width: 100, align: 'left'},
                  { display: 'Specification', name: 'spec', width: 80, align: 'center'},
                  { display: 'Unit', name: 'unitName', width: 40, align: 'center'},
               
-                 { display: 'Inventory', name: 'ckName', width: 80, align: 'center'},
+                 { display: 'Warehouse', name: 'ckName', width: 80, align: 'center'},
                
                 
                  { display: 'Amount', name: 'num', width: 70, align: 'right',

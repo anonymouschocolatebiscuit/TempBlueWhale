@@ -49,7 +49,7 @@
         <form id="form1" runat="server">    
             <table id="form" border="0" cellpadding="0" cellspacing="10" style="width:480px; line-height:40px;">
                 <tr>
-                    <td style="text-align:left;" colspan="2"><b>Batch import vender details and initial balance</b></td>
+                    <td style="text-align:left;" colspan="2"><b>Batch import Supplier details and initial balance</b></td>
                 </tr>
                 <tr>
                 <td style="width:80px; text-align:right; padding-right: 10px">Choose File: </td>

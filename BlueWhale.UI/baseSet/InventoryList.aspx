@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-    <title>Inventory Settings</title>
+    <title>Warehouse Settings</title>
 
     <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
     <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
@@ -24,8 +24,8 @@
             manager = $("#maingrid").ligerGrid({
                 columns: [
                 
-                 { display: 'Inventory Code', name: 'code',id: 'code', width: 120, align: 'center' },
-                 { display: 'Inventory Name', name: 'names',id: 'levelName', width: 250, align: 'left' },
+                 { display: 'Warehouse Code', name: 'code',id: 'code', width: 120, align: 'center' },
+                 { display: 'Warehouse Name', name: 'names',id: 'levelName', width: 250, align: 'left' },
                  { display: 'Status', name: 'flag', width: 100, type: 'int', align: 'center',
                     render: function (row) {  
                       var html = row.flag == 0 ? "<span style='color:red'>Disable</span>" : "<span style='color:green'>Enable</span>";  
@@ -74,7 +74,7 @@
             var row = manager.getSelectedRow();
             if (!row) { $.ligerDialog.warn('Please select the row to modify!'); return; }
             
-            var title ="Edit Inventory";
+            var title ="Edit Warehouse";
            
             $.ligerDialog.open({ 
                 title : title,
@@ -149,7 +149,7 @@
        
         function addRowTop()
         {
-            var title="Add Inventory";
+            var title="Add Warehouse";
          
             
             $.ligerDialog.open({ 

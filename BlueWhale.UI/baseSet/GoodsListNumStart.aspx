@@ -82,7 +82,7 @@
                 </td>
             </tr>
             <tr>
-                <td style="text-align: right;">Inventory：</td>
+                <td style="text-align: right;">Warehouse：</td>
                 <td>
                     <asp:DropDownList ID="ddlInventoryList" runat="server">
                     </asp:DropDownList>
@@ -114,7 +114,7 @@
                             <asp:BoundField HeaderText="Serial Number">
                                 <ItemStyle Width="60px" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="ckName" HeaderText="Inventory">
+                            <asp:BoundField DataField="ckName" HeaderText="Warehouse">
                                 <ItemStyle Width="100px" />
                             </asp:BoundField>
                             <asp:BoundField DataField="num" HeaderText="Initial Quantity">

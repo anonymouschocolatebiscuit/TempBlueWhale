@@ -116,7 +116,7 @@ namespace BlueWhale.UI.pay
             DataSet ds = dalCheck.GetAllModel(id);
             if (ds.Tables[0].Rows.Count > 0)
             {
-                // Bind vendor dropdown
+                // Bind Supplier dropdown
                 this.ddlVenderList.SelectedValue = ds.Tables[0].Rows[0]["venderIdA"].ToString();
                 this.txtBizDate.Text = DateTime.Parse(ds.Tables[0].Rows[0]["bizDate"].ToString()).ToShortDateString();
                 this.txtRemarks.Text = ds.Tables[0].Rows[0]["remarks"].ToString();

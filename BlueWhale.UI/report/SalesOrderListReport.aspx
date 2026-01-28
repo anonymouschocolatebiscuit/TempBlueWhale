@@ -118,7 +118,7 @@
                     <td style="text-align:left; width:120px;">
                         <asp:TextBox ID="txtDateEnd" runat="server" ltype="date" validate="{required:true}"></asp:TextBox> 
                     </td>
-                    <td style="text-align:right; width:60px;">Vender：</td>
+                    <td style="text-align:right; width:60px;">Supplier：</td>
                     <td style="text-align:left; width:120px;">
                         <input type="text" id="txtVenderList"/> 
                     </td>

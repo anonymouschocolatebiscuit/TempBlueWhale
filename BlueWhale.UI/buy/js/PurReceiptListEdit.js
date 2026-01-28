@@ -59,7 +59,7 @@ $.ligerDefaults.Grid.formatters['numberbox'] = function (value, column) {
 //Client Start
 function f_selectClient() {
     $.ligerDialog.open({
-        title: 'Select vender', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
+        title: 'Select Supplier', name: 'winselector', width: 800, height: 540, url: '../baseSet/VenderListSelect.aspx', buttons: [
             { text: 'Confirm', onclick: f_selectClientOK },
             { text: 'Close', onclick: f_selectClientCancel }
         ]

@@ -127,7 +127,7 @@ namespace BlueWhaleUI.baseSet
                         LogsDAL logs = new LogsDAL();
                         logs.ShopId = LoginUser.ShopId;
                         logs.Users = LoginUser.Phone + "-" + LoginUser.Names;
-                        logs.Events = "Import vender: " + this.Label1.Text;
+                        logs.Events = "Import Supplier: " + this.Label1.Text;
                         logs.Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
                         logs.Add();
                     }
@@ -177,9 +177,9 @@ namespace BlueWhaleUI.baseSet
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                string code = dt.Rows[i]["Vender Number"].ToString();
-                string names = dt.Rows[i]["Vender Name"].ToString();
-                string typeName = dt.Rows[i]["Vender Category"].ToString();
+                string code = dt.Rows[i]["Supplier Number"].ToString();
+                string names = dt.Rows[i]["Supplier Name"].ToString();
+                string typeName = dt.Rows[i]["Supplier Category"].ToString();
                 int tax = ConvertTo.ConvertInt(dt.Rows[i]["Tax Rate"].ToString());
                 DateTime dueDate = DateTime.Now;
 
@@ -292,7 +292,7 @@ namespace BlueWhaleUI.baseSet
 
             #endregion
 
-            string result = "Has imported【" + VenderNum.ToString() + "】rows vender detail,【" + linkManNum.ToString() + "】rows contact detail.";
+            string result = "Has imported【" + VenderNum.ToString() + "】rows Supplier detail,【" + linkManNum.ToString() + "】rows contact detail.";
 
             return result;
 

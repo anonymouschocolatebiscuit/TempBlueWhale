@@ -51,7 +51,7 @@
                     <asp:TextBox ID="txtRemarks" runat="server" Width="540px" TextMode="MultiLine"></asp:TextBox>
                 </td>
                 <td style="text-align: right; padding-right: 30px;">
-                    <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Generate Inventory Surplus and Shortage Report" onclick="save()" style="margin:0px;"/>
+                    <input id="Button1" class="ui-btn ui-btn-sp mrb" type="button" value="Generate Warehouse Surplus and Shortage Report" onclick="save()" style="margin:0px;"/>
                 </td>
             </tr>
         </table>
