@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Welcome to SteelViper ERP</title>
+    <title>Welcome to Indigo Panther ERP</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,7 +25,7 @@
             z-index: 99;
             width: 100%;
             font-family: '微软雅黑', '宋体';
-            background: #4e565e;
+            background: #fff;
         }
 
         .default .menuList1 {
@@ -68,7 +68,7 @@
             top: 46px;
             left: 0;
             width: 63px;
-            background: #2c3136;
+            background: #ded9d9;
             height: 100%;
             z-index: 201;
         }
@@ -420,7 +420,7 @@
             height: 32px;
             width: 32px;
             margin: 0 auto;
-            filter: invert(72%) sepia(85%) saturate(1853%) hue-rotate(145deg) brightness(108%) contrast(106%);
+            filter: invert(11%) sepia(84%) saturate(6781%) hue-rotate(259deg) brightness(61%) contrast(124%);
         }
         /* Left Navigation icon end */
     </style>
@@ -699,10 +699,10 @@
             <div id="app/vm/Header_0" style="display: flex; justify-content: space-between; align-items: center; height: 46px; padding: 0 15px;">
 
                 <a title="Return to Index" style="display: flex; align-items: center; text-decoration: none;">
-                    <img src="images/SteelViper.png" alt="STEELVIPER ERP" style="height: 35px; width: auto;" />
+                    <img src="images/IndigoPanther.png" alt="INDIGO PANTHER ERP" style="height: 55px; width: 55px;" />
                     <div style="display: flex; flex-direction: column; margin-left: 12px; line-height: 1.1;">
-                        <span style="font-size: 18px; color: #00f2ff; font-family: '微软雅黑', '宋体'; font-weight: bold; letter-spacing: 1px;">STEELVIPER</span>
-                        <span style="font-size: 18px; color: #00f2ff; font-family: '微软雅黑', '宋体'; font-weight: bold; letter-spacing: 1px">ERP</span>
+                        <span style="font-size: 18px; color: #1D0075; font-family: '微软雅黑', '宋体'; font-weight: bold; letter-spacing: 1px;">INDIGO PANTHER</span>
+                        <span style="font-size: 18px; color: #1D0075; font-family: '微软雅黑', '宋体'; font-weight: bold; letter-spacing: 1px">ERP</span>
                     </div>
                 </a>
 
@@ -711,15 +711,15 @@
                     <div class="headMessage" id="Div2">
                         <a href="javascript:void(0)" onclick="f_addTab('Pwd','Change Password','Pwd.aspx')" style="display: flex; align-items: center; text-decoration: none; color: #ffffff; font-size: 14px;">
                            
-                            <i class="fas fa-key" style="display: inline-block; font-family: 'Font Awesome 5 Free' !important; font-weight: 900 !important; margin-right: 8px; color: #00f2ff; font-size: 16px;"></i>
-                            <span style="font-family: '微软雅黑';">Change Password</span>
+                            <i class="fas fa-key" style="display: inline-block; font-family: 'Font Awesome 5 Free' !important; font-weight: 900 !important; margin-right: 8px; color: #1D0075; font-size: 16px;"></i>
+                            <span style="font-family: '微软雅黑'; color: #000000">Change Password</span>
                         </a>
                     </div>
 
                     <div class="headMessage" id="userList">
                         <a href="javascript:void(0)" onclick="logout()" style="display: flex; align-items: center; text-decoration: none; color: #ffffff; font-size: 14px;">
-                             <i class="fas fa-sign-out-alt" style="margin-right: 8px; color: #00f2ff; font-size: 18px; font-family: 'Font Awesome 5 Free' !important; font-weight: 900 !important;"></i>
-                            <span style="font-family: '微软雅黑';">Logout</span>
+                             <i class="fas fa-sign-out-alt" style="margin-right: 8px; color: #1D0075; font-size: 18px; font-family: 'Font Awesome 5 Free' !important; font-weight: 900 !important;"></i>
+                            <span style="font-family: '微软雅黑'; color: #000000">Logout</span>
                         </a>
                     </div>
 

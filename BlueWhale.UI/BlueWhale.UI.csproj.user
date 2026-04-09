@@ -8,7 +8,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <LastActiveSolutionConfig>Release|Any CPU</LastActiveSolutionConfig>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
     <ProjectView>ProjectFiles</ProjectView>
     <NameOfLastUsedPublishProfile>D:\Formal\My Git Repo\TempBlueWhale\BlueWhale.UI\Properties\PublishProfiles\app-erp-prod - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
