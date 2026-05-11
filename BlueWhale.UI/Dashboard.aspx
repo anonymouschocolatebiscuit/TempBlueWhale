@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Welcome to SteelViper ERP</title>
+    <title>Welcome to SteelViper_Plus ERP</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -845,7 +845,7 @@
                         </div>
                     </div>
                 </li>
-               <%-- <li class="a4">
+                <li class="a4">
                     <a href="javascript:void(0);">
                         <span class="moduleimg" style="background-position: -36px -220px;"></span>
                     </a>
@@ -878,7 +878,7 @@
                             </ul>
                         </div>
                     </div>
-                </li>--%>
+                </li>
                 <li class="a4">
                     <a href="javascript:void(0);" page="baidu" class="baidu ">
                         <span class="moduleimg" style="background-position: -36px -256px;"></span>
@@ -921,7 +921,7 @@
                                 <li><a onclick="f_addTab('GoodsOutInSumReport','Product Inbound & Outbound Summary Report','Report/GoodsOutInSumReport.aspx')">Product Inbound & Outbound Summary Report</a></li>
                             </ul>
                         </div>
-                        <%--<div class="nav-item nav-fund last">
+                        <div class="nav-item nav-fund last">
                             <h3>Financial Reports</h3>
                             <ul class="sub-nav" id="report-money">
                                 <li><a onclick="f_addTab('AccountFlowReport','Cash & Bank Report','Report/AccountFlowReport.aspx')">Cash & Bank Report</a></li>
@@ -931,7 +931,7 @@
                                 <li><a onclick="f_addTab('StatementVender','Supplier Statement','Report/StatementVender.aspx')">Supplier Statement</a></li>
                                 <li><a onclick="f_addTab('OtherGetPayFlowReport','Other Income & Expense Detail Report','Report/OtherGetPayFlowReport.aspx')">Other Income & Expense Detail Report</a></li>
                             </ul>
-                        </div>--%>
+                        </div>
                     </div>
                 </li>
                 <li class="a4">
@@ -942,11 +942,11 @@
                         <div class="nav-item">
                             <h3>Basic Settings</h3>
                             <ul class="sub-nav" id="setting-base">
-                                <%--<li><a onclick="f_addTab('ClientList','Client Management','BaseSet/ClientList.aspx')">Client Management</a></li>--%>
-                                <%--<li><a onclick="f_addTab('VenderList','Supplier Management','BaseSet/VenderList.aspx')">Supplier Management</a></li>--%>
+                                <li><a onclick="f_addTab('ClientList','Client Management','BaseSet/ClientList.aspx')">Client Management</a></li>
+                                <li><a onclick="f_addTab('VenderList','Supplier Management','BaseSet/VenderList.aspx')">Supplier Management</a></li>
                                 <li><a onclick="f_addTab('GoodsList','Product Management','BaseSet/GoodsList.aspx')">Product Management</a></li>
                                 <li><a onclick="f_addTab('InventoryList','Warehouse Management','BaseSet/InventoryList.aspx')">Warehouse Management</a></li>
-                                <%--<li><a onclick="f_addTab('AccountList','Account Management','BaseSet/AccountList.aspx')">Account Management</a></li>--%>
+                                <li><a onclick="f_addTab('AccountList','Account Management','BaseSet/AccountList.aspx')">Account Management</a></li>
                                 <li><a onclick="f_addTab('UsersList','User Management','BaseSet/UsersList.aspx')">User Management</a></li>
                                 <li><a onclick="f_addTab('processList','Process Management','BaseSet/processList.aspx')">Process Management</a></li>
                             </ul>

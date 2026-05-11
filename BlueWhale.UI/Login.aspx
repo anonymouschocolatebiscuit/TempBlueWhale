@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>SteelViper ERP System</title>
+    <title>SteelViper_Plus ERP System</title>
     <link href="skin/default/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="scripts/jquery/jquery-1.10.2.min.js"></script>
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
