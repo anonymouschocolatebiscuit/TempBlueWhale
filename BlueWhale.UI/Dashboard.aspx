@@ -699,9 +699,9 @@
             <div id="app/vm/Header_0" style="display: flex; justify-content: space-between; align-items: center; height: 46px; padding: 0 15px;">
 
                 <a title="Return to Index" style="display: flex; align-items: center; text-decoration: none;">
-                    <img src="images/SteelViper.png" alt="STEELVIPER ERP" style="height: 35px; width: auto;" />
+                    <img src="images/SteelViper.png" alt="STEELVIPER_PLUS ERP" style="height: 35px; width: auto;" />
                     <div style="display: flex; flex-direction: column; margin-left: 12px; line-height: 1.1;">
-                        <span style="font-size: 18px; color: #00f2ff; font-family: '微软雅黑', '宋体'; font-weight: bold; letter-spacing: 1px;">STEELVIPER</span>
+                        <span style="font-size: 18px; color: #00f2ff; font-family: '微软雅黑', '宋体'; font-weight: bold; letter-spacing: 1px;">STEELVIPER_PLUS</span>
                         <span style="font-size: 18px; color: #00f2ff; font-family: '微软雅黑', '宋体'; font-weight: bold; letter-spacing: 1px">ERP</span>
                     </div>
                 </a>
