@@ -942,8 +942,8 @@
                         <div class="nav-item">
                             <h3>Basic Settings</h3>
                             <ul class="sub-nav" id="setting-base">
-                                <li><a onclick="f_addTab('ClientList','Client Management','BaseSet/ClientList.aspx')">Client Management</a></li>
-                                <li><a onclick="f_addTab('VenderList','Supplier Management','BaseSet/VenderList.aspx')">Supplier Management</a></li>
+                               <%-- <li><a onclick="f_addTab('ClientList','Client Management','BaseSet/ClientList.aspx')">Client Management</a></li>
+                                <li><a onclick="f_addTab('VenderList','Supplier Management','BaseSet/VenderList.aspx')">Supplier Management</a></li>--%>
                                 <li><a onclick="f_addTab('GoodsList','Product Management','BaseSet/GoodsList.aspx')">Product Management</a></li>
                                 <li><a onclick="f_addTab('InventoryList','Warehouse Management','BaseSet/InventoryList.aspx')">Warehouse Management</a></li>
                                 <li><a onclick="f_addTab('AccountList','Account Management','BaseSet/AccountList.aspx')">Account Management</a></li>
@@ -958,9 +958,9 @@
                                 <%--<li><a onclick="f_addTab('VenderTypeList','Supplier Category','BaseSet/VenderTypeList.aspx')">Supplier Category</a></li>--%>
                                 <li><a onclick="f_addTab('GoodsTypeList','Item Category','BaseSet/GoodsTypeList.aspx')">Item Category</a></li>
                                 <li><a onclick="f_addTab('GoodsBrandList','Item Brand','BaseSet/GoodsBrandList.aspx')">Item Brand</a></li>
-                                <%--<li><a onclick="f_addTab('PayGetList','Income & Expense Category','BaseSet/PayGetList.aspx')">Income & Expense Category</a></li>--%>
+                                <li><a onclick="f_addTab('PayGetList','Income & Expense Category','BaseSet/PayGetList.aspx')">Income & Expense Category</a></li>
                                 <li><a onclick="f_addTab('UnitList','Unit of Measurement','BaseSet/UnitList.aspx')">Unit of Measurement</a></li>
-                                <%--<li><a onclick="f_addTab('PayTypeList','Settlement Method','BaseSet/PayTypeList.aspx')">Settlement Method</a></li>--%>
+                                <li><a onclick="f_addTab('PayTypeList','Settlement Method','BaseSet/PayTypeList.aspx')">Settlement Method</a></li>
                                 <li><a onclick="f_addTab('processTypeList','Process Category','BaseSet/processTypeList.aspx')">Process Category</a></li>
                             </ul>
                         </div>
