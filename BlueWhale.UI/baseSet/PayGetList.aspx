@@ -55,7 +55,7 @@
                     return;
                 }
             
-                var title ="Edit Income and Expense Categories";
+                var title ="Edit Expense Categories";
            
                 $.ligerDialog.open({ 
                     title : title,
@@ -118,7 +118,7 @@
         
             function addRowTop()
             {           
-                var title ="Add New Income and Expense Category";
+                var title ="Add New Expense Category";
     
                 $.ligerDialog.open({ 
                     title : title,

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Welcome to Indigo Panther ERP</title>
+    <title>Welcome to Indigo Panther Pro ERP</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -699,9 +699,9 @@
             <div id="app/vm/Header_0" style="display: flex; justify-content: space-between; align-items: center; height: 46px; padding: 0 15px;">
 
                 <a title="Return to Index" style="display: flex; align-items: center; text-decoration: none;">
-                    <img src="images/IndigoPanther.png" alt="INDIGO PANTHER ERP" style="height: 55px; width: 55px;" />
+                    <img src="images/IndigoPanther.png" alt="INDIGO PANTHER PRO ERP" style="height: 55px; width: 55px;" />
                     <div style="display: flex; flex-direction: column; margin-left: 12px; line-height: 1.1;">
-                        <span style="font-size: 18px; color: #1D0075; font-family: '微软雅黑', '宋体'; font-weight: bold; letter-spacing: 1px;">INDIGO PANTHER</span>
+                        <span style="font-size: 18px; color: #1D0075; font-family: '微软雅黑', '宋体'; font-weight: bold; letter-spacing: 1px;">INDIGO PANTHER PRO</span>
                         <span style="font-size: 18px; color: #1D0075; font-family: '微软雅黑', '宋体'; font-weight: bold; letter-spacing: 1px">ERP</span>
                     </div>
                 </a>
@@ -850,7 +850,7 @@
                         <span class="moduleimg" style="background-position: -36px -220px;"></span>
                     </a>
                     <div class="sub-nav-wrap group-nav group-nav-t0 store-nav cf" style="display: none;">
-                        <div class="nav-item nav-onlineStore">
+                        <%--<div class="nav-item nav-onlineStore">
                             <h3>Collection</h3>
                             <ul class="sub-nav" id="Ul6">
                                 <li><a onclick="f_addTab('ReceivableListAdd','Sales Collection - Create','pay/ReceivableListAdd.aspx')">Sales Collection - Create</a></li>
@@ -858,7 +858,7 @@
                                 <li><a onclick="f_addTab('OtherGetListAdd','Other Collection - Create','pay/OtherGetListAdd.aspx')">Other Collection - Create</a></li>
                                 <li><a onclick="f_addTab('OtherGetList','Other Collection - View','pay/OtherGetList.aspx')">Other Collection - View</a></li>
                             </ul>
-                        </div>
+                        </div>--%>
                         <div class="nav-item nav-onlineStore">
                             <h3>Payment</h3>
                             <ul class="sub-nav" id="Ul9">
@@ -871,8 +871,8 @@
                         <div class="nav-item nav-JDstore last">
                             <h3>Settlement</h3>
                             <ul class="sub-nav" id="Ul8">
-                                <li><a onclick="f_addTab('CheckBillGetListAdd',' Collection Write-off - Create','pay/CheckBillGetListAdd.aspx')">Collection Write-off - Create</a></li>
-                                <li><a onclick="f_addTab('CheckBillGetList','Collection Write-off - View','pay/CheckBillGetList.aspx')">Collection Write-off - View</a></li>
+                                <%--<li><a onclick="f_addTab('CheckBillGetListAdd',' Collection Write-off - Create','pay/CheckBillGetListAdd.aspx')">Collection Write-off - Create</a></li>
+                                <li><a onclick="f_addTab('CheckBillGetList','Collection Write-off - View','pay/CheckBillGetList.aspx')">Collection Write-off - View</a></li>--%>
                                 <li><a onclick="f_addTab('CheckBillPayListAdd','Payment Write-off - Create','pay/CheckBillPayListAdd.aspx')">Payment Write-off - Create</a></li>
                                 <li><a onclick="f_addTab('PayMentList','Payment Write-off - View','pay/PayMentList.aspx')">Payment Write-off - View</a></li>
                             </ul>
@@ -926,10 +926,10 @@
                             <ul class="sub-nav" id="report-money">
                                 <li><a onclick="f_addTab('AccountFlowReport','Cash & Bank Report','Report/AccountFlowReport.aspx')">Cash & Bank Report</a></li>
                                 <li><a onclick="f_addTab('VendorNeedPayReport','Accounts Payable Detail Report','Report/VendorNeedPayReport.aspx')">Accounts Payable Detail Report</a></li>
-                                <li><a onclick="f_addTab('ClientNeedPayReport','Accounts Receivable Detail Report','Report/ClientNeedPayReport.aspx')">Accounts Receivable Detail Report</a></li>
-                                <li><a onclick="f_addTab('StatementClient','Client Statement','Report/StatementClient.aspx')">Client Statement</a></li>
+                                <%--<li><a onclick="f_addTab('ClientNeedPayReport','Accounts Receivable Detail Report','Report/ClientNeedPayReport.aspx')">Accounts Receivable Detail Report</a></li>
+                                <li><a onclick="f_addTab('StatementClient','Client Statement','Report/StatementClient.aspx')">Client Statement</a></li>--%>
                                 <li><a onclick="f_addTab('StatementVender','Supplier Statement','Report/StatementVender.aspx')">Supplier Statement</a></li>
-                                <li><a onclick="f_addTab('OtherGetPayFlowReport','Other Income & Expense Detail Report','Report/OtherGetPayFlowReport.aspx')">Other Income & Expense Detail Report</a></li>
+                                <li><a onclick="f_addTab('OtherGetPayFlowReport','Other Income & Expense Detail Report','Report/OtherGetPayFlowReport.aspx')">Other Expense Detail Report</a></li>
                             </ul>
                         </div>
                     </div>

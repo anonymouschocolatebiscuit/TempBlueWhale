@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>IndigoPanther ERP Pro System</title>
+    <title>IndigoPanther Pro ERP  System</title>
     <link href="skin/default/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="scripts/jquery/jquery-1.10.2.min.js"></script>
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
@@ -25,7 +25,7 @@
     <form id="form1" runat="server">
         <div class="login-title" style="margin-top: 20px; margin-bottom: 50px; text-align: center;">
             <a href="Login.aspx" style="text-decoration: none;">
-                <img src="images/logo.png" alt="IndigoPanther ERP" style="height: 280px; width: 540px;" />
+                <img src="images/logo.png" alt="IndigoPanther Pro ERP" style="height: 280px; width: 540px;" />
             </a>
         </div>
         <div class="login-screen">

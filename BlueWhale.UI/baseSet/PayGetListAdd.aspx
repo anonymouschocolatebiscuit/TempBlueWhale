@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
-        <title>Income and Expense Categories</title>
+        <title>Expense Categories</title>
 
         <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
         <link href="../lib/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" type="text/css" />
@@ -86,7 +86,6 @@
                     <td style="width:80px; text-align:left;">Category：</td>
                     <td>
                         <asp:DropDownList ID="ddlTypesList" runat="server">
-                            <asp:ListItem>Income</asp:ListItem>
                             <asp:ListItem>Expenses</asp:ListItem>
                         </asp:DropDownList>
                     </td>
