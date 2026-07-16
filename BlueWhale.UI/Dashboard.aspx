@@ -845,7 +845,7 @@
                         </div>
                     </div>
                 </li>
-               <%-- <li class="a4">
+                <li class="a4">
                     <a href="javascript:void(0);">
                         <span class="moduleimg" style="background-position: -36px -220px;"></span>
                     </a>
@@ -878,7 +878,7 @@
                             </ul>
                         </div>
                     </div>
-                </li>--%>
+                </li>
                 <li class="a4">
                     <a href="javascript:void(0);" page="baidu" class="baidu ">
                         <span class="moduleimg" style="background-position: -36px -256px;"></span>
@@ -921,7 +921,7 @@
                                 <li><a onclick="f_addTab('GoodsOutInSumReport','Product Inbound & Outbound Summary Report','Report/GoodsOutInSumReport.aspx')">Product Inbound & Outbound Summary Report</a></li>
                             </ul>
                         </div>
-                        <%--<div class="nav-item nav-fund last">
+                        <div class="nav-item nav-fund last">
                             <h3>Financial Reports</h3>
                             <ul class="sub-nav" id="report-money">
                                 <li><a onclick="f_addTab('AccountFlowReport','Cash & Bank Report','Report/AccountFlowReport.aspx')">Cash & Bank Report</a></li>
@@ -931,7 +931,7 @@
                                 <li><a onclick="f_addTab('StatementVender','Supplier Statement','Report/StatementVender.aspx')">Supplier Statement</a></li>
                                 <li><a onclick="f_addTab('OtherGetPayFlowReport','Other Income & Expense Detail Report','Report/OtherGetPayFlowReport.aspx')">Other Income & Expense Detail Report</a></li>
                             </ul>
-                        </div>--%>
+                        </div>
                     </div>
                 </li>
                 <li class="a4">
