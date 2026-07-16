@@ -58,7 +58,7 @@ namespace BlueWhale.UI.BaseSet
 				this.txtCode.Text = ds.Tables[0].Rows[0]["code"].ToString();
 				this.txtNames.Text = ds.Tables[0].Rows[0]["names"].ToString();
 				this.ddlVenderTypeList.SelectedValue = ds.Tables[0].Rows[0]["typeId"].ToString();
-				this.txtDueDate.Text = DateTime.Parse(ds.Tables[0].Rows[0]["yueDate"].ToString()).ToShortDateString();
+				this.txtDueDate.Text = DateTime.Parse(ds.Tables[0].Rows[0]["dueDate"].ToString()).ToShortDateString();
 				this.txtPayNeed.Text = ds.Tables[0].Rows[0]["payNeed"].ToString();
 				this.txtTax.Text = ds.Tables[0].Rows[0]["tax"].ToString();
 				this.txtPayReady.Text = ds.Tables[0].Rows[0]["payReady"].ToString();
@@ -67,7 +67,7 @@ namespace BlueWhale.UI.BaseSet
 				this.txtTaxNumber.Text = ds.Tables[0].Rows[0]["taxNumber"].ToString();
 				this.txtBankName.Text = ds.Tables[0].Rows[0]["bankName"].ToString();
 				this.txtBankNumber.Text = ds.Tables[0].Rows[0]["bankNumber"].ToString();
-				this.txtAddress.Text = ds.Tables[0].Rows[0]["dizhi"].ToString();
+				this.txtAddress.Text = ds.Tables[0].Rows[0]["address"].ToString();
 
 			}
 

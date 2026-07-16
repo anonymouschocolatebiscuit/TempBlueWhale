@@ -929,7 +929,7 @@
                                 <%--<li><a onclick="f_addTab('ClientNeedPayReport','Accounts Receivable Detail Report','Report/ClientNeedPayReport.aspx')">Accounts Receivable Detail Report</a></li>
                                 <li><a onclick="f_addTab('StatementClient','Client Statement','Report/StatementClient.aspx')">Client Statement</a></li>--%>
                                 <li><a onclick="f_addTab('StatementVender','Supplier Statement','Report/StatementVender.aspx')">Supplier Statement</a></li>
-                                <li><a onclick="f_addTab('OtherGetPayFlowReport','Other Income & Expense Detail Report','Report/OtherGetPayFlowReport.aspx')">Other Expense Detail Report</a></li>
+                                <li><a onclick="f_addTab('OtherGetPayFlowReport','Other Expense Detail Report','Report/OtherGetPayFlowReport.aspx')">Other Expense Detail Report</a></li>
                             </ul>
                         </div>
                     </div>
@@ -943,7 +943,7 @@
                             <h3>Basic Settings</h3>
                             <ul class="sub-nav" id="setting-base">
                                 <%--<li><a onclick="f_addTab('ClientList','Client Management','BaseSet/ClientList.aspx')">Client Management</a></li>--%>
-                                <%--<li><a onclick="f_addTab('VenderList','Supplier Management','BaseSet/VenderList.aspx')">Supplier Management</a></li>--%>
+                                <li><a onclick="f_addTab('VenderList','Supplier Management','BaseSet/VenderList.aspx')">Supplier Management</a></li>
                                 <li><a onclick="f_addTab('GoodsList','Product Management','BaseSet/GoodsList.aspx')">Product Management</a></li>
                                 <li><a onclick="f_addTab('InventoryList','Warehouse Management','BaseSet/InventoryList.aspx')">Warehouse Management</a></li>
                                 <%--<li><a onclick="f_addTab('AccountList','Account Management','BaseSet/AccountList.aspx')">Account Management</a></li>--%>
@@ -955,12 +955,12 @@
                             <h3>Auxiliary Settings</h3>
                             <ul class="sub-nav" id="setting-auxiliary">
                                 <%--<li><a onclick="f_addTab('ClientTypeList','Client Category','BaseSet/ClientTypeList.aspx')">Client Category</a></li>--%>
-                                <%--<li><a onclick="f_addTab('VenderTypeList','Supplier Category','BaseSet/VenderTypeList.aspx')">Supplier Category</a></li>--%>
+                                <li><a onclick="f_addTab('VenderTypeList','Supplier Category','BaseSet/VenderTypeList.aspx')">Supplier Category</a></li>
                                 <li><a onclick="f_addTab('GoodsTypeList','Item Category','BaseSet/GoodsTypeList.aspx')">Item Category</a></li>
                                 <li><a onclick="f_addTab('GoodsBrandList','Item Brand','BaseSet/GoodsBrandList.aspx')">Item Brand</a></li>
-                                <%--<li><a onclick="f_addTab('PayGetList','Income & Expense Category','BaseSet/PayGetList.aspx')">Income & Expense Category</a></li>--%>
+                                <li><a onclick="f_addTab('PayGetList','Expense Category','BaseSet/PayGetList.aspx')">Expense Category</a></li>
                                 <li><a onclick="f_addTab('UnitList','Unit of Measurement','BaseSet/UnitList.aspx')">Unit of Measurement</a></li>
-                                <%--<li><a onclick="f_addTab('PayTypeList','Settlement Method','BaseSet/PayTypeList.aspx')">Settlement Method</a></li>--%>
+                                <li><a onclick="f_addTab('PayTypeList','Settlement Method','BaseSet/PayTypeList.aspx')">Settlement Method</a></li>
                                 <li><a onclick="f_addTab('processTypeList','Process Category','BaseSet/processTypeList.aspx')">Process Category</a></li>
                             </ul>
                         </div>
