@@ -946,7 +946,7 @@
                                 <li><a onclick="f_addTab('VenderList','Supplier Management','BaseSet/VenderList.aspx')">Supplier Management</a></li>
                                 <li><a onclick="f_addTab('GoodsList','Product Management','BaseSet/GoodsList.aspx')">Product Management</a></li>
                                 <li><a onclick="f_addTab('InventoryList','Warehouse Management','BaseSet/InventoryList.aspx')">Warehouse Management</a></li>
-                                <%--<li><a onclick="f_addTab('AccountList','Account Management','BaseSet/AccountList.aspx')">Account Management</a></li>--%>
+                                <li><a onclick="f_addTab('AccountList','Account Management','BaseSet/AccountList.aspx')">Account Management</a></li>
                                 <li><a onclick="f_addTab('UsersList','User Management','BaseSet/UsersList.aspx')">User Management</a></li>
                                 <li><a onclick="f_addTab('processList','Process Management','BaseSet/processList.aspx')">Process Management</a></li>
                             </ul>
